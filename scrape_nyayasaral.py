@@ -81,6 +81,16 @@ def discover_all_subjects(session: requests.Session):
                         "title": title,
                         "url": canonical,
                     }
+    # Always include known live Semester II+ subjects even if not yet linked on /3-year-llb/
+    for sid, sem, ttl in [
+        ("law-of-contract-ii", "Semester II", "Law of Contracts – II"),
+    ]:
+        if sid not in discovered:
+            discovered[sid] = {"id": sid, "semester": sem, "title": ttl, "url": f"{BASE_URL}/subjects/{sid}/"}
+    for v in discovered.values():
+        v["title"] = re.sub(r"\s*\d+\s*units\s*·?\s*$", "", v["title"], flags=re.I).strip()
+        v["semester"] = re.sub(r"Semester\s+1\b", "Semester I", v["semester"], flags=re.I)
+        v["semester"] = re.sub(r"Semester\s+2\b", "Semester II", v["semester"], flags=re.I)
     print(f"Discovered {len(discovered)} live subjects across all semesters.")
     return list(discovered.values())
 
