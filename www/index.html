@@ -61,7 +61,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.0.0</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.1.0</div>
           </div>
         </button>
       </div>
@@ -3995,5 +3995,41 @@
 })();
 </script>
 <!-- LS_V5_END -->
+<!-- LS_OTA_BULLETPROOF_START -->
+<div id="lsOtaToast" class="hidden fixed top-0 inset-x-0 z-[120] bg-[#7B1E2B] text-white text-xs font-semibold text-center py-2 px-4 shadow-md">Updating Law Studyes...</div>
+<script>
+(function(){
+  var RAW = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
+  var VK = "law_studyes_ota_version";
+  function getUpdater(){ return window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater; }
+  async function runInstantOta(){
+    var up = getUpdater();
+    if(!up) return;
+    try { await up.notifyAppReady(); } catch(e) {}
+    if(!navigator.onLine) return;
+    try {
+      var r = await fetch(RAW + "/ota-version.json?t=" + Date.now(), { cache: "no-store" });
+      if(!r.ok) return;
+      var meta = await r.json();
+      if(!meta || !meta.version) return;
+      var cur = ""; try { cur = localStorage.getItem(VK) || ""; } catch(e) {}
+      if(cur === meta.version) return;
+      var bar = document.getElementById("lsOtaToast");
+      if(bar){ bar.textContent = "Updating Law Studyes to v" + meta.version + "..."; bar.classList.remove("hidden"); }
+      var bdl = await up.download({ url: RAW + "/ota-bundle.zip?v=" + encodeURIComponent(meta.version), version: meta.version });
+      if(bdl && bdl.id){
+        try { localStorage.setItem(VK, meta.version); } catch(e) {}
+        await up.set(bdl);
+      }
+    } catch(e) {
+      var bar2 = document.getElementById("lsOtaToast");
+      if(bar2) bar2.classList.add("hidden");
+    }
+  }
+  window.addEventListener("DOMContentLoaded", function(){ setTimeout(runInstantOta, 300); });
+  document.addEventListener("visibilitychange", function(){ if(document.visibilityState === "visible") runInstantOta(); });
+})();
+</script>
+<!-- LS_OTA_BULLETPROOF_END -->
 </body>
 </html>
