@@ -3,7 +3,10 @@ name: Build Offline Law Studyes APK
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 21 * * 0' # Weekly Sunday 2:30 AM IST fresh offline APK build
+    - cron: '0 21 * * 0' # Weekly Sunday 2:30 AM IST
+
+permissions:
+  contents: write
 
 jobs:
   build-apk:
@@ -11,14 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Python & Scrape All Live LL.B. Notes
+      - name: Setup Python and Scrape All Live LL.B. Notes
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - run: python scrape_nyayasaral.py
 
-      - name: Setup Node.js & Java 17
+      - name: Setup Node.js and JDK 21
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -27,7 +30,7 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Build Capacitor Android APK (Full Offline Data Bundled)
+      - name: Build Capacitor Android APK (Offline Data + OTA + Indian Google TTS)
         run: |
           npm install
           npx cap add android
@@ -37,8 +40,19 @@ jobs:
           ./gradlew assembleDebug
           cp app/build/outputs/apk/debug/app-debug.apk ../LawStudyes-Offline.apk
 
-      - name: Upload Downloadable APK Artifact
+      - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: LawStudyes-Offline-APK
           path: LawStudyes-Offline.apk
+
+      - name: Publish Direct Download Link via GitHub Release (latest)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Law Studyes Offline APK (Latest)
+          body: |
+            Direct APK download link:
+            https://github.com/khodayanvesh-jsf/law-studyes/releases/latest/download/LawStudyes-Offline.apk
+          files: LawStudyes-Offline.apk
+          make_latest: true

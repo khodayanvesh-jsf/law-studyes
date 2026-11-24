@@ -344,6 +344,14 @@
           </label>
         </div>
 
+        <div class="p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E0D5] flex items-center justify-between gap-3">
+          <div>
+            <div class="text-xs font-bold text-[#1F1B18]">Android Offline APK (with Auto-OTA)</div>
+            <div class="text-[11px] text-[#5F554E]">Direct link to latest compiled LawStudyes-Offline.apk</div>
+          </div>
+          <a id="downloadApkLinkBtn" href="https://github.com/khodayanvesh-jsf/law-studyes/releases/latest/download/LawStudyes-Offline.apk" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs font-semibold shrink-0">Download APK</a>
+        </div>
+
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           <button id="exportJsonBtn" type="button" class="px-3.5 py-2.5 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18] flex items-center justify-center gap-2">
             <i data-lucide="download" class="w-4 h-4 text-[#7B1E2B]"></i>
@@ -873,8 +881,8 @@
       },
       revealedAnswers: {},
       resetPending: false,
-      syncFeedUrl: '',
-      autoSyncOnLaunch: false,
+      syncFeedUrl: 'https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www/nyayasaral_db.json',
+      autoSyncOnLaunch: true,
       lastSyncedAt: '',
       // Audio TTS State
       audio: {
@@ -2382,6 +2390,51 @@
     }
 
     window.addEventListener('DOMContentLoaded', init);
+  </script>
+
+  <script>
+    (function () {
+      const OTA_BASE = 'https://law-studyes.vercel.app';
+      const OTA_FALLBACK = 'https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www';
+      const CURRENT_VERSION_KEY = 'law_studyes_ota_version';
+
+      async function checkLawStudyesOta() {
+        const cap = window.Capacitor;
+        const updater = cap && cap.Plugins && cap.Plugins.CapacitorUpdater;
+        if (!updater) return;
+        try { await updater.notifyAppReady(); } catch (e) {}
+
+        let meta = null;
+        let activeBase = OTA_BASE;
+        for (const base of [OTA_BASE, OTA_FALLBACK]) {
+          try {
+            const r = await fetch(base + '/ota-version.json?t=' + Date.now(), { cache: 'no-store' });
+            if (r.ok) { meta = await r.json(); activeBase = base; break; }
+          } catch (e) {}
+        }
+        if (!meta || !meta.version) return;
+
+        let installed = '';
+        try { installed = localStorage.getItem(CURRENT_VERSION_KEY) || ''; } catch (e) {}
+        if (installed === meta.version) return;
+
+        try {
+          const bundleUrl = meta.url || (activeBase + '/ota-bundle.zip');
+          const bundle = await updater.download({ url: bundleUrl, version: meta.version });
+          if (bundle && bundle.id) {
+            try { localStorage.setItem(CURRENT_VERSION_KEY, meta.version); } catch (e) {}
+            await updater.set(bundle);
+          }
+        } catch (e) {
+          console.warn('Law Studyes OTA skipped:', e);
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', () => { setTimeout(checkLawStudyesOta, 1500); });
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') checkLawStudyesOta();
+      });
+    })();
   </script>
 </body>
 </html>
