@@ -340,6 +340,7 @@ def main():
         "notes": all_notes,
     }
     out_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    Path("www/db-version.json").write_text(json.dumps({"dbVersion": datetime.now(timezone.utc).strftime("%Y.%m.%d.%H%M"), "totalSubjects": len(all_subjects), "totalNotes": len(all_notes)}, indent=2), encoding="utf-8")
     write_sqlite(Path("nyayasaral_notes.sqlite"), all_subjects, all_notes)
     write_markdown_tree(Path("notes_markdown"), all_subjects, all_notes)
     print(f"\nSYNC COMPLETE: {len(all_subjects)} subjects, {len(all_notes)} notes saved.")

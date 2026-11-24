@@ -2193,7 +2193,18 @@
         }
         if (!silent) showToast('Checking for new semesters & notes...');
         try {
-          const res = await fetch(url, { cache: 'no-store' });
+                    const verUrl = url.replace(/nyayasaral_db\.json(\?.*)?$/i, 'db-version.json');
+          let remoteDbVer = '';
+          try {
+            const vr = await fetch(verUrl + '?t=' + Date.now(), { cache: 'no-store' });
+            if (vr.ok) {
+              const vd = await vr.json();
+              remoteDbVer = vd.dbVersion || '';
+              const localDbVer = localStorage.getItem('ls_db_version') || '';
+              if (silent && remoteDbVer && localDbVer === remoteDbVer) return;
+            }
+          } catch (e) {}
+          const res = await fetch(url + '?t=' + Date.now(), { cache: 'no-store' });
           if (!res.ok) throw new Error('HTTP ' + res.status);
           const parsed = await res.json();
           const prevCount = Object.keys(state.notes).length;
@@ -2204,6 +2215,7 @@
             state.notes = { ...state.notes, ...parsed.notes };
           }
           state.lastSyncedAt = new Date().toISOString();
+          if (remoteDbVer) { try { localStorage.setItem('ls_db_version', remoteDbVer); } catch (e) {} }
           await persistAll();
           populateSubjectDropdowns();
           renderSidebar();
@@ -2433,6 +2445,241 @@
       window.addEventListener('DOMContentLoaded', () => { setTimeout(checkLawStudyesOta, 1500); });
       document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') checkLawStudyesOta();
+      });
+    })();
+  </script>
+
+  <!-- Student Registration & Phone-Only Login Gate (No Password Required) -->
+  <div id="lawStudyesAuthOverlay" class="fixed inset-0 z-[90] bg-[#FAF7F2] flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white border border-[#E8E0D5] rounded-2xl max-w-md w-full shadow-xl overflow-hidden">
+      <div class="bg-[#7B1E2B] text-[#FAF7F2] px-6 py-5 text-center">
+        <div class="font-editorial text-2xl font-bold tracking-tight">Law Studyes</div>
+        <div class="text-xs text-[#FBF1F2]/85 mt-1">3-Year LL.B. Offline Notes &amp; Professor Audio Studio</div>
+      </div>
+
+      <div class="flex border-b border-[#E8E0D5] bg-[#FAF7F2] text-xs font-bold">
+        <button id="authTabLogin" type="button" class="flex-1 py-3 text-[#7B1E2B] border-b-2 border-[#7B1E2B] bg-white">Student Login</button>
+        <button id="authTabRegister" type="button" class="flex-1 py-3 text-[#5F554E] hover:text-[#7B1E2B]">New Registration</button>
+      </div>
+
+      <div class="p-6">
+        <div id="authAlertBox" class="hidden mb-4 rounded-xl px-3.5 py-2.5 text-xs font-medium bg-red-50 border border-red-200 text-red-800"></div>
+
+        <!-- Phone-Only Login Form -->
+        <form id="studentLoginForm" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-[#5F554E] mb-1">Registered Mobile Number (10 digits)</label>
+            <div class="flex items-center border border-[#E8E0D5] rounded-xl overflow-hidden focus-within:border-[#7B1E2B]">
+              <span class="px-3 py-2.5 bg-[#FAF7F2] text-xs font-bold text-[#5F554E] border-r border-[#E8E0D5]">+91</span>
+              <input id="loginPhoneInput" type="tel" maxlength="10" inputmode="numeric" required placeholder="Enter 10-digit mobile number" class="flex-1 px-3 py-2.5 text-sm focus:outline-none" />
+            </div>
+          </div>
+          <button type="submit" class="w-full py-2.5 rounded-xl bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-sm font-semibold shadow-sm transition-colors">
+            Login with Phone Number
+          </button>
+          <p class="text-[11px] text-center text-[#5F554E]">No password needed. New student? Switch to <strong>New Registration</strong> above.</p>
+        </form>
+
+        <!-- Simple Student Registration Form (No Password) -->
+        <form id="studentRegisterForm" class="hidden space-y-3">
+          <div>
+            <label class="block text-xs font-semibold text-[#5F554E] mb-1">Full Name *</label>
+            <input id="regNameInput" type="text" required placeholder="e.g., Anvesh Kumar" class="w-full border border-[#E8E0D5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#7B1E2B]" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[#5F554E] mb-1">Mobile Number (10 digits) *</label>
+            <div class="flex items-center border border-[#E8E0D5] rounded-xl overflow-hidden focus-within:border-[#7B1E2B]">
+              <span class="px-3 py-2 bg-[#FAF7F2] text-xs font-bold text-[#5F554E] border-r border-[#E8E0D5]">+91</span>
+              <input id="regPhoneInput" type="tel" maxlength="10" inputmode="numeric" required placeholder="9876543210" class="flex-1 px-3 py-2 text-sm focus:outline-none" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[#5F554E] mb-1">College / University</label>
+            <input id="regCollegeInput" type="text" placeholder="e.g., Kakatiya / Osmania University" class="w-full border border-[#E8E0D5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#7B1E2B]" />
+          </div>
+          <div class="grid grid-cols-2 gap-2.5">
+            <div>
+              <label class="block text-xs font-semibold text-[#5F554E] mb-1">Course Year</label>
+              <select id="regYearInput" class="w-full border border-[#E8E0D5] rounded-xl px-2.5 py-2 text-xs font-semibold bg-[#FAF7F2]">
+                <option value="Year 1">Year 1</option>
+                <option value="Year 2">Year 2</option>
+                <option value="Year 3">Year 3</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#5F554E] mb-1">Semester</label>
+              <select id="regSemInput" class="w-full border border-[#E8E0D5] rounded-xl px-2.5 py-2 text-xs font-semibold bg-[#FAF7F2]">
+                <option value="Semester I">Semester I</option>
+                <option value="Semester II">Semester II</option>
+                <option value="Semester III">Semester III</option>
+                <option value="Semester IV">Semester IV</option>
+                <option value="Semester V">Semester V</option>
+                <option value="Semester VI">Semester VI</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="w-full py-2.5 rounded-xl bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-sm font-semibold shadow-sm transition-colors mt-1">
+            Register &amp; Enter Law Studyes
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const SUPA_URL = '';
+      const SUPA_KEY = '';
+      const REG_KEY = 'ls_registered_students_v1';
+      const SESSION_KEY = 'ls_active_student_v1';
+      const SIG_SALT = 'LS-ANTI-TAMPER-2026-KAV';
+
+      // Frontend Anti-Tamper Guards (disable inspect shortcuts & context menu)
+      document.addEventListener('contextmenu', (e) => {
+        if (!['INPUT', 'TEXTAREA'].includes(e.target.tagName)) e.preventDefault();
+      });
+      document.addEventListener('keydown', (e) => {
+        const k = (e.key || '').toLowerCase();
+        if (k === 'f12' || (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(k)) || (e.ctrlKey && ['u', 's'].includes(k))) {
+          e.preventDefault();
+        }
+      });
+
+      async function signPayload(obj) {
+        const str = JSON.stringify(obj) + SIG_SALT;
+        if (window.crypto && window.crypto.subtle) {
+          const buf = await window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+          return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+        return btoa(unescape(encodeURIComponent(str))).slice(0, 32);
+      }
+
+      function getLocalStudents() {
+        try { return JSON.parse(localStorage.getItem(REG_KEY) || '{}'); } catch (e) { return {}; }
+      }
+      function saveLocalStudents(map) {
+        try { localStorage.setItem(REG_KEY, JSON.stringify(map)); } catch (e) {}
+      }
+
+      async function syncStudentToBackend(student) {
+        if (!SUPA_URL || !SUPA_KEY) return;
+        try {
+          await fetch(SUPA_URL.replace(/\/$/, '') + '/rest/v1/law_studyes_students', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': SUPA_KEY,
+              'Authorization': 'Bearer ' + SUPA_KEY,
+              'Prefer': 'resolution=merge-duplicates'
+            },
+            body: JSON.stringify(student)
+          });
+        } catch (e) {}
+      }
+
+      async function lookupStudentFromBackend(phone) {
+        if (!SUPA_URL || !SUPA_KEY) return null;
+        try {
+          const r = await fetch(SUPA_URL.replace(/\/$/, '') + '/rest/v1/law_studyes_students?phone=eq.' + encodeURIComponent(phone) + '&select=*', {
+            headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY }
+          });
+          if (r.ok) {
+            const rows = await r.json();
+            return rows && rows[0] ? rows[0] : null;
+          }
+        } catch (e) {}
+        return null;
+      }
+
+      function showAuthError(msg) {
+        const box = document.getElementById('authAlertBox');
+        if (!box) return;
+        box.textContent = msg;
+        box.classList.remove('hidden');
+      }
+      function hideAuthError() {
+        document.getElementById('authAlertBox')?.classList.add('hidden');
+      }
+
+      async function activateSession(student) {
+        const sig = await signPayload(student);
+        try { localStorage.setItem(SESSION_KEY, JSON.stringify({ student, sig })); } catch (e) {}
+        document.getElementById('lawStudyesAuthOverlay')?.classList.add('hidden');
+        // Apply student's Year/Semester automatically if filters exist
+        const yrSel = document.getElementById('filterYearSelect');
+        if (yrSel && student.year) { yrSel.value = student.year; }
+      }
+
+      async function checkExistingSession() {
+        try {
+          const raw = localStorage.getItem(SESSION_KEY);
+          if (!raw) return;
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.student && parsed.sig) {
+            const expected = await signPayload(parsed.student);
+            if (expected === parsed.sig) {
+              document.getElementById('lawStudyesAuthOverlay')?.classList.add('hidden');
+              return;
+            }
+          }
+          localStorage.removeItem(SESSION_KEY);
+        } catch (e) {}
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        checkExistingSession();
+        const tabLogin = document.getElementById('authTabLogin');
+        const tabReg = document.getElementById('authTabRegister');
+        const formLogin = document.getElementById('studentLoginForm');
+        const formReg = document.getElementById('studentRegisterForm');
+
+        tabLogin?.addEventListener('click', () => {
+          hideAuthError();
+          formLogin.classList.remove('hidden');
+          formReg.classList.add('hidden');
+          tabLogin.className = 'flex-1 py-3 text-[#7B1E2B] border-b-2 border-[#7B1E2B] bg-white';
+          tabReg.className = 'flex-1 py-3 text-[#5F554E] hover:text-[#7B1E2B]';
+        });
+        tabReg?.addEventListener('click', () => {
+          hideAuthError();
+          formReg.classList.remove('hidden');
+          formLogin.classList.add('hidden');
+          tabReg.className = 'flex-1 py-3 text-[#7B1E2B] border-b-2 border-[#7B1E2B] bg-white';
+          tabLogin.className = 'flex-1 py-3 text-[#5F554E] hover:text-[#7B1E2B]';
+        });
+
+        formReg?.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          hideAuthError();
+          const name = document.getElementById('regNameInput').value.trim();
+          const phone = document.getElementById('regPhoneInput').value.replace(/\D/g, '');
+          const college = document.getElementById('regCollegeInput').value.trim();
+          const year = document.getElementById('regYearInput').value;
+          const semester = document.getElementById('regSemInput').value;
+          if (phone.length !== 10) { showAuthError('Please enter a valid 10-digit mobile number.'); return; }
+          const student = { phone, name, college, year, semester, registeredAt: new Date().toISOString() };
+          const all = getLocalStudents();
+          all[phone] = student;
+          saveLocalStudents(all);
+          await syncStudentToBackend(student);
+          await activateSession(student);
+        });
+
+        formLogin?.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          hideAuthError();
+          const phone = document.getElementById('loginPhoneInput').value.replace(/\D/g, '');
+          if (phone.length !== 10) { showAuthError('Enter your registered 10-digit mobile number.'); return; }
+          const all = getLocalStudents();
+          let student = all[phone] || await lookupStudentFromBackend(phone);
+          if (!student) {
+            showAuthError('Number not registered yet. Tap "New Registration" above to register in 10 seconds.');
+            return;
+          }
+          all[phone] = student;
+          saveLocalStudents(all);
+          await activateSession(student);
+        });
       });
     })();
   </script>
