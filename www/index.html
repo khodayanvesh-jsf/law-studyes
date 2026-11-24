@@ -3970,5 +3970,150 @@
 })();
 </script>
 <!-- LS_UX_BACK_END -->
+<!-- LS_CIRCLES_START -->
+<div id="lsCirclesModal" class="hidden fixed inset-0 z-[125] bg-black/50 flex items-center justify-center p-3">
+  <div class="bg-white border border-[#E8E0D5] rounded-2xl max-w-md w-full max-h-[88vh] flex flex-col shadow-xl overflow-hidden">
+    <div class="px-4 py-3.5 bg-[#7B1E2B] text-white flex items-center justify-between">
+      <div>
+        <div class="font-editorial text-base font-bold">Law Study Circles</div>
+        <div class="text-[11px] text-[#FBF1F2]/85">Create or join a free study group with classmates</div>
+      </div>
+      <button id="lsCloseCirclesBtn" type="button" class="px-2 py-1 rounded-lg bg-white/15 text-xs font-bold">✕</button>
+    </div>
+    <div class="p-4 space-y-3 overflow-y-auto flex-1 text-xs">
+      <div class="grid grid-cols-2 gap-2">
+        <button id="lsTabJoinCircle" type="button" class="py-2 rounded-lg bg-[#7B1E2B] text-white font-semibold">Join / Open Circle</button>
+        <button id="lsTabCreateCircle" type="button" class="py-2 rounded-lg border border-[#E8E0D5] bg-[#FAF7F2] text-[#1F1B18] font-semibold">+ Create Circle</button>
+      </div>
+      <div id="lsCreateCircleBox" class="hidden space-y-2 p-3 rounded-xl bg-[#FAF7F2] border border-[#E8E0D5]">
+        <input id="lsNewCircleName" type="text" placeholder="Circle name (e.g., OU Sem 1 Contract Group)" class="w-full bg-white border border-[#E8E0D5] rounded-lg px-3 py-2 text-xs" />
+        <button id="lsCreateCircleSubmit" type="button" class="w-full py-2 rounded-lg bg-[#7B1E2B] text-white font-semibold">Create Circle &amp; Get Invite Code</button>
+      </div>
+      <div id="lsJoinCircleBox" class="flex gap-2">
+        <input id="lsCircleCodeInput" type="text" maxlength="10" placeholder="Enter Circle Code (e.g., LAW482)" class="flex-1 uppercase border border-[#E8E0D5] rounded-lg px-3 py-2 text-xs font-bold" />
+        <button id="lsOpenCircleBtn" type="button" class="px-3.5 py-2 rounded-lg bg-[#7B1E2B] text-white font-semibold">Open</button>
+      </div>
+      <div id="lsActiveCircleBar" class="hidden p-2.5 rounded-xl bg-[#FBF1F2] border border-[#E8D5D8] flex items-center justify-between gap-2">
+        <span id="lsActiveCircleLabel" class="font-bold text-[#7B1E2B] truncate"></span>
+        <div class="flex gap-1.5 shrink-0">
+          <button id="lsRefreshCircleBtn" type="button" class="px-2 py-1 rounded bg-white border border-[#E8D5D8] text-[#7B1E2B] font-semibold">Refresh</button>
+          <a id="lsShareCircleWa" href="#" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded bg-[#25D366] text-white font-semibold">WhatsApp</a>
+        </div>
+      </div>
+      <div id="lsCircleFeed" class="space-y-2 min-h-[160px] max-h-[260px] overflow-y-auto p-2 rounded-xl bg-[#FAF7F2] border border-[#E8E0D5]">
+        <div class="text-center text-[#5F554E] py-8">Create a new circle or enter a code to start discussing with classmates.</div>
+      </div>
+      <div id="lsCircleComposer" class="hidden flex gap-2">
+        <input id="lsCircleMsgInput" type="text" placeholder="Ask a doubt or share an exam tip..." class="flex-1 border border-[#E8E0D5] rounded-lg px-3 py-2 text-xs" />
+        <button id="lsSendCircleMsgBtn" type="button" class="px-3.5 py-2 rounded-lg bg-[#7B1E2B] text-white font-semibold">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var API = "https://script.google.com/macros/s/AKfycby_IsKA5aN_1YI6lYxGe82xmwfYhmTWs0ekzru0C4VPjdohd2UAvQPTvyDF3L7uxhVs/exec";
+  var activeCode = "";
+  try { activeCode = localStorage.getItem("ls_last_circle_code") || ""; } catch (e) {}
+
+  function getMe() {
+    try { return (JSON.parse(localStorage.getItem("ls_active_student_v1") || "{}")).student || { name: "Student", phone: "" }; } catch (e) { return { name: "Student", phone: "" }; }
+  }
+
+  async function loadMessages(code) {
+    if (!code) return;
+    activeCode = code.toUpperCase().trim();
+    try { localStorage.setItem("ls_last_circle_code", activeCode); } catch (e) {}
+    document.getElementById("lsCircleCodeInput").value = activeCode;
+    document.getElementById("lsActiveCircleLabel").textContent = "Circle Code: " + activeCode;
+    document.getElementById("lsActiveCircleBar").classList.remove("hidden");
+    document.getElementById("lsCircleComposer").classList.remove("hidden");
+    document.getElementById("lsShareCircleWa").href = "https://wa.me/?text=" + encodeURIComponent("Join my Law Studyes Circle! Open Law Studyes -> Circles -> Enter Code: " + activeCode);
+
+    var feed = document.getElementById("lsCircleFeed");
+    feed.innerHTML = '<div class="text-center text-[#5F554E] py-6">Loading circle messages...</div>';
+    try {
+      var r = await fetch(API + "?action=circleMessages&code=" + encodeURIComponent(activeCode) + "&t=" + Date.now(), { cache: "no-store" });
+      var d = await r.json();
+      var msgs = (d && d.messages) || [];
+      if (!msgs.length) {
+        feed.innerHTML = '<div class="text-center text-[#5F554E] py-6">No messages yet. Say hello or post a doubt!</div>';
+        return;
+      }
+      feed.innerHTML = "";
+      for (var i = 0; i < msgs.length; i++) {
+        var m = msgs[i];
+        var div = document.createElement("div");
+        div.className = "bg-white border border-[#E8E0D5] rounded-lg p-2.5";
+        div.innerHTML = '<div class="font-bold text-[#7B1E2B] text-[11px]"></div><div class="text-[#1F1B18] mt-0.5"></div>';
+        div.children[0].textContent = m.name || "Student";
+        div.children[1].textContent = m.message || "";
+        feed.appendChild(div);
+      }
+      feed.scrollTop = feed.scrollHeight;
+    } catch (e) {
+      feed.innerHTML = '<div class="text-center text-red-700 py-6">Connect to internet to sync circle messages.</div>';
+    }
+  }
+
+  function wireCircles() {
+    var waBtn = document.getElementById("whatsappShareAppBtn");
+    if (waBtn && !document.getElementById("lsOpenCirclesHeaderBtn")) {
+      var btn = document.createElement("button");
+      btn.id = "lsOpenCirclesHeaderBtn";
+      btn.type = "button";
+      btn.className = "px-2.5 py-1.5 rounded-lg border border-[#E8E0D5] bg-white text-[#7B1E2B] hover:bg-[#FBF1F2] text-xs font-semibold";
+      btn.textContent = "Circles";
+      btn.onclick = function () {
+        document.getElementById("lsCirclesModal").classList.remove("hidden");
+        if (activeCode) loadMessages(activeCode);
+      };
+      waBtn.parentElement.insertBefore(btn, waBtn);
+    }
+
+    document.getElementById("lsCloseCirclesBtn")?.addEventListener("click", function () {
+      document.getElementById("lsCirclesModal").classList.add("hidden");
+    });
+    document.getElementById("lsTabCreateCircle")?.addEventListener("click", function () {
+      document.getElementById("lsCreateCircleBox").classList.remove("hidden");
+    });
+    document.getElementById("lsTabJoinCircle")?.addEventListener("click", function () {
+      document.getElementById("lsCreateCircleBox").classList.add("hidden");
+    });
+    document.getElementById("lsOpenCircleBtn")?.addEventListener("click", function () {
+      var code = (document.getElementById("lsCircleCodeInput").value || "").trim();
+      if (code) loadMessages(code);
+    });
+    document.getElementById("lsRefreshCircleBtn")?.addEventListener("click", function () {
+      if (activeCode) loadMessages(activeCode);
+    });
+    document.getElementById("lsCreateCircleSubmit")?.addEventListener("click", async function () {
+      var cname = (document.getElementById("lsNewCircleName").value || "").trim() || "Law Study Circle";
+      var code = "LAW" + Math.floor(100 + Math.random() * 900);
+      var me = getMe();
+      try {
+        await fetch(API, { method: "POST", redirect: "follow", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ action: "createCircle", code: code, circleName: cname, name: me.name, phone: me.phone }) });
+      } catch (e) {}
+      document.getElementById("lsCreateCircleBox").classList.add("hidden");
+      if (typeof showToast === "function") showToast("Circle created! Code: " + code);
+      loadMessages(code);
+    });
+    document.getElementById("lsSendCircleMsgBtn")?.addEventListener("click", async function () {
+      var inp = document.getElementById("lsCircleMsgInput");
+      var txt = (inp.value || "").trim();
+      if (!txt || !activeCode) return;
+      var me = getMe();
+      inp.value = "";
+      try {
+        await fetch(API, { method: "POST", redirect: "follow", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ action: "postCircleMessage", code: activeCode, name: me.name, phone: me.phone, message: txt, topicId: (typeof state !== "undefined" ? state.activeTopicId : "") }) });
+      } catch (e) {}
+      loadMessages(activeCode);
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", function () { setTimeout(wireCircles, 500); });
+})();
+</script>
+<!-- LS_CIRCLES_END -->
 </body>
 </html>
