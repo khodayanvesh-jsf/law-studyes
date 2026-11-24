@@ -1,0 +1,8 @@
+{
+  "name": "Law Studyes — 3-Year LL.B. Offline Audio Studio",
+  "short_name": "Law Studyes",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#7B1E2B"
+}

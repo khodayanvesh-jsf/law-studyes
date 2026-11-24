@@ -1,0 +1,9 @@
+{
+  "appId": "com.lawstudyes.llbaudio",
+  "appName": "Law Studyes",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": true
+  }
+}

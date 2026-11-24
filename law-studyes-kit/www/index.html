@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Law Studyes — 3-Year LL.B. Offline Audio & Notes Studio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --bg-parchment: #FAF7F2;
+      --bg-card: #FFFFFF;
+      --border-warm: #E8E0D5;
+      --accent-maroon: #7B1E2B;
+      --accent-maroon-dark: #5E1520;
+      --accent-tint: #FBF1F2;
+      --text-ink: #1F1B18;
+      --text-muted: #5F554E;
+    }
+    body {
+      background-color: var(--bg-parchment);
+      color: var(--text-ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-editorial {
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    .speaking-highlight {
+      box-shadow: 0 0 0 2px #7B1E2B, 0 8px 24px -6px rgba(123, 30, 43, 0.18);
+      background-color: #FFFDFB !important;
+      transition: all 0.25s ease;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #D8CEC2;
+      border-radius: 9999px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #B8A99A;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col overflow-x-hidden pb-28 lg:pb-24">
+  <!-- Top Header -->
+  <header class="sticky top-0 z-30 bg-[#FAF7F2]/95 backdrop-blur border-b border-[#E8E0D5]">
+    <div class="max-w-7xl mx-auto px-3 sm:px-5 h-16 flex items-center justify-between gap-2 sm:gap-4">
+      <!-- Left: Mobile Toggle + Brand -->
+      <div class="flex items-center gap-2.5 min-w-0">
+        <button id="mobileMenuBtn" type="button" class="lg:hidden p-2 rounded-lg border border-[#E8E0D5] bg-white text-[#7B1E2B] hover:bg-[#FBF1F2]" aria-label="Toggle Units Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+        <button id="brandResetBtn" type="button" class="flex items-center gap-2.5 text-left group min-w-0">
+          <span class="w-9 h-9 rounded-full bg-[#7B1E2B] text-[#FAF7F2] flex items-center justify-center shrink-0 shadow-sm">
+            <i data-lucide="scale" class="w-4 h-4"></i>
+          </span>
+          <div class="truncate">
+            <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync</div>
+          </div>
+        </button>
+      </div>
+
+      <!-- Center: Subject Picker + Search -->
+      <div class="flex-1 max-w-xl hidden md:flex items-center gap-2">
+        <select id="subjectSelect" aria-label="Select Subject" class="bg-white border border-[#E8E0D5] rounded-lg px-3 py-1.5 text-sm font-medium text-[#1F1B18] focus:outline-none focus:ring-2 focus:ring-[#7B1E2B]/30 focus:border-[#7B1E2B] max-w-[230px] truncate">
+        </select>
+        <div class="relative flex-1">
+          <i data-lucide="search" class="w-4 h-4 text-[#5F554E] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+          <input id="searchInput" type="text" placeholder="Search topics, sections, case laws..." class="w-full bg-white border border-[#E8E0D5] rounded-lg pl-9 pr-8 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#7B1E2B]/30 focus:border-[#7B1E2B]" />
+          <button id="clearSearchBtn" type="button" class="hidden absolute right-2 top-1/2 -translate-y-1/2 text-[#5F554E] hover:text-[#7B1E2B] p-0.5" aria-label="Clear Search">
+            <i data-lucide="x" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Language Toggle, Bookmarks, DB Manager -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <div class="inline-flex items-center rounded-full border border-[#E8E0D5] bg-white p-0.5 text-xs font-semibold">
+          <button id="langEnBtn" type="button" class="px-2.5 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white">EN</button>
+          <button id="langTeBtn" type="button" class="px-2.5 py-1 rounded-full transition-colors text-[#5F554E] hover:text-[#7B1E2B]">TE</button>
+        </div>
+        <button id="bookmarkFilterBtn" type="button" title="Show Bookmarked Only" class="p-2 rounded-lg border border-[#E8E0D5] bg-white text-[#5F554E] hover:text-[#7B1E2B] hover:bg-[#FBF1F2] transition-colors flex items-center gap-1">
+          <i data-lucide="bookmark" class="w-4 h-4"></i>
+          <span id="bookmarkCountBadge" class="text-xs font-semibold hidden sm:inline">0</span>
+        </button>
+        <button id="quickSyncBtn" type="button" title="Sync Latest Notes" class="p-2 rounded-lg border border-[#E8E0D5] bg-white text-[#7B1E2B] hover:bg-[#FBF1F2] transition-colors flex items-center gap-1">
+          <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+          <span class="text-xs font-semibold hidden xl:inline">Sync</span>
+        </button>
+        <button id="dbModalBtn" type="button" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs sm:text-sm font-medium flex items-center gap-1.5 shadow-sm transition-colors">
+          <i data-lucide="database" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Local DB</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Subject + Search Strip -->
+    <div class="md:hidden px-3 pb-2.5 flex items-center gap-2 border-t border-[#EFE8DE] pt-2 bg-[#FAF7F2]">
+      <select id="mobileSubjectSelect" aria-label="Select Subject Mobile" class="bg-white border border-[#E8E0D5] rounded-lg px-2.5 py-1.5 text-xs font-medium text-[#1F1B18] max-w-[46%] truncate">
+      </select>
+      <div class="relative flex-1">
+        <i data-lucide="search" class="w-3.5 h-3.5 text-[#5F554E] absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+        <input id="mobileSearchInput" type="text" placeholder="Search topics..." class="w-full bg-white border border-[#E8E0D5] rounded-lg pl-8 pr-2.5 py-1.5 text-xs focus:outline-none focus:border-[#7B1E2B]" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Cascading Study Filter Bar: Year -> Semester -> Subject -> Unit -->
+  <section id="cascadeFilterBar" class="bg-white border-b border-[#E8E0D5] shadow-sm">
+    <div class="max-w-7xl mx-auto px-3 sm:px-5 py-2.5 flex flex-wrap items-center gap-2">
+      <div class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#7B1E2B] mr-1">
+        <i data-lucide="filter" class="w-3.5 h-3.5"></i>
+        <span>Course Filter</span>
+      </div>
+      <select id="filterYearSelect" aria-label="Select Year" class="bg-[#FAF7F2] border border-[#E8E0D5] rounded-lg px-2.5 py-1.5 text-xs font-semibold text-[#1F1B18] focus:outline-none focus:border-[#7B1E2B]">
+        <option value="Year 1">Year 1</option>
+        <option value="Year 2">Year 2</option>
+        <option value="Year 3">Year 3</option>
+      </select>
+      <span class="text-[#B8A99A] text-xs">›</span>
+      <select id="filterSemesterSelect" aria-label="Select Semester" class="bg-[#FAF7F2] border border-[#E8E0D5] rounded-lg px-2.5 py-1.5 text-xs font-semibold text-[#1F1B18] focus:outline-none focus:border-[#7B1E2B]">
+      </select>
+      <span class="text-[#B8A99A] text-xs">›</span>
+      <select id="filterSubjectSelect" aria-label="Select Subject" class="bg-[#FAF7F2] border border-[#E8E0D5] rounded-lg px-2.5 py-1.5 text-xs font-semibold text-[#1F1B18] focus:outline-none focus:border-[#7B1E2B] max-w-[220px] truncate">
+      </select>
+      <span class="text-[#B8A99A] text-xs">›</span>
+      <select id="filterUnitSelect" aria-label="Select Unit" class="bg-[#FAF7F2] border border-[#E8E0D5] rounded-lg px-2.5 py-1.5 text-xs font-semibold text-[#1F1B18] focus:outline-none focus:border-[#7B1E2B] max-w-[230px] truncate">
+      </select>
+      <div class="flex items-center gap-1.5 ml-auto">
+        <button id="filterListenSubUnitBtn" type="button" class="px-2.5 py-1.5 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs font-semibold flex items-center gap-1 shadow-sm transition-colors">
+          <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Sub-Unit Audio
+        </button>
+        <button id="filterListenWholeUnitBtn" type="button" class="px-2.5 py-1.5 rounded-lg bg-[#FBF1F2] hover:bg-[#7B1E2B] text-[#7B1E2B] hover:text-white border border-[#E8D5D8] text-xs font-semibold flex items-center gap-1 transition-colors">
+          <i data-lucide="list-music" class="w-3.5 h-3.5"></i> Whole Unit Audio
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Workspace -->
+  <div class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-5 py-4 sm:py-6 flex gap-6 relative">
+    <!-- Mobile Backdrop -->
+    <div id="sidebarBackdrop" class="hidden fixed inset-0 bg-black/40 z-30 lg:hidden"></div>
+
+    <!-- Left Sidebar: Units & Topics -->
+    <aside id="sidebarDrawer" class="fixed lg:static inset-y-0 left-0 z-40 lg:z-10 w-80 max-w-[85vw] lg:w-80 lg:shrink-0 bg-[#FAF7F2] lg:bg-transparent transform -translate-x-full lg:translate-x-0 transition-transform duration-200 flex flex-col border-r lg:border-r-0 border-[#E8E0D5] p-4 lg:p-0">
+      <div class="flex items-center justify-between lg:hidden pb-3 mb-3 border-b border-[#E8E0D5]">
+        <span class="font-editorial font-bold text-[#7B1E2B]">Units & Topics</span>
+        <button id="closeSidebarBtn" type="button" class="p-1.5 rounded-lg text-[#5F554E] hover:bg-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Subject Quick Stats Card -->
+      <div id="subjectSummaryCard" class="bg-white border border-[#E8E0D5] rounded-xl p-4 mb-4 shadow-sm">
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span id="subjectSemBadge" class="text-[11px] font-semibold uppercase tracking-wider text-[#7B1E2B] bg-[#FBF1F2] px-2 py-0.5 rounded-full">Semester I</span>
+          <span id="dbStatusPill" class="text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+            IndexedDB
+          </span>
+        </div>
+        <h2 id="sidebarSubjectTitle" class="font-editorial text-lg font-bold text-[#1F1B18] leading-snug mt-1">Law of Contract – I</h2>
+        <div class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-[#F0EAE2] text-center">
+          <div>
+            <div id="statPublished" class="font-editorial text-base font-bold text-[#7B1E2B]">66</div>
+            <div class="text-[11px] text-[#5F554E]">Published</div>
+          </div>
+          <div>
+            <div id="statOffline" class="font-editorial text-base font-bold text-emerald-700">2</div>
+            <div class="text-[11px] text-[#5F554E]">Full Offline</div>
+          </div>
+          <div>
+            <div id="statDone" class="font-editorial text-base font-bold text-[#1F1B18]">0</div>
+            <div class="text-[11px] text-[#5F554E]">Completed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Units & Topics Accordion -->
+      <div class="flex items-center justify-between mb-2 px-1">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#5F554E]">Units & Sub-Units</span>
+        <button id="playCurrentSubjectBtn" type="button" class="text-xs font-semibold text-[#7B1E2B] hover:underline flex items-center gap-1">
+          <i data-lucide="play-circle" class="w-3.5 h-3.5"></i>
+          Play Unit
+        </button>
+      </div>
+      <div id="unitsContainer" class="flex-1 overflow-y-auto custom-scroll space-y-2.5 pr-1 max-h-[calc(100vh-280px)]">
+      </div>
+    </aside>
+
+    <!-- Main Reading Area -->
+    <main class="flex-1 min-w-0">
+      <div id="readingPane" class="space-y-5">
+      </div>
+    </main>
+  </div>
+
+  <!-- Sticky Bottom Audio Player Bar -->
+  <div id="audioPlayerBar" class="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t-2 border-[#7B1E2B] shadow-[0_-8px_24px_rgba(31,27,24,0.08)]">
+    <div class="h-1 w-full bg-[#F0EAE2]">
+      <div id="audioProgressBar" class="h-full bg-[#7B1E2B] transition-all duration-300" style="width: 0%"></div>
+    </div>
+    <div id="liveCaptionStrip" class="hidden bg-[#FBF1F2] border-b border-[#EFE0E2] px-3 sm:px-5 py-1.5">
+      <div class="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#5E1520]">
+        <span class="font-bold uppercase tracking-wider text-[10px] bg-[#7B1E2B] text-white px-1.5 py-0.5 rounded shrink-0">Speaking</span>
+        <span id="liveCaptionText" class="truncate font-medium"></span>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-3 sm:px-5 py-2.5 flex flex-wrap lg:flex-nowrap items-center justify-between gap-2 sm:gap-3">
+      <!-- Track Info -->
+      <div class="flex items-center gap-3 min-w-0 flex-1">
+        <div id="audioStatusIcon" class="w-10 h-10 rounded-full bg-[#FBF1F2] border border-[#E8D5D8] text-[#7B1E2B] flex items-center justify-center shrink-0">
+          <i data-lucide="headphones" class="w-5 h-5"></i>
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-2">
+            <span id="audioModeBadge" class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#FBF1F2] text-[#7B1E2B]">Topic Mode</span>
+            <span id="audioQueueCounter" class="text-[11px] text-[#5F554E] truncate">Ready to listen</span>
+          </div>
+          <div id="audioCurrentTitle" class="text-sm font-semibold text-[#1F1B18] truncate">Select a topic or unit to start audio playback</div>
+        </div>
+      </div>
+
+      <!-- Playback Buttons -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <button id="audioPrevBtn" type="button" title="Previous Section" class="p-2 rounded-lg border border-[#E8E0D5] hover:bg-[#FAF7F2] text-[#1F1B18] disabled:opacity-40">
+          <i data-lucide="skip-back" class="w-4 h-4"></i>
+        </button>
+        <button id="audioPlayPauseBtn" type="button" title="Play / Pause" class="px-4 py-2 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white font-semibold text-sm flex items-center gap-1.5 shadow-sm transition-colors">
+          <i id="playPauseIcon" data-lucide="play" class="w-4 h-4"></i>
+          <span id="playPauseLabel">Play</span>
+        </button>
+        <button id="audioStopBtn" type="button" title="Stop" class="p-2 rounded-lg border border-[#E8E0D5] hover:bg-[#FAF7F2] text-[#1F1B18]">
+          <i data-lucide="square" class="w-4 h-4"></i>
+        </button>
+        <button id="audioNextBtn" type="button" title="Next Section" class="p-2 rounded-lg border border-[#E8E0D5] hover:bg-[#FAF7F2] text-[#1F1B18] disabled:opacity-40">
+          <i data-lucide="skip-forward" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Study Audio Controls: Teaching Mode, Repeat, Sleep Timer, Speed, Voice -->
+      <div class="flex flex-wrap items-center gap-1.5 shrink-0">
+        <button id="teachingModeBtn" type="button" title="Toggle Professor Teaching Style vs Direct Read" class="px-2.5 py-1.5 rounded-lg border text-xs font-semibold bg-[#FBF1F2] border-[#7B1E2B] text-[#7B1E2B] transition-colors flex items-center gap-1">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span class="hidden md:inline">Professor Mode</span>
+        </button>
+        <button id="repeatTopicBtn" type="button" title="Loop Current Topic for Revision" class="p-1.5 rounded-lg border border-[#E8E0D5] bg-[#FAF7F2] text-[#5F554E] hover:text-[#7B1E2B] transition-colors">
+          <i data-lucide="repeat" class="w-3.5 h-3.5"></i>
+        </button>
+        <select id="sleepTimerSelect" aria-label="Sleep Timer" title="Study Sleep Timer" class="hidden sm:block bg-[#FAF7F2] border border-[#E8E0D5] rounded-lg px-2 py-1.5 text-xs font-medium text-[#1F1B18]">
+          <option value="0">Timer: Off</option>
+          <option value="15">Sleep: 15m</option>
+          <option value="30">Sleep: 30m</option>
+          <option value="45">Sleep: 45m</option>
+        </select>
+        <select id="audioSpeedSelect" aria-label="Playback Speed" class="bg-[#FAF7F2] border border-[#E8E0D5] rounded-lg px-2 py-1.5 text-xs font-semibold text-[#1F1B18]">
+          <option value="0.75">0.75x</option>
+          <option value="0.9">0.9x</option>
+          <option value="1" selected>1.0x</option>
+          <option value="1.15">1.15x</option>
+          <option value="1.25">1.25x</option>
+          <option value="1.5">1.5x</option>
+          <option value="1.75">1.75x</option>
+        </select>
+        <select id="audioVoiceSelect" aria-label="Voice Selection" class="hidden md:block bg-[#FAF7F2] border border-[#E8E0D5] rounded-lg px-2 py-1.5 text-xs text-[#1F1B18] max-w-[185px] truncate">
+          <option value="">Google Indian Voice (en-IN)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Database Manager Modal -->
+  <div id="dbModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+    <div class="bg-white border border-[#E8E0D5] rounded-2xl max-w-lg w-full shadow-xl overflow-hidden">
+      <div class="px-5 py-4 border-b border-[#E8E0D5] bg-[#FAF7F2] flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="database" class="w-5 h-5 text-[#7B1E2B]"></i>
+          <h3 class="font-editorial text-lg font-bold text-[#1F1B18]">Law Studyes — Local DB &amp; Auto-Sync</h3>
+        </div>
+        <button id="closeDbModalBtn" type="button" class="p-1 rounded-lg text-[#5F554E] hover:bg-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="p-5 space-y-4 text-sm">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
+          <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#E8E0D5]">
+            <div id="dbStatSubjects" class="font-editorial text-lg font-bold text-[#7B1E2B]">6</div>
+            <div class="text-[11px] text-[#5F554E]">Subjects</div>
+          </div>
+          <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#E8E0D5]">
+            <div id="dbStatUnits" class="font-editorial text-lg font-bold text-[#1F1B18]">30</div>
+            <div class="text-[11px] text-[#5F554E]">Units</div>
+          </div>
+          <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#E8E0D5]">
+            <div id="dbStatSynced" class="font-editorial text-lg font-bold text-emerald-700">2</div>
+            <div class="text-[11px] text-[#5F554E]">Offline Notes</div>
+          </div>
+          <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#E8E0D5]">
+            <div id="dbStatBookmarks" class="font-editorial text-lg font-bold text-amber-700">0</div>
+            <div class="text-[11px] text-[#5F554E]">Bookmarks</div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-2.5">
+          <div class="flex items-center justify-between gap-2">
+            <div class="font-semibold text-emerald-900 flex items-center gap-1.5">
+              <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+              Automatic Cloud Sync (All Years &amp; Future Notes)
+            </div>
+            <span id="lastSyncedText" class="text-[11px] text-emerald-800 font-medium">Not synced yet</span>
+          </div>
+          <p class="text-xs text-emerald-900/80 leading-relaxed">
+            Paste your hosted <code class="bg-white px-1 py-0.5 rounded border border-emerald-200">nyayasaral_db.json</code> HTTPS URL (auto-updated daily via the included GitHub Actions workflow) to pull all semesters and newly published notes automatically.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input id="syncFeedUrlInput" type="url" placeholder="https://<user>.github.io/law-studyes/nyayasaral_db.json" class="flex-1 bg-white border border-emerald-300 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-[#7B1E2B]" />
+            <button id="runSyncNowBtn" type="button" class="px-3.5 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold shrink-0">Sync Now</button>
+          </div>
+          <label class="inline-flex items-center gap-2 text-xs text-emerald-900 cursor-pointer">
+            <input id="autoSyncToggle" type="checkbox" class="rounded border-emerald-400 text-[#7B1E2B]" />
+            <span>Auto-sync new notes every time Law Studyes opens</span>
+          </label>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#FBF1F2] border border-[#E8D5D8] space-y-2">
+          <div class="font-semibold text-[#7B1E2B] flex items-center gap-1.5">
+            <i data-lucide="upload-cloud" class="w-4 h-4"></i>
+            Import Full Database Manually (JSON)
+          </div>
+          <p class="text-xs text-[#5F554E] leading-relaxed">
+            Run the companion <code class="bg-white px-1 py-0.5 rounded border border-[#E8D5D8]">scrape_nyayasaral.py</code> script on your PC to pull all 325+ live Year 1 notes (EN &amp; TE) into <code class="bg-white px-1 py-0.5 rounded border border-[#E8D5D8]">nyayasaral_db.json</code>, then upload it here to store everything offline in IndexedDB.
+          </p>
+          <label class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs font-semibold cursor-pointer transition-colors">
+            <i data-lucide="file-json" class="w-4 h-4"></i>
+            Choose nyayasaral_db.json
+            <input id="importJsonInput" type="file" accept=".json,application/json" class="hidden" />
+          </label>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <button id="exportJsonBtn" type="button" class="px-3.5 py-2.5 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18] flex items-center justify-center gap-2">
+            <i data-lucide="download" class="w-4 h-4 text-[#7B1E2B]"></i>
+            Export Local DB (.json)
+          </button>
+          <button id="exportSubjectMdBtn" type="button" class="px-3.5 py-2.5 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18] flex items-center justify-center gap-2">
+            <i data-lucide="file-text" class="w-4 h-4 text-[#7B1E2B]"></i>
+            Export Subject Notes (.md)
+          </button>
+        </div>
+
+        <div class="pt-3 border-t border-[#E8E0D5] flex items-center justify-between gap-3">
+          <span class="text-xs text-[#5F554E]">Storage Engine: <strong id="dbEngineText" class="text-[#1F1B18]">IndexedDB (NyayaSaralLocalDB)</strong></span>
+          <button id="resetDbBtn" type="button" class="px-3 py-1.5 rounded-lg border border-red-200 text-red-700 hover:bg-red-50 text-xs font-semibold">
+            Reset to Defaults
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add / Edit Topic Note Modal -->
+  <div id="editNoteModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+    <div class="bg-white border border-[#E8E0D5] rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-xl overflow-hidden">
+      <div class="px-5 py-4 border-b border-[#E8E0D5] bg-[#FAF7F2] flex items-center justify-between">
+        <div>
+          <h3 class="font-editorial text-lg font-bold text-[#1F1B18]">Edit / Add Offline Note</h3>
+          <p id="editModalSub" class="text-xs text-[#5F554E]">Saved directly to your browser's local IndexedDB database</p>
+        </div>
+        <button id="closeEditModalBtn" type="button" class="p-1 rounded-lg text-[#5F554E] hover:bg-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form id="editNoteForm" class="p-5 overflow-y-auto custom-scroll space-y-3.5 text-sm">
+        <input type="hidden" id="editTopicId" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-[#5F554E] mb-1">Statutory Subtitle</label>
+            <input id="editSubtitle" type="text" placeholder="e.g., Sections 2(b), 4 and 7 of Indian Contract Act" class="w-full border border-[#E8E0D5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7B1E2B]" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-[#5F554E] mb-1">Read Time</label>
+            <input id="editReadTime" type="text" placeholder="e.g., 10 min read" class="w-full border border-[#E8E0D5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7B1E2B]" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-[#5F554E] mb-1">In One Minute (Quick Summary)</label>
+          <textarea id="editInOneMinute" rows="3" placeholder="Paste or type the 1-minute summary..." class="w-full border border-[#E8E0D5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7B1E2B]"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-[#5F554E] mb-1">Legal Provision (Sections &amp; Bare Act)</label>
+          <textarea id="editLegalProvision" rows="3" placeholder="Paste statutory sections..." class="w-full border border-[#E8E0D5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7B1E2B]"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-[#5F554E] mb-1">Meaning &amp; Definition</label>
+          <textarea id="editMeaning" rows="3" placeholder="Paste explanation and definitions..." class="w-full border border-[#E8E0D5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7B1E2B]"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-[#5F554E] mb-1">Key Points to Remember (one per line)</label>
+          <textarea id="editKeyPoints" rows="3" placeholder="Point 1&#10;Point 2&#10;Point 3" class="w-full border border-[#E8E0D5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7B1E2B]"></textarea>
+        </div>
+        <div class="pt-2 flex items-center justify-end gap-2">
+          <button id="cancelEditBtn" type="button" class="px-4 py-2 rounded-lg border border-[#E8E0D5] text-xs font-semibold text-[#5F554E] hover:bg-[#FAF7F2]">Cancel</button>
+          <button type="submit" class="px-4 py-2 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs font-semibold">Save to Local DB</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastEl" class="hidden fixed top-20 right-4 z-50 bg-[#1F1B18] text-white text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastText">Saved</span>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. GROUNDED NYAYASARAL YEAR 1 DATA (Verified from nyayasaral.com)
+    // =========================================================================
+    const SEED_SUBJECTS = [
+      {
+        id: 'law-of-contract-i',
+        year: 'Year 1',
+        semester: 'Semester I',
+        title: 'Law of Contract – I',
+        totalPublished: 66,
+        url: 'https://nyayasaral.com/subjects/law-of-contract-i/',
+        units: [
+          {
+            unitNo: 1,
+            title: 'Formation of a Valid Contract',
+            topics: [
+              { id: 'loc1-u1-t1', topicNo: 1, title: 'Definition and essentials of a valid Contract', readTime: '10 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/definition-and-essentials-of-a-valid-contract/' },
+              { id: 'loc1-u1-t2', topicNo: 2, title: 'Definition and essentials of a valid Offer', readTime: '10 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/definition-and-essentials-of-a-valid-offer/' },
+              { id: 'loc1-u1-t3', topicNo: 3, title: 'Definition and essentials of valid Acceptance', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u1-t4', topicNo: 4, title: 'Communication of Offer and Acceptance', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u1-t5', topicNo: 5, title: 'Revocation of Offer and Acceptance through various modes including electronic medium', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u1-t6', topicNo: 6, title: 'Govt. Contracts etc', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u1-t7', topicNo: 7, title: 'Consideration - salient features', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u1-t8', topicNo: 8, title: 'Exception to consideration', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u1-t9', topicNo: 9, title: 'Doctrine of Privity of Contract', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u1-t10', topicNo: 10, title: 'Exceptions to the privity of contract', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u1-t11', topicNo: 11, title: 'Standard form of Contract', readTime: '10 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' }
+            ]
+          },
+          {
+            unitNo: 2,
+            title: 'Capacity, Consent and Validity of Agreements',
+            topics: [
+              { id: 'loc1-u2-t1', topicNo: 1, title: 'Capacity of the parties', readTime: '6 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t2', topicNo: 2, title: "Effect of Minor's Agreement", readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t3', topicNo: 3, title: 'Contracts with insane persons and persons disqualified by law', readTime: '6 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t4', topicNo: 4, title: 'Concepts of Free Consent', readTime: '8 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t5', topicNo: 5, title: 'Coercion', readTime: '6 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t6', topicNo: 6, title: 'Undue influence', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t7', topicNo: 7, title: 'Misrepresentation', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t8', topicNo: 8, title: 'Fraud', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t9', topicNo: 9, title: 'Mistake', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t10', topicNo: 10, title: 'Lawful Object', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t11', topicNo: 11, title: 'Immoral agreements and various heads of public policy', readTime: '8 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t12', topicNo: 12, title: 'Illegal agreements', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t13', topicNo: 13, title: 'Uncertain agreements', readTime: '5 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t14', topicNo: 14, title: 'Wagering agreements', readTime: '6 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t15', topicNo: 15, title: 'Contingent contracts', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u2-t16', topicNo: 16, title: 'Void and Voidable contracts', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' }
+            ]
+          },
+          {
+            unitNo: 3,
+            title: 'Performance and Discharge of Contracts',
+            topics: [
+              { id: 'loc1-u3-t1', topicNo: 1, title: 'Discharge of Contracts', readTime: '8 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t2', topicNo: 2, title: 'By performance', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t3', topicNo: 3, title: 'Appropriation of payments', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t4', topicNo: 4, title: 'Performance by joint promisors', readTime: '8 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t5', topicNo: 5, title: 'Discharge by Novation', readTime: '8 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t6', topicNo: 6, title: 'Remission', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t7', topicNo: 7, title: 'Accord and Satisfaction', readTime: '7 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t8', topicNo: 8, title: 'Discharge by impossibility of performance (Doctrine of Frustration)', readTime: '14 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t9', topicNo: 9, title: 'Discharge by Breach', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t10', topicNo: 10, title: 'Anticipatory Breach', readTime: '8 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u3-t11', topicNo: 11, title: 'Actual breach', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' }
+            ]
+          },
+          {
+            unitNo: 4,
+            title: 'Quasi-Contracts and Remedies for Breach',
+            topics: [
+              { id: 'loc1-u4-t1', topicNo: 1, title: 'Quasi Contract', readTime: '12 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t2', topicNo: 2, title: 'Necessaries supplied to a person who is incapable of entering into a contract', readTime: '10 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t3', topicNo: 3, title: 'Payment by an interested person', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t4', topicNo: 4, title: 'Liability to pay for non-gratuitous acts', readTime: '10 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t5', topicNo: 5, title: 'Rights of finder of lost goods', readTime: '13 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t6', topicNo: 6, title: 'Things delivered by mistake or coercion', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t7', topicNo: 7, title: 'Quantum merit', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t8', topicNo: 8, title: 'Remedies for breach of contract', readTime: '16 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t9', topicNo: 9, title: 'Kinds of damages', readTime: '16 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t10', topicNo: 10, title: 'Liquidated and unliquidated damages and penalty', readTime: '15 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u4-t11', topicNo: 11, title: 'Duty to mitigate', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' }
+            ]
+          },
+          {
+            unitNo: 5,
+            title: 'Specific Relief and Contractual Remedies',
+            topics: [
+              { id: 'loc1-u5-t1', topicNo: 1, title: 'Specific Relief Act including 2018 Amendment', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t2', topicNo: 2, title: 'Recovering possession of property', readTime: '12 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t3', topicNo: 3, title: 'Specific performance of the contract – As a rule enforced by court', readTime: '21 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t4', topicNo: 4, title: 'Rectification of instruments', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t5', topicNo: 5, title: 'Rescission of contracts as a rule enforced by court', readTime: '13 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t6', topicNo: 6, title: 'Cancellation of instruments', readTime: '10 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t7', topicNo: 7, title: 'Declaratory Decrees', readTime: '10 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t8', topicNo: 8, title: 'Preventive Relief', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t9', topicNo: 9, title: 'Injunctions-Generally', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t10', topicNo: 10, title: 'Temporary and Perpetual injunctions', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t11', topicNo: 11, title: 'Mandatory & Prohibitory injunctions', readTime: '8 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t12', topicNo: 12, title: 'Injunctions to perform negative agreement', readTime: '10 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t13', topicNo: 13, title: 'Special provision for contracts relating to infrastructure projects', readTime: '10 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t14', topicNo: 14, title: 'Arbitration clause', readTime: '12 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t15', topicNo: 15, title: 'Mediation Agreement', readTime: '9 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t16', topicNo: 16, title: 'Construction contracts', readTime: '11 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' },
+              { id: 'loc1-u5-t17', topicNo: 17, title: 'Specific performance of contracts and force majeure', readTime: '18 min read', url: 'https://nyayasaral.com/subjects/law-of-contract-i/' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'family-law-i',
+        year: 'Year 1',
+        semester: 'Semester I',
+        title: 'Family Law – I (Hindu Law)',
+        totalPublished: 41,
+        url: 'https://nyayasaral.com/subjects/family-law-i/',
+        units: [
+          { unitNo: 1, title: 'Sources, Schools and Hindu Joint Family', topics: [{ id: 'fl1-u1-idx', topicNo: 1, title: 'Unit 1 Topics (Import nyayasaral_db.json to populate all 41 notes)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/family-law-i/' }] },
+          { unitNo: 2, title: 'Hindu Marriage', topics: [{ id: 'fl1-u2-idx', topicNo: 1, title: 'Unit 2 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/family-law-i/' }] },
+          { unitNo: 3, title: 'Matrimonial Remedies under Hindu Law', topics: [{ id: 'fl1-u3-idx', topicNo: 1, title: 'Unit 3 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/family-law-i/' }] },
+          { unitNo: 4, title: 'Adoption, Maintenance and Guardianship', topics: [{ id: 'fl1-u4-idx', topicNo: 1, title: 'Unit 4 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/family-law-i/' }] },
+          { unitNo: 5, title: 'Hindu Succession', topics: [{ id: 'fl1-u5-idx', topicNo: 1, title: 'Unit 5 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/family-law-i/' }] }
+        ]
+      },
+      {
+        id: 'constitutional-law-i',
+        year: 'Year 1',
+        semester: 'Semester I',
+        title: 'Constitutional Law – I',
+        totalPublished: 39,
+        url: 'https://nyayasaral.com/subjects/constitutional-law-i/',
+        units: [
+          { unitNo: 1, title: 'Constitutional Development and Framing of the Indian Constitution', topics: [{ id: 'cl1-u1-idx', topicNo: 1, title: 'Unit 1 Topics (Import nyayasaral_db.json to populate all 39 notes)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/constitutional-law-i/' }] },
+          { unitNo: 2, title: 'Salient Features, Preamble, Union, Citizenship, Fundamental Rights Principles and Judicial Review', topics: [{ id: 'cl1-u2-idx', topicNo: 1, title: 'Unit 2 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/constitutional-law-i/' }] },
+          { unitNo: 3, title: 'Fundamental Rights: Equality, Freedoms and Personal Liberty', topics: [{ id: 'cl1-u3-idx', topicNo: 1, title: 'Unit 3 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/constitutional-law-i/' }] },
+          { unitNo: 4, title: 'Fundamental Rights: Exploitation, Religion, Culture, Remedies and Limitations', topics: [{ id: 'cl1-u4-idx', topicNo: 1, title: 'Unit 4 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/constitutional-law-i/' }] },
+          { unitNo: 5, title: 'Directive Principles and Fundamental Duties', topics: [{ id: 'cl1-u5-idx', topicNo: 1, title: 'Unit 5 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/constitutional-law-i/' }] }
+        ]
+      },
+      {
+        id: 'law-of-torts',
+        year: 'Year 1',
+        semester: 'Semester I',
+        title: 'Law of Torts',
+        totalPublished: 68,
+        url: 'https://nyayasaral.com/subjects/law-of-torts/',
+        units: [
+          { unitNo: 1, title: 'Nature and General Principles of Tortious Liability', topics: [{ id: 'lot-u1-idx', topicNo: 1, title: 'Unit 1 Topics (Import nyayasaral_db.json to populate all 68 notes)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-torts/' }] },
+          { unitNo: 2, title: 'Defences, Vicarious Liability and Strict Liability', topics: [{ id: 'lot-u2-idx', topicNo: 1, title: 'Unit 2 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-torts/' }] },
+          { unitNo: 3, title: 'Specific Torts: the Person and Immovable Property', topics: [{ id: 'lot-u3-idx', topicNo: 1, title: 'Unit 3 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-torts/' }] },
+          { unitNo: 4, title: 'Movable Property, Accidents, Defamation and Business Torts', topics: [{ id: 'lot-u4-idx', topicNo: 1, title: 'Unit 4 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-torts/' }] },
+          { unitNo: 5, title: 'Consumer Protection Law', topics: [{ id: 'lot-u5-idx', topicNo: 1, title: 'Unit 5 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-torts/' }] }
+        ]
+      },
+      {
+        id: 'environmental-law',
+        year: 'Year 1',
+        semester: 'Semester I',
+        title: 'Environmental Law',
+        totalPublished: 62,
+        url: 'https://nyayasaral.com/subjects/environmental-law/',
+        units: [
+          { unitNo: 1, title: 'Environment, Ecology and Environmental Pollution', topics: [{ id: 'env-u1-idx', topicNo: 1, title: 'Unit 1 Topics (Import nyayasaral_db.json to populate all 62 notes)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/environmental-law/' }] },
+          { unitNo: 2, title: 'Common Law Remedies against Pollution', topics: [{ id: 'env-u2-idx', topicNo: 1, title: 'Unit 2 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/environmental-law/' }] },
+          { unitNo: 3, title: 'Environmental Protection Laws and Regulatory Institutions', topics: [{ id: 'env-u3-idx', topicNo: 1, title: 'Unit 3 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/environmental-law/' }] },
+          { unitNo: 4, title: 'Constitutional and Judicial Protection of the Environment', topics: [{ id: 'env-u4-idx', topicNo: 1, title: 'Unit 4 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/environmental-law/' }] },
+          { unitNo: 5, title: 'International Environmental Law', topics: [{ id: 'env-u5-idx', topicNo: 1, title: 'Unit 5 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/environmental-law/' }] }
+        ]
+      },
+      {
+        id: 'law-of-contract-ii',
+        year: 'Year 1',
+        semester: 'Semester II',
+        title: 'Law of Contracts – II',
+        totalPublished: 49,
+        url: 'https://nyayasaral.com/subjects/law-of-contract-ii/',
+        units: [
+          { unitNo: 1, title: 'Contract of Indemnity, Guarantee, Bailment, Pledge or Pawn', topics: [{ id: 'loc2-u1-idx', topicNo: 1, title: 'Unit 1 Topics (Import nyayasaral_db.json to populate all 49 notes)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-contract-ii/' }] },
+          { unitNo: 2, title: 'Contract of Agency', topics: [{ id: 'loc2-u2-idx', topicNo: 1, title: 'Unit 2 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-contract-ii/' }] },
+          { unitNo: 3, title: 'Sale of Goods', topics: [{ id: 'loc2-u3-idx', topicNo: 1, title: 'Unit 3 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-contract-ii/' }] },
+          { unitNo: 4, title: 'Property — The Sale of Goods Act, 1930', topics: [{ id: 'loc2-u4-idx', topicNo: 1, title: 'Unit 4 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-contract-ii/' }] },
+          { unitNo: 5, title: 'Partnership', topics: [{ id: 'loc2-u5-idx', topicNo: 1, title: 'Unit 5 Topics (Sync via scraper)', readTime: 'Sync via scraper', url: 'https://nyayasaral.com/subjects/law-of-contract-ii/' }] }
+        ]
+      }
+    ];
+
+    // Full verbatim notes seeded from nyayasaral.com
+    const SEED_NOTES = {
+      'loc1-u1-t1': {
+        id: 'loc1-u1-t1',
+        subtitle: 'Sections 2(e), 2(h) and 10 of the Indian Contract Act, 1872',
+        readTime: '10 min read',
+        url: 'https://nyayasaral.com/subjects/law-of-contract-i/definition-and-essentials-of-a-valid-contract/',
+        en: {
+          inOneMinute: 'A contract is an agreement that the law will enforce (Section 2(h)). An agreement is born when one person makes a proposal and the other accepts it (Sections 2(a), 2(b), 2(e)). Not every agreement is a contract. Section 10 says an agreement becomes a contract only when it is made with free consent, by competent parties, for a lawful consideration, with a lawful object, and is not expressly declared void. Courts add one more: the parties must intend to create legal relations (Balfour v. Balfour). So remember the line: all contracts are agreements, but all agreements are not contracts. In exams, marks come from listing every essential, giving the section for each, and adding one case or example for each.',
+          legalProvision: [
+            'Section 2(a): When one person signifies to another his willingness to do or to abstain from doing anything, with a view to obtaining the assent of that other to such act or abstinence, he is said to make a proposal.',
+            'Section 2(b): When the person to whom the proposal is made signifies his assent thereto, the proposal is said to be accepted. A proposal, when accepted, becomes a promise.',
+            'Section 2(c): The person making the proposal is called the "promisor", and the person accepting the proposal is called the "promisee".',
+            'Section 2(d): Consideration is an act, abstinence, or promise given at the desire of the promisor by the promisee or any other person.',
+            'Section 2(e): Every promise and every set of promises, forming the consideration for each other, is an agreement.',
+            'Section 2(g): An agreement not enforceable by law is said to be void.',
+            'Section 2(h): An agreement enforceable by law is a contract.',
+            'Section 2(i): An agreement enforceable by law at the option of one or more parties, but not at the option of the other, is a voidable contract.',
+            'Section 10 (What agreements are contracts): All agreements are contracts if they are made by the free consent of parties competent to contract, for a lawful consideration and with a lawful object, and are not hereby expressly declared to be void.',
+            'Section 11 (Who are competent to contract): Majority age, sound mind, and not disqualified from contracting by law.',
+            'Section 13 & 14 (Consent & Free Consent): Agreeing upon the same thing in the same sense, not caused by coercion (S. 15), undue influence (S. 16), fraud (S. 17), misrepresentation (S. 18), or mistake (S. 20–22).'
+          ],
+          meaning: 'The Indian Contract Act builds the definition in two steps: (1) Agreement = offer + acceptance (Sections 2(b), 2(e)), and (2) Contract = agreement + enforceability by law (Section 2(h)). Pollock defines a contract as "Every agreement and promise enforceable at law is a contract." Anson describes it as a legally binding agreement between two or more persons creating rights to acts or forbearances. A social or domestic promise (such as going to a film or giving pocket money) is an agreement but usually not a contract, because the parties did not intend legal consequences. Running example: Anil offers to sell his used laptop to Bhavana for ₹30,000; Bhavana accepts, pays ₹5,000 advance today, and promises to pay ₹25,000 on delivery next Monday.',
+          keyPoints: [
+            'Contract = agreement + enforceability by law (Section 2(h)).',
+            'Agreement = offer + acceptance (Sections 2(a), 2(b), 2(e)).',
+            'Section 10 essentials: free consent, competent parties, lawful consideration, lawful object, not expressly declared void.',
+            'Intention to create legal relations is added by courts (Balfour v. Balfour).',
+            'Competence requires majority, sound mind, and no legal disqualification (Section 11); a minor\'s agreement is void (Mohori Bibee).',
+            'Consent without freedom makes a contract voidable; mutual mistake of fact makes an agreement void.',
+            'Uncertain (Section 29) and impossible (Section 56) agreements are void.',
+            'Writing is needed only where a specific law requires writing, attestation, or registration (Section 10, second paragraph).'
+          ],
+          caseLaws: [
+            {
+              name: 'Balfour v. Balfour (1919)',
+              citation: '[1919] 2 KB 571 (Court of Appeal)',
+              facts: 'A husband holding a government post in Ceylon promised his wife £30 a month while she stayed in England on medical advice. They later separated, and she sued for the allowance.',
+              principle: 'Agreements between husband and wife made in the ordinary domestic relationship are generally not contracts because the parties do not intend legal consequences.',
+              whyItMatters: 'Leading case on intention to create legal relations in domestic agreements.'
+            },
+            {
+              name: 'Carlill v. Carbolic Smoke Ball Co. (1893)',
+              citation: '[1893] 1 QB 256 (Court of Appeal)',
+              facts: 'The company advertised a £100 reward to anyone who caught influenza after using its smoke ball three times daily for two weeks, and deposited £1,000 with the Alliance Bank to show sincerity. Mrs Carlill used it as directed and caught influenza.',
+              principle: 'An offer may be made to the world at large and accepted by anyone who performs its conditions; the bank deposit proved intention to be bound.',
+              whyItMatters: 'Illustrates general offer, acceptance by performance, and intention to create legal relations together.'
+            },
+            {
+              name: 'Mohori Bibee v. Dharmodas Ghose (1903)',
+              citation: '(1903) LR 30 IA 114 (Privy Council)',
+              facts: 'Dharmodas Ghose, while a minor, mortgaged his houses to money-lender Brahmo Dutt for Rs. 20,000. The lender\'s agent had notice that he was a minor.',
+              principle: 'A minor is not competent to contract under Section 11, so a minor\'s agreement is void ab initio, not voidable.',
+              whyItMatters: 'Settles the capacity essential and the void vs. voidable distinction for minors.'
+            },
+            {
+              name: 'Rose and Frank Co. v. J.R. Crompton and Bros. Ltd. (1925)',
+              citation: '[1925] AC 445 (House of Lords)',
+              facts: 'English carbon paper makers and their American distributor signed a 1913 arrangement stating it was not a formal or legal agreement and was only an honourable pledge. Later the makers refused some orders.',
+              principle: 'In business agreements intention is presumed, but clear express words can exclude it; the 1913 arrangement itself was unenforceable, though accepted orders were binding.',
+              whyItMatters: 'Shows that the commercial presumption of legal intention can be rebutted by express words.'
+            }
+          ],
+          selfTest: [
+            { q: 'Define a contract under the Indian Contract Act.', a: 'An agreement enforceable by law (Section 2(h)).' },
+            { q: 'Name the five conditions in Section 10.', a: 'Free consent, competent parties, lawful consideration, lawful object, and not expressly declared void.' },
+            { q: 'Which essential is missing in Balfour v. Balfour?', a: 'Intention to create legal relations.' },
+            { q: 'Is a minor\'s agreement void or voidable?', a: 'Void (Mohori Bibee v. Dharmodas Ghose, 1903).' },
+            { q: 'A agrees to sell B "my white horse for ₹500 or ₹1,000". Is it a contract?', a: 'No. It is void for uncertainty (Section 29, illustration (f)).' },
+            { q: 'Must every contract be in writing?', a: 'No. Only where some law requires writing, attestation, or registration (Section 10, second paragraph).' }
+          ]
+        }
+      },
+      'loc1-u1-t2': {
+        id: 'loc1-u1-t2',
+        subtitle: 'Sections 2(a), 2(c), 4 and 29 of the Indian Contract Act, 1872',
+        readTime: '10 min read',
+        url: 'https://nyayasaral.com/subjects/law-of-contract-i/definition-and-essentials-of-a-valid-offer/',
+        en: {
+          inOneMinute: 'Every contract starts with an offer, which the Act calls a proposal. Under Section 2(a), a person makes a proposal when he signifies to another his willingness to do or to abstain from doing anything, with a view to obtaining the assent of that other. A valid offer must be definite, made with the intention of being bound on acceptance, and communicated to the offeree. It must be distinguished from an invitation to offer, such as a price list, a shop display, an auction advertisement, or a call for tenders. Key exam cases: Harvey v. Facey and MacPherson v. Appanna.',
+          legalProvision: [
+            'Section 2(a): Signifying willingness to do or abstain from doing anything, with a view to obtaining the assent of the other person, constitutes a proposal.',
+            'Section 2(b) & 2(c): Accepted proposal becomes a promise; the proposer is the promisor and the acceptor is the promisee.',
+            'Section 3: Communication of proposals, acceptance, and revocation may be made by any act or omission intended to communicate or having the effect of communicating it.',
+            'Section 4 (first paragraph): The communication of a proposal is complete when it comes to the knowledge of the person to whom it is made.',
+            'Section 8: Performance of the conditions of a proposal, or acceptance of consideration for a reciprocal promise, is an acceptance of the proposal.',
+            'Section 9: Promises made in words are express; those made otherwise than in words (by conduct) are implied.',
+            'Section 29: Agreements, the meaning of which is not certain, or capable of being made certain, are void.'
+          ],
+          meaning: 'The Indian Contract Act uses the word "proposal" while English law and textbooks use "offer" — they mean the same thing. Section 2(a) breaks into three elements: (1) "When one person signifies to another" (communication to another person), (2) "his willingness to do or to abstain from doing anything" (positive act or abstinence), and (3) "with a view to obtaining the assent of that other" (intention to be legally bound upon acceptance). Because acceptance immediately forms a contract, the law separates a true offer from a mere invitation to offer (such as shop displays or catalogues). Running example: Meena writes to Ravi: "I will sell you my sewing machine, model XL-200, for ₹8,000. Delivery at my house on Sunday. Please reply by Friday."',
+          keyPoints: [
+            'Offer = proposal (Section 2(a)): willingness to do or abstain, shown to another, to obtain his assent.',
+            'Must be made with an intention to be bound on acceptance.',
+            'Must be definite and certain (Section 29).',
+            'Must be communicated; communication is complete when it comes to the knowledge of the offeree (Section 4).',
+            'An invitation to offer (shop display, price list, auction notice, tender notice, quotation) is not an offer.',
+            'A general offer can be accepted by anyone who knows of it and performs its conditions (Section 8; Carlill).',
+            'Offers may be express (words) or implied (conduct) under Section 9.',
+            'Silence cannot be imposed as acceptance (Felthouse v. Bindley).'
+          ],
+          caseLaws: [
+            {
+              name: 'Harvey v. Facey (1893)',
+              citation: '[1893] AC 552 (Privy Council)',
+              facts: 'Harvey telegraphed asking whether Facey would sell Bumper Hall Pen and his lowest cash price. Facey replied "Lowest price for Bumper Hall Pen £900." Harvey telegraphed agreeing to buy at £900; Facey did not reply.',
+              principle: 'A statement of the lowest price in reply to an enquiry is not an offer to sell. Harvey\'s final telegram was only an offer, never accepted.',
+              whyItMatters: 'Leading case separating an offer from a mere price quotation.'
+            },
+            {
+              name: 'MacPherson v. M.N. Appanna (1951)',
+              citation: 'AIR 1951 SC 184 : 1951 SCR 161',
+              facts: 'The owner of a bungalow in Mercara, told of an offer of Rs. 6,000, cabled "Won\'t accept less than rupees ten thousand." Appanna wrote confirming Rs. 10,000; the owner sold to another for Rs. 11,000.',
+              principle: 'Stating the lowest price one would accept is not an offer; there was no concluded contract.',
+              whyItMatters: 'Supreme Court of India\'s adoption of Harvey v. Facey.'
+            },
+            {
+              name: 'Carlill v. Carbolic Smoke Ball Co. (1893)',
+              citation: '[1893] 1 QB 256 (Court of Appeal)',
+              facts: 'The company advertised a £100 reward to anyone catching influenza after using its smoke ball as directed and deposited £1,000 in a bank. Mrs Carlill complied and caught influenza.',
+              principle: 'An offer can be made to the world at large and accepted by performing its conditions without prior notice of acceptance.',
+              whyItMatters: 'Leading case on general offers.'
+            },
+            {
+              name: 'Lalman Shukla v. Gauri Dutt (1913)',
+              citation: 'Allahabad High Court, 1913',
+              facts: 'A servant was sent to search for his master\'s missing nephew. While he was away, the master announced a reward. The servant found the boy and later claimed the reward.',
+              principle: 'A person who performs an act without knowing of the offer cannot claim to have accepted it.',
+              whyItMatters: 'Demonstrates that an offer must be communicated (known) before acceptance.'
+            },
+            {
+              name: 'Pharmaceutical Society of Great Britain v. Boots Cash Chemists (1953)',
+              citation: '[1953] 1 QB 401 (Court of Appeal)',
+              facts: 'Boots allowed customers to pick medicines from open shelves and pay at a cash desk supervised by a pharmacist. The Society argued the sale occurred at the shelf without supervision.',
+              principle: 'Display of goods on shelves is an invitation to offer; the customer makes the offer at the cash desk and the seller accepts there.',
+              whyItMatters: 'Leading case on display of goods in self-service shops.'
+            },
+            {
+              name: 'Felthouse v. Bindley (1862)',
+              citation: '142 ER 1037 : (1862) 11 CB (NS) 869',
+              facts: 'An uncle offered to buy his nephew\'s horse for £30 15s, writing that if he heard no more he would consider the horse his. The nephew did not reply and the horse was sold at auction by mistake.',
+              principle: 'An offeror cannot make the offeree\'s silence amount to acceptance.',
+              whyItMatters: 'Establishes that silence cannot be forced as acceptance.'
+            }
+          ],
+          selfTest: [
+            { q: 'What does the Act call an offer?', a: 'A proposal (Section 2(a)).' },
+            { q: 'Is a reply stating "lowest price ₹9 lakh" an offer?', a: 'No. It is a statement of price (Harvey v. Facey; MacPherson v. Appanna).' },
+            { q: 'When is the communication of an offer complete?', a: 'When it comes to the knowledge of the person to whom it is made (Section 4).' },
+            { q: 'Can a person who returns a lost article without knowing of the reward claim it?', a: 'No. He did not know of the offer (Lalman Shukla v. Gauri Dutt).' },
+            { q: 'Are goods on a supermarket shelf an offer?', a: 'No. They are an invitation to offer; the customer offers at the counter (Boots).' },
+            { q: 'Can an offeror say "your silence will mean acceptance"?', a: 'He can say it, but it does not bind the offeree (Felthouse v. Bindley).' }
+          ]
+        }
+      }
+    };
+
+    // =========================================================================
+    // 2. INDEXEDDB LOCAL DATABASE LAYER (with safe in-memory fallback)
+    // =========================================================================
+    const DB_NAME = 'NyayaSaralLocalDB';
+    const DB_VERSION = 1;
+    let dbHandle = null;
+    let usingIndexedDB = false;
+
+    function openLocalDB() {
+      return new Promise((resolve) => {
+        if (!window.indexedDB) {
+          resolve(null);
+          return;
+        }
+        try {
+          const req = window.indexedDB.open(DB_NAME, DB_VERSION);
+          req.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains('store')) {
+              db.createObjectStore('store', { keyPath: 'key' });
+            }
+          };
+          req.onsuccess = (e) => {
+            dbHandle = e.target.result;
+            usingIndexedDB = true;
+            resolve(dbHandle);
+          };
+          req.onerror = () => resolve(null);
+        } catch (err) {
+          resolve(null);
+        }
+      });
+    }
+
+    function dbGet(key) {
+      return new Promise((resolve) => {
+        if (dbHandle) {
+          try {
+            const tx = dbHandle.transaction('store', 'readonly');
+            const req = tx.objectStore('store').get(key);
+            req.onsuccess = () => resolve(req.result ? req.result.value : null);
+            req.onerror = () => resolve(null);
+            return;
+          } catch (e) {}
+        }
+        try {
+          const raw = window.localStorage.getItem('nyayasaral_' + key);
+          resolve(raw ? JSON.parse(raw) : null);
+        } catch (e) {
+          resolve(null);
+        }
+      });
+    }
+
+    function dbSet(key, value) {
+      return new Promise((resolve) => {
+        if (dbHandle) {
+          try {
+            const tx = dbHandle.transaction('store', 'readwrite');
+            tx.objectStore('store').put({ key, value });
+            tx.oncomplete = () => resolve(true);
+            tx.onerror = () => resolve(false);
+            return;
+          } catch (e) {}
+        }
+        try {
+          window.localStorage.setItem('nyayasaral_' + key, JSON.stringify(value));
+          resolve(true);
+        } catch (e) {
+          resolve(false);
+        }
+      });
+    }
+
+    // =========================================================================
+    // 3. APPLICATION STATE
+    // =========================================================================
+    const SECTION_DEFS = [
+      { key: 'inOneMinute', label: 'In One Minute' },
+      { key: 'legalProvision', label: 'Legal Provision' },
+      { key: 'meaning', label: 'Meaning & Definition' },
+      { key: 'keyPoints', label: 'Key Points' },
+      { key: 'caseLaws', label: 'Leading Case Laws' },
+      { key: 'selfTest', label: 'Quick Self-Test' }
+    ];
+
+    const state = {
+      subjects: JSON.parse(JSON.stringify(SEED_SUBJECTS)),
+      notes: JSON.parse(JSON.stringify(SEED_NOTES)),
+      bookmarks: [],
+      completed: [],
+      personalNotes: {},
+      lang: 'en',
+      activeYear: 'Year 1',
+      activeSemester: 'Semester I',
+      activeSubjectId: 'law-of-contract-i',
+      expandedUnitNo: 1,
+      activeTopicId: 'loc1-u1-t1',
+      searchQuery: '',
+      bookmarkFilter: false,
+      enabledSections: {
+        inOneMinute: true,
+        legalProvision: true,
+        meaning: true,
+        keyPoints: true,
+        caseLaws: true,
+        selfTest: true
+      },
+      revealedAnswers: {},
+      resetPending: false,
+      syncFeedUrl: '',
+      autoSyncOnLaunch: false,
+      lastSyncedAt: '',
+      // Audio TTS State
+      audio: {
+        mode: 'topic', // 'topic' | 'unit'
+        teachingMode: true,
+        repeatTopic: false,
+        sleepTimerHandle: null,
+        pauseTimerHandle: null,
+        queue: [], // [{ topicId, topicTitle, sectionKey, sectionLabel, chunks: [{text, pitch, rateFactor, pauseAfterMs}] }]
+        index: -1,
+        chunkIndex: 0,
+        isPlaying: false,
+        isPaused: false,
+        speed: 1.0,
+        voiceURI: '',
+        voices: []
+      }
+    };
+
+    // =========================================================================
+    // 4. HELPERS & DATA LOOKUPS
+    // =========================================================================
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function showToast(msg) {
+      const el = document.getElementById('toastEl');
+      document.getElementById('toastText').textContent = msg;
+      el.classList.remove('hidden');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => el.classList.add('hidden'), 2800);
+    }
+
+    function getActiveSubject() {
+      return state.subjects.find(s => s.id === state.activeSubjectId) || state.subjects[0];
+    }
+
+    function findTopicMeta(topicId) {
+      for (const subj of state.subjects) {
+        for (const unit of subj.units) {
+          for (const t of unit.topics) {
+            if (t.id === topicId) return { subject: subj, unit, topic: t };
+          }
+        }
+      }
+      return null;
+    }
+
+    function getNoteContent(topicId, lang) {
+      const rec = state.notes[topicId];
+      if (!rec) return null;
+      return rec[lang] || null;
+    }
+
+    function hasFullNote(topicId) {
+      const rec = state.notes[topicId];
+      if (!rec) return false;
+      const d = rec.en || rec.te;
+      return Boolean(d && (d.inOneMinute || (d.legalProvision && d.legalProvision.length) || d.meaning || (d.keyPoints && d.keyPoints.length)));
+    }
+
+    async function persistAll() {
+      await dbSet('subjects', state.subjects);
+      await dbSet('notes', state.notes);
+      await dbSet('bookmarks', state.bookmarks);
+      await dbSet('completed', state.completed);
+      await dbSet('personalNotes', state.personalNotes);
+      await dbSet('syncConfig', { url: state.syncFeedUrl, auto: state.autoSyncOnLaunch, lastSyncedAt: state.lastSyncedAt });
+    }
+
+    // =========================================================================
+    // 5. TEXT-TO-SPEECH ENGINE (UNIT-WISE & TOPIC-WISE)
+    // =========================================================================
+    function scoreIndianGoogleVoice(v, langMode) {
+      const name = (v.name || '').toLowerCase();
+      const lang = (v.lang || '').toLowerCase().replace('_', '-');
+      const isGoogle = name.includes('google');
+      const isNatural = /natural|neural|wavenet|enhanced|online/i.test(name);
+      if (langMode === 'te') {
+        if (isGoogle && lang.startsWith('te-in')) return 0;
+        if (lang.startsWith('te')) return 1;
+      }
+      if (isGoogle && isNatural && (lang === 'en-in' || name.includes('india'))) return 0;
+      if (isGoogle && (lang === 'en-in' || name.includes('india'))) return 1;
+      if (isNatural && (lang === 'en-in' || name.includes('india'))) return 2;
+      if (lang === 'en-in' || name.includes('india')) return 3;
+      if (isGoogle && lang.startsWith('en')) return 4;
+      if (lang.startsWith('en')) return 5;
+      return 6;
+    }
+
+    function normalizeLegalSpeech(text) {
+      return String(text || '')
+        .replace(/\bS\.\s*(\d+)\s*\(([a-z])\)/gi, 'Section $1, clause $2')
+        .replace(/\bSections?\s*(\d+)\s*\(([a-z])\)/gi, 'Section $1, clause $2')
+        .replace(/\bS\.\s*(\d+)/gi, 'Section $1')
+        .replace(/\bv\.\s+/g, 'versus ')
+        .replace(/\bAIR\s+(\d{4})\s+SC\s+(\d+)/g, 'All India Reporter, $1, Supreme Court, page $2')
+        .replace(/₹\s*([\d,]+)/g, '$1 rupees')
+        .replace(/\bRs\.\s*([\d,]+)/gi, '$1 rupees')
+        .replace(/£\s*([\d,]+)/g, '$1 pounds')
+        .replace(/\betc\./gi, 'and so on')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function splitIntoNaturalChunks(text, pitch = 1.0, rateFactor = 0.96, pauseAfterMs = 280) {
+      const clean = normalizeLegalSpeech(text);
+      if (!clean) return [];
+      const sentences = clean.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [clean];
+      return sentences.map(s => s.trim()).filter(Boolean).map(s => ({
+        text: s,
+        pitch,
+        rateFactor,
+        pauseAfterMs
+      }));
+    }
+
+    function pickBestIndianVoice(langMode) {
+      const voices = state.audio.voices || [];
+      if (!voices.length) return null;
+      return [...voices].sort((a, b) => scoreIndianGoogleVoice(a, langMode) - scoreIndianGoogleVoice(b, langMode))[0] || null;
+    }
+
+    function loadVoices() {
+      if (!('speechSynthesis' in window)) return;
+      const voices = window.speechSynthesis.getVoices() || [];
+      state.audio.voices = voices;
+      const sel = document.getElementById('audioVoiceSelect');
+      if (!sel) return;
+      const prev = state.audio.voiceURI;
+      const best = pickBestIndianVoice(state.lang);
+      const bestLabel = best ? `Auto: ${best.name} (${best.lang})` : 'Auto: Google Indian Voice (en-IN)';
+      sel.innerHTML = `<option value="">${escapeHtml(bestLabel)}</option>`;
+      const sorted = [...voices].sort((a, b) =>
+        scoreIndianGoogleVoice(a, state.lang) - scoreIndianGoogleVoice(b, state.lang) || a.name.localeCompare(b.name)
+      );
+      sorted.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v.voiceURI;
+        const isIn = /en[-_]in|india/i.test(v.lang + ' ' + v.name);
+        opt.textContent = `${isIn ? '🇮🇳 ' : ''}${v.name} (${v.lang})`;
+        if (v.voiceURI === prev) opt.selected = true;
+        sel.appendChild(opt);
+      });
+    }
+
+    function buildTopicQueueItems(topicId) {
+      const meta = findTopicMeta(topicId);
+      if (!meta) return [];
+      const rec = state.notes[topicId];
+      const langData = rec ? (rec[state.lang] || rec.en) : null;
+      if (!langData) return [];
+
+      const teach = state.audio.teachingMode;
+      const items = [];
+
+      if (state.enabledSections.inOneMinute && langData.inOneMinute) {
+        const chunks = [];
+        if (teach) {
+          chunks.push({
+            text: `Welcome to Law Studyes. Let us understand Unit ${meta.unit.unitNo}, Topic ${meta.topic.topicNo}: ${meta.topic.title}. Listen carefully to the core concept first.`,
+            pitch: 1.04,
+            rateFactor: 0.95,
+            pauseAfterMs: 550
+          });
+        }
+        chunks.push(...splitIntoNaturalChunks(langData.inOneMinute, 1.0, teach ? 0.94 : 1.0, teach ? 320 : 120));
+        items.push({ topicId, topicTitle: meta.topic.title, sectionKey: 'inOneMinute', sectionLabel: 'In One Minute', chunks });
+      }
+
+      if (state.enabledSections.legalProvision && langData.legalProvision && langData.legalProvision.length) {
+        const chunks = [];
+        chunks.push({
+          text: teach ? 'Now, let us go through the exact legal provisions and sections you should cite in your exam answer.' : 'Legal Provision.',
+          pitch: 1.03,
+          rateFactor: 0.95,
+          pauseAfterMs: 500
+        });
+        const lines = Array.isArray(langData.legalProvision) ? langData.legalProvision : [langData.legalProvision];
+        lines.forEach(line => {
+          chunks.push(...splitIntoNaturalChunks(line, 0.98, teach ? 0.92 : 1.0, teach ? 420 : 150));
+        });
+        items.push({ topicId, topicTitle: meta.topic.title, sectionKey: 'legalProvision', sectionLabel: 'Legal Provision', chunks });
+      }
+
+      if (state.enabledSections.meaning && langData.meaning) {
+        const chunks = [];
+        chunks.push({
+          text: teach ? 'Let us break down the meaning and definition with practical examples so it stays clear in your mind.' : 'Meaning and Definition.',
+          pitch: 1.03,
+          rateFactor: 0.95,
+          pauseAfterMs: 450
+        });
+        chunks.push(...splitIntoNaturalChunks(langData.meaning, 1.0, teach ? 0.95 : 1.0, teach ? 320 : 120));
+        items.push({ topicId, topicTitle: meta.topic.title, sectionKey: 'meaning', sectionLabel: 'Meaning & Definition', chunks });
+      }
+
+      if (state.enabledSections.keyPoints && langData.keyPoints && langData.keyPoints.length) {
+        const chunks = [];
+        chunks.push({
+          text: teach ? 'Here are the key exam points to remember. Try to note each one clearly.' : 'Key points to remember.',
+          pitch: 1.04,
+          rateFactor: 0.96,
+          pauseAfterMs: 480
+        });
+        langData.keyPoints.forEach((p, i) => {
+          chunks.push(...splitIntoNaturalChunks(`Point ${i + 1}. ${p}`, 1.0, teach ? 0.94 : 1.0, teach ? 450 : 150));
+        });
+        items.push({ topicId, topicTitle: meta.topic.title, sectionKey: 'keyPoints', sectionLabel: 'Key Points', chunks });
+      }
+
+      if (state.enabledSections.caseLaws && langData.caseLaws && langData.caseLaws.length) {
+        const chunks = [];
+        chunks.push({
+          text: teach ? 'Now let us examine the landmark case laws. Quoting these cases earns strong marks in LL.B. exams.' : 'Leading Case Laws.',
+          pitch: 1.04,
+          rateFactor: 0.95,
+          pauseAfterMs: 550
+        });
+        langData.caseLaws.forEach((c, i) => {
+          chunks.push({ text: `Case ${i + 1}: ${normalizeLegalSpeech(c.name)}.`, pitch: 1.05, rateFactor: 0.92, pauseAfterMs: 400 });
+          if (c.facts) chunks.push(...splitIntoNaturalChunks(`Facts of the case: ${c.facts}`, 1.0, teach ? 0.95 : 1.0, 350));
+          if (c.principle) chunks.push(...splitIntoNaturalChunks(`Legal principle held: ${c.principle}`, 0.98, teach ? 0.92 : 1.0, 420));
+          if (c.whyItMatters) chunks.push(...splitIntoNaturalChunks(`Why it matters for your exam: ${c.whyItMatters}`, 1.02, teach ? 0.95 : 1.0, 550));
+        });
+        items.push({ topicId, topicTitle: meta.topic.title, sectionKey: 'caseLaws', sectionLabel: 'Leading Case Laws', chunks });
+      }
+
+      if (state.enabledSections.selfTest && langData.selfTest && langData.selfTest.length) {
+        const chunks = [];
+        chunks.push({
+          text: teach ? 'Time for a quick viva self-test! Pause and think of your answer before I give it to you.' : 'Quick Self-Test.',
+          pitch: 1.05,
+          rateFactor: 0.96,
+          pauseAfterMs: 600
+        });
+        langData.selfTest.forEach((qa, i) => {
+          chunks.push({
+            text: `Question ${i + 1}: ${normalizeLegalSpeech(qa.q)}`,
+            pitch: 1.05,
+            rateFactor: 0.94,
+            pauseAfterMs: teach ? 2400 : 500
+          });
+          chunks.push(...splitIntoNaturalChunks(`Answer: ${qa.a}`, 0.99, teach ? 0.94 : 1.0, 600));
+        });
+        items.push({ topicId, topicTitle: meta.topic.title, sectionKey: 'selfTest', sectionLabel: 'Quick Self-Test', chunks });
+      }
+      return items;
+    }
+
+    function startTopicAudio(topicId) {
+      const items = buildTopicQueueItems(topicId);
+      if (!items.length) {
+        showToast('No offline note text to read. Select a synced topic or enable at least one section.');
+        return;
+      }
+      state.audio.mode = 'topic';
+      state.audio.queue = items;
+      state.audio.index = 0;
+      state.audio.chunkIndex = 0;
+      playQueueIndex(0, 0);
+    }
+
+    function startUnitAudio(subjectId, unitNo, startFromTopicId = null) {
+      const subj = state.subjects.find(s => s.id === subjectId);
+      if (!subj) return;
+      const unit = subj.units.find(u => u.unitNo === unitNo);
+      if (!unit) return;
+
+      let topics = unit.topics;
+      if (startFromTopicId) {
+        const idx = topics.findIndex(t => t.id === startFromTopicId);
+        if (idx >= 0) topics = topics.slice(idx);
+      }
+
+      const queue = [];
+      topics.forEach(t => {
+        queue.push(...buildTopicQueueItems(t.id));
+      });
+
+      if (!queue.length) {
+        showToast(`Unit ${unitNo} has no offline notes synced yet. Run Auto-Sync or add notes first.`);
+        return;
+      }
+
+      state.audio.mode = 'unit';
+      state.audio.queue = queue;
+      state.audio.index = 0;
+      state.audio.chunkIndex = 0;
+      playQueueIndex(0, 0);
+      showToast(`Playing Unit ${unitNo} teaching session (${queue.length} sections)`);
+    }
+
+    function stopAudio() {
+      clearTimeout(state.audio.pauseTimerHandle);
+      const capTTS = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
+      if (capTTS) { try { capTTS.stop(); } catch (e) {} }
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      state.audio.isPlaying = false;
+      state.audio.isPaused = false;
+      state.audio.index = -1;
+      state.audio.chunkIndex = 0;
+      document.getElementById('liveCaptionStrip')?.classList.add('hidden');
+      updateAudioUI();
+      clearSpeakingHighlight();
+    }
+
+    function clearSpeakingHighlight() {
+      document.querySelectorAll('.speaking-highlight').forEach(el => el.classList.remove('speaking-highlight'));
+    }
+
+    function highlightActiveSection(sectionKey) {
+      clearSpeakingHighlight();
+      const card = document.querySelector(`[data-section-card="${sectionKey}"]`);
+      if (card) {
+        card.classList.add('speaking-highlight');
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function playQueueIndex(idx, chunkIdx = 0) {
+      clearTimeout(state.audio.pauseTimerHandle);
+      if (!('speechSynthesis' in window) && !(window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech)) {
+        showToast('Text-to-Speech is not supported in this browser.');
+        return;
+      }
+      if (idx < 0 || idx >= state.audio.queue.length) {
+        if (state.audio.repeatTopic && state.audio.queue.length) {
+          playQueueIndex(0, 0);
+          return;
+        }
+        stopAudio();
+        showToast('Finished study session');
+        return;
+      }
+
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      state.audio.index = idx;
+      state.audio.chunkIndex = chunkIdx;
+      state.audio.isPlaying = true;
+      state.audio.isPaused = false;
+
+      const item = state.audio.queue[idx];
+      if (!item.chunks || chunkIdx >= item.chunks.length) {
+        playQueueIndex(idx + 1, 0);
+        return;
+      }
+
+      const chunk = item.chunks[chunkIdx];
+
+      if (state.activeTopicId !== item.topicId) {
+        const meta = findTopicMeta(item.topicId);
+        if (meta) {
+          state.activeSubjectId = meta.subject.id;
+          state.activeYear = inferSubjectYear(meta.subject);
+          state.activeSemester = meta.subject.semester;
+          state.expandedUnitNo = meta.unit.unitNo;
+          state.activeTopicId = item.topicId;
+          populateSubjectDropdowns();
+          renderSidebar();
+          renderReadingPane();
+        }
+      }
+
+      updateAudioUI();
+      highlightActiveSection(item.sectionKey);
+
+      const capStrip = document.getElementById('liveCaptionStrip');
+      const capText = document.getElementById('liveCaptionText');
+      if (capStrip && capText) {
+        capStrip.classList.remove('hidden');
+        capText.textContent = chunk.text;
+      }
+
+      const effectiveRate = Math.min(2.0, Math.max(0.65, Number((state.audio.speed * (chunk.rateFactor || 1.0)).toFixed(2))));
+
+      const advanceNext = () => {
+        if (!state.audio.isPlaying || state.audio.index !== idx || state.audio.chunkIndex !== chunkIdx) return;
+        const delay = chunk.pauseAfterMs || 250;
+        state.audio.pauseTimerHandle = setTimeout(() => {
+          if (!state.audio.isPlaying || state.audio.isPaused) return;
+          if (chunkIdx + 1 < item.chunks.length) {
+            playQueueIndex(idx, chunkIdx + 1);
+          } else {
+            playQueueIndex(idx + 1, 0);
+          }
+        }, delay);
+      };
+
+      const capTTS = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
+      if (capTTS) {
+        capTTS.speak({
+          text: chunk.text,
+          lang: state.lang === 'te' ? 'te-IN' : 'en-IN',
+          rate: effectiveRate,
+          pitch: chunk.pitch || 1.0,
+          volume: 1.0,
+          category: 'ambient'
+        }).then(advanceNext).catch(() => {});
+        return;
+      }
+
+      const utter = new SpeechSynthesisUtterance(chunk.text);
+      utter.rate = effectiveRate;
+      utter.pitch = chunk.pitch || 1.0;
+      utter.lang = state.lang === 'te' ? 'te-IN' : 'en-IN';
+      if (state.audio.voiceURI) {
+        const v = state.audio.voices.find(x => x.voiceURI === state.audio.voiceURI);
+        if (v) utter.voice = v;
+      } else {
+        const bestIn = pickBestIndianVoice(state.lang);
+        if (bestIn) utter.voice = bestIn;
+      }
+      utter.onend = advanceNext;
+      utter.onerror = () => {
+        if (state.audio.isPlaying && state.audio.index === idx) {
+          state.audio.isPlaying = false;
+          updateAudioUI();
+        }
+      };
+      window.speechSynthesis.speak(utter);
+    }
+
+    function togglePlayPause() {
+      if (!('speechSynthesis' in window)) {
+        showToast('Text-to-Speech is unavailable in this browser.');
+        return;
+      }
+      if (state.audio.isPlaying && !state.audio.isPaused) {
+        window.speechSynthesis.pause();
+        state.audio.isPaused = true;
+        updateAudioUI();
+        return;
+      }
+      if (state.audio.isPlaying && state.audio.isPaused) {
+        window.speechSynthesis.resume();
+        state.audio.isPaused = false;
+        updateAudioUI();
+        return;
+      }
+      startTopicAudio(state.activeTopicId);
+    }
+
+    function updateAudioUI() {
+      const modeBadge = document.getElementById('audioModeBadge');
+      const queueCounter = document.getElementById('audioQueueCounter');
+      const titleEl = document.getElementById('audioCurrentTitle');
+      const progBar = document.getElementById('audioProgressBar');
+      const playLabel = document.getElementById('playPauseLabel');
+      const prevBtn = document.getElementById('audioPrevBtn');
+      const nextBtn = document.getElementById('audioNextBtn');
+
+      modeBadge.textContent = state.audio.mode === 'unit' ? 'Unit Playlist' : 'Topic Mode';
+
+      if (state.audio.index >= 0 && state.audio.queue[state.audio.index]) {
+        const cur = state.audio.queue[state.audio.index];
+        queueCounter.textContent = `Section ${state.audio.index + 1} of ${state.audio.queue.length} · ${cur.sectionLabel}`;
+        titleEl.textContent = cur.topicTitle;
+        const pct = Math.round(((state.audio.index + 1) / state.audio.queue.length) * 100);
+        progBar.style.width = `${pct}%`;
+        prevBtn.disabled = state.audio.index <= 0;
+        nextBtn.disabled = state.audio.index >= state.audio.queue.length - 1;
+      } else {
+        const meta = findTopicMeta(state.activeTopicId);
+        queueCounter.textContent = 'Ready to listen';
+        titleEl.textContent = meta ? meta.topic.title : 'Select a topic to listen';
+        progBar.style.width = '0%';
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+      }
+
+      if (state.audio.isPlaying && !state.audio.isPaused) {
+        playLabel.textContent = 'Pause';
+      } else if (state.audio.isPaused) {
+        playLabel.textContent = 'Resume';
+      } else {
+        playLabel.textContent = 'Play';
+      }
+    }
+
+    // =========================================================================
+    // 6. RENDERING UI
+    // =========================================================================
+    const YEAR_SEMESTERS = {
+      'Year 1': ['Semester I', 'Semester II'],
+      'Year 2': ['Semester III', 'Semester IV'],
+      'Year 3': ['Semester V', 'Semester VI']
+    };
+
+    function inferSubjectYear(subj) {
+      if (subj.year) return subj.year;
+      const sem = (subj.semester || '').toLowerCase();
+      if (/iii|iv|3|4/.test(sem)) return 'Year 2';
+      if (/v|vi|5|6/.test(sem)) return 'Year 3';
+      return 'Year 1';
+    }
+
+    function populateCascadeFilters() {
+      const yrSel = document.getElementById('filterYearSelect');
+      const semSel = document.getElementById('filterSemesterSelect');
+      const subjSel = document.getElementById('filterSubjectSelect');
+      const unitSel = document.getElementById('filterUnitSelect');
+      if (!yrSel || !semSel || !subjSel || !unitSel) return;
+
+      yrSel.value = state.activeYear;
+      const sems = YEAR_SEMESTERS[state.activeYear] || ['Semester I', 'Semester II'];
+      if (!sems.includes(state.activeSemester)) state.activeSemester = sems[0];
+      semSel.innerHTML = sems.map(sm => `<option value="${sm}" ${sm === state.activeSemester ? 'selected' : ''}>${sm}</option>`).join('');
+
+      const matchingSubjs = state.subjects.filter(s => inferSubjectYear(s) === state.activeYear && s.semester === state.activeSemester);
+      if (matchingSubjs.length) {
+        if (!matchingSubjs.some(s => s.id === state.activeSubjectId)) {
+          state.activeSubjectId = matchingSubjs[0].id;
+        }
+        subjSel.innerHTML = matchingSubjs.map(s =>
+          `<option value="${escapeHtml(s.id)}" ${s.id === state.activeSubjectId ? 'selected' : ''}>${escapeHtml(s.title)} (${s.totalPublished})</option>`
+        ).join('');
+      } else {
+        subjSel.innerHTML = `<option value="">No subjects synced yet for ${escapeHtml(state.activeSemester)}</option>`;
+      }
+
+      const activeSubj = getActiveSubject();
+      if (activeSubj && activeSubj.units && activeSubj.units.length) {
+        if (!activeSubj.units.some(u => u.unitNo === state.expandedUnitNo)) {
+          state.expandedUnitNo = activeSubj.units[0].unitNo;
+        }
+        unitSel.innerHTML = activeSubj.units.map(u =>
+          `<option value="${u.unitNo}" ${u.unitNo === state.expandedUnitNo ? 'selected' : ''}>Unit ${u.unitNo}: ${escapeHtml(u.title)}</option>`
+        ).join('');
+      } else {
+        unitSel.innerHTML = '<option value="1">Unit 1</option>';
+      }
+    }
+
+    function populateSubjectDropdowns() {
+      const desktopSel = document.getElementById('subjectSelect');
+      const mobileSel = document.getElementById('mobileSubjectSelect');
+      const opts = state.subjects.map(s =>
+        `<option value="${escapeHtml(s.id)}" ${s.id === state.activeSubjectId ? 'selected' : ''}>${escapeHtml(s.semester)} · ${escapeHtml(s.title)} (${s.totalPublished})</option>`
+      ).join('');
+      desktopSel.innerHTML = opts;
+      mobileSel.innerHTML = opts;
+      populateCascadeFilters();
+    }
+
+    function renderSidebar() {
+      const subj = getActiveSubject();
+      document.getElementById('subjectSemBadge').textContent = subj.semester;
+      document.getElementById('sidebarSubjectTitle').textContent = subj.title;
+      document.getElementById('statPublished').textContent = subj.totalPublished;
+
+      let offlineCount = 0;
+      let doneCount = 0;
+      subj.units.forEach(u => u.topics.forEach(t => {
+        if (hasFullNote(t.id)) offlineCount++;
+        if (state.completed.includes(t.id)) doneCount++;
+      }));
+      document.getElementById('statOffline').textContent = offlineCount;
+      document.getElementById('statDone').textContent = doneCount;
+      document.getElementById('bookmarkCountBadge').textContent = state.bookmarks.length;
+
+      const q = state.searchQuery.trim().toLowerCase();
+      const container = document.getElementById('unitsContainer');
+
+      const html = subj.units.map(unit => {
+        const filteredTopics = unit.topics.filter(t => {
+          if (state.bookmarkFilter && !state.bookmarks.includes(t.id)) return false;
+          if (!q) return true;
+          const noteRec = state.notes[t.id];
+          const noteText = noteRec && noteRec.en ? JSON.stringify(noteRec.en).toLowerCase() : '';
+          return t.title.toLowerCase().includes(q) || unit.title.toLowerCase().includes(q) || noteText.includes(q);
+        });
+
+        if ((q || state.bookmarkFilter) && filteredTopics.length === 0) return '';
+
+        const isExpanded = state.expandedUnitNo === unit.unitNo || Boolean(q) || state.bookmarkFilter;
+        const unitOfflineCount = unit.topics.filter(t => hasFullNote(t.id)).length;
+
+        const topicsHtml = isExpanded ? `
+          <div class="border-t border-[#F0EAE2] divide-y divide-[#F5EFE8]">
+            ${filteredTopics.map(t => {
+              const active = t.id === state.activeTopicId;
+              const synced = hasFullNote(t.id);
+              const isBm = state.bookmarks.includes(t.id);
+              const isDone = state.completed.includes(t.id);
+              return `
+                <button type="button" data-select-topic="${escapeHtml(t.id)}" class="w-full text-left px-3 py-2.5 flex items-start gap-2.5 transition-colors ${active ? 'bg-[#FBF1F2] border-l-[3px] border-l-[#7B1E2B]' : 'hover:bg-[#FAF7F2]'}">
+                  <span class="mt-1.5 w-2 h-2 rounded-full shrink-0 ${synced ? 'bg-emerald-600' : 'border border-amber-500 bg-amber-50'}" title="${synced ? 'Full offline note stored' : 'Syllabus index'}"></span>
+                  <div class="min-w-0 flex-1">
+                    <div class="text-xs font-semibold leading-snug ${active ? 'text-[#7B1E2B]' : 'text-[#1F1B18]'}">${t.topicNo}. ${escapeHtml(t.title)}</div>
+                    <div class="text-[11px] text-[#5F554E] mt-0.5 flex items-center gap-2">
+                      <span>${escapeHtml(t.readTime)}</span>
+                      ${synced ? '<span class="text-emerald-700 font-medium">· Offline</span>' : ''}
+                      ${isDone ? '<span class="text-[#7B1E2B] font-medium">· Done</span>' : ''}
+                    </div>
+                  </div>
+                  ${isBm ? '<span class="text-[#7B1E2B] shrink-0 mt-0.5">★</span>' : ''}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        ` : '';
+
+        return `
+          <div class="bg-white border border-[#E8E0D5] rounded-xl overflow-hidden shadow-sm">
+            <div class="flex items-center justify-between gap-2 px-3 py-2.5 ${isExpanded ? 'bg-[#FAF7F2]/70' : ''}">
+              <button type="button" data-toggle-unit="${unit.unitNo}" class="flex-1 text-left min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-[#7B1E2B]">Unit ${unit.unitNo}</span>
+                  <span class="text-[11px] text-[#5F554E]">· ${filteredTopics.length} topics${unitOfflineCount ? ` (${unitOfflineCount} offline)` : ''}</span>
+                </div>
+                <div class="text-xs font-semibold text-[#1F1B18] leading-snug mt-0.5 line-clamp-2">${escapeHtml(unit.title)}</div>
+              </button>
+              <button type="button" data-play-unit="${unit.unitNo}" title="Listen to Unit ${unit.unitNo} Playlist" class="p-1.5 rounded-lg bg-[#FBF1F2] hover:bg-[#7B1E2B] text-[#7B1E2B] hover:text-white transition-colors shrink-0">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            ${topicsHtml}
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = html || `<div class="bg-white border border-[#E8E0D5] rounded-xl p-4 text-xs text-[#5F554E] text-center">No topics match your current filter.</div>`;
+      lucide.createIcons();
+      if (state.autoSyncOnLaunch && state.syncFeedUrl && window.__runAutoSync) {
+        window.__runAutoSync(true);
+      }
+    }
+
+    function renderReadingPane() {
+      const pane = document.getElementById('readingPane');
+      const meta = findTopicMeta(state.activeTopicId);
+      if (!meta) {
+        pane.innerHTML = `<div class="bg-white border border-[#E8E0D5] rounded-2xl p-8 text-center text-[#5F554E]">Select a topic from the sidebar to begin studying.</div>`;
+        return;
+      }
+
+      const { subject, unit, topic } = meta;
+      const noteRec = state.notes[topic.id];
+      const langData = noteRec ? noteRec[state.lang] : null;
+      const fallbackEn = noteRec ? noteRec.en : null;
+      const activeData = langData || fallbackEn;
+      const isBm = state.bookmarks.includes(topic.id);
+      const isDone = state.completed.includes(topic.id);
+
+      // Section filter chips for TTS
+      const sectionChips = SECTION_DEFS.map(sec => {
+        const on = state.enabledSections[sec.key];
+        return `
+          <button type="button" data-toggle-section="${sec.key}" class="px-2.5 py-1 rounded-full text-xs font-medium border transition-colors ${on ? 'bg-[#7B1E2B] text-white border-[#7B1E2B]' : 'bg-white text-[#5F554E] border-[#E8E0D5] hover:border-[#7B1E2B]'}">
+            ${on ? '✓ ' : ''}${sec.label}
+          </button>
+        `;
+      }).join('');
+
+      let bodyHtml = '';
+
+      if (activeData) {
+        const langNotice = (state.lang === 'te' && !langData) ? `
+          <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-xs text-amber-900 flex items-center justify-between gap-2">
+            <span>Telugu (TE) translation for this topic is not yet in your local database. Showing English (EN) version — run the companion scraper to import all Telugu pages.</span>
+          </div>
+        ` : '';
+
+        const legalList = Array.isArray(activeData.legalProvision)
+          ? activeData.legalProvision.map(line => `<p class="leading-relaxed">${escapeHtml(line)}</p>`).join('')
+          : `<p class="leading-relaxed whitespace-pre-line">${escapeHtml(activeData.legalProvision || '')}</p>`;
+
+        const keyPointsHtml = (activeData.keyPoints || []).map(pt =>
+          `<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-[#7B1E2B] mt-2 shrink-0"></span><span>${escapeHtml(pt)}</span></li>`
+        ).join('');
+
+        const casesHtml = (activeData.caseLaws || []).map(c => `
+          <div class="bg-[#FAF7F2] border border-[#E8E0D5] rounded-xl p-4 space-y-2">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h4 class="font-editorial font-bold text-[#7B1E2B] text-base">${escapeHtml(c.name)}</h4>
+              ${c.citation ? `<span class="text-xs font-medium text-[#5F554E] bg-white px-2 py-0.5 rounded border border-[#E8E0D5]">${escapeHtml(c.citation)}</span>` : ''}
+            </div>
+            <p class="text-sm text-[#1F1B18] leading-relaxed"><strong class="text-[#5F554E]">Facts:</strong> ${escapeHtml(c.facts)}</p>
+            <p class="text-sm text-[#1F1B18] leading-relaxed"><strong class="text-[#5F554E]">Principle:</strong> ${escapeHtml(c.principle)}</p>
+            ${c.whyItMatters ? `<p class="text-xs text-[#7B1E2B] font-medium pt-1 border-t border-[#E8E0D5]">Why it matters: ${escapeHtml(c.whyItMatters)}</p>` : ''}
+          </div>
+        `).join('');
+
+        const selfTestHtml = (activeData.selfTest || []).map((qa, i) => {
+          const ansKey = `${topic.id}_${i}`;
+          const shown = Boolean(state.revealedAnswers[ansKey]);
+          return `
+            <div class="border border-[#E8E0D5] rounded-xl p-3.5 bg-[#FAF7F2]/60">
+              <div class="flex items-start justify-between gap-3">
+                <div class="text-sm font-semibold text-[#1F1B18]">${i + 1}. ${escapeHtml(qa.q)}</div>
+                <button type="button" data-toggle-answer="${ansKey}" class="text-xs font-semibold text-[#7B1E2B] hover:underline shrink-0">
+                  ${shown ? 'Hide' : 'Show Answer'}
+                </button>
+              </div>
+              ${shown ? `<div class="mt-2 pt-2 border-t border-[#E8E0D5] text-sm text-emerald-900 bg-emerald-50/70 rounded-lg px-3 py-2">${escapeHtml(qa.a)}</div>` : ''}
+            </div>
+          `;
+        }).join('');
+
+        bodyHtml = `
+          ${langNotice}
+
+          ${activeData.inOneMinute ? `
+          <section data-section-card="inOneMinute" class="bg-[#FBF1F2] border-l-4 border-[#7B1E2B] rounded-r-2xl p-5 shadow-sm">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <h2 class="font-editorial text-lg font-bold text-[#7B1E2B]">In One Minute</h2>
+              <button type="button" data-play-single-section="inOneMinute" class="text-xs font-semibold text-[#7B1E2B] bg-white px-2.5 py-1 rounded-full border border-[#E8D5D8] hover:bg-[#7B1E2B] hover:text-white transition-colors flex items-center gap-1">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Listen
+              </button>
+            </div>
+            <p class="text-sm sm:text-[15px] leading-relaxed text-[#1F1B18]">${escapeHtml(activeData.inOneMinute)}</p>
+          </section>` : ''}
+
+          ${(activeData.legalProvision && activeData.legalProvision.length) ? `
+          <section data-section-card="legalProvision" class="bg-white border border-[#E8E0D5] rounded-2xl p-5 shadow-sm">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <h2 class="font-editorial text-lg font-bold text-[#1F1B18]">Legal Provision</h2>
+              <button type="button" data-play-single-section="legalProvision" class="text-xs font-semibold text-[#7B1E2B] bg-[#FBF1F2] px-2.5 py-1 rounded-full hover:bg-[#7B1E2B] hover:text-white transition-colors flex items-center gap-1">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Listen
+              </button>
+            </div>
+            <div class="border-l-2 border-[#7B1E2B] pl-4 space-y-2.5 text-sm text-[#1F1B18]">
+              ${legalList}
+            </div>
+          </section>` : ''}
+
+          ${activeData.meaning ? `
+          <section data-section-card="meaning" class="bg-white border border-[#E8E0D5] rounded-2xl p-5 shadow-sm">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <h2 class="font-editorial text-lg font-bold text-[#1F1B18]">Meaning and Definition</h2>
+              <button type="button" data-play-single-section="meaning" class="text-xs font-semibold text-[#7B1E2B] bg-[#FBF1F2] px-2.5 py-1 rounded-full hover:bg-[#7B1E2B] hover:text-white transition-colors flex items-center gap-1">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Listen
+              </button>
+            </div>
+            <p class="text-sm sm:text-[15px] leading-relaxed text-[#1F1B18] whitespace-pre-line">${escapeHtml(activeData.meaning)}</p>
+          </section>` : ''}
+
+          ${keyPointsHtml ? `
+          <section data-section-card="keyPoints" class="bg-white border border-[#E8E0D5] rounded-2xl p-5 shadow-sm">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <h2 class="font-editorial text-lg font-bold text-[#1F1B18]">Key Points to Remember</h2>
+              <button type="button" data-play-single-section="keyPoints" class="text-xs font-semibold text-[#7B1E2B] bg-[#FBF1F2] px-2.5 py-1 rounded-full hover:bg-[#7B1E2B] hover:text-white transition-colors flex items-center gap-1">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Listen
+              </button>
+            </div>
+            <ul class="space-y-2 text-sm text-[#1F1B18]">${keyPointsHtml}</ul>
+          </section>` : ''}
+
+          ${casesHtml ? `
+          <section data-section-card="caseLaws" class="bg-white border border-[#E8E0D5] rounded-2xl p-5 shadow-sm">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <h2 class="font-editorial text-lg font-bold text-[#1F1B18]">Leading Case Laws (${activeData.caseLaws.length})</h2>
+              <button type="button" data-play-single-section="caseLaws" class="text-xs font-semibold text-[#7B1E2B] bg-[#FBF1F2] px-2.5 py-1 rounded-full hover:bg-[#7B1E2B] hover:text-white transition-colors flex items-center gap-1">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Listen
+              </button>
+            </div>
+            <div class="grid grid-cols-1 gap-3">${casesHtml}</div>
+          </section>` : ''}
+
+          ${selfTestHtml ? `
+          <section data-section-card="selfTest" class="bg-white border border-[#E8E0D5] rounded-2xl p-5 shadow-sm">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <h2 class="font-editorial text-lg font-bold text-[#1F1B18]">Quick Self-Test</h2>
+              <div class="flex items-center gap-2">
+                <button type="button" id="revealAllBtn" class="text-xs font-semibold text-[#5F554E] hover:text-[#7B1E2B]">Toggle All Answers</button>
+                <button type="button" data-play-single-section="selfTest" class="text-xs font-semibold text-[#7B1E2B] bg-[#FBF1F2] px-2.5 py-1 rounded-full hover:bg-[#7B1E2B] hover:text-white transition-colors flex items-center gap-1">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Listen
+                </button>
+              </div>
+            </div>
+            <div class="space-y-2.5">${selfTestHtml}</div>
+          </section>` : ''}
+        `;
+      } else {
+        bodyHtml = `
+          <div class="bg-white border border-[#E8E0D5] rounded-2xl p-6 sm:p-8 text-center space-y-4 shadow-sm">
+            <div class="w-12 h-12 rounded-full bg-[#FBF1F2] text-[#7B1E2B] flex items-center justify-center mx-auto">
+              <i data-lucide="cloud-download" class="w-6 h-6"></i>
+            </div>
+            <div class="max-w-md mx-auto space-y-1.5">
+              <h3 class="font-editorial text-lg font-bold text-[#1F1B18]">Topic Indexed — Full Note Ready to Sync</h3>
+              <p class="text-sm text-[#5F554E]">
+                This syllabus topic is indexed from <strong>nyayasaral.com</strong>. Import your scraped <code class="bg-[#FAF7F2] px-1.5 py-0.5 rounded border border-[#E8E0D5]">nyayasaral_db.json</code> to load all 325+ verbatim notes offline, or paste this topic's note directly into your local database.
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2">
+              <button type="button" id="openImportFromEmptyBtn" class="px-4 py-2 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+                <i data-lucide="database" class="w-4 h-4"></i> Import Full DB (JSON)
+              </button>
+              <button type="button" id="openEditFromEmptyBtn" class="px-4 py-2 rounded-lg border border-[#E8E0D5] bg-[#FAF7F2] hover:bg-white text-[#1F1B18] text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+                <i data-lucide="edit-3" class="w-4 h-4 text-[#7B1E2B]"></i> Paste / Add Note Locally
+              </button>
+              <a href="${escapeHtml(topic.url)}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-[#7B1E2B] text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+                Open on NyayaSaral <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        `;
+      }
+
+      pane.innerHTML = `
+        <!-- Breadcrumb & Hero Header -->
+        <div class="bg-white border border-[#E8E0D5] rounded-2xl p-5 sm:p-6 shadow-sm space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-[#5F554E]">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span>3-Year LL.B.</span><span>›</span>
+              <span>${escapeHtml(subject.semester)}</span><span>›</span>
+              <span class="font-medium text-[#1F1B18]">${escapeHtml(subject.title)}</span><span>›</span>
+              <span class="text-[#7B1E2B] font-semibold">Unit ${unit.unitNo}</span>
+            </div>
+            <a href="${escapeHtml(topic.url)}" target="_blank" rel="noopener noreferrer" class="text-[#7B1E2B] hover:underline flex items-center gap-1 font-medium">
+              Source on NyayaSaral <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+
+          <div>
+            <div class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#7B1E2B] bg-[#FBF1F2] px-2.5 py-1 rounded-full mb-2">
+              Unit ${unit.unitNo} · Topic ${topic.topicNo}
+            </div>
+            <h1 class="font-editorial text-2xl sm:text-3xl font-bold text-[#1F1B18] leading-tight">${escapeHtml(topic.title)}</h1>
+            ${noteRec && noteRec.subtitle ? `<p class="text-sm text-[#5F554E] mt-1.5">${escapeHtml(noteRec.subtitle)}</p>` : ''}
+            <div class="text-xs text-[#5F554E] mt-2 flex flex-wrap items-center gap-3">
+              <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> ${escapeHtml(noteRec && noteRec.readTime ? noteRec.readTime : topic.readTime)}</span>
+              <span>·</span>
+              <span>${escapeHtml(unit.title)}</span>
+            </div>
+          </div>
+
+          <!-- Primary Action Toolbar -->
+          <div class="flex flex-wrap items-center gap-2 pt-3 border-t border-[#F0EAE2]">
+            <button type="button" id="listenTopicBtn" class="px-3.5 py-2 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs sm:text-sm font-semibold flex items-center gap-1.5 shadow-sm transition-colors">
+              <i data-lucide="headphones" class="w-4 h-4"></i> Listen to Topic
+            </button>
+            <button type="button" id="listenUnitBtn" class="px-3.5 py-2 rounded-lg bg-[#FBF1F2] hover:bg-[#7B1E2B] text-[#7B1E2B] hover:text-white border border-[#E8D5D8] text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition-colors">
+              <i data-lucide="list-music" class="w-4 h-4"></i> Listen to Unit ${unit.unitNo}
+            </button>
+            <button type="button" id="toggleBookmarkBtn" class="px-3 py-2 rounded-lg border text-xs font-semibold flex items-center gap-1.5 transition-colors ${isBm ? 'bg-amber-50 border-amber-300 text-amber-800' : 'bg-white border-[#E8E0D5] text-[#5F554E] hover:text-[#7B1E2B]'}">
+              <i data-lucide="bookmark" class="w-3.5 h-3.5"></i> ${isBm ? 'Bookmarked' : 'Bookmark'}
+            </button>
+            <button type="button" id="toggleCompleteBtn" class="px-3 py-2 rounded-lg border text-xs font-semibold flex items-center gap-1.5 transition-colors ${isDone ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-white border-[#E8E0D5] text-[#5F554E] hover:text-emerald-700'}">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> ${isDone ? 'Completed' : 'Mark Done'}
+            </button>
+            <button type="button" id="editTopicBtn" class="px-3 py-2 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18] flex items-center gap-1.5">
+              <i data-lucide="edit-3" class="w-3.5 h-3.5 text-[#7B1E2B]"></i> Edit Note
+            </button>
+            <button type="button" id="exportTopicMdBtn" class="px-3 py-2 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18] flex items-center gap-1.5">
+              <i data-lucide="download" class="w-3.5 h-3.5 text-[#7B1E2B]"></i> .md
+            </button>
+          </div>
+
+          <!-- Audio Section Selector -->
+          <div class="pt-2 flex flex-wrap items-center gap-1.5">
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-[#5F554E] mr-1">Read Aloud Sections:</span>
+            ${sectionChips}
+          </div>
+        </div>
+
+        ${bodyHtml}
+
+        <!-- Personal Study Margin Notes & Mnemonics (Saved Offline in Device IndexedDB) -->
+        <section class="bg-white border border-[#E8E0D5] rounded-2xl p-5 shadow-sm">
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <h2 class="font-editorial text-base font-bold text-[#1F1B18] flex items-center gap-2">
+              <i data-lucide="notebook-pen" class="w-4 h-4 text-[#7B1E2B]"></i>
+              My Exam Notes &amp; Memory Tricks
+            </h2>
+            <span id="personalNoteSavedBadge" class="text-[11px] text-emerald-700 font-medium">Saved on device</span>
+          </div>
+          <textarea id="personalMarginNoteInput" rows="3" placeholder="Jot down your own mnemonics, exam pointers, or case-law memory hooks for this topic..." class="w-full bg-[#FAF7F2] border border-[#E8E0D5] rounded-xl px-3.5 py-2.5 text-sm text-[#1F1B18] focus:outline-none focus:border-[#7B1E2B]">${escapeHtml(state.personalNotes[topic.id] || '')}</textarea>
+        </section>
+      `;
+
+      lucide.createIcons();
+      attachReadingPaneListeners(subject, unit, topic);
+      updateAudioUI();
+    }
+
+    function attachReadingPaneListeners(subject, unit, topic) {
+      document.getElementById('listenTopicBtn')?.addEventListener('click', () => startTopicAudio(topic.id));
+      document.getElementById('listenUnitBtn')?.addEventListener('click', () => startUnitAudio(subject.id, unit.unitNo, topic.id));
+      document.getElementById('toggleBookmarkBtn')?.addEventListener('click', async () => {
+        if (state.bookmarks.includes(topic.id)) {
+          state.bookmarks = state.bookmarks.filter(id => id !== topic.id);
+          showToast('Removed bookmark');
+        } else {
+          state.bookmarks.push(topic.id);
+          showToast('Bookmarked topic');
+        }
+        await persistAll();
+        renderSidebar();
+        renderReadingPane();
+      });
+      document.getElementById('toggleCompleteBtn')?.addEventListener('click', async () => {
+        if (state.completed.includes(topic.id)) {
+          state.completed = state.completed.filter(id => id !== topic.id);
+        } else {
+          state.completed.push(topic.id);
+          showToast('Marked topic as completed');
+        }
+        await persistAll();
+        renderSidebar();
+        renderReadingPane();
+      });
+      document.getElementById('editTopicBtn')?.addEventListener('click', () => openEditNoteModal(topic.id));
+      document.getElementById('openEditFromEmptyBtn')?.addEventListener('click', () => openEditNoteModal(topic.id));
+      document.getElementById('openImportFromEmptyBtn')?.addEventListener('click', openDbModal);
+      document.getElementById('exportTopicMdBtn')?.addEventListener('click', () => downloadTopicMarkdown(topic.id));
+
+      document.getElementById('revealAllBtn')?.addEventListener('click', () => {
+        const rec = state.notes[topic.id];
+        const d = rec && (rec[state.lang] || rec.en);
+        if (!d || !d.selfTest) return;
+        const anyHidden = d.selfTest.some((_, i) => !state.revealedAnswers[`${topic.id}_${i}`]);
+        d.selfTest.forEach((_, i) => {
+          state.revealedAnswers[`${topic.id}_${i}`] = anyHidden;
+        });
+        renderReadingPane();
+      });
+
+      document.querySelectorAll('[data-toggle-section]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-toggle-section');
+          state.enabledSections[key] = !state.enabledSections[key];
+          renderReadingPane();
+        });
+      });
+
+      document.querySelectorAll('[data-toggle-answer]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const k = btn.getAttribute('data-toggle-answer');
+          state.revealedAnswers[k] = !state.revealedAnswers[k];
+          renderReadingPane();
+        });
+      });
+
+      document.querySelectorAll('[data-play-single-section]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const secKey = btn.getAttribute('data-play-single-section');
+          const all = buildTopicQueueItems(topic.id);
+          const item = all.find(x => x.sectionKey === secKey);
+          if (!item) {
+            // Temporarily build even if chip was off
+            const prev = state.enabledSections[secKey];
+            state.enabledSections[secKey] = true;
+            const rebuilt = buildTopicQueueItems(topic.id).find(x => x.sectionKey === secKey);
+            state.enabledSections[secKey] = prev;
+            if (rebuilt) {
+              state.audio.mode = 'topic';
+              state.audio.queue = [rebuilt];
+              playQueueIndex(0);
+            }
+            return;
+          }
+          state.audio.mode = 'topic';
+          state.audio.queue = [item];
+          playQueueIndex(0, 0);
+        });
+      });
+
+      const marginInput = document.getElementById('personalMarginNoteInput');
+      if (marginInput) {
+        marginInput.addEventListener('input', () => {
+          const badge = document.getElementById('personalNoteSavedBadge');
+          if (badge) badge.textContent = 'Saving...';
+          clearTimeout(window.__marginSaveTimer);
+          window.__marginSaveTimer = setTimeout(async () => {
+            state.personalNotes[topic.id] = marginInput.value;
+            await persistAll();
+            if (badge) badge.textContent = 'Saved on device';
+          }, 400);
+        });
+      }
+    }
+
+    // =========================================================================
+    // 7. MODALS, IMPORT/EXPORT & MARKDOWN GENERATOR
+    // =========================================================================
+    function downloadTextFile(filename, content, mime = 'text/plain;charset=utf-8') {
+      const blob = new Blob([content], { type: mime });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function formatTopicToMarkdown(topicId) {
+      const meta = findTopicMeta(topicId);
+      if (!meta) return '';
+      const rec = state.notes[topicId];
+      const d = rec && (rec[state.lang] || rec.en);
+      let md = `# ${meta.topic.title}\n`;
+      md += `**Subject:** ${meta.subject.title} | **Unit ${meta.unit.unitNo}:** ${meta.unit.title}\n`;
+      if (rec && rec.subtitle) md += `**Provision:** ${rec.subtitle}\n`;
+      md += `**Source:** ${meta.topic.url}\n\n`;
+      if (!d) return md + `_Not yet synced offline._\n\n`;
+      if (d.inOneMinute) md += `## In One Minute\n${d.inOneMinute}\n\n`;
+      if (d.legalProvision && d.legalProvision.length) {
+        md += `## Legal Provision\n`;
+        const lines = Array.isArray(d.legalProvision) ? d.legalProvision : [d.legalProvision];
+        lines.forEach(l => { md += `- ${l}\n`; });
+        md += `\n`;
+      }
+      if (d.meaning) md += `## Meaning and Definition\n${d.meaning}\n\n`;
+      if (d.keyPoints && d.keyPoints.length) {
+        md += `## Key Points to Remember\n`;
+        d.keyPoints.forEach(p => { md += `- ${p}\n`; });
+        md += `\n`;
+      }
+      if (d.caseLaws && d.caseLaws.length) {
+        md += `## Leading Case Laws\n`;
+        d.caseLaws.forEach(c => {
+          md += `### ${c.name} ${c.citation ? `(${c.citation})` : ''}\n`;
+          md += `- **Facts:** ${c.facts}\n- **Principle:** ${c.principle}\n- **Why it matters:** ${c.whyItMatters || ''}\n\n`;
+        });
+      }
+      if (d.selfTest && d.selfTest.length) {
+        md += `## Quick Self-Test\n`;
+        d.selfTest.forEach((qa, i) => { md += `${i + 1}. **${qa.q}** — ${qa.a}\n`; });
+        md += `\n`;
+      }
+      return md;
+    }
+
+    function downloadTopicMarkdown(topicId) {
+      const meta = findTopicMeta(topicId);
+      if (!meta) return;
+      const md = formatTopicToMarkdown(topicId);
+      const slug = meta.topic.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 50);
+      downloadTextFile(`${slug}.md`, md, 'text/markdown;charset=utf-8');
+      showToast('Exported topic note as Markdown');
+    }
+
+    function openDbModal() {
+      const totalUnits = state.subjects.reduce((acc, s) => acc + s.units.length, 0);
+      const syncedTotal = Object.keys(state.notes).filter(id => hasFullNote(id)).length;
+      document.getElementById('dbStatSubjects').textContent = state.subjects.length;
+      document.getElementById('dbStatUnits').textContent = totalUnits;
+      document.getElementById('dbStatSynced').textContent = syncedTotal;
+      document.getElementById('dbStatBookmarks').textContent = state.bookmarks.length;
+      document.getElementById('dbEngineText').textContent = usingIndexedDB ? 'IndexedDB (LawStudyesLocalDB)' : 'Browser Local Storage / Memory';
+      document.getElementById('syncFeedUrlInput').value = state.syncFeedUrl || '';
+      document.getElementById('autoSyncToggle').checked = Boolean(state.autoSyncOnLaunch);
+      document.getElementById('lastSyncedText').textContent = state.lastSyncedAt ? ('Last synced: ' + new Date(state.lastSyncedAt).toLocaleString()) : 'Not synced yet';
+      state.resetPending = false;
+      document.getElementById('resetDbBtn').textContent = 'Reset to Defaults';
+      document.getElementById('dbModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function openEditNoteModal(topicId) {
+      const meta = findTopicMeta(topicId);
+      if (!meta) return;
+      const rec = state.notes[topicId] || {};
+      const d = rec[state.lang] || rec.en || {};
+      document.getElementById('editTopicId').value = topicId;
+      document.getElementById('editModalSub').textContent = `${meta.subject.title} · Unit ${meta.unit.unitNo} · ${meta.topic.title} (${state.lang.toUpperCase()})`;
+      document.getElementById('editSubtitle').value = rec.subtitle || '';
+      document.getElementById('editReadTime').value = rec.readTime || meta.topic.readTime || '';
+      document.getElementById('editInOneMinute').value = d.inOneMinute || '';
+      document.getElementById('editLegalProvision').value = Array.isArray(d.legalProvision) ? d.legalProvision.join('\n') : (d.legalProvision || '');
+      document.getElementById('editMeaning').value = d.meaning || '';
+      document.getElementById('editKeyPoints').value = Array.isArray(d.keyPoints) ? d.keyPoints.join('\n') : '';
+      document.getElementById('editNoteModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    // =========================================================================
+    // 8. EVENT WIRING & INITIALIZATION
+    // =========================================================================
+    function closeMobileSidebar() {
+      document.getElementById('sidebarDrawer').classList.add('-translate-x-full');
+      document.getElementById('sidebarBackdrop').classList.add('hidden');
+    }
+
+    function wireEvents() {
+      // Mobile Sidebar
+      document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        document.getElementById('sidebarDrawer').classList.remove('-translate-x-full');
+        document.getElementById('sidebarBackdrop').classList.remove('hidden');
+      });
+      document.getElementById('closeSidebarBtn').addEventListener('click', closeMobileSidebar);
+      document.getElementById('sidebarBackdrop').addEventListener('click', closeMobileSidebar);
+
+      // Brand reset
+      document.getElementById('brandResetBtn').addEventListener('click', () => {
+        state.searchQuery = '';
+        state.bookmarkFilter = false;
+        document.getElementById('searchInput').value = '';
+        document.getElementById('mobileSearchInput').value = '';
+        document.getElementById('clearSearchBtn').classList.add('hidden');
+        document.getElementById('bookmarkFilterBtn').classList.remove('bg-[#FBF1F2]', 'text-[#7B1E2B]', 'border-[#7B1E2B]');
+        renderSidebar();
+      });
+
+      // Subject Selection
+      function onSubjectChange(newId) {
+        state.activeSubjectId = newId;
+        const subj = getActiveSubject();
+        state.expandedUnitNo = subj.units[0] ? subj.units[0].unitNo : 1;
+        state.activeTopicId = subj.units[0] && subj.units[0].topics[0] ? subj.units[0].topics[0].id : '';
+        populateSubjectDropdowns();
+        renderSidebar();
+        renderReadingPane();
+      }
+      function syncSubjectSelection(newId) {
+        if (!newId) return;
+        const found = state.subjects.find(s => s.id === newId);
+        if (found) {
+          state.activeYear = inferSubjectYear(found);
+          state.activeSemester = found.semester;
+        }
+        onSubjectChange(newId);
+      }
+
+      document.getElementById('subjectSelect').addEventListener('change', e => syncSubjectSelection(e.target.value));
+      document.getElementById('mobileSubjectSelect').addEventListener('change', e => syncSubjectSelection(e.target.value));
+
+      // Cascading Year -> Semester -> Subject -> Unit listeners
+      document.getElementById('filterYearSelect').addEventListener('change', (e) => {
+        state.activeYear = e.target.value;
+        state.activeSemester = (YEAR_SEMESTERS[state.activeYear] || ['Semester I'])[0];
+        populateCascadeFilters();
+        const match = state.subjects.find(s => inferSubjectYear(s) === state.activeYear && s.semester === state.activeSemester);
+        if (match) {
+          onSubjectChange(match.id);
+        } else {
+          showToast(`${state.activeYear} · ${state.activeSemester} has no synced subjects yet. Run Auto-Sync when published.`);
+        }
+      });
+
+      document.getElementById('filterSemesterSelect').addEventListener('change', (e) => {
+        state.activeSemester = e.target.value;
+        populateCascadeFilters();
+        const match = state.subjects.find(s => inferSubjectYear(s) === state.activeYear && s.semester === state.activeSemester);
+        if (match) {
+          onSubjectChange(match.id);
+        } else {
+          showToast(`${state.activeSemester} has no synced subjects yet. Run Auto-Sync when published.`);
+        }
+      });
+
+      document.getElementById('filterSubjectSelect').addEventListener('change', (e) => {
+        if (e.target.value) syncSubjectSelection(e.target.value);
+      });
+
+      document.getElementById('filterUnitSelect').addEventListener('change', (e) => {
+        const uNo = Number(e.target.value);
+        state.expandedUnitNo = uNo;
+        const subj = getActiveSubject();
+        const u = subj && subj.units.find(x => x.unitNo === uNo);
+        if (u && u.topics && u.topics[0]) {
+          state.activeTopicId = u.topics[0].id;
+        }
+        renderSidebar();
+        renderReadingPane();
+      });
+
+      document.getElementById('filterListenSubUnitBtn').addEventListener('click', () => {
+        startTopicAudio(state.activeTopicId);
+      });
+      document.getElementById('filterListenWholeUnitBtn').addEventListener('click', () => {
+        startUnitAudio(state.activeSubjectId, state.expandedUnitNo);
+      });
+
+      // Search
+      function onSearch(val) {
+        state.searchQuery = val;
+        document.getElementById('searchInput').value = val;
+        document.getElementById('mobileSearchInput').value = val;
+        document.getElementById('clearSearchBtn').classList.toggle('hidden', !val);
+        renderSidebar();
+      }
+      document.getElementById('searchInput').addEventListener('input', e => onSearch(e.target.value));
+      document.getElementById('mobileSearchInput').addEventListener('input', e => onSearch(e.target.value));
+      document.getElementById('clearSearchBtn').addEventListener('click', () => onSearch(''));
+
+      // Language Toggle
+      function setLang(l) {
+        state.lang = l;
+        document.getElementById('langEnBtn').className = l === 'en'
+          ? 'px-2.5 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white'
+          : 'px-2.5 py-1 rounded-full transition-colors text-[#5F554E] hover:text-[#7B1E2B]';
+        document.getElementById('langTeBtn').className = l === 'te'
+          ? 'px-2.5 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white'
+          : 'px-2.5 py-1 rounded-full transition-colors text-[#5F554E] hover:text-[#7B1E2B]';
+        loadVoices();
+        renderReadingPane();
+      }
+      document.getElementById('langEnBtn').addEventListener('click', () => setLang('en'));
+      document.getElementById('langTeBtn').addEventListener('click', () => setLang('te'));
+
+      // Bookmark Filter
+      document.getElementById('bookmarkFilterBtn').addEventListener('click', () => {
+        state.bookmarkFilter = !state.bookmarkFilter;
+        document.getElementById('bookmarkFilterBtn').classList.toggle('bg-[#FBF1F2]', state.bookmarkFilter);
+        document.getElementById('bookmarkFilterBtn').classList.toggle('text-[#7B1E2B]', state.bookmarkFilter);
+        document.getElementById('bookmarkFilterBtn').classList.toggle('border-[#7B1E2B]', state.bookmarkFilter);
+        renderSidebar();
+      });
+
+      // Play Current Expanded Unit Button
+      document.getElementById('playCurrentSubjectBtn').addEventListener('click', () => {
+        startUnitAudio(state.activeSubjectId, state.expandedUnitNo);
+      });
+
+      // Delegated clicks inside Units Sidebar
+      document.getElementById('unitsContainer').addEventListener('click', (e) => {
+        const playBtn = e.target.closest('[data-play-unit]');
+        if (playBtn) {
+          const uNo = Number(playBtn.getAttribute('data-play-unit'));
+          startUnitAudio(state.activeSubjectId, uNo);
+          return;
+        }
+        const unitBtn = e.target.closest('[data-toggle-unit]');
+        if (unitBtn) {
+          const uNo = Number(unitBtn.getAttribute('data-toggle-unit'));
+          state.expandedUnitNo = state.expandedUnitNo === uNo ? -1 : uNo;
+          renderSidebar();
+          return;
+        }
+        const topicBtn = e.target.closest('[data-select-topic]');
+        if (topicBtn) {
+          state.activeTopicId = topicBtn.getAttribute('data-select-topic');
+          renderSidebar();
+          renderReadingPane();
+          closeMobileSidebar();
+        }
+      });
+
+      // Audio Bar Controls
+      document.getElementById('audioPlayPauseBtn').addEventListener('click', togglePlayPause);
+      document.getElementById('teachingModeBtn').addEventListener('click', () => {
+        state.audio.teachingMode = !state.audio.teachingMode;
+        const btn = document.getElementById('teachingModeBtn');
+        btn.className = state.audio.teachingMode
+          ? 'px-2.5 py-1.5 rounded-lg border text-xs font-semibold bg-[#FBF1F2] border-[#7B1E2B] text-[#7B1E2B] transition-colors flex items-center gap-1'
+          : 'px-2.5 py-1.5 rounded-lg border text-xs font-semibold bg-[#FAF7F2] border-[#E8E0D5] text-[#5F554E] transition-colors flex items-center gap-1';
+        showToast(state.audio.teachingMode ? 'Professor Teaching Mode ON (natural pauses & viva prompts)' : 'Direct Read Mode ON');
+      });
+      document.getElementById('repeatTopicBtn').addEventListener('click', () => {
+        state.audio.repeatTopic = !state.audio.repeatTopic;
+        const btn = document.getElementById('repeatTopicBtn');
+        btn.className = state.audio.repeatTopic
+          ? 'p-1.5 rounded-lg border border-[#7B1E2B] bg-[#FBF1F2] text-[#7B1E2B] transition-colors'
+          : 'p-1.5 rounded-lg border border-[#E8E0D5] bg-[#FAF7F2] text-[#5F554E] hover:text-[#7B1E2B] transition-colors';
+        showToast(state.audio.repeatTopic ? 'Looping current topic ON' : 'Looping OFF');
+      });
+      document.getElementById('sleepTimerSelect').addEventListener('change', (e) => {
+        clearTimeout(state.audio.sleepTimerHandle);
+        const mins = Number(e.target.value);
+        if (mins > 0) {
+          state.audio.sleepTimerHandle = setTimeout(() => {
+            stopAudio();
+            document.getElementById('sleepTimerSelect').value = '0';
+            showToast('Sleep timer ended — audio stopped');
+          }, mins * 60 * 1000);
+          showToast(`Sleep timer set for ${mins} minutes`);
+        } else {
+          showToast('Sleep timer turned off');
+        }
+      });
+      document.getElementById('audioStopBtn').addEventListener('click', stopAudio);
+      document.getElementById('audioPrevBtn').addEventListener('click', () => {
+        if (state.audio.index > 0) playQueueIndex(state.audio.index - 1);
+      });
+      document.getElementById('audioNextBtn').addEventListener('click', () => {
+        if (state.audio.index < state.audio.queue.length - 1) playQueueIndex(state.audio.index + 1);
+      });
+      document.getElementById('audioSpeedSelect').addEventListener('change', (e) => {
+        state.audio.speed = parseFloat(e.target.value) || 1.0;
+        if (state.audio.isPlaying && !state.audio.isPaused) {
+          playQueueIndex(state.audio.index);
+        }
+      });
+      document.getElementById('audioVoiceSelect').addEventListener('change', (e) => {
+        state.audio.voiceURI = e.target.value;
+        if (state.audio.isPlaying && !state.audio.isPaused) {
+          playQueueIndex(state.audio.index);
+        }
+      });
+
+      // Auto-Sync Engine
+      async function runRemoteSync(silent = false) {
+        const url = (state.syncFeedUrl || '').trim();
+        if (!url) {
+          if (!silent) {
+            openDbModal();
+            showToast('Enter your HTTPS Sync Feed URL in DB & Sync to enable automatic updates.');
+          }
+          return;
+        }
+        if (!/^https:\/\//i.test(url)) {
+          if (!silent) showToast('Sync Feed URL must start with https://');
+          return;
+        }
+        if (!silent) showToast('Checking for new semesters & notes...');
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const parsed = await res.json();
+          const prevCount = Object.keys(state.notes).length;
+          if (Array.isArray(parsed.subjects) && parsed.subjects.length) {
+            state.subjects = parsed.subjects;
+          }
+          if (parsed.notes && typeof parsed.notes === 'object') {
+            state.notes = { ...state.notes, ...parsed.notes };
+          }
+          state.lastSyncedAt = new Date().toISOString();
+          await persistAll();
+          populateSubjectDropdowns();
+          renderSidebar();
+          renderReadingPane();
+          const added = Math.max(0, Object.keys(state.notes).length - prevCount);
+          const lastEl = document.getElementById('lastSyncedText');
+          if (lastEl) lastEl.textContent = 'Last synced: ' + new Date(state.lastSyncedAt).toLocaleString();
+          showToast(added > 0 ? `Synced ${added} new notes (${Object.keys(state.notes).length} total offline)` : `Up to date (${Object.keys(state.notes).length} notes offline)`);
+        } catch (err) {
+          if (!silent) showToast('Could not reach Sync Feed URL. Check URL or internet connection.');
+        }
+      }
+
+      document.getElementById('quickSyncBtn').addEventListener('click', () => runRemoteSync(false));
+      document.getElementById('runSyncNowBtn').addEventListener('click', async () => {
+        state.syncFeedUrl = document.getElementById('syncFeedUrlInput').value.trim();
+        state.autoSyncOnLaunch = document.getElementById('autoSyncToggle').checked;
+        await persistAll();
+        await runRemoteSync(false);
+      });
+      document.getElementById('autoSyncToggle').addEventListener('change', async (e) => {
+        state.syncFeedUrl = document.getElementById('syncFeedUrlInput').value.trim();
+        state.autoSyncOnLaunch = e.target.checked;
+        await persistAll();
+        showToast(state.autoSyncOnLaunch ? 'Auto-sync on launch enabled' : 'Auto-sync on launch disabled');
+      });
+      window.__runAutoSync = runRemoteSync;
+
+      // DB Modal
+      document.getElementById('dbModalBtn').addEventListener('click', openDbModal);
+      document.getElementById('closeDbModalBtn').addEventListener('click', () => document.getElementById('dbModal').classList.add('hidden'));
+
+      document.getElementById('importJsonInput').addEventListener('change', async (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        try {
+          const text = await file.text();
+          const parsed = JSON.parse(text);
+          if (Array.isArray(parsed.subjects) && parsed.subjects.length) {
+            state.subjects = parsed.subjects;
+          }
+          if (parsed.notes && typeof parsed.notes === 'object') {
+            state.notes = { ...state.notes, ...parsed.notes };
+          }
+          await persistAll();
+          populateSubjectDropdowns();
+          const subj = getActiveSubject();
+          if (subj.units[0] && subj.units[0].topics[0]) {
+            state.expandedUnitNo = subj.units[0].unitNo;
+            state.activeTopicId = subj.units[0].topics[0].id;
+          }
+          renderSidebar();
+          renderReadingPane();
+          document.getElementById('dbModal').classList.add('hidden');
+          showToast(`Imported ${Object.keys(parsed.notes || {}).length} notes into local IndexedDB`);
+        } catch (err) {
+          showToast('Invalid JSON file. Expected nyayasaral_db.json format.');
+        } finally {
+          e.target.value = '';
+        }
+      });
+
+      document.getElementById('exportJsonBtn').addEventListener('click', () => {
+        const payload = {
+          exportedAt: new Date().toISOString(),
+          source: 'https://nyayasaral.com/3-year-llb/',
+          subjects: state.subjects,
+          notes: state.notes
+        };
+        downloadTextFile('nyayasaral_local_db.json', JSON.stringify(payload, null, 2), 'application/json');
+        showToast('Exported local database (.json)');
+      });
+
+      document.getElementById('exportSubjectMdBtn').addEventListener('click', () => {
+        const subj = getActiveSubject();
+        let md = `# ${subj.title} (${subj.semester})\nSource: ${subj.url}\n\n`;
+        subj.units.forEach(u => {
+          md += `---\n# Unit ${u.unitNo}: ${u.title}\n\n`;
+          u.topics.forEach(t => {
+            md += formatTopicToMarkdown(t.id);
+          });
+        });
+        downloadTextFile(`${subj.id}-notes.md`, md, 'text/markdown;charset=utf-8');
+        showToast(`Exported ${subj.title} notes (.md)`);
+      });
+
+      document.getElementById('resetDbBtn').addEventListener('click', async () => {
+        if (!state.resetPending) {
+          state.resetPending = true;
+          document.getElementById('resetDbBtn').textContent = 'Click again to confirm reset';
+          return;
+        }
+        state.subjects = JSON.parse(JSON.stringify(SEED_SUBJECTS));
+        state.notes = JSON.parse(JSON.stringify(SEED_NOTES));
+        state.bookmarks = [];
+        state.completed = [];
+        await persistAll();
+        state.activeSubjectId = 'law-of-contract-i';
+        state.expandedUnitNo = 1;
+        state.activeTopicId = 'loc1-u1-t1';
+        populateSubjectDropdowns();
+        renderSidebar();
+        renderReadingPane();
+        document.getElementById('dbModal').classList.add('hidden');
+        showToast('Local database reset to defaults');
+      });
+
+      // Edit Note Modal
+      document.getElementById('closeEditModalBtn').addEventListener('click', () => document.getElementById('editNoteModal').classList.add('hidden'));
+      document.getElementById('cancelEditBtn').addEventListener('click', () => document.getElementById('editNoteModal').classList.add('hidden'));
+      document.getElementById('editNoteForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const topicId = document.getElementById('editTopicId').value;
+        const meta = findTopicMeta(topicId);
+        if (!meta) return;
+        const existing = state.notes[topicId] || { id: topicId, url: meta.topic.url };
+        existing.subtitle = document.getElementById('editSubtitle').value.trim();
+        existing.readTime = document.getElementById('editReadTime').value.trim() || meta.topic.readTime;
+        const lpLines = document.getElementById('editLegalProvision').value.split('\n').map(s => s.trim()).filter(Boolean);
+        const kpLines = document.getElementById('editKeyPoints').value.split('\n').map(s => s.trim()).filter(Boolean);
+        const existingLang = existing[state.lang] || {};
+        existing[state.lang] = {
+          ...existingLang,
+          inOneMinute: document.getElementById('editInOneMinute').value.trim(),
+          legalProvision: lpLines,
+          meaning: document.getElementById('editMeaning').value.trim(),
+          keyPoints: kpLines
+        };
+        state.notes[topicId] = existing;
+        await persistAll();
+        document.getElementById('editNoteModal').classList.add('hidden');
+        renderSidebar();
+        renderReadingPane();
+        showToast('Note saved to local IndexedDB');
+      });
+    }
+
+    async function init() {
+      await openLocalDB();
+      document.getElementById('dbStatusPill').innerHTML = usingIndexedDB
+        ? '<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> IndexedDB'
+        : '<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Local Mode';
+
+
+      // Auto-load bundled nyayasaral_db.json when packaged inside Capacitor APK / local server
+      try {
+        const res = await fetch('./nyayasaral_db.json');
+        if (res.ok) {
+          const bundled = await res.json();
+          if (Array.isArray(bundled.subjects) && bundled.subjects.length) state.subjects = bundled.subjects;
+          if (bundled.notes && typeof bundled.notes === 'object') state.notes = { ...state.notes, ...bundled.notes };
+        }
+      } catch (e) {}
+
+      const savedSubjects = await dbGet('subjects');
+      const savedNotes = await dbGet('notes');
+      const savedBookmarks = await dbGet('bookmarks');
+      const savedCompleted = await dbGet('completed');
+
+      if (Array.isArray(savedSubjects) && savedSubjects.length) state.subjects = savedSubjects;
+      if (savedNotes && typeof savedNotes === 'object') state.notes = { ...SEED_NOTES, ...savedNotes };
+      if (Array.isArray(savedBookmarks)) state.bookmarks = savedBookmarks;
+      if (Array.isArray(savedCompleted)) state.completed = savedCompleted;
+      const savedPersonal = await dbGet('personalNotes');
+      if (savedPersonal && typeof savedPersonal === 'object') state.personalNotes = savedPersonal;
+      const savedSync = await dbGet('syncConfig');
+      if (savedSync && typeof savedSync === 'object') {
+        state.syncFeedUrl = savedSync.url || '';
+        state.autoSyncOnLaunch = Boolean(savedSync.auto);
+        state.lastSyncedAt = savedSync.lastSyncedAt || '';
+      }
+
+      await persistAll();
+      populateSubjectDropdowns();
+      wireEvents();
+      renderSidebar();
+      renderReadingPane();
+
+      if ('speechSynthesis' in window) {
+        loadVoices();
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+      }
+      lucide.createIcons();
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

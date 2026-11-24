@@ -1,0 +1,17 @@
+{
+  "name": "law-studyes-app",
+  "version": "1.1.0",
+  "description": "Law Studyes — Offline 3-Year LL.B. All-Years Notes & Indian Google Voice Audio Player (Android APK)",
+  "scripts": {
+    "sync": "npx cap sync android",
+    "open:android": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.0",
+    "@capacitor/core": "^6.1.0",
+    "@capacitor-community/text-to-speech": "^5.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.0"
+  }
+}
