@@ -3773,7 +3773,7 @@
         return;
       }
       var name = nameEl.value.trim();
-      var phone = phoneEl.value.replace(/\D/g, "");
+      var phone = phoneEl.value.replace(/\D/g, "").slice(-10);
       var col = cSel.value === "__OTHER__" ? cCus.value.trim() : cSel.value;
       var student = { phone: phone, name: name, state: sSel.value, university: uSel.value, college: col, year: ySel.value, semester: smSel.value, registeredAt: new Date().toISOString() };
       var all = {}; try { all = JSON.parse(localStorage.getItem(RK) || "{}"); } catch (x) {}
@@ -3782,7 +3782,7 @@
         localStorage.setItem(RK, JSON.stringify(all));
         localStorage.setItem(SK, JSON.stringify({ student: student, sig: await makeSig(student) }));
       } catch (x) {}
-      try { fetch(GS_API, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(student) }); } catch (x) {}
+      try { await fetch(GS_API, { method: "POST", redirect: "follow", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(student) }); } catch (x) {}
       document.getElementById("lawStudyesAuthOverlay").classList.add("hidden");
       if (typeof showToast === "function") showToast("Registered! Welcome, " + name);
     });
@@ -3790,7 +3790,7 @@
     login.addEventListener("submit", async function (e) {
       e.preventDefault();
       clearErr();
-      var phone = (login.querySelector("#loginPhoneInput").value || "").replace(/\D/g, "");
+      var phone = (login.querySelector("#loginPhoneInput").value || "").replace(/\D/g, "").slice(-10);
       if (phone.length !== 10) { showErr("Enter your registered 10-digit mobile number."); return; }
       var all = {}; try { all = JSON.parse(localStorage.getItem(RK) || "{}"); } catch (x) {}
       var student = all[phone];
