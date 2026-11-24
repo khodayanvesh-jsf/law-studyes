@@ -265,10 +265,10 @@
           <option value="0.9">0.9x</option>
           <option value="1">1.0x</option>
           <option value="1.15">1.15x</option>
-          <option value="1.25">1.25x</option>
+          <option value="1.25" selected>1.25x</option>
           <option value="1.5">1.5x</option>
           <option value="1.75">1.75x</option>
-          <option value="2" selected>2.0x</option>
+          <option value="2">2.0x</option>
         </select>
         <select id="audioVoiceSelect" aria-label="Voice Selection" class="hidden md:block bg-[#FAF7F2] border border-[#E8E0D5] rounded-lg px-2 py-1.5 text-xs text-[#1F1B18] max-w-[185px] truncate">
           <option value="">Google Indian Voice (en-IN)</option>
@@ -897,7 +897,7 @@
         chunkIndex: 0,
         isPlaying: false,
         isPaused: false,
-        speed: 2.0,
+        speed: 1.25,
         voiceURI: '',
         voices: []
       }
@@ -2578,7 +2578,7 @@
           const parsed = JSON.parse(raw);
           if (parsed && parsed.student && parsed.sig) {
             const expected = await signPayload(parsed.student);
-            if (expected === parsed.sig) {
+            if (expected === parsed.sig && parsed.student.phone && parsed.student.name && parsed.student.state && parsed.student.university && parsed.student.college) {
               document.getElementById('lawStudyesAuthOverlay')?.classList.add('hidden');
               return;
             }
