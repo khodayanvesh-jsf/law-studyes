@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-Law Studyes Fast Parallel Scraper v2.6
+Law Studyes Fast Parallel Scraper v2.6.1
 Preserves ALL verbatim SVG diagrams, comparison tables, and inline images (offline base64)
-alongside clean structured sections for Professor Audio TTS — zero text altered.
+alongside clean structured EN & TE sections - zero legal text altered.
 """
 import base64
 import json
 import re
-import sqlite3
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,12 +20,17 @@ DISCOVERY_PAGES = [
     "https://nyayasaral.com/3-year-llb/",
     "https://nyayasaral.com/syllabus/",
 ]
-HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) LawStudyesFastSync/2.6"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) LawStudyesFastSync/2.6.1"}
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
+ADAPTER = requests.adapters.HTTPAdapter(pool_connections=16, pool_maxsize=16, max_retries=2)
+SESSION.mount("https://", ADAPTER)
+SESSION.mount("http://", ADAPTER)
 
 
 def fetch_soup(url: str):
     try:
-        r = requests.get(url, headers=HEADERS, timeout=20)
+        r = SESSION.get(url, timeout=20)
         if r.status_code != 200:
             return None
         r.encoding = "utf-8"
@@ -44,9 +48,11 @@ def inline_img_to_data_uri(img_src: str, page_url: str) -> str:
         return img_src
     full = urljoin(page_url, img_src)
     try:
-        r = requests.get(full, headers=HEADERS, timeout=12)
-        if r.status_code == 200 and len(r.content) < 350_000:
+        r = SESSION.get(full, timeout=15)
+        if r.status_code == 200 and len(r.content) < 550_000:
             ctype = r.headers.get("Content-Type", "image/png").split(";")[0]
+            if not ctype.startswith("image/"):
+                ctype = "image/png"
             b64 = base64.b64encode(r.content).decode("ascii")
             return f"data:{ctype};base64,{b64}"
     except Exception:
@@ -57,25 +63,26 @@ def inline_img_to_data_uri(img_src: str, page_url: str) -> str:
 def extract_visuals(main, page_url: str) -> list:
     """Extract all verbatim SVG diagrams, figures, images, and comparison tables."""
     visuals = []
-    # 1. Inline SVG diagrams & figure wrappers
     seen_html = set()
+
+    # 1. Inline SVG diagrams, figure wrappers, and comparison tables
     for fig in main.find_all(["figure", "svg", "table"]):
-        # Skip nested svg/table if parent figure already captured
         if fig.name != "figure" and fig.find_parent("figure"):
             continue
         if fig.name == "svg":
-            # Skip tiny UI icons (width/height <= 28px)
-            w = str(fig.get("width", ""))
+            w = str(fig.get("width", "")).replace("px", "").strip()
             cls = " ".join(fig.get("class", []))
-            if w in ("14", "16", "18", "20", "24") or "icon" in cls.lower():
+            if w in ("12", "14", "16", "18", "20", "22", "24") or "icon" in cls.lower():
                 continue
             if len(str(fig)) < 250:
                 continue
-        # Inline any <img> inside figure
         for img in fig.find_all("img"):
-            if img.get("src"):
-                img["src"] = inline_img_to_data_uri(img["src"], page_url)
-        # Strip external links inside tables/figures so users never leave the app
+            raw_src = img.get("src") or img.get("data-src") or img.get("data-lazy-src") or ""
+            if raw_src:
+                img["src"] = inline_img_to_data_uri(raw_src, page_url)
+                for attr in ("srcset", "data-src", "data-lazy-src", "loading"):
+                    if attr in img.attrs:
+                        del img.attrs[attr]
         for a in fig.find_all("a"):
             a.unwrap()
         raw_html = str(fig)
@@ -87,15 +94,16 @@ def extract_visuals(main, page_url: str) -> list:
                 caption = clean_text(cap_el)
             vtype = "table" if fig.name == "table" else "diagram"
             visuals.append({"type": vtype, "caption": caption, "html": raw_html})
+
     # 2. Standalone content images outside figures
     for img in main.find_all("img"):
         if img.find_parent("figure"):
             continue
-        src = img.get("src", "")
-        if not src or "icon-512" in src or "logo" in src.lower():
+        src = img.get("src") or img.get("data-src") or img.get("data-lazy-src") or ""
+        if not src or "icon-512" in src or "logo" in src.lower() or "avatar" in src.lower():
             continue
         data_uri = inline_img_to_data_uri(src, page_url)
-        alt = img.get("alt", "Study Diagram")
+        alt = (img.get("alt") or "Study Diagram").replace('"', "&quot;")
         html_str = f'<figure class="ls-img-fig"><img src="{data_uri}" alt="{alt}" /><figcaption>{alt}</figcaption></figure>'
         if html_str not in seen_html:
             seen_html.add(html_str)
@@ -111,7 +119,7 @@ def parse_note_page(soup: BeautifulSoup, page_url: str) -> dict:
         sib = h1.find_next_sibling()
         if sib and sib.name in ("p", "div"):
             subtitle = clean_text(sib)
-    rt_match = re.search(r"\b(\d+\s*(?:min read|నిమిషాల పఠనం))\b", main.get_text(" ", strip=True))
+    rt_match = re.search(r"\b(\d+\s*(?:min read|\u0c28\u0c3f\u0c2e\u0c3f\u0c37\u0c3e\u0c32 \u0c2a\u0c20\u0c28\u0c02))\b", main.get_text(" ", strip=True))
     if rt_match:
         read_time = rt_match.group(1)
 
@@ -138,12 +146,12 @@ def parse_note_page(soup: BeautifulSoup, page_url: str) -> dict:
                 return v
         return []
 
-    in_one_min = " ".join(find_section(["in one minute", "ఒక్క నిమిషంలో"]))
-    legal_prov = find_section(["legal provision", "చట్టపరమైన నిబంధన"])
-    meaning = "\n\n".join(find_section(["meaning and definition", "అర్థం", "detailed explanation"]))
-    key_points = find_section(["key points", "గుర్తుంచుకోవలసిన"])
-    case_raw = find_section(["leading case", "ప్రముఖ కేసులు"])
-    qa_raw = find_section(["quick self-test", "స్వీయ పరీక్ష"])
+    in_one_min = " ".join(find_section(["in one minute", "\u0c12\u0c15\u0c4d\u0c15 \u0c28\u0c3f\u0c2e\u0c3f\u0c37\u0c02\u0c32\u0c4b"]))
+    legal_prov = find_section(["legal provision", "\u0c1a\u0c1f\u0c4d\u0c1f\u0c2a\u0c30\u0c2e\u0c48\u0c28 \u0c28\u0c3f\u0c2c\u0c02\u0c27\u0c28"])
+    meaning = "\n\n".join(find_section(["meaning and definition", "\u0c05\u0c30\u0c4d\u0c25\u0c02", "detailed explanation"]))
+    key_points = find_section(["key points", "\u0c17\u0c41\u0c30\u0c4d\u0c24\u0c41\u0c02\u0c1a\u0c41\u0c15\u0c4b\u0c35\u0c32\u0c38\u0c3f\u0c28"])
+    case_raw = find_section(["leading case", "\u0c2a\u0c4d\u0c30\u0c2e\u0c41\u0c16 \u0c15\u0c47\u0c38\u0c41\u0c32\u0c41"])
+    qa_raw = find_section(["quick self-test", "\u0c38\u0c4d\u0c35\u0c40\u0c2f \u0c2a\u0c30\u0c40\u0c15\u0c4d\u0c37"])
 
     if not in_one_min and not meaning:
         paras = [clean_text(p) for p in main.find_all("p") if len(clean_text(p)) > 30]
@@ -154,7 +162,13 @@ def parse_note_page(soup: BeautifulSoup, page_url: str) -> dict:
     for c in case_raw:
         if len(c) > 25:
             parts = c.split(".", 1)
-            case_laws.append({"name": parts[0][:100], "citation": "", "facts": parts[1].strip() if len(parts) > 1 else c, "principle": "", "whyItMatters": ""})
+            case_laws.append({
+                "name": parts[0][:100],
+                "citation": "",
+                "facts": parts[1].strip() if len(parts) > 1 else c,
+                "principle": "",
+                "whyItMatters": "",
+            })
 
     self_test = []
     for line in qa_raw:
@@ -198,11 +212,11 @@ def discover_all_subjects():
                 if sid not in discovered:
                     title = re.sub(r"\s*\d+\s*(notes|units).*$", "", txt, flags=re.I).strip() or sid.replace("-", " ").title()
                     discovered[sid] = {"id": sid, "semester": current_sem, "title": title, "url": f"{BASE_URL}/subjects/{sid}/"}
-    for sid, sem, ttl in [("law-of-contract-ii", "Semester II", "Law of Contracts – II")]:
+    for sid, sem, ttl in [("law-of-contract-ii", "Semester II", "Law of Contracts - II")]:
         if sid not in discovered:
             discovered[sid] = {"id": sid, "semester": sem, "title": ttl, "url": f"{BASE_URL}/subjects/{sid}/"}
     for v in discovered.values():
-        v["title"] = re.sub(r"\s*\d+\s*units\s*·?\s*$", "", v["title"], flags=re.I).strip()
+        v["title"] = re.sub(r"\s*\d+\s*units\s*\u00b7?\s*$", "", v["title"], flags=re.I).strip()
         v["semester"] = re.sub(r"Semester\s+1\b", "Semester I", v["semester"], flags=re.I)
         v["semester"] = re.sub(r"Semester\s+2\b", "Semester II", v["semester"], flags=re.I)
     return list(discovered.values())
@@ -251,12 +265,12 @@ def main():
             unit_no = int(um.group(1)) if um else 1
             rm = re.search(r"(\d+\s*min read)", row_text, re.I)
             rt = rm.group(1) if rm else "8 min read"
-            tt = re.sub(r"Unit\s*\d+.*$", "", row_text, flags=re.I).strip(" ·-–>") or full_url.rstrip("/").split("/")[-1].replace("-", " ").title()
+            tt = re.sub(r"Unit\s*\d+.*$", "", row_text, flags=re.I).strip(" \u00b7-\u2013>") or full_url.rstrip("/").split("/")[-1].replace("-", " ").title()
             units_dict.setdefault(unit_no, []).append({"title": tt, "readTime": rt, "url": full_url})
 
         unit_titles = {}
         for el in soup.find_all(["button", "a", "li", "h2", "h3"]):
-            m = re.match(r"Unit\s*(\d+)\s*[:\-–]\s*(.+)", clean_text(el), re.I)
+            m = re.match(r"Unit\s*(\d+)\s*[:\-\u2013]\s*(.+)", clean_text(el), re.I)
             if m:
                 unit_titles[int(m.group(1))] = m.group(2).strip()
 
@@ -269,27 +283,49 @@ def main():
                 tasks.append((tid, t["url"], t["readTime"]))
             units_list.append({"unitNo": uno, "title": unit_titles.get(uno, f"Unit {uno}"), "topics": tlist})
         if units_list:
-            all_subjects.append({"id": sm["id"], "semester": sm["semester"], "title": title, "totalPublished": sum(len(u["topics"]) for u in units_list), "url": sm["url"], "units": units_list})
+            all_subjects.append({
+                "id": sm["id"],
+                "semester": sm["semester"],
+                "title": title,
+                "totalPublished": sum(len(u["topics"]) for u in units_list),
+                "url": sm["url"],
+                "units": units_list,
+            })
 
-    print(f"Fetching {len(tasks)} topics (EN + TE + SVG Diagrams + Tables) with 8 parallel workers...")
+    print(f"Fetching {len(tasks)} topics (EN + TE + Verbatim SVG Diagrams + Images + Tables) with 12 parallel workers...")
     all_notes = {}
-    visual_count = 0
+    visual_en = 0
+    visual_te = 0
     done = 0
-    with ThreadPoolExecutor(max_workers=8) as ex:
+    with ThreadPoolExecutor(max_workers=12) as ex:
         futs = [ex.submit(fetch_topic_pair, tid, url, rt) for tid, url, rt in tasks]
         for f in as_completed(futs):
             tid, entry = f.result()
             all_notes[tid] = entry
-            visual_count += len((entry.get("en") or {}).get("visuals", []))
+            visual_en += len((entry.get("en") or {}).get("visuals", []))
+            visual_te += len((entry.get("te") or {}).get("visuals", []))
             done += 1
             if done % 50 == 0 or done == len(tasks):
-                print(f"  Progress: {done}/{len(tasks)} topics synced ({visual_count} diagrams/tables preserved)")
+                print(f"  Progress: {done}/{len(tasks)} topics synced (EN visuals: {visual_en} | TE visuals: {visual_te})")
 
     now_iso = datetime.now(timezone.utc).isoformat()
     db_ver = datetime.now(timezone.utc).strftime("%Y.%m.%d.%H%M")
-    Path("www/nyayasaral_db.json").write_text(json.dumps({"appName": "Law Studyes", "syncedAt": now_iso, "subjects": all_subjects, "notes": all_notes}, ensure_ascii=False), encoding="utf-8")
-    Path("www/db-version.json").write_text(json.dumps({"dbVersion": db_ver, "totalSubjects": len(all_subjects), "totalNotes": len(all_notes), "totalVisuals": visual_count, "updatedAt": now_iso}, indent=2), encoding="utf-8")
-    print(f"\nDONE! {len(all_subjects)} subjects, {len(all_notes)} notes, {visual_count} verbatim SVG diagrams & tables saved!")
+    Path("www/nyayasaral_db.json").write_text(
+        json.dumps({"appName": "Law Studyes", "syncedAt": now_iso, "subjects": all_subjects, "notes": all_notes}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    Path("www/db-version.json").write_text(
+        json.dumps({
+            "dbVersion": db_ver,
+            "totalSubjects": len(all_subjects),
+            "totalNotes": len(all_notes),
+            "totalVisuals": visual_en,
+            "totalVisualsTe": visual_te,
+            "updatedAt": now_iso,
+        }, indent=2),
+        encoding="utf-8",
+    )
+    print(f"\nDONE! {len(all_subjects)} subjects, {len(all_notes)} notes, {visual_en} EN + {visual_te} TE verbatim diagrams/images/tables saved!")
 
 
 if __name__ == "__main__":

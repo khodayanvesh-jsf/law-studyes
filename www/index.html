@@ -61,7 +61,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.6.0</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.1</div>
           </div>
         </button>
       </div>
@@ -882,7 +882,7 @@
       },
       revealedAnswers: {},
       resetPending: false,
-      syncFeedUrl: 'https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www/nyayasaral_db.json',
+      syncFeedUrl: 'https://law-studyes.vercel.app/nyayasaral_db.json',
       autoSyncOnLaunch: true,
       lastSyncedAt: '',
       // Audio TTS State
@@ -2407,8 +2407,8 @@
 
   <script>
     (function () {
-      const OTA_BASE = 'https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www';
-      const OTA_FALLBACK = 'https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www';
+      const OTA_BASE = 'https://law-studyes.vercel.app';
+      const OTA_FALLBACK = 'https://law-studyes.vercel.app';
       const CURRENT_VERSION_KEY = 'law_studyes_ota_version';
 
       async function checkLawStudyesOta() {
@@ -3463,7 +3463,7 @@
 <div id="lsOtaToast" class="hidden fixed top-0 inset-x-0 z-[120] bg-[#7B1E2B] text-white text-xs font-semibold text-center py-2 px-4 shadow-md">Updating Law Studyes...</div>
 <script>
 (function(){
-  var RAW = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
+  var RAW = "https://law-studyes.vercel.app";
   var VK = "law_studyes_ota_version";
   function getUpdater(){ return window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater; }
   async function runInstantOta(){
@@ -4118,8 +4118,8 @@
 <!-- LS_VERSION_OTA_CARD_START -->
 <script>
 (function () {
-  var BUILT_IN_VER = "2.4.0";
-  var RAW = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
+  var BUILT_IN_VER = "2.6.1";
+  var RAW = "https://law-studyes.vercel.app";
   var VK = "law_studyes_ota_version";
   window.__lsOtaLastStatus = "Checking...";
 
@@ -4277,8 +4277,8 @@
 <!-- LS_LEFT_VER_OTA_START -->
 <script>
 (function () {
-  var BUILT_IN = "2.6.0";
-  var RAW = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
+  var BUILT_IN = "2.6.1";
+  var RAW = "https://law-studyes.vercel.app";
   var otaBusy = false;
 
   function getUp() {
@@ -4386,69 +4386,223 @@
 })();
 </script>
 <!-- LS_LEFT_VER_OTA_END -->
+
 <!-- LS_VISUAL_DIAGRAMS_START -->
 <style>
   @keyframes lsDiagramReveal {
-    from { opacity: 0; transform: translateY(12px) scale(0.985); }
+    from { opacity: 0; transform: translateY(14px) scale(0.985); }
     to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes lsCardFadeSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   @keyframes lsSvgNodePulse {
     0%, 100% { filter: drop-shadow(0 0 0 rgba(123,30,43,0)); }
-    50% { filter: drop-shadow(0 3px 8px rgba(123,30,43,0.16)); }
+    50% { filter: drop-shadow(0 4px 10px rgba(123,30,43,0.18)); }
   }
-  .ls-visual-card { animation: lsDiagramReveal 0.45s ease-out both; }
-  .ls-visual-box svg { max-width: 100%; height: auto; display: block; margin: 0 auto; animation: lsSvgNodePulse 4s ease-in-out infinite; }
-  .ls-visual-box img { max-width: 100%; height: auto; border-radius: 10px; margin: 0 auto; display: block; }
+  @keyframes lsMemoryBeat {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(123,30,43,0.18); border-color: #7B1E2B; }
+    50% { box-shadow: 0 0 0 6px rgba(123,30,43,0.06); border-color: #B45309; }
+  }
+  @keyframes lsNodePop {
+    0% { opacity: 0; transform: translateY(6px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  #readingPane > section, #readingPane > article, #readingPane > div {
+    animation: lsCardFadeSlide 0.35s ease-out both;
+  }
+  .ls-visual-card { animation: lsDiagramReveal 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .ls-visual-box {
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .ls-visual-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(123,30,43,0.09);
+  }
+  .ls-visual-box svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    animation: lsSvgNodePulse 4.5s ease-in-out infinite;
+  }
+  .ls-visual-box svg g, .ls-visual-box svg rect, .ls-visual-box svg circle, .ls-visual-box svg path {
+    transition: opacity 0.35s ease, filter 0.35s ease, transform 0.25s ease;
+  }
+  .ls-visual-box.ls-spotlight-on { animation: lsMemoryBeat 2.2s ease-in-out infinite; }
+  .ls-spotlight-dim { opacity: 0.28 !important; }
+  .ls-spotlight-active {
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 8px rgba(180,83,9,0.55)) !important;
+  }
+  .ls-visual-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+    animation: lsNodePop 0.45s ease-out both;
+  }
   .ls-visual-box table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .ls-visual-box th { background: #FBF1F2; color: #7B1E2B; text-align: left; padding: 8px 10px; border: 1px solid #E8D5D8; font-weight: 700; }
-  .ls-visual-box td { padding: 8px 10px; border: 1px solid #E8E0D5; vertical-align: top; }
+  .ls-visual-box th {
+    background: #FBF1F2;
+    color: #7B1E2B;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #E8D5D8;
+    font-weight: 700;
+  }
+  .ls-visual-box td {
+    padding: 8px 10px;
+    border: 1px solid #E8E0D5;
+    vertical-align: top;
+    transition: background-color 0.25s ease;
+  }
   .ls-visual-box tr:nth-child(even) td { background: #FAF7F2; }
+  .ls-visual-box tr:hover td { background: #FFF3E6 !important; }
+  .ls-row-flash td { background: #FDE68A !important; font-weight: 600; }
+  #lsZoomCanvas { transform-origin: top left; transition: transform 0.2s ease; }
 </style>
-<div id="lsZoomModal" class="hidden fixed inset-0 z-[140] bg-black/80 flex items-center justify-center p-3">
-  <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
-    <div class="px-4 py-2.5 bg-[#7B1E2B] text-white flex items-center justify-between text-xs font-bold">
-      <span id="lsZoomTitle">Study Diagram (Pinch / Scroll to inspect)</span>
-      <button id="lsZoomCloseBtn" type="button" class="px-2.5 py-1 rounded bg-white/20">✕ Close</button>
+<div id="lsZoomModal" class="hidden fixed inset-0 z-[140] bg-black/85 flex items-center justify-center p-2 sm:p-4">
+  <div class="bg-white rounded-2xl max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+    <div class="px-3 py-2.5 bg-[#7B1E2B] text-white flex flex-wrap items-center justify-between gap-2 text-xs font-bold">
+      <span id="lsZoomTitle" class="truncate max-w-[55%]">Study Diagram</span>
+      <div class="flex items-center gap-1.5">
+        <button id="lsZoomOutBtn" type="button" class="px-2 py-1 rounded bg-white/15 hover:bg-white/25">- Zoom</button>
+        <button id="lsZoomResetBtn" type="button" class="px-2 py-1 rounded bg-white/15 hover:bg-white/25">100%</button>
+        <button id="lsZoomInBtn" type="button" class="px-2 py-1 rounded bg-white/15 hover:bg-white/25">+ Zoom</button>
+        <button id="lsMemoryPulseBtn" type="button" class="px-2.5 py-1 rounded bg-amber-500 text-white hover:bg-amber-600">Memory Walk</button>
+        <button id="lsZoomCloseBtn" type="button" class="px-2.5 py-1 rounded bg-white/20 hover:bg-white/30">&times; Close</button>
+      </div>
     </div>
-    <div id="lsZoomBody" class="p-4 overflow-auto ls-visual-box flex-1"></div>
+    <div id="lsZoomBody" class="p-4 overflow-auto ls-visual-box flex-1 bg-[#FAF7F2]/40">
+      <div id="lsZoomCanvas"></div>
+    </div>
   </div>
 </div>
 <script>
 (function () {
+  var VERCEL_OTA_BASE = "https://law-studyes.vercel.app";
+  var RAW_OTA_FALLBACK = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
+  var zoomScale = 1;
+  var memoryTimer = null;
+
+  function stopMemoryWalk() {
+    if (memoryTimer) { clearInterval(memoryTimer); memoryTimer = null; }
+    var btn = document.getElementById("lsMemoryPulseBtn");
+    if (btn) btn.textContent = "Memory Walk";
+    var c = document.getElementById("lsZoomCanvas");
+    if (c) {
+      c.querySelectorAll(".ls-spotlight-dim,.ls-spotlight-active,.ls-row-flash").forEach(function (el) {
+        el.classList.remove("ls-spotlight-dim", "ls-spotlight-active", "ls-row-flash");
+      });
+    }
+  }
+
+  function startMemoryWalk() {
+    var c = document.getElementById("lsZoomCanvas");
+    if (!c) return;
+    if (memoryTimer) { stopMemoryWalk(); return; }
+    var rows = Array.from(c.querySelectorAll("tbody tr, table tr"));
+    var svgNodes = Array.from(c.querySelectorAll("svg > g, svg rect, svg circle, svg polygon"));
+    var targets = rows.length > 1 ? rows : svgNodes;
+    if (!targets.length) return;
+    var btn = document.getElementById("lsMemoryPulseBtn");
+    if (btn) btn.textContent = "Stop Walk";
+    var isTable = rows.length > 1;
+    var step = 0;
+    function tick() {
+      for (var i = 0; i < targets.length; i++) {
+        if (isTable) {
+          targets[i].classList.toggle("ls-row-flash", i === step);
+        } else {
+          targets[i].classList.toggle("ls-spotlight-active", i === step);
+          targets[i].classList.toggle("ls-spotlight-dim", i !== step);
+        }
+      }
+      step = (step + 1) % targets.length;
+    }
+    tick();
+    memoryTimer = setInterval(tick, 1400);
+  }
+
+  function applyZoom() {
+    var c = document.getElementById("lsZoomCanvas");
+    if (c) c.style.transform = "scale(" + zoomScale.toFixed(2) + ")";
+    var r = document.getElementById("lsZoomResetBtn");
+    if (r) r.textContent = Math.round(zoomScale * 100) + "%";
+  }
+
+  // Ensure bundled diagram DB is loaded even if older localStorage cache had no visuals
+  var dbReloadAttempted = false;
+  async function ensureVisualsInState() {
+    if (dbReloadAttempted || typeof state === "undefined" || !state.notes) return;
+    var keys = Object.keys(state.notes);
+    var hasAnyVisual = false;
+    for (var i = 0; i < keys.length; i++) {
+      var n = state.notes[keys[i]];
+      if ((n && n.en && n.en.visuals && n.en.visuals.length) || (n && n.te && n.te.visuals && n.te.visuals.length)) {
+        hasAnyVisual = true;
+        break;
+      }
+    }
+    if (hasAnyVisual) return;
+    dbReloadAttempted = true;
+    try {
+      var res = await fetch("./nyayasaral_db.json?v=" + Date.now(), { cache: "no-store" });
+      if (!res.ok) res = await fetch(VERCEL_OTA_BASE + "/nyayasaral_db.json?v=" + Date.now(), { cache: "no-store" });
+      if (res.ok) {
+        var fresh = await res.json();
+        if (fresh && fresh.notes) {
+          state.notes = fresh.notes;
+          if (Array.isArray(fresh.subjects) && fresh.subjects.length) state.subjects = fresh.subjects;
+          injectTopicVisuals();
+        }
+      }
+    } catch (e) {}
+  }
+
   function injectTopicVisuals() {
     if (typeof state === "undefined" || !state.activeTopicId) return;
     var pane = document.getElementById("readingPane");
     if (!pane) return;
-    document.getElementById("lsVisualDiagramsSection")?.remove();
+    var existing = document.getElementById("lsVisualDiagramsSection");
+    if (existing) existing.remove();
 
     var rec = state.notes && state.notes[state.activeTopicId];
     var langData = rec ? (rec[state.lang] || rec.en) : null;
     var visuals = (langData && Array.isArray(langData.visuals)) ? langData.visuals : [];
     if (!visuals.length && rec && rec.en && Array.isArray(rec.en.visuals)) visuals = rec.en.visuals;
-    if (!visuals.length) return;
+    if (!visuals.length) { ensureVisualsInState(); return; }
 
     var sec = document.createElement("section");
     sec.id = "lsVisualDiagramsSection";
     sec.className = "bg-white border border-[#E8E0D5] rounded-2xl p-5 shadow-sm space-y-4 ls-visual-card";
 
     var header = document.createElement("div");
-    header.className = "flex items-center justify-between gap-2";
-    header.innerHTML = '<h2 class="font-editorial text-lg font-bold text-[#7B1E2B]">Visual Diagrams &amp; Quick Comparison Tables (' + visuals.length + ')</h2><span class="text-[11px] font-semibold text-[#5F554E] bg-[#FAF7F2] px-2 py-0.5 rounded-full border border-[#E8E0D5]">Tap diagram to zoom</span>';
+    header.className = "flex flex-wrap items-center justify-between gap-2";
+    header.innerHTML = '<h2 class="font-editorial text-lg font-bold text-[#7B1E2B]">Visual Diagrams &amp; Quick Comparison Tables (' + visuals.length + ')</h2>' +
+      '<span class="text-[11px] font-semibold text-[#5F554E] bg-[#FAF7F2] px-2.5 py-0.5 rounded-full border border-[#E8E0D5]">Tap any diagram to Zoom &amp; Memory Walk</span>';
     sec.appendChild(header);
 
     for (var i = 0; i < visuals.length; i++) {
       (function (v, idx) {
         var box = document.createElement("div");
-        box.className = "ls-visual-box bg-[#FAF7F2]/60 border border-[#E8E0D5] rounded-xl p-3.5 overflow-x-auto cursor-pointer hover:border-[#7B1E2B] transition-colors ls-visual-card";
-        box.style.animationDelay = (idx * 90) + "ms";
+        box.className = "ls-visual-box bg-[#FAF7F2]/60 border border-[#E8E0D5] rounded-xl p-3.5 overflow-x-auto cursor-pointer hover:border-[#7B1E2B] ls-visual-card";
+        box.style.animationDelay = (idx * 95) + "ms";
         box.innerHTML = v.html;
         box.addEventListener("click", function () {
+          stopMemoryWalk();
+          zoomScale = 1;
           var zm = document.getElementById("lsZoomModal");
-          var zb = document.getElementById("lsZoomBody");
+          var zc = document.getElementById("lsZoomCanvas");
           var zt = document.getElementById("lsZoomTitle");
-          if (zm && zb) {
-            zb.innerHTML = v.html;
-            if (zt) zt.textContent = v.caption || ("Visual Diagram " + (idx + 1));
+          if (zm && zc) {
+            zc.innerHTML = v.html;
+            applyZoom();
+            if (zt) zt.textContent = v.caption || ("Study Diagram " + (idx + 1) + " of " + visuals.length);
             zm.classList.remove("hidden");
           }
         });
@@ -4456,7 +4610,6 @@
       })(visuals[i], i);
     }
 
-    // Insert right after "In One Minute" card (or after header card) for high visual memorization
     var afterEl = pane.querySelector('[data-section-card="inOneMinute"]') || pane.children[1] || pane.firstChild;
     if (afterEl && afterEl.nextSibling) {
       pane.insertBefore(sec, afterEl.nextSibling);
@@ -4465,14 +4618,73 @@
     }
   }
 
+  // Unified, resilient OTA helper: prevents duplicate download race & uses Vercel CDN first
+  function wrapCapacitorUpdaterResilient() {
+    var up = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater;
+    if (!up || up.__lsResilientWrapped) return;
+    up.__lsResilientWrapped = true;
+    try { up.notifyAppReady(); } catch (e) {}
+    var activeDownload = null;
+    var origDownload = up.download.bind(up);
+    up.download = async function (opts) {
+      if (activeDownload) return activeDownload;
+      activeDownload = (async function () {
+        try {
+          var targetVer = (opts && opts.version) ? String(opts.version) : "";
+          try {
+            if (typeof up.list === "function" && targetVer) {
+              var listed = await up.list();
+              var bundles = (listed && listed.bundles) ? listed.bundles : [];
+              for (var i = 0; i < bundles.length; i++) {
+                if (bundles[i].version === targetVer && bundles[i].status === "success") {
+                  return bundles[i];
+                }
+              }
+            }
+          } catch (le) {}
+          var primaryUrl = (opts && opts.url) ? String(opts.url) : (VERCEL_OTA_BASE + "/ota-bundle.zip");
+          if (primaryUrl.indexOf("raw.githubusercontent.com") !== -1) {
+            primaryUrl = primaryUrl.replace(RAW_OTA_FALLBACK, VERCEL_OTA_BASE);
+          }
+          try {
+            return await origDownload(Object.assign({}, opts, { url: primaryUrl }));
+          } catch (firstErr) {
+            var fbUrl = primaryUrl.replace(VERCEL_OTA_BASE, RAW_OTA_FALLBACK);
+            if (fbUrl !== primaryUrl) {
+              return await origDownload(Object.assign({}, opts, { url: fbUrl }));
+            }
+            throw firstErr;
+          }
+        } finally {
+          activeDownload = null;
+        }
+      })();
+      return activeDownload;
+    };
+  }
+
   window.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("lsZoomCloseBtn")?.addEventListener("click", function () {
-      document.getElementById("lsZoomModal")?.classList.add("hidden");
-    });
-    document.getElementById("lsZoomModal")?.addEventListener("click", function (e) {
-      if (e.target.id === "lsZoomModal") e.target.classList.add("hidden");
-    });
+    wrapCapacitorUpdaterResilient();
+    var closeModal = function () {
+      stopMemoryWalk();
+      var zm = document.getElementById("lsZoomModal");
+      if (zm) zm.classList.add("hidden");
+    };
+    var cBtn = document.getElementById("lsZoomCloseBtn");
+    if (cBtn) cBtn.addEventListener("click", closeModal);
+    var zmEl = document.getElementById("lsZoomModal");
+    if (zmEl) zmEl.addEventListener("click", function (e) { if (e.target.id === "lsZoomModal") closeModal(); });
+    var zi = document.getElementById("lsZoomInBtn");
+    if (zi) zi.addEventListener("click", function () { zoomScale = Math.min(2.6, zoomScale + 0.25); applyZoom(); });
+    var zo = document.getElementById("lsZoomOutBtn");
+    if (zo) zo.addEventListener("click", function () { zoomScale = Math.max(0.6, zoomScale - 0.25); applyZoom(); });
+    var zr = document.getElementById("lsZoomResetBtn");
+    if (zr) zr.addEventListener("click", function () { zoomScale = 1; applyZoom(); });
+    var mp = document.getElementById("lsMemoryPulseBtn");
+    if (mp) mp.addEventListener("click", startMemoryWalk);
+
     setTimeout(function () {
+      wrapCapacitorUpdaterResilient();
       if (typeof window.renderReadingPane === "function" && !window.__lsVisualHooked) {
         window.__lsVisualHooked = true;
         var origR = window.renderReadingPane;
@@ -4483,7 +4695,8 @@
         };
       }
       injectTopicVisuals();
-    }, 500);
+      ensureVisualsInState();
+    }, 450);
   });
 })();
 </script>

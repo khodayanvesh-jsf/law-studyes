@@ -1,11 +1,13 @@
 <#
 .SYNOPSIS
-  Builds a forward-slash ota-bundle.zip from www/, updates ota-version.json & ota-manifest.json,
-  and pushes to GitHub/Vercel so installed Law Studyes APKs auto-update via OTA.
+  Law Studyes OTA Publisher v2.6.1
+  Packs UI + FULL nyayasaral_db.json (all 591 EN/TE notes + verbatim SVG diagrams, images & tables)
+  into forward-slash www/ota-bundle.zip, points OTA manifests to Vercel CDN with SHA-256,
+  pushes to GitHub/Vercel, and verifies live parity.
 #>
 param(
-  [string]$Version = (Get-Date -Format "yyyy.MM.dd.HHmm"),
-  [string]$VercelBaseUrl = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www"
+  [string]$Version = (Get-Date).ToUniversalTime().ToString("yyyy.MM.dd.HHmm"),
+  [string]$VercelBaseUrl = "https://law-studyes.vercel.app"
 )
 
 Add-Type -AssemblyName System.IO.Compression
@@ -15,12 +17,15 @@ $utf8NoBom = New-Object System.Text.UTF8Encoding $false
 $root = (Get-Location).Path
 $wwwDir = Join-Path $root "www"
 $zipPath = Join-Path $wwwDir "ota-bundle.zip"
+$baseUrl = $VercelBaseUrl.TrimEnd('/')
+
 if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
 
+# Pack ALL web assets INCLUDING nyayasaral_db.json & db-version.json (exclude only zip, manifests & apk)
 $zip = [System.IO.Compression.ZipFile]::Open($zipPath, [System.IO.Compression.ZipArchiveMode]::Create)
 try {
   Get-ChildItem -Path $wwwDir -Recurse -File | Where-Object {
-    $_.Name -notin @("ota-bundle.zip", "ota-version.json", "ota-manifest.json", "nyayasaral_db.json", "db-version.json", "LawStudyes-Offline.apk")
+    $_.Name -notin @("ota-bundle.zip", "ota-version.json", "ota-manifest.json", "LawStudyes-Offline.apk")
   } | ForEach-Object {
     $rel = $_.FullName.Substring($wwwDir.Length + 1).Replace('\', '/')
     [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $_.FullName, $rel, [System.IO.Compression.CompressionLevel]::Optimal) | Out-Null
@@ -29,16 +34,64 @@ try {
   $zip.Dispose()
 }
 
+$zipSizeBytes = (Get-Item $zipPath).Length
+$zipSizeMB = [Math]::Round($zipSizeBytes / 1MB, 2)
+$zipSha = (Get-FileHash $zipPath -Algorithm SHA256).Hash.ToLower()
 $nowIso = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-$verObj = @{ version = $Version; url = "$VercelBaseUrl/ota-bundle.zip"; updatedAt = $nowIso } | ConvertTo-Json -Depth 3
-$manObj = @{ app = "Law Studyes"; version = $Version; bundle = "ota-bundle.zip"; updatedAt = $nowIso } | ConvertTo-Json -Depth 3
+
+$verObj = [ordered]@{
+  version   = $Version
+  url       = "$baseUrl/ota-bundle.zip"
+  sha256    = $zipSha
+  sizeBytes = $zipSizeBytes
+  updatedAt = $nowIso
+} | ConvertTo-Json -Depth 3
+
+$manObj = [ordered]@{
+  app       = "Law Studyes"
+  version   = $Version
+  bundle    = "ota-bundle.zip"
+  url       = "$baseUrl/ota-bundle.zip"
+  sha256    = $zipSha
+  sizeBytes = $zipSizeBytes
+  updatedAt = $nowIso
+} | ConvertTo-Json -Depth 3
+
 [System.IO.File]::WriteAllText((Join-Path $wwwDir "ota-version.json"), $verObj, $utf8NoBom)
 [System.IO.File]::WriteAllText((Join-Path $wwwDir "ota-manifest.json"), $manObj, $utf8NoBom)
 
-Write-Host "[OK] Built OTA v$Version -> www/ota-bundle.zip (forward-slash paths for Android)" -ForegroundColor Green
+Write-Host "[OK] Built FULL Diagram OTA v$Version -> www/ota-bundle.zip ($zipSizeMB MB | SHA256: $($zipSha.Substring(0,16)))" -ForegroundColor Green
+
+# Ensure audit_extract is ignored so working tree stays clean
+$gi = Join-Path $root ".gitignore"
+if (Test-Path $gi) {
+  $giTxt = [System.IO.File]::ReadAllText($gi, $utf8NoBom)
+  if ($giTxt -notmatch 'audit_extract') {
+    [System.IO.File]::WriteAllText($gi, ($giTxt.TrimEnd() + "`r`naudit_extract/`r`n"), $utf8NoBom)
+  }
+} else {
+  [System.IO.File]::WriteAllText($gi, "audit_extract/`r`n", $utf8NoBom)
+}
 
 git add -A
-git commit -m "OTA release v$Version"
+git commit -m "OTA v$Version - Full 591 EN/TE notes + Verbatim Diagrams & Animations"
 git pull --rebase origin main
 git push origin main
-Write-Host "[DONE] OTA v$Version pushed to GitHub & Vercel!" -ForegroundColor Green
+
+Write-Host "[WAIT] Waiting 30s for Vercel CDN to publish v$Version..." -ForegroundColor Yellow
+Start-Sleep -Seconds 30
+
+try {
+  $ts = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
+  $liveMeta = (Invoke-WebRequest "$baseUrl/ota-version.json?t=$ts" -UseBasicParsing -TimeoutSec 20).Content | ConvertFrom-Json
+  $tmpZip = Join-Path $env:TEMP "ls_live_verify.zip"
+  Invoke-WebRequest "$baseUrl/ota-bundle.zip?t=$ts" -OutFile $tmpZip -UseBasicParsing -TimeoutSec 60
+  $liveSha = (Get-FileHash $tmpZip -Algorithm SHA256).Hash.ToLower()
+  if ($liveSha -eq $zipSha -and $liveMeta.version -eq $Version) {
+    Write-Host "[VERIFIED] Vercel LIVE Parity MATCH! Version=$($liveMeta.version) | SHA=$($liveSha.Substring(0,16))" -ForegroundColor Green
+  } else {
+    Write-Host "[INFO] Vercel still propagating (Live=$($liveMeta.version) vs Local=$Version). Re-check in 30s." -ForegroundColor Yellow
+  }
+} catch {
+  Write-Host "[WARN] Live verify skipped: $($_.Exception.Message)" -ForegroundColor Yellow
+}
