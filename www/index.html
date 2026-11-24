@@ -3260,5 +3260,218 @@
 })();
 </script>
 <!-- LAW_STUDYES_STUDIO_VOICE_END -->
+<!-- LAW_STUDYES_UNDERLINE_LOCKSCREEN_START -->
+<style>
+  .ls-active-spoken-line {
+    text-decoration: underline;
+    text-decoration-color: #7B1E2B;
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 4px;
+    background-color: #FCE7EA;
+    color: #1F1B18;
+    border-radius: 4px;
+    padding: 1px 3px;
+    transition: background-color 0.2s ease;
+  }
+</style>
+<script>
+(function () {
+  let wakeLockSentinel = null;
+  let keepAliveCtx = null;
+  let keepAliveNode = null;
+  let manualStopRequested = false;
+
+  // -----------------------------------------------------------------------
+  // 1. LIVE LINE-BY-LINE UNDERLINING INSIDE THE ACTIVE READING CARD
+  // -----------------------------------------------------------------------
+  function clearSpokenUnderline() {
+    document.querySelectorAll('span.ls-active-spoken-line').forEach(span => {
+      const parent = span.parentNode;
+      if (!parent) return;
+      parent.replaceChild(document.createTextNode(span.textContent || ''), span);
+      parent.normalize();
+    });
+  }
+
+  function normalizeForMatch(s) {
+    return String(s || '')
+      .toLowerCase()
+      .replace(/section\s+(\d+),?\s*clause\s+([a-z])/g, '$1$2')
+      .replace(/[^a-z0-9\u0C00-\u0C7F]+/g, ' ')
+      .trim();
+  }
+
+  function underlineSpokenLine(sectionKey, spokenText) {
+    clearSpokenUnderline();
+    if (!sectionKey || !spokenText) return;
+    const card = document.querySelector(`[data-section-card="${sectionKey}"]`);
+    if (!card) return;
+
+    // Extract clean search words from the spoken sentence (skip professor intro prefixes)
+    const stripped = spokenText
+      .replace(/^(Point\s+\d+\.|Case\s+\d+:|Facts of the case:|Legal principle held:|Why it matters for your exam:|Question\s+\d+:|Answer:)\s*/i, '')
+      .trim();
+    const words = normalizeForMatch(stripped).split(' ').filter(w => w.length > 2);
+    if (words.length < 2) return;
+
+    // Walk text nodes inside the card to find the best matching node
+    const walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT, null);
+    let bestNode = null;
+    let bestScore = 0;
+    let node;
+    while ((node = walker.nextNode())) {
+      const parentTag = node.parentElement ? node.parentElement.tagName : '';
+      if (parentTag === 'BUTTON' || parentTag === 'H2') continue;
+      const txt = node.nodeValue || '';
+      if (txt.trim().length < 8) continue;
+      const normNode = normalizeForMatch(txt);
+      let hits = 0;
+      for (const w of words.slice(0, 10)) {
+        if (normNode.includes(w)) hits++;
+      }
+      if (hits > bestScore) {
+        bestScore = hits;
+        bestNode = node;
+      }
+    }
+
+    if (!bestNode || bestScore < Math.min(2, words.length)) return;
+
+    const fullText = bestNode.nodeValue;
+    // Try to locate the exact sentence inside the text node
+    const sentences = fullText.match(/[^.!?]+[.!?]*\s*/g) || [fullText];
+    let targetIdx = 0;
+    let maxSentHits = -1;
+    sentences.forEach((sent, i) => {
+      const ns = normalizeForMatch(sent);
+      let h = 0;
+      for (const w of words.slice(0, 10)) { if (ns.includes(w)) h++; }
+      if (h > maxSentHits) { maxSentHits = h; targetIdx = i; }
+    });
+
+    const before = sentences.slice(0, targetIdx).join('');
+    const target = sentences[targetIdx];
+    const after = sentences.slice(targetIdx + 1).join('');
+
+    const frag = document.createDocumentFragment();
+    if (before) frag.appendChild(document.createTextNode(before));
+    const span = document.createElement('span');
+    span.className = 'ls-active-spoken-line';
+    span.textContent = target;
+    frag.appendChild(span);
+    if (after) frag.appendChild(document.createTextNode(after));
+
+    bestNode.parentNode.replaceChild(frag, bestNode);
+    span.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // -----------------------------------------------------------------------
+  // 2. CONTINUOUS LOCK-SCREEN & BACKGROUND AUDIO KEEP-ALIVE
+  // -----------------------------------------------------------------------
+  async function acquirePlaybackKeepAlive(topicTitle, sectionLabel) {
+    manualStopRequested = false;
+
+    // A. Screen Wake Lock (where supported)
+    try {
+      if ('wakeLock' in navigator && !wakeLockSentinel) {
+        wakeLockSentinel = await navigator.wakeLock.request('screen');
+        wakeLockSentinel.addEventListener('release', () => { wakeLockSentinel = null; });
+      }
+    } catch (e) {}
+
+    // B. Near-silent Web Audio keep-alive so Android WebView doesn't suspend JS on screen lock
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx && !keepAliveCtx) {
+        keepAliveCtx = new AudioCtx();
+        const osc = keepAliveCtx.createOscillator();
+        const gain = keepAliveCtx.createGain();
+        gain.gain.value = 0.00001; // inaudible keep-alive pulse
+        osc.connect(gain);
+        gain.connect(keepAliveCtx.destination);
+        osc.start();
+        keepAliveNode = osc;
+      } else if (keepAliveCtx && keepAliveCtx.state === 'suspended') {
+        keepAliveCtx.resume();
+      }
+    } catch (e) {}
+
+    // C. Lock-Screen Media Session Controls (Android notification & lock screen)
+    try {
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: topicTitle || 'Law Studyes Lecture',
+          artist: sectionLabel || 'Professor Audio Mode',
+          album: 'Law Studyes — 3-Year LL.B.'
+        });
+        navigator.mediaSession.playbackState = 'playing';
+        navigator.mediaSession.setActionHandler('play', () => {
+          if (typeof togglePlayPause === 'function' && state.audio.isPaused) togglePlayPause();
+        });
+        navigator.mediaSession.setActionHandler('pause', () => {
+          if (typeof togglePlayPause === 'function' && !state.audio.isPaused) togglePlayPause();
+        });
+        navigator.mediaSession.setActionHandler('stop', () => {
+          manualStopRequested = true;
+          if (typeof stopAudio === 'function') stopAudio();
+        });
+        navigator.mediaSession.setActionHandler('previoustrack', () => {
+          if (state.audio.index > 0 && typeof playQueueIndex === 'function') playQueueIndex(state.audio.index - 1, 0);
+        });
+        navigator.mediaSession.setActionHandler('nexttrack', () => {
+          if (state.audio.index < state.audio.queue.length - 1 && typeof playQueueIndex === 'function') playQueueIndex(state.audio.index + 1, 0);
+        });
+      }
+    } catch (e) {}
+  }
+
+  function releasePlaybackKeepAlive() {
+    try { if (wakeLockSentinel) { wakeLockSentinel.release(); wakeLockSentinel = null; } } catch (e) {}
+    try { if (keepAliveNode) { keepAliveNode.stop(); keepAliveNode = null; } } catch (e) {}
+    try { if (keepAliveCtx) { keepAliveCtx.close(); keepAliveCtx = null; } } catch (e) {}
+    try { if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none'; } catch (e) {}
+  }
+
+  // Re-acquire WakeLock automatically if user unlocks phone while still playing
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && typeof state !== 'undefined' && state.audio && state.audio.isPlaying && !state.audio.isPaused && !manualStopRequested) {
+      const cur = state.audio.queue && state.audio.queue[state.audio.index];
+      acquirePlaybackKeepAlive(cur ? cur.topicTitle : '', cur ? cur.sectionLabel : '');
+    }
+  });
+
+  function wireUnderlineAndLockScreen() {
+    if (typeof window.playQueueIndex === 'function' && !window.__lsUnderlineWrapped) {
+      window.__lsUnderlineWrapped = true;
+      const origPlay = window.playQueueIndex;
+      window.playQueueIndex = function (idx, chunkIdx = 0) {
+        const item = state.audio && state.audio.queue && state.audio.queue[idx];
+        const chunk = item && item.chunks && item.chunks[chunkIdx];
+        if (item && chunk) {
+          acquirePlaybackKeepAlive(item.topicTitle, item.sectionLabel);
+          setTimeout(() => underlineSpokenLine(item.sectionKey, chunk.text), 80);
+        }
+        return origPlay(idx, chunkIdx);
+      };
+    }
+
+    if (typeof window.stopAudio === 'function' && !window.__lsUnderlineStopWrapped) {
+      window.__lsUnderlineStopWrapped = true;
+      const origStop = window.stopAudio;
+      window.stopAudio = function () {
+        manualStopRequested = true;
+        clearSpokenUnderline();
+        releasePlaybackKeepAlive();
+        return origStop.apply(this, arguments);
+      };
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(wireUnderlineAndLockScreen, 1100);
+  });
+})();
+</script>
+<!-- LAW_STUDYES_UNDERLINE_LOCKSCREEN_END -->
 </body>
 </html>
