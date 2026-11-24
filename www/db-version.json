@@ -1,6 +1,7 @@
 {
-    "updatedAt":  "2026-11-24T22:34:18Z",
-    "dbVersion":  "2026.11.25.0404",
-    "totalSubjects":  6,
-    "totalNotes":  591
+  "dbVersion": "2026.11.24.2247",
+  "totalSubjects": 6,
+  "totalNotes": 591,
+  "totalVisuals": 2146,
+  "updatedAt": "2026-11-24T22:47:16.287104+00:00"
 }

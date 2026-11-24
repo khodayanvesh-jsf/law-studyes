@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
 """
-Law Studyes — Dynamic All-Years & All-Semesters Auto-Sync Scraper
-Automatically discovers EVERY published subject across Years 1-3 (Semesters I-VI)
-from https://nyayasaral.com/3-year-llb/ and https://nyayasaral.com/syllabus/,
-fetches all live English & Telugu notes, and updates:
-  1. www/nyayasaral_db.json   (Web App & Android APK auto-sync feed)
-  2. nyayasaral_notes.sqlite  (local SQLite database)
-  3. notes_markdown/          (organized Semester -> Subject -> Unit -> Topic .md files)
+Law Studyes Fast Parallel Scraper v2.6
+Preserves ALL verbatim SVG diagrams, comparison tables, and inline images (offline base64)
+alongside clean structured sections for Professor Audio TTS — zero text altered.
 """
+import base64
 import json
 import re
 import sqlite3
-import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urljoin
@@ -24,20 +21,17 @@ DISCOVERY_PAGES = [
     "https://nyayasaral.com/3-year-llb/",
     "https://nyayasaral.com/syllabus/",
 ]
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) LawStudyesAutoSync/2.0"
-}
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) LawStudyesFastSync/2.6"}
 
 
-def fetch_soup(session: requests.Session, url: str):
+def fetch_soup(url: str):
     try:
-        r = session.get(url, headers=HEADERS, timeout=25)
+        r = requests.get(url, headers=HEADERS, timeout=20)
         if r.status_code != 200:
             return None
         r.encoding = "utf-8"
         return BeautifulSoup(r.text, "html.parser")
-    except Exception as exc:
-        print(f"  [WARN] Failed to fetch {url}: {exc}")
+    except Exception:
         return None
 
 
@@ -45,57 +39,71 @@ def clean_text(el) -> str:
     return re.sub(r"\s+", " ", el.get_text(" ", strip=True)).strip()
 
 
-def slugify(text: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:60] or "topic"
+def inline_img_to_data_uri(img_src: str, page_url: str) -> str:
+    if not img_src or img_src.startswith("data:"):
+        return img_src
+    full = urljoin(page_url, img_src)
+    try:
+        r = requests.get(full, headers=HEADERS, timeout=12)
+        if r.status_code == 200 and len(r.content) < 350_000:
+            ctype = r.headers.get("Content-Type", "image/png").split(";")[0]
+            b64 = base64.b64encode(r.content).decode("ascii")
+            return f"data:{ctype};base64,{b64}"
+    except Exception:
+        pass
+    return full
 
 
-def discover_all_subjects(session: requests.Session):
-    """Dynamically discover all live subject pages across all Years & Semesters."""
-    discovered = {}
-    for page_url in DISCOVERY_PAGES:
-        soup = fetch_soup(session, page_url)
-        if not soup:
+def extract_visuals(main, page_url: str) -> list:
+    """Extract all verbatim SVG diagrams, figures, images, and comparison tables."""
+    visuals = []
+    # 1. Inline SVG diagrams & figure wrappers
+    seen_html = set()
+    for fig in main.find_all(["figure", "svg", "table"]):
+        # Skip nested svg/table if parent figure already captured
+        if fig.name != "figure" and fig.find_parent("figure"):
             continue
-        current_sem = "3-Year LL.B."
-        for el in soup.find_all(["h2", "h3", "h4", "a"]):
-            txt = clean_text(el)
-            if el.name in ("h2", "h3", "h4"):
-                m = re.search(r"(Semester\s+[IVX1-6]+|Year\s+[1-3])", txt, re.I)
-                if m:
-                    current_sem = m.group(1).title()
+        if fig.name == "svg":
+            # Skip tiny UI icons (width/height <= 28px)
+            w = str(fig.get("width", ""))
+            cls = " ".join(fig.get("class", []))
+            if w in ("14", "16", "18", "20", "24") or "icon" in cls.lower():
                 continue
-            href = el.get("href", "")
-            full_url = urljoin(BASE_URL, href).split("#")[0]
-            m_subj = re.match(r"^https://nyayasaral\.com/subjects/([a-z0-9-]+)/?$", full_url)
-            if m_subj:
-                subj_id = m_subj.group(1)
-                if subj_id.endswith("-te"):
-                    continue
-                canonical = f"{BASE_URL}/subjects/{subj_id}/"
-                title = txt or subj_id.replace("-", " ").title()
-                title = re.sub(r"\s*\d+\s*notes.*$", "", title, flags=re.I).strip()
-                if subj_id not in discovered:
-                    discovered[subj_id] = {
-                        "id": subj_id,
-                        "semester": current_sem,
-                        "title": title,
-                        "url": canonical,
-                    }
-    # Always include known live Semester II+ subjects even if not yet linked on /3-year-llb/
-    for sid, sem, ttl in [
-        ("law-of-contract-ii", "Semester II", "Law of Contracts – II"),
-    ]:
-        if sid not in discovered:
-            discovered[sid] = {"id": sid, "semester": sem, "title": ttl, "url": f"{BASE_URL}/subjects/{sid}/"}
-    for v in discovered.values():
-        v["title"] = re.sub(r"\s*\d+\s*units\s*·?\s*$", "", v["title"], flags=re.I).strip()
-        v["semester"] = re.sub(r"Semester\s+1\b", "Semester I", v["semester"], flags=re.I)
-        v["semester"] = re.sub(r"Semester\s+2\b", "Semester II", v["semester"], flags=re.I)
-    print(f"Discovered {len(discovered)} live subjects across all semesters.")
-    return list(discovered.values())
+            if len(str(fig)) < 250:
+                continue
+        # Inline any <img> inside figure
+        for img in fig.find_all("img"):
+            if img.get("src"):
+                img["src"] = inline_img_to_data_uri(img["src"], page_url)
+        # Strip external links inside tables/figures so users never leave the app
+        for a in fig.find_all("a"):
+            a.unwrap()
+        raw_html = str(fig)
+        if raw_html not in seen_html and len(raw_html) > 80:
+            seen_html.add(raw_html)
+            caption = ""
+            cap_el = fig.find("figcaption") or fig.find("caption")
+            if cap_el:
+                caption = clean_text(cap_el)
+            vtype = "table" if fig.name == "table" else "diagram"
+            visuals.append({"type": vtype, "caption": caption, "html": raw_html})
+    # 2. Standalone content images outside figures
+    for img in main.find_all("img"):
+        if img.find_parent("figure"):
+            continue
+        src = img.get("src", "")
+        if not src or "icon-512" in src or "logo" in src.lower():
+            continue
+        data_uri = inline_img_to_data_uri(src, page_url)
+        alt = img.get("alt", "Study Diagram")
+        html_str = f'<figure class="ls-img-fig"><img src="{data_uri}" alt="{alt}" /><figcaption>{alt}</figcaption></figure>'
+        if html_str not in seen_html:
+            seen_html.add(html_str)
+            visuals.append({"type": "image", "caption": alt, "html": html_str})
+    return visuals
 
 
-def parse_note_page(soup: BeautifulSoup) -> dict:
+def parse_note_page(soup: BeautifulSoup, page_url: str) -> dict:
     main = soup.find("article") or soup.find("main") or soup.body
     subtitle, read_time = "", ""
     h1 = main.find("h1")
@@ -106,6 +114,8 @@ def parse_note_page(soup: BeautifulSoup) -> dict:
     rt_match = re.search(r"\b(\d+\s*(?:min read|నిమిషాల పఠనం))\b", main.get_text(" ", strip=True))
     if rt_match:
         read_time = rt_match.group(1)
+
+    visuals = extract_visuals(main, page_url)
 
     sections_map = {}
     for h in main.find_all(["h2", "h3"]):
@@ -144,13 +154,7 @@ def parse_note_page(soup: BeautifulSoup) -> dict:
     for c in case_raw:
         if len(c) > 25:
             parts = c.split(".", 1)
-            case_laws.append({
-                "name": parts[0][:100],
-                "citation": "",
-                "facts": parts[1].strip() if len(parts) > 1 else c,
-                "principle": "",
-                "whyItMatters": ""
-            })
+            case_laws.append({"name": parts[0][:100], "citation": "", "facts": parts[1].strip() if len(parts) > 1 else c, "principle": "", "whyItMatters": ""})
 
     self_test = []
     for line in qa_raw:
@@ -168,192 +172,124 @@ def parse_note_page(soup: BeautifulSoup) -> dict:
             "keyPoints": key_points,
             "caseLaws": case_laws,
             "selfTest": self_test,
+            "visuals": visuals,
         },
     }
 
 
-def parse_subject_page(session: requests.Session, subj_meta: dict, existing_notes: dict):
-    subj_id = subj_meta["id"]
-    url = subj_meta["url"]
-    print(f"\n=== Syncing Subject: {subj_meta['title']} ({subj_meta['semester']}) ===")
-    soup = fetch_soup(session, url)
-    if not soup:
-        return None, {}
-
-    # Prefer H1 title from the subject page itself
-    h1 = soup.find("h1")
-    title = clean_text(h1) if h1 else subj_meta["title"]
-
-    units_dict = {}
-    notes_dict = {}
-    prefix = f"/subjects/{subj_id}/"
-    seen_urls = set()
-
-    for a in soup.find_all("a", href=True):
-        full_url = urljoin(BASE_URL, a["href"]).split("#")[0]
-        if prefix not in full_url or full_url.rstrip("/") == url.rstrip("/"):
+def discover_all_subjects():
+    discovered = {}
+    for page_url in DISCOVERY_PAGES:
+        soup = fetch_soup(page_url)
+        if not soup:
             continue
-        if full_url.rstrip("/").endswith("-te") or full_url in seen_urls:
-            continue
-        seen_urls.add(full_url)
-
-        row_text = clean_text(a)
-        unit_match = re.search(r"Unit\s*(\d+)", row_text, re.I)
-        unit_no = int(unit_match.group(1)) if unit_match else 1
-        rt_match = re.search(r"(\d+\s*min read)", row_text, re.I)
-        read_time = rt_match.group(1) if rt_match else "8 min read"
-        topic_title = re.sub(r"Unit\s*\d+.*$", "", row_text, flags=re.I).strip(" ·-–>")
-        if not topic_title:
-            topic_title = full_url.rstrip("/").split("/")[-1].replace("-", " ").title()
-
-        units_dict.setdefault(unit_no, []).append({
-            "title": topic_title,
-            "readTime": read_time,
-            "url": full_url
-        })
-
-    unit_titles = {}
-    for el in soup.find_all(["button", "a", "li", "h2", "h3"]):
-        m = re.match(r"Unit\s*(\d+)\s*[:\-–]\s*(.+)", clean_text(el), re.I)
-        if m:
-            unit_titles[int(m.group(1))] = m.group(2).strip()
-
-    units_list = []
-    for unit_no in sorted(units_dict.keys()):
-        topics_list = []
-        for idx, t in enumerate(units_dict[unit_no], start=1):
-            topic_id = f"{subj_id}-u{unit_no}-t{idx}"
-            topics_list.append({
-                "id": topic_id,
-                "topicNo": idx,
-                "title": t["title"],
-                "readTime": t["readTime"],
-                "url": t["url"]
-            })
-
-            # Reuse already-synced note if URL matches (fast incremental sync)
-            if topic_id in existing_notes and existing_notes[topic_id].get("url") == t["url"]:
-                notes_dict[topic_id] = existing_notes[topic_id]
+        current_sem = "Semester I"
+        for el in soup.find_all(["h2", "h3", "h4", "a"]):
+            txt = clean_text(el)
+            if el.name in ("h2", "h3", "h4"):
+                m = re.search(r"(Semester\s+[IVX1-6]+)", txt, re.I)
+                if m:
+                    current_sem = m.group(1).title()
                 continue
+            full_url = urljoin(BASE_URL, el.get("href", "")).split("#")[0]
+            m_subj = re.match(r"^https://nyayasaral\.com/subjects/([a-z0-9-]+)/?$", full_url)
+            if m_subj and not m_subj.group(1).endswith("-te"):
+                sid = m_subj.group(1)
+                if sid not in discovered:
+                    title = re.sub(r"\s*\d+\s*(notes|units).*$", "", txt, flags=re.I).strip() or sid.replace("-", " ").title()
+                    discovered[sid] = {"id": sid, "semester": current_sem, "title": title, "url": f"{BASE_URL}/subjects/{sid}/"}
+    for sid, sem, ttl in [("law-of-contract-ii", "Semester II", "Law of Contracts – II")]:
+        if sid not in discovered:
+            discovered[sid] = {"id": sid, "semester": sem, "title": ttl, "url": f"{BASE_URL}/subjects/{sid}/"}
+    for v in discovered.values():
+        v["title"] = re.sub(r"\s*\d+\s*units\s*·?\s*$", "", v["title"], flags=re.I).strip()
+        v["semester"] = re.sub(r"Semester\s+1\b", "Semester I", v["semester"], flags=re.I)
+        v["semester"] = re.sub(r"Semester\s+2\b", "Semester II", v["semester"], flags=re.I)
+    return list(discovered.values())
 
-            print(f"  [NEW U{unit_no} T{idx}] Fetching EN+TE: {t['title']}")
-            en_soup = fetch_soup(session, t["url"])
-            en_parsed = parse_note_page(en_soup) if en_soup else None
-            te_soup = fetch_soup(session, t["url"].rstrip("/") + "-te/")
-            te_parsed = parse_note_page(te_soup) if te_soup else None
 
-            note_entry = {
-                "id": topic_id,
-                "subtitle": (en_parsed["subtitle"] if en_parsed else ""),
-                "readTime": (en_parsed["readTime"] if en_parsed and en_parsed["readTime"] else t["readTime"]),
-                "url": t["url"],
-            }
-            if en_parsed:
-                note_entry["en"] = en_parsed["langData"]
-            if te_parsed:
-                note_entry["te"] = te_parsed["langData"]
-            notes_dict[topic_id] = note_entry
-            time.sleep(0.25)
-
-        units_list.append({
-            "unitNo": unit_no,
-            "title": unit_titles.get(unit_no, f"Unit {unit_no}"),
-            "topics": topics_list
-        })
-
-    if not units_list:
-        return None, {}
-
-    return {
-        "id": subj_id,
-        "semester": subj_meta["semester"],
-        "title": title,
-        "totalPublished": sum(len(u["topics"]) for u in units_list),
+def fetch_topic_pair(topic_id: str, url: str, read_time: str):
+    en_soup = fetch_soup(url)
+    en_p = parse_note_page(en_soup, url) if en_soup else None
+    te_url = url.rstrip("/") + "-te/"
+    te_soup = fetch_soup(te_url)
+    te_p = parse_note_page(te_soup, te_url) if te_soup else None
+    entry = {
+        "id": topic_id,
+        "subtitle": en_p["subtitle"] if en_p else "",
+        "readTime": (en_p["readTime"] if en_p and en_p["readTime"] else read_time),
         "url": url,
-        "units": units_list
-    }, notes_dict
-
-
-def write_sqlite(db_path: Path, subjects: list, notes: dict):
-    if db_path.exists():
-        db_path.unlink()
-    conn = sqlite3.connect(str(db_path))
-    cur = conn.cursor()
-    cur.executescript("""
-        CREATE TABLE subjects (id TEXT PRIMARY KEY, semester TEXT, title TEXT, total_published INTEGER, url TEXT);
-        CREATE TABLE units (id TEXT PRIMARY KEY, subject_id TEXT, unit_no INTEGER, title TEXT);
-        CREATE TABLE topics (id TEXT PRIMARY KEY, subject_id TEXT, unit_no INTEGER, topic_no INTEGER, title TEXT, read_time TEXT, url TEXT);
-        CREATE TABLE notes (topic_id TEXT PRIMARY KEY, subtitle TEXT, read_time TEXT, url TEXT, en_json TEXT, te_json TEXT);
-    """)
-    for s in subjects:
-        cur.execute("INSERT INTO subjects VALUES (?,?,?,?,?)", (s["id"], s["semester"], s["title"], s["totalPublished"], s["url"]))
-        for u in s["units"]:
-            cur.execute("INSERT INTO units VALUES (?,?,?,?)", (f"{s['id']}-u{u['unitNo']}", s["id"], u["unitNo"], u["title"]))
-            for t in u["topics"]:
-                cur.execute("INSERT INTO topics VALUES (?,?,?,?,?,?,?)", (t["id"], s["id"], u["unitNo"], t["topicNo"], t["title"], t["readTime"], t["url"]))
-    for tid, n in notes.items():
-        cur.execute("INSERT INTO notes VALUES (?,?,?,?,?,?)",
-                    (tid, n.get("subtitle", ""), n.get("readTime", ""), n.get("url", ""),
-                     json.dumps(n.get("en"), ensure_ascii=False), json.dumps(n.get("te"), ensure_ascii=False)))
-    conn.commit()
-    conn.close()
-
-
-def write_markdown_tree(base_dir: Path, subjects: list, notes: dict):
-    base_dir.mkdir(parents=True, exist_ok=True)
-    for s in subjects:
-        s_dir = base_dir / f"{slugify(s['semester'])}_{s['id']}"
-        for u in s["units"]:
-            u_dir = s_dir / f"Unit_{u['unitNo']:02d}_{slugify(u['title'])}"
-            u_dir.mkdir(parents=True, exist_ok=True)
-            for t in u["topics"]:
-                n = notes.get(t["id"], {})
-                en = n.get("en", {})
-                md_lines = [f"# {t['title']}", f"**Subject:** {s['title']} ({s['semester']}) | **Unit {u['unitNo']}:** {u['title']}", f"**Source:** {t['url']}", ""]
-                if en.get("inOneMinute"):
-                    md_lines += ["## In One Minute", en["inOneMinute"], ""]
-                if en.get("legalProvision"):
-                    md_lines += ["## Legal Provision"] + [f"- {x}" for x in en["legalProvision"]] + [""]
-                if en.get("meaning"):
-                    md_lines += ["## Meaning and Definition", en["meaning"], ""]
-                if en.get("keyPoints"):
-                    md_lines += ["## Key Points to Remember"] + [f"- {x}" for x in en["keyPoints"]] + [""]
-                (u_dir / f"{t['topicNo']:02d}_{slugify(t['title'])}.md").write_text("\n".join(md_lines), encoding="utf-8")
+    }
+    if en_p:
+        entry["en"] = en_p["langData"]
+    if te_p:
+        entry["te"] = te_p["langData"]
+    return topic_id, entry
 
 
 def main():
-    out_json = Path("www/nyayasaral_db.json")
-    existing_notes = {}
-    if out_json.exists():
-        try:
-            existing_notes = json.loads(out_json.read_text(encoding="utf-8")).get("notes", {})
-            print(f"Loaded {len(existing_notes)} existing synced notes for incremental update.")
-        except Exception:
-            pass
+    subjects_meta = discover_all_subjects()
+    print(f"Discovered {len(subjects_meta)} live subjects. Collecting topic index...")
+    all_subjects = []
+    tasks = []
 
-    session = requests.Session()
-    subject_metas = discover_all_subjects(session)
-    all_subjects, all_notes = [], {}
+    for sm in subjects_meta:
+        soup = fetch_soup(sm["url"])
+        if not soup:
+            continue
+        h1 = soup.find("h1")
+        title = clean_text(h1) if h1 else sm["title"]
+        prefix = f"/subjects/{sm['id']}/"
+        units_dict, seen = {}, set()
+        for a in soup.find_all("a", href=True):
+            full_url = urljoin(BASE_URL, a["href"]).split("#")[0]
+            if prefix not in full_url or full_url.rstrip("/") == sm["url"].rstrip("/") or full_url.rstrip("/").endswith("-te") or full_url in seen:
+                continue
+            seen.add(full_url)
+            row_text = clean_text(a)
+            um = re.search(r"Unit\s*(\d+)", row_text, re.I)
+            unit_no = int(um.group(1)) if um else 1
+            rm = re.search(r"(\d+\s*min read)", row_text, re.I)
+            rt = rm.group(1) if rm else "8 min read"
+            tt = re.sub(r"Unit\s*\d+.*$", "", row_text, flags=re.I).strip(" ·-–>") or full_url.rstrip("/").split("/")[-1].replace("-", " ").title()
+            units_dict.setdefault(unit_no, []).append({"title": tt, "readTime": rt, "url": full_url})
 
-    for meta in subject_metas:
-        subj_obj, notes_dict = parse_subject_page(session, meta, existing_notes)
-        if subj_obj:
-            all_subjects.append(subj_obj)
-            all_notes.update(notes_dict)
+        unit_titles = {}
+        for el in soup.find_all(["button", "a", "li", "h2", "h3"]):
+            m = re.match(r"Unit\s*(\d+)\s*[:\-–]\s*(.+)", clean_text(el), re.I)
+            if m:
+                unit_titles[int(m.group(1))] = m.group(2).strip()
 
-    out_json.parent.mkdir(parents=True, exist_ok=True)
-    payload = {
-        "appName": "Law Studyes",
-        "syncedAt": datetime.now(timezone.utc).isoformat(),
-        "source": "https://nyayasaral.com/3-year-llb/",
-        "subjects": all_subjects,
-        "notes": all_notes,
-    }
-    out_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    Path("www/db-version.json").write_text(json.dumps({"dbVersion": datetime.now(timezone.utc).strftime("%Y.%m.%d.%H%M"), "totalSubjects": len(all_subjects), "totalNotes": len(all_notes)}, indent=2), encoding="utf-8")
-    write_sqlite(Path("nyayasaral_notes.sqlite"), all_subjects, all_notes)
-    write_markdown_tree(Path("notes_markdown"), all_subjects, all_notes)
-    print(f"\nSYNC COMPLETE: {len(all_subjects)} subjects, {len(all_notes)} notes saved.")
+        units_list = []
+        for uno in sorted(units_dict.keys()):
+            tlist = []
+            for idx, t in enumerate(units_dict[uno], start=1):
+                tid = f"{sm['id']}-u{uno}-t{idx}"
+                tlist.append({"id": tid, "topicNo": idx, "title": t["title"], "readTime": t["readTime"], "url": t["url"]})
+                tasks.append((tid, t["url"], t["readTime"]))
+            units_list.append({"unitNo": uno, "title": unit_titles.get(uno, f"Unit {uno}"), "topics": tlist})
+        if units_list:
+            all_subjects.append({"id": sm["id"], "semester": sm["semester"], "title": title, "totalPublished": sum(len(u["topics"]) for u in units_list), "url": sm["url"], "units": units_list})
+
+    print(f"Fetching {len(tasks)} topics (EN + TE + SVG Diagrams + Tables) with 8 parallel workers...")
+    all_notes = {}
+    visual_count = 0
+    done = 0
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        futs = [ex.submit(fetch_topic_pair, tid, url, rt) for tid, url, rt in tasks]
+        for f in as_completed(futs):
+            tid, entry = f.result()
+            all_notes[tid] = entry
+            visual_count += len((entry.get("en") or {}).get("visuals", []))
+            done += 1
+            if done % 50 == 0 or done == len(tasks):
+                print(f"  Progress: {done}/{len(tasks)} topics synced ({visual_count} diagrams/tables preserved)")
+
+    now_iso = datetime.now(timezone.utc).isoformat()
+    db_ver = datetime.now(timezone.utc).strftime("%Y.%m.%d.%H%M")
+    Path("www/nyayasaral_db.json").write_text(json.dumps({"appName": "Law Studyes", "syncedAt": now_iso, "subjects": all_subjects, "notes": all_notes}, ensure_ascii=False), encoding="utf-8")
+    Path("www/db-version.json").write_text(json.dumps({"dbVersion": db_ver, "totalSubjects": len(all_subjects), "totalNotes": len(all_notes), "totalVisuals": visual_count, "updatedAt": now_iso}, indent=2), encoding="utf-8")
+    print(f"\nDONE! {len(all_subjects)} subjects, {len(all_notes)} notes, {visual_count} verbatim SVG diagrams & tables saved!")
 
 
 if __name__ == "__main__":

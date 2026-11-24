@@ -61,7 +61,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.5.0</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.6.0</div>
           </div>
         </button>
       </div>
@@ -4277,7 +4277,7 @@
 <!-- LS_LEFT_VER_OTA_START -->
 <script>
 (function () {
-  var BUILT_IN = "2.5.0";
+  var BUILT_IN = "2.6.0";
   var RAW = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
   var otaBusy = false;
 
@@ -4386,5 +4386,107 @@
 })();
 </script>
 <!-- LS_LEFT_VER_OTA_END -->
+<!-- LS_VISUAL_DIAGRAMS_START -->
+<style>
+  @keyframes lsDiagramReveal {
+    from { opacity: 0; transform: translateY(12px) scale(0.985); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes lsSvgNodePulse {
+    0%, 100% { filter: drop-shadow(0 0 0 rgba(123,30,43,0)); }
+    50% { filter: drop-shadow(0 3px 8px rgba(123,30,43,0.16)); }
+  }
+  .ls-visual-card { animation: lsDiagramReveal 0.45s ease-out both; }
+  .ls-visual-box svg { max-width: 100%; height: auto; display: block; margin: 0 auto; animation: lsSvgNodePulse 4s ease-in-out infinite; }
+  .ls-visual-box img { max-width: 100%; height: auto; border-radius: 10px; margin: 0 auto; display: block; }
+  .ls-visual-box table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .ls-visual-box th { background: #FBF1F2; color: #7B1E2B; text-align: left; padding: 8px 10px; border: 1px solid #E8D5D8; font-weight: 700; }
+  .ls-visual-box td { padding: 8px 10px; border: 1px solid #E8E0D5; vertical-align: top; }
+  .ls-visual-box tr:nth-child(even) td { background: #FAF7F2; }
+</style>
+<div id="lsZoomModal" class="hidden fixed inset-0 z-[140] bg-black/80 flex items-center justify-center p-3">
+  <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+    <div class="px-4 py-2.5 bg-[#7B1E2B] text-white flex items-center justify-between text-xs font-bold">
+      <span id="lsZoomTitle">Study Diagram (Pinch / Scroll to inspect)</span>
+      <button id="lsZoomCloseBtn" type="button" class="px-2.5 py-1 rounded bg-white/20">✕ Close</button>
+    </div>
+    <div id="lsZoomBody" class="p-4 overflow-auto ls-visual-box flex-1"></div>
+  </div>
+</div>
+<script>
+(function () {
+  function injectTopicVisuals() {
+    if (typeof state === "undefined" || !state.activeTopicId) return;
+    var pane = document.getElementById("readingPane");
+    if (!pane) return;
+    document.getElementById("lsVisualDiagramsSection")?.remove();
+
+    var rec = state.notes && state.notes[state.activeTopicId];
+    var langData = rec ? (rec[state.lang] || rec.en) : null;
+    var visuals = (langData && Array.isArray(langData.visuals)) ? langData.visuals : [];
+    if (!visuals.length && rec && rec.en && Array.isArray(rec.en.visuals)) visuals = rec.en.visuals;
+    if (!visuals.length) return;
+
+    var sec = document.createElement("section");
+    sec.id = "lsVisualDiagramsSection";
+    sec.className = "bg-white border border-[#E8E0D5] rounded-2xl p-5 shadow-sm space-y-4 ls-visual-card";
+
+    var header = document.createElement("div");
+    header.className = "flex items-center justify-between gap-2";
+    header.innerHTML = '<h2 class="font-editorial text-lg font-bold text-[#7B1E2B]">Visual Diagrams &amp; Quick Comparison Tables (' + visuals.length + ')</h2><span class="text-[11px] font-semibold text-[#5F554E] bg-[#FAF7F2] px-2 py-0.5 rounded-full border border-[#E8E0D5]">Tap diagram to zoom</span>';
+    sec.appendChild(header);
+
+    for (var i = 0; i < visuals.length; i++) {
+      (function (v, idx) {
+        var box = document.createElement("div");
+        box.className = "ls-visual-box bg-[#FAF7F2]/60 border border-[#E8E0D5] rounded-xl p-3.5 overflow-x-auto cursor-pointer hover:border-[#7B1E2B] transition-colors ls-visual-card";
+        box.style.animationDelay = (idx * 90) + "ms";
+        box.innerHTML = v.html;
+        box.addEventListener("click", function () {
+          var zm = document.getElementById("lsZoomModal");
+          var zb = document.getElementById("lsZoomBody");
+          var zt = document.getElementById("lsZoomTitle");
+          if (zm && zb) {
+            zb.innerHTML = v.html;
+            if (zt) zt.textContent = v.caption || ("Visual Diagram " + (idx + 1));
+            zm.classList.remove("hidden");
+          }
+        });
+        sec.appendChild(box);
+      })(visuals[i], i);
+    }
+
+    // Insert right after "In One Minute" card (or after header card) for high visual memorization
+    var afterEl = pane.querySelector('[data-section-card="inOneMinute"]') || pane.children[1] || pane.firstChild;
+    if (afterEl && afterEl.nextSibling) {
+      pane.insertBefore(sec, afterEl.nextSibling);
+    } else {
+      pane.appendChild(sec);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("lsZoomCloseBtn")?.addEventListener("click", function () {
+      document.getElementById("lsZoomModal")?.classList.add("hidden");
+    });
+    document.getElementById("lsZoomModal")?.addEventListener("click", function (e) {
+      if (e.target.id === "lsZoomModal") e.target.classList.add("hidden");
+    });
+    setTimeout(function () {
+      if (typeof window.renderReadingPane === "function" && !window.__lsVisualHooked) {
+        window.__lsVisualHooked = true;
+        var origR = window.renderReadingPane;
+        window.renderReadingPane = function () {
+          var res = origR.apply(this, arguments);
+          setTimeout(injectTopicVisuals, 30);
+          return res;
+        };
+      }
+      injectTopicVisuals();
+    }, 500);
+  });
+})();
+</script>
+<!-- LS_VISUAL_DIAGRAMS_END -->
 </body>
 </html>
