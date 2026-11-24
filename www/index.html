@@ -61,7 +61,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.4.0</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.5.0</div>
           </div>
         </button>
       </div>
@@ -4274,5 +4274,117 @@
 })();
 </script>
 <!-- LS_FAST_LANG_END -->
+<!-- LS_LEFT_VER_OTA_START -->
+<script>
+(function () {
+  var BUILT_IN = "2.5.0";
+  var RAW = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
+  var otaBusy = false;
+
+  function getUp() {
+    return window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater;
+  }
+
+  async function getRunningVer() {
+    var up = getUp();
+    if (up && up.current) {
+      try {
+        var cur = await up.current();
+        if (cur && cur.bundle && cur.bundle.version && cur.bundle.version !== "builtin") {
+          return cur.bundle.version;
+        }
+      } catch (e) {}
+    }
+    return BUILT_IN;
+  }
+
+  async function setPillText(txt) {
+    var btn = document.getElementById("lsCompactVerBtn");
+    if (btn) btn.textContent = txt;
+  }
+
+  async function checkAndApplyOta(manual) {
+    if (otaBusy) return;
+    var up = getUp();
+    var running = await getRunningVer();
+    setPillText("v" + running + " · ↻");
+
+    if (up && up.notifyAppReady) { try { await up.notifyAppReady(); } catch (e) {} }
+    if (!navigator.onLine) {
+      if (manual && typeof showToast === "function") showToast("Offline — connect to internet to update");
+      return;
+    }
+
+    otaBusy = true;
+    try {
+      if (manual) setPillText("Checking...");
+      // Also trigger background notes sync on manual tap
+      if (manual && typeof window.__runAutoSync === "function") window.__runAutoSync(false);
+
+      if (!up) {
+        setPillText("v" + running + " · Web");
+        if (manual && typeof showToast === "function") showToast("Web version v" + running + " (up to date)");
+        return;
+      }
+
+      var r = await fetch(RAW + "/ota-version.json?t=" + Date.now(), { cache: "no-store" });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      var meta = await r.json();
+      if (!meta || !meta.version) throw new Error("Bad version file");
+
+      if (running === meta.version) {
+        setPillText("v" + running + " · ✓");
+        if (manual && typeof showToast === "function") showToast("Already on latest v" + running);
+        return;
+      }
+
+      setPillText("Updating...");
+      if (typeof showToast === "function") showToast("Updating to v" + meta.version + "...");
+      var bdl = await up.download({
+        url: RAW + "/ota-bundle.zip?v=" + encodeURIComponent(meta.version),
+        version: meta.version
+      });
+      if (bdl && bdl.id) {
+        await up.set(bdl);
+        if (up.reload) await up.reload();
+      } else {
+        throw new Error("Empty OTA bundle");
+      }
+    } catch (err) {
+      setPillText("v" + running + " · ↻");
+      if (manual && typeof showToast === "function") {
+        showToast("Update error: " + (err && err.message ? err.message : String(err)));
+      }
+    } finally {
+      otaBusy = false;
+    }
+  }
+
+  function mountCompactLeftVersionPill() {
+    var oldPill = document.getElementById("dbStatusPill");
+    if (!oldPill || document.getElementById("lsCompactVerBtn")) return;
+    var btn = document.createElement("button");
+    btn.id = "lsCompactVerBtn";
+    btn.type = "button";
+    btn.title = "Tap to check for latest app & notes update";
+    btn.className = "text-[11px] font-semibold text-[#7B1E2B] bg-[#FBF1F2] hover:bg-[#7B1E2B] hover:text-white border border-[#E8D5D8] px-2 py-0.5 rounded-full transition-colors cursor-pointer";
+    btn.textContent = "v" + BUILT_IN + " · ↻";
+    btn.addEventListener("click", function () { checkAndApplyOta(true); });
+    oldPill.parentNode.replaceChild(btn, oldPill);
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      mountCompactLeftVersionPill();
+      checkAndApplyOta(false);
+    }, 350);
+  });
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible") checkAndApplyOta(false);
+  });
+  window.addEventListener("focus", function () { checkAndApplyOta(false); });
+})();
+</script>
+<!-- LS_LEFT_VER_OTA_END -->
 </body>
 </html>
