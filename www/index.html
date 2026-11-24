@@ -3473,5 +3473,27 @@
 })();
 </script>
 <!-- LAW_STUDYES_UNDERLINE_LOCKSCREEN_END -->
+<!-- LAW_STUDYES_GSHEET_DB_START -->
+<script>
+(function(){
+  const API='https://script.google.com/macros/s/AKfycbzZAhVxO0TAnQE8B9d1PK3YV_sU0_X79YtZtlZkCdH-wlznFxNlv5XYG4gflPtsgf8_/exec', RK='ls_registered_students_v1', SK='ls_active_student_v1', SALT='LS-ANTI-TAMPER-2026-KAV';
+  async function sig(o){const s=JSON.stringify(o)+SALT;if(crypto&&crypto.subtle){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');}return btoa(unescape(encodeURIComponent(s))).slice(0,32);}
+  async function pushS(st){try{await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(st)});}catch(e){}}
+  async function getS(ph){try{const r=await fetch(API+'?phone='+encodeURIComponent(ph),{cache:'no-store'});if(r.ok){const d=await r.json();if(d&&d.ok&&d.student)return d.student;}}catch(e){}return null;}
+  window.addEventListener('DOMContentLoaded',()=>setTimeout(()=>{
+    const rf=document.getElementById('studentRegisterForm');
+    if(rf&&!rf.__gs){rf.__gs=1;rf.addEventListener('submit',()=>setTimeout(()=>{try{const s=JSON.parse(localStorage.getItem(SK)||'{}').student;if(s&&s.phone)pushS(s);}catch(e){}},250));}
+    const lf=document.getElementById('studentLoginForm');
+    if(lf&&!lf.__gs){lf.__gs=1;lf.addEventListener('submit',async()=>{
+      const ph=(document.getElementById('loginPhoneInput')?.value||'').replace(/\D/g,'');if(ph.length!==10)return;
+      let all={};try{all=JSON.parse(localStorage.getItem(RK)||'{}');}catch(e){}
+      if(all[ph]){pushS(all[ph]);return;}
+      const rem=await getS(ph);if(rem){all[ph]=rem;try{localStorage.setItem(RK,JSON.stringify(all));localStorage.setItem(SK,JSON.stringify({student:rem,sig:await sig(rem)}));}catch(e){}
+      document.getElementById('authAlertBox')?.classList.add('hidden');document.getElementById('lawStudyesAuthOverlay')?.classList.add('hidden');}
+    });}
+  },700));
+})();
+</script>
+<!-- LAW_STUDYES_GSHEET_DB_END -->
 </body>
 </html>
