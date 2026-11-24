@@ -20,7 +20,7 @@ if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
 $zip = [System.IO.Compression.ZipFile]::Open($zipPath, [System.IO.Compression.ZipArchiveMode]::Create)
 try {
   Get-ChildItem -Path $wwwDir -Recurse -File | Where-Object {
-    $_.Name -notin @("ota-bundle.zip", "ota-version.json", "ota-manifest.json", "nyayasaral_db.json", "db-version.json")
+    $_.Name -notin @("ota-bundle.zip", "ota-version.json", "ota-manifest.json", "nyayasaral_db.json", "db-version.json", "LawStudyes-Offline.apk")
   } | ForEach-Object {
     $rel = $_.FullName.Substring($wwwDir.Length + 1).Replace('\', '/')
     [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $_.FullName, $rel, [System.IO.Compression.CompressionLevel]::Optimal) | Out-Null

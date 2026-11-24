@@ -61,7 +61,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.3.0</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.4.0</div>
           </div>
         </button>
       </div>
@@ -4115,5 +4115,93 @@
 })();
 </script>
 <!-- LS_CIRCLES_END -->
+<!-- LS_VERSION_OTA_CARD_START -->
+<script>
+(function () {
+  var BUILT_IN_VER = "2.4.0";
+  var RAW = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
+  var VK = "law_studyes_ota_version";
+  window.__lsOtaLastStatus = "Checking...";
+
+  function getUpdater() {
+    return window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater;
+  }
+
+  function updateVersionCardUI() {
+    var el = document.getElementById("lsAccountVerText");
+    var st = document.getElementById("lsAccountOtaStatus");
+    var curOta = "";
+    try { curOta = localStorage.getItem(VK) || "Built-in"; } catch (e) { curOta = "Built-in"; }
+    if (el) el.textContent = "App v" + BUILT_IN_VER + " · OTA: " + curOta;
+    if (st) st.textContent = window.__lsOtaLastStatus;
+  }
+
+  window.__lsCheckOtaVerbose = async function (manual) {
+    var up = getUpdater();
+    if (!up) {
+      window.__lsOtaLastStatus = "Web preview (OTA runs inside Android APK)";
+      updateVersionCardUI();
+      return;
+    }
+    try { await up.notifyAppReady(); } catch (e) {}
+    if (!navigator.onLine) {
+      window.__lsOtaLastStatus = "Offline (will auto-check when online)";
+      updateVersionCardUI();
+      return;
+    }
+    try {
+      window.__lsOtaLastStatus = "Checking server...";
+      updateVersionCardUI();
+      var r = await fetch(RAW + "/ota-version.json?t=" + Date.now(), { cache: "no-store" });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      var meta = await r.json();
+      var cur = ""; try { cur = localStorage.getItem(VK) || ""; } catch (e) {}
+      if (!meta || !meta.version) throw new Error("Invalid ota-version.json");
+      if (cur === meta.version) {
+        window.__lsOtaLastStatus = "Up to date (v" + meta.version + ")";
+        updateVersionCardUI();
+        if (manual && typeof showToast === "function") showToast("Already on latest version!");
+        return;
+      }
+      window.__lsOtaLastStatus = "Downloading v" + meta.version + "...";
+      updateVersionCardUI();
+      var bdl = await up.download({ url: RAW + "/ota-bundle.zip?v=" + encodeURIComponent(meta.version), version: meta.version });
+      if (bdl && bdl.id) {
+        try { localStorage.setItem(VK, meta.version); } catch (e) {}
+        window.__lsOtaLastStatus = "Applying v" + meta.version + "...";
+        updateVersionCardUI();
+        await up.set(bdl);
+        if (up.reload) await up.reload();
+      } else {
+        window.__lsOtaLastStatus = "Download returned empty bundle";
+        updateVersionCardUI();
+      }
+    } catch (err) {
+      window.__lsOtaLastStatus = "OTA Error: " + (err && err.message ? err.message : String(err));
+      updateVersionCardUI();
+    }
+  };
+
+  function injectVersionCardIntoAuth() {
+    var card = document.querySelector("#lawStudyesAuthOverlay > div");
+    if (!card || document.getElementById("lsAccountVerBox")) return;
+    var box = document.createElement("div");
+    box.id = "lsAccountVerBox";
+    box.className = "px-5 py-3 bg-[#FAF7F2] border-t border-[#E8E0D5] flex items-center justify-between gap-2 text-[11px]";
+    box.innerHTML = '<div><div id="lsAccountVerText" class="font-bold text-[#7B1E2B]">App v2.4.0</div><div id="lsAccountOtaStatus" class="text-[#5F554E]">Checking...</div></div><button id="lsManualOtaBtn" type="button" class="px-2.5 py-1.5 rounded-lg bg-[#7B1E2B] text-white font-semibold shrink-0">Check OTA</button>';
+    card.appendChild(box);
+    document.getElementById("lsManualOtaBtn").addEventListener("click", function () { window.__lsCheckOtaVerbose(true); });
+    updateVersionCardUI();
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      injectVersionCardIntoAuth();
+      window.__lsCheckOtaVerbose(false);
+    }, 400);
+  });
+})();
+</script>
+<!-- LS_VERSION_OTA_CARD_END -->
 </body>
 </html>

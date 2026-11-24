@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 *.apk
 .DS_Store
+
+!www/LawStudyes-Offline.apk
