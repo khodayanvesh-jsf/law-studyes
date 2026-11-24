@@ -33,7 +33,7 @@ $nowIso = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
 $verObj = @{ version = $Version; url = "$VercelBaseUrl/ota-bundle.zip"; updatedAt = $nowIso } | ConvertTo-Json -Depth 3
 $manObj = @{ app = "Law Studyes"; version = $Version; bundle = "ota-bundle.zip"; updatedAt = $nowIso } | ConvertTo-Json -Depth 3
 [System.IO.File]::WriteAllText((Join-Path $wwwDir "ota-version.json"), $verObj, $utf8NoBom)
-[System.IO.File]::WriteAllText((Join-Path $wwwDir "ota-manifest.json", "nyayasaral_db.json", "db-version.json"), $manObj, $utf8NoBom)
+[System.IO.File]::WriteAllText((Join-Path $wwwDir "ota-manifest.json"), $manObj, $utf8NoBom)
 
 Write-Host "[OK] Built OTA v$Version -> www/ota-bundle.zip (forward-slash paths for Android)" -ForegroundColor Green
 
