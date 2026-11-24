@@ -4233,5 +4233,46 @@
 })();
 </script>
 <!-- LS_SAFE_TTS_END -->
+<!-- LS_FAST_LANG_START -->
+<script>
+(function () {
+  var LK = "ls_pref_lang_v1";
+  function applyFastLang(newLang) {
+    if (typeof state === "undefined") return;
+    var wasPlaying = Boolean(state.audio && state.audio.isPlaying && !state.audio.isPaused);
+    var curTopic = state.activeTopicId;
+    if (typeof stopAudio === "function") stopAudio();
+    state.lang = newLang === "te" ? "te" : "en";
+    try { localStorage.setItem(LK, state.lang); } catch (e) {}
+
+    var enBtn = document.getElementById("langEnBtn");
+    var teBtn = document.getElementById("langTeBtn");
+    if (enBtn) enBtn.className = state.lang === "en" ? "px-2.5 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white" : "px-2.5 py-1 rounded-full transition-colors text-[#5F554E]";
+    if (teBtn) teBtn.className = state.lang === "te" ? "px-2.5 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white" : "px-2.5 py-1 rounded-full transition-colors text-[#5F554E]";
+
+    if (typeof renderReadingPane === "function") renderReadingPane();
+    if (typeof showToast === "function") showToast(state.lang === "te" ? "Switched to Telugu (TE)" : "Switched to English (EN)");
+    if (wasPlaying && curTopic && typeof startTopicAudio === "function") {
+      setTimeout(function () { startTopicAudio(curTopic); }, 120);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      var enOld = document.getElementById("langEnBtn");
+      var teOld = document.getElementById("langTeBtn");
+      if (enOld && teOld) {
+        var enNew = enOld.cloneNode(true); enOld.parentNode.replaceChild(enNew, enOld);
+        var teNew = teOld.cloneNode(true); teOld.parentNode.replaceChild(teNew, teOld);
+        enNew.addEventListener("click", function () { applyFastLang("en"); });
+        teNew.addEventListener("click", function () { applyFastLang("te"); });
+      }
+      var saved = ""; try { saved = localStorage.getItem(LK) || ""; } catch (e) {}
+      if (saved === "te") applyFastLang("te");
+    }, 300);
+  });
+})();
+</script>
+<!-- LS_FAST_LANG_END -->
 </body>
 </html>
