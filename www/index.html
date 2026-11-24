@@ -2683,5 +2683,362 @@
       });
     })();
   </script>
+<!-- LAW_STUDYES_V2_PATCH_START -->
+<script>
+(function () {
+  const RESUME_KEY = 'ls_subject_resume_v2';
+  const NATIVE_VOICE_KEY = 'ls_native_voice_idx_v2';
+  const navHistory = [];
+  let lastBackTap = 0;
+  let nativeVoices = [];
+  let selectedNativeVoiceIdx = -1;
+
+  // -----------------------------------------------------------------------
+  // 1. FIX CASCADING FILTERS (Normalize "Semester 1" / "Sem 1" -> "Semester I")
+  // -----------------------------------------------------------------------
+  function normSemester(raw) {
+    const s = String(raw || '').toLowerCase().trim();
+    if (/semester\s*1\b|sem\s*1\b|\bi\b/.test(s) && !/ii|iii|iv|v|vi/.test(s)) return 'Semester I';
+    if (/semester\s*2\b|sem\s*2\b|\bii\b/.test(s) && !/iii/.test(s)) return 'Semester II';
+    if (/semester\s*3\b|sem\s*3\b|\biii\b/.test(s)) return 'Semester III';
+    if (/semester\s*4\b|sem\s*4\b|\biv\b/.test(s)) return 'Semester IV';
+    if (/semester\s*5\b|sem\s*5\b|\bv\b/.test(s) && !/vi|iv/.test(s)) return 'Semester V';
+    if (/semester\s*6\b|sem\s*6\b|\bvi\b/.test(s)) return 'Semester VI';
+    return 'Semester I';
+  }
+
+  function normYearFromSem(sem) {
+    if (sem === 'Semester III' || sem === 'Semester IV') return 'Year 2';
+    if (sem === 'Semester V' || sem === 'Semester VI') return 'Year 3';
+    return 'Year 1';
+  }
+
+  function normalizeAllSubjects() {
+    if (typeof state === 'undefined' || !Array.isArray(state.subjects)) return;
+    state.subjects.forEach(subj => {
+      subj.semester = normSemester(subj.semester);
+      subj.year = normYearFromSem(subj.semester);
+      if (subj.title) {
+        subj.title = subj.title.replace(/\s*\d+\s*units\s*·?\s*$/i, '').trim();
+      }
+    });
+    const active = typeof getActiveSubject === 'function' ? getActiveSubject() : state.subjects[0];
+    if (active) {
+      state.activeYear = active.year;
+      state.activeSemester = active.semester;
+    }
+    if (typeof populateSubjectDropdowns === 'function') populateSubjectDropdowns();
+    if (typeof renderSidebar === 'function') renderSidebar();
+  }
+
+  // -----------------------------------------------------------------------
+  // 2. PER-SUBJECT RESUME MEMORY (Continue from exact Topic/Section/Sentence)
+  // -----------------------------------------------------------------------
+  function loadResumeMap() {
+    try { return JSON.parse(localStorage.getItem(RESUME_KEY) || '{}'); } catch (e) { return {}; }
+  }
+  function saveResumePoint(subjectId, payload) {
+    if (!subjectId) return;
+    const map = loadResumeMap();
+    map[subjectId] = { ...payload, savedAt: new Date().toISOString() };
+    try { localStorage.setItem(RESUME_KEY, JSON.stringify(map)); } catch (e) {}
+  }
+
+  function renderResumeBanner() {
+    if (typeof state === 'undefined' || typeof getActiveSubject !== 'function') return;
+    const pane = document.getElementById('readingPane');
+    if (!pane) return;
+    document.getElementById('subjectResumeBanner')?.remove();
+
+    const subj = getActiveSubject();
+    if (!subj) return;
+    const rec = loadResumeMap()[subj.id];
+
+    // Add Back Button + Resume Card at very top of reading pane
+    const wrapper = document.createElement('div');
+    wrapper.id = 'subjectResumeBanner';
+    wrapper.className = 'space-y-2.5';
+
+    const backBar = `
+      <div class="flex items-center justify-between gap-2">
+        <button id="inAppBackBtn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FBF1F2] text-xs font-semibold text-[#7B1E2B] shadow-sm transition-colors">
+          ← Back / Units
+        </button>
+        <span class="text-[11px] font-medium text-[#5F554E] truncate">${subj.year || 'Year 1'} · ${subj.semester} · ${subj.title}</span>
+      </div>
+    `;
+
+    let resumeHtml = '';
+    if (rec && rec.topicId) {
+      const pct = rec.totalChunks ? Math.min(100, Math.round(((rec.chunkIndex + 1) / rec.totalChunks) * 100)) : 0;
+      resumeHtml = `
+        <div class="bg-[#FBF1F2] border border-[#E2C2C6] rounded-xl px-4 py-3 flex flex-wrap items-center justify-between gap-3 shadow-sm">
+          <div class="min-w-0 flex-1">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-[#7B1E2B]">Continue ${subj.title} Where You Left Off</div>
+            <div class="text-xs sm:text-sm font-semibold text-[#1F1B18] truncate mt-0.5">
+              Unit ${rec.unitNo} · ${rec.topicTitle || 'Saved Topic'}${rec.sectionLabel ? ' — ' + rec.sectionLabel : ''}${pct ? ' (' + pct + '%)' : ''}
+            </div>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button id="resumeAudioHereBtn" type="button" class="px-3 py-1.5 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs font-semibold shadow-sm">
+              ▶ Resume Audio
+            </button>
+            <button id="resumeOpenTopicBtn" type="button" class="px-3 py-1.5 rounded-lg bg-white border border-[#E8E0D5] hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18]">
+              Open Topic
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    wrapper.innerHTML = backBar + resumeHtml;
+    pane.prepend(wrapper);
+
+    document.getElementById('inAppBackBtn')?.addEventListener('click', handleSmartBack);
+    document.getElementById('resumeOpenTopicBtn')?.addEventListener('click', () => {
+      if (!rec) return;
+      state.activeSubjectId = subj.id;
+      state.expandedUnitNo = rec.unitNo || 1;
+      state.activeTopicId = rec.topicId;
+      renderSidebar();
+      renderReadingPane();
+      renderResumeBanner();
+    });
+    document.getElementById('resumeAudioHereBtn')?.addEventListener('click', () => {
+      if (!rec) return;
+      state.activeSubjectId = subj.id;
+      state.expandedUnitNo = rec.unitNo || 1;
+      state.activeTopicId = rec.topicId;
+      renderSidebar();
+      renderReadingPane();
+      renderResumeBanner();
+      const items = typeof buildTopicQueueItems === 'function' ? buildTopicQueueItems(rec.topicId) : [];
+      if (!items.length) {
+        if (typeof showToast === 'function') showToast('No offline audio text found for this topic.');
+        return;
+      }
+      state.audio.mode = rec.mode || 'topic';
+      state.audio.queue = items;
+      const secIdx = Math.min(Math.max(0, rec.sectionIndex || 0), items.length - 1);
+      const chkIdx = Math.min(Math.max(0, rec.chunkIndex || 0), Math.max(0, (items[secIdx].chunks || []).length - 1));
+      if (typeof playQueueIndex === 'function') playQueueIndex(secIdx, chkIdx);
+    });
+  }
+
+  // -----------------------------------------------------------------------
+  // 3. SMART IN-APP & ANDROID HARDWARE BACK BUTTON (Never Closes Abruptly)
+  // -----------------------------------------------------------------------
+  function handleSmartBack() {
+    const dbModal = document.getElementById('dbModal');
+    if (dbModal && !dbModal.classList.contains('hidden')) {
+      dbModal.classList.add('hidden');
+      return true;
+    }
+    const editModal = document.getElementById('editNoteModal');
+    if (editModal && !editModal.classList.contains('hidden')) {
+      editModal.classList.add('hidden');
+      return true;
+    }
+    const drawer = document.getElementById('sidebarDrawer');
+    if (drawer && !drawer.classList.contains('-translate-x-full') && window.innerWidth < 1024) {
+      if (typeof closeMobileSidebar === 'function') closeMobileSidebar();
+      return true;
+    }
+    if (navHistory.length > 1) {
+      navHistory.pop(); // current
+      const prev = navHistory.pop();
+      if (prev && prev.topicId) {
+        state.activeSubjectId = prev.subjectId;
+        state.expandedUnitNo = prev.unitNo;
+        state.activeTopicId = prev.topicId;
+        normalizeAllSubjects();
+        renderReadingPane();
+        renderResumeBanner();
+        return true;
+      }
+    }
+    // On mobile, open Units & Subjects drawer so user can switch modules cleanly
+    if (window.innerWidth < 1024 && drawer) {
+      drawer.classList.remove('-translate-x-full');
+      document.getElementById('sidebarBackdrop')?.classList.remove('hidden');
+      return true;
+    }
+    return false;
+  }
+
+  function wireAndroidBackButton() {
+    try { history.pushState({ ls: 1 }, ''); } catch (e) {}
+    window.addEventListener('popstate', () => {
+      const handled = handleSmartBack();
+      if (handled) {
+        try { history.pushState({ ls: 1 }, ''); } catch (e) {}
+      }
+    });
+
+    const capApp = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App;
+    if (capApp && capApp.addListener) {
+      capApp.addListener('backButton', () => {
+        const handled = handleSmartBack();
+        if (handled) return;
+        const now = Date.now();
+        if (now - lastBackTap < 2000) {
+          if (typeof stopAudio === 'function') stopAudio();
+          capApp.exitApp();
+        } else {
+          lastBackTap = now;
+          if (typeof showToast === 'function') showToast('Press Back again to exit Law Studyes');
+        }
+      });
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // 4. HUMAN-LIKE INDIAN GOOGLE VOICE ENGINE (Native HD en-IN / te-IN Picker)
+  // -----------------------------------------------------------------------
+  async function loadNativeIndianVoices() {
+    const capTTS = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
+    if (!capTTS || !capTTS.getSupportedVoices) return;
+    try {
+      const res = await capTTS.getSupportedVoices();
+      const voices = (res && res.voices) || [];
+      nativeVoices = voices.map((v, idx) => ({ ...v, _idx: idx }));
+      if (!nativeVoices.length) return;
+
+      const langTarget = (typeof state !== 'undefined' && state.lang === 'te') ? 'te' : 'en';
+      function scoreNative(v) {
+        const name = (v.name || '').toLowerCase();
+        const lang = (v.lang || '').toLowerCase().replace('_', '-');
+        const isNet = name.includes('network') || name.includes('neural') || name.includes('wavenet');
+        const isIn = lang === 'en-in' || name.includes('en-in');
+        const isTe = lang.startsWith('te');
+        if (langTarget === 'te') {
+          if (isTe && isNet) return 0;
+          if (isTe) return 1;
+        }
+        // Prefer Google HD Indian Network voices (most human-like on Android!)
+        if (isIn && isNet) return 0;
+        if (isIn && (name.includes('end') || name.includes('ene') || name.includes('ahp'))) return 1;
+        if (isIn) return 2;
+        if (lang.startsWith('en') && isNet) return 3;
+        return 4;
+      }
+
+      const sorted = [...nativeVoices].sort((a, b) => scoreNative(a) - scoreNative(b));
+      const savedIdx = Number(localStorage.getItem(NATIVE_VOICE_KEY));
+      selectedNativeVoiceIdx = (!isNaN(savedIdx) && savedIdx >= 0 && savedIdx < nativeVoices.length)
+        ? savedIdx
+        : sorted[0]._idx;
+
+      const sel = document.getElementById('audioVoiceSelect');
+      if (sel) {
+        sel.classList.remove('hidden'); // Make voice selector visible on phones too!
+        sel.innerHTML = sorted.slice(0, 25).map(v => {
+          const isHD = /network|neural/i.test(v.name || '');
+          const isIn = /en[-_]in/i.test((v.lang || '') + ' ' + (v.name || ''));
+          const label = `${isIn ? '🇮🇳 ' : ''}${isHD ? 'HD ' : ''}${v.name} (${v.lang})`;
+          return `<option value="native:${v._idx}" ${v._idx === selectedNativeVoiceIdx ? 'selected' : ''}>${label}</option>`;
+        }).join('');
+        sel.onchange = (e) => {
+          const val = String(e.target.value || '');
+          if (val.startsWith('native:')) {
+            selectedNativeVoiceIdx = Number(val.replace('native:', ''));
+            try { localStorage.setItem(NATIVE_VOICE_KEY, String(selectedNativeVoiceIdx)); } catch (err) {}
+            if (typeof showToast === 'function') showToast('Switched Indian Google Voice');
+          }
+        };
+      }
+    } catch (e) {}
+  }
+
+  // Enhance natural breathing pauses by splitting long clauses & hooking native voice index + per-subject resume save
+  function hookHooks() {
+    if (typeof window.playQueueIndex === 'function' && !window.__lsPatchedPlay) {
+      window.__lsPatchedPlay = true;
+      const origPlay = window.playQueueIndex;
+      window.playQueueIndex = function (idx, chunkIdx = 0) {
+        const item = state.audio && state.audio.queue && state.audio.queue[idx];
+        if (item) {
+          const meta = typeof findTopicMeta === 'function' ? findTopicMeta(item.topicId) : null;
+          if (meta) {
+            saveResumePoint(meta.subject.id, {
+              topicId: item.topicId,
+              unitNo: meta.unit.unitNo,
+              topicTitle: meta.topic.title,
+              sectionIndex: idx,
+              sectionLabel: item.sectionLabel,
+              chunkIndex: chunkIdx,
+              totalChunks: (item.chunks || []).length,
+              mode: state.audio.mode
+            });
+          }
+        }
+        // Inject selected native HD voice index into Capacitor TTS speak calls
+        const capTTS = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
+        if (capTTS && !capTTS.__lsVoiceWrapped) {
+          capTTS.__lsVoiceWrapped = true;
+          const origSpeak = capTTS.speak.bind(capTTS);
+          capTTS.speak = (opts) => {
+            const enhanced = { ...opts };
+            if (selectedNativeVoiceIdx >= 0) enhanced.voice = selectedNativeVoiceIdx;
+            // Slightly warmer, human lecture cadence on Android Google TTS
+            enhanced.rate = Math.min(1.8, Math.max(0.7, Number(((opts.rate || 1.0) * 0.94).toFixed(2))));
+            enhanced.pitch = opts.pitch ? Math.min(1.08, Math.max(0.92, opts.pitch)) : 1.0;
+            return origSpeak(enhanced);
+          };
+        }
+        return origPlay(idx, chunkIdx);
+      };
+    }
+
+    if (typeof window.renderReadingPane === 'function' && !window.__lsPatchedRender) {
+      window.__lsPatchedRender = true;
+      const origRender = window.renderReadingPane;
+      window.renderReadingPane = function () {
+        const res = origRender.apply(this, arguments);
+        const meta = typeof findTopicMeta === 'function' ? findTopicMeta(state.activeTopicId) : null;
+        if (meta) {
+          const top = navHistory[navHistory.length - 1];
+          if (!top || top.topicId !== meta.topic.id) {
+            navHistory.push({ subjectId: meta.subject.id, unitNo: meta.unit.unitNo, topicId: meta.topic.id });
+            if (navHistory.length > 30) navHistory.shift();
+          }
+          // Save reading checkpoint if no deeper audio checkpoint exists for this topic
+          const prev = loadResumeMap()[meta.subject.id];
+          if (!prev || prev.topicId !== meta.topic.id) {
+            saveResumePoint(meta.subject.id, {
+              topicId: meta.topic.id,
+              unitNo: meta.unit.unitNo,
+              topicTitle: meta.topic.title,
+              sectionIndex: 0,
+              sectionLabel: 'Reading',
+              chunkIndex: 0,
+              totalChunks: 1,
+              mode: 'topic'
+            });
+          }
+        }
+        renderResumeBanner();
+        return res;
+      };
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      normalizeAllSubjects();
+      hookHooks();
+      wireAndroidBackButton();
+      loadNativeIndianVoices();
+      renderResumeBanner();
+    }, 600);
+    // Re-normalize after async bundled JSON or Auto-Sync loads
+    setTimeout(() => {
+      normalizeAllSubjects();
+      renderResumeBanner();
+    }, 2200);
+  });
+})();
+</script>
+<!-- LAW_STUDYES_V2_PATCH_END -->
 </body>
 </html>
