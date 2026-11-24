@@ -61,7 +61,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.2.0</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. · All Years Audio &amp; Sync · v2.3.0</div>
           </div>
         </button>
       </div>
@@ -3866,5 +3866,109 @@
 })();
 </script>
 <!-- LS_CLEAN_UI_SHARE_END -->
+<!-- LS_UX_BACK_START -->
+<div id="lsExitModal" class="hidden fixed inset-0 z-[130] bg-black/50 flex items-center justify-center p-4">
+  <div class="bg-white border border-[#E8E0D5] rounded-2xl max-w-xs w-full p-5 text-center shadow-xl space-y-4">
+    <div class="font-editorial text-lg font-bold text-[#7B1E2B]">Exit Law Studyes?</div>
+    <p class="text-xs text-[#5F554E]">Your study progress and audio position are saved automatically on your device.</p>
+    <div class="grid grid-cols-2 gap-2.5">
+      <button id="lsExitCancelBtn" type="button" class="py-2 rounded-xl border border-[#E8E0D5] text-xs font-semibold text-[#1F1B18]">Stay</button>
+      <button id="lsExitConfirmBtn" type="button" class="py-2 rounded-xl bg-[#7B1E2B] text-white text-xs font-semibold">Exit App</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var lastHomeBack = 0;
+  var topicStack = [];
+
+  function isOpen(id) {
+    var el = document.getElementById(id);
+    return el && !el.classList.contains("hidden");
+  }
+
+  window.__lsAndroidBack = function () {
+    // 1. Close Exit modal if open
+    if (isOpen("lsExitModal")) { document.getElementById("lsExitModal").classList.add("hidden"); return; }
+    // 2. Close Edit / DB modals if open
+    if (isOpen("editNoteModal")) { document.getElementById("editNoteModal").classList.add("hidden"); return; }
+    if (isOpen("dbModal")) { document.getElementById("dbModal").classList.add("hidden"); return; }
+    // 3. Close mobile Units/Subjects drawer if open
+    var drawer = document.getElementById("sidebarDrawer");
+    if (drawer && !drawer.classList.contains("-translate-x-full") && window.innerWidth < 1024) {
+      if (typeof closeMobileSidebar === "function") closeMobileSidebar();
+      return;
+    }
+    // 4. Go back to previous topic if history exists
+    if (topicStack.length > 1) {
+      topicStack.pop();
+      var prev = topicStack[topicStack.length - 1];
+      if (prev && typeof state !== "undefined") {
+        state.activeSubjectId = prev.subjectId;
+        state.expandedUnitNo = prev.unitNo;
+        state.activeTopicId = prev.topicId;
+        if (typeof populateSubjectDropdowns === "function") populateSubjectDropdowns();
+        if (typeof renderSidebar === "function") renderSidebar();
+        if (typeof renderReadingPane === "function") renderReadingPane();
+        return;
+      }
+    }
+    // 5. At Home screen: double-tap Back opens Exit confirmation dialog
+    var now = Date.now();
+    if (now - lastHomeBack < 2200) {
+      document.getElementById("lsExitModal").classList.remove("hidden");
+    } else {
+      lastHomeBack = now;
+      if (typeof showToast === "function") showToast("Press Back again to exit Law Studyes");
+    }
+  };
+
+  function upgradeMobileDrawerOneTap() {
+    var drawer = document.getElementById("sidebarDrawer");
+    if (!drawer || document.getElementById("lsEasyCloseDrawerBtn")) return;
+    var bar = document.createElement("button");
+    bar.id = "lsEasyCloseDrawerBtn";
+    bar.type = "button";
+    bar.className = "lg:hidden mt-3 w-full py-2.5 rounded-xl bg-[#7B1E2B] text-white text-xs font-bold shadow-sm";
+    bar.textContent = "✕ Close Subjects & Units";
+    bar.onclick = function () { if (typeof closeMobileSidebar === "function") closeMobileSidebar(); };
+    drawer.appendChild(bar);
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    upgradeMobileDrawerOneTap();
+    document.getElementById("lsExitCancelBtn")?.addEventListener("click", function () {
+      document.getElementById("lsExitModal").classList.add("hidden");
+    });
+    document.getElementById("lsExitConfirmBtn")?.addEventListener("click", function () {
+      if (typeof stopAudio === "function") stopAudio();
+      if (window.LawStudyesNative && window.LawStudyesNative.exitAppNow) {
+        window.LawStudyesNative.exitAppNow();
+      } else {
+        document.getElementById("lsExitModal").classList.add("hidden");
+      }
+    });
+    if (typeof window.renderReadingPane === "function" && !window.__lsStackHooked) {
+      window.__lsStackHooked = true;
+      var origR = window.renderReadingPane;
+      window.renderReadingPane = function () {
+        var r = origR.apply(this, arguments);
+        if (typeof findTopicMeta === "function" && typeof state !== "undefined") {
+          var m = findTopicMeta(state.activeTopicId);
+          if (m) {
+            var top = topicStack[topicStack.length - 1];
+            if (!top || top.topicId !== m.topic.id) {
+              topicStack.push({ subjectId: m.subject.id, unitNo: m.unit.unitNo, topicId: m.topic.id });
+              if (topicStack.length > 25) topicStack.shift();
+            }
+          }
+        }
+        return r;
+      };
+    }
+  });
+})();
+</script>
+<!-- LS_UX_BACK_END -->
 </body>
 </html>
