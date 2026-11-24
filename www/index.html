@@ -3436,7 +3436,7 @@
 <!-- LAW_STUDYES_GSHEET_DB_START -->
 <script>
 (function(){
-  const API='https://script.google.com/macros/s/AKfycbzZAhVxO0TAnQE8B9d1PK3YV_sU0_X79YtZtlZkCdH-wlznFxNlv5XYG4gflPtsgf8_/exec', RK='ls_registered_students_v1', SK='ls_active_student_v1', SALT='LS-ANTI-TAMPER-2026-KAV';
+  const API='https://script.google.com/macros/s/AKfycby_IsKA5aN_1YI6lYxGe82xmwfYhmTWs0ekzru0C4VPjdohd2UAvQPTvyDF3L7uxhVs/exec', RK='ls_registered_students_v1', SK='ls_active_student_v1', SALT='LS-ANTI-TAMPER-2026-KAV';
   async function sig(o){const s=JSON.stringify(o)+SALT;if(crypto&&crypto.subtle){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');}return btoa(unescape(encodeURIComponent(s))).slice(0,32);}
   async function pushS(st){try{await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(st)});}catch(e){}}
   async function getS(ph){try{const r=await fetch(API+'?phone='+encodeURIComponent(ph),{cache:'no-store'});if(r.ok){const d=await r.json();if(d&&d.ok&&d.student)return d.student;}}catch(e){}return null;}
@@ -3497,7 +3497,7 @@
 <!-- LS_FINAL_AUTH_START -->
 <script>
 (function () {
-  var GS_API = "https://script.google.com/macros/s/AKfycbzZAhVxO0TAnQE8B9d1PK3YV_sU0_X79YtZtlZkCdH-wlznFxNlv5XYG4gflPtsgf8_/exec";
+  var GS_API = "https://script.google.com/macros/s/AKfycby_IsKA5aN_1YI6lYxGe82xmwfYhmTWs0ekzru0C4VPjdohd2UAvQPTvyDF3L7uxhVs/exec";
   var RK = "ls_registered_students_v1";
   var SK = "ls_active_student_v1";
   var SALT = "LS-ANTI-TAMPER-2026-KAV";
