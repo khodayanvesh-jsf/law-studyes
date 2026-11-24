@@ -2406,7 +2406,7 @@
 
   <script>
     (function () {
-      const OTA_BASE = 'https://law-studyes.vercel.app';
+      const OTA_BASE = 'https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www';
       const OTA_FALLBACK = 'https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www';
       const CURRENT_VERSION_KEY = 'law_studyes_ota_version';
 
@@ -3495,5 +3495,332 @@
 })();
 </script>
 <!-- LAW_STUDYES_GSHEET_DB_END -->
+<!-- LAW_STUDYES_V4_LAW_CASCADE_START -->
+<script>
+(function () {
+  const GSHEET_API = 'https://script.google.com/macros/s/AKfycbzZAhVxO0TAnQE8B9d1PK3YV_sU0_X79YtZtlZkCdH-wlznFxNlv5XYG4gflPtsgf8_/exec';
+  const REG_KEY = 'ls_registered_students_v1';
+  const SESSION_KEY = 'ls_active_student_v1';
+  const SIG_SALT = 'LS-ANTI-TAMPER-2026-KAV';
+
+  // Strict 1-to-1 Law-Only Directory: State -> Law University -> Affiliated Law Colleges
+  const LAW_ONLY_DIR = {
+    'Telangana': {
+      'Osmania University (Faculty of Law)': [
+        'University College of Law, Osmania University',
+        'Post Graduate College of Law, Basheerbagh',
+        'Pendekanti Law College, Hyderabad',
+        'Sultan-ul-Uloom College of Law, Banjara Hills',
+        'Padala Rama Reddi Law College, Hyderabad',
+        'Mahatma Gandhi Law College, Hyderabad',
+        'Aurora Legal Sciences Academy, Bandlaguda',
+        'Bhaskara Law College, Moinabad',
+        'K.V. Ranga Reddy Law College, Hyderabad',
+        'Ponugoti Madhava Rao Law College, L.B. Nagar',
+        'Dr. B.R. Ambedkar Law College, Baghlingampally',
+        'Keshav Memorial College of Law, Hyderabad',
+        'Marwadi Siksha Samithi Law College, Hyderabad'
+      ],
+      'Kakatiya University (Faculty of Law)': [
+        'University College of Law, Kakatiya University, Warangal',
+        'Adarsha Law College, Hanamkonda',
+        'Kakatiya College of Law, Warangal',
+        'Manair College of Law, Khammam',
+        'Anantha Law College, Warangal'
+      ],
+      'Telangana University (Faculty of Law)': [
+        'University College of Law, Telangana University, Nizamabad'
+      ],
+      'Satavahana University (Faculty of Law)': [
+        'Justice Kumarayya College of Law, Karimnagar',
+        'University College of Law, Satavahana University'
+      ],
+      'Palamuru University (Faculty of Law)': [
+        'University College of Law, Palamuru University, Mahabubnagar'
+      ],
+      'Mahatma Gandhi University (Faculty of Law)': [
+        'University College of Law, MGU Nalgonda'
+      ],
+      'NALSAR University of Law, Hyderabad': [
+        'NALSAR University of Law, Shamirpet'
+      ]
+    },
+    'Andhra Pradesh': {
+      'Andhra University (Faculty of Law)': [
+        'Dr. B.R. Ambedkar College of Law, Visakhapatnam',
+        'N.B.M. Law College, Visakhapatnam',
+        'All Saints Christian Law College, Visakhapatnam',
+        'Visakha Law College, Visakhapatnam',
+        'M.R.V.R.G.R. Law College, Vizianagaram'
+      ],
+      'Acharya Nagarjuna University (Faculty of Law)': [
+        'University College of Law, ANU Guntur',
+        'J.C. College of Law, Guntur',
+        'A.C. College of Law, Guntur',
+        'Smt. Velagapudi Durgamba Siddhartha Law College, Vijayawada',
+        'Indira Priyadarshini Law College, Ongole'
+      ],
+      'Sri Venkateswara University (Faculty of Law)': [
+        'University College of Law, SVU Tirupati',
+        'Anantha College of Law, Tirupati',
+        'Dr. Ambedkar Global Law Institute, Tirupati',
+        'V.R. Law College, Nellore'
+      ],
+      'Sri Krishnadevaraya University (Faculty of Law)': [
+        'University College of Law, SKU Anantapur',
+        'Sri Vijayanagar College of Law, Anantapur',
+        'Smt. Basava Rama Tarakam Memorial Law College, Kadapa'
+      ],
+      'Adikavi Nannaya University (Faculty of Law)': [
+        'G.S.K.M. Law College, Rajahmundry',
+        'D.N.R. College of Law, Bhimavaram',
+        'Veeravalli College of Law, Rajahmundry'
+      ],
+      'Damodaram Sanjivayya National Law University': [
+        'DSNLU, Sabbavaram, Visakhapatnam'
+      ]
+    },
+    'Karnataka': {
+      'Karnataka State Law University (KSLU), Hubballi': [
+        'KSLU Law School, Hubballi',
+        'BMS College of Law, Bengaluru',
+        'KLE Society Law College, Bengaluru',
+        'Seshadripuram Law College, Bengaluru',
+        'Vidyavardhaka Law College, Mysuru',
+        'SDM Law College, Mangaluru'
+      ],
+      'National Law School of India University (NLSIU)': [
+        'NLSIU, Bengaluru'
+      ]
+    },
+    'Maharashtra': {
+      'University of Mumbai (Faculty of Law)': [
+        'Government Law College (GLC), Mumbai',
+        'KC Law College, Mumbai',
+        'Rizvi Law College, Mumbai',
+        'Adv. Balasaheb Apte College of Law, Mumbai'
+      ],
+      'Savitribai Phule Pune University (Law)': [
+        'ILS Law College, Pune',
+        'DES Shri Navalmal Firodia Law College, Pune',
+        'Modern Law College, Pune'
+      ],
+      'Maharashtra National Law University (MNLU)': [
+        'MNLU Mumbai',
+        'MNLU Nagpur',
+        'MNLU Chhatrapati Sambhajinagar'
+      ]
+    },
+    'Tamil Nadu': {
+      'Tamil Nadu Dr. Ambedkar Law University (TNDALU)': [
+        'School of Excellence in Law, Chennai',
+        'Dr. Ambedkar Government Law College, Chennai',
+        'Government Law College, Madurai',
+        'Government Law College, Coimbatore',
+        'Government Law College, Tiruchirappalli'
+      ]
+    },
+    'Delhi / NCR': {
+      'University of Delhi (Faculty of Law)': [
+        'Campus Law Centre (CLC), Delhi University',
+        'Law Centre-I, Delhi University',
+        'Law Centre-II, Delhi University'
+      ],
+      'National Law University, Delhi': [
+        'NLU Delhi, Dwarka'
+      ]
+    }
+  };
+
+  const YR_SEMS = {
+    'Year 1': ['Semester I', 'Semester II'],
+    'Year 2': ['Semester III', 'Semester IV'],
+    'Year 3': ['Semester V', 'Semester VI']
+  };
+
+  async function signPayload(obj) {
+    const str = JSON.stringify(obj) + SIG_SALT;
+    if (window.crypto && window.crypto.subtle) {
+      const buf = await window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    return btoa(unescape(encodeURIComponent(str))).slice(0, 32);
+  }
+
+  async function saveStudentToSheet(student) {
+    try {
+      await fetch(GSHEET_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(student)
+      });
+    } catch (e) {}
+  }
+
+  async function findStudentInSheet(phone) {
+    try {
+      const r = await fetch(GSHEET_API + '?phone=' + encodeURIComponent(phone), { cache: 'no-store' });
+      if (r.ok) {
+        const d = await r.json();
+        if (d && d.ok && d.student) return d.student;
+      }
+    } catch (e) {}
+    return null;
+  }
+
+  function buildLawCascadeRegistration() {
+    const oldForm = document.getElementById('studentRegisterForm');
+    if (!oldForm) return;
+    const form = oldForm.cloneNode(false);
+    form.className = oldForm.className;
+    form.innerHTML = 
+      <div>
+        <label class="block text-xs font-semibold text-[#5F554E] mb-1">Full Name *</label>
+        <input id="regNameInput" type="text" required placeholder="Enter your full name" class="w-full border border-[#E8E0D5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#7B1E2B]" />
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-[#5F554E] mb-1">Mobile Number (10 digits) *</label>
+        <div class="flex items-center border border-[#E8E0D5] rounded-xl overflow-hidden focus-within:border-[#7B1E2B]">
+          <span class="px-3 py-2 bg-[#FAF7F2] text-xs font-bold text-[#5F554E] border-r border-[#E8E0D5]">+91</span>
+          <input id="regPhoneInput" type="tel" maxlength="10" inputmode="numeric" required placeholder="9876543210" class="flex-1 px-3 py-2 text-sm focus:outline-none" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-[#5F554E] mb-1">1. Select State *</label>
+        <select id="regStateSelect" required class="w-full border border-[#E8E0D5] rounded-xl px-3 py-2 text-xs font-semibold bg-[#FAF7F2] focus:outline-none focus:border-[#7B1E2B]"></select>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-[#5F554E] mb-1">2. Select Law University *</label>
+        <select id="regUnivSelect" required class="w-full border border-[#E8E0D5] rounded-xl px-3 py-2 text-xs font-semibold bg-[#FAF7F2] focus:outline-none focus:border-[#7B1E2B]"></select>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-[#5F554E] mb-1">3. Select Law College *</label>
+        <select id="regCollegeSelect" required class="w-full border border-[#E8E0D5] rounded-xl px-3 py-2 text-xs font-semibold bg-[#FAF7F2] focus:outline-none focus:border-[#7B1E2B]"></select>
+        <input id="regCustomCollegeInput" type="text" placeholder="Enter your Law College name" class="hidden mt-2 w-full border border-[#E8E0D5] rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-[#7B1E2B]" />
+      </div>
+      <div class="grid grid-cols-2 gap-2.5">
+        <div>
+          <label class="block text-xs font-semibold text-[#5F554E] mb-1">Course Year *</label>
+          <select id="regYearInput" class="w-full border border-[#E8E0D5] rounded-xl px-2.5 py-2 text-xs font-semibold bg-[#FAF7F2]">
+            <option value="Year 1">Year 1</option>
+            <option value="Year 2">Year 2</option>
+            <option value="Year 3">Year 3</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-[#5F554E] mb-1">Semester *</label>
+          <select id="regSemInput" class="w-full border border-[#E8E0D5] rounded-xl px-2.5 py-2 text-xs font-semibold bg-[#FAF7F2]"></select>
+        </div>
+      </div>
+      <button type="submit" class="w-full py-2.5 rounded-xl bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-sm font-semibold shadow-sm transition-colors mt-1">
+        Register &amp; Start Studying
+      </button>
+    ;
+    oldForm.parentNode.replaceChild(form, oldForm);
+
+    const sSel = form.querySelector('#regStateSelect');
+    const uSel = form.querySelector('#regUnivSelect');
+    const cSel = form.querySelector('#regCollegeSelect');
+    const cCustom = form.querySelector('#regCustomCollegeInput');
+    const ySel = form.querySelector('#regYearInput');
+    const smSel = form.querySelector('#regSemInput');
+
+    sSel.innerHTML = '<option value="">-- Select State --</option>' + Object.keys(LAW_ONLY_DIR).map(st => <option value=""></option>).join('');
+
+    function onState() {
+      const um = LAW_ONLY_DIR[sSel.value] || {};
+      const univs = Object.keys(um);
+      uSel.innerHTML = univs.length
+        ? '<option value="">-- Select Law University --</option>' + univs.map(u => <option value=""></option>).join('')
+        : '<option value="">-- Select State First --</option>';
+      onUniv();
+    }
+    function onUniv() {
+      const cols = (LAW_ONLY_DIR[sSel.value] || {})[uSel.value] || [];
+      cSel.innerHTML = cols.length
+        ? '<option value="">-- Select Law College --</option>' + cols.map(c => <option value=""></option>).join('') + '<option value="__OTHER__">Other BCI Law College (Type Name)</option>'
+        : '<option value="">-- Select Law University First --</option>';
+      onCol();
+    }
+    function onCol() {
+      const isOther = cSel.value === '__OTHER__';
+      cCustom.classList.toggle('hidden', !isOther);
+      cCustom.required = isOther;
+    }
+    function onYear() {
+      const sems = YR_SEMS[ySel.value] || ['Semester I', 'Semester II'];
+      smSel.innerHTML = sems.map(s => <option value=""></option>).join('');
+    }
+
+    sSel.addEventListener('change', onState);
+    uSel.addEventListener('change', onUniv);
+    cSel.addEventListener('change', onCol);
+    ySel.addEventListener('change', onYear);
+    // Default to Telangana so user sees live 1-to-1 cascade immediately
+    sSel.value = 'Telangana';
+    onState();
+    onYear();
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errBox = document.getElementById('authAlertBox');
+      if (errBox) errBox.classList.add('hidden');
+      const name = form.querySelector('#regNameInput').value.trim();
+      const phone = form.querySelector('#regPhoneInput').value.replace(/\D/g, '');
+      const stateVal = sSel.value;
+      const univVal = uSel.value;
+      const colVal = cSel.value === '__OTHER__' ? cCustom.value.trim() : cSel.value;
+      if (phone.length !== 10 || !stateVal || !univVal || !colVal) {
+        if (errBox) { errBox.textContent = 'Please complete Name, 10-digit Phone, State, Law University, and Law College.'; errBox.classList.remove('hidden'); }
+        return;
+      }
+      const student = { phone, name, state: stateVal, university: univVal, college: colVal, year: ySel.value, semester: smSel.value, registeredAt: new Date().toISOString() };
+      let all = {}; try { all = JSON.parse(localStorage.getItem(REG_KEY) || '{}'); } catch (err) {}
+      all[phone] = student;
+      try { localStorage.setItem(REG_KEY, JSON.stringify(all)); } catch (err) {}
+      const sig = await signPayload(student);
+      try { localStorage.setItem(SESSION_KEY, JSON.stringify({ student, sig })); } catch (err) {}
+      saveStudentToSheet(student);
+      document.getElementById('lawStudyesAuthOverlay')?.classList.add('hidden');
+      if (typeof showToast === 'function') showToast('Registered! Welcome, ' + name);
+    });
+
+    // Wire Phone-Only Login with Google Sheet lookup
+    const oldLogin = document.getElementById('studentLoginForm');
+    if (oldLogin) {
+      const lForm = oldLogin.cloneNode(true);
+      oldLogin.parentNode.replaceChild(lForm, oldLogin);
+      lForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const errBox = document.getElementById('authAlertBox');
+        if (errBox) errBox.classList.add('hidden');
+        const phone = (lForm.querySelector('#loginPhoneInput')?.value || '').replace(/\D/g, '');
+        if (phone.length !== 10) {
+          if (errBox) { errBox.textContent = 'Enter your registered 10-digit mobile number.'; errBox.classList.remove('hidden'); }
+          return;
+        }
+        let all = {}; try { all = JSON.parse(localStorage.getItem(REG_KEY) || '{}'); } catch (err) {}
+        let student = all[phone] || await findStudentInSheet(phone);
+        if (!student) {
+          if (errBox) { errBox.textContent = 'Number not registered yet. Tap "New Registration" above.'; errBox.classList.remove('hidden'); }
+          return;
+        }
+        all[phone] = student;
+        try { localStorage.setItem(REG_KEY, JSON.stringify(all)); } catch (err) {}
+        const sig = await signPayload(student);
+        try { localStorage.setItem(SESSION_KEY, JSON.stringify({ student, sig })); } catch (err) {}
+        saveStudentToSheet(student);
+        document.getElementById('lawStudyesAuthOverlay')?.classList.add('hidden');
+        if (typeof showToast === 'function') showToast('Welcome back, ' + student.name);
+      });
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(buildLawCascadeRegistration, 450);
+  });
+})();
+</script>
+<!-- LAW_STUDYES_V4_LAW_CASCADE_END -->
 </body>
 </html>

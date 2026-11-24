@@ -5,7 +5,7 @@
 #>
 param(
   [string]$Version = (Get-Date -Format "yyyy.MM.dd.HHmm"),
-  [string]$VercelBaseUrl = "https://law-studyes.vercel.app"
+  [string]$VercelBaseUrl = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www"
 )
 
 Add-Type -AssemblyName System.IO.Compression
