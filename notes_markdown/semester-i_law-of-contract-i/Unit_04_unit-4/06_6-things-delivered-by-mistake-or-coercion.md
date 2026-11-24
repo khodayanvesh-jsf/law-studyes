@@ -1,0 +1,28 @@
+# 6. Things delivered by mistake or coercion
+**Subject:** Law of Contract – I (Semester I) | **Unit 4:** Unit 4
+**Source:** https://nyayasaral.com/subjects/law-of-contract-i/things-delivered-mistake-coercion/
+
+## In One Minute
+If you pay money by mistake, or hand over goods because you are forced to, the person who received them must give them back. Section 72 says so in one sentence. You do not have to prove that the receiver did anything wrong. In exams, the double payment by joint debtors, the illegal railway charge, and the rule that "mistake" covers both fact and law earn the marks. In real life, it is the basis of refunds of excess payments and of taxes collected without authority.
+
+## Legal Provision
+- Section 72. Liability of person to whom money is paid, or thing delivered, by mistake or under coercion. A person to whom money has been paid, or anything delivered, by mistake or under coercion, must repay or return it. Illustrations (a) A and B jointly owe 100 rupees to C, A alone pays the amount to C, and B, not knowing this fact, pays 100 rupees over again to C. C is bound to repay the amount to B. (b) A railway company refuses to deliver up certain goods to the consignee, except upon the payment of an illegal charge for carriage. The consignee pays the sum charged in order to obtain the goods. He is entitled to recover so much of the charge as was illegally excessive.
+- Related provisions
+- Section 43 (second paragraph). Each promisor may compel contribution. —Each of two or more joint promisors may compel every other joint promisor to contribute equally with himself to the performance of the promise, unless a contrary intention appears from the contract.
+- Section 15. "Coercion" defined. "Coercion" is the committing, or threatening to commit, any act forbidden by the Indian Penal Code (45 of 1860) or the unlawful detaining, or threatening to detain, any property, to the prejudice of any person whatever, with the intention of causing any person to enter into an agreement.
+- Section 21. Effect of mistakes as to law. A contract is not voidable because it was caused by a mistake as to any law in force in India; but a mistake as to a law not in force in India has the same effect as a mistake of fact.
+- Section 65. When an agreement is discovered to be void, or when a contract becomes void, any person who has received any advantage under such agreement or contract is bound to restore it, or to make compensation for it to the person from whom he received it. Illustration (a). A pays B 1,000 rupees in consideration of B's promising to marry C, A's daughter. C is dead at the time of the promise. The agreement is void, but B must repay A the 1,000 rupees.
+- In simple words
+- Section 72: whoever receives money, or any thing, that was paid or delivered by mistake or under coercion must repay the money or return the thing. Illustration (a): a joint debt paid twice by mistake. The creditor must repay the second payment. Illustration (b): goods held back until an illegal charge is paid. The consignee (the person to whom goods are sent) recovers the part of the charge that was more than the law allowed. Section 43: each joint promisor may make the others contribute equally.
+
+## Meaning and Definition
+Section 72 is the last of the five quasi-contractual situations. It has two grounds. The first is a payment or delivery made by mistake . The second is a payment or delivery made under coercion . In both, the receiver has something that the giver never meant to give freely.
+
+Why the law has this rule. The reason is unjust enrichment . The receiver should not keep what he had no right to take. The section does not ask whether the receiver was honest. It asks only whether the payment came from a mistake or from compulsion.
+
+See Diagram 1 for the questions that a court asks.
+
+Diagram 1. Start at the top. If the answer to a box ends the claim, stop at the result beside it. Otherwise follow the arrow down to the next box. flowchart TD Q1["1. Was money paid, or a thing delivered,<br/>to the person who now holds it?"] Q1 -->|"No"| X1["Section 72 does not apply"] Q1 -->|"Yes"| Q2["2. By mistake, of fact or of law,<br/>or under coercion in the wide sense?"] Q2 -->|"No"| X2["A free and informed payment:<br/>the receiver need not return it"] Q2 -->|"Yes"| Q3["3. Was the sum legally due<br/>from the giver anyway?"] Q3 -->|"Yes"| X3["Not recoverable:<br/>he paid only what he owed"] Q3 -->|"No"| R["The receiver must repay the money<br/>or return the thing"] Text description Question 1: was money paid, or a thing delivered, to the person who now holds it? If no, Section 72 does not apply. Question 2: was it paid or delivered by mistake, whether of fact or of law, or under coercion in the wide sense of compulsion? If no, it was a free and informed payment, and the receiver need not return it. Question 3: was the sum legally due from the giver anyway, for example under a contract? If yes, it cannot be recovered, because the giver paid only what he owed. If all the tests are met, the receiver must repay the money or return the thing.
+
+## Key Points to Remember
+- Money paid or goods delivered by mistake or under coercion must be repaid or returned (Section 72). Mistake covers both fact and law ( Shiba Prasad Singh ; Kanhaiya Lal ). Coercion in Section 72 means any compulsion, not just the technical meaning in Section 15. The receiver's good faith is not the test. A sum that was legally due cannot be recovered. Joint debtors who pay twice: the receiver repays the second payer (Illustration (a)), and contribution follows under Section 43.

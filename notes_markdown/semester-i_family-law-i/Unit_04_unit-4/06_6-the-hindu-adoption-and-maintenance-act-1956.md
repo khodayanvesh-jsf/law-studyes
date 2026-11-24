@@ -1,0 +1,25 @@
+# 6. The Hindu Adoption and Maintenance Act, 1956
+**Subject:** Family Law – I (Hindu Law) (Semester I) | **Unit 4:** Unit 4
+**Source:** https://nyayasaral.com/subjects/family-law-i/hindu-adoption-and-maintenance-act-1956/
+
+## In One Minute
+What it is. The Hindu Adoptions and Maintenance Act, 1956 (HAMA) is one of the four Hindu Acts of 1955–56. It codifies two subjects: adoption (Chapter II, Sections 5 to 17) and maintenance (Chapter III, Sections 18 to 28). Who it covers. It applies to Hindus in the sense of Section 2 (Hindus, Buddhists, Jainas, Sikhs and the residuary group), but not to Scheduled Tribes unless notified. Overriding effect. It prevails over older Hindu law and custom on the matters it covers (Section 4). Extent and savings. It extends to the whole of India. Adoptions made before the Act are not affected (Section 30). The Act codified adoption and let women adopt in their own right. Scope of this note. The scheme of the Act as a whole. Adoption and maintenance are explained in detail in their own notes.
+
+## Legal Provision
+- Long title. An Act to amend and codify the law relating to adoptions and maintenance among Hindus.
+- Section 4. Overriding effect of Act. ―Save as otherwise expressly provided in this Act,― (a) any text, rule or interpretation of Hindu law or any custom or usage as part of that law in force immediately before the commencement of this Act shall cease to have effect with respect to any matter for which provision is made in this Act; (b) any other law in force immediately before the commencement of this Act shall cease to apply to Hindus in so far as it is inconsistent with any of the provisions contained in this Act.
+- Section 30. Savings. ―Nothing contained in this Act shall affect any adoption made before the commencement of this Act, and the validity and effect of any such adoption shall be determined as if this Act had not been passed.
+- Other provisions used in this note:
+- Section 1: short title, and extent to the whole of India. Section 2: application to Hindus by religion in any form, Buddhists, Jainas, Sikhs and the residuary group, with the Explanation on children (including an abandoned child or a child of unknown parentage brought up as a Hindu, Buddhist, Jaina or Sikh) and converts. Section 2(2) excludes Scheduled Tribes unless notified. Section 3: definitions of "custom" and "usage", "maintenance" and "minor". Sections 5 to 17: Chapter II, adoptions . Sections 18 to 28: Chapter III, maintenance. Section 29: repeals (itself repealed in 1960).
+
+## Meaning and Definition
+The Act is a codifying statute : a law passed by Parliament that sets out in one place the Hindu law on adoption and maintenance and replaces the old rules on those matters. Section 3 defines "maintenance" as food, clothing, residence, education and medical attendance and treatment, with the marriage expenses of an unmarried daughter. A "minor" is a person who has not completed eighteen years.
+
+Scheme of the Act. See Diagram 1 .
+
+Diagram 1. The Act has four chapters: preliminary, adoption, maintenance, and repeals and savings. flowchart TD A["Hindu Adoptions and<br/>Maintenance Act, 1956"] --> C1["Chapter I, ss. 1 to 4<br/>title, application,<br/>definitions, overriding effect"] A --> C2["Chapter II, ss. 5 to 17<br/>adoptions: requisites,<br/>capacity, effects, payments"] A --> C3["Chapter III, ss. 18 to 28<br/>maintenance: wife, daughter-in-law,<br/>children, parents, dependants"] A --> C4["Chapter IV, ss. 29 and 30<br/>repeals (repealed);<br/>earlier adoptions saved"] Text description Top: Hindu Adoptions and Maintenance Act, 1956. Chapter I, Sections 1 to 4: short title, application, definitions, overriding effect. Chapter II, Sections 5 to 17: adoptions, requisites, capacity, effects, payments. Chapter III, Sections 18 to 28: maintenance of wife, daughter-in-law, children, parents, dependants. Chapter IV, Sections 29 and 30: repeals (repealed) and savings of earlier adoptions.
+
+Chapter Sections Subject I – Preliminary 1 to 4 Short title, application, definitions, overriding effect II – Adoption 5 to 17 Requisites, capacity, effects, payments III – Maintenance 18 to 28 Wife, widowed daughter-in-law, children, parents, dependants IV – Repeals and savings 29 and 30 Repeals (spent and repealed); earlier adoptions saved
+
+## Key Points to Remember
+- Two subjects: adoption (Sections 5 to 17) and maintenance (Sections 18 to 28). Applies to Hindus, Buddhists, Jainas, Sikhs and the residuary group (Section 2); not to Scheduled Tribes unless notified. Section 4: overrides old texts, custom and inconsistent laws. Section 30: earlier adoptions are saved. Maintenance includes food, clothing, residence, education, medical care, and marriage expenses of an unmarried daughter. Section 3(a): custom must be continuous, uniform, certain and not unreasonable or against public policy. Amended in 1962, 2010 and 2019; Section 29 repealed in 1960. Separate from the Juvenile Justice Act regime (Section 56(3) of that Act).

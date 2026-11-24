@@ -1,0 +1,29 @@
+# 2. Necessaries supplied to a person who is incapable of entering into a contract
+**Subject:** Law of Contract – I (Semester I) | **Unit 4:** Unit 4
+**Source:** https://nyayasaral.com/subjects/law-of-contract-i/necessaries-supplied-to-a-person-who-is-incapable-of-entering-into-a-contract/
+
+## In One Minute
+A minor or a person of unsound mind cannot make a binding contract. Yet he must eat, dress and stay healthy. Section 68 lets a person who supplies him with necessaries be paid back from his property. The supplier cannot sue the incapable person on a promise, because there is none. He claims under the law, and only against the property. In exams, the two tests for necessaries and the property-only rule earn the marks. In real life, it protects the grocer, the doctor and the school that serve a minor.
+
+## Legal Provision
+- Section 68. Claim for necessaries supplied to person incapable of contracting, or on his account. If a person, incapable of entering into a contract, or any one whom he is legally bound to support, is supplied by another person with necessaries suited to his condition in life, the person who has furnished such supplies is entitled to be reimbursed from the property of such incapable person. Illustrations. (a) A supplies B, a lunatic, with necessaries suitable to his condition in life. A is entitled to be reimbursed from B's property. (b) A supplies the wife and children of B, a lunatic, with necessaries suitable to their condition in life. A is entitled to be reimbursed from B's property.
+- Related provisions
+- Section 11. Who are competent to contract. Every person is competent to contract who is of the age of majority according to the law to which he is subject, and who is of sound mind, and is not disqualified from contracting by any law to which he is subject.
+- Section 12 (first sentence). What is a sound mind for the purposes of contracting. A person is said to be of sound mind for the purpose of making a contract, if, at the time when he makes it, he is capable of understanding it and of forming a rational judgment as to its effect upon his interests.
+- Negotiable Instruments Act, 1881, Section 26 (second paragraph). Minor. —A minor may draw, indorse, deliver and negotiate such instrument so as to bind all parties except himself.
+- In simple words
+- If a person who cannot contract , or anyone he must support by law, is supplied with necessaries that suit his condition in life, the supplier is paid back from that person's property. "Lunatic" is the Act's old word for a person of unsound mind. A person can contract only if he is a major, of sound mind , and not disqualified by law (Section 11). A minor may sign a promissory note , but the note binds everyone except the minor (Section 26, Negotiable Instruments Act).
+
+## Meaning and Definition
+Section 68 is one of the five situations in which the law imposes a duty without agreement (a quasi contract ). It applies to a person who is "incapable of entering into a contract". That means a person who fails the test of Section 11: a minor, a person of unsound mind, or a person disqualified by law.
+
+What are necessaries. The Act does not define necessaries. It gives the test in the section itself: they must be "suited to his condition in life". The courts add a second test, which is the person's actual need at the time of supply.
+
+Why the law has this rule. The reason is fairness to both sides. The law protects a minor from bad bargains by making his agreements void . It does not want him to starve for that reason. So it lets the supplier recover, but only from the minor's own property. This prevents unjust enrichment .
+
+See Diagram 1 for the questions a court asks.
+
+Diagram 1. Go down the boxes in order. A "No" answer sends you to the result beside the box. flowchart TD Q1["1. Is the person supplied incapable of contracting,<br/>or someone such a person must support? (s. 68)"] Q2["2. Are the goods or services necessaries,<br/>suited to his condition in life? (s. 68)"] Q3["3. Did he actually need them when supplied,<br/>and was he not already enough supplied?"] Q4["4. Does the incapable person own property?"] Y["Supplier is reimbursed from the<br/>incapable person's property.<br/>The person himself is not liable."] N1["s. 68 does not apply.<br/>Ordinary contract law decides."] N2["No claim."] N3["No claim."] N4["Nothing from which<br/>to be reimbursed."] Q1 -->|"Yes"| Q2 Q2 -->|"Yes"| Q3 Q3 -->|"Yes"| Q4 Q4 -->|"Yes"| Y Q1 -->|"No"| N1 Q2 -->|"No"| N2 Q3 -->|"No"| N3 Q4 -->|"No"| N4 Text description Question 1: is the person supplied incapable of entering into a contract, or someone whom such a person must support? If no, Section 68 does not apply and ordinary contract law decides. Question 2: are the goods or services necessaries, suited to his condition in life? If no, there is no claim. Question 3: did he actually need them when they were supplied, and was he not already enough supplied? If no, there is no claim. Question 4: does the incapable person own property? If no, there is nothing from which to be reimbursed. If every answer is yes, the supplier is reimbursed from the incapable person's property; the person himself is not liable.
+
+## Key Points to Remember
+- Section 68 repays a person who supplies necessaries to someone incapable of contracting. Persons incapable of contracting are those who fail Section 11: a minor, a person of unsound mind, a disqualified person. Necessaries must suit the person's condition in life and his actual need. The supplier is repaid from the incapable person's property only. The incapable person is not personally liable ( Mohori Bibee ). Dependants of the incapable person are covered (Illustration (b)). A promissory note signed by a minor does not bind him, so the supplier claims under Section 68. A minor is outside Section 70, because Section 68 provides for his case ( B.K. Mondal ).

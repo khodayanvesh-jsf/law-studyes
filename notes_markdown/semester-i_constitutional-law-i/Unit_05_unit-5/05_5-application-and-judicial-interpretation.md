@@ -1,0 +1,19 @@
+# 5. Application and Judicial Interpretation
+**Subject:** Constitutional Law – I (Semester I) | **Unit 5:** Unit 5
+**Source:** https://nyayasaral.com/subjects/constitutional-law-i/application-and-judicial-interpretation/
+
+## In One Minute
+Article 37 stops a court from enforcing a Directive Principle by itself. Courts still use the principles in two ways. They read a Fundamental Right in harmony with a principle, and they enforce laws that Parliament makes to carry a principle out. Exams ask for the cases where a principle shaped a right, such as the right to livelihood and the right to education. A problem question often asks whether a petition can rest on a principle alone.
+
+## Legal Provision
+- Article 37: Part IV is not enforceable by any court. The principles are fundamental in the governance of the country. The State must apply them in making laws. Article 21: no person shall be deprived of life or personal liberty except according to procedure established by law. Articles 14 and 16: equality before the law, and equality of opportunity in public employment. Article 39(a) and (d): an adequate means of livelihood for citizens, men and women equally, and equal pay for equal work for both men and women. Article 41: effective provision for the right to work, to education and to public assistance, within the limits of the State's economic capacity and development. Article 46: special care for the educational and economic interests of weaker sections, particularly Scheduled Castes and Scheduled Tribes. Article 31C: a law giving effect to the State's policy of securing the principles in Part IV is not void for conflict with Article 14 or 19. The Supreme Court limited it to Article 39(b) and (c). Article 44: the State shall endeavour to secure for the citizens a uniform civil code throughout India. Article 47: raising the level of nutrition and the standard of living, and improving public health, are among the State's primary duties. Article 50: the State shall take steps to separate the judiciary from the executive in the public services of the State. Article 143: the President may refer a question of law to the Supreme Court for its opinion.
+
+## Meaning and Definition
+Applying a Directive Principle means using it in a real case or through a real law. There are two routes. In the first, a court reads a Fundamental Right so that it fits a principle. This is harmonious construction . In the second, the legislature makes a statute , and the court enforces it.
+
+Both routes respect Article 37. The court does not enforce Part IV. It enforces Part III or a statute, and uses Part IV to understand them.
+
+How a court handles a Directive Principle in a case How to read this: go down the boxes in order. A "No" answer sends you to the result beside the box. 1. Is a Fundamental Right or a statute also in issue? Article 37 No: the court cannot enforce the principle on its own. 2. Can the right be read in harmony with the principle? Kerala Education Bill; N.M. Thomas No: the Fundamental Right prevails over the principle (Champakam). Yes to both: the court reads the right with the principle and gives relief on the right.
+
+## Key Points to Remember
+- Courts do not enforce Part IV alone (Article 37). Kerala Education Bill (Article 143 reference): give rights and principles effect together where possible. Olga Tellis: the right to life includes livelihood. Unni Krishnan: education up to fourteen under Article 21, later Article 21A. Many principles work through statutes, such as the Legal Services Authorities Act, 1987. Minerva Mills: Parts III and IV are like two wheels of a chariot; the balance is basic structure. Ratlam: where a principle has statutory form, the Court enforces the statutory duty. Sarla Mudgal: Article 44 is a mandate the Court cannot enforce but urged the Government to act on.

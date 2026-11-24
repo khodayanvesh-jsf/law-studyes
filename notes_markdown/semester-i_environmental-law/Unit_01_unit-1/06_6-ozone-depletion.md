@@ -1,0 +1,17 @@
+# 6. Ozone depletion
+**Subject:** Environmental Law (Semester I) | **Unit 1:** Unit 1
+**Source:** https://nyayasaral.com/subjects/environmental-law/ozone-depletion/
+
+## In One Minute
+The ozone layer is a thin shield of gas high in the atmosphere that blocks most of the Sun's harmful ultraviolet rays. Ozone depletion is the thinning of that shield. It is caused mainly by man-made chemicals such as CFCs and halons. The world answered with the Montreal Protocol. Exams ask for causes, effects and this legal response.
+
+## Legal Provision
+- Vienna Convention for the Protection of the Ozone Layer: adopted on 22 March 1985. The UN Treaty Collection gives its entry into force as 22 September 1988, under article 17(1). Montreal Protocol on Substances that Deplete the Ozone Layer: concluded on 16 September 1987, in force from 1 January 1989 (article 16(1), as the UN Treaty Collection records). London Amendment to the Montreal Protocol: adopted on 29 June 1990 at the Second Meeting of the Parties. It entered into force on 10 August 1992, under article 2(1) of the Amendment (UN Treaty Collection). Ozone Depleting Substances (Regulation and Control) Rules, 2000: made under the Environment (Protection) Act, 1986 (Gazette notification S.O. 670(E) of 19 July 2000), to regulate and phase out such substances in India. Annex A to the Protocol: the list of controlled substances (CFCs and halons) with their ozone depleting potentials. Section 3(1), Environment (Protection) Act, 1986: the source of the Central Government's power to take measures to prevent and control pollution.
+
+## Meaning and Definition
+Ozone depletion is the thinning of the ozone layer in the stratosphere, caused by the breakdown of ozone (O₃) molecules. The layer lies roughly 10 to 50 kilometres above the Earth's surface. It absorbs most of the Sun's harmful ultraviolet radiation.
+
+How a CFC destroys ozone How to read this: follow the boxes from top to bottom. Each step leads to the next. The last box is the result for people and wildlife. 1. A CFC leaks from an old refrigerator or air conditioner. 2. The gas drifts up to the stratosphere. 3. Ultraviolet rays break the CFC and free chlorine atoms. 4. One chlorine atom destroys many ozone molecules. 5. Result The layer thins and more ultraviolet rays reach the ground.
+
+## Key Points to Remember
+- Ozone layer: stratosphere, about 10 to 50 km above the surface. Causes: CFCs, halons, carbon tetrachloride, methyl chloroform, methyl bromide. Vienna Convention: 1985. Montreal Protocol: 1987, in force 1989. India: Ozone Depleting Substances (Regulation and Control) Rules, 2000. Vienna Convention: framework, 21 articles and 2 annexes, no limits. Montreal Protocol: 20 articles and Annex A, with limits. Group I freeze at the 1986 level, then 80 per cent from 1 July 1993 and 50 per cent from 1 July 1998. Developing countries (under 0.3 kg per capita) may delay by ten years. Original Protocol: no Multilateral Fund; Article 13 charges costs to the Parties' contributions. The London Amendment (1990, in force 10 August 1992) created the Multilateral Fund under Article 10 and added Articles 2C to 2E, Annexes B and C, and Article 10A. Later amendments: Copenhagen 1992 (HCFCs, HBFCs, methyl bromide), Montreal 1997 (Article 4A, licensing under Article 4B), Beijing 1999 (bromochloromethane, HCFC production), Kigali 2016 (HFC phase-down, Annex F, Article 2J). Many such substances are also heat-trapping gases, but ozone depletion is not global warming.
