@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS
   Law Studyes OTA Publisher v2.6.1
-  Packs UI + FULL nyayasaral_db.json (all 591 EN/TE notes + verbatim SVG diagrams, images & tables)
-  into forward-slash www/ota-bundle.zip, points OTA manifests to Vercel CDN with SHA-256,
-  pushes to GitHub/Vercel, and verifies live parity.
+  Packs UI + offline mermaid.min.js + FULL nyayasaral_db.json (all 591 EN/TE notes + verbatim
+  Mermaid flowcharts, SVG diagrams, inline images & tables) into forward-slash www/ota-bundle.zip,
+  updates Vercel CDN OTA manifests with SHA-256, pushes to GitHub/Vercel, and verifies live parity.
 #>
 param(
   [string]$Version = (Get-Date).ToUniversalTime().ToString("yyyy.MM.dd.HHmm"),
@@ -21,7 +21,7 @@ $baseUrl = $VercelBaseUrl.TrimEnd('/')
 
 if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
 
-# Pack ALL web assets INCLUDING nyayasaral_db.json & db-version.json (exclude only zip, manifests & apk)
+# Pack ALL web assets INCLUDING vendor/mermaid.min.js, nyayasaral_db.json & db-version.json
 $zip = [System.IO.Compression.ZipFile]::Open($zipPath, [System.IO.Compression.ZipArchiveMode]::Create)
 try {
   Get-ChildItem -Path $wwwDir -Recurse -File | Where-Object {
@@ -60,9 +60,8 @@ $manObj = [ordered]@{
 [System.IO.File]::WriteAllText((Join-Path $wwwDir "ota-version.json"), $verObj, $utf8NoBom)
 [System.IO.File]::WriteAllText((Join-Path $wwwDir "ota-manifest.json"), $manObj, $utf8NoBom)
 
-Write-Host "[OK] Built FULL Diagram OTA v$Version -> www/ota-bundle.zip ($zipSizeMB MB | SHA256: $($zipSha.Substring(0,16)))" -ForegroundColor Green
+Write-Host "[OK] Built FULL Diagram + Mermaid OTA v$Version -> www/ota-bundle.zip ($zipSizeMB MB | SHA256: $($zipSha.Substring(0,16)))" -ForegroundColor Green
 
-# Ensure audit_extract is ignored so working tree stays clean
 $gi = Join-Path $root ".gitignore"
 if (Test-Path $gi) {
   $giTxt = [System.IO.File]::ReadAllText($gi, $utf8NoBom)
@@ -74,7 +73,7 @@ if (Test-Path $gi) {
 }
 
 git add -A
-git commit -m "OTA v$Version - Full 591 EN/TE notes + Verbatim Diagrams & Animations"
+git commit -m "OTA v$Version - Full 591 EN/TE notes + Offline Mermaid Flowcharts, Diagrams & Animations"
 git pull --rebase origin main
 git push origin main
 
@@ -90,7 +89,7 @@ try {
   if ($liveSha -eq $zipSha -and $liveMeta.version -eq $Version) {
     Write-Host "[VERIFIED] Vercel LIVE Parity MATCH! Version=$($liveMeta.version) | SHA=$($liveSha.Substring(0,16))" -ForegroundColor Green
   } else {
-    Write-Host "[INFO] Vercel still propagating (Live=$($liveMeta.version) vs Local=$Version). Re-check in 30s." -ForegroundColor Yellow
+    Write-Host "[INFO] Vercel still propagating (Live=$($liveMeta.version) vs Local=$Version). Wait 20s and re-test." -ForegroundColor Yellow
   }
 } catch {
   Write-Host "[WARN] Live verify skipped: $($_.Exception.Message)" -ForegroundColor Yellow

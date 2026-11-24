@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
 Law Studyes Fast Parallel Scraper v2.6.1
-Preserves ALL verbatim SVG diagrams, comparison tables, and inline images (offline base64)
+Preserves ALL verbatim Mermaid flowcharts (flowchart TD/LR), SVG diagrams, HTML box diagrams,
+comparison tables, and inline images (offline base64) from https://nyayasaral.com/
 alongside clean structured EN & TE sections - zero legal text altered.
 """
 import base64
+import html
 import json
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -26,6 +28,11 @@ SESSION.headers.update(HEADERS)
 ADAPTER = requests.adapters.HTTPAdapter(pool_connections=16, pool_maxsize=16, max_retries=2)
 SESSION.mount("https://", ADAPTER)
 SESSION.mount("http://", ADAPTER)
+
+MERMAID_RE = re.compile(
+    r"^\s*(?:flowchart|graph|sequenceDiagram|classDiagram|stateDiagram|erDiagram|gantt|pie|timeline|mindmap|gitGraph)\b",
+    re.I,
+)
 
 
 def fetch_soup(url: str):
@@ -60,54 +67,149 @@ def inline_img_to_data_uri(img_src: str, page_url: str) -> str:
     return full
 
 
+def normalize_mermaid_nodes(container):
+    """Ensure any Mermaid code block inside a captured visual has class='mermaid' and raw definition intact."""
+    found_mermaid = False
+    for el in list(container.find_all(["pre", "div", "code"])):
+        cls_str = " ".join(el.get("class") or []).lower()
+        raw_txt = el.get_text("\n", strip=False).strip()
+        is_m = ("mermaid" in cls_str) or bool(MERMAID_RE.match(raw_txt))
+        if not is_m:
+            continue
+        # If this is a <code> inside a <pre>, promote to <div class="mermaid"> on the <pre>
+        target = el.parent if (el.name == "code" and el.parent and el.parent.name == "pre") else el
+        if target.name in ("pre", "code", "div"):
+            target.name = "div"
+            target["class"] = ["mermaid", "ls-mermaid-src"]
+            target.clear()
+            target.append(raw_txt)
+            found_mermaid = True
+    return found_mermaid
+
+
 def extract_visuals(main, page_url: str) -> list:
-    """Extract all verbatim SVG diagrams, figures, images, and comparison tables."""
+    """Extract all verbatim Mermaid diagrams, SVG diagrams, HTML box diagrams, images, and tables in page order."""
     visuals = []
     seen_html = set()
+    captured_nodes = set()
 
-    # 1. Inline SVG diagrams, figure wrappers, and comparison tables
-    for fig in main.find_all(["figure", "svg", "table"]):
-        if fig.name != "figure" and fig.find_parent("figure"):
-            continue
-        if fig.name == "svg":
-            w = str(fig.get("width", "")).replace("px", "").strip()
-            cls = " ".join(fig.get("class", []))
-            if w in ("12", "14", "16", "18", "20", "22", "24") or "icon" in cls.lower():
-                continue
-            if len(str(fig)) < 250:
-                continue
-        for img in fig.find_all("img"):
-            raw_src = img.get("src") or img.get("data-src") or img.get("data-lazy-src") or ""
-            if raw_src:
-                img["src"] = inline_img_to_data_uri(raw_src, page_url)
-                for attr in ("srcset", "data-src", "data-lazy-src", "loading"):
-                    if attr in img.attrs:
-                        del img.attrs[attr]
-        for a in fig.find_all("a"):
-            a.unwrap()
-        raw_html = str(fig)
-        if raw_html not in seen_html and len(raw_html) > 80:
-            seen_html.add(raw_html)
-            caption = ""
-            cap_el = fig.find("figcaption") or fig.find("caption")
-            if cap_el:
-                caption = clean_text(cap_el)
-            vtype = "table" if fig.name == "table" else "diagram"
-            visuals.append({"type": vtype, "caption": caption, "html": raw_html})
+    def is_inside_captured(node):
+        p = node.parent
+        while p is not None:
+            if id(p) in captured_nodes:
+                return True
+            p = p.parent
+        return False
 
-    # 2. Standalone content images outside figures
-    for img in main.find_all("img"):
-        if img.find_parent("figure"):
+    # Walk all candidate visual elements in exact document order
+    candidates = main.find_all(["figure", "pre", "div", "svg", "table", "img"])
+    for el in candidates:
+        if is_inside_captured(el):
             continue
-        src = img.get("src") or img.get("data-src") or img.get("data-lazy-src") or ""
-        if not src or "icon-512" in src or "logo" in src.lower() or "avatar" in src.lower():
+        cls_str = " ".join(el.get("class") or []).lower()
+
+        # 1. <figure> wrappers (often hold Mermaid diagrams, SVGs, HTML diagrams, captions & text descriptions)
+        if el.name == "figure":
+            has_m = normalize_mermaid_nodes(el)
+            for img in el.find_all("img"):
+                raw_src = img.get("src") or img.get("data-src") or img.get("data-lazy-src") or ""
+                if raw_src:
+                    img["src"] = inline_img_to_data_uri(raw_src, page_url)
+                    for attr in ("srcset", "data-src", "data-lazy-src", "loading"):
+                        if attr in img.attrs:
+                            del img.attrs[attr]
+            for a in el.find_all("a"):
+                a.unwrap()
+            raw_html = str(el)
+            if raw_html not in seen_html and len(raw_html) > 60:
+                seen_html.add(raw_html)
+                captured_nodes.add(id(el))
+                cap_el = el.find("figcaption") or el.find("caption")
+                caption = clean_text(cap_el) if cap_el else ""
+                vtype = "mermaid" if has_m else ("table" if el.find("table") else "diagram")
+                visuals.append({"type": vtype, "caption": caption, "html": raw_html})
             continue
-        data_uri = inline_img_to_data_uri(src, page_url)
-        alt = (img.get("alt") or "Study Diagram").replace('"', "&quot;")
-        html_str = f'<figure class="ls-img-fig"><img src="{data_uri}" alt="{alt}" /><figcaption>{alt}</figcaption></figure>'
-        if html_str not in seen_html:
-            seen_html.add(html_str)
-            visuals.append({"type": "image", "caption": alt, "html": html_str})
+
+        # 2. Standalone Mermaid blocks (<pre class="mermaid">, <div class="mermaid">, or raw flowchart TD/LR)
+        if el.name in ("pre", "div"):
+            # Skip large layout wrappers that contain headings (h1/h2)
+            if el.name == "div" and el.find(["h1", "h2"]):
+                continue
+            raw_txt = el.get_text("\n", strip=False).strip()
+            is_mermaid = ("mermaid" in cls_str) or (
+                el.name == "pre" and bool(MERMAID_RE.match(raw_txt))
+            ) or (
+                el.name == "div" and not el.find("div") and bool(MERMAID_RE.match(raw_txt))
+            )
+            if is_mermaid and len(raw_txt) > 20:
+                safe_code = html.escape(raw_txt)
+                raw_html = f'<figure class="ls-mermaid-fig"><div class="mermaid ls-mermaid-src">{safe_code}</div></figure>'
+                if raw_html not in seen_html:
+                    seen_html.add(raw_html)
+                    captured_nodes.add(id(el))
+                    visuals.append({"type": "mermaid", "caption": "Flowchart Diagram", "html": raw_html})
+                continue
+
+            # HTML visual box/timeline/diagram blocks outside <figure>
+            if el.name == "div" and any(k in cls_str for k in ("diagram", "flowchart", "timeline", "visual-box", "diagram-box", "comparison-grid")):
+                has_m = normalize_mermaid_nodes(el)
+                for img in el.find_all("img"):
+                    raw_src = img.get("src") or img.get("data-src") or img.get("data-lazy-src") or ""
+                    if raw_src:
+                        img["src"] = inline_img_to_data_uri(raw_src, page_url)
+                for a in el.find_all("a"):
+                    a.unwrap()
+                raw_html = str(el)
+                if raw_html not in seen_html and len(raw_html) > 80:
+                    seen_html.add(raw_html)
+                    captured_nodes.add(id(el))
+                    cap_el = el.find(["figcaption", "h3", "h4", "strong"])
+                    caption = clean_text(cap_el)[:120] if cap_el else "Visual Diagram"
+                    visuals.append({"type": "mermaid" if has_m else "diagram", "caption": caption, "html": raw_html})
+            continue
+
+        # 3. Standalone inline <svg> diagrams (skip tiny UI icons)
+        if el.name == "svg":
+            w = str(el.get("width", "")).replace("px", "").strip()
+            if w in ("12", "14", "16", "18", "20", "22", "24", "28") or "icon" in cls_str:
+                continue
+            raw_html = str(el)
+            if len(raw_html) < 250:
+                continue
+            if raw_html not in seen_html:
+                seen_html.add(raw_html)
+                captured_nodes.add(id(el))
+                t_el = el.find("title")
+                caption = clean_text(t_el) if t_el else "SVG Diagram"
+                visuals.append({"type": "svg", "caption": caption, "html": raw_html})
+            continue
+
+        # 4. Standalone comparison <table>
+        if el.name == "table":
+            for a in el.find_all("a"):
+                a.unwrap()
+            raw_html = str(el)
+            if raw_html not in seen_html and len(raw_html) > 80:
+                seen_html.add(raw_html)
+                captured_nodes.add(id(el))
+                cap_el = el.find("caption")
+                caption = clean_text(cap_el) if cap_el else "Comparison Table"
+                visuals.append({"type": "table", "caption": caption, "html": raw_html})
+            continue
+
+        # 5. Standalone content <img> (inlined offline as Base64)
+        if el.name == "img":
+            src = el.get("src") or el.get("data-src") or el.get("data-lazy-src") or ""
+            if not src or "icon-512" in src or "logo" in src.lower() or "avatar" in src.lower():
+                continue
+            data_uri = inline_img_to_data_uri(src, page_url)
+            alt = (el.get("alt") or "Study Diagram").replace('"', "&quot;")
+            raw_html = f'<figure class="ls-img-fig"><img src="{data_uri}" alt="{alt}" /><figcaption>{alt}</figcaption></figure>'
+            if raw_html not in seen_html:
+                seen_html.add(raw_html)
+                captured_nodes.add(id(el))
+                visuals.append({"type": "image", "caption": alt, "html": raw_html})
+
     return visuals
 
 
@@ -123,7 +225,9 @@ def parse_note_page(soup: BeautifulSoup, page_url: str) -> dict:
     if rt_match:
         read_time = rt_match.group(1)
 
-    visuals = extract_visuals(main, page_url)
+    # Extract visuals BEFORE reading text chunks (use a clean copy so nothing is disturbed)
+    visual_soup = BeautifulSoup(str(main), "html.parser")
+    visuals = extract_visuals(visual_soup, page_url)
 
     sections_map = {}
     for h in main.find_all(["h2", "h3"]):
@@ -133,8 +237,10 @@ def parse_note_page(soup: BeautifulSoup, page_url: str) -> dict:
         while node and node.name not in ("h2",):
             if node.name == "h3" and h.name == "h3":
                 break
+            # Skip raw mermaid source text in plain-text TTS paragraphs so TTS reads clean legal prose
+            cls_n = " ".join(node.get("class") or []).lower()
             txt = clean_text(node)
-            if txt:
+            if txt and "mermaid" not in cls_n and not MERMAID_RE.match(txt):
                 chunks.append(txt)
             node = node.find_next_sibling()
         if chunks:
@@ -243,7 +349,7 @@ def fetch_topic_pair(topic_id: str, url: str, read_time: str):
 
 def main():
     subjects_meta = discover_all_subjects()
-    print(f"Discovered {len(subjects_meta)} live subjects. Collecting topic index...")
+    print(f"Discovered {len(subjects_meta)} live subjects from nyayasaral.com. Collecting topic index...")
     all_subjects = []
     tasks = []
 
@@ -292,21 +398,27 @@ def main():
                 "units": units_list,
             })
 
-    print(f"Fetching {len(tasks)} topics (EN + TE + Verbatim SVG Diagrams + Images + Tables) with 12 parallel workers...")
+    print(f"Fetching {len(tasks)} topics (EN + TE + Verbatim Mermaid Flowcharts + SVGs + Images + Tables) with 12 workers...")
     all_notes = {}
-    visual_en = 0
-    visual_te = 0
+    stats = {"en_total": 0, "te_total": 0, "mermaid": 0, "svg": 0, "table": 0, "image": 0, "diagram": 0}
     done = 0
     with ThreadPoolExecutor(max_workers=12) as ex:
         futs = [ex.submit(fetch_topic_pair, tid, url, rt) for tid, url, rt in tasks]
         for f in as_completed(futs):
             tid, entry = f.result()
             all_notes[tid] = entry
-            visual_en += len((entry.get("en") or {}).get("visuals", []))
-            visual_te += len((entry.get("te") or {}).get("visuals", []))
+            for lang_key in ("en", "te"):
+                vlist = (entry.get(lang_key) or {}).get("visuals", [])
+                if lang_key == "en":
+                    stats["en_total"] += len(vlist)
+                else:
+                    stats["te_total"] += len(vlist)
+                for v in vlist:
+                    vt = v.get("type", "diagram")
+                    stats[vt] = stats.get(vt, 0) + 1
             done += 1
             if done % 50 == 0 or done == len(tasks):
-                print(f"  Progress: {done}/{len(tasks)} topics synced (EN visuals: {visual_en} | TE visuals: {visual_te})")
+                print(f"  Progress: {done}/{len(tasks)} topics synced (EN: {stats['en_total']} | TE: {stats['te_total']} | Mermaid: {stats['mermaid']} | Tables: {stats['table']} | Images: {stats['image']})")
 
     now_iso = datetime.now(timezone.utc).isoformat()
     db_ver = datetime.now(timezone.utc).strftime("%Y.%m.%d.%H%M")
@@ -319,13 +431,16 @@ def main():
             "dbVersion": db_ver,
             "totalSubjects": len(all_subjects),
             "totalNotes": len(all_notes),
-            "totalVisuals": visual_en,
-            "totalVisualsTe": visual_te,
+            "totalVisuals": stats["en_total"],
+            "totalVisualsTe": stats["te_total"],
+            "mermaidDiagrams": stats["mermaid"],
+            "tables": stats["table"],
+            "images": stats["image"],
             "updatedAt": now_iso,
         }, indent=2),
         encoding="utf-8",
     )
-    print(f"\nDONE! {len(all_subjects)} subjects, {len(all_notes)} notes, {visual_en} EN + {visual_te} TE verbatim diagrams/images/tables saved!")
+    print(f"\nDONE! {len(all_subjects)} subjects, {len(all_notes)} notes, {stats['en_total']} EN + {stats['te_total']} TE verbatim visuals saved (Mermaid={stats['mermaid']}, Tables={stats['table']}, SVGs={stats['svg']}, Images={stats['image']})!")
 
 
 if __name__ == "__main__":

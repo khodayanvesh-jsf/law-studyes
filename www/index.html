@@ -4387,10 +4387,12 @@
 </script>
 <!-- LS_LEFT_VER_OTA_END -->
 
+
 <!-- LS_VISUAL_DIAGRAMS_START -->
+<script src="./vendor/mermaid.min.js"></script>
 <style>
   @keyframes lsDiagramReveal {
-    from { opacity: 0; transform: translateY(14px) scale(0.985); }
+    from { opacity: 0; transform: translateY(16px) scale(0.985); }
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
   @keyframes lsCardFadeSlide {
@@ -4399,43 +4401,72 @@
   }
   @keyframes lsSvgNodePulse {
     0%, 100% { filter: drop-shadow(0 0 0 rgba(123,30,43,0)); }
-    50% { filter: drop-shadow(0 4px 10px rgba(123,30,43,0.18)); }
+    50% { filter: drop-shadow(0 4px 12px rgba(123,30,43,0.18)); }
   }
-  @keyframes lsMemoryBeat {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(123,30,43,0.18); border-color: #7B1E2B; }
-    50% { box-shadow: 0 0 0 6px rgba(123,30,43,0.06); border-color: #B45309; }
+  @keyframes lsFlowDash {
+    to { stroke-dashoffset: -28; }
   }
   @keyframes lsNodePop {
-    0% { opacity: 0; transform: translateY(6px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; transform: translateY(6px) scale(0.97); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
   }
   #readingPane > section, #readingPane > article, #readingPane > div {
     animation: lsCardFadeSlide 0.35s ease-out both;
   }
-  .ls-visual-card { animation: lsDiagramReveal 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .ls-visual-card { animation: lsDiagramReveal 0.48s cubic-bezier(0.22, 1, 0.36, 1) both; }
   .ls-visual-box {
     position: relative;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
   .ls-visual-box:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(123,30,43,0.09);
+    box-shadow: 0 8px 22px rgba(123,30,43,0.10);
   }
   .ls-visual-box svg {
     max-width: 100%;
-    height: auto;
+    height: auto !important;
     display: block;
     margin: 0 auto;
     animation: lsSvgNodePulse 4.5s ease-in-out infinite;
   }
-  .ls-visual-box svg g, .ls-visual-box svg rect, .ls-visual-box svg circle, .ls-visual-box svg path {
+  /* Animate Mermaid flowchart arrows & nodes for easier visual memory */
+  .ls-visual-box svg path.flowchart-link,
+  .ls-visual-box svg .edgePath path {
+    stroke-dasharray: 6 3;
+    animation: lsFlowDash 2.4s linear infinite;
+  }
+  .ls-visual-box svg .node,
+  .ls-visual-box svg g,
+  .ls-visual-box svg rect,
+  .ls-visual-box svg circle {
     transition: opacity 0.35s ease, filter 0.35s ease, transform 0.25s ease;
   }
-  .ls-visual-box.ls-spotlight-on { animation: lsMemoryBeat 2.2s ease-in-out infinite; }
-  .ls-spotlight-dim { opacity: 0.28 !important; }
+  .ls-spotlight-dim { opacity: 0.24 !important; }
   .ls-spotlight-active {
     opacity: 1 !important;
-    filter: drop-shadow(0 0 8px rgba(180,83,9,0.55)) !important;
+    filter: drop-shadow(0 0 10px rgba(180,83,9,0.65)) !important;
+  }
+  .ls-visual-box figure { margin: 0; }
+  .ls-visual-box figcaption {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #5F554E;
+    text-align: center;
+    font-weight: 600;
+  }
+  .ls-visual-box details {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #FFFFFF;
+    border: 1px dashed #D6C7BC;
+    border-radius: 10px;
+    font-size: 12.5px;
+    color: #3D352E;
+  }
+  .ls-visual-box details summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #7B1E2B;
   }
   .ls-visual-box img {
     max-width: 100%;
@@ -4488,6 +4519,55 @@
   var RAW_OTA_FALLBACK = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
   var zoomScale = 1;
   var memoryTimer = null;
+  var mermaidReady = false;
+  var mermaidSeq = 0;
+
+  function initMermaidOffline() {
+    if (mermaidReady || typeof window.mermaid === "undefined") return;
+    try {
+      window.mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: "loose",
+        theme: "base",
+        flowchart: { useMaxWidth: true, htmlLabels: true, curve: "basis" },
+        themeVariables: {
+          primaryColor: "#FBF1F2",
+          primaryTextColor: "#1F1B18",
+          primaryBorderColor: "#7B1E2B",
+          lineColor: "#7B1E2B",
+          secondaryColor: "#FFF7ED",
+          tertiaryColor: "#FAF7F2",
+          fontFamily: "'Noto Sans Telugu', system-ui, -apple-system, sans-serif",
+          fontSize: "14px"
+        }
+      });
+      mermaidReady = true;
+    } catch (e) {}
+  }
+
+  async function renderMermaidIn(container) {
+    initMermaidOffline();
+    if (!mermaidReady || !container) return;
+    var nodes = Array.from(container.querySelectorAll(".mermaid"));
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el.getAttribute("data-ls-rendered") === "1") continue;
+      var code = (el.textContent || "").trim();
+      if (!code) continue;
+      el.setAttribute("data-ls-rendered", "1");
+      try {
+        mermaidSeq++;
+        var res = await window.mermaid.render("lsMmdSvg_" + mermaidSeq, code);
+        if (res && res.svg) {
+          el.innerHTML = res.svg;
+        }
+      } catch (err) {
+        // Fallback: keep readable formatted flowchart text if syntax is unusual
+        el.style.whiteSpace = "pre-wrap";
+        el.style.fontSize = "12px";
+      }
+    }
+  }
 
   function stopMemoryWalk() {
     if (memoryTimer) { clearInterval(memoryTimer); memoryTimer = null; }
@@ -4506,8 +4586,9 @@
     if (!c) return;
     if (memoryTimer) { stopMemoryWalk(); return; }
     var rows = Array.from(c.querySelectorAll("tbody tr, table tr"));
-    var svgNodes = Array.from(c.querySelectorAll("svg > g, svg rect, svg circle, svg polygon"));
-    var targets = rows.length > 1 ? rows : svgNodes;
+    var mmdNodes = Array.from(c.querySelectorAll("svg .node"));
+    var genericSvg = Array.from(c.querySelectorAll("svg > g, svg rect, svg circle, svg polygon"));
+    var targets = rows.length > 1 ? rows : (mmdNodes.length ? mmdNodes : genericSvg);
     if (!targets.length) return;
     var btn = document.getElementById("lsMemoryPulseBtn");
     if (btn) btn.textContent = "Stop Walk";
@@ -4535,7 +4616,6 @@
     if (r) r.textContent = Math.round(zoomScale * 100) + "%";
   }
 
-  // Ensure bundled diagram DB is loaded even if older localStorage cache had no visuals
   var dbReloadAttempted = false;
   async function ensureVisualsInState() {
     if (dbReloadAttempted || typeof state === "undefined" || !state.notes) return;
@@ -4583,8 +4663,8 @@
 
     var header = document.createElement("div");
     header.className = "flex flex-wrap items-center justify-between gap-2";
-    header.innerHTML = '<h2 class="font-editorial text-lg font-bold text-[#7B1E2B]">Visual Diagrams &amp; Quick Comparison Tables (' + visuals.length + ')</h2>' +
-      '<span class="text-[11px] font-semibold text-[#5F554E] bg-[#FAF7F2] px-2.5 py-0.5 rounded-full border border-[#E8E0D5]">Tap any diagram to Zoom &amp; Memory Walk</span>';
+    header.innerHTML = '<h2 class="font-editorial text-lg font-bold text-[#7B1E2B]">Visual Diagrams, Flowcharts &amp; Tables (' + visuals.length + ')</h2>' +
+      '<span class="text-[11px] font-semibold text-[#5F554E] bg-[#FAF7F2] px-2.5 py-0.5 rounded-full border border-[#E8E0D5]">Tap diagram to Zoom &amp; Memory Walk</span>';
     sec.appendChild(header);
 
     for (var i = 0; i < visuals.length; i++) {
@@ -4593,17 +4673,19 @@
         box.className = "ls-visual-box bg-[#FAF7F2]/60 border border-[#E8E0D5] rounded-xl p-3.5 overflow-x-auto cursor-pointer hover:border-[#7B1E2B] ls-visual-card";
         box.style.animationDelay = (idx * 95) + "ms";
         box.innerHTML = v.html;
-        box.addEventListener("click", function () {
+        box.addEventListener("click", function (ev) {
+          if (ev.target && ev.target.closest && ev.target.closest("summary,details")) return;
           stopMemoryWalk();
           zoomScale = 1;
           var zm = document.getElementById("lsZoomModal");
           var zc = document.getElementById("lsZoomCanvas");
           var zt = document.getElementById("lsZoomTitle");
           if (zm && zc) {
-            zc.innerHTML = v.html;
+            zc.innerHTML = box.innerHTML;
             applyZoom();
             if (zt) zt.textContent = v.caption || ("Study Diagram " + (idx + 1) + " of " + visuals.length);
             zm.classList.remove("hidden");
+            renderMermaidIn(zc);
           }
         });
         sec.appendChild(box);
@@ -4616,6 +4698,7 @@
     } else {
       pane.appendChild(sec);
     }
+    renderMermaidIn(sec);
   }
 
   // Unified, resilient OTA helper: prevents duplicate download race & uses Vercel CDN first
@@ -4664,6 +4747,7 @@
   }
 
   window.addEventListener("DOMContentLoaded", function () {
+    initMermaidOffline();
     wrapCapacitorUpdaterResilient();
     var closeModal = function () {
       stopMemoryWalk();
