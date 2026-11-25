@@ -1,8 +1,8 @@
 {
-  "version": "3.0.9-11250925",
+  "version": "3.0.9-11250928",
   "url": "https://law-studyes.vercel.app/ota-bundle.zip",
-  "sha256": "9fbf371356f4731ac1fe332dda36f218f575f36d6b84d043194da545913d0d72",
-  "checksum": "9fbf371356f4731ac1fe332dda36f218f575f36d6b84d043194da545913d0d72",
-  "sizeBytes": 3047239,
-  "updatedAt": "2026-11-25T09:25:30Z"
+  "sha256": "d7bd0ffa8703b9d196374c818f15be66500b4fa723c6415b8a487e720a40bfab",
+  "checksum": "d7bd0ffa8703b9d196374c818f15be66500b4fa723c6415b8a487e720a40bfab",
+  "sizeBytes": 3040833,
+  "updatedAt": "2026-11-25T09:28:20Z"
 }
