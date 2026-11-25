@@ -101,7 +101,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.2</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.3</div>
           </div>
         </button>
       </div>
@@ -3538,7 +3538,7 @@
 <!-- LS_FINAL_AUTH_START -->
 <script>
 (function () {
-  var GS_API = "https://script.google.com/macros/s/AKfycby_IsKA5aN_1YI6lYxGe82xmwfYhmTWs0ekzru0C4VPjdohd2UAvQPTvyDF3L7uxhVs/exec";
+  var GS_API = "https://script.google.com/macros/s/AKfycbzu-FFk-THjB-hDmtFRTlXswpCnIDhUW_ENA6nze4hL8gGshxWQLw3VdLTsUEJXxOg8/exec";
   var RK = "ls_registered_students_v1";
   var SK = "ls_active_student_v1";
   var SALT = "LS-ANTI-TAMPER-2026-KAV";
@@ -4158,7 +4158,7 @@
 <!-- LS_VERSION_OTA_CARD_START -->
 <script>
 (function () {
-  var BUILT_IN_VER = "2.6.2";
+  var BUILT_IN_VER = "2.6.3";
   var RAW = "https://law-studyes.vercel.app";
   var VK = "law_studyes_ota_version";
   window.__lsOtaLastStatus = "Checking...";
@@ -4316,7 +4316,7 @@
 <!-- LS_LEFT_VER_OTA_START -->
 <script>
 (function () {
-  var BUILT_IN = "2.6.2";
+  var BUILT_IN = "2.6.3";
   var RAW = "https://law-studyes.vercel.app";
   var otaBusy = false;
 
@@ -5006,5 +5006,282 @@
 })();
 </script>
 <!-- LS_PERSISTENT_OTA_END -->
+<!-- LS_STRICT_SHEET_AUTH_START -->
+<style>
+  body.ls-auth-locked { overflow: hidden !important; touch-action: none; }
+  #lawStudyesAuthOverlay:not(.hidden) {
+    display: flex !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+  .ls-sheet-status-bar {
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    display: none;
+  }
+  .ls-sheet-status-bar.show { display: block; }
+  .ls-sheet-status-bar.err { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+  .ls-sheet-status-bar.ok { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+  .ls-sheet-status-bar.info { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+</style>
+<script>
+(function () {
+  var SHEET_API = "https://script.google.com/macros/s/AKfycbzu-FFk-THjB-hDmtFRTlXswpCnIDhUW_ENA6nze4hL8gGshxWQLw3VdLTsUEJXxOg8/exec";
+  var SK = "ls_active_student_v1";
+  var RK = "ls_registered_students_v1";
+  var APP_VER = "2.6.3";
+  window.__lsAuthUnlocked = false;
+
+  function cleanPhone(v) {
+    return String(v || "").replace(/\D/g, "").slice(-10);
+  }
+
+  function hasVerifiedSession() {
+    try {
+      var raw = localStorage.getItem(SK);
+      if (!raw) return false;
+      var parsed = JSON.parse(raw);
+      return !!(
+        parsed &&
+        parsed.sheetVerified === true &&
+        parsed.student &&
+        cleanPhone(parsed.student.phone).length === 10 &&
+        String(parsed.student.name || "").trim().length >= 2
+      );
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function lockApp() {
+    window.__lsAuthUnlocked = false;
+    var ov = document.getElementById("lawStudyesAuthOverlay");
+    if (ov) {
+      ov.classList.remove("hidden");
+      ov.style.display = "flex";
+    }
+    document.body.classList.add("ls-auth-locked");
+  }
+
+  function unlockApp(student) {
+    window.__lsAuthUnlocked = true;
+    try {
+      var all = {};
+      try { all = JSON.parse(localStorage.getItem(RK) || "{}"); } catch (e) {}
+      all[student.phone] = student;
+      localStorage.setItem(RK, JSON.stringify(all));
+      localStorage.setItem(SK, JSON.stringify({
+        student: student,
+        sheetVerified: true,
+        verifiedAt: new Date().toISOString()
+      }));
+    } catch (e) {}
+    var ov = document.getElementById("lawStudyesAuthOverlay");
+    if (ov) {
+      ov.classList.add("hidden");
+      ov.style.display = "none";
+    }
+    document.body.classList.remove("ls-auth-locked");
+  }
+
+  function showAuthMsg(box, text, kind) {
+    if (!box) return;
+    box.textContent = text;
+    box.className = "ls-sheet-status-bar show " + (kind || "info");
+  }
+
+  async function saveToGoogleSheet(student) {
+    if (!navigator.onLine) {
+      throw new Error("Internet connection required to save your registration to the server.");
+    }
+    var payload = Object.assign({}, student, { appVersion: APP_VER });
+
+    // Primary: POST JSON as text/plain (avoids CORS preflight)
+    try {
+      var r = await fetch(SHEET_API, {
+        method: "POST",
+        redirect: "follow",
+        cache: "no-store",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+      if (r.ok) {
+        var txt = await r.text();
+        var data = JSON.parse(txt);
+        if (data && data.ok === true) return data.student || payload;
+        if (data && data.error) throw new Error(data.error);
+      }
+    } catch (postErr) {
+      // Fallback: GET query params (100% immune to Android WebView 302 POST redirect body-drop)
+      var qs = new URLSearchParams({
+        action: "register",
+        phone: payload.phone,
+        name: payload.name,
+        state: payload.state || "",
+        university: payload.university || "",
+        college: payload.college || "",
+        year: payload.year || "",
+        semester: payload.semester || "",
+        registeredAt: payload.registeredAt,
+        appVersion: APP_VER,
+        t: String(Date.now())
+      });
+      var r2 = await fetch(SHEET_API + "?" + qs.toString(), {
+        method: "GET",
+        redirect: "follow",
+        cache: "no-store"
+      });
+      if (!r2.ok) throw new Error("Sheet server HTTP " + r2.status);
+      var txt2 = await r2.text();
+      var data2 = JSON.parse(txt2);
+      if (data2 && data2.ok === true) return data2.student || payload;
+      throw new Error((data2 && data2.error) || "Could not confirm save in Google Sheet.");
+    }
+    throw new Error("Unexpected response from Google Sheet.");
+  }
+
+  async function lookupInGoogleSheet(phone) {
+    if (!navigator.onLine) {
+      throw new Error("Internet connection required to verify your registered mobile number.");
+    }
+    var url = SHEET_API + "?phone=" + encodeURIComponent(phone) + "&t=" + Date.now();
+    var r = await fetch(url, { method: "GET", redirect: "follow", cache: "no-store" });
+    if (!r.ok) throw new Error("Sheet lookup HTTP " + r.status);
+    var data = JSON.parse(await r.text());
+    if (!data || data.ok !== true) {
+      throw new Error((data && data.error) || "Lookup failed.");
+    }
+    if (data.found && data.student) return data.student;
+    return null;
+  }
+
+  function wireStrictAuthOverlay() {
+    var ov = document.getElementById("lawStudyesAuthOverlay");
+    if (!ov) return;
+
+    // Strip any bypass/skip/close buttons inside auth overlay
+    ov.querySelectorAll("button").forEach(function (b) {
+      var t = (b.textContent || "").toLowerCase();
+      var id = (b.id || "").toLowerCase();
+      if (t.indexOf("skip") !== -1 || t.indexOf("later") !== -1 || t.indexOf("guest") !== -1 || id.indexOf("skip") !== -1 || id.indexOf("close") !== -1) {
+        b.style.display = "none";
+      }
+    });
+
+    // Enforce non-bypassable lock via MutationObserver until verified in Google Sheet
+    if (!window.__lsAuthObserver) {
+      window.__lsAuthObserver = new MutationObserver(function () {
+        if (!window.__lsAuthUnlocked && !hasVerifiedSession()) {
+          if (ov.classList.contains("hidden") || ov.style.display === "none") {
+            lockApp();
+          }
+        }
+      });
+      window.__lsAuthObserver.observe(ov, { attributes: true, attributeFilter: ["class", "style"] });
+    }
+
+    if (hasVerifiedSession()) {
+      window.__lsAuthUnlocked = true;
+      ov.classList.add("hidden");
+      document.body.classList.remove("ls-auth-locked");
+    } else {
+      lockApp();
+    }
+
+    // Intercept Register & Login form submissions in capture phase so legacy silent catch{} never runs
+    ov.addEventListener("submit", async function (ev) {
+      var form = ev.target;
+      if (!form || form.tagName !== "FORM") return;
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+
+      var statusBox = form.querySelector(".ls-sheet-status-bar");
+      if (!statusBox) {
+        statusBox = document.createElement("div");
+        statusBox.className = "ls-sheet-status-bar";
+        form.appendChild(statusBox);
+      }
+
+      var loginPhoneInput = form.querySelector("#loginPhoneInput");
+      var submitBtn = form.querySelector('button[type="submit"], button:not([type="button"])');
+      var origBtnTxt = submitBtn ? submitBtn.textContent : "";
+
+      try {
+        if (loginPhoneInput) {
+          // LOGIN FLOW - Verify against live Google Sheet
+          var lPhone = cleanPhone(loginPhoneInput.value);
+          if (lPhone.length !== 10) {
+            showAuthMsg(statusBox, "Enter your registered 10-digit mobile number.", "err");
+            return;
+          }
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Verifying in Sheet..."; }
+          showAuthMsg(statusBox, "Checking registration in Google Sheet...", "info");
+          var foundStudent = await lookupInGoogleSheet(lPhone);
+          if (!foundStudent) {
+            showAuthMsg(statusBox, "Mobile number not registered yet. Please switch to Register tab first.", "err");
+            return;
+          }
+          showAuthMsg(statusBox, "Verified! Welcome back, " + foundStudent.name, "ok");
+          unlockApp(foundStudent);
+          if (typeof showToast === "function") showToast("Welcome back, " + foundStudent.name);
+        } else {
+          // REGISTER FLOW - Validate & confirm save in Google Sheet BEFORE unlocking
+          var phoneEl = form.querySelector('input[type="tel"], input[id*="Phone" i], input[name*="phone" i]');
+          var nameEl = form.querySelector('input[id*="Name" i], input[name*="name" i], input[type="text"]');
+          var selects = Array.from(form.querySelectorAll("select"));
+          var sSel = form.querySelector('select[id*="State" i]') || selects[0];
+          var uSel = form.querySelector('select[id*="Univ" i]') || selects[1];
+          var cSel = form.querySelector('select[id*="Coll" i]') || selects[2];
+          var ySel = form.querySelector('select[id*="Year" i]') || selects[3];
+          var smSel = form.querySelector('select[id*="Sem" i]') || selects[4];
+          var cCus = form.querySelector('input[id*="Custom" i], input[id*="Other" i]');
+
+          var phone = cleanPhone(phoneEl ? phoneEl.value : "");
+          var name = (nameEl ? nameEl.value : "").trim();
+          if (name.length < 2) {
+            showAuthMsg(statusBox, "Please enter your full name.", "err");
+            return;
+          }
+          if (phone.length !== 10) {
+            showAuthMsg(statusBox, "Please enter a valid 10-digit mobile number.", "err");
+            return;
+          }
+          var college = cSel ? (cSel.value === "__OTHER__" ? (cCus ? cCus.value.trim() : "") : cSel.value) : "";
+          var student = {
+            phone: phone,
+            name: name,
+            state: sSel ? sSel.value : "",
+            university: uSel ? uSel.value : "",
+            college: college,
+            year: ySel ? ySel.value : "",
+            semester: smSel ? smSel.value : "",
+            registeredAt: new Date().toISOString()
+          };
+
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Saving to Sheet..."; }
+          showAuthMsg(statusBox, "Saving registration to Google Sheet...", "info");
+          var savedStudent = await saveToGoogleSheet(student);
+          showAuthMsg(statusBox, "Saved to Google Sheet! Welcome, " + savedStudent.name, "ok");
+          unlockApp(savedStudent);
+          if (typeof showToast === "function") showToast("Registered & saved! Welcome, " + savedStudent.name);
+        }
+      } catch (err) {
+        showAuthMsg(statusBox, "Could not save/verify: " + (err && err.message ? err.message : String(err)), "err");
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnTxt; }
+      }
+    }, true);
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    wireStrictAuthOverlay();
+    setTimeout(wireStrictAuthOverlay, 300);
+  });
+})();
+</script>
+<!-- LS_STRICT_SHEET_AUTH_END -->
 </body>
 </html>
