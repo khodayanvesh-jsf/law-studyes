@@ -105,7 +105,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.7</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.8</div>
           </div>
         </button>
       </div>
@@ -4162,7 +4162,7 @@
 <!-- LS_VERSION_OTA_CARD_START -->
 <script>
 (function () {
-  var BUILT_IN_VER = "2.6.7";
+  var BUILT_IN_VER = "2.6.8";
   var RAW = "https://law-studyes.vercel.app";
   var VK = "law_studyes_ota_version";
   window.__lsOtaLastStatus = "Checking...";
@@ -4320,7 +4320,7 @@
 <!-- LS_LEFT_VER_OTA_START -->
 <script>
 (function () {
-  var BUILT_IN = "2.6.7";
+  var BUILT_IN = "2.6.8";
   var RAW = "https://law-studyes.vercel.app";
   var otaBusy = false;
 
@@ -4828,188 +4828,7 @@
 </script>
 <!-- LS_VISUAL_DIAGRAMS_END -->
 
-<!-- LS_PERSISTENT_OTA_START -->
-<script>
-(function () {
-  var VERCEL_BASE = "https://law-studyes.vercel.app";
-  var RAW_FALLBACK = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
-  var VK = "law_studyes_ota_version";
-  var otaBusy = false;
 
-  function getUpdater() {
-    return window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater;
-  }
-
-  function setStatus(msg, realVer) {
-    window.__lsOtaLastStatus = msg;
-    var st = document.getElementById("lsAccountOtaStatus");
-    if (st) st.textContent = msg;
-    var el = document.getElementById("lsAccountVerText");
-    var bi = (typeof BUILT_IN_VER !== "undefined" ? BUILT_IN_VER : (typeof BUILT_IN !== "undefined" ? BUILT_IN : "2.6.2"));
-    if (el && realVer !== undefined) {
-      el.textContent = "App v" + bi + " \u00b7 OTA: " + realVer;
-    }
-    var sideIds = ["lsSidebarOtaStatus", "otaStatusText", "otaStatusBadge", "lsOtaStatus"];
-    for (var i = 0; i < sideIds.length; i++) {
-      var se = document.getElementById(sideIds[i]);
-      if (se) se.textContent = msg;
-    }
-  }
-
-  async function getNativeRunningVersion(up) {
-    try {
-      if (up && typeof up.current === "function") {
-        var curObj = await up.current();
-        var b = curObj && (curObj.bundle || curObj);
-        if (b && b.id && b.id !== "builtin" && b.version && b.version !== "builtin") {
-          return { id: String(b.id), version: String(b.version), isBuiltin: false };
-        }
-      }
-    } catch (e) {}
-    return { id: "builtin", version: "Built-in", isBuiltin: true };
-  }
-
-  async function fetchMeta() {
-    var ts = Date.now();
-    try {
-      var r = await fetch(VERCEL_BASE + "/ota-version.json?t=" + ts, { cache: "no-store" });
-      if (r.ok) return { meta: await r.json(), base: VERCEL_BASE };
-    } catch (e) {}
-    var r2 = await fetch(RAW_FALLBACK + "/ota-version.json?t=" + ts, { cache: "no-store" });
-    if (!r2.ok) throw new Error("Server HTTP " + r2.status);
-    return { meta: await r2.json(), base: RAW_FALLBACK };
-  }
-
-  async function runPersistentOta(forceManual) {
-    var up = getUpdater();
-    if (!up) {
-      setStatus("Web mode (OTA runs inside Android APK)", "Web");
-      return;
-    }
-    try { await up.notifyAppReady(); } catch (e) {}
-    var running = await getNativeRunningVersion(up);
-    // Sync localStorage to REAL native bundle (fixes stale version after rollback or APK reinstall)
-    try {
-      if (running.isBuiltin) localStorage.removeItem(VK);
-      else localStorage.setItem(VK, running.version);
-    } catch (e) {}
-    setStatus(running.isBuiltin ? "Running Built-in" : ("Active OTA v" + running.version), running.version);
-
-    if (otaBusy) return;
-    if (!navigator.onLine) {
-      setStatus("Offline (" + running.version + ")", running.version);
-      return;
-    }
-
-    otaBusy = true;
-    try {
-      setStatus(forceManual ? "Force checking Vercel..." : "Checking OTA...", running.version);
-      var fetched = await fetchMeta();
-      var meta = fetched.meta;
-      var base = fetched.base;
-      if (!meta || !meta.version) throw new Error("Invalid ota-version.json");
-
-      // Only skip if NOT force-updating AND the REAL native bundle already matches server version
-      if (!forceManual && !running.isBuiltin && running.version === String(meta.version)) {
-        setStatus("Up to date (v" + running.version + ")", running.version);
-        return;
-      }
-
-      // On Force Update, delete any existing failed/duplicate bundle of the same version first
-      var targetVer = String(meta.version);
-      if (forceManual && typeof up.list === "function" && typeof up.delete === "function") {
-        try {
-          var listed = await up.list();
-          var bundles = (listed && listed.bundles) ? listed.bundles : [];
-          for (var i = 0; i < bundles.length; i++) {
-            var bn = bundles[i];
-            if (bn && bn.id && bn.id !== "builtin" && bn.id !== running.id && (bn.version === targetVer || bn.status === "error")) {
-              try { await up.delete({ id: bn.id }); } catch (de) {}
-            }
-          }
-        } catch (le) {}
-      }
-
-      // Unique version suffix on force reinstall if same version is currently running
-      var downloadVer = (forceManual && !running.isBuiltin && running.version === targetVer)
-        ? (targetVer + "-f" + String(Date.now()).slice(-4))
-        : targetVer;
-
-      var zipUrl = (meta.url && meta.url.indexOf("http") === 0)
-        ? meta.url
-        : (base + "/ota-bundle.zip");
-      if (zipUrl.indexOf("raw.githubusercontent.com") !== -1) {
-        zipUrl = VERCEL_BASE + "/ota-bundle.zip";
-      }
-      var sep = zipUrl.indexOf("?") === -1 ? "?" : "&";
-      var bustedUrl = zipUrl + sep + "v=" + encodeURIComponent(downloadVer) + "&t=" + Date.now();
-
-      setStatus("Downloading v" + targetVer + "...", running.version);
-      var bdl = null;
-      try {
-        bdl = await up.download({ url: bustedUrl, version: downloadVer });
-      } catch (dlErr) {
-        var fbUrl = RAW_FALLBACK + "/ota-bundle.zip?v=" + encodeURIComponent(downloadVer) + "&t=" + Date.now();
-        bdl = await up.download({ url: fbUrl, version: downloadVer });
-      }
-
-      if (!bdl || !bdl.id) {
-        throw new Error("Empty bundle returned");
-      }
-
-      setStatus("Installing v" + targetVer + "...", targetVer);
-      if (typeof showToast === "function") showToast("Applying OTA v" + targetVer + "...");
-
-      // IMPORTANT: Do NOT call up.reload() after up.set()!
-      // up.set({ id }) persists the active bundle and reloads the WebView cleanly.
-      await up.set({ id: bdl.id });
-    } catch (err) {
-      var msg = (err && err.message) ? err.message : String(err);
-      setStatus("OTA Error: " + msg, running.version);
-      if (forceManual && typeof showToast === "function") showToast("OTA Error: " + msg);
-    } finally {
-      otaBusy = false;
-    }
-  }
-
-  // Override both global OTA hooks so duplicate scripts cannot race or use stale localStorage
-  window.__lsCheckOtaVerbose = function (manual) { return runPersistentOta(!!manual); };
-  window.__lsForceOtaUpdate = function () { return runPersistentOta(true); };
-
-  // Intercept any Force Update / Check OTA button clicks in the UI cleanly
-  document.addEventListener("click", function (ev) {
-    var btn = ev.target && ev.target.closest ? ev.target.closest("button") : null;
-    if (!btn) return;
-    var id = (btn.id || "").toLowerCase();
-    var txt = (btn.textContent || "").toLowerCase();
-    if (
-      id.indexOf("force") !== -1 ||
-      id.indexOf("ota") !== -1 ||
-      txt.indexOf("force update") !== -1 ||
-      txt.indexOf("check ota") !== -1 ||
-      txt.indexOf("check for update") !== -1
-    ) {
-      if (id === "lszoomclosebtn" || id === "lsmemorypulsebtn") return;
-      ev.preventDefault();
-      ev.stopImmediatePropagation();
-      runPersistentOta(true);
-    }
-  }, true);
-
-  window.addEventListener("DOMContentLoaded", function () {
-    var up = getUpdater();
-    if (up) {
-      try { up.notifyAppReady(); } catch (e) {}
-      getNativeRunningVersion(up).then(function (r) {
-        setStatus(r.isBuiltin ? "Built-in ready" : ("OTA v" + r.version + " active"), r.version);
-      });
-      // Single clean background check 2.5s after launch
-      setTimeout(function () { runPersistentOta(false); }, 2500);
-    }
-  });
-})();
-</script>
-<!-- LS_PERSISTENT_OTA_END -->
 
 
 <!-- LS_STRICT_SHEET_AUTH_START -->
@@ -5079,7 +4898,7 @@
   var RK = "ls_registered_students_v1";
   var LAST_PH_KEY = "ls_last_verified_phone";
   var OTA_VK = "law_studyes_ota_version";
-  var APP_VER = "2.6.7";
+  var APP_VER = "2.6.8";
   var SESSION_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours auto-logout
   window.__lsAuthUnlocked = false;
   window.__lsRegPhotoBase64 = "";
@@ -5468,5 +5287,321 @@
 })();
 </script>
 <!-- LS_STRICT_SHEET_AUTH_END -->
+<!-- LS_PERSISTENT_OTA_START -->
+<style>
+  #lsOtaTopBanner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10050;
+    background: #7B1E2B;
+    color: #FAF7F2;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 14px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.22);
+  }
+  #lsOtaTopBanner.show { display: flex; }
+  .ls-reg-ver-pill {
+    margin-top: 8px;
+    padding: 5px 10px;
+    border-radius: 9999px;
+    background: #FAF7F2;
+    border: 1px solid #E8E0D5;
+    color: #5F554E;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+  }
+</style>
+<div id="lsOtaTopBanner">
+  <span id="lsOtaBannerText">Checking for updates...</span>
+  <button id="lsOtaBannerClose" type="button" style="background:rgba(255,255,255,0.2);border:none;color:#fff;border-radius:6px;padding:2px 8px;font-weight:700;cursor:pointer;">&times;</button>
+</div>
+<script>
+(function () {
+  var VERCEL_BASE = "https://law-studyes.vercel.app";
+  var RAW_FALLBACK = "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www";
+  var VK = "law_studyes_ota_version";
+  var CURRENT_APP_VER = "2.6.8";
+  var otaBusy = false;
+  var lastCheckMs = 0;
+
+  function getUpdater() {
+    return window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater;
+  }
+
+  function showBanner(msg, autoHideMs) {
+    var b = document.getElementById("lsOtaTopBanner");
+    var t = document.getElementById("lsOtaBannerText");
+    if (!b || !t) return;
+    t.textContent = msg;
+    b.classList.add("show");
+    if (window.__lsBannerTimer) clearTimeout(window.__lsBannerTimer);
+    if (autoHideMs && autoHideMs > 0) {
+      window.__lsBannerTimer = setTimeout(function () { b.classList.remove("show"); }, autoHideMs);
+    }
+  }
+
+  function hideBanner() {
+    var b = document.getElementById("lsOtaTopBanner");
+    if (b) b.classList.remove("show");
+  }
+
+  function setStatus(msg, realVer) {
+    window.__lsOtaLastStatus = msg;
+    var st = document.getElementById("lsAccountOtaStatus");
+    if (st) st.textContent = msg;
+    var el = document.getElementById("lsAccountVerText");
+    var verLabel = "App v" + CURRENT_APP_VER + " \u00b7 OTA: " + (realVer || "Built-in");
+    if (el && realVer !== undefined) el.textContent = verLabel;
+
+    // Also keep a live version pill synced inside the Registration/Login overlay
+    var ov = document.getElementById("lawStudyesAuthOverlay");
+    if (ov) {
+      var pill = ov.querySelector("#lsRegVerPill");
+      if (!pill) {
+        var card = ov.querySelector("form") ? ov.querySelector("form").parentElement : ov.firstElementChild;
+        if (card) {
+          pill = document.createElement("div");
+          pill.id = "lsRegVerPill";
+          pill.className = "ls-reg-ver-pill";
+          card.appendChild(pill);
+        }
+      }
+      if (pill) pill.textContent = verLabel + " (" + msg + ")";
+    }
+
+    var sideIds = ["lsSidebarOtaStatus", "otaStatusText", "otaStatusBadge", "lsOtaStatus"];
+    for (var i = 0; i < sideIds.length; i++) {
+      var se = document.getElementById(sideIds[i]);
+      if (se) se.textContent = msg;
+    }
+  }
+
+  async function getNativeRunningVersion(up) {
+    try {
+      if (up && typeof up.current === "function") {
+        var curObj = await up.current();
+        var b = curObj && (curObj.bundle || curObj);
+        if (b && b.id && b.id !== "builtin" && b.version && b.version !== "builtin") {
+          return { id: String(b.id), version: String(b.version), isBuiltin: false };
+        }
+      }
+    } catch (e) {}
+    return { id: "builtin", version: "Built-in", isBuiltin: true };
+  }
+
+  async function fetchMeta() {
+    var ts = Date.now();
+    try {
+      var r = await fetch(VERCEL_BASE + "/ota-version.json?t=" + ts, { cache: "no-store" });
+      if (r.ok) return { meta: await r.json(), base: VERCEL_BASE };
+    } catch (e) {}
+    var r2 = await fetch(RAW_FALLBACK + "/ota-version.json?t=" + ts, { cache: "no-store" });
+    if (!r2.ok) throw new Error("Server HTTP " + r2.status);
+    return { meta: await r2.json(), base: RAW_FALLBACK };
+  }
+
+  async function runPersistentOta(forceManual) {
+    var up = getUpdater();
+    if (!up) {
+      setStatus("Web mode", "Web");
+      return;
+    }
+    try { await up.notifyAppReady(); } catch (e) {}
+    var running = await getNativeRunningVersion(up);
+    try {
+      if (running.isBuiltin) localStorage.removeItem(VK);
+      else localStorage.setItem(VK, running.version);
+    } catch (e) {}
+
+    if (otaBusy) return;
+    if (!forceManual && (Date.now() - lastCheckMs) < 12000) {
+      setStatus(running.isBuiltin ? "Built-in" : ("Active v" + running.version), running.version);
+      return;
+    }
+    if (!navigator.onLine) {
+      setStatus("Offline (" + running.version + ")", running.version);
+      return;
+    }
+
+    otaBusy = true;
+    lastCheckMs = Date.now();
+    try {
+      setStatus(forceManual ? "Force checking Vercel..." : "Checking OTA...", running.version);
+      if (forceManual) showBanner("Checking Law Studyes OTA update...", 0);
+
+      var fetched = await fetchMeta();
+      var meta = fetched.meta;
+      var base = fetched.base;
+      if (!meta || !meta.version) throw new Error("Invalid ota-version.json");
+
+      var targetVer = String(meta.version);
+      if (!forceManual && !running.isBuiltin && running.version === targetVer) {
+        setStatus("Up to date (v" + running.version + ")", running.version);
+        hideBanner();
+        return;
+      }
+
+      // Clean any old failed/duplicate bundles for this version
+      if (typeof up.list === "function" && typeof up.delete === "function") {
+        try {
+          var listed = await up.list();
+          var bundles = (listed && listed.bundles) ? listed.bundles : [];
+          for (var i = 0; i < bundles.length; i++) {
+            var bn = bundles[i];
+            if (bn && bn.id && bn.id !== "builtin" && bn.id !== running.id && (bn.version === targetVer || bn.status === "error")) {
+              try { await up.delete({ id: bn.id }); } catch (de) {}
+            }
+          }
+        } catch (le) {}
+      }
+
+      var downloadVer = (forceManual && !running.isBuiltin && running.version === targetVer)
+        ? (targetVer + "-f" + String(Date.now()).slice(-4))
+        : targetVer;
+
+      var zipUrl = (meta.url && meta.url.indexOf("http") === 0) ? meta.url : (base + "/ota-bundle.zip");
+      if (zipUrl.indexOf("raw.githubusercontent.com") !== -1) zipUrl = VERCEL_BASE + "/ota-bundle.zip";
+      var sep = zipUrl.indexOf("?") === -1 ? "?" : "&";
+      var bustedUrl = zipUrl + sep + "v=" + encodeURIComponent(downloadVer) + "&t=" + Date.now();
+
+      setStatus("Downloading v" + targetVer + "...", running.version);
+      showBanner("Downloading Law Studyes update v" + targetVer + "...", 0);
+
+      var bdl = null;
+      try {
+        bdl = await up.download({ url: bustedUrl, version: downloadVer });
+      } catch (dlErr) {
+        var fbUrl = RAW_FALLBACK + "/ota-bundle.zip?v=" + encodeURIComponent(downloadVer) + "&t=" + Date.now();
+        bdl = await up.download({ url: fbUrl, version: downloadVer });
+      }
+
+      if (!bdl || !bdl.id) throw new Error("Empty bundle returned");
+
+      setStatus("Applying v" + targetVer + "...", targetVer);
+      showBanner("Installing update v" + targetVer + " & restarting...", 0);
+      try { localStorage.setItem(VK, downloadVer); } catch (e) {}
+
+      // Persist & reload cleanly into the new bundle
+      await up.set({ id: bdl.id });
+    } catch (err) {
+      var msg = (err && err.message) ? err.message : String(err);
+      setStatus("OTA Error: " + msg, running.version);
+      if (forceManual) showBanner("OTA Error: " + msg, 5000);
+      else hideBanner();
+    } finally {
+      otaBusy = false;
+    }
+  }
+
+  window.__lsCheckOtaVerbose = function (manual) { return runPersistentOta(!!manual); };
+  window.__lsForceOtaUpdate = function () { return runPersistentOta(true); };
+
+  // Native Android Camera + Gallery handler using @capacitor/camera (with web file-input fallback)
+  window.__lsPickStudentPhoto = async function (mode) {
+    var cam = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Camera;
+    if (cam && typeof cam.getPhoto === "function") {
+      try {
+        var res = await cam.getPhoto({
+          quality: 75,
+          width: 360,
+          height: 360,
+          allowEditing: false,
+          resultType: "dataUrl",
+          source: mode === "camera" ? "CAMERA" : "PHOTOS",
+          direction: "FRONT",
+          correctOrientation: true
+        });
+        if (res && res.dataUrl) {
+          window.__lsRegPhotoBase64 = res.dataUrl;
+          var prev = document.getElementById("lsPhotoPreview");
+          var hint = document.getElementById("lsPhotoHint");
+          if (prev) prev.innerHTML = '<img src="' + res.dataUrl + '" alt="Student Photo" />';
+          if (hint) {
+            var kb = Math.round((res.dataUrl.length * 3) / 4 / 1024);
+            hint.textContent = "Photo ready (" + kb + " KB) - will save to Sheet";
+          }
+          return true;
+        }
+      } catch (err) {
+        var em = (err && err.message) ? err.message : String(err);
+        if (/cancel/i.test(em)) return false;
+        var h2 = document.getElementById("lsPhotoHint");
+        if (h2) h2.textContent = "Camera error: " + em;
+        return false;
+      }
+    }
+    return false;
+  };
+
+  // Capture-phase click handler for Selfie/Gallery buttons (uses native Capacitor Camera on Android)
+  document.addEventListener("click", function (ev) {
+    var btn = ev.target && ev.target.closest ? ev.target.closest("button") : null;
+    if (!btn) return;
+    var id = (btn.id || "");
+    if (id === "lsOtaBannerClose") { hideBanner(); return; }
+    if (id === "lsSelfieBtn" || id === "lsGalleryBtn") {
+      var cam = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Camera;
+      if (cam && typeof cam.getPhoto === "function") {
+        ev.preventDefault();
+        ev.stopImmediatePropagation();
+        window.__lsPickStudentPhoto(id === "lsSelfieBtn" ? "camera" : "gallery");
+      }
+      return;
+    }
+    var lowId = id.toLowerCase();
+    var txt = (btn.textContent || "").toLowerCase();
+    if (
+      lowId.indexOf("force") !== -1 ||
+      lowId.indexOf("ota") !== -1 ||
+      txt.indexOf("force update") !== -1 ||
+      txt.indexOf("check ota") !== -1 ||
+      txt.indexOf("check for update") !== -1
+    ) {
+      if (lowId === "lszoomclosebtn" || lowId === "lsmemorypulsebtn" || lowId === "lsotabannerclose") return;
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      runPersistentOta(true);
+    }
+  }, true);
+
+  window.addEventListener("DOMContentLoaded", function () {
+    var up = getUpdater();
+    if (up) {
+      try { up.notifyAppReady(); } catch (e) {}
+      getNativeRunningVersion(up).then(function (r) {
+        setStatus(r.isBuiltin ? "Built-in ready" : ("Active v" + r.version), r.version);
+      });
+      // Auto-check on cold launch (works even on Registration/Login screen!)
+      setTimeout(function () { runPersistentOta(false); }, 1500);
+
+      // Auto-check whenever app is resumed from background
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          setTimeout(function () { runPersistentOta(false); }, 800);
+        }
+      });
+      var capApp = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App;
+      if (capApp && typeof capApp.addListener === "function") {
+        try {
+          capApp.addListener("appStateChange", function (state) {
+            if (state && state.isActive) {
+              setTimeout(function () { runPersistentOta(false); }, 800);
+            }
+          });
+        } catch (ae) {}
+      }
+    }
+  });
+})();
+</script>
+<!-- LS_PERSISTENT_OTA_END -->
 </body>
 </html>
