@@ -1,0 +1,90 @@
+name: Law Studyes Scheduled Source Sync & OTA Publish
+
+on:
+  schedule:
+    # Runs automatically every 12 hours (00:30 & 12:30 UTC -> 06:00 & 18:00 IST)
+    - cron: '30 0,12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-publish-ota:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install scraper dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Record previous DB hash
+        id: prev
+        run: |
+          if [ -f www/nyayasaral_db.json ]; then
+            echo "hash=$(sha256sum www/nyayasaral_db.json | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+          else
+            echo "hash=none" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run 12-thread source scraper
+        run: python scrape_nyayasaral.py
+
+      - name: Check if source website has new or updated content
+        id: diff
+        run: |
+          NEW_HASH=$(sha256sum www/nyayasaral_db.json | awk '{print $1}')
+          echo "Previous: ${{ steps.prev.outputs.hash }}"
+          echo "Current:  $NEW_HASH"
+          if [ "$NEW_HASH" != "${{ steps.prev.outputs.hash }}" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rebuild forward-slash OTA bundle & manifests if changed
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          python - <<'PY'
+          import hashlib, json, zipfile
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          www = Path("www")
+          zip_path = www / "ota-bundle.zip"
+          exclude = {"ota-bundle.zip", "ota-version.json", "ota-manifest.json", "LawStudyes-Offline.apk"}
+          with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
+              for p in sorted(www.rglob("*")):
+                  if p.is_file() and p.name not in exclude:
+                      zf.write(p, p.relative_to(www).as_posix())
+
+          ver = datetime.now(timezone.utc).strftime("%Y.%m.%d.%H%M")
+          now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          sha = hashlib.sha256(zip_path.read_bytes()).hexdigest().lower()
+          size_b = zip_path.stat().st_size
+          url = "https://law-studyes.vercel.app/ota-bundle.zip"
+
+          (www / "ota-version.json").write_text(json.dumps({
+              "version": ver, "url": url, "sha256": sha, "sizeBytes": size_b, "updatedAt": now_iso
+          }, indent=2), encoding="utf-8")
+          (www / "ota-manifest.json").write_text(json.dumps({
+              "app": "Law Studyes", "version": ver, "bundle": "ota-bundle.zip",
+              "url": url, "sha256": sha, "sizeBytes": size_b, "updatedAt": now_iso
+          }, indent=2), encoding="utf-8")
+          print(f"Built automated OTA v{ver} ({size_b} bytes, sha256={sha[:16]})")
+          PY
+
+      - name: Commit & push updated OTA bundle to main (triggers Vercel CDN)
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "Law Studyes Auto-Sync Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add www/nyayasaral_db.json www/db-version.json www/ota-bundle.zip www/ota-version.json www/ota-manifest.json
+          git commit -m "Auto-Sync OTA: Updated source notes & diagrams ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          git push origin main

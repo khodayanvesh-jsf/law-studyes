@@ -1,9 +1,9 @@
 {
     "app":  "Law Studyes",
-    "version":  "2026.11.25.0429",
+    "version":  "2026.11.25.0441",
     "bundle":  "ota-bundle.zip",
     "url":  "https://law-studyes.vercel.app/ota-bundle.zip",
-    "sha256":  "5a29ed2e2687ea539ac8086e18ebcbc2f220ceff93b56ad32486e124ee16b74e",
-    "sizeBytes":  3033283,
-    "updatedAt":  "2026-11-25T04:29:39Z"
+    "sha256":  "3ee293d832a1f43dedfb148ee5a198fd1a2fa39365b33144f2d8ae2f034d86f7",
+    "sizeBytes":  3027990,
+    "updatedAt":  "2026-11-25T04:41:54Z"
 }

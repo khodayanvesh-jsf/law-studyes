@@ -107,7 +107,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.10</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v3.0.0</div>
           </div>
         </button>
       </div>
@@ -4363,7 +4363,7 @@
   var RK = "ls_registered_students_v1";
   var LAST_PH_KEY = "ls_last_verified_phone";
   var OTA_VK = "law_studyes_ota_version";
-  var APP_VER = "2.6.10";
+  var APP_VER = "3.0.0";
   var SESSION_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours auto-logout
   window.__lsAuthUnlocked = false;
   window.__lsRegPhotoBase64 = "";
@@ -4802,7 +4802,7 @@
     "https://cdn.jsdelivr.net/gh/khodayanvesh-jsf/law-studyes@main/www"
   ];
   var VK = "law_studyes_ota_version";
-  var CURRENT_APP_VER = "2.6.10";
+  var CURRENT_APP_VER = "3.0.0";
   var lastCheckMs = 0;
 
   function getUpdater() {
@@ -5434,5 +5434,13 @@
 })();
 </script>
 <!-- LS_NATIVE_TTS_V2610_END -->
+<!-- LS_MODULAR_V3_START -->
+<script defer src="./js/modules/ls-store.js?v=3.0.0"></script>
+<script defer src="./js/modules/ls-hub.js?v=3.0.0"></script>
+<script defer src="./js/modules/ls-judgments.js?v=3.0.0"></script>
+<script defer src="./js/modules/ls-drill.js?v=3.0.0"></script>
+<script defer src="./js/modules/ls-vault.js?v=3.0.0"></script>
+<script defer src="./js/modules/ls-nav.js?v=3.0.0"></script>
+<!-- LS_MODULAR_V3_END -->
 </body>
 </html>
