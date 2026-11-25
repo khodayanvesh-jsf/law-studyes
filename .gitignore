@@ -14,3 +14,4 @@ desktop-console/node_modules/
 desktop-console/dist/
 .ls_te_hi_cache.json
 www/nyayasaral_db.json.bak
+.ls_legal_tr_cache.json
