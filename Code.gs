@@ -2,6 +2,7 @@ var SHEET_NAME = "Registrations";
 var USAGE_SHEET_NAME = "Daily_Usage";
 var DASH_SHEET_NAME = "Dashboard";
 var PHOTO_FOLDER_NAME = "LawStudyes_Student_Photos";
+var ADMIN_KEY = "LS_FOUNDER_2026";
 
 var HEADERS = [
   "Sl. No",
@@ -60,10 +61,7 @@ function getRegSheet_() {
 
 function getUsageSheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sh = ss.getSheetByName(USAGE_SHEET_NAME);
-  if (!sh) {
-    sh = ss.insertSheet(USAGE_SHEET_NAME);
-  }
+  var sh = ss.getSheetByName(USAGE_SHEET_NAME) || ss.insertSheet(USAGE_SHEET_NAME);
   if (sh.getLastRow() === 0) {
     sh.appendRow(USAGE_HEADERS);
     sh.setFrozenRows(1);
@@ -75,7 +73,6 @@ function ensureDashboardUsageMetrics_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var dash = ss.getSheetByName(DASH_SHEET_NAME);
   if (!dash) return;
-  // Add Daily Usage KPIs in rows 7-8 if not already present
   var marker = String(dash.getRange("A19").getDisplayValue() || "").trim();
   if (marker !== "DAILY USAGE METRICS (LIVE)") {
     dash.getRange("A19").setValue("DAILY USAGE METRICS (LIVE)").setFontWeight("bold");
@@ -104,7 +101,7 @@ function logDailyUsage_(student, appVersion, reason) {
       String(student.name || "").trim(),
       String(student.college || "").trim(),
       String(student.year || "").trim(),
-      String(appVersion || student.appVersion || "2.6.5").trim(),
+      String(appVersion || student.appVersion || "3.0.1").trim(),
       String(reason || "24h Login").trim()
     ]);
     ensureDashboardUsageMetrics_();
@@ -157,7 +154,7 @@ function saveStudent_(d) {
     var col = String(d.college || "").trim();
     var yr = String(d.year || "").trim();
     var sem = String(d.semester || "").trim();
-    var appV = String(d.appVersion || "2.6.5").trim();
+    var appV = String(d.appVersion || "3.0.1").trim();
 
     if (lr >= 2) {
       var phones = sh.getRange(2, 3, lr - 1, 1).getDisplayValues();
@@ -225,6 +222,87 @@ function findStudent_(raw, appVersion, reason, shouldLog) {
   return { ok: true, found: false };
 }
 
+function getAdminDump_(key) {
+  if (String(key || "") !== ADMIN_KEY) {
+    return { ok: false, error: "Unauthorized founder key." };
+  }
+  var todayIst = Utilities.formatDate(new Date(), "Asia/Kolkata", "yyyy-MM-dd");
+
+  // 1. Fetch all Registered Students (newest first)
+  var regSh = getRegSheet_();
+  var regLr = regSh.getLastRow();
+  var students = [];
+  if (regLr >= 2) {
+    var regRows = regSh.getRange(2, 1, regLr - 1, HEADERS.length).getDisplayValues();
+    for (var i = regRows.length - 1; i >= 0; i--) {
+      var r = regRows[i];
+      if (!String(r[2] || "").trim() && !String(r[3] || "").trim()) continue;
+      students.push({
+        slNo: r[0],
+        registeredAt: r[1],
+        phone: cleanPhone_(r[2]),
+        name: r[3],
+        state: r[4],
+        university: r[5],
+        college: r[6],
+        year: r[7],
+        semester: r[8],
+        appVersion: r[9],
+        photoUrl: r[11]
+      });
+    }
+  }
+
+  // 2. Fetch Daily Usage (today's logins + recent 250 logins)
+  var useSh = getUsageSheet_();
+  var useLr = useSh.getLastRow();
+  var todayUsage = [];
+  var recentUsage = [];
+  var todayUniqueMap = {};
+  var allTimeLogins = 0;
+
+  if (useLr >= 2) {
+    var useRows = useSh.getRange(2, 1, useLr - 1, USAGE_HEADERS.length).getDisplayValues();
+    allTimeLogins = useRows.length;
+    for (var j = useRows.length - 1; j >= 0; j--) {
+      var u = useRows[j];
+      var dStr = String(u[1] || "").replace(/^'/, "").trim();
+      var phStr = cleanPhone_(u[3]);
+      var item = {
+        slNo: u[0],
+        date: dStr,
+        time: String(u[2] || "").replace(/^'/, "").trim(),
+        phone: phStr,
+        name: u[4],
+        college: u[5],
+        year: u[6],
+        appVersion: u[7],
+        reason: u[8]
+      };
+      if (recentUsage.length < 250) recentUsage.push(item);
+      if (dStr === todayIst) {
+        todayUsage.push(item);
+        if (phStr) todayUniqueMap[phStr] = true;
+      }
+    }
+  }
+
+  return {
+    ok: true,
+    version: "3.0.1",
+    todayIst: todayIst,
+    stats: {
+      totalStudents: students.length,
+      todayUniqueUsers: Object.keys(todayUniqueMap).length,
+      todayTotalLogins: todayUsage.length,
+      allTimeLogins: allTimeLogins
+    },
+    students: students,
+    todayUsage: todayUsage,
+    recentUsage: recentUsage
+  };
+}
+
 function doPost(e) {
   try {
     var body = (e && e.postData && e.postData.contents) ? e.postData.contents : "{}";
@@ -242,14 +320,15 @@ function doGet(e) {
       getRegSheet_();
       getUsageSheet_();
       ensureDashboardUsageMetrics_();
-      return jsonOut_({ ok: true, version: "2.6.5", service: "LawStudyes-Registrations", sheet: SHEET_NAME, usageSheet: USAGE_SHEET_NAME });
+      return jsonOut_({ ok: true, version: "3.0.1", service: "LawStudyes-Registrations", sheet: SHEET_NAME, usageSheet: USAGE_SHEET_NAME });
     }
+    if (a === "admin_dump") return jsonOut_(getAdminDump_(p.key));
     if (a === "register") return jsonOut_(saveStudent_(p));
     if (p.phone) {
       var shouldLog = (a === "login" || String(p.log || "") === "1");
-      return jsonOut_(findStudent_(p.phone, p.appVersion || "2.6.5", p.reason || "Daily 24h Login", shouldLog));
+      return jsonOut_(findStudent_(p.phone, p.appVersion || "3.0.1", p.reason || "Daily 24h Login", shouldLog));
     }
-    return jsonOut_({ ok: true, version: "2.6.5", status: "ready" });
+    return jsonOut_({ ok: true, version: "3.0.1", status: "ready" });
   } catch (err) {
     return jsonOut_({ ok: false, error: String(err) });
   }

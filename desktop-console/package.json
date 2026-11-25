@@ -1,0 +1,40 @@
+{
+  "name": "law-studyes-founder-console",
+  "version": "3.0.0",
+  "description": "Law Studyes - Windows Founder & Admin Console",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.lawstudyes.founderconsole",
+    "productName": "LawStudyes-Founder-Console",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "icon.png"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.png",
+      "artifactName": "LawStudyes-Founder-Console-Windows.exe",
+      "signAndEditExecutable": false
+    }
+  }
+}
