@@ -89,7 +89,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v3.0.9</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v3.1.0</div>
           </div>
         </button>
       </div>
@@ -378,7 +378,7 @@
             <div class="text-xs font-bold text-[#1F1B18]">Android Offline APK (with Auto-OTA)</div>
             <div class="text-[11px] text-[#5F554E]">Direct link to latest compiled LawStudyes-Offline.apk</div>
           </div>
-          <a id="downloadApkLinkBtn" href="https://law-studyes.vercel.app/LawStudyes-Offline.apk?v=3.0.9" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs font-semibold shrink-0">Download APK</a>
+          <a id="downloadApkLinkBtn" href="https://law-studyes.vercel.app/LawStudyes-Offline.apk?v=3.1.0" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs font-semibold shrink-0">Download APK</a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -3444,10 +3444,7 @@
 
 
 
-<!-- LS_OTA_BULLETPROOF_START -->
-<div id="lsOtaToast" class="hidden fixed top-0 inset-x-0 z-[120] bg-[#7B1E2B] text-white text-xs font-semibold text-center py-2 px-4 shadow-md">Updating Law Studyes...</div>
-<!-- legacy duplicate OTA script removed by v2.6.9 -->
-<!-- LS_OTA_BULLETPROOF_END -->
+
 <!-- LS_FINAL_AUTH_START -->
 <script>
 (function () {
@@ -3782,7 +3779,7 @@
 </style>
 <script>
 (function () {
-  var SHARE_LINK = "https://law-studyes.vercel.app/download.html?v=3.0.9";
+  var SHARE_LINK = "https://law-studyes.vercel.app/download.html?v=3.1.0";
 
   // Prevent any external links inside notes from leaving the app
   document.addEventListener("click", function (e) {
@@ -4072,47 +4069,7 @@
 <!-- legacy duplicate OTA script removed by v2.6.9 -->
 <!-- LS_VERSION_OTA_CARD_END -->
 
-<!-- LS_FAST_LANG_START -->
-<script>
-(function () {
-  var LK = "ls_pref_lang_v1";
-  function applyFastLang(newLang) {
-    if (typeof state === "undefined") return;
-    var wasPlaying = Boolean(state.audio && state.audio.isPlaying && !state.audio.isPaused);
-    var curTopic = state.activeTopicId;
-    if (typeof stopAudio === "function") stopAudio();
-    state.lang = newLang === "te" ? "te" : "en";
-    try { localStorage.setItem(LK, state.lang); } catch (e) {}
 
-    var enBtn = document.getElementById("langEnBtn");
-    var teBtn = document.getElementById("langTeBtn");
-    if (enBtn) enBtn.className = state.lang === "en" ? "px-2.5 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white" : "px-2.5 py-1 rounded-full transition-colors text-[#5F554E]";
-    if (teBtn) teBtn.className = state.lang === "te" ? "px-2.5 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white" : "px-2.5 py-1 rounded-full transition-colors text-[#5F554E]";
-
-    if (typeof renderReadingPane === "function") renderReadingPane();
-    if (typeof showToast === "function") showToast(state.lang === "te" ? "Switched to Telugu (TE)" : "Switched to English (EN)");
-    if (wasPlaying && curTopic && typeof startTopicAudio === "function") {
-      setTimeout(function () { startTopicAudio(curTopic); }, 120);
-    }
-  }
-
-  window.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-      var enOld = document.getElementById("langEnBtn");
-      var teOld = document.getElementById("langTeBtn");
-      if (enOld && teOld) {
-        var enNew = enOld.cloneNode(true); enOld.parentNode.replaceChild(enNew, enOld);
-        var teNew = teOld.cloneNode(true); teOld.parentNode.replaceChild(teNew, teOld);
-        enNew.addEventListener("click", function () { applyFastLang("en"); });
-        teNew.addEventListener("click", function () { applyFastLang("te"); });
-      }
-      var saved = ""; try { saved = localStorage.getItem(LK) || ""; } catch (e) {}
-      if (saved === "te") applyFastLang("te");
-    }, 300);
-  });
-})();
-</script>
-<!-- LS_FAST_LANG_END -->
 <!-- LS_LEFT_VER_OTA_START -->
 <!-- legacy duplicate OTA script removed by v2.6.9 -->
 <!-- LS_LEFT_VER_OTA_END -->
@@ -4316,7 +4273,7 @@
   var RK = "ls_registered_students_v1";
   var LAST_PH_KEY = "ls_last_verified_phone";
   var OTA_VK = "law_studyes_ota_version";
-  var APP_VER = "3.0.9";
+  var APP_VER = "3.1.0";
   var SESSION_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours auto-logout
   window.__lsAuthUnlocked = false;
   window.__lsRegPhotoBase64 = "";
@@ -4754,7 +4711,7 @@
     "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www"
   ];
   var VK = "law_studyes_ota_version";
-  var CURRENT_APP_VER = "3.0.9";
+  var CURRENT_APP_VER = "3.1.0";
   var lastCheckMs = 0;
 
   function getUpdater() {
@@ -5100,17 +5057,7 @@
 <!-- LS_PERSISTENT_OTA_END -->
 
 <!-- LS_MODULAR_V3_START -->
-<script defer src="./js/modules/ls-store.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-hub.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-judgments.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-drill.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-vault.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-nav.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-ota-diag.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-diagrams.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-audio-engine.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-audio-mini.js?v=3.0.9"></script>
-<script defer src="./js/modules/ls-audio-window.js?v=3.0.9"></script>
+<script defer src="./js/ls-app-bundle.js?v=3.1.0"></script>
 <!-- LS_MODULAR_V3_END -->
 
 </body>

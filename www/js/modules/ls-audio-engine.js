@@ -1,17 +1,24 @@
 (function () {
   "use strict";
-  if (window.__lsAudioEngineV309) return;
-  window.__lsAudioEngineV309 = true;
+  if (window.__lsAudioEngineV310) return;
+  window.__lsAudioEngineV310 = true;
   var cachedVoice = {};
 
   function getNativeTts() {
     return window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
   }
 
+  function getActiveBcp47() {
+    var l = (typeof state !== "undefined" && state && state.lang) ? String(state.lang).toLowerCase() : "en";
+    if (l === "te") return "te-IN";
+    if (l === "hi") return "hi-IN";
+    return "en-IN";
+  }
+
   async function resolveVoice(tts, targetLang) {
-    var key = String(targetLang || "en-IN").toLowerCase();
+    var key = String(targetLang || getActiveBcp47()).toLowerCase();
     if (cachedVoice[key] !== undefined) return cachedVoice[key];
-    var res = { lang: targetLang || "en-IN", voice: undefined };
+    var res = { lang: targetLang || getActiveBcp47(), voice: undefined };
     try {
       if (typeof tts.getSupportedVoices === "function") {
         var out = await tts.getSupportedVoices();
@@ -34,18 +41,50 @@
 
   function patchNativeTts() {
     var tts = getNativeTts();
-    if (!tts || tts.__lsEnginePatched) return;
-    tts.__lsEnginePatched = true;
+    if (!tts || tts.__lsTriPatched) return;
+    tts.__lsTriPatched = true;
     var rawSpeak = tts.speak.bind(tts);
     tts.speak = async function (opts) {
       var text = String((opts && opts.text) || "").trim();
       if (!text) return;
-      var lang = (opts && opts.lang) || ((typeof state !== "undefined" && state.lang === "te") ? "te-IN" : "en-IN");
+      var lang = getActiveBcp47();
       var r = await resolveVoice(tts, lang);
-      var p = { text: text, lang: r.lang || lang, rate: Math.min(2.0, Math.max(0.6, Number((opts && opts.rate) || 1.15))), pitch: Number((opts && opts.pitch) || 1.0), volume: 1.0, category: "ambient" };
+      var p = {
+        text: text,
+        lang: r.lang || lang,
+        rate: Math.min(2.0, Math.max(0.6, Number((opts && opts.rate) || 1.15))),
+        pitch: Number((opts && opts.pitch) || 1.0),
+        volume: 1.0,
+        category: "ambient"
+      };
       if (typeof r.voice === "number") p.voice = r.voice;
       try { return await rawSpeak(p); }
-      catch (err) { return rawSpeak({ text: text, lang: "en-US", rate: p.rate, pitch: 1.0, volume: 1.0, category: "ambient" }); }
+      catch (err) {
+        return rawSpeak({ text: text, lang: lang === "en-IN" ? "en-US" : lang, rate: p.rate, pitch: 1.0, volume: 1.0, category: "ambient" });
+      }
+    };
+  }
+
+  function patchWebSpeechLang() {
+    if (typeof window.SpeechSynthesisUtterance === "undefined" || window.__lsWebTriPatched) return;
+    window.__lsWebTriPatched = true;
+    var origSpeak = window.speechSynthesis && window.speechSynthesis.speak ? window.speechSynthesis.speak.bind(window.speechSynthesis) : null;
+    if (!origSpeak) return;
+    window.speechSynthesis.speak = function (utter) {
+      try {
+        if (utter) {
+          var target = getActiveBcp47();
+          utter.lang = target;
+          var vs = window.speechSynthesis.getVoices ? window.speechSynthesis.getVoices() : [];
+          if (vs && vs.length) {
+            var pref = target.split("-")[0];
+            var match = vs.find(function (v) { return (v.lang || "").toLowerCase().replace("_", "-") === target.toLowerCase(); }) ||
+                        vs.find(function (v) { return (v.lang || "").toLowerCase().indexOf(pref + "-") === 0; });
+            if (match) utter.voice = match;
+          }
+        }
+      } catch (e) {}
+      return origSpeak(utter);
     };
   }
 
@@ -73,7 +112,8 @@
       topicTitle: title,
       activeTitle: (tEl && tEl.textContent) ? tEl.textContent : title,
       counterText: (cEl && cEl.textContent) ? cEl.textContent : "Ready to listen",
-      mode: aud.mode || "topic"
+      mode: aud.mode || "topic",
+      lang: getActiveBcp47()
     };
   }
 
@@ -84,7 +124,7 @@
     var bEl = document.getElementById("audioModeBadge");
     if (tEl && !s.isPlaying && !s.isPaused) {
       tEl.textContent = s.topicTitle;
-      if (cEl) cEl.textContent = "Ready to listen";
+      if (cEl) cEl.textContent = "Ready (" + s.lang + ")";
       if (bEl) bEl.textContent = "Topic Mode";
     }
     window.dispatchEvent(new CustomEvent("ls:audio-state", { detail: s }));
@@ -92,6 +132,7 @@
 
   function togglePlayPause() {
     patchNativeTts();
+    patchWebSpeechLang();
     if (typeof state === "undefined" || !state.audio) return;
     var hasNative = !!getNativeTts(), hasWeb = ("speechSynthesis" in window);
     if (!hasNative && !hasWeb) { if (typeof showToast === "function") showToast("Install Google Speech Services for audio."); return; }
@@ -132,6 +173,7 @@
 
   function bindEngine() {
     patchNativeTts();
+    patchWebSpeechLang();
     var pBtn = document.getElementById("audioPlayPauseBtn");
     if (pBtn && !pBtn.__lsEng) {
       pBtn.__lsEng = true;
@@ -183,6 +225,11 @@
     }
     emitState();
   }
+
+  window.addEventListener("ls:lang-changed", function () {
+    cachedVoice = {};
+    stopAll();
+  });
 
   window.LSAudioEngine = {
     toggle: togglePlayPause,

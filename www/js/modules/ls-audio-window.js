@@ -76,7 +76,7 @@
         '<div class="ls-pw-header">' +
           '<div>' +
             '<div style="font-size:15px;font-weight:800;letter-spacing:-0.2px;">Law Studyes Audio Player</div>' +
-            '<div style="font-size:11px;opacity:0.86;">Indian Voice (EN / TE) &middot; Spacious Controls</div>' +
+            '<div style="font-size:11px;opacity:0.86;">Indian Voice (EN / TE / HI) &middot; Spacious Controls</div>' +
           '</div>' +
           '<button type="button" class="ls-pw-close" id="lsPlayerCloseBtn" title="Minimize to Reading View">&times;</button>' +
         '</div>' +
