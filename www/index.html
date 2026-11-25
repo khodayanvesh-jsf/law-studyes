@@ -89,7 +89,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v3.0.5</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v3.0.7</div>
           </div>
         </button>
       </div>
@@ -4345,7 +4345,7 @@
   var RK = "ls_registered_students_v1";
   var LAST_PH_KEY = "ls_last_verified_phone";
   var OTA_VK = "law_studyes_ota_version";
-  var APP_VER = "3.0.5";
+  var APP_VER = "3.0.7";
   var SESSION_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours auto-logout
   window.__lsAuthUnlocked = false;
   window.__lsRegPhotoBase64 = "";
@@ -4783,7 +4783,7 @@
     "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www"
   ];
   var VK = "law_studyes_ota_version";
-  var CURRENT_APP_VER = "3.0.5";
+  var CURRENT_APP_VER = "3.0.7";
   var lastCheckMs = 0;
 
   function getUpdater() {
@@ -4901,7 +4901,7 @@
     return existingReady;
   }
 
-  async function downloadFromMirrors(up, downloadVer, metaUrl) {
+  async function downloadFromMirrors(up, downloadVer, metaUrl, metaSha) {
     var urls = [];
     if (metaUrl && metaUrl.indexOf("http") === 0 && metaUrl.indexOf("raw.githubusercontent.com") === -1) {
       urls.push(metaUrl);
@@ -4910,12 +4910,15 @@
       var candidate = MIRRORS[i] + "/ota-bundle.zip";
       if (urls.indexOf(candidate) === -1) urls.push(candidate);
     }
+    var sha = String(metaSha || "").trim().toLowerCase();
     window.__lsOtaLastErrors = [];
     if (!window.__lsOtaFailListenerBound && typeof up.addListener === "function") {
       window.__lsOtaFailListenerBound = true;
       try {
         up.addListener("downloadFailed", function (ev) {
-          window.__lsOtaLastErrors.push("Native downloadFailed: " + JSON.stringify(ev));
+          var line = "Native downloadFailed: " + JSON.stringify(ev);
+          window.__lsOtaLastErrors.push(line);
+          if (window.__lsPushOtaDiag) window.__lsPushOtaDiag(line);
         });
       } catch (le) {}
     }
@@ -4923,12 +4926,21 @@
       var u = urls[j];
       var sep = u.indexOf("?") === -1 ? "?" : "&";
       var busted = u + sep + "v=" + encodeURIComponent(downloadVer) + "&t=" + Date.now();
+      var t0 = Date.now();
       try {
-        var bdl = await up.download({ url: busted, version: downloadVer });
-        if (bdl && bdl.id) return bdl;
+        if (window.__lsPushOtaDiag) window.__lsPushOtaDiag("Downloading " + u + " (sha=" + sha.slice(0, 10) + ")");
+        var opts = { url: busted, version: downloadVer };
+        if (sha) opts.checksum = sha;
+        var bdl = await up.download(opts);
+        if (bdl && bdl.id) {
+          if (window.__lsPushOtaDiag) window.__lsPushOtaDiag("OK " + u + " (" + (Date.now() - t0) + "ms)");
+          return bdl;
+        }
       } catch (e) {
         var em = (e && e.message) ? e.message : String(e);
-        window.__lsOtaLastErrors.push(u + " -> " + em);
+        var rec = u + " (" + (Date.now() - t0) + "ms) -> " + em;
+        window.__lsOtaLastErrors.push(rec);
+        if (window.__lsPushOtaDiag) window.__lsPushOtaDiag("FAIL " + rec);
       }
     }
     throw new Error(window.__lsOtaLastErrors.join(" | ") || "Bundle download failed on all mirrors");
@@ -4990,7 +5002,7 @@
 
         setStatus("Downloading v" + targetVer + "...", running.version);
         showBanner("Downloading update v" + targetVer + "...", 0);
-        bdl = await downloadFromMirrors(up, downloadVer, meta.url);
+        bdl = await downloadFromMirrors(up, downloadVer, meta.url, meta.sha256 || meta.checksum || "");
       }
 
       setStatus("Installing v" + targetVer + "...", targetVer);
@@ -5425,12 +5437,13 @@
 </script>
 <!-- LS_NATIVE_TTS_V2610_END -->
 <!-- LS_MODULAR_V3_START -->
-<script defer src="./js/modules/ls-store.js?v=3.0.5"></script>
-<script defer src="./js/modules/ls-hub.js?v=3.0.5"></script>
-<script defer src="./js/modules/ls-judgments.js?v=3.0.5"></script>
-<script defer src="./js/modules/ls-drill.js?v=3.0.5"></script>
-<script defer src="./js/modules/ls-vault.js?v=3.0.5"></script>
-<script defer src="./js/modules/ls-nav.js?v=3.0.5"></script>
+<script defer src="./js/modules/ls-store.js?v=3.0.7"></script>
+<script defer src="./js/modules/ls-hub.js?v=3.0.7"></script>
+<script defer src="./js/modules/ls-judgments.js?v=3.0.7"></script>
+<script defer src="./js/modules/ls-drill.js?v=3.0.7"></script>
+<script defer src="./js/modules/ls-vault.js?v=3.0.7"></script>
+<script defer src="./js/modules/ls-nav.js?v=3.0.7"></script>
+<script defer src="./js/modules/ls-ota-diag.js?v=3.0.7"></script>
 <!-- LS_MODULAR_V3_END -->
 <!-- LS_TTS_PLAY_CATCH_V303_START -->
 <script>
