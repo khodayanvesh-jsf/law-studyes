@@ -7,3 +7,6 @@ __pycache__/
 
 !www/LawStudyes-Offline.apk
 audit_extract/
+*.bak
+*.tmp
+*.log
