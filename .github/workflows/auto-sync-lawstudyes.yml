@@ -47,6 +47,8 @@ jobs:
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
+      - name: Auto-generate Telugu and Hindi notes for newly synced topics
+        run: python -u scripts/generate_te_hi_db.py www/nyayasaral_db.json 0 8
 
       - name: Rebuild forward-slash OTA bundle & manifests if changed
         if: steps.diff.outputs.changed == 'true'
@@ -79,6 +81,8 @@ jobs:
           }, indent=2), encoding="utf-8")
           print(f"Built automated OTA v{ver} ({size_b} bytes, sha256={sha[:16]})")
           PY
+      - name: Auto-generate Telugu and Hindi notes for newly synced topics
+        run: python -u scripts/generate_te_hi_db.py www/nyayasaral_db.json 0 8
 
       - name: Commit & push updated OTA bundle to main (triggers Vercel CDN)
         if: steps.diff.outputs.changed == 'true'

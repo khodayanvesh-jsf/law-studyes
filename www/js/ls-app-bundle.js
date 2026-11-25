@@ -1,6 +1,555 @@
-/* Law Studyes v3.1.0 - Unified Bound Module Bundle (Generated 2026-11-25 15:13:21) */
+/* Law Studyes v3.1.1 - Unified Crash-Safe Module Bundle (Built 2026-11-25 17:04:09) */
+
+/* === MODULE: ls-store.js === */
+try {
+(function () {
+  "use strict";
+  var SHELF_KEY = "ls_my_shelf_v3";
+  var PROGRESS_KEY = "ls_study_progress_v3";
+  var EXTRAS_CACHE = null;
+
+  function safeJsonParse(raw, fb) {
+    try { return JSON.parse(raw); } catch (e) { return fb; }
+  }
+
+  function getShelf() {
+    return safeJsonParse(localStorage.getItem(SHELF_KEY) || "[]", []);
+  }
+
+  function toggleShelf(item) {
+    var list = getShelf();
+    var idx = -1;
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].id === item.id) { idx = i; break; }
+    }
+    var saved = false;
+    if (idx !== -1) {
+      list.splice(idx, 1);
+      saved = false;
+    } else {
+      list.unshift({
+        id: item.id,
+        type: item.type || "note",
+        title: item.title || "Saved Item",
+        subtitle: item.subtitle || "",
+        savedAt: new Date().toISOString()
+      });
+      saved = true;
+    }
+    try { localStorage.setItem(SHELF_KEY, JSON.stringify(list)); } catch (e) {}
+    return saved;
+  }
+
+  function isInShelf(id) {
+    var list = getShelf();
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].id === id) return true;
+    }
+    return false;
+  }
+
+  function markTopicRead(topicId, title) {
+    if (!topicId) return;
+    var p = safeJsonParse(localStorage.getItem(PROGRESS_KEY) || "{}", {});
+    p.lastTopicId = topicId;
+    p.lastTopicTitle = title || topicId;
+    p.lastOpenedAt = new Date().toISOString();
+    p.readMap = p.readMap || {};
+    p.readMap[topicId] = true;
+    try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); } catch (e) {}
+  }
+
+  function getProgress() {
+    return safeJsonParse(localStorage.getItem(PROGRESS_KEY) || "{}", {});
+  }
+
+  function getCoreStats() {
+    var subjects = (typeof state !== "undefined" && Array.isArray(state.subjects)) ? state.subjects : [];
+    var notes = (typeof state !== "undefined" && state.notes) ? state.notes : {};
+    var noteKeys = Object.keys(notes);
+    var caseCount = 0;
+    var qaCount = 0;
+    var visualCount = 0;
+    for (var i = 0; i < noteKeys.length; i++) {
+      var n = notes[noteKeys[i]];
+      var en = n && n.en ? n.en : null;
+      if (en) {
+        if (Array.isArray(en.caseLaws)) caseCount += en.caseLaws.length;
+        if (Array.isArray(en.selfTest)) qaCount += en.selfTest.length;
+        if (Array.isArray(en.visuals)) visualCount += en.visuals.length;
+      }
+    }
+    return {
+      subjects: subjects.length,
+      notes: noteKeys.length,
+      cases: caseCount,
+      qa: qaCount,
+      visuals: visualCount
+    };
+  }
+
+  function extractCasesFromNotes() {
+    var notes = (typeof state !== "undefined" && state.notes) ? state.notes : {};
+    var subjects = (typeof state !== "undefined" && Array.isArray(state.subjects)) ? state.subjects : [];
+    var subjTitleById = {};
+    subjects.forEach(function (s) { subjTitleById[s.id] = s.title; });
+    var out = [];
+    var seen = {};
+    Object.keys(notes).forEach(function (tid) {
+      var n = notes[tid];
+      var lang = (typeof state !== "undefined" && state.lang === "te" && n.te) ? "te" : "en";
+      var ld = n && n[lang] ? n[lang] : (n && n.en ? n.en : null);
+      if (!ld || !Array.isArray(ld.caseLaws)) return;
+      var sid = tid.split("-u")[0];
+      var sTitle = subjTitleById[sid] || sid.replace(/-/g, " ");
+      ld.caseLaws.forEach(function (c, idx) {
+        var nm = String(c.name || "").trim();
+        if (!nm || nm.length < 4) return;
+        var key = nm.toLowerCase().slice(0, 60);
+        if (seen[key]) return;
+        seen[key] = true;
+        out.push({
+          id: tid + "-c" + idx,
+          topicId: tid,
+          subject: sTitle,
+          name: nm,
+          citation: c.citation || "",
+          facts: c.facts || "",
+          principle: c.principle || ""
+        });
+      });
+    });
+    return out;
+  }
+
+  function extractQaFromNotes() {
+    var notes = (typeof state !== "undefined" && state.notes) ? state.notes : {};
+    var out = [];
+    Object.keys(notes).forEach(function (tid) {
+      var n = notes[tid];
+      var lang = (typeof state !== "undefined" && state.lang === "te" && n.te) ? "te" : "en";
+      var ld = n && n[lang] ? n[lang] : (n && n.en ? n.en : null);
+      if (!ld || !Array.isArray(ld.selfTest)) return;
+      ld.selfTest.forEach(function (qa, idx) {
+        if (!qa || !qa.q) return;
+        out.push({
+          id: tid + "-q" + idx,
+          topicId: tid,
+          subject: tid.split("-u")[0].replace(/-/g, " "),
+          q: qa.q,
+          a: qa.a || ""
+        });
+      });
+    });
+    return out;
+  }
+
+  async function loadExtras() {
+    if (EXTRAS_CACHE) return EXTRAS_CACHE;
+    try {
+      var r = await fetch("./extras_db.json?v=" + Date.now(), { cache: "no-store" });
+      if (r.ok) {
+        EXTRAS_CACHE = await r.json();
+        return EXTRAS_CACHE;
+      }
+    } catch (e) {}
+    EXTRAS_CACHE = {
+      updatedAt: "",
+      mcqs: [],
+      caseLaws: [],
+      maxims: [
+        { term: "Actus non facit reum nisi mens sit rea", meaning: "An act does not make a person guilty unless the mind is also guilty." },
+        { term: "Audi alteram partem", meaning: "Hear the other side; no one should be condemned unheard." },
+        { term: "Nemo judex in causa sua", meaning: "No one should be a judge in their own cause." },
+        { term: "Ubi jus ibi remedium", meaning: "Where there is a legal right, there is a legal remedy." },
+        { term: "Volenti non fit injuria", meaning: "To a willing person, no legal injury is done." },
+        { term: "Damnum sine injuria", meaning: "Damage or loss without infringement of a legal right is not actionable." },
+        { term: "Injuria sine damno", meaning: "Infringement of a legal right without actual loss is actionable." },
+        { term: "Res ipsa loquitur", meaning: "The thing speaks for itself (presumption of negligence)." },
+        { term: "Ignorantia juris non excusat", meaning: "Ignorance of the law is no excuse." },
+        { term: "Caveat emptor", meaning: "Let the buyer beware." },
+        { term: "Pacta sunt servanda", meaning: "Agreements must be kept." },
+        { term: "Quid pro quo", meaning: "Something for something (consideration in contract)." },
+        { term: "Consensus ad idem", meaning: "Meeting of minds on the same thing in the same sense." },
+        { term: "Nemo dat quod non habet", meaning: "No one can give a better title than they themselves have." },
+        { term: "Qui facit per alium facit per se", meaning: "He who acts through another does the act himself (vicarious liability)." }
+      ],
+      glossary: [
+        { term: "Ratio Decidendi", meaning: "The binding legal principle or reason for a court's decision." },
+        { term: "Obiter Dicta", meaning: "Incidental remarks made by a judge that are persuasive, not binding." },
+        { term: "Ultra Vires", meaning: "Beyond the legal power or authority of a body or statute." },
+        { term: "Locus Standi", meaning: "The right or legal standing of a party to bring an action in court." },
+        { term: "Sub Judice", meaning: "A matter currently under judicial consideration." },
+        { term: "Prima Facie", meaning: "Accepted as correct on first appearance until proved otherwise." },
+        { term: "In Personam", meaning: "A right or judgment binding only the specific parties to the suit." },
+        { term: "In Rem", meaning: "A right or judgment enforceable against the whole world." }
+      ],
+      pastPapers: []
+    };
+    return EXTRAS_CACHE;
+  }
+
+  window.LSStore = {
+    getShelf: getShelf,
+    toggleShelf: toggleShelf,
+    isInShelf: isInShelf,
+    markTopicRead: markTopicRead,
+    getProgress: getProgress,
+    getCoreStats: getCoreStats,
+    extractCasesFromNotes: extractCasesFromNotes,
+    extractQaFromNotes: extractQaFromNotes,
+    loadExtras: loadExtras
+  };
+})();
+
+} catch (__lsModErr) { console.error('[LS Module Error: ls-store.js]', __lsModErr); }
+
+/* === MODULE: ls-trilingual.js === */
+try {
+(function () {
+  "use strict";
+  if (window.__lsTrilingualV311) return;
+  window.__lsTrilingualV311 = true;
+
+  var LANG_KEY = "ls_medium_v1";
+  var DUAL_KEY = "ls_dual_mode_v1";
+  var CACHE_PREFIX = "ls_tr_v2_";
+  var inFlight = {};
+
+  var LABELS = {
+    en: {
+      badge: "English Medium",
+      inOneMinute: "In One Minute",
+      legalProvision: "Legal Provision",
+      meaning: "Meaning & Definition",
+      keyPoints: "Key Points",
+      caseLaws: "Leading Case Laws",
+      selfTest: "Quick Self-Test"
+    },
+    te: {
+      badge: "\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c2e\u0c40\u0c21\u0c3f\u0c2f\u0c02",
+      inOneMinute: "\u0c12\u0c15 \u0c28\u0c3f\u0c2e\u0c3f\u0c37\u0c02\u0c32\u0c4b",
+      legalProvision: "\u0c1a\u0c1f\u0c4d\u0c1f\u0c2a\u0c30\u0c2e\u0c48\u0c28 \u0c28\u0c3f\u0c2c\u0c02\u0c27\u0c28",
+      meaning: "\u0c05\u0c30\u0c4d\u0c25\u0c02 & \u0c28\u0c3f\u0c30\u0c4d\u0c35\u0c1a\u0c28\u0c02",
+      keyPoints: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f \u0c05\u0c02\u0c36\u0c3e\u0c32\u0c41",
+      caseLaws: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f\u0c2e\u0c48\u0c28 \u0c15\u0c47\u0c38\u0c41\u0c32\u0c41",
+      selfTest: "\u0c38\u0c4d\u0c35\u0c2f\u0c02 \u0c2a\u0c30\u0c40\u0c15\u0c4d\u0c37"
+    },
+    hi: {
+      badge: "\u0939\u093f\u0928\u094d\u0926\u0940 \u092e\u093e\u0927\u094d\u092f\u092e",
+      inOneMinute: "\u090f\u0915 \u092e\u093f\u0928\u091f \u092e\u0947\u0902",
+      legalProvision: "\u0935\u093f\u0927\u093f\u0915 \u092a\u094d\u0930\u093e\u0935\u0927\u093e\u0928",
+      meaning: "\u0905\u0930\u094d\u0925 \u0914\u0930 \u092a\u0930\u093f\u092d\u093e\u0937\u093e",
+      keyPoints: "\u092e\u0941\u0916\u094d\u092f \u092c\u093f\u0902\u0926\u0941",
+      caseLaws: "\u092a\u094d\u0930\u092e\u0941\u0916 \u0928\u094d\u092f\u093e\u092f\u093f\u0915 \u0928\u093f\u0930\u094d\u0923\u092f",
+      selfTest: "\u0938\u094d\u0935-\u092a\u0930\u0940\u0915\u094d\u0937\u0923"
+    }
+  };
+
+  function hasLangData(obj) {
+    if (!obj || typeof obj !== "object") return false;
+    var fields = ["inOneMinute", "legalProvision", "meaning", "keyPoints", "caseLaws", "selfTest"];
+    for (var i = 0; i < fields.length; i++) {
+      var v = obj[fields[i]];
+      if (typeof v === "string" && v.trim().length > 0) return true;
+      if (Array.isArray(v) && v.length > 0) return true;
+    }
+    return false;
+  }
+
+  function safeGetLang() {
+    try {
+      var v = localStorage.getItem(LANG_KEY);
+      if (v === "te" || v === "hi" || v === "en") return v;
+    } catch (e) {}
+    return "en";
+  }
+
+  function isDualMode() {
+    try { return localStorage.getItem(DUAL_KEY) === "1"; } catch (e) { return false; }
+  }
+
+  function setDualMode(on) {
+    try { localStorage.setItem(DUAL_KEY, on ? "1" : "0"); } catch (e) {}
+    var b = document.getElementById("langDualBtn");
+    if (b) {
+      b.className = on
+        ? "px-2 py-1 rounded-full transition-colors bg-[#8C6D46] text-white font-bold"
+        : "px-2 py-1 rounded-full transition-colors text-[#5F554E] hover:text-[#7B1E2B]";
+    }
+    if (typeof window.renderReadingPane === "function") {
+      try { window.renderReadingPane(); } catch (e) {}
+    }
+  }
+
+  function injectCss() {
+    if (document.getElementById("lsTriCssV311")) return;
+    var st = document.createElement("style");
+    st.id = "lsTriCssV311";
+    st.textContent =
+      ".ls-dual-card { margin-top:14px; padding:12px 14px; border-radius:14px; background:#FAF7F2; border:1.5px dashed #C7B299; }" +
+      ".ls-dual-title { font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.4px; color:#7B1E2B; margin-bottom:6px; }" +
+      ".ls-dual-body { font-size:12.5px; color:#2C2520; line-height:1.55; }" +
+      ".ls-lang-pill-badge { display:inline-flex; align-items:center; gap:5px; padding:3px 10px; border-radius:999px; background:#FBF1F2; border:1px solid #E8D5D8; color:#7B1E2B; font-size:11px; font-weight:800; margin-bottom:10px; }";
+    document.head.appendChild(st);
+  }
+
+  function readLocalCache(lang, topicId) {
+    try {
+      var raw = localStorage.getItem(CACHE_PREFIX + lang + "_" + topicId);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+
+  function writeLocalCache(lang, topicId, obj) {
+    try { localStorage.setItem(CACHE_PREFIX + lang + "_" + topicId, JSON.stringify(obj)); } catch (e) {}
+  }
+
+  async function translateStr(text, tl) {
+    var clean = String(text || "").trim();
+    if (!clean) return "";
+    var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=" +
+      encodeURIComponent(tl) + "&dt=t&q=" + encodeURIComponent(clean.slice(0, 1200));
+    var r = await fetch(url);
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    var d = await r.json();
+    if (Array.isArray(d) && Array.isArray(d[0])) {
+      var out = "";
+      for (var i = 0; i < d[0].length; i++) {
+        if (d[0][i] && d[0][i][0]) out += d[0][i][0];
+      }
+      if (out.trim()) return out.trim();
+    }
+    return clean;
+  }
+
+  async function translateAny(val, tl) {
+    if (!val || (typeof val !== "object" && typeof val !== "string")) return val;
+    if (typeof val === "string") return await translateStr(val, tl);
+    if (Array.isArray(val)) {
+      var arr = [];
+      for (var i = 0; i < val.length; i++) arr.push(await translateAny(val[i], tl));
+      return arr;
+    }
+    var copy = {};
+    var keys = Object.keys(val);
+    for (var j = 0; j < keys.length; j++) {
+      var k = keys[j];
+      if (k === "id" || k === "type" || k === "html" || k === "svg" || k === "mermaid" || k === "code" || k === "visuals") {
+        copy[k] = val[k];
+      } else {
+        copy[k] = await translateAny(val[k], tl);
+      }
+    }
+    return copy;
+  }
+
+  async function ensureNoteInLang(topicId, lang) {
+    if (!topicId || (lang !== "te" && lang !== "hi")) return;
+    if (typeof state === "undefined" || !state.notes || !state.notes[topicId]) return;
+    var rec = state.notes[topicId];
+    if (hasLangData(rec[lang])) return;
+
+    var cached = readLocalCache(lang, topicId);
+    if (hasLangData(cached)) {
+      rec[lang] = cached;
+      if (state.activeTopicId === topicId && state.lang === lang && typeof window.renderReadingPane === "function") {
+        try { window.renderReadingPane(); } catch (e) {}
+      }
+      return;
+    }
+
+    var lock = lang + ":" + topicId;
+    if (inFlight[lock] || !navigator.onLine || !hasLangData(rec.en)) return;
+    inFlight[lock] = true;
+    try {
+      var built = await translateAny(rec.en, lang);
+      if (hasLangData(built)) {
+        built.visuals = rec.en.visuals || [];
+        rec[lang] = built;
+        writeLocalCache(lang, topicId, built);
+        if (state.activeTopicId === topicId && state.lang === lang && typeof window.renderReadingPane === "function") {
+          try { window.renderReadingPane(); } catch (e) {}
+        }
+      }
+    } catch (e) {}
+    finally { delete inFlight[lock]; }
+  }
+
+  function removeLegacyUnavailableBanners(pane) {
+    if (!pane) return;
+    try {
+      var nodes = pane.querySelectorAll("div, p, span");
+      for (var i = 0; i < nodes.length; i++) {
+        var el = nodes[i];
+        if (el.children.length > 2) continue;
+        var txt = (el.textContent || "").trim();
+        if (txt.length > 240) continue;
+        if (
+          /not available (for|in).*(telugu|hindi)/i.test(txt) ||
+          /telugu.*not available/i.test(txt) ||
+          /hindi.*not available/i.test(txt) ||
+          /showing english fallback/i.test(txt)
+        ) {
+          el.style.display = "none";
+        }
+      }
+    } catch (e) {}
+  }
+
+  function localizePane() {
+    try {
+      if (typeof state === "undefined" || !state.activeTopicId) return;
+      var pane = document.getElementById("readingPane");
+      if (!pane) return;
+
+      var lang = state.lang || "en";
+      var rec = state.notes && state.notes[state.activeTopicId];
+
+      if (lang === "te" || lang === "hi") {
+        if (rec && hasLangData(rec[lang])) {
+          removeLegacyUnavailableBanners(pane);
+        } else if (rec) {
+          ensureNoteInLang(state.activeTopicId, lang);
+        }
+
+        var map = LABELS[lang];
+        var enMap = LABELS.en;
+        pane.querySelectorAll("h2, h3, button[data-toggle-section]").forEach(function (el) {
+          var t = el.textContent || "";
+          ["inOneMinute", "legalProvision", "meaning", "keyPoints", "caseLaws", "selfTest"].forEach(function (k) {
+            if (t.indexOf(enMap[k]) !== -1 && t.indexOf(map[k]) === -1) {
+              el.textContent = t.replace(enMap[k], map[k]);
+            }
+          });
+        });
+
+        var oldDual = document.getElementById("lsDualRefBox");
+        if (oldDual) oldDual.remove();
+        if (isDualMode() && rec && hasLangData(rec.en) && hasLangData(rec[lang])) {
+          var box = document.createElement("div");
+          box.id = "lsDualRefBox";
+          box.className = "ls-dual-card";
+          var enProv = rec.en.legalProvision ? ("<p style='margin-bottom:6px;'><strong>Provision:</strong> " + String(rec.en.legalProvision).replace(/</g, "&lt;") + "</p>") : "";
+          var enSum = rec.en.inOneMinute ? ("<p><strong>Summary:</strong> " + String(rec.en.inOneMinute).replace(/</g, "&lt;") + "</p>") : "";
+          box.innerHTML = '<div class="ls-dual-title">Dual-Medium English Exam Reference</div><div class="ls-dual-body">' + enProv + enSum + '</div>';
+          pane.appendChild(box);
+        }
+      }
+    } catch (e) {}
+  }
+
+  function applyMedium(newLang) {
+    try {
+      if (typeof state === "undefined") return;
+      var lang = (newLang === "te" || newLang === "hi") ? newLang : "en";
+      if (window.LSAudioEngine && typeof window.LSAudioEngine.stop === "function") {
+        window.LSAudioEngine.stop();
+      } else if (typeof stopAudio === "function") {
+        try { stopAudio(); } catch (e) {}
+      }
+
+      state.lang = lang;
+      try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+
+      var activeCls = "px-2 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white font-bold";
+      var idleCls = "px-2 py-1 rounded-full transition-colors text-[#5F554E] hover:text-[#7B1E2B]";
+      var bEn = document.getElementById("langEnBtn");
+      var bTe = document.getElementById("langTeBtn");
+      var bHi = document.getElementById("langHiBtn");
+      var bDual = document.getElementById("langDualBtn");
+      if (bEn) bEn.className = lang === "en" ? activeCls : idleCls;
+      if (bTe) bTe.className = lang === "te" ? activeCls : idleCls;
+      if (bHi) bHi.className = lang === "hi" ? activeCls : idleCls;
+      if (bDual) bDual.style.display = (lang === "en") ? "none" : "inline-block";
+
+      if (lang !== "en" && state.activeTopicId) {
+        ensureNoteInLang(state.activeTopicId, lang);
+      }
+      if (typeof loadVoices === "function") { try { loadVoices(); } catch (e) {} }
+      if (typeof window.renderReadingPane === "function") window.renderReadingPane();
+
+      window.dispatchEvent(new CustomEvent("ls:lang-changed", { detail: { lang: lang } }));
+      if (typeof showToast === "function") showToast("Switched to " + LABELS[lang].badge);
+    } catch (e) {}
+  }
+
+  function mountSwitcher() {
+    try {
+      injectCss();
+      var enBtn = document.getElementById("langEnBtn");
+      var teBtn = document.getElementById("langTeBtn");
+      if (!enBtn || !teBtn) return;
+
+      var host = enBtn.parentElement;
+      if (!host || host.__lsTriV311Mounted) return;
+      host.__lsTriV311Mounted = true;
+
+      var newEn = enBtn.cloneNode(true);
+      var newTe = teBtn.cloneNode(true);
+      enBtn.parentNode.replaceChild(newEn, enBtn);
+      teBtn.parentNode.replaceChild(newTe, teBtn);
+
+      var oldHi = document.getElementById("langHiBtn");
+      if (oldHi) oldHi.remove();
+      var hiBtn = document.createElement("button");
+      hiBtn.id = "langHiBtn";
+      hiBtn.type = "button";
+      hiBtn.textContent = "HI";
+      hiBtn.title = "Hindi Medium";
+      host.appendChild(hiBtn);
+
+      var oldDual = document.getElementById("langDualBtn");
+      if (oldDual) oldDual.remove();
+      var dualBtn = document.createElement("button");
+      dualBtn.id = "langDualBtn";
+      dualBtn.type = "button";
+      dualBtn.textContent = "Dual";
+      dualBtn.title = "Show English Exam Reference alongside Telugu/Hindi";
+      dualBtn.style.display = "none";
+      host.appendChild(dualBtn);
+
+      newEn.addEventListener("click", function () { applyMedium("en"); });
+      newTe.addEventListener("click", function () { applyMedium("te"); });
+      hiBtn.addEventListener("click", function () { applyMedium("hi"); });
+      dualBtn.addEventListener("click", function () { setDualMode(!isDualMode()); });
+
+      if (typeof window.renderReadingPane === "function" && !window.__lsTriV311Hook) {
+        window.__lsTriV311Hook = true;
+        var origR = window.renderReadingPane;
+        window.renderReadingPane = function () {
+          var r = origR.apply(this, arguments);
+          localizePane();
+          return r;
+        };
+      }
+
+      var saved = safeGetLang();
+      setDualMode(isDualMode());
+      if (saved !== "en") {
+        applyMedium(saved);
+      } else {
+        newEn.className = "px-2 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white font-bold";
+        localizePane();
+      }
+    } catch (e) {}
+  }
+
+  window.LSTrilingual = {
+    setLang: applyMedium,
+    getLang: function () { return (typeof state !== "undefined" && state.lang) ? state.lang : safeGetLang(); },
+    setDual: setDualMode
+  };
+
+  window.addEventListener("DOMContentLoaded", function () {
+    setTimeout(mountSwitcher, 200);
+    setTimeout(mountSwitcher, 1000);
+  });
+})();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-trilingual.js]', __lsModErr); }
 
 /* === MODULE: ls-audio-engine.js === */
+try {
 (function () {
   "use strict";
   if (window.__lsAudioEngineV310) return;
@@ -249,8 +798,10 @@
     setTimeout(bindEngine, 1100);
   });
 })();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-audio-engine.js]', __lsModErr); }
 
 /* === MODULE: ls-audio-mini.js === */
+try {
 (function () {
   "use strict";
   if (window.__lsAudioMiniV309) return;
@@ -380,8 +931,10 @@
     }, 1150);
   });
 })();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-audio-mini.js]', __lsModErr); }
 
 /* === MODULE: ls-audio-window.js === */
+try {
 (function () {
   "use strict";
   if (window.__lsAudioWindowV309) return;
@@ -590,42 +1143,58 @@
     setTimeout(mountWindow, 1200);
   });
 })();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-audio-window.js]', __lsModErr); }
 
 /* === MODULE: ls-diagrams.js === */
+try {
 (function () {
   "use strict";
-  if (window.__lsDiagramsRestoredV308) return;
-  window.__lsDiagramsRestoredV308 = true;
+  if (window.__lsSourceDiagramsV311) return;
+  window.__lsSourceDiagramsV311 = true;
 
-  var mermaidInited = false;
+  var mermaidReady = false;
   var zoomScale = 1;
   var walkTimer = null;
 
-  function injectDiagramStyles() {
-    if (document.getElementById("lsDiagramsExtraCss")) return;
+  function injectSourceDiagramCss() {
+    if (document.getElementById("lsSourceDiagramCssV311")) return;
     var st = document.createElement("style");
-    st.id = "lsDiagramsExtraCss";
+    st.id = "lsSourceDiagramCssV311";
     st.textContent =
-      ".ls-visual-card { background:#FFFFFF; border:1px solid #E8E0D5; border-radius:16px; padding:14px; margin-bottom:14px; box-shadow:0 2px 10px rgba(31,27,24,0.04); overflow:hidden; }" +
-      ".ls-visual-box { overflow-x:auto; -webkit-overflow-scrolling:touch; padding:6px 2px; }" +
-      ".ls-visual-box .dg { margin:0; font-size:12.5px; color:#1F1B18; }" +
-      ".ls-visual-box .dg-title { display:block; font-weight:800; color:#7B1E2B; font-size:13.5px; margin-bottom:3px; }" +
-      ".ls-visual-box .dg-how { display:block; font-size:11.5px; color:#5F554E; margin-bottom:10px; font-weight:500; }" +
-      ".ls-visual-box .nest { border:2px solid #7B1E2B; border-radius:14px; padding:10px 12px; margin-top:8px; background:#FAF7F2; }" +
-      ".ls-visual-box .nest .nest { border-color:#B45309; background:#FFFBF0; }" +
-      ".ls-visual-box .nest .nest .nest { border-color:#0F766E; background:#F0FDFA; }" +
-      ".ls-visual-box .nest-label { font-weight:700; font-size:12px; color:#1F1B18; }" +
-      ".ls-visual-box .nest-label small { display:block; font-weight:600; color:#7B1E2B; font-size:10.5px; margin-top:2px; }" +
-      ".ls-visual-box .dg-time ol { list-style:none; padding:0; margin:8px 0 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:8px; }" +
-      ".ls-visual-box .dg-time li { background:#FAF7F2; border:1px solid #E8E0D5; border-left:3px solid #7B1E2B; border-radius:10px; padding:8px 10px; font-size:11.5px; line-height:1.4; }" +
-      ".ls-visual-box .dg-time .when { display:block; font-weight:800; color:#7B1E2B; font-size:12px; margin-bottom:2px; }" +
-      ".ls-visual-box .mermaid { text-align:center; }";
+      ".ls-src-vis-wrap { margin-top:22px; display:flex; flex-direction:column; gap:14px; }" +
+      ".ls-src-vis-card { background:#FFFFFF; border:1px solid #E8E0D5; border-radius:16px; padding:14px; box-shadow:0 2px 10px rgba(31,27,24,0.04); overflow:hidden; }" +
+      ".ls-src-vis-head { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #F3EDE4; }" +
+      ".ls-src-vis-box { overflow-x:auto; -webkit-overflow-scrolling:touch; padding:4px 2px; max-width:100%; }" +
+      ".ls-src-vis-box figure { margin:0; }" +
+      ".ls-src-vis-box figcaption { margin-bottom:10px; font-size:12.5px; color:#3D352E; line-height:1.45; }" +
+      ".ls-src-vis-box .dg { margin:0; font-size:12.5px; color:#1F1B18; }" +
+      ".ls-src-vis-box .dg-title { display:block; font-weight:800; color:#7B1E2B; font-size:14px; margin-bottom:3px; }" +
+      ".ls-src-vis-box .dg-how { display:block; font-size:11.5px; color:#5F554E; margin-bottom:10px; font-weight:500; }" +
+      ".ls-src-vis-box .nest { border:2px solid #7B1E2B; border-radius:14px; padding:10px 12px; margin-top:8px; background:#FAF7F2; }" +
+      ".ls-src-vis-box .nest.n2, .ls-src-vis-box .nest .nest { border-color:#B45309; background:#FFFBF0; }" +
+      ".ls-src-vis-box .nest.n3, .ls-src-vis-box .nest .nest .nest { border-color:#0F766E; background:#F0FDFA; }" +
+      ".ls-src-vis-box .nest.n4, .ls-src-vis-box .nest .nest .nest .nest { border-color:#1D4ED8; background:#EFF6FF; }" +
+      ".ls-src-vis-box .nest-label { font-weight:800; font-size:12.5px; color:#1F1B18; }" +
+      ".ls-src-vis-box .nest-label small { display:block; font-weight:600; color:#7B1E2B; font-size:11px; margin-top:2px; }" +
+      ".ls-src-vis-box .dg-time ol, .ls-src-vis-box .dg-steps ol, .ls-src-vis-box .dg-flow ol { list-style:none; padding:0; margin:8px 0 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:9px; }" +
+      ".ls-src-vis-box .dg-time li, .ls-src-vis-box .dg-steps li, .ls-src-vis-box .dg-flow li { background:#FAF7F2; border:1px solid #E8E0D5; border-left:3.5px solid #7B1E2B; border-radius:10px; padding:9px 10px; font-size:12px; line-height:1.45; }" +
+      ".ls-src-vis-box .dg-time li.hi, .ls-src-vis-box .dg-time li.accent { background:#ECFDF5; border-color:#A7F3D0; border-left-color:#059669; }" +
+      ".ls-src-vis-box .dg-time .when, .ls-src-vis-box .dg-steps .step-no { display:block; font-weight:800; color:#7B1E2B; font-size:12.5px; margin-bottom:3px; }" +
+      ".ls-src-vis-box .dg-grid, .ls-src-vis-box .dg-cols, .ls-src-vis-box .dg-split { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; }" +
+      ".ls-src-vis-box .dg-box, .ls-src-vis-box .dg-col, .ls-src-vis-box .dg-card { background:#FAF7F2; border:1px solid #E8E0D5; border-radius:12px; padding:10px 12px; }" +
+      ".ls-src-vis-box .mermaid { text-align:center; padding:6px 0; }" +
+      ".ls-src-vis-box svg { max-width:100% !important; height:auto !important; display:block; margin:0 auto; }" +
+      ".ls-src-vis-box table { width:100%; border-collapse:collapse; font-size:12.5px; min-width:300px; }" +
+      ".ls-src-vis-box th { background:#FBF1F2; color:#7B1E2B; text-align:left; padding:8px 10px; border:1px solid #E8D5D8; font-weight:800; }" +
+      ".ls-src-vis-box td { padding:8px 10px; border:1px solid #E8E0D5; vertical-align:top; color:#1F1B18; }" +
+      ".ls-src-vis-box tr:nth-child(even) td { background:#FAF7F2; }";
     document.head.appendChild(st);
   }
 
-  function isRealVisual(v) {
+  function isGenuineVisual(v) {
     if (!v || !v.html) return false;
-    var h = String(v.html);
+    var h = String(v.html).trim();
+    if (!h) return false;
     if (v.type === "svg") {
       if (/height=["']?(1[0-9]|2[0-4])["']?/i.test(h) && /width=["']?(1[0-9]|2[0-4])["']?/i.test(h)) return false;
       if (/viewbox=["']0 0 24 24["']/i.test(h) && h.length < 700) return false;
@@ -638,8 +1207,14 @@
     var seen = {};
     for (var i = 0; i < list.length; i++) {
       var v = list[i];
-      if (!isRealVisual(v)) continue;
-      var norm = String(v.html).replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim().toLowerCase().slice(0, 140);
+      if (!isGenuineVisual(v)) continue;
+      var norm = String(v.html)
+        .replace(/<[^>]+>/g, " ")
+        .replace(/&[a-z#0-9]+;/gi, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase()
+        .slice(0, 150);
       if (norm && seen[norm]) continue;
       if (norm) seen[norm] = true;
       out.push(v);
@@ -648,8 +1223,8 @@
   }
 
   function initMermaidOnce() {
-    if (mermaidInited || !window.mermaid) return;
-    mermaidInited = true;
+    if (mermaidReady || !window.mermaid) return;
+    mermaidReady = true;
     try {
       window.mermaid.initialize({
         startOnLoad: false,
@@ -670,12 +1245,12 @@
     } catch (e) {}
   }
 
-  function renderMermaidNodes(container) {
-    if (!container) return;
-    var nodes = container.querySelectorAll(".mermaid");
+  function renderMermaidSafe(rootEl) {
+    if (!rootEl) return;
+    var nodes = rootEl.querySelectorAll(".mermaid");
     if (!nodes.length) return;
     if (!window.mermaid) {
-      setTimeout(function () { renderMermaidNodes(container); }, 400);
+      setTimeout(function () { renderMermaidSafe(rootEl); }, 350);
       return;
     }
     initMermaidOnce();
@@ -683,36 +1258,40 @@
       if (node.getAttribute("data-processed") === "true") return;
       var src = (node.textContent || "").trim();
       if (!src) return;
-      var renderId = "ls_mm_" + Date.now() + "_" + idx;
+      var renderId = "ls_mm_" + Date.now() + "_" + idx + "_" + Math.floor(Math.random() * 1000);
       try {
-        var res = window.mermaid.render(renderId, src);
-        if (res && typeof res.then === "function") {
-          res.then(function (out) {
-            if (out && out.svg) {
-              node.innerHTML = out.svg;
+        var out = window.mermaid.render(renderId, src);
+        if (out && typeof out.then === "function") {
+          out.then(function (res) {
+            if (res && res.svg) {
+              node.innerHTML = res.svg;
               node.setAttribute("data-processed", "true");
             }
-          }).catch(function () {});
+          }).catch(function () {
+            node.setAttribute("data-processed", "error");
+          });
         }
-      } catch (e) {}
+      } catch (e) {
+        node.setAttribute("data-processed", "error");
+      }
     });
   }
 
-  function stopMemoryWalk() {
+  function stopWalk() {
     if (walkTimer) { clearInterval(walkTimer); walkTimer = null; }
-    var canvas = document.getElementById("lsZoomCanvas");
-    if (canvas) {
-      canvas.querySelectorAll(".ls-spotlight-dim, .ls-spotlight-active, .ls-row-flash").forEach(function (el) {
+    var c = document.getElementById("lsZoomCanvas");
+    if (c) {
+      c.querySelectorAll(".ls-spotlight-dim, .ls-spotlight-active, .ls-row-flash").forEach(function (el) {
         el.classList.remove("ls-spotlight-dim", "ls-spotlight-active", "ls-row-flash");
       });
     }
   }
 
-  function startMemoryWalk() {
-    stopMemoryWalk();
-    var canvas = document.getElementById("lsZoomCanvas");
-    if (!canvas) return;
-    var items = Array.prototype.slice.call(canvas.querySelectorAll("svg .node, .dg-time li, .nest, tbody tr"));
+  function startWalk() {
+    stopWalk();
+    var c = document.getElementById("lsZoomCanvas");
+    if (!c) return;
+    var items = Array.prototype.slice.call(c.querySelectorAll("svg .node, .dg-time li, .dg-steps li, .nest, tbody tr"));
     if (!items.length) return;
     var step = 0;
     items.forEach(function (el) { el.classList.add("ls-spotlight-dim"); });
@@ -729,116 +1308,130 @@
     walkTimer = setInterval(tick, 1400);
   }
 
-  function openZoomForCard(cardEl, title) {
-    var modal = document.getElementById("lsZoomModal");
-    var canvas = document.getElementById("lsZoomCanvas");
-    var titleEl = document.getElementById("lsZoomTitle");
-    if (!modal || !canvas || !cardEl) return;
-    stopMemoryWalk();
-    zoomScale = 1;
-    canvas.style.transform = "scale(1)";
-    if (titleEl) titleEl.textContent = title || "Study Diagram";
-    var box = cardEl.querySelector(".ls-visual-box");
-    canvas.innerHTML = box ? box.innerHTML : cardEl.innerHTML;
-    modal.classList.remove("hidden");
+  function openZoom(cardEl, title) {
+    try {
+      var modal = document.getElementById("lsZoomModal");
+      var canvas = document.getElementById("lsZoomCanvas");
+      var titleEl = document.getElementById("lsZoomTitle");
+      if (!modal || !canvas || !cardEl) return;
+      stopWalk();
+      zoomScale = 1;
+      canvas.style.transform = "scale(1)";
+      if (titleEl) titleEl.textContent = title || "Study Diagram";
+      var box = cardEl.querySelector(".ls-src-vis-box");
+      canvas.innerHTML = box ? box.innerHTML : cardEl.innerHTML;
+      modal.classList.remove("hidden");
+      renderMermaidSafe(canvas);
+    } catch (e) {}
   }
 
-  function wireZoomModalOnce() {
+  function wireZoomOnce() {
     var modal = document.getElementById("lsZoomModal");
-    if (!modal || modal.__lsZoomWired) return;
-    modal.__lsZoomWired = true;
+    if (!modal || modal.__lsDiagV311Wired) return;
+    modal.__lsDiagV311Wired = true;
     var canvas = document.getElementById("lsZoomCanvas");
-    var btnClose = document.getElementById("lsZoomCloseBtn");
-    var btnIn = document.getElementById("lsZoomInBtn");
-    var btnOut = document.getElementById("lsZoomOutBtn");
-    var btnReset = document.getElementById("lsZoomResetBtn");
-    var btnWalk = document.getElementById("lsMemoryPulseBtn");
-    if (btnClose) btnClose.addEventListener("click", function () { stopMemoryWalk(); modal.classList.add("hidden"); });
-    if (btnIn) btnIn.addEventListener("click", function () { zoomScale = Math.min(2.4, +(zoomScale + 0.25).toFixed(2)); if (canvas) canvas.style.transform = "scale(" + zoomScale + ")"; });
-    if (btnOut) btnOut.addEventListener("click", function () { zoomScale = Math.max(0.6, +(zoomScale - 0.25).toFixed(2)); if (canvas) canvas.style.transform = "scale(" + zoomScale + ")"; });
-    if (btnReset) btnReset.addEventListener("click", function () { zoomScale = 1; if (canvas) canvas.style.transform = "scale(1)"; });
-    if (btnWalk) btnWalk.addEventListener("click", startMemoryWalk);
+    var bCl = document.getElementById("lsZoomCloseBtn");
+    var bIn = document.getElementById("lsZoomInBtn");
+    var bOut = document.getElementById("lsZoomOutBtn");
+    var bRs = document.getElementById("lsZoomResetBtn");
+    var bWk = document.getElementById("lsMemoryPulseBtn");
+    if (bCl) bCl.addEventListener("click", function () { stopWalk(); modal.classList.add("hidden"); });
+    if (bIn) bIn.addEventListener("click", function () { zoomScale = Math.min(2.4, +(zoomScale + 0.25).toFixed(2)); if (canvas) canvas.style.transform = "scale(" + zoomScale + ")"; });
+    if (bOut) bOut.addEventListener("click", function () { zoomScale = Math.max(0.6, +(zoomScale - 0.25).toFixed(2)); if (canvas) canvas.style.transform = "scale(" + zoomScale + ")"; });
+    if (bRs) bRs.addEventListener("click", function () { zoomScale = 1; if (canvas) canvas.style.transform = "scale(1)"; });
+    if (bWk) bWk.addEventListener("click", startWalk);
     modal.addEventListener("click", function (ev) {
-      if (ev.target === modal) { stopMemoryWalk(); modal.classList.add("hidden"); }
+      if (ev.target === modal) { stopWalk(); modal.classList.add("hidden"); }
     });
   }
 
-  function renderVisualDiagramsForActiveTopic() {
-    injectDiagramStyles();
-    wireZoomModalOnce();
-    var pane = document.getElementById("readingPane");
-    if (!pane || typeof state === "undefined" || !state.activeTopicId) return;
+  function renderSourceDiagrams() {
+    try {
+      injectSourceDiagramCss();
+      wireZoomOnce();
+      var pane = document.getElementById("readingPane");
+      if (!pane || typeof state === "undefined" || !state.activeTopicId) return;
 
-    var oldSec = document.getElementById("lsVisualDiagramsSection");
-    if (oldSec) oldSec.remove();
-
-    var rec = state.notes && state.notes[state.activeTopicId];
-    if (!rec) return;
-    var ld = rec[state.lang] || rec.en;
-    var rawVis = (ld && Array.isArray(ld.visuals) && ld.visuals.length) ? ld.visuals : ((rec.en && Array.isArray(rec.en.visuals)) ? rec.en.visuals : []);
-    var visuals = dedupeVisuals(rawVis);
-    if (!visuals.length) return;
-
-    var sec = document.createElement("section");
-    sec.id = "lsVisualDiagramsSection";
-    sec.className = "mt-6 space-y-3";
-
-    var header = document.createElement("div");
-    header.className = "flex items-center justify-between gap-2 px-1";
-    header.innerHTML =
-      '<div class="text-sm font-extrabold text-[#7B1E2B]">Visual Flowcharts, Diagrams &amp; Tables (' + visuals.length + ')</div>' +
-      '<span class="text-[10.5px] font-bold px-2 py-0.5 rounded-full bg-[#FBF1F2] text-[#7B1E2B]">Offline Ready</span>';
-    sec.appendChild(header);
-
-    visuals.forEach(function (v, idx) {
-      var card = document.createElement("div");
-      card.className = "ls-visual-card";
-      var cap = String(v.caption || (v.type === "table" ? "Comparison Table" : "Study Diagram " + (idx + 1)));
-
-      var topBar = document.createElement("div");
-      topBar.className = "flex items-center justify-between gap-2 mb-2 pb-1.5 border-b border-[#F3EDE4]";
-      topBar.innerHTML =
-        '<div class="text-xs font-bold text-[#7B1E2B] truncate">' + cap.replace(/</g, "&lt;") + '</div>' +
-        '<button type="button" class="ls-zoom-open-btn px-2.5 py-1 rounded-lg bg-[#FAF7F2] border border-[#E8E0D5] text-[11px] font-bold text-[#7B1E2B] shrink-0">Zoom &amp; Walk</button>';
-
-      var box = document.createElement("div");
-      box.className = "ls-visual-box";
-      box.innerHTML = v.html;
-
-      topBar.querySelector(".ls-zoom-open-btn").addEventListener("click", function () {
-        openZoomForCard(card, cap);
+      ["lsVisualDiagramsSection", "lsSourceVisualsSection"].forEach(function (oldId) {
+        var el = document.getElementById(oldId);
+        if (el) el.remove();
       });
 
-      card.appendChild(topBar);
-      card.appendChild(box);
-      sec.appendChild(card);
-    });
+      var rec = state.notes && state.notes[state.activeTopicId];
+      if (!rec) return;
+      var active = rec[state.lang] || rec.en;
+      var raw = (active && Array.isArray(active.visuals) && active.visuals.length)
+        ? active.visuals
+        : ((rec.en && Array.isArray(rec.en.visuals)) ? rec.en.visuals : []);
+      var visuals = dedupeVisuals(raw);
+      if (!visuals.length) return;
 
-    pane.appendChild(sec);
-    renderMermaidNodes(sec);
+      var sec = document.createElement("section");
+      sec.id = "lsSourceVisualsSection";
+      sec.className = "ls-src-vis-wrap";
+
+      var header = document.createElement("div");
+      header.className = "flex items-center justify-between gap-2 px-1";
+      header.innerHTML =
+        '<div class="text-sm font-extrabold text-[#7B1E2B]">Source Diagrams, Flowcharts &amp; Tables (' + visuals.length + ')</div>' +
+        '<span class="text-[10.5px] font-bold px-2 py-0.5 rounded-full bg-[#FBF1F2] text-[#7B1E2B]">Offline Ready</span>';
+      sec.appendChild(header);
+
+      visuals.forEach(function (v, idx) {
+        var card = document.createElement("div");
+        card.className = "ls-src-vis-card";
+        var cap = String(v.caption || (v.type === "table" ? "Comparison Table" : "Study Diagram " + (idx + 1)));
+
+        var top = document.createElement("div");
+        top.className = "ls-src-vis-head";
+        top.innerHTML =
+          '<div class="text-xs font-bold text-[#7B1E2B] truncate">' + cap.replace(/</g, "&lt;") + '</div>' +
+          '<button type="button" class="ls-zoom-btn px-2.5 py-1 rounded-lg bg-[#FAF7F2] border border-[#E8E0D5] text-[11px] font-bold text-[#7B1E2B] shrink-0">Zoom &amp; Walk</button>';
+
+        var box = document.createElement("div");
+        box.className = "ls-src-vis-box";
+        box.innerHTML = v.html;
+
+        top.querySelector(".ls-zoom-btn").addEventListener("click", function () {
+          openZoom(card, cap);
+        });
+
+        card.appendChild(top);
+        card.appendChild(box);
+        sec.appendChild(card);
+      });
+
+      pane.appendChild(sec);
+      renderMermaidSafe(sec);
+    } catch (e) {}
   }
 
   function hookReadingPane() {
-    if (typeof window.renderReadingPane === "function" && !window.__lsDiagramsHooked) {
-      window.__lsDiagramsHooked = true;
-      var orig = window.renderReadingPane;
-      window.renderReadingPane = function () {
-        var r = orig.apply(this, arguments);
-        try { renderVisualDiagramsForActiveTopic(); } catch (e) {}
-        return r;
-      };
-      renderVisualDiagramsForActiveTopic();
-    }
+    try {
+      if (typeof window.renderReadingPane === "function" && !window.__lsSrcDiagHookV311) {
+        window.__lsSrcDiagHookV311 = true;
+        var orig = window.renderReadingPane;
+        window.renderReadingPane = function () {
+          var r = orig.apply(this, arguments);
+          renderSourceDiagrams();
+          return r;
+        };
+        renderSourceDiagrams();
+      }
+    } catch (e) {}
   }
+
+  window.LSDiagrams = { render: renderSourceDiagrams };
 
   window.addEventListener("DOMContentLoaded", function () {
     setTimeout(hookReadingPane, 300);
     setTimeout(hookReadingPane, 1100);
   });
-  window.LSDiagrams = { render: renderVisualDiagramsForActiveTopic };
 })();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-diagrams.js]', __lsModErr); }
 
 /* === MODULE: ls-drill.js === */
+try {
 (function () {
   "use strict";
   function esc(s) {
@@ -950,8 +1543,10 @@
   window.LSDrill = { render: renderExamDrill };
 })();
 
+} catch (__lsModErr) { console.error('[LS Module Error: ls-drill.js]', __lsModErr); }
 
 /* === MODULE: ls-hub.js === */
+try {
 (function () {
   "use strict";
   function esc(s) {
@@ -1021,8 +1616,10 @@
   window.LSHub = { render: renderStudyHub };
 })();
 
+} catch (__lsModErr) { console.error('[LS Module Error: ls-hub.js]', __lsModErr); }
 
 /* === MODULE: ls-judgments.js === */
+try {
 (function () {
   "use strict";
   function esc(s) {
@@ -1085,8 +1682,10 @@
   window.LSJudgments = { render: renderJudgments };
 })();
 
+} catch (__lsModErr) { console.error('[LS Module Error: ls-judgments.js]', __lsModErr); }
 
 /* === MODULE: ls-nav.js === */
+try {
 (function () {
   "use strict";
   if (window.__lsModularNavV307) return;
@@ -1331,8 +1930,10 @@
   window.addEventListener("DOMContentLoaded", injectMobileShell);
   window.LSNav = { openTab: openTab };
 })();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-nav.js]', __lsModErr); }
 
 /* === MODULE: ls-ota-diag.js === */
+try {
 (function () {
   "use strict";
   if (window.__lsOtaDiagV307) return;
@@ -1508,548 +2109,10 @@
   window.LSOtaDiag = { open: openDiagModal, runMirrorCheck: runMirrorCheck, runNativeProbe: runNativeDownloadProbe, push: pushDiag };
   window.addEventListener("DOMContentLoaded", function () { setTimeout(ensureDiagModal, 350); });
 })();
-
-/* === MODULE: ls-store.js === */
-(function () {
-  "use strict";
-  var SHELF_KEY = "ls_my_shelf_v3";
-  var PROGRESS_KEY = "ls_study_progress_v3";
-  var EXTRAS_CACHE = null;
-
-  function safeJsonParse(raw, fb) {
-    try { return JSON.parse(raw); } catch (e) { return fb; }
-  }
-
-  function getShelf() {
-    return safeJsonParse(localStorage.getItem(SHELF_KEY) || "[]", []);
-  }
-
-  function toggleShelf(item) {
-    var list = getShelf();
-    var idx = -1;
-    for (var i = 0; i < list.length; i++) {
-      if (list[i].id === item.id) { idx = i; break; }
-    }
-    var saved = false;
-    if (idx !== -1) {
-      list.splice(idx, 1);
-      saved = false;
-    } else {
-      list.unshift({
-        id: item.id,
-        type: item.type || "note",
-        title: item.title || "Saved Item",
-        subtitle: item.subtitle || "",
-        savedAt: new Date().toISOString()
-      });
-      saved = true;
-    }
-    try { localStorage.setItem(SHELF_KEY, JSON.stringify(list)); } catch (e) {}
-    return saved;
-  }
-
-  function isInShelf(id) {
-    var list = getShelf();
-    for (var i = 0; i < list.length; i++) {
-      if (list[i].id === id) return true;
-    }
-    return false;
-  }
-
-  function markTopicRead(topicId, title) {
-    if (!topicId) return;
-    var p = safeJsonParse(localStorage.getItem(PROGRESS_KEY) || "{}", {});
-    p.lastTopicId = topicId;
-    p.lastTopicTitle = title || topicId;
-    p.lastOpenedAt = new Date().toISOString();
-    p.readMap = p.readMap || {};
-    p.readMap[topicId] = true;
-    try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); } catch (e) {}
-  }
-
-  function getProgress() {
-    return safeJsonParse(localStorage.getItem(PROGRESS_KEY) || "{}", {});
-  }
-
-  function getCoreStats() {
-    var subjects = (typeof state !== "undefined" && Array.isArray(state.subjects)) ? state.subjects : [];
-    var notes = (typeof state !== "undefined" && state.notes) ? state.notes : {};
-    var noteKeys = Object.keys(notes);
-    var caseCount = 0;
-    var qaCount = 0;
-    var visualCount = 0;
-    for (var i = 0; i < noteKeys.length; i++) {
-      var n = notes[noteKeys[i]];
-      var en = n && n.en ? n.en : null;
-      if (en) {
-        if (Array.isArray(en.caseLaws)) caseCount += en.caseLaws.length;
-        if (Array.isArray(en.selfTest)) qaCount += en.selfTest.length;
-        if (Array.isArray(en.visuals)) visualCount += en.visuals.length;
-      }
-    }
-    return {
-      subjects: subjects.length,
-      notes: noteKeys.length,
-      cases: caseCount,
-      qa: qaCount,
-      visuals: visualCount
-    };
-  }
-
-  function extractCasesFromNotes() {
-    var notes = (typeof state !== "undefined" && state.notes) ? state.notes : {};
-    var subjects = (typeof state !== "undefined" && Array.isArray(state.subjects)) ? state.subjects : [];
-    var subjTitleById = {};
-    subjects.forEach(function (s) { subjTitleById[s.id] = s.title; });
-    var out = [];
-    var seen = {};
-    Object.keys(notes).forEach(function (tid) {
-      var n = notes[tid];
-      var lang = (typeof state !== "undefined" && state.lang === "te" && n.te) ? "te" : "en";
-      var ld = n && n[lang] ? n[lang] : (n && n.en ? n.en : null);
-      if (!ld || !Array.isArray(ld.caseLaws)) return;
-      var sid = tid.split("-u")[0];
-      var sTitle = subjTitleById[sid] || sid.replace(/-/g, " ");
-      ld.caseLaws.forEach(function (c, idx) {
-        var nm = String(c.name || "").trim();
-        if (!nm || nm.length < 4) return;
-        var key = nm.toLowerCase().slice(0, 60);
-        if (seen[key]) return;
-        seen[key] = true;
-        out.push({
-          id: tid + "-c" + idx,
-          topicId: tid,
-          subject: sTitle,
-          name: nm,
-          citation: c.citation || "",
-          facts: c.facts || "",
-          principle: c.principle || ""
-        });
-      });
-    });
-    return out;
-  }
-
-  function extractQaFromNotes() {
-    var notes = (typeof state !== "undefined" && state.notes) ? state.notes : {};
-    var out = [];
-    Object.keys(notes).forEach(function (tid) {
-      var n = notes[tid];
-      var lang = (typeof state !== "undefined" && state.lang === "te" && n.te) ? "te" : "en";
-      var ld = n && n[lang] ? n[lang] : (n && n.en ? n.en : null);
-      if (!ld || !Array.isArray(ld.selfTest)) return;
-      ld.selfTest.forEach(function (qa, idx) {
-        if (!qa || !qa.q) return;
-        out.push({
-          id: tid + "-q" + idx,
-          topicId: tid,
-          subject: tid.split("-u")[0].replace(/-/g, " "),
-          q: qa.q,
-          a: qa.a || ""
-        });
-      });
-    });
-    return out;
-  }
-
-  async function loadExtras() {
-    if (EXTRAS_CACHE) return EXTRAS_CACHE;
-    try {
-      var r = await fetch("./extras_db.json?v=" + Date.now(), { cache: "no-store" });
-      if (r.ok) {
-        EXTRAS_CACHE = await r.json();
-        return EXTRAS_CACHE;
-      }
-    } catch (e) {}
-    EXTRAS_CACHE = {
-      updatedAt: "",
-      mcqs: [],
-      caseLaws: [],
-      maxims: [
-        { term: "Actus non facit reum nisi mens sit rea", meaning: "An act does not make a person guilty unless the mind is also guilty." },
-        { term: "Audi alteram partem", meaning: "Hear the other side; no one should be condemned unheard." },
-        { term: "Nemo judex in causa sua", meaning: "No one should be a judge in their own cause." },
-        { term: "Ubi jus ibi remedium", meaning: "Where there is a legal right, there is a legal remedy." },
-        { term: "Volenti non fit injuria", meaning: "To a willing person, no legal injury is done." },
-        { term: "Damnum sine injuria", meaning: "Damage or loss without infringement of a legal right is not actionable." },
-        { term: "Injuria sine damno", meaning: "Infringement of a legal right without actual loss is actionable." },
-        { term: "Res ipsa loquitur", meaning: "The thing speaks for itself (presumption of negligence)." },
-        { term: "Ignorantia juris non excusat", meaning: "Ignorance of the law is no excuse." },
-        { term: "Caveat emptor", meaning: "Let the buyer beware." },
-        { term: "Pacta sunt servanda", meaning: "Agreements must be kept." },
-        { term: "Quid pro quo", meaning: "Something for something (consideration in contract)." },
-        { term: "Consensus ad idem", meaning: "Meeting of minds on the same thing in the same sense." },
-        { term: "Nemo dat quod non habet", meaning: "No one can give a better title than they themselves have." },
-        { term: "Qui facit per alium facit per se", meaning: "He who acts through another does the act himself (vicarious liability)." }
-      ],
-      glossary: [
-        { term: "Ratio Decidendi", meaning: "The binding legal principle or reason for a court's decision." },
-        { term: "Obiter Dicta", meaning: "Incidental remarks made by a judge that are persuasive, not binding." },
-        { term: "Ultra Vires", meaning: "Beyond the legal power or authority of a body or statute." },
-        { term: "Locus Standi", meaning: "The right or legal standing of a party to bring an action in court." },
-        { term: "Sub Judice", meaning: "A matter currently under judicial consideration." },
-        { term: "Prima Facie", meaning: "Accepted as correct on first appearance until proved otherwise." },
-        { term: "In Personam", meaning: "A right or judgment binding only the specific parties to the suit." },
-        { term: "In Rem", meaning: "A right or judgment enforceable against the whole world." }
-      ],
-      pastPapers: []
-    };
-    return EXTRAS_CACHE;
-  }
-
-  window.LSStore = {
-    getShelf: getShelf,
-    toggleShelf: toggleShelf,
-    isInShelf: isInShelf,
-    markTopicRead: markTopicRead,
-    getProgress: getProgress,
-    getCoreStats: getCoreStats,
-    extractCasesFromNotes: extractCasesFromNotes,
-    extractQaFromNotes: extractQaFromNotes,
-    loadExtras: loadExtras
-  };
-})();
-
-
-/* === MODULE: ls-trilingual.js === */
-(function () {
-  "use strict";
-  if (window.__lsTrilingualV310) return;
-  window.__lsTrilingualV310 = true;
-
-  var LANG_KEY = "ls_medium_v1";
-  var DUAL_KEY = "ls_dual_mode_v1";
-  var CACHE_PREFIX = "ls_tr_v1_";
-  var inFlight = {};
-
-  var LABELS = {
-    en: {
-      badge: "English Medium",
-      inOneMinute: "In One Minute",
-      legalProvision: "Legal Provision",
-      meaning: "Meaning & Definition",
-      keyPoints: "Key Points",
-      caseLaws: "Leading Case Laws",
-      selfTest: "Quick Self-Test"
-    },
-    te: {
-      badge: "\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c2e\u0c40\u0c21\u0c3f\u0c2f\u0c02 (Telugu)",
-      inOneMinute: "\u0c12\u0c15 \u0c28\u0c3f\u0c2e\u0c3f\u0c37\u0c02\u0c32\u0c4b (In One Minute)",
-      legalProvision: "\u0c1a\u0c1f\u0c4d\u0c1f\u0c2a\u0c30\u0c2e\u0c48\u0c28 \u0c28\u0c3f\u0c2c\u0c02\u0c27\u0c28 (Legal Provision)",
-      meaning: "\u0c05\u0c30\u0c4d\u0c25\u0c02 & \u0c28\u0c3f\u0c30\u0c4d\u0c35\u0c1a\u0c28\u0c02 (Meaning)",
-      keyPoints: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f \u0c05\u0c02\u0c36\u0c3e\u0c32\u0c41 (Key Points)",
-      caseLaws: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f\u0c2e\u0c48\u0c28 \u0c15\u0c47\u0c38\u0c41\u0c32\u0c41 (Case Laws)",
-      selfTest: "\u0c38\u0c4d\u0c35\u0c2f\u0c02 \u0c2a\u0c30\u0c40\u0c15\u0c4d\u0c37 (Self-Test)"
-    },
-    hi: {
-      badge: "\u0939\u093f\u0928\u094d\u0926\u0940 \u092e\u093e\u0927\u094d\u092f\u092e (Hindi)",
-      inOneMinute: "\u090f\u0915 \u092e\u093f\u0928\u091f \u092e\u0947\u0902 (In One Minute)",
-      legalProvision: "\u0935\u093f\u0927\u093f\u0915 \u092a\u094d\u0930\u093e\u0935\u0927\u093e\u0928 (Legal Provision)",
-      meaning: "\u0905\u0930\u094d\u0925 \u0914\u0930 \u092a\u0930\u093f\u092d\u093e\u0937\u093e (Meaning)",
-      keyPoints: "\u092e\u0941\u0916\u094d\u092f \u092c\u093f\u0902\u0926\u0941 (Key Points)",
-      caseLaws: "\u092a\u094d\u0930\u092e\u0941\u0916 \u0928\u094d\u092f\u093e\u092f\u093f\u0915 \u0928\u093f\u0930\u094d\u0923\u092f (Case Laws)",
-      selfTest: "\u0938\u094d\u0935-\u092a\u0930\u0940\u0915\u094d\u0937\u0923 (Self-Test)"
-    }
-  };
-
-  function getSavedLang() {
-    try {
-      var v = localStorage.getItem(LANG_KEY);
-      if (v === "te" || v === "hi" || v === "en") return v;
-    } catch (e) {}
-    return "en";
-  }
-
-  function isDualMode() {
-    try { return localStorage.getItem(DUAL_KEY) === "1"; } catch (e) { return false; }
-  }
-
-  function setDualMode(on) {
-    try { localStorage.setItem(DUAL_KEY, on ? "1" : "0"); } catch (e) {}
-    var b = document.getElementById("langDualBtn");
-    if (b) {
-      b.className = on
-        ? "px-2 py-1 rounded-full transition-colors bg-[#8C6D46] text-white font-bold"
-        : "px-2 py-1 rounded-full transition-colors text-[#5F554E] hover:text-[#7B1E2B]";
-    }
-    if (typeof window.renderReadingPane === "function") window.renderReadingPane();
-  }
-
-  function injectTrilingualCss() {
-    if (document.getElementById("lsTrilingualCss")) return;
-    var st = document.createElement("style");
-    st.id = "lsTrilingualCss";
-    st.textContent =
-      ".ls-tr-banner { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 12px; margin-bottom:12px; border-radius:12px; background:#FFFBF0; border:1px solid #E8D5A8; color:#5E1520; font-size:12px; font-weight:700; }" +
-      ".ls-dual-card { margin-top:14px; padding:12px 14px; border-radius:14px; background:#FAF7F2; border:1.5px dashed #C7B299; }" +
-      ".ls-dual-title { font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.4px; color:#7B1E2B; margin-bottom:6px; }" +
-      ".ls-dual-body { font-size:12.5px; color:#2C2520; line-height:1.55; }";
-    document.head.appendChild(st);
-  }
-
-  function readCache(lang, topicId) {
-    try {
-      var raw = localStorage.getItem(CACHE_PREFIX + lang + "_" + topicId);
-      return raw ? JSON.parse(raw) : null;
-    } catch (e) { return null; }
-  }
-
-  function writeCache(lang, topicId, obj) {
-    try {
-      localStorage.setItem(CACHE_PREFIX + lang + "_" + topicId, JSON.stringify(obj));
-    } catch (e) {}
-  }
-
-  async function translateText(text, targetLang) {
-    var clean = String(text || "").trim();
-    if (!clean) return "";
-    var parts = [];
-    var remaining = clean;
-    while (remaining.length > 900) {
-      var cut = remaining.lastIndexOf(". ", 900);
-      if (cut < 300) cut = remaining.lastIndexOf(" ", 900);
-      if (cut < 200) cut = 900;
-      parts.push(remaining.slice(0, cut + 1).trim());
-      remaining = remaining.slice(cut + 1).trim();
-    }
-    if (remaining) parts.push(remaining);
-
-    var outParts = [];
-    for (var i = 0; i < parts.length; i++) {
-      var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=" +
-        encodeURIComponent(targetLang) + "&dt=t&q=" + encodeURIComponent(parts[i]);
-      var r = await fetch(url);
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      var data = await r.json();
-      var seg = "";
-      if (Array.isArray(data) && Array.isArray(data[0])) {
-        for (var j = 0; j < data[0].length; j++) {
-          if (data[0][j] && data[0][j][0]) seg += data[0][j][0];
-        }
-      }
-      outParts.push(seg || parts[i]);
-    }
-    return outParts.join(" ");
-  }
-
-  async function translateField(val, targetLang) {
-    if (!val) return val;
-    if (typeof val === "string") return await translateText(val, targetLang);
-    if (Array.isArray(val)) {
-      var arr = [];
-      for (var i = 0; i < val.length; i++) {
-        if (typeof val[i] === "string") {
-          arr.push(await translateText(val[i], targetLang));
-        } else if (val[i] && typeof val[i] === "object") {
-          var clone = Object.assign({}, val[i]);
-          if (clone.summary) clone.summary = await translateText(clone.summary, targetLang);
-          if (clone.principle) clone.principle = await translateText(clone.principle, targetLang);
-          if (clone.q) clone.q = await translateText(clone.q, targetLang);
-          if (clone.a) clone.a = await translateText(clone.a, targetLang);
-          arr.push(clone);
-        } else {
-          arr.push(val[i]);
-        }
-      }
-      return arr;
-    }
-    return val;
-  }
-
-  async function ensureTopicTranslated(topicId, targetLang) {
-    if (!topicId || (targetLang !== "hi" && targetLang !== "te")) return;
-    if (typeof state === "undefined" || !state.notes || !state.notes[topicId]) return;
-    var rec = state.notes[topicId];
-    if (rec[targetLang] && rec[targetLang].inOneMinute) return;
-
-    var cached = readCache(targetLang, topicId);
-    if (cached && cached.inOneMinute) {
-      rec[targetLang] = cached;
-      if (typeof window.renderReadingPane === "function") window.renderReadingPane();
-      return;
-    }
-
-    var key = targetLang + ":" + topicId;
-    if (inFlight[key]) return;
-    if (!navigator.onLine) return;
-    if (!rec.en) return;
-
-    inFlight[key] = true;
-    showTranslatingBanner(targetLang, true);
-    try {
-      var en = rec.en;
-      var tr = {
-        inOneMinute: await translateField(en.inOneMinute, targetLang),
-        legalProvision: await translateField(en.legalProvision, targetLang),
-        meaning: await translateField(en.meaning, targetLang),
-        keyPoints: await translateField(en.keyPoints, targetLang),
-        caseLaws: await translateField(en.caseLaws, targetLang),
-        selfTest: await translateField(en.selfTest, targetLang),
-        visuals: en.visuals || []
-      };
-      rec[targetLang] = tr;
-      writeCache(targetLang, topicId, tr);
-      if (state.activeTopicId === topicId && state.lang === targetLang && typeof window.renderReadingPane === "function") {
-        window.renderReadingPane();
-      }
-    } catch (e) {
-      showTranslatingBanner(targetLang, false, "Offline / translation paused - showing English note.");
-    } finally {
-      delete inFlight[key];
-    }
-  }
-
-  function showTranslatingBanner(lang, loading, errText) {
-    var pane = document.getElementById("readingPane");
-    if (!pane) return;
-    var old = document.getElementById("lsTrStatusBanner");
-    if (old) old.remove();
-    var div = document.createElement("div");
-    div.id = "lsTrStatusBanner";
-    div.className = "ls-tr-banner";
-    var lname = lang === "hi" ? "Hindi" : "Telugu";
-    div.textContent = loading
-      ? ("Preparing " + lname + " medium note & saving offline...")
-      : (errText || "");
-    if (div.textContent) pane.insertBefore(div, pane.firstChild);
-  }
-
-  function localizePaneAndDualView() {
-    if (typeof state === "undefined" || !state.activeTopicId) return;
-    var lang = state.lang || "en";
-    var pane = document.getElementById("readingPane");
-    if (!pane) return;
-
-    if (lang === "te" || lang === "hi") {
-      var map = LABELS[lang];
-      var enMap = LABELS.en;
-      pane.querySelectorAll("h2, h3, button[data-toggle-section]").forEach(function (el) {
-        var t = el.textContent || "";
-        ["inOneMinute", "legalProvision", "meaning", "keyPoints", "caseLaws", "selfTest"].forEach(function (k) {
-          if (t.indexOf(enMap[k]) !== -1 && t.indexOf(map[k]) === -1) {
-            el.textContent = t.replace(enMap[k], map[k]);
-          }
-        });
-      });
-
-      var rec = state.notes && state.notes[state.activeTopicId];
-      if (rec && (!rec[lang] || !rec[lang].inOneMinute)) {
-        ensureTopicTranslated(state.activeTopicId, lang);
-      }
-
-      var oldDual = document.getElementById("lsDualRefBox");
-      if (oldDual) oldDual.remove();
-      if (isDualMode() && rec && rec.en && rec[lang]) {
-        var box = document.createElement("div");
-        box.id = "lsDualRefBox";
-        box.className = "ls-dual-card";
-        var enProv = rec.en.legalProvision ? ("<p style='margin-bottom:6px;'><strong>Provision:</strong> " + String(rec.en.legalProvision).replace(/</g, "&lt;") + "</p>") : "";
-        var enSum = rec.en.inOneMinute ? ("<p><strong>Summary:</strong> " + String(rec.en.inOneMinute).replace(/</g, "&lt;") + "</p>") : "";
-        box.innerHTML =
-          '<div class="ls-dual-title">Dual-Medium English Exam Reference</div>' +
-          '<div class="ls-dual-body">' + enProv + enSum + '</div>';
-        pane.appendChild(box);
-      }
-    }
-  }
-
-  function applyMedium(newLang) {
-    if (typeof state === "undefined") return;
-    var lang = (newLang === "te" || newLang === "hi") ? newLang : "en";
-    if (window.LSAudioEngine && typeof window.LSAudioEngine.stop === "function") {
-      window.LSAudioEngine.stop();
-    } else if (typeof stopAudio === "function") {
-      stopAudio();
-    }
-
-    state.lang = lang;
-    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
-
-    var activeCls = "px-2 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white font-bold";
-    var idleCls = "px-2 py-1 rounded-full transition-colors text-[#5F554E] hover:text-[#7B1E2B]";
-    var bEn = document.getElementById("langEnBtn");
-    var bTe = document.getElementById("langTeBtn");
-    var bHi = document.getElementById("langHiBtn");
-    var bDual = document.getElementById("langDualBtn");
-    if (bEn) bEn.className = lang === "en" ? activeCls : idleCls;
-    if (bTe) bTe.className = lang === "te" ? activeCls : idleCls;
-    if (bHi) bHi.className = lang === "hi" ? activeCls : idleCls;
-    if (bDual) bDual.style.display = (lang === "en") ? "none" : "inline-block";
-
-    if (typeof loadVoices === "function") { try { loadVoices(); } catch (e) {} }
-    if (typeof window.renderReadingPane === "function") window.renderReadingPane();
-
-    window.dispatchEvent(new CustomEvent("ls:lang-changed", { detail: { lang: lang } }));
-    if (typeof showToast === "function") showToast("Switched to " + LABELS[lang].badge);
-  }
-
-  function mountSwitcher() {
-    injectTrilingualCss();
-    var enBtn = document.getElementById("langEnBtn");
-    var teBtn = document.getElementById("langTeBtn");
-    if (!enBtn || !teBtn) return;
-
-    var host = enBtn.parentElement;
-    if (!host || host.__lsTriMounted) return;
-    host.__lsTriMounted = true;
-
-    var newEn = enBtn.cloneNode(true);
-    var newTe = teBtn.cloneNode(true);
-    enBtn.parentNode.replaceChild(newEn, enBtn);
-    teBtn.parentNode.replaceChild(newTe, teBtn);
-
-    var hiBtn = document.createElement("button");
-    hiBtn.id = "langHiBtn";
-    hiBtn.type = "button";
-    hiBtn.textContent = "HI";
-    hiBtn.title = "Hindi Medium";
-    host.appendChild(hiBtn);
-
-    var dualBtn = document.createElement("button");
-    dualBtn.id = "langDualBtn";
-    dualBtn.type = "button";
-    dualBtn.textContent = "Dual";
-    dualBtn.title = "Show English Legal Reference alongside Telugu/Hindi";
-    dualBtn.style.display = "none";
-    host.appendChild(dualBtn);
-
-    newEn.addEventListener("click", function () { applyMedium("en"); });
-    newTe.addEventListener("click", function () { applyMedium("te"); });
-    hiBtn.addEventListener("click", function () { applyMedium("hi"); });
-    dualBtn.addEventListener("click", function () { setDualMode(!isDualMode()); });
-
-    if (typeof window.renderReadingPane === "function" && !window.__lsTriRenderHook) {
-      window.__lsTriRenderHook = true;
-      var origR = window.renderReadingPane;
-      window.renderReadingPane = function () {
-        var r = origR.apply(this, arguments);
-        try { localizePaneAndDualView(); } catch (e) {}
-        return r;
-      };
-    }
-
-    var saved = getSavedLang();
-    setDualMode(isDualMode());
-    if (saved !== "en") {
-      applyMedium(saved);
-    } else {
-      newEn.className = "px-2 py-1 rounded-full transition-colors bg-[#7B1E2B] text-white font-bold";
-    }
-  }
-
-  window.LSTrilingual = {
-    setLang: applyMedium,
-    getLang: function () { return (typeof state !== "undefined" && state.lang) ? state.lang : getSavedLang(); },
-    setDual: setDualMode
-  };
-
-  window.addEventListener("DOMContentLoaded", function () {
-    setTimeout(mountSwitcher, 200);
-    setTimeout(mountSwitcher, 1000);
-  });
-})();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-ota-diag.js]', __lsModErr); }
 
 /* === MODULE: ls-vault.js === */
+try {
 (function () {
   "use strict";
   function esc(s) {
@@ -2140,3 +2203,5 @@
     renderShelf: renderMyShelf
   };
 })();
+
+} catch (__lsModErr) { console.error('[LS Module Error: ls-vault.js]', __lsModErr); }

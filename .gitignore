@@ -12,3 +12,5 @@ audit_extract/
 *.log
 desktop-console/node_modules/
 desktop-console/dist/
+.ls_te_hi_cache.json
+www/nyayasaral_db.json.bak
