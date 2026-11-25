@@ -101,7 +101,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.3</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.4</div>
           </div>
         </button>
       </div>
@@ -4158,7 +4158,7 @@
 <!-- LS_VERSION_OTA_CARD_START -->
 <script>
 (function () {
-  var BUILT_IN_VER = "2.6.3";
+  var BUILT_IN_VER = "2.6.4";
   var RAW = "https://law-studyes.vercel.app";
   var VK = "law_studyes_ota_version";
   window.__lsOtaLastStatus = "Checking...";
@@ -4316,7 +4316,7 @@
 <!-- LS_LEFT_VER_OTA_START -->
 <script>
 (function () {
-  var BUILT_IN = "2.6.3";
+  var BUILT_IN = "2.6.4";
   var RAW = "https://law-studyes.vercel.app";
   var otaBusy = false;
 
@@ -5006,6 +5006,7 @@
 })();
 </script>
 <!-- LS_PERSISTENT_OTA_END -->
+
 <!-- LS_STRICT_SHEET_AUTH_START -->
 <style>
   body.ls-auth-locked { overflow: hidden !important; touch-action: none; }
@@ -5026,14 +5027,54 @@
   .ls-sheet-status-bar.err { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
   .ls-sheet-status-bar.ok { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
   .ls-sheet-status-bar.info { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+  .ls-photo-picker {
+    margin: 10px 0;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px dashed #D6C7BC;
+    background: #FAF7F2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .ls-photo-avatar {
+    width: 62px;
+    height: 62px;
+    border-radius: 9999px;
+    object-fit: cover;
+    border: 2px solid #7B1E2B;
+    background: #FBF1F2;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #7B1E2B;
+    text-align: center;
+    overflow: hidden;
+  }
+  .ls-photo-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ls-photo-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; }
+  .ls-photo-btn {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #7B1E2B;
+  }
+  .ls-photo-btn-cam { background: #7B1E2B; color: #FFFFFF; }
+  .ls-photo-btn-gal { background: #FFFFFF; color: #7B1E2B; }
 </style>
 <script>
 (function () {
   var SHEET_API = "https://script.google.com/macros/s/AKfycbzu-FFk-THjB-hDmtFRTlXswpCnIDhUW_ENA6nze4hL8gGshxWQLw3VdLTsUEJXxOg8/exec";
   var SK = "ls_active_student_v1";
   var RK = "ls_registered_students_v1";
-  var APP_VER = "2.6.3";
+  var APP_VER = "2.6.4";
   window.__lsAuthUnlocked = false;
+  window.__lsRegPhotoBase64 = "";
 
   function cleanPhone(v) {
     return String(v || "").replace(/\D/g, "").slice(-10);
@@ -5093,54 +5134,111 @@
     box.className = "ls-sheet-status-bar show " + (kind || "info");
   }
 
+  function compressImageFile(file) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onerror = function () { reject(new Error("Could not read photo file.")); };
+      reader.onload = function () {
+        var img = new Image();
+        img.onerror = function () { reject(new Error("Invalid image file.")); };
+        img.onload = function () {
+          var maxDim = 320;
+          var w = img.width, h = img.height;
+          if (w > h && w > maxDim) { h = Math.round(h * maxDim / w); w = maxDim; }
+          else if (h >= w && h > maxDim) { w = Math.round(w * maxDim / h); h = maxDim; }
+          var canvas = document.createElement("canvas");
+          canvas.width = w;
+          canvas.height = h;
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, w, h);
+          var dataUrl = canvas.toDataURL("image/jpeg", 0.72);
+          resolve(dataUrl);
+        };
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function injectPhotoPicker(regForm) {
+    if (!regForm || regForm.querySelector("#lsRegPhotoBox")) return;
+    var box = document.createElement("div");
+    box.id = "lsRegPhotoBox";
+    box.className = "ls-photo-picker";
+    box.innerHTML =
+      '<div id="lsPhotoPreview" class="ls-photo-avatar">Photo</div>' +
+      '<div style="flex:1;min-width:0;">' +
+        '<div style="font-size:12px;font-weight:700;color:#1F1B18;">Student Photo (Required)</div>' +
+        '<div id="lsPhotoHint" style="font-size:11px;color:#5F554E;">Take a live selfie or choose from gallery</div>' +
+        '<div class="ls-photo-actions">' +
+          '<button type="button" id="lsSelfieBtn" class="ls-photo-btn ls-photo-btn-cam">Take Selfie</button>' +
+          '<button type="button" id="lsGalleryBtn" class="ls-photo-btn ls-photo-btn-gal">Upload Gallery</button>' +
+        '</div>' +
+        '<input type="file" id="lsSelfieInput" accept="image/*" capture="user" style="display:none;" />' +
+        '<input type="file" id="lsGalleryInput" accept="image/*" style="display:none;" />' +
+      '</div>';
+
+    var submitBtn = regForm.querySelector('button[type="submit"], button:not([type="button"])');
+    if (submitBtn && submitBtn.parentNode) {
+      submitBtn.parentNode.insertBefore(box, submitBtn);
+    } else {
+      regForm.appendChild(box);
+    }
+
+    var sIn = box.querySelector("#lsSelfieInput");
+    var gIn = box.querySelector("#lsGalleryInput");
+    var prev = box.querySelector("#lsPhotoPreview");
+    var hint = box.querySelector("#lsPhotoHint");
+
+    box.querySelector("#lsSelfieBtn").addEventListener("click", function () { sIn.value = ""; sIn.click(); });
+    box.querySelector("#lsGalleryBtn").addEventListener("click", function () { gIn.value = ""; gIn.click(); });
+
+    async function onFilePicked(ev) {
+      var f = ev.target && ev.target.files && ev.target.files[0];
+      if (!f) return;
+      hint.textContent = "Optimizing photo...";
+      try {
+        var b64 = await compressImageFile(f);
+        window.__lsRegPhotoBase64 = b64;
+        prev.innerHTML = '<img src="' + b64 + '" alt="Student Selfie" />';
+        var kb = Math.round((b64.length * 3) / 4 / 1024);
+        hint.textContent = "Photo ready (" + kb + " KB) - will save to Sheet";
+      } catch (err) {
+        hint.textContent = "Photo error: " + (err && err.message ? err.message : String(err));
+      }
+    }
+    sIn.addEventListener("change", onFilePicked);
+    gIn.addEventListener("change", onFilePicked);
+  }
+
   async function saveToGoogleSheet(student) {
     if (!navigator.onLine) {
-      throw new Error("Internet connection required to save your registration to the server.");
+      throw new Error("Internet connection required to save your registration & photo.");
     }
-    var payload = Object.assign({}, student, { appVersion: APP_VER });
+    var payload = Object.assign({}, student, {
+      appVersion: APP_VER,
+      photoBase64: window.__lsRegPhotoBase64 || ""
+    });
 
-    // Primary: POST JSON as text/plain (avoids CORS preflight)
-    try {
-      var r = await fetch(SHEET_API, {
-        method: "POST",
-        redirect: "follow",
-        cache: "no-store",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(payload)
-      });
-      if (r.ok) {
-        var txt = await r.text();
-        var data = JSON.parse(txt);
-        if (data && data.ok === true) return data.student || payload;
-        if (data && data.error) throw new Error(data.error);
-      }
-    } catch (postErr) {
-      // Fallback: GET query params (100% immune to Android WebView 302 POST redirect body-drop)
-      var qs = new URLSearchParams({
-        action: "register",
-        phone: payload.phone,
-        name: payload.name,
-        state: payload.state || "",
-        university: payload.university || "",
-        college: payload.college || "",
-        year: payload.year || "",
-        semester: payload.semester || "",
-        registeredAt: payload.registeredAt,
-        appVersion: APP_VER,
-        t: String(Date.now())
-      });
-      var r2 = await fetch(SHEET_API + "?" + qs.toString(), {
-        method: "GET",
-        redirect: "follow",
-        cache: "no-store"
-      });
-      if (!r2.ok) throw new Error("Sheet server HTTP " + r2.status);
-      var txt2 = await r2.text();
-      var data2 = JSON.parse(txt2);
-      if (data2 && data2.ok === true) return data2.student || payload;
-      throw new Error((data2 && data2.error) || "Could not confirm save in Google Sheet.");
+    var r = await fetch(SHEET_API, {
+      method: "POST",
+      redirect: "follow",
+      cache: "no-store",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+    if (!r.ok) throw new Error("Sheet server HTTP " + r.status);
+    var txt = await r.text();
+    if (/<!doctype|<html|unable to open/i.test(txt)) {
+      throw new Error("Apps Script returned HTML error. Re-deploy Web App with access=Anyone.");
     }
-    throw new Error("Unexpected response from Google Sheet.");
+    var data = JSON.parse(txt);
+    if (data && data.ok === true) {
+      var saved = data.student || student;
+      if (window.__lsRegPhotoBase64) saved.photoPreview = window.__lsRegPhotoBase64;
+      return saved;
+    }
+    throw new Error((data && data.error) || "Could not confirm save in Google Sheet.");
   }
 
   async function lookupInGoogleSheet(phone) {
@@ -5150,34 +5248,40 @@
     var url = SHEET_API + "?phone=" + encodeURIComponent(phone) + "&t=" + Date.now();
     var r = await fetch(url, { method: "GET", redirect: "follow", cache: "no-store" });
     if (!r.ok) throw new Error("Sheet lookup HTTP " + r.status);
-    var data = JSON.parse(await r.text());
-    if (!data || data.ok !== true) {
-      throw new Error((data && data.error) || "Lookup failed.");
+    var txt = await r.text();
+    if (/<!doctype|<html|unable to open/i.test(txt)) {
+      throw new Error("Sheet server unreachable.");
     }
-    if (data.found && data.student) return data.student;
-    return null;
+    var data = JSON.parse(txt);
+    if (!data || data.ok !== true) throw new Error((data && data.error) || "Lookup failed.");
+    return (data.found && data.student) ? data.student : null;
   }
 
   function wireStrictAuthOverlay() {
     var ov = document.getElementById("lawStudyesAuthOverlay");
     if (!ov) return;
 
-    // Strip any bypass/skip/close buttons inside auth overlay
+    // Inject Selfie / Gallery photo picker into Registration form (form without #loginPhoneInput)
+    ov.querySelectorAll("form").forEach(function (f) {
+      if (!f.querySelector("#loginPhoneInput")) injectPhotoPicker(f);
+    });
+
+    if (ov.__lsStrictAuth264) return;
+    ov.__lsStrictAuth264 = true;
+
     ov.querySelectorAll("button").forEach(function (b) {
       var t = (b.textContent || "").toLowerCase();
       var id = (b.id || "").toLowerCase();
+      if (id === "lsselfiebtn" || id === "lsgallerybtn") return;
       if (t.indexOf("skip") !== -1 || t.indexOf("later") !== -1 || t.indexOf("guest") !== -1 || id.indexOf("skip") !== -1 || id.indexOf("close") !== -1) {
         b.style.display = "none";
       }
     });
 
-    // Enforce non-bypassable lock via MutationObserver until verified in Google Sheet
     if (!window.__lsAuthObserver) {
       window.__lsAuthObserver = new MutationObserver(function () {
         if (!window.__lsAuthUnlocked && !hasVerifiedSession()) {
-          if (ov.classList.contains("hidden") || ov.style.display === "none") {
-            lockApp();
-          }
+          if (ov.classList.contains("hidden") || ov.style.display === "none") lockApp();
         }
       });
       window.__lsAuthObserver.observe(ov, { attributes: true, attributeFilter: ["class", "style"] });
@@ -5191,7 +5295,6 @@
       lockApp();
     }
 
-    // Intercept Register & Login form submissions in capture phase so legacy silent catch{} never runs
     ov.addEventListener("submit", async function (ev) {
       var form = ev.target;
       if (!form || form.tagName !== "FORM") return;
@@ -5211,13 +5314,12 @@
 
       try {
         if (loginPhoneInput) {
-          // LOGIN FLOW - Verify against live Google Sheet
           var lPhone = cleanPhone(loginPhoneInput.value);
           if (lPhone.length !== 10) {
             showAuthMsg(statusBox, "Enter your registered 10-digit mobile number.", "err");
             return;
           }
-          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Verifying in Sheet..."; }
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Verifying..."; }
           showAuthMsg(statusBox, "Checking registration in Google Sheet...", "info");
           var foundStudent = await lookupInGoogleSheet(lPhone);
           if (!foundStudent) {
@@ -5228,7 +5330,6 @@
           unlockApp(foundStudent);
           if (typeof showToast === "function") showToast("Welcome back, " + foundStudent.name);
         } else {
-          // REGISTER FLOW - Validate & confirm save in Google Sheet BEFORE unlocking
           var phoneEl = form.querySelector('input[type="tel"], input[id*="Phone" i], input[name*="phone" i]');
           var nameEl = form.querySelector('input[id*="Name" i], input[name*="name" i], input[type="text"]');
           var selects = Array.from(form.querySelectorAll("select"));
@@ -5241,14 +5342,13 @@
 
           var phone = cleanPhone(phoneEl ? phoneEl.value : "");
           var name = (nameEl ? nameEl.value : "").trim();
-          if (name.length < 2) {
-            showAuthMsg(statusBox, "Please enter your full name.", "err");
+          if (name.length < 2) { showAuthMsg(statusBox, "Please enter your full name.", "err"); return; }
+          if (phone.length !== 10) { showAuthMsg(statusBox, "Please enter a valid 10-digit mobile number.", "err"); return; }
+          if (!window.__lsRegPhotoBase64) {
+            showAuthMsg(statusBox, "Please take a selfie or upload a photo from gallery.", "err");
             return;
           }
-          if (phone.length !== 10) {
-            showAuthMsg(statusBox, "Please enter a valid 10-digit mobile number.", "err");
-            return;
-          }
+
           var college = cSel ? (cSel.value === "__OTHER__" ? (cCus ? cCus.value.trim() : "") : cSel.value) : "";
           var student = {
             phone: phone,
@@ -5261,12 +5361,12 @@
             registeredAt: new Date().toISOString()
           };
 
-          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Saving to Sheet..."; }
-          showAuthMsg(statusBox, "Saving registration to Google Sheet...", "info");
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Uploading Photo & Saving..."; }
+          showAuthMsg(statusBox, "Uploading photo & saving registration to Google Sheet...", "info");
           var savedStudent = await saveToGoogleSheet(student);
-          showAuthMsg(statusBox, "Saved to Google Sheet! Welcome, " + savedStudent.name, "ok");
+          showAuthMsg(statusBox, "Saved (Sl. No #" + (savedStudent.slNo || "") + ")! Welcome, " + savedStudent.name, "ok");
           unlockApp(savedStudent);
-          if (typeof showToast === "function") showToast("Registered & saved! Welcome, " + savedStudent.name);
+          if (typeof showToast === "function") showToast("Registered with photo! Welcome, " + savedStudent.name);
         }
       } catch (err) {
         showAuthMsg(statusBox, "Could not save/verify: " + (err && err.message ? err.message : String(err)), "err");
@@ -5278,7 +5378,7 @@
 
   window.addEventListener("DOMContentLoaded", function () {
     wireStrictAuthOverlay();
-    setTimeout(wireStrictAuthOverlay, 300);
+    setTimeout(wireStrictAuthOverlay, 350);
   });
 })();
 </script>
