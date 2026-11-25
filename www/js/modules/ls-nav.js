@@ -1,9 +1,10 @@
 (function () {
   "use strict";
-  if (window.__lsModularNavV303) return;
-  window.__lsModularNavV303 = true;
+  if (window.__lsModularNavV304) return;
+  window.__lsModularNavV304 = true;
 
   var activeTab = "library";
+  var audioCollapsed = false;
 
   function injectMobileShell() {
     var oldStyle = document.getElementById("lsModularNavStyle");
@@ -12,36 +13,38 @@
     var style = document.createElement("style");
     style.id = "lsModularNavStyle";
     style.textContent =
-      "body { padding-bottom: 64px !important; }" +
-      "main { padding-bottom: 132px !important; }" +
-      /* Lift any fixed bottom audio bar cleanly above the 60px bottom nav */
-      ".fixed.bottom-0:not(#lsBottomNav):not(#lsMoreSheet), #audioPlayerBar, #floatingAudioBar, [id*='audioBar' i], [id*='playerBar' i] { bottom: 60px !important; z-index: 80 !important; }" +
-      /* Prevent top header brand title from truncating to 'Law St' on narrow mobile screens */
-      "header h1, header .brand-title, header [class*='font-bold'] { white-space: nowrap !important; }" +
-      "@media (max-width: 480px) { header { gap: 4px !important; padding-left: 8px !important; padding-right: 8px !important; } header button, header a { padding-left: 6px !important; padding-right: 6px !important; font-size: 11px !important; } }" +
-      /* Hide Library-only filter/audio chrome when viewing modular hubs */
-      "body.ls-in-module main, body.ls-in-module #audioPlayerBar, body.ls-in-module #floatingAudioBar, body.ls-in-module .fixed.bottom-0:not(#lsBottomNav):not(#lsMoreSheet), body.ls-in-module [data-ls-library-only='1'] { display: none !important; }" +
-      "#lsModularStage { display:none; padding: 12px 14px 82px; max-width: 900px; margin: 0 auto; }" +
-      "#lsModularStage.active { display:block; }" +
-      "#lsBottomNav { position:fixed; bottom:0; left:0; right:0; z-index:95; background:#FFFFFF; border-top:1px solid #E8E0D5; display:grid; grid-template-columns:repeat(5,1fr); height:60px; box-shadow:0 -4px 16px rgba(31,27,24,0.08); }" +
-      ".ls-nav-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; font-size:10.5px; font-weight:700; color:#5F554E; border:none; background:transparent; cursor:pointer; }" +
-      ".ls-nav-btn.active { color:#7B1E2B; }" +
-      ".ls-nav-btn.active .ls-nav-dot { width:20px; height:3px; border-radius:99px; background:#7B1E2B; margin-bottom:2px; }" +
-      "#lsMoreSheet { position:fixed; inset:0; z-index:140; background:rgba(0,0,0,0.45); display:none; align-items:flex-end; justify-content:center; }" +
-      "#lsMoreSheet.show { display:flex; }" +
-      "#lsMoreCard { background:#FFFFFF; width:100%; max-width:540px; border-radius:22px 22px 0 0; padding:18px 16px 26px; box-shadow:0 -8px 30px rgba(0,0,0,0.18); }";
+      "@keyframes lsFadeSlideUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }" +
+      "@keyframes lsSheetUp { from { transform: translateY(100%); } to { transform: translateY(0); } }" +
+      "@keyframes lsPop { 0% { transform: scale(0.88); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }" +
+      "body { padding-bottom: 86px !important; }" +
+      "main { padding-bottom: 164px !important; }" +
+      "header .font-editorial { white-space: nowrap !important; }" +
+      "@media (max-width: 480px) { header .h-16 { gap: 4px !important; padding-left: 8px !important; padding-right: 8px !important; } header button, header a { padding-left: 6px !important; padding-right: 6px !important; font-size: 11px !important; } }" +
+      /* Hide Library-only filter & audio bars cleanly when on modular hubs */
+      "body.ls-in-module main, body.ls-in-module #cascadeFilterBar, body.ls-in-module #audioPlayerBar, body.ls-in-module #lsAudioMiniToggle { display: none !important; }" +
+      /* Float Audio Player Bar cleanly ABOVE the floating Bottom Dock */
+      "#audioPlayerBar { bottom: 80px !important; left: 10px !important; right: 10px !important; border-radius: 18px !important; border: 1.5px solid #E8D5D8 !important; box-shadow: 0 8px 24px rgba(123,30,43,0.14) !important; z-index: 82 !important; transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), opacity 0.24s ease !important; }" +
+      "body.ls-audio-collapsed #audioPlayerBar { transform: translateY(130%) !important; opacity: 0 !important; pointer-events: none !important; }" +
+      "#lsAudioMiniToggle { position: fixed; right: 14px; bottom: 82px; z-index: 86; background: #7B1E2B; color: #FAF7F2; border: 2px solid #FAD676; border-radius: 999px; padding: 7px 12px; font-size: 11px; font-weight: 800; box-shadow: 0 6px 18px rgba(123,30,43,0.28); cursor: pointer; display: flex; align-items: center; gap: 5px; transition: transform 0.2s ease, opacity 0.2s ease; }" +
+      "#lsAudioMiniToggle:active { transform: scale(0.92); }" +
+      "#lsModularStage { display: none; padding: 12px 14px 96px; max-width: 900px; margin: 0 auto; }" +
+      "#lsModularStage.active { display: block; animation: lsFadeSlideUp 0.26s cubic-bezier(0.22,1,0.36,1); }" +
+      /* Floating Glass Animated Bottom Navigation Dock */
+      "#lsBottomNav { position: fixed; bottom: 10px; left: 10px; right: 10px; max-width: 620px; margin: 0 auto; z-index: 95; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border: 1px solid #E8E0D5; border-radius: 22px; display: grid; grid-template-columns: repeat(5, 1fr); height: 62px; padding: 4px 6px; box-shadow: 0 10px 28px rgba(31,27,24,0.14); }" +
+      ".ls-nav-btn { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 10px; font-weight: 700; color: #6E6259; border: none; background: transparent; border-radius: 16px; cursor: pointer; transition: color 0.2s ease, background 0.22s ease, transform 0.16s ease; }" +
+      ".ls-nav-btn:active { transform: scale(0.9); }" +
+      ".ls-nav-btn svg { width: 20px; height: 20px; stroke-width: 2; transition: transform 0.24s cubic-bezier(0.34,1.56,0.64,1); }" +
+      ".ls-nav-btn.active { color: #7B1E2B; background: #FBF1F2; }" +
+      ".ls-nav-btn.active svg { transform: translateY(-2px) scale(1.12); animation: lsPop 0.28s ease; }" +
+      ".ls-nav-btn.active::after { content: ''; position: absolute; bottom: 3px; width: 18px; height: 3px; border-radius: 99px; background: #7B1E2B; }" +
+      /* Animated Tools Bottom Sheet */
+      "#lsMoreSheet { position: fixed; inset: 0; z-index: 140; background: rgba(20,14,12,0.48); backdrop-filter: blur(3px); display: none; align-items: flex-end; justify-content: center; }" +
+      "#lsMoreSheet.show { display: flex; }" +
+      "#lsMoreCard { background: #FFFFFF; width: 100%; max-width: 540px; border-radius: 24px 24px 0 0; padding: 12px 16px 26px; box-shadow: 0 -10px 34px rgba(0,0,0,0.22); animation: lsSheetUp 0.28s cubic-bezier(0.22,1,0.36,1); }" +
+      ".ls-sheet-handle { width: 42px; height: 4px; border-radius: 99px; background: #D6C7BC; margin: 0 auto 12px; }" +
+      ".ls-tool-tile { padding: 13px; border-radius: 16px; border: 1px solid #E8E0D5; background: #FAF7F2; text-align: left; transition: transform 0.16s ease, border-color 0.2s ease; }" +
+      ".ls-tool-tile:active { transform: scale(0.96); border-color: #7B1E2B; }";
     document.head.appendChild(style);
-
-    // Tag Library-specific course filter & sub-unit audio bars so they auto-hide on non-Library tabs
-    setTimeout(function () {
-      document.querySelectorAll("div, section").forEach(function (el) {
-        if (el.id === "lsModularStage" || el.id === "lsBottomNav" || el.id === "lsMoreSheet") return;
-        var txt = (el.textContent || "");
-        if (txt.indexOf("COURSE FILTER") !== -1 && txt.indexOf("Sub-Unit Audio") !== -1 && el.children.length <= 6 && el.offsetHeight < 260) {
-          el.setAttribute("data-ls-library-only", "1");
-        }
-      });
-    }, 300);
 
     if (document.getElementById("lsBottomNav")) return;
 
@@ -54,29 +57,52 @@
       document.body.appendChild(stage);
     }
 
+    // Audio Bar Collapse/Expand pill so students can read full-screen or pop up Audio anytime
+    var audioToggle = document.createElement("button");
+    audioToggle.id = "lsAudioMiniToggle";
+    audioToggle.type = "button";
+    audioToggle.textContent = "Hide Audio";
+    audioToggle.addEventListener("click", function () {
+      audioCollapsed = !audioCollapsed;
+      document.body.classList.toggle("ls-audio-collapsed", audioCollapsed);
+      audioToggle.textContent = audioCollapsed ? "Show Audio" : "Hide Audio";
+    });
+    document.body.appendChild(audioToggle);
+
     var nav = document.createElement("nav");
     nav.id = "lsBottomNav";
     nav.innerHTML =
-      '<button type="button" class="ls-nav-btn" data-ls-nav="hub"><span class="ls-nav-dot"></span><span>Study Hub</span></button>' +
-      '<button type="button" class="ls-nav-btn active" data-ls-nav="library"><span class="ls-nav-dot"></span><span>Library</span></button>' +
-      '<button type="button" class="ls-nav-btn" data-ls-nav="judgments"><span class="ls-nav-dot"></span><span>Judgments</span></button>' +
-      '<button type="button" class="ls-nav-btn" data-ls-nav="drill"><span class="ls-nav-dot"></span><span>Exam Drill</span></button>' +
-      '<button type="button" class="ls-nav-btn" data-ls-nav="more"><span class="ls-nav-dot"></span><span>More</span></button>';
+      '<button type="button" class="ls-nav-btn" data-ls-nav="hub">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 10v10h14V10"/></svg>' +
+        '<span>Hub</span></button>' +
+      '<button type="button" class="ls-nav-btn active" data-ls-nav="library">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>' +
+        '<span>Library</span></button>' +
+      '<button type="button" class="ls-nav-btn" data-ls-nav="judgments">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M3 14l2-6 2 6a2 2 0 0 1-4 0z"/><path d="M17 14l2-6 2 6a2 2 0 0 1-4 0z"/></svg>' +
+        '<span>Cases</span></button>' +
+      '<button type="button" class="ls-nav-btn" data-ls-nav="drill">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>' +
+        '<span>Drill</span></button>' +
+      '<button type="button" class="ls-nav-btn" data-ls-nav="more">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>' +
+        '<span>Tools</span></button>';
     document.body.appendChild(nav);
 
     var sheet = document.createElement("div");
     sheet.id = "lsMoreSheet";
     sheet.innerHTML =
       '<div id="lsMoreCard">' +
+        '<div class="ls-sheet-handle"></div>' +
         '<div class="flex items-center justify-between mb-3">' +
           '<div class="text-sm font-bold text-[#7B1E2B]">Law Studyes Tools</div>' +
-          '<button type="button" id="lsMoreClose" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-[#FAF7F2] text-[#5F554E]">Close</button>' +
+          '<button type="button" id="lsMoreClose" class="text-xs font-bold px-3 py-1 rounded-full bg-[#FAF7F2] text-[#5F554E]">Close</button>' +
         '</div>' +
         '<div class="grid grid-cols-2 gap-2.5">' +
-          '<button type="button" data-ls-nav="viva" class="p-3 rounded-xl border border-[#E8E0D5] bg-[#FAF7F2] text-left"><div class="text-xs font-bold text-[#7B1E2B]">Viva &amp; Exam Bank</div><div class="text-[10.5px] text-[#5F554E]">Short &amp; Long Q&amp;A</div></button>' +
-          '<button type="button" data-ls-nav="lexicon" class="p-3 rounded-xl border border-[#E8E0D5] bg-[#FAF7F2] text-left"><div class="text-xs font-bold text-[#7B1E2B]">Lexicon &amp; Maxims</div><div class="text-[10.5px] text-[#5F554E]">Legal Terms &amp; Latin</div></button>' +
-          '<button type="button" data-ls-nav="shelf" class="p-3 rounded-xl border border-[#E8E0D5] bg-[#FAF7F2] text-left"><div class="text-xs font-bold text-[#7B1E2B]">My Shelf</div><div class="text-[10.5px] text-[#5F554E]">Saved Bookmarks</div></button>' +
-          '<button type="button" id="lsMoreForceOta" class="p-3 rounded-xl border border-[#7B1E2B] bg-[#FBF1F2] text-left"><div class="text-xs font-bold text-[#7B1E2B]">Check Live Sync</div><div class="text-[10.5px] text-[#5F554E]">Pull Latest OTA</div></button>' +
+          '<button type="button" data-ls-nav="viva" class="ls-tool-tile"><div class="text-xs font-bold text-[#7B1E2B]">Viva &amp; Exam Bank</div><div class="text-[10.5px] text-[#5F554E] mt-0.5">Short &amp; Long Q&amp;A</div></button>' +
+          '<button type="button" data-ls-nav="lexicon" class="ls-tool-tile"><div class="text-xs font-bold text-[#7B1E2B]">Lexicon &amp; Maxims</div><div class="text-[10.5px] text-[#5F554E] mt-0.5">Legal Terms &amp; Latin</div></button>' +
+          '<button type="button" data-ls-nav="shelf" class="ls-tool-tile"><div class="text-xs font-bold text-[#7B1E2B]">My Shelf</div><div class="text-[10.5px] text-[#5F554E] mt-0.5">Saved Bookmarks</div></button>' +
+          '<button type="button" id="lsMoreForceOta" class="ls-tool-tile" style="border-color:#7B1E2B;background:#FBF1F2;"><div class="text-xs font-bold text-[#7B1E2B]">Check Live Sync</div><div class="text-[10.5px] text-[#5F554E] mt-0.5">Pull Latest OTA</div></button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(sheet);
@@ -85,20 +111,9 @@
       if (ev.target === sheet || ev.target.id === "lsMoreClose") sheet.classList.remove("show");
     });
     var otaBtn = sheet.querySelector("#lsMoreForceOta");
-    if (otaBtn) otaBtn.addEventListener("click", async function () {
+    if (otaBtn) otaBtn.addEventListener("click", function () {
       sheet.classList.remove("show");
-      var hasCap = !!(window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater);
-      if (hasCap && typeof window.__lsForceOtaUpdate === "function") {
-        window.__lsForceOtaUpdate();
-      } else {
-        try {
-          var r = await fetch("https://law-studyes.vercel.app/ota-version.json?t=" + Date.now(), { cache: "no-store" });
-          var m = await r.json();
-          if (typeof showToast === "function") showToast("Live Vercel OTA: v" + (m.version || "ready"));
-        } catch (e) {
-          if (typeof showToast === "function") showToast("Offline mode - using local bundle.");
-        }
-      }
+      if (typeof window.__lsForceOtaUpdate === "function") window.__lsForceOtaUpdate();
     });
   }
 
@@ -130,6 +145,8 @@
     }
 
     document.body.classList.add("ls-in-module");
+    stage.classList.remove("active");
+    void stage.offsetWidth;
     stage.classList.add("active");
     window.scrollTo(0, 0);
 
@@ -143,10 +160,7 @@
 
   document.addEventListener("click", function (ev) {
     var navEl = ev.target && ev.target.closest ? ev.target.closest("[data-ls-nav]") : null;
-    if (navEl) {
-      openTab(navEl.getAttribute("data-ls-nav"));
-      return;
-    }
+    if (navEl) { openTab(navEl.getAttribute("data-ls-nav")); return; }
     var topicEl = ev.target && ev.target.closest ? ev.target.closest("[data-ls-open-topic]") : null;
     if (topicEl) {
       var tid = topicEl.getAttribute("data-ls-open-topic");
@@ -187,25 +201,6 @@
     }
   });
 
-  window.addEventListener("DOMContentLoaded", function () {
-    injectMobileShell();
-    setTimeout(function () {
-      if (typeof window.renderReadingPane === "function" && !window.__lsProgressHooked) {
-        window.__lsProgressHooked = true;
-        var origR = window.renderReadingPane;
-        window.renderReadingPane = function () {
-          var res = origR.apply(this, arguments);
-          try {
-            if (typeof state !== "undefined" && state.activeTopicId && window.LSStore) {
-              var rec = state.notes && state.notes[state.activeTopicId];
-              window.LSStore.markTopicRead(state.activeTopicId, (rec && rec.subtitle) || state.activeTopicId);
-            }
-          } catch (e) {}
-          return res;
-        };
-      }
-    }, 500);
-  });
-
+  window.addEventListener("DOMContentLoaded", injectMobileShell);
   window.LSNav = { openTab: openTab };
 })();

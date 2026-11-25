@@ -74,25 +74,7 @@
 <body class="min-h-screen flex flex-col overflow-x-hidden pb-28 lg:pb-24">
   <!-- Top Header -->
   <header class="sticky top-0 z-30 bg-[#FAF7F2]/95 backdrop-blur border-b border-[#E8E0D5]">
-<!-- LS_OTA_EARLY_READY_START -->
-<script>
-(function () {
-  function lsSignalReady() {
-    try {
-      var up = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater;
-      if (up && typeof up.notifyAppReady === "function") {
-        up.notifyAppReady().catch(function () {});
-      }
-    } catch (e) {}
-  }
-  lsSignalReady();
-  setTimeout(lsSignalReady, 100);
-  setTimeout(lsSignalReady, 600);
-  document.addEventListener("DOMContentLoaded", lsSignalReady);
-  window.addEventListener("load", lsSignalReady);
-})();
-</script>
-<!-- LS_OTA_EARLY_READY_END -->
+
 
 
     <div class="max-w-7xl mx-auto px-3 sm:px-5 h-16 flex items-center justify-between gap-2 sm:gap-4">
@@ -107,7 +89,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v3.0.3</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v3.0.4</div>
           </div>
         </button>
       </div>
@@ -4363,7 +4345,7 @@
   var RK = "ls_registered_students_v1";
   var LAST_PH_KEY = "ls_last_verified_phone";
   var OTA_VK = "law_studyes_ota_version";
-  var APP_VER = "3.0.3";
+  var APP_VER = "3.0.4";
   var SESSION_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours auto-logout
   window.__lsAuthUnlocked = false;
   window.__lsRegPhotoBase64 = "";
@@ -4798,11 +4780,10 @@
 
   var MIRRORS = [
     "https://law-studyes.vercel.app",
-    "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www",
-    "https://cdn.jsdelivr.net/gh/khodayanvesh-jsf/law-studyes@main/www"
+    "https://raw.githubusercontent.com/khodayanvesh-jsf/law-studyes/main/www"
   ];
   var VK = "law_studyes_ota_version";
-  var CURRENT_APP_VER = "3.0.3";
+  var CURRENT_APP_VER = "3.0.4";
   var lastCheckMs = 0;
 
   function getUpdater() {
@@ -5435,12 +5416,12 @@
 </script>
 <!-- LS_NATIVE_TTS_V2610_END -->
 <!-- LS_MODULAR_V3_START -->
-<script defer src="./js/modules/ls-store.js?v=3.0.3"></script>
-<script defer src="./js/modules/ls-hub.js?v=3.0.3"></script>
-<script defer src="./js/modules/ls-judgments.js?v=3.0.3"></script>
-<script defer src="./js/modules/ls-drill.js?v=3.0.3"></script>
-<script defer src="./js/modules/ls-vault.js?v=3.0.3"></script>
-<script defer src="./js/modules/ls-nav.js?v=3.0.3"></script>
+<script defer src="./js/modules/ls-store.js?v=3.0.4"></script>
+<script defer src="./js/modules/ls-hub.js?v=3.0.4"></script>
+<script defer src="./js/modules/ls-judgments.js?v=3.0.4"></script>
+<script defer src="./js/modules/ls-drill.js?v=3.0.4"></script>
+<script defer src="./js/modules/ls-vault.js?v=3.0.4"></script>
+<script defer src="./js/modules/ls-nav.js?v=3.0.4"></script>
 <!-- LS_MODULAR_V3_END -->
 <!-- LS_TTS_PLAY_CATCH_V303_START -->
 <script>
