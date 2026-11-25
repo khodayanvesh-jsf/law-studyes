@@ -101,7 +101,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.4</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v2.6.5</div>
           </div>
         </button>
       </div>
@@ -4158,7 +4158,7 @@
 <!-- LS_VERSION_OTA_CARD_START -->
 <script>
 (function () {
-  var BUILT_IN_VER = "2.6.4";
+  var BUILT_IN_VER = "2.6.5";
   var RAW = "https://law-studyes.vercel.app";
   var VK = "law_studyes_ota_version";
   window.__lsOtaLastStatus = "Checking...";
@@ -4316,7 +4316,7 @@
 <!-- LS_LEFT_VER_OTA_START -->
 <script>
 (function () {
-  var BUILT_IN = "2.6.4";
+  var BUILT_IN = "2.6.5";
   var RAW = "https://law-studyes.vercel.app";
   var otaBusy = false;
 
@@ -5007,6 +5007,7 @@
 </script>
 <!-- LS_PERSISTENT_OTA_END -->
 
+
 <!-- LS_STRICT_SHEET_AUTH_START -->
 <style>
   body.ls-auth-locked { overflow: hidden !important; touch-action: none; }
@@ -5072,52 +5073,112 @@
   var SHEET_API = "https://script.google.com/macros/s/AKfycbzu-FFk-THjB-hDmtFRTlXswpCnIDhUW_ENA6nze4hL8gGshxWQLw3VdLTsUEJXxOg8/exec";
   var SK = "ls_active_student_v1";
   var RK = "ls_registered_students_v1";
-  var APP_VER = "2.6.4";
+  var LAST_PH_KEY = "ls_last_verified_phone";
+  var OTA_VK = "law_studyes_ota_version";
+  var APP_VER = "2.6.5";
+  var SESSION_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours auto-logout
   window.__lsAuthUnlocked = false;
   window.__lsRegPhotoBase64 = "";
+  window.__lsLogoutReason = "Daily 24h Login";
 
   function cleanPhone(v) {
     return String(v || "").replace(/\D/g, "").slice(-10);
   }
 
-  function hasVerifiedSession() {
+  function getCurrentOtaTag() {
+    try { return localStorage.getItem(OTA_VK) || "Built-in"; } catch (e) { return "Built-in"; }
+  }
+
+  // Returns { valid: true } or { valid: false, reason: "...", lastPhone: "..." }
+  function checkSessionState() {
+    var lastPhone = "";
+    try { lastPhone = cleanPhone(localStorage.getItem(LAST_PH_KEY) || ""); } catch (e) {}
     try {
       var raw = localStorage.getItem(SK);
-      if (!raw) return false;
+      if (!raw) return { valid: false, reason: "First Login", lastPhone: lastPhone };
       var parsed = JSON.parse(raw);
-      return !!(
-        parsed &&
-        parsed.sheetVerified === true &&
-        parsed.student &&
-        cleanPhone(parsed.student.phone).length === 10 &&
-        String(parsed.student.name || "").trim().length >= 2
-      );
+      if (!parsed || parsed.sheetVerified !== true || !parsed.student) {
+        return { valid: false, reason: "Unverified Session", lastPhone: lastPhone };
+      }
+      var ph = cleanPhone(parsed.student.phone);
+      var nm = String(parsed.student.name || "").trim();
+      if (ph.length !== 10 || nm.length < 2) {
+        return { valid: false, reason: "Invalid Profile", lastPhone: lastPhone };
+      }
+      if (!lastPhone) lastPhone = ph;
+
+      // 1. Force re-login with phone number whenever App or OTA version updated
+      var curOta = getCurrentOtaTag();
+      if (parsed.verifiedAppVer !== APP_VER || parsed.verifiedOtaVer !== curOta) {
+        return { valid: false, reason: "Post-Update Login (v" + APP_VER + ")", lastPhone: ph };
+      }
+
+      // 2. Force auto-logout every 24 hours for daily active user verification
+      var vTime = parsed.verifiedAt ? Date.parse(parsed.verifiedAt) : 0;
+      if (!vTime || (Date.now() - vTime) >= SESSION_TTL_MS) {
+        return { valid: false, reason: "Daily 24h Login", lastPhone: ph };
+      }
+
+      return { valid: true, student: parsed.student, lastPhone: ph };
     } catch (e) {
-      return false;
+      return { valid: false, reason: "Session Reset", lastPhone: lastPhone };
     }
   }
 
-  function lockApp() {
+  function switchOverlayToLoginTab(ov, prefillPhone, reasonText) {
+    if (!ov) return;
+    // Click the Login tab button if present so returning users land straight on 1-tap phone login
+    if (prefillPhone && prefillPhone.length === 10) {
+      ov.querySelectorAll("button").forEach(function (b) {
+        var t = (b.textContent || "").trim().toLowerCase();
+        var id = (b.id || "").toLowerCase();
+        if ((t === "login" || t === "existing student" || t.indexOf("login") !== -1 || id.indexOf("logintab") !== -1) && b.type === "button") {
+          try { b.click(); } catch (e) {}
+        }
+      });
+      var lp = ov.querySelector("#loginPhoneInput");
+      if (lp && !lp.value) lp.value = prefillPhone;
+      var loginForm = lp && lp.closest ? lp.closest("form") : null;
+      if (loginForm && reasonText) {
+        var box = loginForm.querySelector(".ls-sheet-status-bar");
+        if (!box) {
+          box = document.createElement("div");
+          box.className = "ls-sheet-status-bar";
+          loginForm.appendChild(box);
+        }
+        showAuthMsg(box, reasonText + " - Tap Login to verify your mobile number.", "info");
+      }
+    }
+  }
+
+  function lockApp(reason, prefillPhone) {
     window.__lsAuthUnlocked = false;
+    window.__lsLogoutReason = reason || "Daily 24h Login";
+    try { localStorage.removeItem(SK); } catch (e) {}
     var ov = document.getElementById("lawStudyesAuthOverlay");
     if (ov) {
       ov.classList.remove("hidden");
       ov.style.display = "flex";
+      switchOverlayToLoginTab(ov, prefillPhone, reason);
     }
     document.body.classList.add("ls-auth-locked");
   }
 
   function unlockApp(student) {
     window.__lsAuthUnlocked = true;
+    var curOta = getCurrentOtaTag();
     try {
       var all = {};
       try { all = JSON.parse(localStorage.getItem(RK) || "{}"); } catch (e) {}
       all[student.phone] = student;
       localStorage.setItem(RK, JSON.stringify(all));
+      localStorage.setItem(LAST_PH_KEY, student.phone);
       localStorage.setItem(SK, JSON.stringify({
         student: student,
         sheetVerified: true,
-        verifiedAt: new Date().toISOString()
+        verifiedAt: new Date().toISOString(),
+        verifiedAppVer: APP_VER,
+        verifiedOtaVer: curOta
       }));
     } catch (e) {}
     var ov = document.getElementById("lawStudyesAuthOverlay");
@@ -5151,8 +5212,7 @@
           canvas.height = h;
           var ctx = canvas.getContext("2d");
           ctx.drawImage(img, 0, 0, w, h);
-          var dataUrl = canvas.toDataURL("image/jpeg", 0.72);
-          resolve(dataUrl);
+          resolve(canvas.toDataURL("image/jpeg", 0.72));
         };
         img.src = reader.result;
       };
@@ -5179,11 +5239,8 @@
       '</div>';
 
     var submitBtn = regForm.querySelector('button[type="submit"], button:not([type="button"])');
-    if (submitBtn && submitBtn.parentNode) {
-      submitBtn.parentNode.insertBefore(box, submitBtn);
-    } else {
-      regForm.appendChild(box);
-    }
+    if (submitBtn && submitBtn.parentNode) submitBtn.parentNode.insertBefore(box, submitBtn);
+    else regForm.appendChild(box);
 
     var sIn = box.querySelector("#lsSelfieInput");
     var gIn = box.querySelector("#lsGalleryInput");
@@ -5219,7 +5276,6 @@
       appVersion: APP_VER,
       photoBase64: window.__lsRegPhotoBase64 || ""
     });
-
     var r = await fetch(SHEET_API, {
       method: "POST",
       redirect: "follow",
@@ -5241,33 +5297,55 @@
     throw new Error((data && data.error) || "Could not confirm save in Google Sheet.");
   }
 
-  async function lookupInGoogleSheet(phone) {
+  async function verifyAndLogDailyLogin(phone, reason) {
     if (!navigator.onLine) {
-      throw new Error("Internet connection required to verify your registered mobile number.");
+      throw new Error("Internet connection required for daily mobile number verification.");
     }
-    var url = SHEET_API + "?phone=" + encodeURIComponent(phone) + "&t=" + Date.now();
-    var r = await fetch(url, { method: "GET", redirect: "follow", cache: "no-store" });
-    if (!r.ok) throw new Error("Sheet lookup HTTP " + r.status);
+    var qs = new URLSearchParams({
+      action: "login",
+      phone: phone,
+      log: "1",
+      appVersion: APP_VER,
+      reason: reason || "Daily 24h Login",
+      t: String(Date.now())
+    });
+    var r = await fetch(SHEET_API + "?" + qs.toString(), {
+      method: "GET",
+      redirect: "follow",
+      cache: "no-store"
+    });
+    if (!r.ok) throw new Error("Sheet verification HTTP " + r.status);
     var txt = await r.text();
     if (/<!doctype|<html|unable to open/i.test(txt)) {
       throw new Error("Sheet server unreachable.");
     }
     var data = JSON.parse(txt);
-    if (!data || data.ok !== true) throw new Error((data && data.error) || "Lookup failed.");
+    if (!data || data.ok !== true) throw new Error((data && data.error) || "Verification failed.");
     return (data.found && data.student) ? data.student : null;
+  }
+
+  function enforceSessionCheck() {
+    var st = checkSessionState();
+    if (st.valid) {
+      window.__lsAuthUnlocked = true;
+      var ov = document.getElementById("lawStudyesAuthOverlay");
+      if (ov) { ov.classList.add("hidden"); ov.style.display = "none"; }
+      document.body.classList.remove("ls-auth-locked");
+    } else {
+      lockApp(st.reason, st.lastPhone);
+    }
   }
 
   function wireStrictAuthOverlay() {
     var ov = document.getElementById("lawStudyesAuthOverlay");
     if (!ov) return;
 
-    // Inject Selfie / Gallery photo picker into Registration form (form without #loginPhoneInput)
     ov.querySelectorAll("form").forEach(function (f) {
       if (!f.querySelector("#loginPhoneInput")) injectPhotoPicker(f);
     });
 
-    if (ov.__lsStrictAuth264) return;
-    ov.__lsStrictAuth264 = true;
+    if (ov.__lsStrictAuth265) return;
+    ov.__lsStrictAuth265 = true;
 
     ov.querySelectorAll("button").forEach(function (b) {
       var t = (b.textContent || "").toLowerCase();
@@ -5280,20 +5358,23 @@
 
     if (!window.__lsAuthObserver) {
       window.__lsAuthObserver = new MutationObserver(function () {
-        if (!window.__lsAuthUnlocked && !hasVerifiedSession()) {
-          if (ov.classList.contains("hidden") || ov.style.display === "none") lockApp();
+        if (!window.__lsAuthUnlocked && !checkSessionState().valid) {
+          if (ov.classList.contains("hidden") || ov.style.display === "none") {
+            var s = checkSessionState();
+            lockApp(s.reason, s.lastPhone);
+          }
         }
       });
       window.__lsAuthObserver.observe(ov, { attributes: true, attributeFilter: ["class", "style"] });
     }
 
-    if (hasVerifiedSession()) {
-      window.__lsAuthUnlocked = true;
-      ov.classList.add("hidden");
-      document.body.classList.remove("ls-auth-locked");
-    } else {
-      lockApp();
-    }
+    enforceSessionCheck();
+
+    // Re-check 24h expiry whenever user returns to the app or every 60 seconds
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") enforceSessionCheck();
+    });
+    setInterval(enforceSessionCheck, 60000);
 
     ov.addEventListener("submit", async function (ev) {
       var form = ev.target;
@@ -5320,15 +5401,15 @@
             return;
           }
           if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Verifying..."; }
-          showAuthMsg(statusBox, "Checking registration in Google Sheet...", "info");
-          var foundStudent = await lookupInGoogleSheet(lPhone);
+          showAuthMsg(statusBox, "Verifying mobile number & logging daily attendance...", "info");
+          var foundStudent = await verifyAndLogDailyLogin(lPhone, window.__lsLogoutReason || "Daily 24h Login");
           if (!foundStudent) {
             showAuthMsg(statusBox, "Mobile number not registered yet. Please switch to Register tab first.", "err");
             return;
           }
           showAuthMsg(statusBox, "Verified! Welcome back, " + foundStudent.name, "ok");
           unlockApp(foundStudent);
-          if (typeof showToast === "function") showToast("Welcome back, " + foundStudent.name);
+          if (typeof showToast === "function") showToast("Verified! Welcome back, " + foundStudent.name);
         } else {
           var phoneEl = form.querySelector('input[type="tel"], input[id*="Phone" i], input[name*="phone" i]');
           var nameEl = form.querySelector('input[id*="Name" i], input[name*="name" i], input[type="text"]');
@@ -5369,7 +5450,7 @@
           if (typeof showToast === "function") showToast("Registered with photo! Welcome, " + savedStudent.name);
         }
       } catch (err) {
-        showAuthMsg(statusBox, "Could not save/verify: " + (err && err.message ? err.message : String(err)), "err");
+        showAuthMsg(statusBox, "Could not verify/save: " + (err && err.message ? err.message : String(err)), "err");
       } finally {
         if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnTxt; }
       }
