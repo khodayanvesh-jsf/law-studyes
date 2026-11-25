@@ -107,7 +107,7 @@
           </span>
           <div class="truncate">
             <div class="font-editorial text-lg sm:text-xl font-bold text-[#7B1E2B] leading-tight tracking-tight">Law Studyes</div>
-            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v3.0.2</div>
+            <div class="text-[11px] text-[#5F554E] leading-none hidden sm:block">3-Year LL.B. &middot; All Years Audio &amp; Sync &middot; v3.0.3</div>
           </div>
         </button>
       </div>
@@ -4363,7 +4363,7 @@
   var RK = "ls_registered_students_v1";
   var LAST_PH_KEY = "ls_last_verified_phone";
   var OTA_VK = "law_studyes_ota_version";
-  var APP_VER = "3.0.2";
+  var APP_VER = "3.0.3";
   var SESSION_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours auto-logout
   window.__lsAuthUnlocked = false;
   window.__lsRegPhotoBase64 = "";
@@ -4802,7 +4802,7 @@
     "https://cdn.jsdelivr.net/gh/khodayanvesh-jsf/law-studyes@main/www"
   ];
   var VK = "law_studyes_ota_version";
-  var CURRENT_APP_VER = "3.0.2";
+  var CURRENT_APP_VER = "3.0.3";
   var lastCheckMs = 0;
 
   function getUpdater() {
@@ -5435,12 +5435,71 @@
 </script>
 <!-- LS_NATIVE_TTS_V2610_END -->
 <!-- LS_MODULAR_V3_START -->
-<script defer src="./js/modules/ls-store.js?v=3.0.0"></script>
-<script defer src="./js/modules/ls-hub.js?v=3.0.0"></script>
-<script defer src="./js/modules/ls-judgments.js?v=3.0.0"></script>
-<script defer src="./js/modules/ls-drill.js?v=3.0.0"></script>
-<script defer src="./js/modules/ls-vault.js?v=3.0.0"></script>
-<script defer src="./js/modules/ls-nav.js?v=3.0.0"></script>
+<script defer src="./js/modules/ls-store.js?v=3.0.3"></script>
+<script defer src="./js/modules/ls-hub.js?v=3.0.3"></script>
+<script defer src="./js/modules/ls-judgments.js?v=3.0.3"></script>
+<script defer src="./js/modules/ls-drill.js?v=3.0.3"></script>
+<script defer src="./js/modules/ls-vault.js?v=3.0.3"></script>
+<script defer src="./js/modules/ls-nav.js?v=3.0.3"></script>
 <!-- LS_MODULAR_V3_END -->
+<!-- LS_TTS_PLAY_CATCH_V303_START -->
+<script>
+(function () {
+  if (window.__lsTtsCatchV303) return;
+  window.__lsTtsCatchV303 = true;
+
+  function extractActiveNoteTextFallback() {
+    // 1. Try visible #readingPane first
+    var pane = document.getElementById("readingPane");
+    if (pane && pane.offsetParent !== null) {
+      var cl = pane.cloneNode(true);
+      cl.querySelectorAll("script,style,svg,button,#lsVisualDiagramsSection,.ls-visual-card,.mermaid").forEach(function (e) { e.remove(); });
+      var t = (cl.innerText || cl.textContent || "").replace(/\s+/g, " ").trim();
+      if (t.length > 20) return t;
+    }
+    // 2. Fall back directly to state.notes[state.activeTopicId] so Play works even before DOM sync
+    if (typeof state !== "undefined" && state && state.notes) {
+      var tid = state.activeTopicId || Object.keys(state.notes)[0];
+      var rec = tid ? state.notes[tid] : null;
+      var lang = (state.lang === "te" && rec && rec.te) ? "te" : "en";
+      var ld = rec && rec[lang] ? rec[lang] : (rec && rec.en ? rec.en : null);
+      if (ld) {
+        var parts = [];
+        if (ld.title) parts.push(ld.title);
+        if (ld.overview) parts.push(ld.overview);
+        if (Array.isArray(ld.sections)) {
+          ld.sections.forEach(function (s) {
+            if (s.heading) parts.push(s.heading);
+            if (s.content) parts.push(String(s.content).replace(/<[^>]+>/g, " "));
+          });
+        }
+        return parts.join(". ").replace(/\s+/g, " ").trim();
+      }
+    }
+    return "";
+  }
+
+  document.addEventListener("click", function (ev) {
+    var btn = ev.target && ev.target.closest ? ev.target.closest("button") : null;
+    if (!btn) return;
+    var txt = (btn.textContent || "").replace(/\s+/g, " ").trim();
+    if (/^(Play|Pause|Resume)$/i.test(txt) || btn.id === "btnPlayPause" || btn.id === "audioPlayBtn") {
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      if (typeof window.toggleAudio === "function") {
+        if (/^Play$/i.test(txt) && typeof window.playAudio === "function") {
+          var noteTxt = extractActiveNoteTextFallback();
+          if (noteTxt) {
+            window.playAudio(noteTxt);
+            return;
+          }
+        }
+        window.toggleAudio();
+      }
+    }
+  }, true);
+})();
+</script>
+<!-- LS_TTS_PLAY_CATCH_V303_END -->
 </body>
 </html>

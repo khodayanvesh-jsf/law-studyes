@@ -1,26 +1,49 @@
 (function () {
   "use strict";
-  if (window.__lsModularNavV3) return;
-  window.__lsModularNavV3 = true;
+  if (window.__lsModularNavV303) return;
+  window.__lsModularNavV303 = true;
 
   var activeTab = "library";
 
   function injectMobileShell() {
-    if (document.getElementById("lsBottomNav")) return;
+    var oldStyle = document.getElementById("lsModularNavStyle");
+    if (oldStyle) oldStyle.remove();
 
     var style = document.createElement("style");
+    style.id = "lsModularNavStyle";
     style.textContent =
-      "body { padding-bottom: 66px !important; }" +
-      "#lsModularStage { display:none; padding: 12px 14px 78px; max-width: 900px; margin: 0 auto; }" +
+      "body { padding-bottom: 64px !important; }" +
+      "main { padding-bottom: 132px !important; }" +
+      /* Lift any fixed bottom audio bar cleanly above the 60px bottom nav */
+      ".fixed.bottom-0:not(#lsBottomNav):not(#lsMoreSheet), #audioPlayerBar, #floatingAudioBar, [id*='audioBar' i], [id*='playerBar' i] { bottom: 60px !important; z-index: 80 !important; }" +
+      /* Prevent top header brand title from truncating to 'Law St' on narrow mobile screens */
+      "header h1, header .brand-title, header [class*='font-bold'] { white-space: nowrap !important; }" +
+      "@media (max-width: 480px) { header { gap: 4px !important; padding-left: 8px !important; padding-right: 8px !important; } header button, header a { padding-left: 6px !important; padding-right: 6px !important; font-size: 11px !important; } }" +
+      /* Hide Library-only filter/audio chrome when viewing modular hubs */
+      "body.ls-in-module main, body.ls-in-module #audioPlayerBar, body.ls-in-module #floatingAudioBar, body.ls-in-module .fixed.bottom-0:not(#lsBottomNav):not(#lsMoreSheet), body.ls-in-module [data-ls-library-only='1'] { display: none !important; }" +
+      "#lsModularStage { display:none; padding: 12px 14px 82px; max-width: 900px; margin: 0 auto; }" +
       "#lsModularStage.active { display:block; }" +
-      "#lsBottomNav { position:fixed; bottom:0; left:0; right:0; z-index:90; background:#FFFFFF; border-top:1px solid #E8E0D5; display:grid; grid-template-columns:repeat(5,1fr); height:60px; box-shadow:0 -4px 16px rgba(31,27,24,0.06); }" +
+      "#lsBottomNav { position:fixed; bottom:0; left:0; right:0; z-index:95; background:#FFFFFF; border-top:1px solid #E8E0D5; display:grid; grid-template-columns:repeat(5,1fr); height:60px; box-shadow:0 -4px 16px rgba(31,27,24,0.08); }" +
       ".ls-nav-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; font-size:10.5px; font-weight:700; color:#5F554E; border:none; background:transparent; cursor:pointer; }" +
       ".ls-nav-btn.active { color:#7B1E2B; }" +
       ".ls-nav-btn.active .ls-nav-dot { width:20px; height:3px; border-radius:99px; background:#7B1E2B; margin-bottom:2px; }" +
-      "#lsMoreSheet { position:fixed; inset:0; z-index:130; background:rgba(0,0,0,0.45); display:none; align-items:flex-end; justify-content:center; }" +
+      "#lsMoreSheet { position:fixed; inset:0; z-index:140; background:rgba(0,0,0,0.45); display:none; align-items:flex-end; justify-content:center; }" +
       "#lsMoreSheet.show { display:flex; }" +
       "#lsMoreCard { background:#FFFFFF; width:100%; max-width:540px; border-radius:22px 22px 0 0; padding:18px 16px 26px; box-shadow:0 -8px 30px rgba(0,0,0,0.18); }";
     document.head.appendChild(style);
+
+    // Tag Library-specific course filter & sub-unit audio bars so they auto-hide on non-Library tabs
+    setTimeout(function () {
+      document.querySelectorAll("div, section").forEach(function (el) {
+        if (el.id === "lsModularStage" || el.id === "lsBottomNav" || el.id === "lsMoreSheet") return;
+        var txt = (el.textContent || "");
+        if (txt.indexOf("COURSE FILTER") !== -1 && txt.indexOf("Sub-Unit Audio") !== -1 && el.children.length <= 6 && el.offsetHeight < 260) {
+          el.setAttribute("data-ls-library-only", "1");
+        }
+      });
+    }, 300);
+
+    if (document.getElementById("lsBottomNav")) return;
 
     var stage = document.createElement("div");
     stage.id = "lsModularStage";
@@ -62,9 +85,20 @@
       if (ev.target === sheet || ev.target.id === "lsMoreClose") sheet.classList.remove("show");
     });
     var otaBtn = sheet.querySelector("#lsMoreForceOta");
-    if (otaBtn) otaBtn.addEventListener("click", function () {
+    if (otaBtn) otaBtn.addEventListener("click", async function () {
       sheet.classList.remove("show");
-      if (typeof window.__lsForceOtaUpdate === "function") window.__lsForceOtaUpdate();
+      var hasCap = !!(window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.CapacitorUpdater);
+      if (hasCap && typeof window.__lsForceOtaUpdate === "function") {
+        window.__lsForceOtaUpdate();
+      } else {
+        try {
+          var r = await fetch("https://law-studyes.vercel.app/ota-version.json?t=" + Date.now(), { cache: "no-store" });
+          var m = await r.json();
+          if (typeof showToast === "function") showToast("Live Vercel OTA: v" + (m.version || "ready"));
+        } catch (e) {
+          if (typeof showToast === "function") showToast("Offline mode - using local bundle.");
+        }
+      }
     });
   }
 
@@ -87,16 +121,15 @@
     setActiveNavHighlight(tab);
 
     var stage = document.getElementById("lsModularStage");
-    var mainHost = document.querySelector("main");
     if (!stage) return;
 
     if (tab === "library") {
+      document.body.classList.remove("ls-in-module");
       stage.classList.remove("active");
-      if (mainHost) mainHost.style.display = "";
       return;
     }
 
-    if (mainHost) mainHost.style.display = "none";
+    document.body.classList.add("ls-in-module");
     stage.classList.add("active");
     window.scrollTo(0, 0);
 
