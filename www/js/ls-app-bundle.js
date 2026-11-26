@@ -1,4 +1,4 @@
-/* Law Studyes v3.2.2 - Unified Crash-Safe Module Bundle (Built 2026-11-26 19:36:21) */
+/* Law Studyes v3.2.3 - Unified Crash-Safe Module Bundle (Built 2026-11-26 19:53:32) */
 
 /* === MODULE: ls-store.js === */
 try {
@@ -548,45 +548,231 @@ try {
 })();
 } catch (__lsModErr) { console.error('[LS Module Error: ls-trilingual.js]', __lsModErr); }
 
-/* === MODULE: ls-voice-controller.js === */
+/* === MODULE: ls-audio-engine.js === */
 try {
 (function () {
   "use strict";
-  if (window.__lsVoiceCtrlV322) return;
-  window.__lsVoiceCtrlV322 = true;
+  if (window.__lsCleanAudioV323) return;
+  window.__lsCleanAudioV323 = true;
 
-  var K_ENG = "ls_voice_engine_v2", K_GEN = "ls_voice_gender_v2", K_VID = "ls_voice_id_v2", K_RATE = "ls_voice_rate_v2";
-  var webVoices = [], capVoices = [], nativeWebSpeak = null, nativeCapSpeak = null;
-  var syncingSelect = false;
+  var K_SPD = "ls_aud_spd_323", K_TCH = "ls_aud_tch_323", K_REP = "ls_aud_rep_323", K_VC = "ls_aud_vc_323_";
+  var AUDIO_CACHE = "ls-prof-audio-v1", CDN = "https://law-studyes.vercel.app";
 
-  var PRESETS = [
-    { val: "__ls_mode:studio:female", label: "Human Studio MP3 + Neural (Ma'am)" },
-    { val: "__ls_mode:neural:female", label: "Indian Neural Voice (Ma'am)" },
-    { val: "__ls_mode:neural:male",   label: "Indian Neural Voice (Sir)" },
-    { val: "__ls_mode:device:female", label: "Offline Device Voice (Ma'am)" },
-    { val: "__ls_mode:device:male",   label: "Offline Device Voice (Sir)" }
-  ];
+  var manifest = null, htmlAudio = null, webVoices = [], capVoices = [], isNative = false;
+  var token = 0, playing = false, paused = false, studioMp3 = false;
+  var scope = "topic", teachMode = true, repeat = false, speed = 0.96, sleepId = null;
+  var queue = [], curIdx = 0, curTopicId = "", curTitle = "", curVoiceLbl = "Auto Best Indian Voice";
 
-  function getEngine() { try { return localStorage.getItem(K_ENG) || "studio"; } catch (e) { return "studio"; } }
-  function getGender() { try { return localStorage.getItem(K_GEN) || localStorage.getItem("ls_prof_gender_v1") || "female"; } catch (e) { return "female"; } }
-  function getVoiceId() { try { return localStorage.getItem(K_VID) || "auto"; } catch (e) { return "auto"; } }
-  function getRate() {
+  function loadPrefs() {
     try {
-      var sel = document.getElementById("audioSpeedSelect");
-      var raw = localStorage.getItem(K_RATE) || (sel && sel.value) || "1";
-      var r = parseFloat(raw);
-      return (isFinite(r) && r >= 0.5 && r <= 2.0) ? r : 1.0;
-    } catch (e) { return 1.0; }
+      var sp = parseFloat(localStorage.getItem(K_SPD) || "0.96");
+      if (isFinite(sp) && sp >= 0.6 && sp <= 1.8) speed = sp;
+      teachMode = localStorage.getItem(K_TCH) !== "0";
+      repeat = localStorage.getItem(K_REP) === "1";
+    } catch (e) {}
   }
-  function getLang() { try { return (typeof state !== "undefined" && state && state.lang) ? String(state.lang).toLowerCase() : "en"; } catch (e) { return "en"; } }
-  function toBcp47(l) { l = String(l || getLang()).toLowerCase(); return l === "te" ? "te-IN" : (l === "hi" ? "hi-IN" : "en-IN"); }
-  function getPitch() { return getGender() === "male" ? (getEngine() === "device" ? 0.80 : 0.88) : (getEngine() === "device" ? 1.12 : 1.04); }
 
-  function loadWebVoices() {
-    try { if ("speechSynthesis" in window) { var v = window.speechSynthesis.getVoices() || []; if (v.length) webVoices = v; } } catch (e) {}
-    return webVoices;
+  function langNow() {
+    try { var l = (typeof state !== "undefined" && state && state.lang) ? String(state.lang).toLowerCase() : "en"; return (l === "te" || l === "hi") ? l : "en"; }
+    catch (e) { return "en"; }
   }
-  async function loadCapVoices() {
+  function bcp47(l) { l = String(l || langNow()).toLowerCase(); return l === "te" ? "te-IN" : (l === "hi" ? "hi-IN" : "en-IN"); }
+  function getSavedVc(l) { try { return localStorage.getItem(K_VC + l) || "auto"; } catch (e) { return "auto"; } }
+  function setSavedVc(l, k) { try { localStorage.setItem(K_VC + l, String(k || "auto")); } catch (e) {} }
+
+  function cleanSpeech(raw, lang) {
+    var s = String(raw || "");
+    if (!s) return "";
+    s = s.replace(/<[^>]+>/g, " ").replace(/https?:\/\/\S+/gi, " ").replace(/[\*\#\_`~>\[\]]+/g, " ");
+    s = s.replace(/\s*\|\s*/g, ". ").replace(/[\u2022\u25aa\u25ba\u25b8\u2756\u25cf\u25cb\u25c6\u25c7\u2713\u2714\u2192\u21d2\u2014\u2013]+/g, ", ");
+    if (lang === "en") {
+      s = s.replace(/\bSecs?\.\s*/gi, "Section ").replace(/\bArts?\.\s*/gi, "Article ")
+           .replace(/\bu\/s\b/gi, "under Section").replace(/\bw\.e\.f\./gi, "with effect from")
+           .replace(/\bi\.e\./gi, "that is").replace(/\be\.g\./gi, "for example")
+           .replace(/\betc\./gi, "and so on").replace(/\bvs?\.\s+/gi, " versus ")
+           .replace(/\bIPC\b/g, "I P C").replace(/\bCrPC\b/g, "C R P C").replace(/\bCPC\b/g, "C P C")
+           .replace(/\bBNS\b/g, "B N S").replace(/\bBNSS\b/g, "B N S S").replace(/\bBSA\b/g, "B S A")
+           .replace(/\bAIR\b/g, "A I R").replace(/\bSCC\b/g, "S C C").replace(/\bPIL\b/g, "P I L").replace(/\bFIR\b/g, "F I R");
+    }
+    return s.replace(/\s*([,\.;:\?!\u0964])\s*/g, "$1 ").replace(/\.{2,}/g, ".").replace(/\s+/g, " ").trim();
+  }
+
+  function splitFluent(text, maxLen) {
+    var lim = maxLen || 185, s = String(text || "").trim();
+    if (!s) return [];
+    if (s.length <= lim) return [s];
+    var parts = s.match(/[^\.\?!\u0964]+[\.\?!\u0964]*/g) || [s], out = [];
+    for (var i = 0; i < parts.length; i++) {
+      var p = parts[i].trim();
+      if (!p) continue;
+      if (p.length <= lim) { out.push(p); continue; }
+      var cls = p.match(/[^,;:]+[,;:]*/g) || [p], buf = "";
+      for (var j = 0; j < cls.length; j++) {
+        var c = cls[j].trim();
+        if (!c) continue;
+        if ((buf + " " + c).trim().length <= lim) { buf = (buf ? buf + " " : "") + c; }
+        else {
+          if (buf) out.push(buf);
+          if (c.length <= lim) { buf = c; }
+          else {
+            var ws = c.split(/\s+/), wb = "";
+            for (var k = 0; k < ws.length; k++) {
+              if ((wb + " " + ws[k]).trim().length <= lim) wb = (wb ? wb + " " : "") + ws[k];
+              else { if (wb) out.push(wb); wb = ws[k]; }
+            }
+            buf = wb;
+          }
+        }
+      }
+      if (buf) out.push(buf);
+    }
+    return out.filter(function (x) { return x && x.length > 1; });
+  }
+
+  function metaSafe(tid) { try { return typeof findTopicMeta === "function" ? findTopicMeta(tid) : null; } catch (e) { return null; } }
+
+  function buildTopicQueue(tid, lang, asProf) {
+    var rec = (typeof state !== "undefined" && state.notes) ? state.notes[tid] : null;
+    if (!rec) return [];
+    var ld = rec[lang] || rec.en; if (!ld) return [];
+    var m = metaSafe(tid), title = (m && m.topic && m.topic.title) ? m.topic.title : String(tid).replace(/-/g, " ");
+    var ct = cleanSpeech(title, lang), m1 = cleanSpeech(ld.inOneMinute, lang), pr = cleanSpeech(ld.legalProvision, lang), mn = cleanSpeech(ld.meaning, lang);
+    var pts = Array.isArray(ld.keyPoints) ? ld.keyPoints.map(function (x) { return cleanSpeech(typeof x === "string" ? x : (x && (x.point || x.text || x.summary)), lang); }).filter(Boolean) : [];
+    var cs = Array.isArray(ld.caseLaws) ? ld.caseLaws.slice(0, 3).map(function (c) {
+      if (typeof c === "string") return cleanSpeech(c, lang);
+      if (!c) return "";
+      var n = cleanSpeech(c.name || c.title, lang), p = cleanSpeech(c.principle || c.summary, lang);
+      return (n && p) ? (n + ". " + p) : (n || p);
+    }).filter(Boolean) : [];
+
+    var blks = [];
+    if (lang === "te") {
+      if (asProf) {
+        blks.push({ step: 0, text: "\u0c28\u0c2e\u0c38\u0c4d\u0c15\u0c3e\u0c30\u0c02 \u0c38\u0c4d\u0c1f\u0c42\u0c21\u0c46\u0c02\u0c1f\u0c4d\u0c38\u0c4d. \u0c08\u0c30\u0c4b\u0c1c\u0c41 \u0c2e\u0c28\u0c02 " + ct + " \u0c17\u0c41\u0c30\u0c3f\u0c02\u0c1a\u0c3f \u0c38\u0c41\u0c32\u0c2d\u0c02\u0c17\u0c3e \u0c05\u0c30\u0c4d\u0c25\u0c02 \u0c1a\u0c47\u0c38\u0c41\u0c15\u0c41\u0c02\u0c26\u0c3e\u0c02." });
+        if (m1) blks.push({ step: 1, text: "\u0c2e\u0c41\u0c02\u0c26\u0c41\u0c17\u0c3e \u0c12\u0c15 \u0c28\u0c3f\u0c2e\u0c3f\u0c37\u0c02\u0c32\u0c4b \u0c2e\u0c41\u0c16\u0c4d\u0c2f \u0c35\u0c3f\u0c37\u0c2f\u0c02 \u0c24\u0c46\u0c32\u0c41\u0c38\u0c41\u0c15\u0c41\u0c02\u0c26\u0c3e\u0c02. " + m1 });
+        if (pr) blks.push({ step: 2, text: "\u0c0e\u0c17\u0c4d\u0c1c\u0c3e\u0c2e\u0c4d\u200c\u0c32\u0c4b \u0c2e\u0c41\u0c02\u0c26\u0c41\u0c17\u0c3e \u0c30\u0c3e\u0c2f\u0c3e\u0c32\u0c4d\u0c38\u0c3f\u0c28 \u0c1a\u0c1f\u0c4d\u0c1f\u0c2a\u0c30\u0c2e\u0c48\u0c28 \u0c28\u0c3f\u0c2c\u0c02\u0c27\u0c28 \u0c07\u0c26\u0c3f. " + pr });
+        if (mn) blks.push({ step: 3, text: "\u0c07\u0c2a\u0c4d\u0c2a\u0c41\u0c21\u0c41 \u0c26\u0c40\u0c28\u0c3f \u0c05\u0c30\u0c4d\u0c25\u0c02 \u0c38\u0c4d\u0c2a\u0c37\u0c4d\u0c1f\u0c02\u0c17\u0c3e \u0c1a\u0c42\u0c26\u0c4d\u0c26\u0c3e\u0c02. " + mn });
+        if (pts.length) {
+          blks.push({ step: 4, text: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f\u0c2e\u0c48\u0c28 \u0c2a\u0c3e\u0c2f\u0c3f\u0c02\u0c1f\u0c4d\u0c32\u0c41 \u0c12\u0c15\u0c4d\u0c15\u0c4a\u0c15\u0c4d\u0c15\u0c1f\u0c3f\u0c17\u0c3e \u0c17\u0c2e\u0c28\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f." });
+          pts.forEach(function (p, i) { blks.push({ step: 4, text: "\u0c2a\u0c3e\u0c2f\u0c3f\u0c02\u0c1f\u0c4d " + (i + 1) + ". " + p }); });
+        }
+        if (cs.length) blks.push({ step: 5, text: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f\u0c2e\u0c48\u0c28 \u0c15\u0c47\u0c38\u0c41 \u0c32\u0c3e \u0c17\u0c41\u0c30\u0c4d\u0c24\u0c41\u0c2a\u0c46\u0c1f\u0c4d\u0c1f\u0c41\u0c15\u0c4b\u0c02\u0c21\u0c3f. " + cs.join(". ") });
+      } else {
+        blks.push({ step: 0, text: ct }); if (m1) blks.push({ step: 1, text: m1 }); if (pr) blks.push({ step: 2, text: pr });
+        if (mn) blks.push({ step: 3, text: mn }); pts.forEach(function (p) { blks.push({ step: 4, text: p }); }); cs.forEach(function (c) { blks.push({ step: 5, text: c }); });
+      }
+    } else if (lang === "hi") {
+      if (asProf) {
+        blks.push({ step: 0, text: "\u0928\u092e\u0938\u094d\u0924\u0947 \u0938\u094d\u091f\u0942\u0921\u0947\u0902\u091f\u094d\u0938\u0964 \u0906\u091c \u0939\u092e " + ct + " \u0915\u094b \u0906\u0938\u093e\u0928 \u0914\u0930 \u0938\u094d\u092a\u0937\u094d\u091f \u092d\u093e\u0937\u093e \u092e\u0947\u0902 \u0938\u092e\u091d\u0947\u0902\u0917\u0947\u0964" });
+        if (m1) blks.push({ step: 1, text: "\u0938\u092c\u0938\u0947 \u092a\u0939\u0932\u0947 \u090f\u0915 \u092e\u093f\u0928\u091f \u092e\u0947\u0902 \u0907\u0938\u0915\u093e \u092e\u0941\u0916\u094d\u092f \u0938\u093e\u0930 \u0938\u092e\u091d\u093f\u090f\u0964 " + m1 });
+        if (pr) blks.push({ step: 2, text: "\u090f\u0917\u094d\u091c\u093e\u092e \u092e\u0947\u0902 \u0938\u092c\u0938\u0947 \u092a\u0939\u0932\u0947 \u092f\u0939 \u0935\u093f\u0927\u093f\u0915 \u092a\u094d\u0930\u093e\u0935\u0927\u093e\u0928 \u0932\u093f\u0916\u093f\u090f\u0964 " + pr });
+        if (mn) blks.push({ step: 3, text: "\u0905\u092c \u0907\u0938\u0915\u093e \u0938\u0930\u0932 \u0905\u0930\u094d\u0925 \u0938\u092e\u091d\u0924\u0947 \u0939\u0948\u0902\u0964 " + mn });
+        if (pts.length) {
+          blks.push({ step: 4, text: "\u0905\u092c \u090f\u0915 \u090f\u0915 \u0915\u0930\u0915\u0947 \u092e\u0941\u0916\u094d\u092f \u092a\u0949\u0907\u0902\u091f\u094d\u0938 \u0927\u094d\u092f\u093e\u0928 \u0938\u0947 \u0938\u0941\u0928\u093f\u090f\u0964" });
+          pts.forEach(function (p, i) { blks.push({ step: 4, text: "\u092a\u0949\u0907\u0902\u091f " + (i + 1) + "\u0964 " + p }); });
+        }
+        if (cs.length) blks.push({ step: 5, text: "\u0907\u0938 \u0935\u093f\u0937\u092f \u0915\u093e \u092a\u094d\u0930\u092e\u0941\u0916 \u0915\u0947\u0938 \u0932\u0949 \u092f\u093e\u0926 \u0930\u0916\u093f\u090f\u0964 " + cs.join("\u0964 ") });
+      } else {
+        blks.push({ step: 0, text: ct }); if (m1) blks.push({ step: 1, text: m1 }); if (pr) blks.push({ step: 2, text: pr });
+        if (mn) blks.push({ step: 3, text: mn }); pts.forEach(function (p) { blks.push({ step: 4, text: p }); }); cs.forEach(function (c) { blks.push({ step: 5, text: c }); });
+      }
+    } else {
+      if (asProf) {
+        blks.push({ step: 0, text: "Hello students. Today let us clearly understand " + ct + "." });
+        if (m1) blks.push({ step: 1, text: "First, here is the core idea in plain words. " + m1 });
+        if (pr) blks.push({ step: 2, text: "For your exam answer, start with this exact legal provision. " + pr });
+        if (mn) blks.push({ step: 3, text: "Let us look at what this means. " + mn });
+        if (pts.length) {
+          blks.push({ step: 4, text: "Now listen carefully to the key scoring points." });
+          pts.forEach(function (p, i) { blks.push({ step: 4, text: "Point " + (i + 1) + ". " + p }); });
+        }
+        if (cs.length) blks.push({ step: 5, text: "Be sure to quote this landmark case law in your answer. " + cs.join(". ") });
+      } else {
+        blks.push({ step: 0, text: ct }); if (m1) blks.push({ step: 1, text: m1 }); if (pr) blks.push({ step: 2, text: pr });
+        if (mn) blks.push({ step: 3, text: mn }); pts.forEach(function (p) { blks.push({ step: 4, text: p }); }); cs.forEach(function (c) { blks.push({ step: 5, text: c }); });
+      }
+    }
+
+    var out = [];
+    for (var b = 0; b < blks.length; b++) {
+      var chs = splitFluent(blks[b].text, 185);
+      for (var s = 0; s < chs.length; s++) out.push({ topicId: tid, topicTitle: title, lang: lang, stepIdx: blks[b].step, text: chs[s] });
+    }
+    return out;
+  }
+
+  async function loadManifest() {
+    if (manifest !== null) return manifest;
+    manifest = {};
+    try { var r = await fetch("./audio/manifest.json", { cache: "no-store" }); if (r.ok) manifest = await r.json(); } catch (e) {}
+    return manifest;
+  }
+
+  function rankVoice(v, bcp) {
+    var vl = String((v && v.lang) || "").toLowerCase().replace("_", "-"), vn = String((v && (v.name || v.voiceURI)) || "");
+    var tgt = bcp.toLowerCase(), pref = tgt.split("-")[0];
+    if (vl.indexOf("ar") === 0) return -9999;
+    if (vl !== tgt && vl.indexOf(pref + "-") !== 0 && vl !== pref) return -5000;
+    var sc = (vl === tgt) ? 200 : 80;
+    if (/natural|neural|wavenet|online/i.test(vn)) sc += 90;
+    if (/neerja|prabhat|shruti|mohan|swara|madhur|google/i.test(vn)) sc += 60;
+    if (v && v.localService === false) sc += 25;
+    if (/espeak|compact/i.test(vn)) sc -= 60;
+    return sc;
+  }
+
+  function sortedVoices(lang) {
+    var bcp = bcp47(lang), src = (isNative && capVoices.length) ? capVoices : webVoices, arr = [];
+    for (var i = 0; i < src.length; i++) {
+      var sc = rankVoice(src[i], bcp);
+      if (sc > 0) {
+        var key = (isNative && capVoices.length) ? ("cap:" + i) : ("web:" + (src[i].voiceURI || src[i].name || i));
+        arr.push({ key: key, index: i, voice: src[i], name: String(src[i].name || src[i].voiceURI || ("Voice " + (i + 1))), lang: src[i].lang || bcp, score: sc });
+      }
+    }
+    arr.sort(function (a, b) { return b.score - a.score; });
+    return arr;
+  }
+
+  function resolveVoice(lang) {
+    var list = sortedVoices(lang), saved = getSavedVc(lang);
+    if (saved === "studio-mp3") return { key: "studio-mp3", isStudio: true, name: "HD Studio Human Voice (MP3)", fallback: list[0] || null };
+    if (saved && saved !== "auto") {
+      for (var i = 0; i < list.length; i++) if (list[i].key === saved) return list[i];
+    }
+    return list[0] || null;
+  }
+
+  function updateHint() {
+    var h = document.getElementById("lsPwVoiceActiveHint");
+    if (h) h.textContent = curVoiceLbl + " (" + speed.toFixed(2).replace(/\.00$/, "") + "x)";
+  }
+
+  function populateVoices() {
+    var sel = document.getElementById("audioVoiceSelect");
+    if (!sel) return;
+    var lang = langNow(), bcp = bcp47(lang), tid = (typeof state !== "undefined" && state.activeTopicId) ? state.activeTopicId : curTopicId;
+    var list = sortedVoices(lang), saved = getSavedVc(lang), opts = [];
+    if (manifest && manifest[lang] && manifest[lang][tid]) opts.push({ v: "studio-mp3", l: "HD Studio Human Voice (MP3)" });
+    opts.push({ v: "auto", l: "Auto Best Indian Voice (" + bcp + ")" });
+    for (var i = 0; i < list.length; i++) opts.push({ v: list[i].key, l: list[i].name + " (" + list[i].lang + ")" });
+
+    sel.innerHTML = "";
+    var hit = false;
+    opts.forEach(function (o) {
+      var op = document.createElement("option"); op.value = o.v; op.textContent = o.l;
+      if (o.v === saved) { op.selected = true; hit = true; }
+      sel.appendChild(op);
+    });
+    if (!hit && sel.options.length) sel.selectedIndex = 0;
+    var rv = resolveVoice(lang);
+    curVoiceLbl = rv ? rv.name : ("System " + bcp);
+    updateHint();
+  }
+
+  async function refreshVoices() {
+    isNative = !!(window.Capacitor && typeof window.Capacitor.isNativePlatform === "function" && window.Capacitor.isNativePlatform());
+    try { if ("speechSynthesis" in window) { var wv = window.speechSynthesis.getVoices() || []; if (wv.length) webVoices = wv; } } catch (e) {}
     try {
       var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
       if (tts && typeof tts.getSupportedVoices === "function") {
@@ -594,573 +780,297 @@ try {
         if (r && Array.isArray(r.voices)) capVoices = r.voices;
       }
     } catch (e) {}
-    return capVoices;
-  }
-
-  function scoreVoice(v, bcp47, eng, gen) {
-    var vl = String((v && v.lang) || "").toLowerCase().replace("_", "-");
-    var vn = String((v && (v.name || v.voiceURI)) || "");
-    var pref = bcp47.toLowerCase().split("-")[0];
-    if (vl.indexOf("ar") === 0) return -9999;
-    if (vl !== bcp47.toLowerCase() && vl.indexOf(pref + "-") !== 0 && vl !== pref) return -5000;
-    var sc = (vl === bcp47.toLowerCase()) ? 100 : 40;
-    var isNeural = /neural|natural|network|wavenet|online|google|microsoft/i.test(vn) || (v && v.localService === false);
-    if (eng === "device") { if (v && v.localService === true) sc += 55; if (!isNeural) sc += 25; }
-    else if (isNeural) sc += 55;
-    if (gen === "female" && /neerja|shruti|swara|heera|kalpana|veena|lekha|female|wavenet-a|wavenet-d|sfg|isf|inf/i.test(vn)) sc += 30;
-    if (gen === "male" && /prabhat|mohan|madhur|ravi|hemant|male|wavenet-b|wavenet-c|ism|inm/i.test(vn)) sc += 30;
-    return sc;
-  }
-
-  function resolveWebVoice(lang) {
-    var bcp47 = toBcp47(lang), vs = loadWebVoices(), vid = getVoiceId();
-    if (!vs.length) return null;
-    if (vid && vid !== "auto") {
-      if (/^\d+$/.test(vid) && vs[parseInt(vid, 10)]) return vs[parseInt(vid, 10)];
-      for (var i = 0; i < vs.length; i++) {
-        if (vs[i].voiceURI === vid || vs[i].name === vid) return vs[i];
-      }
-    }
-    var best = null, bestSc = -999, eng = getEngine(), gen = getGender();
-    for (var j = 0; j < vs.length; j++) {
-      var s = scoreVoice(vs[j], bcp47, eng, gen);
-      if (s > bestSc) { bestSc = s; best = vs[j]; }
-    }
-    return best;
-  }
-
-  function resolveCapVoiceIndex(lang) {
-    var bcp47 = toBcp47(lang), vs = capVoices, vid = getVoiceId();
-    if (!vs.length) return -1;
-    if (vid && vid !== "auto") {
-      if (/^\d+$/.test(vid) && vs[parseInt(vid, 10)]) return parseInt(vid, 10);
-      for (var i = 0; i < vs.length; i++) {
-        if (vs[i].voiceURI === vid || vs[i].name === vid) return i;
-      }
-    }
-    var bestIdx = -1, bestSc = -999, eng = getEngine(), gen = getGender();
-    for (var j = 0; j < vs.length; j++) {
-      var s = scoreVoice(vs[j], bcp47, eng, gen);
-      if (s > bestSc) { bestSc = s; bestIdx = j; }
-    }
-    return bestIdx;
-  }
-
-  function stopRawTts() {
-    try { var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech; if (tts && tts.stop) tts.stop().catch(function () {}); } catch (e) {}
-    try { if ("speechSynthesis" in window) window.speechSynthesis.cancel(); } catch (e) {}
-  }
-
-  function describeActive() {
-    var eng = getEngine(), gen = getGender(), vid = getVoiceId(), rate = getRate(), bcp = toBcp47(getLang());
-    if (vid && vid !== "auto") {
-      var v = resolveWebVoice(getLang());
-      var vname = v ? v.name : ("Voice #" + vid);
-      return "Active: " + vname + " | " + rate + "x";
-    }
-    var eLbl = eng === "studio" ? "Studio MP3" : (eng === "device" ? "Offline Device" : "Indian Neural");
-    return "Active: " + eLbl + " (" + (gen === "male" ? "Sir" : "Ma'am") + ") | " + bcp + " | " + rate + "x";
-  }
-
-  function ensurePlayerSelectPresets() {
-    var sel = document.getElementById("audioVoiceSelect");
-    if (!sel) return;
-    syncingSelect = true;
-    try {
-      var grp = sel.querySelector('optgroup[data-ls-presets="1"]');
-      if (!grp) {
-        grp = document.createElement("optgroup");
-        grp.setAttribute("data-ls-presets", "1");
-        grp.label = "Law Studyes Voice Engines";
-        PRESETS.forEach(function (p) {
-          var opt = document.createElement("option");
-          opt.value = p.val;
-          opt.textContent = p.label;
-          grp.appendChild(opt);
-        });
-        sel.insertBefore(grp, sel.firstChild);
-      }
-
-      var vid = getVoiceId();
-      var targetVal = (vid && vid !== "auto") ? vid : ("__ls_mode:" + getEngine() + ":" + getGender());
-      var found = false;
-      for (var i = 0; i < sel.options.length; i++) {
-        if (sel.options[i].value === targetVal) { sel.selectedIndex = i; found = true; break; }
-      }
-      if (!found && sel.options.length) {
-        var fallback = "__ls_mode:" + getEngine() + ":" + getGender();
-        for (var j = 0; j < sel.options.length; j++) {
-          if (sel.options[j].value === fallback) { sel.selectedIndex = j; break; }
-        }
-      }
-    } catch (e) {}
-    finally { syncingSelect = false; }
-  }
-
-  function syncPlayerUi() {
-    var oldDup = document.getElementById("lsUnifiedVoicePanel");
-    if (oldDup) oldDup.remove();
-
-    ensurePlayerSelectPresets();
-
-    var spd = document.getElementById("audioSpeedSelect");
-    if (spd) {
-      var rStr = String(getRate());
-      for (var i = 0; i < spd.options.length; i++) {
-        if (parseFloat(spd.options[i].value) === parseFloat(rStr)) { spd.selectedIndex = i; break; }
-      }
-    }
-
-    var hint = document.getElementById("lsPwVoiceActiveHint");
-    if (hint) hint.textContent = describeActive();
-  }
-
-  function restartAudioEngineIfPlaying() {
-    try {
-      var eng = window.LSAudioEngine;
-      if (!eng) return;
-      var st = (typeof eng.getState === "function") ? eng.getState() : null;
-      var isPlaying = !!(st && (st.playing || st.isPlaying) && !st.paused);
-      if (!isPlaying && typeof window.speechSynthesis !== "undefined" && window.speechSynthesis.speaking) {
-        var ppBtn = document.getElementById("audioPlayPauseBtn");
-        if (ppBtn && /pause/i.test(String(ppBtn.textContent || ppBtn.getAttribute("aria-label") || ""))) {
-          isPlaying = true;
-        }
-      }
-      if (!isPlaying) return;
-
-      if (typeof eng.setSpeed === "function") { try { eng.setSpeed(getRate()); } catch (e) {} }
-      var curIdx = (st && typeof st.index === "number") ? st.index : ((st && typeof st.currentIndex === "number") ? st.currentIndex : -1);
-
-      if (typeof eng.stopHardware === "function") eng.stopHardware();
-      else if (typeof eng.stop === "function") eng.stop();
-      else stopRawTts();
-
-      setTimeout(function () {
-        try {
-          if (curIdx >= 0 && typeof eng.jumpTo === "function") eng.jumpTo(curIdx);
-          else if (typeof eng.playTopic === "function") eng.playTopic();
-          else if (typeof eng.play === "function") eng.play();
-        } catch (err) {}
-      }, 150);
-    } catch (e) {}
-  }
-
-  function applySettings(patch, restartActive) {
-    if (patch && typeof patch.engine === "string") try { localStorage.setItem(K_ENG, patch.engine); } catch (e) {}
-    if (patch && typeof patch.gender === "string") try { localStorage.setItem(K_GEN, patch.gender); localStorage.setItem("ls_prof_gender_v1", patch.gender); } catch (e) {}
-    if (patch && typeof patch.voiceId === "string") try { localStorage.setItem(K_VID, patch.voiceId); } catch (e) {}
-    if (patch && patch.rate !== undefined) try { localStorage.setItem(K_RATE, String(patch.rate)); } catch (e) {}
-
-    syncPlayerUi();
-
-    var detail = { engine: getEngine(), gender: getGender(), voiceId: getVoiceId(), rate: getRate(), restartActive: restartActive !== false };
-    try { window.dispatchEvent(new CustomEvent("ls:voice-settings-changed", { detail: detail })); } catch (e) {}
-
-    if (restartActive !== false) {
-      restartAudioEngineIfPlaying();
-    }
-  }
-
-  function patchSpeechApis() {
-    try {
-      if ("speechSynthesis" in window && typeof window.speechSynthesis.speak === "function" && !window.speechSynthesis.__lsPatchedV322) {
-        nativeWebSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
-        window.speechSynthesis.__lsPatchedV322 = true;
-        window.speechSynthesis.speak = function (u) {
-          try {
-            if (u) {
-              var l = getLang();
-              u.lang = toBcp47(l);
-              var v = resolveWebVoice(l);
-              if (v) u.voice = v;
-              u.rate = getRate();
-              u.pitch = getPitch();
-            }
-          } catch (e) {}
-          return nativeWebSpeak(u);
-        };
-      }
-    } catch (e) {}
-    try {
-      var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-      if (tts && typeof tts.speak === "function" && !tts.__lsPatchedV322) {
-        nativeCapSpeak = tts.speak.bind(tts);
-        tts.__lsPatchedV322 = true;
-        tts.speak = function (opts) {
-          var o = Object.assign({}, opts || {});
-          try {
-            var l = getLang();
-            o.lang = toBcp47(l);
-            o.rate = getRate();
-            o.pitch = getPitch();
-            var idx = resolveCapVoiceIndex(l);
-            if (idx >= 0) o.voice = idx;
-          } catch (e) {}
-          return nativeCapSpeak(o);
-        };
-      }
-    } catch (e) {}
-  }
-
-  async function testVoice() {
-    var l = getLang(), eng = getEngine(), gen = getGender();
-    var sample = l === "te"
-      ? "\u0c28\u0c2e\u0c38\u0c4d\u0c15\u0c3e\u0c30\u0c02! \u0c07\u0c26\u0c3f \u0c2e\u0c40\u0c30\u0c41 \u0c0e\u0c02\u0c2a\u0c3f\u0c15 \u0c1a\u0c47\u0c38\u0c3f\u0c28 \u0c32\u0c3e \u0c38\u0c4d\u0c1f\u0c21\u0c40\u0c38\u0c4d \u0c35\u0c3e\u0c2f\u0c3f\u0c38\u0c4d."
-      : (l === "hi"
-        ? "\u0928\u092e\u0938\u094d\u0924\u0947! \u092f\u0939 \u0906\u092a\u0915\u0940 \u091a\u0941\u0928\u0940 \u0939\u0941\u0908 \u0932\u0949 \u0938\u094d\u091f\u0921\u0940\u091c\u093c \u0906\u0935\u093e\u091c\u093c \u0939\u0948\u0964"
-        : "Hello students! Testing " + eng + " " + (gen === "male" ? "Sir" : "Ma'am") + " voice engine.");
-
-    stopRawTts();
-    if (window.LSIndianProfessor && window.LSIndianProfessor.stop) window.LSIndianProfessor.stop();
-    if (typeof showToast === "function") showToast(describeActive());
-
-    var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-    if (tts && typeof tts.speak === "function") {
-      try { await tts.speak({ text: sample, lang: toBcp47(l), rate: getRate(), pitch: getPitch(), volume: 1.0 }); return; } catch (e) {}
-    }
-    if ("speechSynthesis" in window) {
-      try { window.speechSynthesis.speak(new SpeechSynthesisUtterance(sample)); } catch (e) {}
-    }
-  }
-
-  function wireRealPlayerControls() {
-    try {
-      var vcSel = document.getElementById("audioVoiceSelect");
-      var vcHost = document.getElementById("lsPwVoiceHost");
-      var spdSel = document.getElementById("audioSpeedSelect");
-
-      if (vcSel && !vcSel.__lsBoundV322) {
-        vcSel.__lsBoundV322 = true;
-        vcSel.addEventListener("change", function () {
-          if (syncingSelect) return;
-          var val = String(vcSel.value || "");
-          var txt = (vcSel.options[vcSel.selectedIndex] && vcSel.options[vcSel.selectedIndex].text) || "";
-          if (val.indexOf("__ls_mode:") === 0) {
-            var p = val.split(":");
-            applySettings({ engine: p[1] || "studio", gender: p[2] || "female", voiceId: "auto" }, true);
-          } else if (/studio|mp3/i.test(val + " " + txt)) {
-            applySettings({ engine: "studio", voiceId: "auto" }, true);
-          } else if (/offline|local|device/i.test(val + " " + txt)) {
-            applySettings({ engine: "device", voiceId: val || "auto" }, true);
-          } else {
-            applySettings({ engine: "neural", voiceId: val || "auto" }, true);
-          }
-          if (typeof showToast === "function") showToast(describeActive());
-        }, true);
-
-        if (typeof MutationObserver !== "undefined") {
-          new MutationObserver(function () {
-            if (!syncingSelect) ensurePlayerSelectPresets();
-          }).observe(vcSel, { childList: true });
-        }
-      }
-
-      if (spdSel && !spdSel.__lsBoundV322) {
-        spdSel.__lsBoundV322 = true;
-        spdSel.addEventListener("change", function () {
-          var r = parseFloat(spdSel.value);
-          if (isFinite(r) && r >= 0.5 && r <= 2.0) {
-            applySettings({ rate: r }, true);
-            if (typeof showToast === "function") showToast("Speed: " + r + "x");
-          }
-        }, true);
-      }
-
-      if (vcHost && !document.getElementById("lsPwVoiceActionRow")) {
-        var row = document.createElement("div");
-        row.id = "lsPwVoiceActionRow";
-        row.style.cssText = "display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;";
-        row.innerHTML =
-          '<span id="lsPwVoiceActiveHint" style="font-size:11px;font-weight:700;color:#7B1E2B;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>' +
-          '<button type="button" id="lsPwTestVoiceBtn" style="padding:5px 11px;border-radius:8px;border:1px solid #7B1E2B;background:#7B1E2B;color:#FFF;font-size:11px;font-weight:800;cursor:pointer;flex-shrink:0;">Test Voice</button>';
-        vcHost.appendChild(row);
-        row.querySelector("#lsPwTestVoiceBtn").addEventListener("click", testVoice);
-      }
-
-      syncPlayerUi();
-    } catch (e) {}
-  }
-
-  window.LSVoiceController = {
-    getEngine: getEngine, getGender: getGender, getVoiceId: getVoiceId, getRate: getRate, getPitch: getPitch,
-    langToBcp47: toBcp47, applySettings: applySettings, testVoice: testVoice, describeActive: describeActive
-  };
-
-  function boot() {
-    patchSpeechApis();
-    loadWebVoices();
-    loadCapVoices().then(syncPlayerUi);
-    wireRealPlayerControls();
-  }
-
-  if ("speechSynthesis" in window && "onvoiceschanged" in window.speechSynthesis) {
-    window.speechSynthesis.onvoiceschanged = function () { loadWebVoices(); syncPlayerUi(); };
-  }
-  window.addEventListener("ls:lang-changed", syncPlayerUi);
-  window.addEventListener("DOMContentLoaded", function () {
-    boot();
-    setTimeout(boot, 500);
-    setTimeout(boot, 1500);
-    if (typeof MutationObserver !== "undefined" && document.body) {
-      new MutationObserver(function () {
-        if (document.getElementById("lsPwVoiceHost") && !document.getElementById("lsPwVoiceActionRow")) {
-          wireRealPlayerControls();
-        }
-      }).observe(document.body, { childList: true, subtree: true });
-    }
-  });
-})();
-} catch (__lsModErr) { console.error('[LS Module Error: ls-voice-controller.js]', __lsModErr); }
-
-/* === MODULE: ls-audio-engine.js === */
-try {
-(function () {
-  "use strict";
-  if (window.__lsAudioEngineV310) return;
-  window.__lsAudioEngineV310 = true;
-  var cachedVoice = {};
-
-  function getNativeTts() {
-    return window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-  }
-
-  function getActiveBcp47() {
-    var l = (typeof state !== "undefined" && state && state.lang) ? String(state.lang).toLowerCase() : "en";
-    if (l === "te") return "te-IN";
-    if (l === "hi") return "hi-IN";
-    return "en-IN";
-  }
-
-  async function resolveVoice(tts, targetLang) {
-    var key = String(targetLang || getActiveBcp47()).toLowerCase();
-    if (cachedVoice[key] !== undefined) return cachedVoice[key];
-    var res = { lang: targetLang || getActiveBcp47(), voice: undefined };
-    try {
-      if (typeof tts.getSupportedVoices === "function") {
-        var out = await tts.getSupportedVoices();
-        var list = (out && Array.isArray(out.voices)) ? out.voices : [];
-        var pref = key.split("-")[0], exact = -1, prefIdx = -1, enFb = -1;
-        for (var i = 0; i < list.length; i++) {
-          var vl = String((list[i] && list[i].lang) || "").toLowerCase().replace("_", "-");
-          if (vl.indexOf("ar") === 0) continue;
-          if (vl === key) { exact = i; break; }
-          if (prefIdx === -1 && vl.indexOf(pref + "-") === 0) prefIdx = i;
-          if (pref === "en" && enFb === -1 && (vl === "en-gb" || vl === "en-us")) enFb = i;
-        }
-        var pick = exact !== -1 ? exact : (prefIdx !== -1 ? prefIdx : enFb);
-        if (pick !== -1) { res.voice = pick; res.lang = list[pick].lang || res.lang; }
-      }
-    } catch (e) {}
-    cachedVoice[key] = res;
-    return res;
-  }
-
-  function patchNativeTts() {
-    var tts = getNativeTts();
-    if (!tts || tts.__lsTriPatched) return;
-    tts.__lsTriPatched = true;
-    var rawSpeak = tts.speak.bind(tts);
-    tts.speak = async function (opts) {
-      var text = String((opts && opts.text) || "").trim();
-      if (!text) return;
-      var lang = getActiveBcp47();
-      var r = await resolveVoice(tts, lang);
-      var p = {
-        text: text,
-        lang: r.lang || lang,
-        rate: Math.min(2.0, Math.max(0.6, Number((opts && opts.rate) || 1.15))),
-        pitch: Number((opts && opts.pitch) || 1.0),
-        volume: 1.0,
-        category: "ambient"
-      };
-      if (typeof r.voice === "number") p.voice = r.voice;
-      try { return await rawSpeak(p); }
-      catch (err) {
-        return rawSpeak({ text: text, lang: lang === "en-IN" ? "en-US" : lang, rate: p.rate, pitch: 1.0, volume: 1.0, category: "ambient" });
-      }
-    };
-  }
-
-  function patchWebSpeechLang() {
-    if (typeof window.SpeechSynthesisUtterance === "undefined" || window.__lsWebTriPatched) return;
-    window.__lsWebTriPatched = true;
-    var origSpeak = window.speechSynthesis && window.speechSynthesis.speak ? window.speechSynthesis.speak.bind(window.speechSynthesis) : null;
-    if (!origSpeak) return;
-    window.speechSynthesis.speak = function (utter) {
-      try {
-        if (utter) {
-          var target = getActiveBcp47();
-          utter.lang = target;
-          var vs = window.speechSynthesis.getVoices ? window.speechSynthesis.getVoices() : [];
-          if (vs && vs.length) {
-            var pref = target.split("-")[0];
-            var match = vs.find(function (v) { return (v.lang || "").toLowerCase().replace("_", "-") === target.toLowerCase(); }) ||
-                        vs.find(function (v) { return (v.lang || "").toLowerCase().indexOf(pref + "-") === 0; });
-            if (match) utter.voice = match;
-          }
-        }
-      } catch (e) {}
-      return origSpeak(utter);
-    };
+    populateVoices();
   }
 
   function stopHardware() {
-    var tts = getNativeTts();
-    if (tts && typeof tts.stop === "function") { try { tts.stop().catch(function () {}); } catch (e) {} }
-    if (typeof window.speechSynthesis !== "undefined") { try { window.speechSynthesis.cancel(); } catch (e) {} }
+    if (htmlAudio) { try { htmlAudio.pause(); htmlAudio.currentTime = 0; } catch (e) {} htmlAudio = null; }
+    var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
+    if (tts && tts.stop) { try { tts.stop().catch(function () {}); } catch (e) {} }
+    if ("speechSynthesis" in window) { try { window.speechSynthesis.cancel(); } catch (e) {} }
   }
 
-  function getSnapshot() {
-    var ok = (typeof state !== "undefined" && state);
-    var aud = (ok && state.audio) ? state.audio : {};
-    var title = "Select a topic to listen";
-    if (ok && state.activeTopicId) {
-      var rec = state.notes && state.notes[state.activeTopicId];
-      var ld = rec ? (rec[state.lang] || rec.en) : null;
-      var meta = (typeof findTopicMeta === "function") ? findTopicMeta(state.activeTopicId) : null;
-      title = (ld && ld.title) || (meta && meta.topic && meta.topic.title) || state.activeTopicId;
+  function stop() {
+    token++; playing = false; paused = false; studioMp3 = false;
+    if (sleepId) { clearTimeout(sleepId); sleepId = null; }
+    stopHardware(); emitState();
+  }
+
+  async function tryMp3(tid, lang, tk) {
+    await loadManifest();
+    var rel = (manifest && manifest[lang] && manifest[lang][tid]) ? manifest[lang][tid] : null;
+    if (!rel) return false;
+    var urls = [rel, CDN + "/" + rel.replace(/^\.\//, "")];
+    for (var i = 0; i < urls.length; i++) {
+      try {
+        var u = urls[i], playUrl = u;
+        if ("caches" in window) {
+          var c = await caches.open(AUDIO_CACHE), hit = await c.match(u);
+          if (hit) playUrl = URL.createObjectURL(await hit.blob());
+          else {
+            var resp = await fetch(u); if (!resp.ok) continue;
+            try { c.put(u, resp.clone()); } catch (e) {}
+            playUrl = URL.createObjectURL(await resp.blob());
+          }
+        }
+        if (tk !== token) return true;
+        htmlAudio = new Audio(playUrl);
+        htmlAudio.playbackRate = speed;
+        htmlAudio.ontimeupdate = function () {
+          if (tk !== token || !htmlAudio || !htmlAudio.duration) return;
+          var b = document.getElementById("audioProgressBar");
+          if (b) b.style.width = Math.min(100, Math.round((htmlAudio.currentTime / htmlAudio.duration) * 100)) + "%";
+        };
+        htmlAudio.onended = function () {
+          if (tk !== token) return;
+          if (repeat) { htmlAudio.currentTime = 0; htmlAudio.play().catch(function () {}); return; }
+          playing = false; paused = false; studioMp3 = false; emitState();
+        };
+        await htmlAudio.play();
+        playing = true; paused = false; studioMp3 = true;
+        curVoiceLbl = "HD Studio Human Voice (MP3)"; updateHint(); emitState();
+        return true;
+      } catch (e) {}
     }
-    var tEl = document.getElementById("audioCurrentTitle");
-    var cEl = document.getElementById("audioQueueCounter");
+    return false;
+  }
+
+  function speakChunk(text, lang, vc) {
+    var bcp = bcp47(lang);
+    var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
+    if (isNative && tts && typeof tts.speak === "function") {
+      var opts = { text: text, lang: bcp, rate: speed, pitch: 1.0, volume: 1.0, category: "ambient" };
+      if (vc && typeof vc.index === "number") opts.voice = vc.index;
+      return tts.speak(opts).catch(function () {});
+    }
+    if ("speechSynthesis" in window) {
+      return new Promise(function (resolve) {
+        var doneFlag = false;
+        function fin() { if (!doneFlag) { doneFlag = true; resolve(); } }
+        try {
+          var u = new SpeechSynthesisUtterance(text);
+          u.lang = bcp; u.rate = speed; u.pitch = 1.0;
+          if (vc && vc.voice) { u.voice = vc.voice; if (vc.voice.lang) u.lang = vc.voice.lang; }
+          u.onend = fin; u.onerror = fin;
+          window.speechSynthesis.speak(u);
+          setTimeout(fin, Math.max(8000, Math.round((text.length * 140) / Math.max(0.6, speed))));
+        } catch (e) { fin(); }
+      });
+    }
+    return Promise.resolve();
+  }
+
+  async function runFrom(idx) {
+    var tk = ++token; stopHardware();
+    if (!queue.length) { playing = false; paused = false; emitState(); return; }
+    curIdx = Math.max(0, Math.min(idx, queue.length - 1));
+    var first = queue[curIdx], lang = first.lang, saved = getSavedVc(lang);
+    if (scope === "topic" && curIdx === 0 && (saved === "studio-mp3" || saved === "auto")) {
+      if (await tryMp3(first.topicId, lang, tk)) return;
+    }
+    var chosen = resolveVoice(lang);
+    if (chosen && chosen.isStudio) chosen = chosen.fallback;
+    curVoiceLbl = chosen ? chosen.name : ("System " + bcp47(lang));
+    updateHint();
+    playing = true; paused = false; studioMp3 = false;
+
+    for (var i = curIdx; i < queue.length; i++) {
+      if (tk !== token) return;
+      curIdx = i; curTopicId = queue[i].topicId; curTitle = queue[i].topicTitle;
+      emitState();
+      await speakChunk(queue[i].text, queue[i].lang, chosen);
+      if (tk !== token) return;
+      await new Promise(function (r) { setTimeout(r, 240); });
+    }
+    if (tk === token) {
+      if (repeat && scope === "topic") { runFrom(0); return; }
+      playing = false; paused = false; emitState();
+    }
+  }
+
+  function playTopic(tid, forceProf) {
+    var id = tid || (typeof state !== "undefined" && state.activeTopicId) || curTopicId;
+    if (!id) { if (typeof showToast === "function") showToast("Open any topic first to listen."); return; }
+    if (typeof forceProf === "boolean") { teachMode = forceProf; try { localStorage.setItem(K_TCH, teachMode ? "1" : "0"); } catch (e) {} }
+    populateVoices();
+    var items = buildTopicQueue(id, langNow(), teachMode);
+    if (!items.length) return;
+    scope = "topic"; queue = items; curIdx = 0; curTopicId = id; curTitle = items[0].topicTitle;
+    runFrom(0);
+  }
+
+  function playUnit(tid) {
+    var id = tid || (typeof state !== "undefined" && state.activeTopicId) || curTopicId;
+    if (!id) return;
+    var m = metaSafe(id);
+    if (!m || !m.unit || !Array.isArray(m.unit.topics) || !m.unit.topics.length) { playTopic(id); return; }
+    populateVoices();
+    var all = [], lang = langNow();
+    m.unit.topics.forEach(function (t) { if (t && t.id) all = all.concat(buildTopicQueue(t.id, lang, teachMode)); });
+    if (!all.length) return;
+    scope = "unit"; queue = all; curIdx = 0; curTopicId = all[0].topicId; curTitle = all[0].topicTitle;
+    runFrom(0);
+  }
+
+  function pause() {
+    if (!playing || paused) return;
+    paused = true;
+    if (studioMp3 && htmlAudio) { try { htmlAudio.pause(); } catch (e) {} }
+    else { token++; stopHardware(); }
+    emitState();
+  }
+  function resume() {
+    if (!playing || !paused) return;
+    paused = false;
+    if (studioMp3 && htmlAudio) { htmlAudio.playbackRate = speed; htmlAudio.play().catch(function () {}); emitState(); }
+    else runFrom(curIdx);
+  }
+  function togglePlay() { if (playing && !paused) pause(); else if (playing && paused) resume(); else playTopic(); }
+  function prev() { if (!queue.length) return; if (studioMp3 && htmlAudio) { htmlAudio.currentTime = Math.max(0, htmlAudio.currentTime - 10); return; } runFrom(Math.max(0, curIdx - 1)); }
+  function next() { if (!queue.length) return; if (studioMp3 && htmlAudio && htmlAudio.duration) { htmlAudio.currentTime = Math.min(htmlAudio.duration - 0.5, htmlAudio.currentTime + 10); return; } runFrom(Math.min(queue.length - 1, curIdx + 1)); }
+
+  function setSpeed(val) {
+    var r = parseFloat(val); if (!isFinite(r) || r < 0.6 || r > 1.8) return;
+    speed = r; try { localStorage.setItem(K_SPD, String(speed)); } catch (e) {}
+    updateHint();
+    if (playing && !paused) { if (studioMp3 && htmlAudio) htmlAudio.playbackRate = speed; else runFrom(curIdx); }
+    emitState();
+  }
+
+  function toggleTeach() {
+    teachMode = !teachMode; try { localStorage.setItem(K_TCH, teachMode ? "1" : "0"); } catch (e) {}
+    if (typeof showToast === "function") showToast(teachMode ? "Indian Professor Style ON" : "Direct Notes Reading ON");
+    if (playing && !paused) { if (scope === "unit") playUnit(curTopicId); else playTopic(curTopicId); } else emitState();
+  }
+
+  function toggleRepeat() {
+    repeat = !repeat; try { localStorage.setItem(K_REP, repeat ? "1" : "0"); } catch (e) {}
+    if (typeof showToast === "function") showToast(repeat ? "Loop Topic ON" : "Loop Topic OFF");
+    emitState();
+  }
+
+  function setSleep(mins) {
+    if (sleepId) { clearTimeout(sleepId); sleepId = null; }
+    var m = parseInt(mins, 10) || 0;
+    if (m > 0) {
+      sleepId = setTimeout(function () { stop(); if (typeof showToast === "function") showToast("Sleep timer ended audio."); }, m * 60000);
+      if (typeof showToast === "function") showToast("Sleep timer: " + m + " min");
+    }
+  }
+
+  async function testVoice() {
+    var lang = langNow(), chosen = resolveVoice(lang);
+    stop();
+    var txt = lang === "te"
+      ? "\u0c28\u0c2e\u0c38\u0c4d\u0c15\u0c3e\u0c30\u0c02 \u0c38\u0c4d\u0c1f\u0c42\u0c21\u0c46\u0c02\u0c1f\u0c4d\u0c38\u0c4d. \u0c07\u0c26\u0c3f \u0c32\u0c3e \u0c38\u0c4d\u0c1f\u0c21\u0c40\u0c38\u0c4d \u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c35\u0c3e\u0c2f\u0c3f\u0c38\u0c4d."
+      : (lang === "hi"
+        ? "\u0928\u092e\u0938\u094d\u0924\u0947 \u0938\u094d\u091f\u0942\u0921\u0947\u0902\u091f\u094d\u0938\u0964 \u092f\u0939 \u0932\u0949 \u0938\u094d\u091f\u0921\u0940\u091c\u093c \u0915\u0940 \u0939\u093f\u0902\u0926\u0940 \u0906\u0935\u093e\u091c\u093c \u0939\u0948\u0964"
+        : "Hello students. This is your selected Law Studyes Indian voice.");
+    if (chosen && chosen.isStudio) {
+      var tid = (typeof state !== "undefined" && state.activeTopicId) || curTopicId;
+      if (tid && await tryMp3(tid, lang, ++token)) return;
+      chosen = chosen.fallback;
+    }
+    if (typeof showToast === "function") showToast("Testing: " + (chosen ? chosen.name : ("System " + bcp47(lang))));
+    await speakChunk(txt, lang, chosen);
+  }
+
+  function getState() {
+    var it = queue[curIdx] || null, tot = queue.length || 0, pct = tot ? Math.round(((curIdx + 1) / tot) * 100) : 0;
     return {
-      isPlaying: !!(aud.isPlaying && !aud.isPaused),
-      isPaused: !!(aud.isPlaying && aud.isPaused),
-      topicTitle: title,
-      activeTitle: (tEl && tEl.textContent) ? tEl.textContent : title,
-      counterText: (cEl && cEl.textContent) ? cEl.textContent : "Ready to listen",
-      mode: aud.mode || "topic",
-      lang: getActiveBcp47()
+      playing: playing, isPlaying: playing && !paused, paused: paused, topicId: curTopicId,
+      title: curTitle || "Select a Topic to Listen", topicTitle: curTitle || "Select a Topic to Listen",
+      caption: studioMp3 ? "Playing HD Studio Human Voice (MP3)" : (it ? it.text : ""),
+      currentText: studioMp3 ? "Playing HD Studio Human Voice (MP3)" : (it ? it.text : ""),
+      stepIdx: it ? it.stepIdx : -1, index: curIdx, currentIndex: curIdx, total: tot, progress: pct, percent: pct,
+      scope: scope, teachingMode: teachMode, repeat: repeat, speed: speed, lang: langNow(), voiceName: curVoiceLbl, studioMp3: studioMp3
     };
   }
 
   function emitState() {
-    var s = getSnapshot();
-    var tEl = document.getElementById("audioCurrentTitle");
-    var cEl = document.getElementById("audioQueueCounter");
-    var bEl = document.getElementById("audioModeBadge");
-    if (tEl && !s.isPlaying && !s.isPaused) {
-      tEl.textContent = s.topicTitle;
-      if (cEl) cEl.textContent = "Ready (" + s.lang + ")";
-      if (bEl) bEl.textContent = "Topic Mode";
-    }
-    window.dispatchEvent(new CustomEvent("ls:audio-state", { detail: s }));
+    var st = getState(), el;
+    if ((el = document.getElementById("audioCurrentTitle"))) el.textContent = st.title;
+    if ((el = document.getElementById("audioModeBadge"))) el.textContent = st.studioMp3 ? "HD Studio MP3" : (st.teachingMode ? "Indian Professor" : "Direct Notes");
+    if ((el = document.getElementById("audioQueueCounter"))) el.textContent = st.total ? ((st.index + 1) + " / " + st.total) : "Ready";
+    if ((el = document.getElementById("liveCaptionStrip"))) { el.textContent = st.caption || "Tap Play to start Audio"; el.classList.remove("hidden"); }
+    if ((el = document.getElementById("audioProgressBar")) && !st.studioMp3) el.style.width = st.percent + "%";
+    if ((el = document.getElementById("audioPlayPauseBtn"))) { el.textContent = (st.playing && !st.paused) ? "Pause" : (st.paused ? "Resume" : "Play"); }
+    if ((el = document.getElementById("teachingModeBtn"))) { el.textContent = st.teachingMode ? "Professor Mode: ON" : "Direct Notes: ON"; el.classList.toggle("active", st.teachingMode); }
+    if ((el = document.getElementById("repeatTopicBtn"))) { el.textContent = st.repeat ? "Loop: ON" : "Loop: OFF"; el.classList.toggle("active", st.repeat); }
+    if ((el = document.getElementById("lsMiniTitle"))) el.textContent = st.title;
+    if ((el = document.getElementById("lsMiniSub"))) el.textContent = (st.playing && !st.paused) ? (st.voiceName + " - " + st.percent + "%") : (st.paused ? "Paused" : "Tap to open Audio Player");
+    if ((el = document.getElementById("lsMiniPulse"))) el.style.display = (st.playing && !st.paused) ? "block" : "none";
+    try { window.dispatchEvent(new CustomEvent("ls:audio-state", { detail: st })); } catch (e) {}
   }
 
-  function togglePlayPause() {
-    patchNativeTts();
-    patchWebSpeechLang();
-    if (typeof state === "undefined" || !state.audio) return;
-    var hasNative = !!getNativeTts(), hasWeb = ("speechSynthesis" in window);
-    if (!hasNative && !hasWeb) { if (typeof showToast === "function") showToast("Install Google Speech Services for audio."); return; }
-
-    if (state.audio.isPlaying && !state.audio.isPaused) {
-      clearTimeout(state.audio.pauseTimerHandle);
-      state.audio.isPaused = true;
-      if (hasNative) stopHardware();
-      else { try { window.speechSynthesis.pause(); } catch (e) { window.speechSynthesis.cancel(); } }
-      if (typeof updateAudioUI === "function") updateAudioUI();
-      emitState();
-      return;
-    }
-    if (state.audio.isPlaying && state.audio.isPaused) {
-      state.audio.isPaused = false;
-      if (hasNative) { if (typeof playQueueIndex === "function") playQueueIndex(state.audio.index || 0, state.audio.chunkIndex || 0); }
-      else if (hasWeb && window.speechSynthesis.paused) { window.speechSynthesis.resume(); if (typeof updateAudioUI === "function") updateAudioUI(); }
-      else if (typeof playQueueIndex === "function") { playQueueIndex(state.audio.index || 0, state.audio.chunkIndex || 0); }
-      emitState();
-      return;
-    }
-    if (typeof startTopicAudio === "function" && state.activeTopicId) {
-      startTopicAudio(state.activeTopicId);
-      setTimeout(emitState, 80);
-    }
+  function cleanClone(id) {
+    var el = document.getElementById(id);
+    if (!el || el.__lsClean323) return el;
+    var c = el.cloneNode(true); c.__lsClean323 = true;
+    if (el.parentNode) el.parentNode.replaceChild(c, el);
+    return c;
   }
 
-  function stopAll() {
-    if (typeof state !== "undefined" && state.audio) {
-      clearTimeout(state.audio.pauseTimerHandle);
-      state.audio.isPlaying = false;
-      state.audio.isPaused = false;
+  function bindControls() {
+    var b;
+    if ((b = cleanClone("audioPlayPauseBtn")) && !b.__w) { b.__w = true; b.addEventListener("click", togglePlay); }
+    if ((b = cleanClone("audioPrevBtn")) && !b.__w) { b.__w = true; b.addEventListener("click", prev); }
+    if ((b = cleanClone("audioNextBtn")) && !b.__w) { b.__w = true; b.addEventListener("click", next); }
+    if ((b = cleanClone("audioStopBtn")) && !b.__w) { b.__w = true; b.addEventListener("click", stop); }
+    if ((b = cleanClone("teachingModeBtn")) && !b.__w) { b.__w = true; b.addEventListener("click", toggleTeach); }
+    if ((b = cleanClone("repeatTopicBtn")) && !b.__w) { b.__w = true; b.addEventListener("click", toggleRepeat); }
+    if ((b = cleanClone("sleepTimerSelect")) && !b.__w) { b.__w = true; b.addEventListener("change", function () { setSleep(b.value); }); }
+    if ((b = cleanClone("audioSpeedSelect")) && !b.__w) {
+      b.__w = true;
+      b.innerHTML = '<option value="0.8">0.8x (Slow)</option><option value="0.96">1.0x (Natural)</option><option value="1.15">1.15x (Brisk)</option><option value="1.3">1.3x (Revision)</option>';
+      b.value = String(speed); if (b.selectedIndex === -1) b.value = "0.96";
+      b.addEventListener("change", function () { setSpeed(b.value); });
     }
-    stopHardware();
-    if (typeof updateAudioUI === "function") updateAudioUI();
-    setTimeout(emitState, 60);
-  }
-
-  function bindEngine() {
-    patchNativeTts();
-    patchWebSpeechLang();
-    var pBtn = document.getElementById("audioPlayPauseBtn");
-    if (pBtn && !pBtn.__lsEng) {
-      pBtn.__lsEng = true;
-      var fresh = pBtn.cloneNode(true);
-      pBtn.parentNode.replaceChild(fresh, pBtn);
-      fresh.addEventListener("click", function (ev) { ev.preventDefault(); ev.stopPropagation(); togglePlayPause(); });
-    }
-    var sBtn = document.getElementById("audioStopBtn");
-    if (sBtn && !sBtn.__lsStop) { sBtn.__lsStop = true; sBtn.addEventListener("click", function () { stopAll(); }, true); }
-    ["audioPrevBtn", "audioNextBtn"].forEach(function (id) {
-      var b = document.getElementById(id);
-      if (b && !b.__lsSkip) { b.__lsSkip = true; b.addEventListener("click", function () { stopHardware(); setTimeout(emitState, 80); }, true); }
-    });
-    var spd = document.getElementById("audioSpeedSelect");
-    if (spd && !spd.__lsSpd) {
-      spd.__lsSpd = true;
-      spd.addEventListener("change", function () {
-        if (typeof state !== "undefined" && state.audio) {
-          state.audio.speed = parseFloat(spd.value) || 1.15;
-          if (state.audio.isPlaying && !state.audio.isPaused && typeof playQueueIndex === "function") {
-            stopHardware(); playQueueIndex(state.audio.index || 0, state.audio.chunkIndex || 0);
-          }
-        }
+    var vcSel = cleanClone("audioVoiceSelect");
+    if (vcSel && !vcSel.__w) {
+      vcSel.__w = true;
+      vcSel.addEventListener("change", function () {
+        var l = langNow(); setSavedVc(l, vcSel.value);
+        var rv = resolveVoice(l); curVoiceLbl = rv ? rv.name : ("System " + bcp47(l));
+        updateHint();
+        if (typeof showToast === "function") showToast("Voice: " + curVoiceLbl);
+        if (playing && !paused) runFrom(vcSel.value === "studio-mp3" ? 0 : curIdx);
+        emitState();
       });
     }
-    if (typeof window.updateAudioUI === "function" && !window.__lsEngUpd) {
-      window.__lsEngUpd = true;
-      var oU = window.updateAudioUI;
-      window.updateAudioUI = function () { var r = oU.apply(this, arguments); try { emitState(); } catch (e) {} return r; };
+    var vcHost = document.getElementById("lsPwVoiceHost");
+    if (vcHost) {
+      var oldR = document.getElementById("lsPwVoiceActionRow");
+      if (oldR && !oldR.__v323) oldR.remove();
+      if (!document.getElementById("lsPwVoiceActionRow")) {
+        var row = document.createElement("div"); row.id = "lsPwVoiceActionRow"; row.__v323 = true;
+        row.style.cssText = "display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;";
+        row.innerHTML = '<span id="lsPwVoiceActiveHint" style="font-size:11px;font-weight:700;color:#7B1E2B;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>' +
+          '<button type="button" id="lsPwTestVoiceBtn" style="padding:5px 11px;border-radius:8px;border:1px solid #7B1E2B;background:#7B1E2B;color:#FFF;font-size:11px;font-weight:800;cursor:pointer;flex-shrink:0;">Test Voice</button>';
+        vcHost.appendChild(row);
+        row.querySelector("#lsPwTestVoiceBtn").addEventListener("click", testVoice);
+      }
     }
-    if (typeof window.renderReadingPane === "function" && !window.__lsEngRen) {
-      window.__lsEngRen = true;
-      var oR = window.renderReadingPane;
-      window.renderReadingPane = function () {
-        var r = oR.apply(this, arguments);
-        try {
-          if (typeof state !== "undefined" && state.audio && state.audio.queue && state.audio.queue.length) {
-            var cur = state.audio.queue[state.audio.index || 0];
-            if (cur && cur.topicId && state.activeTopicId && cur.topicId !== state.activeTopicId && state.audio.mode !== "unit") {
-              stopHardware(); clearTimeout(state.audio.pauseTimerHandle);
-              state.audio.isPlaying = false; state.audio.isPaused = false; state.audio.queue = [];
-              if (typeof updateAudioUI === "function") updateAudioUI();
-            }
-          }
-          emitState();
-        } catch (e) {}
-        return r;
-      };
-    }
-    emitState();
+    populateVoices(); emitState();
   }
 
-  window.addEventListener("ls:lang-changed", function () {
-    cachedVoice = {};
-    stopAll();
-  });
-
   window.LSAudioEngine = {
-    toggle: togglePlayPause,
-    stop: stopAll,
-    stopHardware: stopHardware,
-    playTopic: function () { if (typeof startTopicAudio === "function" && state && state.activeTopicId) { stopHardware(); startTopicAudio(state.activeTopicId); setTimeout(emitState, 80); } },
-    playUnit: function () { if (typeof startUnitAudio === "function" && state && state.activeSubjectId) { stopHardware(); startUnitAudio(state.activeSubjectId, state.expandedUnitNo); setTimeout(emitState, 80); } },
-    getSnapshot: getSnapshot,
-    emitState: emitState
+    playTopic: playTopic, playUnit: playUnit, play: togglePlay, pause: pause, resume: resume, togglePlay: togglePlay,
+    stop: stop, stopHardware: stopHardware, prev: prev, next: next, jumpTo: runFrom, setSpeed: setSpeed,
+    toggleTeachingMode: toggleTeach, toggleRepeat: toggleRepeat, setSleepTimer: setSleep,
+    testVoice: testVoice, refreshVoices: refreshVoices, emitState: emitState, getState: getState
   };
 
+  function boot() { loadPrefs(); loadManifest().then(function () { refreshVoices().then(bindControls); }); }
+  if ("speechSynthesis" in window && "onvoiceschanged" in window.speechSynthesis) window.speechSynthesis.onvoiceschanged = refreshVoices;
+  window.addEventListener("ls:lang-changed", function () { stop(); populateVoices(); });
   window.addEventListener("DOMContentLoaded", function () {
-    setTimeout(bindEngine, 250);
-    setTimeout(bindEngine, 1100);
+    setTimeout(boot, 250); setTimeout(bindControls, 900); setTimeout(bindControls, 1800);
+    if (typeof window.renderReadingPane === "function" && !window.__lsAudHook323) {
+      window.__lsAudHook323 = true;
+      var orig = window.renderReadingPane;
+      window.renderReadingPane = function () { var r = orig.apply(this, arguments); setTimeout(populateVoices, 60); return r; };
+    }
   });
 })();
 } catch (__lsModErr) { console.error('[LS Module Error: ls-audio-engine.js]', __lsModErr); }
@@ -1968,20 +1878,10 @@ try {
 try {
 (function () {
   "use strict";
-  if (window.__lsIndianProfessorV321) return;
-  window.__lsIndianProfessorV321 = true;
+  if (window.__lsIndianProfessorV323) return;
+  window.__lsIndianProfessorV323 = true;
 
-  var AUDIO_CACHE = "ls-prof-audio-v1", CDN_BASE = "https://law-studyes.vercel.app";
-  var manifest = null, htmlAudio = null, playing = false, paused = false, curIdx = 0, sentences = [], token = 0;
-
-  function vc() { return window.LSVoiceController || null; }
-  function getEng() { return vc() ? vc().getEngine() : "studio"; }
-  function getGen() { return vc() ? vc().getGender() : "female"; }
-  function getRate() { return vc() ? vc().getRate() : 1.0; }
-  function getPitch() { return vc() ? vc().getPitch() : 1.0; }
-  function bcp47(l) { return vc() ? vc().langToBcp47(l) : (l === "te" ? "te-IN" : (l === "hi" ? "hi-IN" : "en-IN")); }
-  function clean(s) { return String(s || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(); }
-
+  function clean(s) { return String(s || "").replace(/<[^>]+>/g, " ").replace(/\s*\|\s*/g, ". ").replace(/\s+/g, " ").trim(); }
   function topicTitle(tid) {
     try { var m = typeof findTopicMeta === "function" ? findTopicMeta(tid) : null; if (m && m.topic && m.topic.title) return m.topic.title; } catch (e) {}
     return String(tid || "Topic").replace(/-/g, " ");
@@ -1990,273 +1890,145 @@ try {
   function buildLesson(tid, lang) {
     var rec = (typeof state !== "undefined" && state.notes) ? state.notes[tid] : null;
     if (!rec) return null;
-    var ld = rec[lang] || rec.en;
-    if (!ld) return null;
+    var ld = rec[lang] || rec.en; if (!ld) return null;
     var t = topicTitle(tid), m1 = clean(ld.inOneMinute), pr = clean(ld.legalProvision), mn = clean(ld.meaning);
-    var pts = Array.isArray(ld.keyPoints) ? ld.keyPoints.slice(0, 5).map(function (x) { return clean(typeof x === "string" ? x : (x && (x.point || x.text || x.summary))); }).filter(Boolean) : [];
+    var pts = Array.isArray(ld.keyPoints) ? ld.keyPoints.slice(0, 5).map(function (x, i) { var tx = clean(typeof x === "string" ? x : (x && (x.point || x.text || x.summary))); return tx ? ((i + 1) + ". " + tx) : ""; }).filter(Boolean) : [];
     var c0 = Array.isArray(ld.caseLaws) && ld.caseLaws[0];
     var topCase = !c0 ? "" : (typeof c0 === "string" ? clean(c0) : (clean(c0.name || c0.title) + (c0.principle || c0.summary ? " - " + clean(c0.principle || c0.summary) : "")));
 
     if (lang === "te") {
       return {
-        heading: "\u0c07\u0c02\u0c21\u0c3f\u0c2f\u0c28\u0c4d \u0c2a\u0c4d\u0c30\u0c4a\u0c2b\u0c46\u0c38\u0c30\u0c4d \u0c15\u0c4d\u0c32\u0c3e\u0c38\u0c4d\u200c\u0c30\u0c42\u0c2e\u0c4d (AI Teaching Mode)",
-        sub: "\u0c38\u0c3f\u0c02\u0c2a\u0c41\u0c32\u0c4d \u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c15\u0c4d\u0c32\u0c3e\u0c38\u0c4d \u0c35\u0c3f\u0c35\u0c30\u0c23 + \u0c0e\u0c17\u0c4d\u0c1c\u0c3e\u0c2e\u0c4d \u0c1f\u0c3f\u0c2a\u0c4d\u0c38\u0c4d",
+        heading: "\u0c07\u0c02\u0c21\u0c3f\u0c2f\u0c28\u0c4d \u0c2a\u0c4d\u0c30\u0c4a\u0c2b\u0c46\u0c38\u0c30\u0c4d \u0c15\u0c4d\u0c32\u0c3e\u0c38\u0c4d\u200c\u0c30\u0c42\u0c2e\u0c4d",
+        sub: "\u0c38\u0c41\u0c32\u0c2d\u0c2e\u0c48\u0c28 \u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c35\u0c3f\u0c35\u0c30\u0c23 & \u0c0e\u0c17\u0c4d\u0c1c\u0c3e\u0c2e\u0c4d \u0c1f\u0c3f\u0c2a\u0c4d\u0c38\u0c4d",
         steps: [
-          { tag: "\u0c15\u0c4d\u0c32\u0c3e\u0c38\u0c4d", text: "\u0c28\u0c2e\u0c38\u0c4d\u0c15\u0c3e\u0c30\u0c02 \u0c38\u0c4d\u0c1f\u0c42\u0c21\u0c46\u0c02\u0c1f\u0c4d\u0c38\u0c4d! \u0c08\u0c30\u0c4b\u0c1c\u0c41 " + t + " \u0c17\u0c41\u0c30\u0c3f\u0c02\u0c1a\u0c3f \u0c38\u0c3f\u0c02\u0c2a\u0c41\u0c32\u0c4d\u200c\u0c17\u0c3e \u0c28\u0c47\u0c30\u0c4d\u0c1a\u0c41\u0c15\u0c41\u0c02\u0c26\u0c3e\u0c02." },
-          m1 ? { tag: "\u0c38\u0c3e\u0c30\u0c3e\u0c02\u0c36\u0c02", text: m1 } : null,
-          pr ? { tag: "\u0c38\u0c46\u0c15\u0c4d\u0c37\u0c28\u0c4d", text: pr } : null,
-          mn ? { tag: "\u0c35\u0c3f\u0c35\u0c30\u0c23", text: mn } : null,
-          pts.length ? { tag: "\u0c2a\u0c3e\u0c2f\u0c3f\u0c02\u0c1f\u0c4d\u0c32\u0c41", text: pts.join(" | ") } : null,
-          topCase ? { tag: "\u0c15\u0c47\u0c38\u0c4d \u0c32\u0c3e", text: topCase } : null
+          { step: 0, tag: "\u0c2a\u0c30\u0c3f\u0c1a\u0c2f\u0c02", text: "\u0c08\u0c30\u0c4b\u0c1c\u0c41 \u0c2e\u0c28\u0c02 " + t + " \u0c17\u0c41\u0c30\u0c3f\u0c02\u0c1a\u0c3f \u0c38\u0c41\u0c32\u0c2d\u0c02\u0c17\u0c3e \u0c05\u0c30\u0c4d\u0c25\u0c02 \u0c1a\u0c47\u0c38\u0c41\u0c15\u0c41\u0c02\u0c26\u0c3e\u0c02." },
+          m1 ? { step: 1, tag: "\u0c12\u0c15 \u0c28\u0c3f\u0c2e\u0c3f\u0c37\u0c02\u0c32\u0c4b", text: m1 } : null,
+          pr ? { step: 2, tag: "\u0c1a\u0c1f\u0c4d\u0c1f\u0c2a\u0c30\u0c2e\u0c48\u0c28 \u0c28\u0c3f\u0c2c\u0c02\u0c27\u0c28", text: pr } : null,
+          mn ? { step: 3, tag: "\u0c38\u0c4d\u0c2a\u0c37\u0c4d\u0c1f\u0c2e\u0c48\u0c28 \u0c05\u0c30\u0c4d\u0c25\u0c02", text: mn } : null,
+          pts.length ? { step: 4, tag: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f \u0c2a\u0c3e\u0c2f\u0c3f\u0c02\u0c1f\u0c4d\u0c32\u0c41", text: pts.join(" ") } : null,
+          topCase ? { step: 5, tag: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f\u0c2e\u0c48\u0c28 \u0c15\u0c47\u0c38\u0c41 \u0c32\u0c3e", text: topCase } : null
         ].filter(Boolean)
       };
     }
     if (lang === "hi") {
       return {
-        heading: "\u0907\u0902\u0921\u093f\u092f\u0928 \u092a\u094d\u0930\u094b\u092b\u0947\u0938\u0930 \u0915\u094d\u0932\u093e\u0938\u0930\u0942\u092e (AI Teaching Mode)",
-        sub: "\u0906\u0938\u093e\u0928 \u0939\u093f\u0902\u0926\u0940 \u0915\u094d\u0932\u093e\u0938\u0930\u0942\u092e \u0938\u092e\u091d + \u090f\u0917\u094d\u091c\u093e\u092e \u091f\u094d\u0930\u093f\u0915\u094d\u0938",
+        heading: "\u0907\u0902\u0921\u093f\u092f\u0928 \u092a\u094d\u0930\u094b\u092b\u0947\u0938\u0930 \u0915\u094d\u0932\u093e\u0938\u0930\u0942\u092e",
+        sub: "\u0906\u0938\u093e\u0928 \u0939\u093f\u0902\u0926\u0940 \u0935\u094d\u092f\u093e\u0916\u094d\u092f\u093e & \u090f\u0917\u094d\u091c\u093e\u092e \u091f\u093f\u092a\u094d\u0938",
         steps: [
-          { tag: "\u0915\u094d\u0932\u093e\u0938", text: "\u0928\u092e\u0938\u094d\u0924\u0947 \u0938\u094d\u091f\u0942\u0921\u0947\u0902\u091f\u094d\u0938! \u0906\u091c \u0939\u092e " + t + " \u0915\u094b \u0906\u0938\u093e\u0928 \u0915\u094d\u0932\u093e\u0938\u0930\u0942\u092e \u0905\u0902\u0926\u093e\u091c \u092e\u0947\u0902 \u0938\u092e\u091d\u0947\u0902\u0917\u0947\u0964" },
-          m1 ? { tag: "\u0915\u0949\u0928\u094d\u0938\u0947\u092a\u094d\u091f", text: m1 } : null,
-          pr ? { tag: "\u0938\u0947\u0915\u094d\u0936\u0928", text: pr } : null,
-          mn ? { tag: "\u0905\u0930\u094d\u0925", text: mn } : null,
-          pts.length ? { tag: "\u092a\u0949\u0907\u0902\u091f\u094d\u0938", text: pts.join(" | ") } : null,
-          topCase ? { tag: "\u0915\u0947\u0938 \u0932\u0949", text: topCase } : null
+          { step: 0, tag: "\u092a\u0930\u093f\u091a\u092f", text: "\u0906\u091c \u0939\u092e " + t + " \u0915\u094b \u0906\u0938\u093e\u0928 \u0914\u0930 \u0938\u094d\u092a\u0937\u094d\u091f \u092d\u093e\u0937\u093e \u092e\u0947\u0902 \u0938\u092e\u091d\u0947\u0902\u0917\u0947\u0964" },
+          m1 ? { step: 1, tag: "\u090f\u0915 \u092e\u093f\u0928\u091f \u092e\u0947\u0902", text: m1 } : null,
+          pr ? { step: 2, tag: "\u0935\u093f\u0927\u093f\u0915 \u092a\u094d\u0930\u093e\u0935\u0927\u093e\u0928", text: pr } : null,
+          mn ? { step: 3, tag: "\u0938\u0930\u0932 \u0905\u0930\u094d\u0925", text: mn } : null,
+          pts.length ? { step: 4, tag: "\u092e\u0941\u0916\u094d\u092f \u092a\u0949\u0907\u0902\u091f\u094d\u0938", text: pts.join(" ") } : null,
+          topCase ? { step: 5, tag: "\u092a\u094d\u0930\u092e\u0941\u0916 \u0915\u0947\u0938 \u0932\u0949", text: topCase } : null
         ].filter(Boolean)
       };
     }
     return {
-      heading: "Indian Professor Classroom (AI Teaching Mode)",
-      sub: "Relatable Indian LL.B. classroom explanation + exam answer strategy",
+      heading: "Indian Professor Classroom",
+      sub: "Clear Indian LL.B. classroom explanation & exam structure",
       steps: [
-        { tag: "Class Start", text: "Hello students! Let us understand " + t + " in simple Indian classroom style." },
-        m1 ? { tag: "1-Min Core", text: m1 } : null,
-        pr ? { tag: "Section Hook", text: pr } : null,
-        mn ? { tag: "Plain Meaning", text: mn } : null,
-        pts.length ? { tag: "Scoring Points", text: pts.join(" | ") } : null,
-        topCase ? { tag: "Landmark Case", text: topCase } : null
+        { step: 0, tag: "Overview", text: "Today let us clearly understand " + t + "." },
+        m1 ? { step: 1, tag: "1-Minute Core", text: m1 } : null,
+        pr ? { step: 2, tag: "Legal Provision", text: pr } : null,
+        mn ? { step: 3, tag: "Plain Meaning", text: mn } : null,
+        pts.length ? { step: 4, tag: "Key Scoring Points", text: pts.join(" ") } : null,
+        topCase ? { step: 5, tag: "Landmark Case", text: topCase } : null
       ].filter(Boolean)
     };
   }
 
   function injectCss() {
-    if (document.getElementById("lsProfCssV321")) return;
-    var st = document.createElement("style");
-    st.id = "lsProfCssV321";
+    if (document.getElementById("lsProfCssV323")) return;
+    var st = document.createElement("style"); st.id = "lsProfCssV323";
     st.textContent =
       ".ls-prof-card{margin:14px 0 16px;border-radius:16px;background:linear-gradient(135deg,#FFFBF2 0%,#FDF4F5 100%);border:1.5px solid #E5C9A8;padding:12px 14px}" +
       ".ls-prof-title{font-size:13.5px;font-weight:800;color:#7B1E2B}.ls-prof-sub{font-size:11px;color:#6B5B4D;font-weight:600}" +
       ".ls-prof-controls{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px}" +
-      ".ls-prof-btn,.ls-prof-sel{padding:6px 10px;border-radius:999px;border:1px solid #DFC5A4;background:#FFF;color:#7B1E2B;font-size:11.5px;font-weight:800;cursor:pointer}" +
-      ".ls-prof-btn.primary{background:#7B1E2B;color:#FFF;border-color:#7B1E2B}.ls-prof-btn.active{background:#8C6D46;color:#FFF;border-color:#8C6D46}" +
-      ".ls-prof-status{font-size:11px;color:#7B1E2B;font-weight:700;margin-top:8px}.ls-prof-body{margin-top:10px;display:flex;flex-direction:column;gap:7px}" +
+      ".ls-prof-btn{padding:6px 11px;border-radius:999px;border:1px solid #DFC5A4;background:#FFF;color:#7B1E2B;font-size:11.5px;font-weight:800;cursor:pointer}" +
+      ".ls-prof-btn.primary{background:#7B1E2B;color:#FFF;border-color:#7B1E2B}.ls-prof-status{font-size:11px;color:#7B1E2B;font-weight:700;margin-top:8px}" +
+      ".ls-prof-body{margin-top:10px;display:flex;flex-direction:column;gap:7px}" +
       ".ls-prof-step{background:#FFF;border:1px solid #EFE4D6;border-left:3.5px solid #7B1E2B;border-radius:10px;padding:8px 10px;font-size:12.5px;line-height:1.55}" +
       ".ls-prof-step.speaking{background:#FFF7E6;border-left-color:#B45309}.ls-prof-tag{display:inline-block;font-size:10px;font-weight:800;color:#7B1E2B;background:#FBF1F2;padding:2px 7px;border-radius:999px;margin-bottom:4px}";
     document.head.appendChild(st);
   }
 
-  async function getManifest() {
-    if (manifest !== null) return manifest;
-    manifest = {};
-    try { var r = await fetch("./audio/manifest.json", { cache: "no-store" }); if (r.ok) manifest = await r.json(); } catch (e) {}
-    return manifest;
+  function sync(st) {
+    if (!st) return;
+    var p = document.getElementById("lsProfPlayBtn"), s = document.getElementById("lsProfStopBtn"), el = document.getElementById("lsProfStatus");
+    if (p) p.textContent = (st.playing && !st.paused) ? "Pause Class" : (st.paused ? "Resume Class" : "Listen to Professor");
+    if (s) s.style.display = (st.playing || st.paused) ? "inline-block" : "none";
+    if (el) el.textContent = (st.playing && !st.paused) ? ("Playing: " + st.voiceName + " (" + st.percent + "%)") : (st.paused ? "Paused" : "");
+    document.querySelectorAll("#lsProfLessonBody .ls-prof-step").forEach(function (n) {
+      n.classList.toggle("speaking", st.playing && !st.paused && !st.studioMp3 && parseInt(n.getAttribute("data-step") || "-9", 10) === st.stepIdx);
+    });
   }
-
-  function setStatus(msg) { var el = document.getElementById("lsProfStatus"); if (el) el.textContent = msg || ""; }
-  function highlight(idx) { document.querySelectorAll("#lsProfLessonBody .ls-prof-step").forEach(function (el, i) { el.classList.toggle("speaking", i === idx); }); }
-
-  function syncBtns() {
-    var p = document.getElementById("lsProfPlayBtn"), s = document.getElementById("lsProfStopBtn"),
-        f = document.getElementById("lsProfVoiceFemBtn"), m = document.getElementById("lsProfVoiceMaleBtn"),
-        e = document.getElementById("lsProfEngineSel");
-    if (p) p.textContent = playing ? (paused ? "Resume Class" : "Pause Class") : "Listen to Professor";
-    if (s) s.style.display = (playing || paused) ? "inline-block" : "none";
-    if (f) f.classList.toggle("active", getGen() === "female");
-    if (m) m.classList.toggle("active", getGen() === "male");
-    if (e) e.value = getEng();
-  }
-
-  function stopAudio() {
-    token++; playing = false; paused = false;
-    if (htmlAudio) { try { htmlAudio.pause(); htmlAudio.currentTime = 0; } catch (e) {} htmlAudio = null; }
-    var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-    if (tts && tts.stop) { try { tts.stop().catch(function () {}); } catch (e) {} }
-    if ("speechSynthesis" in window) { try { window.speechSynthesis.cancel(); } catch (e) {} }
-    syncBtns(); highlight(-1);
-  }
-
-  async function tryMp3(tid, lang, tk) {
-    if (getEng() !== "studio" || getGen() !== "female") return false;
-    var mf = await getManifest();
-    var rel = (mf && mf[lang] && mf[lang][tid]) ? mf[lang][tid] : null;
-    if (!rel) return false;
-    var urls = [rel, CDN_BASE + "/" + rel.replace(/^\.\//, "")];
-    for (var i = 0; i < urls.length; i++) {
-      try {
-        var u = urls[i], playUrl = u;
-        if ("caches" in window) {
-          var c = await caches.open(AUDIO_CACHE), hit = await c.match(u);
-          if (hit) playUrl = URL.createObjectURL(await hit.blob());
-          else {
-            var resp = await fetch(u);
-            if (!resp.ok) continue;
-            try { c.put(u, resp.clone()); } catch (e) {}
-            playUrl = URL.createObjectURL(await resp.blob());
-          }
-        }
-        if (tk !== token) return true;
-        htmlAudio = new Audio(playUrl);
-        htmlAudio.playbackRate = getRate();
-        htmlAudio.onended = function () { playing = false; paused = false; setStatus("Class completed (Studio MP3)."); syncBtns(); };
-        await htmlAudio.play();
-        playing = true; paused = false;
-        setStatus("Playing Studio Human MP3 (" + getRate() + "x)");
-        syncBtns();
-        return true;
-      } catch (e) {}
-    }
-    return false;
-  }
-
-  async function speakOne(text, lang) {
-    var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-    if (tts && typeof tts.speak === "function") {
-      await tts.speak({ text: text, lang: bcp47(lang), rate: getRate(), pitch: getPitch(), volume: 1.0, category: "ambient" });
-      return;
-    }
-    if ("speechSynthesis" in window) {
-      await new Promise(function (resolve) {
-        try { var u = new SpeechSynthesisUtterance(text); u.lang = bcp47(lang); u.onend = resolve; u.onerror = resolve; window.speechSynthesis.speak(u); }
-        catch (e) { resolve(); }
-      });
-    }
-  }
-
-  async function loopSpeak(startAt) {
-    var tk = ++token, lang = (typeof state !== "undefined" && state.lang) ? state.lang : "en";
-    playing = true; paused = false; syncBtns();
-    setStatus("Active: " + getEng().toUpperCase() + " | " + (getGen() === "male" ? "Sir" : "Ma'am") + " | " + bcp47(lang) + " | " + getRate() + "x");
-    for (var i = startAt; i < sentences.length; i++) {
-      if (tk !== token) return;
-      curIdx = i; highlight(i);
-      await speakOne(sentences[i], lang);
-      if (tk !== token) return;
-      await new Promise(function (r) { setTimeout(r, 200); });
-    }
-    if (tk === token) { playing = false; paused = false; highlight(-1); setStatus("Classroom explanation complete!"); syncBtns(); }
-  }
-
-  async function play(resumeIdx) {
-    if (typeof state === "undefined" || !state.activeTopicId) return;
-    if (typeof resumeIdx !== "number" && playing && !paused) {
-      paused = true;
-      if (htmlAudio) { try { htmlAudio.pause(); } catch (e) {} }
-      else {
-        token++;
-        var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-        if (tts && tts.stop) { try { tts.stop().catch(function () {}); } catch (e) {} }
-        if ("speechSynthesis" in window) { try { window.speechSynthesis.cancel(); } catch (e) {} }
-      }
-      setStatus("Class paused."); syncBtns(); return;
-    }
-    if (typeof resumeIdx !== "number" && playing && paused) {
-      paused = false;
-      if (htmlAudio) { htmlAudio.playbackRate = getRate(); try { await htmlAudio.play(); } catch (e) {} syncBtns(); return; }
-      loopSpeak(curIdx); return;
-    }
-    if (window.LSAudioEngine && window.LSAudioEngine.stop) window.LSAudioEngine.stop();
-    stopAudio();
-    var tk = ++token, tid = state.activeTopicId, lang = state.lang || "en";
-    var body = document.getElementById("lsProfLessonBody");
-    if (body) body.style.display = "flex";
-    var lesson = buildLesson(tid, lang);
-    if (!lesson || !lesson.steps.length) return;
-    sentences = lesson.steps.map(function (s) { return s.text; });
-    curIdx = (typeof resumeIdx === "number" && resumeIdx >= 0 && resumeIdx < sentences.length) ? resumeIdx : 0;
-    if (curIdx === 0 && await tryMp3(tid, lang, tk)) return;
-    loopSpeak(curIdx);
-  }
-
-  window.addEventListener("ls:voice-settings-changed", function () {
-    syncBtns();
-    if (!playing || paused) return;
-    if (htmlAudio && getEng() === "studio" && getGen() === "female") {
-      htmlAudio.playbackRate = getRate();
-      setStatus("Updated Studio MP3 speed (" + getRate() + "x)");
-      return;
-    }
-    var idx = curIdx;
-    stopAudio();
-    setTimeout(function () { play(idx); }, 130);
-  });
 
   function renderCard() {
     try {
       injectCss();
       if (typeof state === "undefined" || !state.activeTopicId) return;
-      var pane = document.getElementById("readingPane");
-      if (!pane) return;
+      var pane = document.getElementById("readingPane"); if (!pane) return;
       var old = document.getElementById("lsIndianProfessorCard"); if (old) old.remove();
-      var lesson = buildLesson(state.activeTopicId, state.lang || "en");
-      if (!lesson) return;
+      var lesson = buildLesson(state.activeTopicId, state.lang || "en"); if (!lesson) return;
 
-      var card = document.createElement("section");
-      card.id = "lsIndianProfessorCard"; card.className = "ls-prof-card";
+      var card = document.createElement("section"); card.id = "lsIndianProfessorCard"; card.className = "ls-prof-card";
       card.innerHTML =
         '<div class="ls-prof-title">' + lesson.heading + '</div><div class="ls-prof-sub">' + lesson.sub + '</div>' +
         '<div class="ls-prof-controls">' +
           '<button type="button" id="lsProfPlayBtn" class="ls-prof-btn primary">Listen to Professor</button>' +
           '<button type="button" id="lsProfStopBtn" class="ls-prof-btn" style="display:none;">Stop</button>' +
-          '<select id="lsProfEngineSel" class="ls-prof-sel">' +
-            '<option value="studio">Engine: Studio MP3</option><option value="neural">Engine: Indian Neural</option><option value="device">Engine: Offline Device</option>' +
-          '</select>' +
-          '<button type="button" id="lsProfVoiceFemBtn" class="ls-prof-btn">Ma\'am</button>' +
-          '<button type="button" id="lsProfVoiceMaleBtn" class="ls-prof-btn">Sir</button>' +
-          '<button type="button" id="lsProfTestBtn" class="ls-prof-btn">Test Voice</button>' +
-          '<button type="button" id="lsProfToggleBodyBtn" class="ls-prof-btn">Show Notes</button>' +
-        '</div>' +
-        '<div id="lsProfStatus" class="ls-prof-status"></div><div id="lsProfLessonBody" class="ls-prof-body" style="display:none;"></div>';
+          '<button type="button" id="lsProfOpenPlayerBtn" class="ls-prof-btn">Voice &amp; Speed Settings</button>' +
+          '<button type="button" id="lsProfToggleBodyBtn" class="ls-prof-btn">Show Classroom Notes</button>' +
+        '</div><div id="lsProfStatus" class="ls-prof-status"></div><div id="lsProfLessonBody" class="ls-prof-body" style="display:none;"></div>';
 
       var body = card.querySelector("#lsProfLessonBody");
       lesson.steps.forEach(function (st) {
-        var r = document.createElement("div"); r.className = "ls-prof-step";
+        var r = document.createElement("div"); r.className = "ls-prof-step"; r.setAttribute("data-step", String(st.step));
         r.innerHTML = '<span class="ls-prof-tag">' + st.tag.replace(/</g, "&lt;") + '</span><div>' + st.text.replace(/</g, "&lt;") + '</div>';
         body.appendChild(r);
       });
 
-      card.querySelector("#lsProfPlayBtn").addEventListener("click", function () { play(); });
-      card.querySelector("#lsProfStopBtn").addEventListener("click", stopAudio);
-      card.querySelector("#lsProfEngineSel").addEventListener("change", function (ev) { if (vc()) vc().applySettings({ engine: ev.target.value, voiceId: "auto" }, true); });
-      card.querySelector("#lsProfVoiceFemBtn").addEventListener("click", function () { if (vc()) vc().applySettings({ gender: "female", voiceId: "auto" }, true); });
-      card.querySelector("#lsProfVoiceMaleBtn").addEventListener("click", function () { if (vc()) vc().applySettings({ gender: "male", voiceId: "auto" }, true); });
-      card.querySelector("#lsProfTestBtn").addEventListener("click", function () { if (vc()) vc().testVoice(); });
+      card.querySelector("#lsProfPlayBtn").addEventListener("click", function () {
+        var eng = window.LSAudioEngine; if (!eng) return;
+        var st = eng.getState();
+        if (st.playing && st.topicId === state.activeTopicId) eng.togglePlay();
+        else { body.style.display = "flex"; card.querySelector("#lsProfToggleBodyBtn").textContent = "Hide Classroom Notes"; eng.playTopic(state.activeTopicId, true); }
+      });
+      card.querySelector("#lsProfStopBtn").addEventListener("click", function () { if (window.LSAudioEngine) window.LSAudioEngine.stop(); });
+      card.querySelector("#lsProfOpenPlayerBtn").addEventListener("click", function () {
+        if (window.LSAudioWindow && typeof window.LSAudioWindow.open === "function") window.LSAudioWindow.open();
+        else { var m = document.getElementById("lsPlayerWindowModal"); if (m) m.classList.add("show"); }
+      });
       card.querySelector("#lsProfToggleBodyBtn").addEventListener("click", function (ev) {
-        var open = body.style.display !== "none";
-        body.style.display = open ? "none" : "flex";
-        ev.currentTarget.textContent = open ? "Show Notes" : "Hide Notes";
+        var open = body.style.display !== "none"; body.style.display = open ? "none" : "flex";
+        ev.currentTarget.textContent = open ? "Show Classroom Notes" : "Hide Classroom Notes";
       });
 
       var copyBar = document.getElementById("lsNoteCopyBar");
       if (copyBar && copyBar.parentNode === pane) copyBar.insertAdjacentElement("afterend", card);
       else pane.insertBefore(card, pane.firstChild);
-      syncBtns();
+      if (window.LSAudioEngine) sync(window.LSAudioEngine.getState());
     } catch (e) {}
   }
 
+  window.addEventListener("ls:audio-state", function (ev) { sync(ev.detail); });
   function hook() {
     try {
-      if (typeof window.renderReadingPane === "function" && !window.__lsProfHookV321) {
-        window.__lsProfHookV321 = true;
+      if (typeof window.renderReadingPane === "function" && !window.__lsProfHookV323) {
+        window.__lsProfHookV323 = true;
         var orig = window.renderReadingPane;
-        window.renderReadingPane = function () { stopAudio(); var r = orig.apply(this, arguments); renderCard(); return r; };
+        window.renderReadingPane = function () { var r = orig.apply(this, arguments); renderCard(); return r; };
         renderCard();
       }
     } catch (e) {}
   }
 
-  window.addEventListener("ls:lang-changed", stopAudio);
-  window.LSIndianProfessor = { play: play, stop: stopAudio };
-  window.addEventListener("DOMContentLoaded", function () { setTimeout(hook, 400); setTimeout(hook, 1250); });
+  window.LSIndianProfessor = {
+    play: function () { if (window.LSAudioEngine) window.LSAudioEngine.playTopic(state.activeTopicId, true); },
+    stop: function () { if (window.LSAudioEngine) window.LSAudioEngine.stop(); }
+  };
+  window.addEventListener("DOMContentLoaded", function () { setTimeout(hook, 350); setTimeout(hook, 1200); });
 })();
 } catch (__lsModErr) { console.error('[LS Module Error: ls-indian-professor.js]', __lsModErr); }
 
