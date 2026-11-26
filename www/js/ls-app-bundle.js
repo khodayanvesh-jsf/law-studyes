@@ -1,4 +1,4 @@
-/* Law Studyes v3.2.1 - Unified Crash-Safe Module Bundle (Built 2026-11-26 18:30:51) */
+/* Law Studyes v3.2.2 - Unified Crash-Safe Module Bundle (Built 2026-11-26 18:47:31) */
 
 /* === MODULE: ls-store.js === */
 try {
@@ -552,19 +552,35 @@ try {
 try {
 (function () {
   "use strict";
-  if (window.__lsVoiceCtrlV321) return;
-  window.__lsVoiceCtrlV321 = true;
+  if (window.__lsVoiceCtrlV322) return;
+  window.__lsVoiceCtrlV322 = true;
 
   var K_ENG = "ls_voice_engine_v2", K_GEN = "ls_voice_gender_v2", K_VID = "ls_voice_id_v2", K_RATE = "ls_voice_rate_v2";
   var webVoices = [], capVoices = [], nativeWebSpeak = null, nativeCapSpeak = null;
+  var syncingSelect = false;
+
+  var PRESETS = [
+    { val: "__ls_mode:studio:female", label: "Human Studio MP3 + Neural (Ma'am)" },
+    { val: "__ls_mode:neural:female", label: "Indian Neural Voice (Ma'am)" },
+    { val: "__ls_mode:neural:male",   label: "Indian Neural Voice (Sir)" },
+    { val: "__ls_mode:device:female", label: "Offline Device Voice (Ma'am)" },
+    { val: "__ls_mode:device:male",   label: "Offline Device Voice (Sir)" }
+  ];
 
   function getEngine() { try { return localStorage.getItem(K_ENG) || "studio"; } catch (e) { return "studio"; } }
   function getGender() { try { return localStorage.getItem(K_GEN) || localStorage.getItem("ls_prof_gender_v1") || "female"; } catch (e) { return "female"; } }
   function getVoiceId() { try { return localStorage.getItem(K_VID) || "auto"; } catch (e) { return "auto"; } }
-  function getRate() { try { var r = parseFloat(localStorage.getItem(K_RATE) || "1"); return (isFinite(r) && r >= 0.5 && r <= 2.0) ? r : 1.0; } catch (e) { return 1.0; } }
+  function getRate() {
+    try {
+      var sel = document.getElementById("audioSpeedSelect");
+      var raw = localStorage.getItem(K_RATE) || (sel && sel.value) || "1";
+      var r = parseFloat(raw);
+      return (isFinite(r) && r >= 0.5 && r <= 2.0) ? r : 1.0;
+    } catch (e) { return 1.0; }
+  }
   function getLang() { try { return (typeof state !== "undefined" && state && state.lang) ? String(state.lang).toLowerCase() : "en"; } catch (e) { return "en"; } }
   function toBcp47(l) { l = String(l || getLang()).toLowerCase(); return l === "te" ? "te-IN" : (l === "hi" ? "hi-IN" : "en-IN"); }
-  function getPitch() { return getGender() === "male" ? (getEngine() === "device" ? 0.82 : 0.90) : (getEngine() === "device" ? 1.10 : 1.04); }
+  function getPitch() { return getGender() === "male" ? (getEngine() === "device" ? 0.80 : 0.88) : (getEngine() === "device" ? 1.12 : 1.04); }
 
   function loadWebVoices() {
     try { if ("speechSynthesis" in window) { var v = window.speechSynthesis.getVoices() || []; if (v.length) webVoices = v; } } catch (e) {}
@@ -600,10 +616,16 @@ try {
     var bcp47 = toBcp47(lang), vs = loadWebVoices(), vid = getVoiceId();
     if (!vs.length) return null;
     if (vid && vid !== "auto") {
-      for (var i = 0; i < vs.length; i++) if (vs[i].voiceURI === vid || vs[i].name === vid) return vs[i];
+      if (/^\d+$/.test(vid) && vs[parseInt(vid, 10)]) return vs[parseInt(vid, 10)];
+      for (var i = 0; i < vs.length; i++) {
+        if (vs[i].voiceURI === vid || vs[i].name === vid) return vs[i];
+      }
     }
     var best = null, bestSc = -999, eng = getEngine(), gen = getGender();
-    for (var j = 0; j < vs.length; j++) { var s = scoreVoice(vs[j], bcp47, eng, gen); if (s > bestSc) { bestSc = s; best = vs[j]; } }
+    for (var j = 0; j < vs.length; j++) {
+      var s = scoreVoice(vs[j], bcp47, eng, gen);
+      if (s > bestSc) { bestSc = s; best = vs[j]; }
+    }
     return best;
   }
 
@@ -612,10 +634,15 @@ try {
     if (!vs.length) return -1;
     if (vid && vid !== "auto") {
       if (/^\d+$/.test(vid) && vs[parseInt(vid, 10)]) return parseInt(vid, 10);
-      for (var i = 0; i < vs.length; i++) if (vs[i].voiceURI === vid || vs[i].name === vid) return i;
+      for (var i = 0; i < vs.length; i++) {
+        if (vs[i].voiceURI === vid || vs[i].name === vid) return i;
+      }
     }
     var bestIdx = -1, bestSc = -999, eng = getEngine(), gen = getGender();
-    for (var j = 0; j < vs.length; j++) { var s = scoreVoice(vs[j], bcp47, eng, gen); if (s > bestSc) { bestSc = s; bestIdx = j; } }
+    for (var j = 0; j < vs.length; j++) {
+      var s = scoreVoice(vs[j], bcp47, eng, gen);
+      if (s > bestSc) { bestSc = s; bestIdx = j; }
+    }
     return bestIdx;
   }
 
@@ -624,46 +651,125 @@ try {
     try { if ("speechSynthesis" in window) window.speechSynthesis.cancel(); } catch (e) {}
   }
 
+  function describeActive() {
+    var eng = getEngine(), gen = getGender(), vid = getVoiceId(), rate = getRate(), bcp = toBcp47(getLang());
+    if (vid && vid !== "auto") {
+      var v = resolveWebVoice(getLang());
+      var vname = v ? v.name : ("Voice #" + vid);
+      return "Active: " + vname + " | " + rate + "x";
+    }
+    var eLbl = eng === "studio" ? "Studio MP3" : (eng === "device" ? "Offline Device" : "Indian Neural");
+    return "Active: " + eLbl + " (" + (gen === "male" ? "Sir" : "Ma'am") + ") | " + bcp + " | " + rate + "x";
+  }
+
+  function ensurePlayerSelectPresets() {
+    var sel = document.getElementById("audioVoiceSelect");
+    if (!sel) return;
+    syncingSelect = true;
+    try {
+      var grp = sel.querySelector('optgroup[data-ls-presets="1"]');
+      if (!grp) {
+        grp = document.createElement("optgroup");
+        grp.setAttribute("data-ls-presets", "1");
+        grp.label = "Law Studyes Voice Engines";
+        PRESETS.forEach(function (p) {
+          var opt = document.createElement("option");
+          opt.value = p.val;
+          opt.textContent = p.label;
+          grp.appendChild(opt);
+        });
+        sel.insertBefore(grp, sel.firstChild);
+      }
+
+      var vid = getVoiceId();
+      var targetVal = (vid && vid !== "auto") ? vid : ("__ls_mode:" + getEngine() + ":" + getGender());
+      var found = false;
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].value === targetVal) { sel.selectedIndex = i; found = true; break; }
+      }
+      if (!found && sel.options.length) {
+        var fallback = "__ls_mode:" + getEngine() + ":" + getGender();
+        for (var j = 0; j < sel.options.length; j++) {
+          if (sel.options[j].value === fallback) { sel.selectedIndex = j; break; }
+        }
+      }
+    } catch (e) {}
+    finally { syncingSelect = false; }
+  }
+
+  function syncPlayerUi() {
+    var oldDup = document.getElementById("lsUnifiedVoicePanel");
+    if (oldDup) oldDup.remove();
+
+    ensurePlayerSelectPresets();
+
+    var spd = document.getElementById("audioSpeedSelect");
+    if (spd) {
+      var rStr = String(getRate());
+      for (var i = 0; i < spd.options.length; i++) {
+        if (parseFloat(spd.options[i].value) === parseFloat(rStr)) { spd.selectedIndex = i; break; }
+      }
+    }
+
+    var hint = document.getElementById("lsPwVoiceActiveHint");
+    if (hint) hint.textContent = describeActive();
+  }
+
+  function restartAudioEngineIfPlaying() {
+    try {
+      var eng = window.LSAudioEngine;
+      if (!eng) return;
+      var st = (typeof eng.getState === "function") ? eng.getState() : null;
+      var isPlaying = !!(st && (st.playing || st.isPlaying) && !st.paused);
+      if (!isPlaying && typeof window.speechSynthesis !== "undefined" && window.speechSynthesis.speaking) {
+        var ppBtn = document.getElementById("audioPlayPauseBtn");
+        if (ppBtn && /pause/i.test(String(ppBtn.textContent || ppBtn.getAttribute("aria-label") || ""))) {
+          isPlaying = true;
+        }
+      }
+      if (!isPlaying) return;
+
+      if (typeof eng.setSpeed === "function") { try { eng.setSpeed(getRate()); } catch (e) {} }
+      var curIdx = (st && typeof st.index === "number") ? st.index : ((st && typeof st.currentIndex === "number") ? st.currentIndex : -1);
+
+      if (typeof eng.stopHardware === "function") eng.stopHardware();
+      else if (typeof eng.stop === "function") eng.stop();
+      else stopRawTts();
+
+      setTimeout(function () {
+        try {
+          if (curIdx >= 0 && typeof eng.jumpTo === "function") eng.jumpTo(curIdx);
+          else if (typeof eng.playTopic === "function") eng.playTopic();
+          else if (typeof eng.play === "function") eng.play();
+        } catch (err) {}
+      }, 150);
+    } catch (e) {}
+  }
+
   function applySettings(patch, restartActive) {
     if (patch && typeof patch.engine === "string") try { localStorage.setItem(K_ENG, patch.engine); } catch (e) {}
     if (patch && typeof patch.gender === "string") try { localStorage.setItem(K_GEN, patch.gender); localStorage.setItem("ls_prof_gender_v1", patch.gender); } catch (e) {}
     if (patch && typeof patch.voiceId === "string") try { localStorage.setItem(K_VID, patch.voiceId); } catch (e) {}
     if (patch && patch.rate !== undefined) try { localStorage.setItem(K_RATE, String(patch.rate)); } catch (e) {}
 
-    syncUi();
+    syncPlayerUi();
+
     var detail = { engine: getEngine(), gender: getGender(), voiceId: getVoiceId(), rate: getRate(), restartActive: restartActive !== false };
     try { window.dispatchEvent(new CustomEvent("ls:voice-settings-changed", { detail: detail })); } catch (e) {}
 
     if (restartActive !== false) {
-      try {
-        var engApi = window.LSAudioEngine;
-        if (engApi && typeof engApi.getState === "function") {
-          var st = engApi.getState();
-          if (st && st.playing && !st.paused) {
-            if (typeof engApi.setSpeed === "function") engApi.setSpeed(detail.rate);
-            var idx = typeof st.index === "number" ? st.index : 0;
-            if (typeof engApi.stop === "function") engApi.stop();
-            setTimeout(function () {
-              try {
-                if (typeof engApi.jumpTo === "function") engApi.jumpTo(idx);
-                else if (typeof engApi.play === "function") engApi.play();
-              } catch (err) {}
-            }, 130);
-          }
-        }
-      } catch (e) {}
+      restartAudioEngineIfPlaying();
     }
   }
 
   function patchSpeechApis() {
     try {
-      if ("speechSynthesis" in window && typeof window.speechSynthesis.speak === "function" && !window.speechSynthesis.__lsPatchedV321) {
+      if ("speechSynthesis" in window && typeof window.speechSynthesis.speak === "function" && !window.speechSynthesis.__lsPatchedV322) {
         nativeWebSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
-        window.speechSynthesis.__lsPatchedV321 = true;
+        window.speechSynthesis.__lsPatchedV322 = true;
         window.speechSynthesis.speak = function (u) {
           try {
-            if (u && !u.__lsVoiceApplied) {
-              u.__lsVoiceApplied = true;
+            if (u) {
               var l = getLang();
               u.lang = toBcp47(l);
               var v = resolveWebVoice(l);
@@ -678,9 +784,9 @@ try {
     } catch (e) {}
     try {
       var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-      if (tts && typeof tts.speak === "function" && !tts.__lsPatchedV321) {
+      if (tts && typeof tts.speak === "function" && !tts.__lsPatchedV322) {
         nativeCapSpeak = tts.speak.bind(tts);
-        tts.__lsPatchedV321 = true;
+        tts.__lsPatchedV322 = true;
         tts.speak = function (opts) {
           var o = Object.assign({}, opts || {});
           try {
@@ -703,11 +809,11 @@ try {
       ? "\u0c28\u0c2e\u0c38\u0c4d\u0c15\u0c3e\u0c30\u0c02! \u0c07\u0c26\u0c3f \u0c2e\u0c40\u0c30\u0c41 \u0c0e\u0c02\u0c2a\u0c3f\u0c15 \u0c1a\u0c47\u0c38\u0c3f\u0c28 \u0c32\u0c3e \u0c38\u0c4d\u0c1f\u0c21\u0c40\u0c38\u0c4d \u0c35\u0c3e\u0c2f\u0c3f\u0c38\u0c4d."
       : (l === "hi"
         ? "\u0928\u092e\u0938\u094d\u0924\u0947! \u092f\u0939 \u0906\u092a\u0915\u0940 \u091a\u0941\u0928\u0940 \u0939\u0941\u0908 \u0932\u0949 \u0938\u094d\u091f\u0921\u0940\u091c\u093c \u0906\u0935\u093e\u091c\u093c \u0939\u0948\u0964"
-        : "Hello students! Testing your selected " + eng + " " + (gen === "male" ? "Sir" : "Ma'am") + " voice engine.");
+        : "Hello students! Testing " + eng + " " + (gen === "male" ? "Sir" : "Ma'am") + " voice engine.");
 
     stopRawTts();
     if (window.LSIndianProfessor && window.LSIndianProfessor.stop) window.LSIndianProfessor.stop();
-    if (typeof showToast === "function") showToast("Testing " + eng.toUpperCase() + " (" + (gen === "male" ? "Sir" : "Ma'am") + ", " + getRate() + "x)");
+    if (typeof showToast === "function") showToast(describeActive());
 
     var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
     if (tts && typeof tts.speak === "function") {
@@ -718,114 +824,92 @@ try {
     }
   }
 
-  function fillVoiceSelect(sel) {
-    if (!sel) return;
-    var bcp = toBcp47(getLang()).toLowerCase(), pref = bcp.split("-")[0];
-    var list = capVoices.length ? capVoices : loadWebVoices(), saved = getVoiceId();
-    var html = '<option value="auto">Auto Best (' + toBcp47(getLang()) + ')</option>';
-    for (var i = 0; i < list.length; i++) {
-      var v = list[i], vl = String((v && v.lang) || "").toLowerCase().replace("_", "-");
-      if (vl === bcp || vl.indexOf(pref + "-") === 0 || vl === pref) {
-        var key = capVoices.length ? String(i) : String(v.voiceURI || v.name || i);
-        var lbl = String(v.name || v.voiceURI || ("Voice " + i)) + " (" + (v.lang || "") + ")";
-        html += '<option value="' + key.replace(/"/g, "&quot;") + '"' + (saved === key ? " selected" : "") + '>' + lbl.replace(/</g, "&lt;") + '</option>';
-      }
-    }
-    sel.innerHTML = html;
-  }
-
-  function syncUi() {
-    var e = document.getElementById("lsUnifiedEngineSel"), g = document.getElementById("lsUnifiedGenderSel"),
-        v = document.getElementById("lsUnifiedVoiceSel"), r = document.getElementById("lsUnifiedRateSel");
-    if (e) e.value = getEngine();
-    if (g) g.value = getGender();
-    if (r) r.value = String(getRate());
-    if (v) fillVoiceSelect(v);
-  }
-
-  function injectPlayerControls() {
+  function wireRealPlayerControls() {
     try {
-      var host = document.getElementById("lsAudioModalBody") || document.getElementById("lsAudioWindowBody")
-        || document.getElementById("lsAudioWindow") || document.getElementById("lsAudioModal")
-        || document.querySelector("[id*='AudioWindow'], [id*='AudioModal'], [id*='audioPlayer']");
-      if (!host) return;
+      var vcSel = document.getElementById("audioVoiceSelect");
+      var vcHost = document.getElementById("lsPwVoiceHost");
+      var spdSel = document.getElementById("audioSpeedSelect");
 
-      host.querySelectorAll("select").forEach(function (s) {
-        if ((s.id && s.id.indexOf("lsUnified") === 0) || s.__lsHookedV321) return;
-        s.__lsHookedV321 = true;
-        s.addEventListener("change", function () {
-          var val = String(s.value || "").toLowerCase();
-          if (/studio|mp3|human/.test(val)) applySettings({ engine: "studio", voiceId: "auto" }, true);
-          else if (/device|offline|local/.test(val)) applySettings({ engine: "device", voiceId: "auto" }, true);
-          else if (/neural|web|cloud|tts|native/.test(val)) applySettings({ engine: "neural", voiceId: "auto" }, true);
-          else if (/male|sir/.test(val)) applySettings({ gender: "male", voiceId: "auto" }, true);
-          else if (/female|maam|madam/.test(val)) applySettings({ gender: "female", voiceId: "auto" }, true);
-          else if (/^\d+(\.\d+)?$/.test(val) && parseFloat(val) >= 0.5 && parseFloat(val) <= 2.5) applySettings({ rate: parseFloat(val) }, true);
-          else if (s.value) applySettings({ voiceId: s.value }, true);
-        });
-      });
+      if (vcSel && !vcSel.__lsBoundV322) {
+        vcSel.__lsBoundV322 = true;
+        vcSel.addEventListener("change", function () {
+          if (syncingSelect) return;
+          var val = String(vcSel.value || "");
+          var txt = (vcSel.options[vcSel.selectedIndex] && vcSel.options[vcSel.selectedIndex].text) || "";
+          if (val.indexOf("__ls_mode:") === 0) {
+            var p = val.split(":");
+            applySettings({ engine: p[1] || "studio", gender: p[2] || "female", voiceId: "auto" }, true);
+          } else if (/studio|mp3/i.test(val + " " + txt)) {
+            applySettings({ engine: "studio", voiceId: "auto" }, true);
+          } else if (/offline|local|device/i.test(val + " " + txt)) {
+            applySettings({ engine: "device", voiceId: val || "auto" }, true);
+          } else {
+            applySettings({ engine: "neural", voiceId: val || "auto" }, true);
+          }
+          if (typeof showToast === "function") showToast(describeActive());
+        }, true);
 
-      if (document.getElementById("lsUnifiedVoicePanel")) { syncUi(); return; }
+        if (typeof MutationObserver !== "undefined") {
+          new MutationObserver(function () {
+            if (!syncingSelect) ensurePlayerSelectPresets();
+          }).observe(vcSel, { childList: true });
+        }
+      }
 
-      var box = document.createElement("div");
-      box.id = "lsUnifiedVoicePanel";
-      box.style.cssText = "margin:10px 0;padding:10px;border-radius:12px;background:#FAF7F2;border:1px solid #E5D5C0;display:flex;flex-direction:column;gap:8px;";
-      box.innerHTML =
-        '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">' +
-          '<strong style="font-size:12px;color:#7B1E2B;">Voice Engine &amp; Live Controls</strong>' +
-          '<button type="button" id="lsUnifiedTestVoiceBtn" style="padding:4px 10px;border-radius:8px;border:1px solid #7B1E2B;background:#7B1E2B;color:#FFF;font-size:11px;font-weight:800;cursor:pointer;">Test Voice</button>' +
-        '</div>' +
-        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">' +
-          '<label style="font-size:10.5px;font-weight:700;color:#5F554E;">Engine' +
-            '<select id="lsUnifiedEngineSel" style="width:100%;margin-top:2px;padding:6px;border-radius:8px;border:1px solid #D8C8B4;background:#FFF;font-size:11.5px;">' +
-              '<option value="studio">Human Studio MP3 + Neural</option>' +
-              '<option value="neural">Indian Neural TTS</option>' +
-              '<option value="device">Offline Device TTS</option>' +
-            '</select></label>' +
-          '<label style="font-size:10.5px;font-weight:700;color:#5F554E;">Professor Voice' +
-            '<select id="lsUnifiedGenderSel" style="width:100%;margin-top:2px;padding:6px;border-radius:8px;border:1px solid #D8C8B4;background:#FFF;font-size:11.5px;">' +
-              '<option value="female">Ma\'am (Female Indian)</option>' +
-              '<option value="male">Sir (Male Indian)</option>' +
-            '</select></label>' +
-          '<label style="font-size:10.5px;font-weight:700;color:#5F554E;">System Voice' +
-            '<select id="lsUnifiedVoiceSel" style="width:100%;margin-top:2px;padding:6px;border-radius:8px;border:1px solid #D8C8B4;background:#FFF;font-size:11.5px;"></select></label>' +
-          '<label style="font-size:10.5px;font-weight:700;color:#5F554E;">Speed' +
-            '<select id="lsUnifiedRateSel" style="width:100%;margin-top:2px;padding:6px;border-radius:8px;border:1px solid #D8C8B4;background:#FFF;font-size:11.5px;">' +
-              '<option value="0.85">0.85x (Slow)</option><option value="1">1.0x (Normal)</option><option value="1.15">1.15x (Fast)</option><option value="1.3">1.3x (Revision)</option>' +
-            '</select></label>' +
-        '</div>';
+      if (spdSel && !spdSel.__lsBoundV322) {
+        spdSel.__lsBoundV322 = true;
+        spdSel.addEventListener("change", function () {
+          var r = parseFloat(spdSel.value);
+          if (isFinite(r) && r >= 0.5 && r <= 2.0) {
+            applySettings({ rate: r }, true);
+            if (typeof showToast === "function") showToast("Speed: " + r + "x");
+          }
+        }, true);
+      }
 
-      (host.querySelector(".bg-white, .modal-card, .ls-audio-card") || host).appendChild(box);
-      box.querySelector("#lsUnifiedEngineSel").addEventListener("change", function (ev) {
-        applySettings({ engine: ev.target.value, voiceId: "auto" }, true);
-        if (typeof showToast === "function") showToast("Engine: " + ev.target.options[ev.target.selectedIndex].text);
-      });
-      box.querySelector("#lsUnifiedGenderSel").addEventListener("change", function (ev) {
-        applySettings({ gender: ev.target.value, voiceId: "auto" }, true);
-        if (typeof showToast === "function") showToast("Voice: " + (ev.target.value === "male" ? "Sir" : "Ma'am"));
-      });
-      box.querySelector("#lsUnifiedVoiceSel").addEventListener("change", function (ev) {
-        applySettings({ voiceId: ev.target.value }, true);
-      });
-      box.querySelector("#lsUnifiedRateSel").addEventListener("change", function (ev) {
-        applySettings({ rate: parseFloat(ev.target.value) || 1.0 }, true);
-      });
-      box.querySelector("#lsUnifiedTestVoiceBtn").addEventListener("click", testVoice);
-      syncUi();
+      if (vcHost && !document.getElementById("lsPwVoiceActionRow")) {
+        var row = document.createElement("div");
+        row.id = "lsPwVoiceActionRow";
+        row.style.cssText = "display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;";
+        row.innerHTML =
+          '<span id="lsPwVoiceActiveHint" style="font-size:11px;font-weight:700;color:#7B1E2B;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>' +
+          '<button type="button" id="lsPwTestVoiceBtn" style="padding:5px 11px;border-radius:8px;border:1px solid #7B1E2B;background:#7B1E2B;color:#FFF;font-size:11px;font-weight:800;cursor:pointer;flex-shrink:0;">Test Voice</button>';
+        vcHost.appendChild(row);
+        row.querySelector("#lsPwTestVoiceBtn").addEventListener("click", testVoice);
+      }
+
+      syncPlayerUi();
     } catch (e) {}
   }
 
   window.LSVoiceController = {
     getEngine: getEngine, getGender: getGender, getVoiceId: getVoiceId, getRate: getRate, getPitch: getPitch,
-    langToBcp47: toBcp47, applySettings: applySettings, testVoice: testVoice
+    langToBcp47: toBcp47, applySettings: applySettings, testVoice: testVoice, describeActive: describeActive
   };
 
-  function boot() { patchSpeechApis(); loadWebVoices(); loadCapVoices().then(syncUi); injectPlayerControls(); }
-  if ("speechSynthesis" in window && "onvoiceschanged" in window.speechSynthesis) {
-    window.speechSynthesis.onvoiceschanged = function () { loadWebVoices(); syncUi(); };
+  function boot() {
+    patchSpeechApis();
+    loadWebVoices();
+    loadCapVoices().then(syncPlayerUi);
+    wireRealPlayerControls();
   }
-  window.addEventListener("ls:lang-changed", syncUi);
-  window.addEventListener("DOMContentLoaded", function () { boot(); setTimeout(boot, 600); setTimeout(boot, 1600); });
+
+  if ("speechSynthesis" in window && "onvoiceschanged" in window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = function () { loadWebVoices(); syncPlayerUi(); };
+  }
+  window.addEventListener("ls:lang-changed", syncPlayerUi);
+  window.addEventListener("DOMContentLoaded", function () {
+    boot();
+    setTimeout(boot, 500);
+    setTimeout(boot, 1500);
+    if (typeof MutationObserver !== "undefined" && document.body) {
+      new MutationObserver(function () {
+        if (document.getElementById("lsPwVoiceHost") && !document.getElementById("lsPwVoiceActionRow")) {
+          wireRealPlayerControls();
+        }
+      }).observe(document.body, { childList: true, subtree: true });
+    }
+  });
 })();
 } catch (__lsModErr) { console.error('[LS Module Error: ls-voice-controller.js]', __lsModErr); }
 
@@ -2180,8 +2264,8 @@ try {
 try {
 (function () {
   "use strict";
-  if (window.__lsPdfExportV321) return;
-  window.__lsPdfExportV321 = true;
+  if (window.__lsPdfExportV322) return;
+  window.__lsPdfExportV322 = true;
 
   var LBL = {
     en: { med: "English Medium", m1: "In One Minute", pr: "Legal Provision", mn: "Meaning", pts: "Key Scoring Points", cs: "Leading Case Laws", dg: "Original Diagrams & Tables" },
@@ -2197,8 +2281,10 @@ try {
   }
 
   function showSaveStatus(msg) {
-    var el = document.getElementById("lsDownloadSaveStatus");
-    if (el) { el.textContent = msg; el.style.display = "block"; }
+    ["lsModalSaveStatus", "lsTopicSaveStatus"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) { el.textContent = msg; el.style.display = "block"; }
+    });
     if (typeof showToast === "function") showToast(msg);
   }
 
@@ -2208,13 +2294,13 @@ try {
         var opts = { suggestedName: fileName };
         if (ext && mimeType) {
           var acc = {}; acc[mimeType] = ["." + ext.replace(/^\./, "")];
-          opts.types = [{ description: desc || "Study Notes", accept: acc }];
+          opts.types = [{ description: desc || "Law Studyes File", accept: acc }];
         }
         var handle = await window.showSaveFilePicker(opts);
         var w = await handle.createWritable();
         await w.write(content);
         await w.close();
-        showSaveStatus("Saved \"" + handle.name + "\" to your selected folder!");
+        showSaveStatus("Saved \"" + handle.name + "\" to your chosen folder!");
         return true;
       } catch (err) {
         if (err && err.name === "AbortError") { showSaveStatus("Save cancelled."); return false; }
@@ -2375,7 +2461,7 @@ try {
       setTimeout(function () {
         try {
           fr.contentWindow.focus(); fr.contentWindow.print();
-          showSaveStatus("Select 'Save as PDF' & pick your folder -> pre-filled filename: \"" + fname + ".pdf\"");
+          showSaveStatus("Select 'Save as PDF' & pick your folder -> filename: \"" + fname + ".pdf\"");
         } catch (err) { saveWithFolderPrompt(html, fname + ".html", "text/html", "html", "Printable Hard-Copy Study Sheet"); }
         finally { setTimeout(function () { document.title = prev; }, 1500); }
       }, 280);
@@ -2385,6 +2471,20 @@ try {
   function exportPdf() { var c = ctx(); if (!c) return; var fn = safeTopicName(c.title, c.lang, ""); printPdf(wrapA4(fn, buildTopicHtml(c.tid, c.title, c.subj, c.unitLbl, c.lang, isDual())), fn); }
   function exportHtml() { var c = ctx(); if (!c) return; var fn = safeTopicName(c.title, c.lang, "HardCopy"); saveWithFolderPrompt(wrapA4(fn, buildTopicHtml(c.tid, c.title, c.subj, c.unitLbl, c.lang, isDual())), fn + ".html", "text/html", "html", "Printable Study Sheet (.html)"); }
   function exportMd() { var c = ctx(); if (!c) return; var fn = safeTopicName(c.title, c.lang, ""); saveWithFolderPrompt(buildTopicMd(c.tid, c.title, c.subj, c.unitLbl, c.lang, isDual()), fn + ".md", "text/markdown", "md", "Markdown Study Notes (.md)"); }
+  function exportSubjectMd() {
+    try {
+      var subj = typeof getActiveSubject === "function" ? getActiveSubject() : null;
+      if (!subj || !Array.isArray(subj.units)) { exportMd(); return; }
+      var lang = (typeof state !== "undefined" && state.lang) ? state.lang : "en";
+      var md = "# " + subj.title + "\n\n";
+      subj.units.forEach(function (u) {
+        md += "---\n# Unit " + (u.unitNo || "") + ": " + (u.title || "") + "\n\n";
+        (u.topics || []).forEach(function (t) { md += buildTopicMd(t.id, t.title || t.id, subj.title, "Unit " + (u.unitNo || ""), lang, isDual()) + "\n"; });
+      });
+      var fn = safeTopicName(subj.title, lang, "FullSubject");
+      saveWithFolderPrompt(md, fn + ".md", "text/markdown", "md", "Subject Markdown Notes (.md)");
+    } catch (e) { exportMd(); }
+  }
   function exportUnit() {
     var c = ctx(); if (!c || !c.meta || !c.meta.unit || !Array.isArray(c.meta.unit.topics)) { exportPdf(); return; }
     var secs = c.meta.unit.topics.map(function (t) { return t && t.id ? buildTopicHtml(t.id, t.title || t.id, c.subj, c.unitLbl, c.lang, isDual()) : ""; }).filter(Boolean);
@@ -2393,82 +2493,125 @@ try {
     printPdf(wrapA4(fn, secs.join("")), fn);
   }
 
-  function findMdHost() {
-    var els = document.querySelectorAll("button, a");
-    for (var i = 0; i < els.length; i++) {
-      var b = els[i];
-      if (b.id && b.id.indexOf("lsUnifiedDl") === 0) continue;
-      var txt = String(b.textContent || "").trim(), meta = String(b.id || "") + " " + String(b.getAttribute("onclick") || "");
-      if (/\.(md)\b/i.test(txt) || /markdown/i.test(txt) || /exportmd|downloadmd/i.test(meta)) return { btn: b, box: b.parentElement };
+  function wireTopicHeaderExports() {
+    ["lsPdfTopicBtn", "lsPdfUnitBtn", "lsPdfXeroxBtn", "lsUnifiedDownloadsWrap"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.remove();
+    });
+
+    var mdBtn = document.getElementById("exportTopicMdBtn");
+    if (mdBtn && mdBtn.parentElement) {
+      if (!mdBtn.__lsSaveAsBoundV322) {
+        mdBtn.__lsSaveAsBoundV322 = true;
+        mdBtn.title = "Save topic as .md (choose folder with Topic Name)";
+        mdBtn.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          ev.stopImmediatePropagation();
+          exportMd();
+        }, true);
+      }
+
+      var row = mdBtn.parentElement;
+      if (!row.querySelector("#lsHeaderPdfBtn")) {
+        var bPdf = document.createElement("button");
+        bPdf.type = "button";
+        bPdf.id = "lsHeaderPdfBtn";
+        bPdf.className = "px-3 py-2 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs font-semibold flex items-center gap-1.5";
+        bPdf.textContent = "PDF";
+        bPdf.title = "Download Topic as Hard-Copy PDF (pre-filled with Topic Name)";
+        bPdf.addEventListener("click", exportPdf);
+        mdBtn.insertAdjacentElement("afterend", bPdf);
+
+        var bHtml = document.createElement("button");
+        bHtml.type = "button";
+        bHtml.id = "lsHeaderPrintHtmlBtn";
+        bHtml.className = "px-3 py-2 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18] flex items-center gap-1.5";
+        bHtml.textContent = "Save File";
+        bHtml.title = "Choose folder & save A4 printable study file with Topic Name";
+        bHtml.addEventListener("click", exportHtml);
+        bPdf.insertAdjacentElement("afterend", bHtml);
+      }
+
+      if (!document.getElementById("lsTopicSaveStatus")) {
+        var st = document.createElement("div");
+        st.id = "lsTopicSaveStatus";
+        st.style.cssText = "display:none;width:100%;margin-top:6px;padding:6px 10px;border-radius:8px;background:#EEF7EE;border:1px solid #B7DDB9;color:#1F5C24;font-size:11.5px;font-weight:700;";
+        row.parentElement.appendChild(st);
+      }
     }
-    return null;
   }
 
-  function createUnifiedBar() {
-    var b1 = "padding:6px 10px;border-radius:9px;border:1px solid #7B1E2B;background:#7B1E2B;color:#FFF;font-size:11.5px;font-weight:800;cursor:pointer;";
-    var b2 = "padding:6px 10px;border-radius:9px;border:1px solid #C7B299;background:#FFF;color:#7B1E2B;font-size:11.5px;font-weight:700;cursor:pointer;";
-    var w = document.createElement("div");
-    w.id = "lsUnifiedDownloadsWrap";
-    w.style.cssText = "display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px;";
-    w.innerHTML =
-      '<button type="button" id="lsUnifiedDlPdfBtn" style="' + b1 + '">Download PDF (Hard Copy)</button>' +
-      '<button type="button" id="lsUnifiedDlUnitBtn" style="' + b2 + '">Unit PDF Booklet</button>' +
-      '<button type="button" id="lsUnifiedDlHtmlBtn" style="' + b2 + '">Save Print File (.html)</button>' +
-      '<button type="button" id="lsUnifiedDlMdBtn" style="' + b2 + '">Save .md (Choose Folder)</button>' +
-      '<div id="lsDownloadSaveStatus" style="display:none;width:100%;margin-top:4px;padding:6px 8px;border-radius:8px;background:#EEF7EE;border:1px solid #B7DDB9;color:#1F5C24;font-size:11px;font-weight:700;"></div>';
-    w.querySelector("#lsUnifiedDlPdfBtn").addEventListener("click", exportPdf);
-    w.querySelector("#lsUnifiedDlUnitBtn").addEventListener("click", exportUnit);
-    w.querySelector("#lsUnifiedDlHtmlBtn").addEventListener("click", exportHtml);
-    w.querySelector("#lsUnifiedDlMdBtn").addEventListener("click", exportMd);
-    return w;
+  function wireDbExportModal() {
+    var subjMdBtn = document.getElementById("exportSubjectMdBtn");
+    if (!subjMdBtn || !subjMdBtn.parentElement) return;
+
+    if (!subjMdBtn.__lsSaveAsBoundV322) {
+      subjMdBtn.__lsSaveAsBoundV322 = true;
+      subjMdBtn.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        ev.stopImmediatePropagation();
+        exportSubjectMd();
+      }, true);
+    }
+
+    var grid = subjMdBtn.parentElement;
+    if (!grid.querySelector("#lsModalTopicPdfBtn")) {
+      var cls = "px-3.5 py-2.5 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18] flex items-center justify-center gap-2";
+      var primaryCls = "px-3.5 py-2.5 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-xs font-semibold text-white flex items-center justify-center gap-2";
+
+      var b1 = document.createElement("button");
+      b1.type = "button"; b1.id = "lsModalTopicPdfBtn"; b1.className = primaryCls;
+      b1.textContent = "Download Topic PDF (Hard Copy)";
+      b1.addEventListener("click", exportPdf);
+      grid.appendChild(b1);
+
+      var b2 = document.createElement("button");
+      b2.type = "button"; b2.id = "lsModalUnitPdfBtn"; b2.className = cls;
+      b2.textContent = "Download Unit PDF Booklet";
+      b2.addEventListener("click", exportUnit);
+      grid.appendChild(b2);
+
+      var b3 = document.createElement("button");
+      b3.type = "button"; b3.id = "lsModalTopicHtmlBtn"; b3.className = cls;
+      b3.textContent = "Save Topic Print File (.html)";
+      b3.addEventListener("click", exportHtml);
+      grid.appendChild(b3);
+
+      var b4 = document.createElement("button");
+      b4.type = "button"; b4.id = "lsModalTopicMdBtn"; b4.className = cls;
+      b4.textContent = "Save Current Topic (.md)";
+      b4.addEventListener("click", exportMd);
+      grid.appendChild(b4);
+    }
+
+    if (!document.getElementById("lsModalSaveStatus") && grid.parentElement) {
+      var st = document.createElement("div");
+      st.id = "lsModalSaveStatus";
+      st.style.cssText = "display:none;margin-top:8px;padding:7px 10px;border-radius:8px;background:#EEF7EE;border:1px solid #B7DDB9;color:#1F5C24;font-size:11.5px;font-weight:700;";
+      grid.insertAdjacentElement("afterend", st);
+    }
   }
 
-  function mountInMdWindow() {
+  function mountAll() {
     try {
-      ["lsPdfTopicBtn", "lsPdfUnitBtn", "lsPdfXeroxBtn"].forEach(function (id) { var x = document.getElementById(id); if (x) x.remove(); });
-      var found = findMdHost();
-      if (found && found.box) {
-        if (found.btn && !found.btn.__lsMdSaveAsBound) {
-          found.btn.__lsMdSaveAsBound = true;
-          found.btn.addEventListener("click", function (ev) {
-            if (typeof state !== "undefined" && state.activeTopicId) { ev.preventDefault(); ev.stopImmediatePropagation(); exportMd(); }
-          }, true);
-        }
-        if (!found.box.querySelector("#lsUnifiedDownloadsWrap")) {
-          var prev = document.getElementById("lsUnifiedDownloadsWrap"); if (prev) prev.remove();
-          found.box.appendChild(createUnifiedBar());
-        }
-        return;
-      }
-      var pane = document.getElementById("readingPane");
-      if (!pane || typeof state === "undefined" || !state.activeTopicId || document.getElementById("lsUnifiedDownloadsWrap")) return;
-      var bar = document.getElementById("lsNoteCopyBar");
-      if (!bar) {
-        bar = document.createElement("div"); bar.id = "lsNoteCopyBar";
-        bar.style.cssText = "display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px;padding:8px 10px;border-radius:12px;background:#FAF7F2;border:1px solid #E8E0D5;";
-        pane.insertBefore(bar, pane.firstChild);
-      }
-      bar.appendChild(createUnifiedBar());
+      wireTopicHeaderExports();
+      wireDbExportModal();
     } catch (e) {}
   }
 
   function hook() {
     try {
-      if (typeof window.renderReadingPane === "function" && !window.__lsPdfHookV321) {
-        window.__lsPdfHookV321 = true;
+      if (typeof window.renderReadingPane === "function" && !window.__lsPdfHookV322) {
+        window.__lsPdfHookV322 = true;
         var orig = window.renderReadingPane;
-        window.renderReadingPane = function () { var r = orig.apply(this, arguments); setTimeout(mountInMdWindow, 40); return r; };
+        window.renderReadingPane = function () { var r = orig.apply(this, arguments); setTimeout(mountAll, 25); return r; };
       }
-      mountInMdWindow();
-      if (!window.__lsDlObsV321 && typeof MutationObserver !== "undefined" && document.body) {
-        window.__lsDlObsV321 = true;
-        new MutationObserver(mountInMdWindow).observe(document.body, { childList: true, subtree: true });
-      }
+      mountAll();
     } catch (e) {}
   }
 
   window.LSPdfExport = { exportTopic: exportPdf, exportUnit: exportUnit, exportHtml: exportHtml, exportMd: exportMd, safeTopicName: safeTopicName };
-  window.addEventListener("DOMContentLoaded", function () { setTimeout(hook, 350); setTimeout(hook, 1200); });
+  window.addEventListener("DOMContentLoaded", function () { setTimeout(hook, 300); setTimeout(hook, 1100); });
 })();
 } catch (__lsModErr) { console.error('[LS Module Error: ls-pdf-export.js]', __lsModErr); }
 

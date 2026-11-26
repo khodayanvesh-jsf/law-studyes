@@ -1,7 +1,7 @@
 (function () {
   "use strict";
-  if (window.__lsPdfExportV321) return;
-  window.__lsPdfExportV321 = true;
+  if (window.__lsPdfExportV322) return;
+  window.__lsPdfExportV322 = true;
 
   var LBL = {
     en: { med: "English Medium", m1: "In One Minute", pr: "Legal Provision", mn: "Meaning", pts: "Key Scoring Points", cs: "Leading Case Laws", dg: "Original Diagrams & Tables" },
@@ -17,8 +17,10 @@
   }
 
   function showSaveStatus(msg) {
-    var el = document.getElementById("lsDownloadSaveStatus");
-    if (el) { el.textContent = msg; el.style.display = "block"; }
+    ["lsModalSaveStatus", "lsTopicSaveStatus"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) { el.textContent = msg; el.style.display = "block"; }
+    });
     if (typeof showToast === "function") showToast(msg);
   }
 
@@ -28,13 +30,13 @@
         var opts = { suggestedName: fileName };
         if (ext && mimeType) {
           var acc = {}; acc[mimeType] = ["." + ext.replace(/^\./, "")];
-          opts.types = [{ description: desc || "Study Notes", accept: acc }];
+          opts.types = [{ description: desc || "Law Studyes File", accept: acc }];
         }
         var handle = await window.showSaveFilePicker(opts);
         var w = await handle.createWritable();
         await w.write(content);
         await w.close();
-        showSaveStatus("Saved \"" + handle.name + "\" to your selected folder!");
+        showSaveStatus("Saved \"" + handle.name + "\" to your chosen folder!");
         return true;
       } catch (err) {
         if (err && err.name === "AbortError") { showSaveStatus("Save cancelled."); return false; }
@@ -195,7 +197,7 @@
       setTimeout(function () {
         try {
           fr.contentWindow.focus(); fr.contentWindow.print();
-          showSaveStatus("Select 'Save as PDF' & pick your folder -> pre-filled filename: \"" + fname + ".pdf\"");
+          showSaveStatus("Select 'Save as PDF' & pick your folder -> filename: \"" + fname + ".pdf\"");
         } catch (err) { saveWithFolderPrompt(html, fname + ".html", "text/html", "html", "Printable Hard-Copy Study Sheet"); }
         finally { setTimeout(function () { document.title = prev; }, 1500); }
       }, 280);
@@ -205,6 +207,20 @@
   function exportPdf() { var c = ctx(); if (!c) return; var fn = safeTopicName(c.title, c.lang, ""); printPdf(wrapA4(fn, buildTopicHtml(c.tid, c.title, c.subj, c.unitLbl, c.lang, isDual())), fn); }
   function exportHtml() { var c = ctx(); if (!c) return; var fn = safeTopicName(c.title, c.lang, "HardCopy"); saveWithFolderPrompt(wrapA4(fn, buildTopicHtml(c.tid, c.title, c.subj, c.unitLbl, c.lang, isDual())), fn + ".html", "text/html", "html", "Printable Study Sheet (.html)"); }
   function exportMd() { var c = ctx(); if (!c) return; var fn = safeTopicName(c.title, c.lang, ""); saveWithFolderPrompt(buildTopicMd(c.tid, c.title, c.subj, c.unitLbl, c.lang, isDual()), fn + ".md", "text/markdown", "md", "Markdown Study Notes (.md)"); }
+  function exportSubjectMd() {
+    try {
+      var subj = typeof getActiveSubject === "function" ? getActiveSubject() : null;
+      if (!subj || !Array.isArray(subj.units)) { exportMd(); return; }
+      var lang = (typeof state !== "undefined" && state.lang) ? state.lang : "en";
+      var md = "# " + subj.title + "\n\n";
+      subj.units.forEach(function (u) {
+        md += "---\n# Unit " + (u.unitNo || "") + ": " + (u.title || "") + "\n\n";
+        (u.topics || []).forEach(function (t) { md += buildTopicMd(t.id, t.title || t.id, subj.title, "Unit " + (u.unitNo || ""), lang, isDual()) + "\n"; });
+      });
+      var fn = safeTopicName(subj.title, lang, "FullSubject");
+      saveWithFolderPrompt(md, fn + ".md", "text/markdown", "md", "Subject Markdown Notes (.md)");
+    } catch (e) { exportMd(); }
+  }
   function exportUnit() {
     var c = ctx(); if (!c || !c.meta || !c.meta.unit || !Array.isArray(c.meta.unit.topics)) { exportPdf(); return; }
     var secs = c.meta.unit.topics.map(function (t) { return t && t.id ? buildTopicHtml(t.id, t.title || t.id, c.subj, c.unitLbl, c.lang, isDual()) : ""; }).filter(Boolean);
@@ -213,80 +229,123 @@
     printPdf(wrapA4(fn, secs.join("")), fn);
   }
 
-  function findMdHost() {
-    var els = document.querySelectorAll("button, a");
-    for (var i = 0; i < els.length; i++) {
-      var b = els[i];
-      if (b.id && b.id.indexOf("lsUnifiedDl") === 0) continue;
-      var txt = String(b.textContent || "").trim(), meta = String(b.id || "") + " " + String(b.getAttribute("onclick") || "");
-      if (/\.(md)\b/i.test(txt) || /markdown/i.test(txt) || /exportmd|downloadmd/i.test(meta)) return { btn: b, box: b.parentElement };
+  function wireTopicHeaderExports() {
+    ["lsPdfTopicBtn", "lsPdfUnitBtn", "lsPdfXeroxBtn", "lsUnifiedDownloadsWrap"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.remove();
+    });
+
+    var mdBtn = document.getElementById("exportTopicMdBtn");
+    if (mdBtn && mdBtn.parentElement) {
+      if (!mdBtn.__lsSaveAsBoundV322) {
+        mdBtn.__lsSaveAsBoundV322 = true;
+        mdBtn.title = "Save topic as .md (choose folder with Topic Name)";
+        mdBtn.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          ev.stopImmediatePropagation();
+          exportMd();
+        }, true);
+      }
+
+      var row = mdBtn.parentElement;
+      if (!row.querySelector("#lsHeaderPdfBtn")) {
+        var bPdf = document.createElement("button");
+        bPdf.type = "button";
+        bPdf.id = "lsHeaderPdfBtn";
+        bPdf.className = "px-3 py-2 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-white text-xs font-semibold flex items-center gap-1.5";
+        bPdf.textContent = "PDF";
+        bPdf.title = "Download Topic as Hard-Copy PDF (pre-filled with Topic Name)";
+        bPdf.addEventListener("click", exportPdf);
+        mdBtn.insertAdjacentElement("afterend", bPdf);
+
+        var bHtml = document.createElement("button");
+        bHtml.type = "button";
+        bHtml.id = "lsHeaderPrintHtmlBtn";
+        bHtml.className = "px-3 py-2 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18] flex items-center gap-1.5";
+        bHtml.textContent = "Save File";
+        bHtml.title = "Choose folder & save A4 printable study file with Topic Name";
+        bHtml.addEventListener("click", exportHtml);
+        bPdf.insertAdjacentElement("afterend", bHtml);
+      }
+
+      if (!document.getElementById("lsTopicSaveStatus")) {
+        var st = document.createElement("div");
+        st.id = "lsTopicSaveStatus";
+        st.style.cssText = "display:none;width:100%;margin-top:6px;padding:6px 10px;border-radius:8px;background:#EEF7EE;border:1px solid #B7DDB9;color:#1F5C24;font-size:11.5px;font-weight:700;";
+        row.parentElement.appendChild(st);
+      }
     }
-    return null;
   }
 
-  function createUnifiedBar() {
-    var b1 = "padding:6px 10px;border-radius:9px;border:1px solid #7B1E2B;background:#7B1E2B;color:#FFF;font-size:11.5px;font-weight:800;cursor:pointer;";
-    var b2 = "padding:6px 10px;border-radius:9px;border:1px solid #C7B299;background:#FFF;color:#7B1E2B;font-size:11.5px;font-weight:700;cursor:pointer;";
-    var w = document.createElement("div");
-    w.id = "lsUnifiedDownloadsWrap";
-    w.style.cssText = "display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px;";
-    w.innerHTML =
-      '<button type="button" id="lsUnifiedDlPdfBtn" style="' + b1 + '">Download PDF (Hard Copy)</button>' +
-      '<button type="button" id="lsUnifiedDlUnitBtn" style="' + b2 + '">Unit PDF Booklet</button>' +
-      '<button type="button" id="lsUnifiedDlHtmlBtn" style="' + b2 + '">Save Print File (.html)</button>' +
-      '<button type="button" id="lsUnifiedDlMdBtn" style="' + b2 + '">Save .md (Choose Folder)</button>' +
-      '<div id="lsDownloadSaveStatus" style="display:none;width:100%;margin-top:4px;padding:6px 8px;border-radius:8px;background:#EEF7EE;border:1px solid #B7DDB9;color:#1F5C24;font-size:11px;font-weight:700;"></div>';
-    w.querySelector("#lsUnifiedDlPdfBtn").addEventListener("click", exportPdf);
-    w.querySelector("#lsUnifiedDlUnitBtn").addEventListener("click", exportUnit);
-    w.querySelector("#lsUnifiedDlHtmlBtn").addEventListener("click", exportHtml);
-    w.querySelector("#lsUnifiedDlMdBtn").addEventListener("click", exportMd);
-    return w;
+  function wireDbExportModal() {
+    var subjMdBtn = document.getElementById("exportSubjectMdBtn");
+    if (!subjMdBtn || !subjMdBtn.parentElement) return;
+
+    if (!subjMdBtn.__lsSaveAsBoundV322) {
+      subjMdBtn.__lsSaveAsBoundV322 = true;
+      subjMdBtn.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        ev.stopImmediatePropagation();
+        exportSubjectMd();
+      }, true);
+    }
+
+    var grid = subjMdBtn.parentElement;
+    if (!grid.querySelector("#lsModalTopicPdfBtn")) {
+      var cls = "px-3.5 py-2.5 rounded-lg border border-[#E8E0D5] bg-white hover:bg-[#FAF7F2] text-xs font-semibold text-[#1F1B18] flex items-center justify-center gap-2";
+      var primaryCls = "px-3.5 py-2.5 rounded-lg bg-[#7B1E2B] hover:bg-[#5E1520] text-xs font-semibold text-white flex items-center justify-center gap-2";
+
+      var b1 = document.createElement("button");
+      b1.type = "button"; b1.id = "lsModalTopicPdfBtn"; b1.className = primaryCls;
+      b1.textContent = "Download Topic PDF (Hard Copy)";
+      b1.addEventListener("click", exportPdf);
+      grid.appendChild(b1);
+
+      var b2 = document.createElement("button");
+      b2.type = "button"; b2.id = "lsModalUnitPdfBtn"; b2.className = cls;
+      b2.textContent = "Download Unit PDF Booklet";
+      b2.addEventListener("click", exportUnit);
+      grid.appendChild(b2);
+
+      var b3 = document.createElement("button");
+      b3.type = "button"; b3.id = "lsModalTopicHtmlBtn"; b3.className = cls;
+      b3.textContent = "Save Topic Print File (.html)";
+      b3.addEventListener("click", exportHtml);
+      grid.appendChild(b3);
+
+      var b4 = document.createElement("button");
+      b4.type = "button"; b4.id = "lsModalTopicMdBtn"; b4.className = cls;
+      b4.textContent = "Save Current Topic (.md)";
+      b4.addEventListener("click", exportMd);
+      grid.appendChild(b4);
+    }
+
+    if (!document.getElementById("lsModalSaveStatus") && grid.parentElement) {
+      var st = document.createElement("div");
+      st.id = "lsModalSaveStatus";
+      st.style.cssText = "display:none;margin-top:8px;padding:7px 10px;border-radius:8px;background:#EEF7EE;border:1px solid #B7DDB9;color:#1F5C24;font-size:11.5px;font-weight:700;";
+      grid.insertAdjacentElement("afterend", st);
+    }
   }
 
-  function mountInMdWindow() {
+  function mountAll() {
     try {
-      ["lsPdfTopicBtn", "lsPdfUnitBtn", "lsPdfXeroxBtn"].forEach(function (id) { var x = document.getElementById(id); if (x) x.remove(); });
-      var found = findMdHost();
-      if (found && found.box) {
-        if (found.btn && !found.btn.__lsMdSaveAsBound) {
-          found.btn.__lsMdSaveAsBound = true;
-          found.btn.addEventListener("click", function (ev) {
-            if (typeof state !== "undefined" && state.activeTopicId) { ev.preventDefault(); ev.stopImmediatePropagation(); exportMd(); }
-          }, true);
-        }
-        if (!found.box.querySelector("#lsUnifiedDownloadsWrap")) {
-          var prev = document.getElementById("lsUnifiedDownloadsWrap"); if (prev) prev.remove();
-          found.box.appendChild(createUnifiedBar());
-        }
-        return;
-      }
-      var pane = document.getElementById("readingPane");
-      if (!pane || typeof state === "undefined" || !state.activeTopicId || document.getElementById("lsUnifiedDownloadsWrap")) return;
-      var bar = document.getElementById("lsNoteCopyBar");
-      if (!bar) {
-        bar = document.createElement("div"); bar.id = "lsNoteCopyBar";
-        bar.style.cssText = "display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px;padding:8px 10px;border-radius:12px;background:#FAF7F2;border:1px solid #E8E0D5;";
-        pane.insertBefore(bar, pane.firstChild);
-      }
-      bar.appendChild(createUnifiedBar());
+      wireTopicHeaderExports();
+      wireDbExportModal();
     } catch (e) {}
   }
 
   function hook() {
     try {
-      if (typeof window.renderReadingPane === "function" && !window.__lsPdfHookV321) {
-        window.__lsPdfHookV321 = true;
+      if (typeof window.renderReadingPane === "function" && !window.__lsPdfHookV322) {
+        window.__lsPdfHookV322 = true;
         var orig = window.renderReadingPane;
-        window.renderReadingPane = function () { var r = orig.apply(this, arguments); setTimeout(mountInMdWindow, 40); return r; };
+        window.renderReadingPane = function () { var r = orig.apply(this, arguments); setTimeout(mountAll, 25); return r; };
       }
-      mountInMdWindow();
-      if (!window.__lsDlObsV321 && typeof MutationObserver !== "undefined" && document.body) {
-        window.__lsDlObsV321 = true;
-        new MutationObserver(mountInMdWindow).observe(document.body, { childList: true, subtree: true });
-      }
+      mountAll();
     } catch (e) {}
   }
 
   window.LSPdfExport = { exportTopic: exportPdf, exportUnit: exportUnit, exportHtml: exportHtml, exportMd: exportMd, safeTopicName: safeTopicName };
-  window.addEventListener("DOMContentLoaded", function () { setTimeout(hook, 350); setTimeout(hook, 1200); });
+  window.addEventListener("DOMContentLoaded", function () { setTimeout(hook, 300); setTimeout(hook, 1100); });
 })();
