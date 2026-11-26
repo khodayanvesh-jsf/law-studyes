@@ -1,4 +1,4 @@
-/* Law Studyes v3.2.4 - Unified Crash-Safe Module Bundle (Built 2026-11-26 20:40:40) */
+/* Law Studyes v3.2.5 - Unified Crash-Safe Module Bundle (Built 2026-11-26 21:01:34) */
 
 /* === MODULE: ls-store.js === */
 try {
@@ -552,19 +552,21 @@ try {
 try {
 (function () {
   "use strict";
-  if (window.__lsCleanAudioV324) return;
-  window.__lsCleanAudioV324 = true;
+  if (window.__lsCleanAudioV325) return;
+  window.__lsCleanAudioV325 = true;
 
-  var K_SPD = "ls_aud_spd_324", K_TCH = "ls_aud_tch_324", K_REP = "ls_aud_rep_324", K_VC = "ls_aud_vc_324_";
+  var K_SPD = "ls_aud_spd_325", K_TCH = "ls_aud_tch_325", K_REP = "ls_aud_rep_325", K_VC = "ls_aud_vc_325_";
   var AUDIO_CACHE = "ls-prof-audio-v1", CDN = "https://law-studyes.vercel.app";
 
-  var manifest = null, htmlAudio = null, keepAliveAudio = null, wakeLock = null;
-  var webVoices = [], capVoices = [], isNative = false;
+  var manifest = null, htmlAudio = null, webVoices = [];
   var token = 0, playing = false, paused = false, studioMp3 = false;
   var scope = "topic", teachMode = true, repeat = false, speed = 0.98, sleepId = null;
-  var queue = [], curIdx = 0, curTopicId = "", curTitle = "", curVoiceLbl = "Auto Best Indian Voice";
+  var queue = [], curIdx = 0, curTopicId = "", curTitle = "", curCaption = "", curStepIdx = -1, curVoiceLbl = "Auto Best Indian Voice";
 
-  var SILENT_WAV = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
+  function nativeSvc() {
+    try { return (window.LSNativeTtsService && typeof window.LSNativeTtsService.playQueue === "function") ? window.LSNativeTtsService : null; }
+    catch (e) { return null; }
+  }
 
   function loadPrefs() {
     try {
@@ -582,62 +584,6 @@ try {
   function bcp47(l) { l = String(l || langNow()).toLowerCase(); return l === "te" ? "te-IN" : (l === "hi" ? "hi-IN" : "en-IN"); }
   function getSavedVc(l) { try { return localStorage.getItem(K_VC + l) || "auto"; } catch (e) { return "auto"; } }
   function setSavedVc(l, k) { try { localStorage.setItem(K_VC + l, String(k || "auto")); } catch (e) {} }
-
-  function startBackgroundKeepAlive(title) {
-    try {
-      if (window.LSNativeKeepAlive && typeof window.LSNativeKeepAlive.setPlaying === "function") {
-        window.LSNativeKeepAlive.setPlaying(true, String(title || "Law Studyes Audio"));
-      }
-    } catch (e) {}
-    try {
-      if (navigator.wakeLock && typeof navigator.wakeLock.request === "function" && !wakeLock) {
-        navigator.wakeLock.request("screen").then(function (wl) {
-          wakeLock = wl;
-          wl.addEventListener("release", function () { wakeLock = null; });
-        }).catch(function () {});
-      }
-    } catch (e) {}
-    try {
-      if (!keepAliveAudio) {
-        keepAliveAudio = new Audio(SILENT_WAV);
-        keepAliveAudio.loop = true;
-        keepAliveAudio.volume = 0.01;
-      }
-      if (keepAliveAudio.paused) keepAliveAudio.play().catch(function () {});
-    } catch (e) {}
-    try {
-      if ("mediaSession" in navigator) {
-        if (typeof MediaMetadata !== "undefined") {
-          navigator.mediaSession.metadata = new MediaMetadata({
-            title: String(title || "Law Studyes Audio"),
-            artist: "Law Studyes - Indian Professor",
-            album: "3-Year LL.B. Notes"
-          });
-        }
-        navigator.mediaSession.playbackState = "playing";
-        navigator.mediaSession.setActionHandler("play", function () { resume(); });
-        navigator.mediaSession.setActionHandler("pause", function () { pause(); });
-        navigator.mediaSession.setActionHandler("previoustrack", function () { prev(); });
-        navigator.mediaSession.setActionHandler("nexttrack", function () { next(); });
-        navigator.mediaSession.setActionHandler("stop", function () { stop(); });
-      }
-    } catch (e) {}
-  }
-
-  function stopBackgroundKeepAlive() {
-    try {
-      if (window.LSNativeKeepAlive && typeof window.LSNativeKeepAlive.setPlaying === "function") {
-        window.LSNativeKeepAlive.setPlaying(false, "");
-      }
-    } catch (e) {}
-    try { if (wakeLock) { wakeLock.release().catch(function () {}); wakeLock = null; } } catch (e) {}
-    try { if (keepAliveAudio) { keepAliveAudio.pause(); keepAliveAudio.currentTime = 0; } } catch (e) {}
-    try { if ("mediaSession" in navigator) navigator.mediaSession.playbackState = paused ? "paused" : "none"; } catch (e) {}
-  }
-
-  document.addEventListener("visibilitychange", function () {
-    if (!document.hidden && playing && !paused) startBackgroundKeepAlive(curTitle);
-  });
 
   function cleanSpeech(raw, lang) {
     var s = String(raw || "");
@@ -768,65 +714,42 @@ try {
     return manifest;
   }
 
-  function rankVoice(v, bcp) {
-    var vl = String((v && v.lang) || "").toLowerCase().replace("_", "-"), vn = String((v && (v.name || v.voiceURI)) || "");
-    var tgt = bcp.toLowerCase(), pref = tgt.split("-")[0];
-    if (vl.indexOf("ar") === 0) return -9999;
-    if (vl !== tgt && vl.indexOf(pref + "-") !== 0 && vl !== pref) return -5000;
-    var sc = (vl === tgt) ? 200 : 80;
-    if (/natural|neural|wavenet|network|online/i.test(vn)) sc += 90;
-    if (/neerja|prabhat|shruti|mohan|swara|madhur|google/i.test(vn)) sc += 60;
-    if (v && v.localService === false) sc += 25;
-    if (/espeak|compact/i.test(vn)) sc -= 60;
-    return sc;
-  }
-
   function curatedVoices(lang) {
-    var bcp = bcp47(lang), src = (isNative && capVoices.length) ? capVoices : webVoices, all = [];
-    for (var i = 0; i < src.length; i++) {
-      var sc = rankVoice(src[i], bcp);
-      if (sc > 0) {
-        var rawName = String(src[i].name || src[i].voiceURI || ("Voice " + (i + 1)));
-        var key = (isNative && capVoices.length) ? ("cap:" + i) : ("web:" + (src[i].voiceURI || src[i].name || i));
-        var isNet = /network|neural|natural|wavenet|online/i.test(rawName) || (src[i].localService === false);
-        var isMale = /prabhat|mohan|madhur|ravi|hemant|male|\-e\-|\-d\-|ind\-x\-end|en\-in\-x\-ene|te\-in\-x\-tem|hi\-in\-x\-hid/i.test(rawName);
-        var isFem = /neerja|shruti|swara|heera|kalpana|veena|lekha|female|en\-in\-x\-ena|en\-in\-x\-enc|te\-in\-x\-tef|hi\-in\-x\-hia/i.test(rawName);
-        all.push({ key: key, index: i, voice: src[i], rawName: rawName, lang: src[i].lang || bcp, score: sc, isNet: isNet, isMale: isMale, isFem: isFem });
-      }
+    var bcp = bcp47(lang), svc = nativeSvc(), raw = [];
+    if (svc && typeof svc.getVoicesForLang === "function") {
+      try { raw = JSON.parse(svc.getVoicesForLang(bcp) || "[]"); } catch (e) { raw = []; }
+    } else if ("speechSynthesis" in window) {
+      raw = webVoices;
+    }
+    var tgt = bcp.toLowerCase(), pref = tgt.split("-")[0], all = [];
+    for (var i = 0; i < raw.length; i++) {
+      var v = raw[i], vl = String((v && v.lang) || "").toLowerCase().replace("_", "-");
+      if (vl.indexOf("ar") === 0) continue;
+      if (vl !== tgt && vl.indexOf(pref + "-") !== 0 && vl !== pref) continue;
+      var rn = String((v && (v.name || v.voiceURI)) || ("Voice " + i));
+      var sc = (vl === tgt ? 200 : 80) + (/network|neural|natural|wavenet|online/i.test(rn) ? 80 : 0) + (/google|neerja|prabhat|shruti|mohan|swara|madhur/i.test(rn) ? 50 : 0);
+      var isNet = /network|neural|natural|wavenet|online/i.test(rn) || (v.localService === false);
+      var isMale = /prabhat|mohan|madhur|ravi|hemant|male|\-e\-|\-d\-|en\-in\-x\-ene|te\-in\-x\-tem|hi\-in\-x\-hid/i.test(rn);
+      var isFem = /neerja|shruti|swara|heera|kalpana|veena|lekha|female|en\-in\-x\-ena|en\-in\-x\-enc|te\-in\-x\-tef|hi\-in\-x\-hia/i.test(rn);
+      all.push({ key: rn, voice: v, score: sc, isNet: isNet, isMale: isMale, isFem: isFem });
     }
     all.sort(function (a, b) { return b.score - a.score; });
-    if (!all.length) return [];
 
-    var picked = [], usedKeys = {};
-    function addPick(item, cleanLabel) {
-      if (!item || usedKeys[item.key]) return;
-      usedKeys[item.key] = true;
-      picked.push({ key: item.key, index: item.index, voice: item.voice, name: cleanLabel, lang: item.lang });
-    }
-
-    var bestFem = all.filter(function (x) { return x.isFem; })[0] || all[0];
-    var bestMale = all.filter(function (x) { return x.isMale && !usedKeys[x.key]; })[0];
-    var bestNet = all.filter(function (x) { return x.isNet && !usedKeys[x.key]; })[0];
-    var bestLocal = all.filter(function (x) { return !x.isNet && !usedKeys[x.key]; })[0];
-
-    addPick(bestFem, "Indian Female (Clear)");
-    addPick(bestMale, "Indian Male (Clear)");
-    addPick(bestNet, "Indian HD Online Voice");
-    addPick(bestLocal, "Indian Offline Voice");
-
-    for (var k = 0; k < all.length && picked.length < 3; k++) {
-      addPick(all[k], "Indian Voice " + (picked.length + 1));
-    }
+    var picked = [], used = {};
+    function add(it, lbl) { if (!it || used[it.key]) return; used[it.key] = true; picked.push({ key: it.key, voice: it.voice, name: lbl }); }
+    add(all.filter(function (x) { return x.isFem; })[0] || all[0], "Indian Female (Clear)");
+    add(all.filter(function (x) { return x.isMale && !used[x.key]; })[0], "Indian Male (Clear)");
+    add(all.filter(function (x) { return x.isNet && !used[x.key]; })[0], "Indian HD Online Voice");
+    add(all.filter(function (x) { return !x.isNet && !used[x.key]; })[0], "Indian Offline Voice");
+    for (var k = 0; k < all.length && picked.length < 3; k++) add(all[k], "Indian Voice " + (picked.length + 1));
     return picked;
   }
 
-  function resolveVoice(lang) {
-    var list = curatedVoices(lang), saved = getSavedVc(lang);
-    if (saved === "studio-mp3") return { key: "studio-mp3", isStudio: true, name: "HD Studio Human Voice (MP3)", fallback: list[0] || null };
-    if (saved && saved !== "auto") {
-      for (var i = 0; i < list.length; i++) if (list[i].key === saved) return list[i];
-    }
-    return list[0] || null;
+  function removeDeadDropdowns() {
+    var host = document.getElementById("lsPwVoiceHost");
+    if (host) host.querySelectorAll("select").forEach(function (s) { if (s.id !== "audioVoiceSelect") s.remove(); });
+    var modal = document.getElementById("lsPlayerWindowModal");
+    if (modal) modal.querySelectorAll("select").forEach(function (s) { if (s.id !== "audioVoiceSelect" && s.id !== "audioSpeedSelect" && s.id !== "sleepTimerSelect") s.remove(); });
   }
 
   function updateHint() {
@@ -834,35 +757,15 @@ try {
     if (h) h.textContent = curVoiceLbl + " (" + speed.toFixed(2).replace(/\.00$/, "") + "x)";
   }
 
-  function removeDeadVoiceDropdowns() {
-    var host = document.getElementById("lsPwVoiceHost");
-    if (host) {
-      host.querySelectorAll("select").forEach(function (s) {
-        if (s.id !== "audioVoiceSelect") s.remove();
-      });
-    }
-    var modal = document.getElementById("lsPlayerWindowModal");
-    if (modal) {
-      modal.querySelectorAll("select").forEach(function (s) {
-        if (s.id !== "audioVoiceSelect" && s.id !== "audioSpeedSelect" && s.id !== "sleepTimerSelect") {
-          s.remove();
-        }
-      });
-    }
-  }
-
   function populateVoices() {
-    removeDeadVoiceDropdowns();
+    removeDeadDropdowns();
     var sel = document.getElementById("audioVoiceSelect");
     if (!sel) return;
     var lang = langNow(), bcp = bcp47(lang), tid = (typeof state !== "undefined" && state.activeTopicId) ? state.activeTopicId : curTopicId;
     var list = curatedVoices(lang), saved = getSavedVc(lang), opts = [];
-    if (manifest && manifest[lang] && manifest[lang][tid]) {
-      opts.push({ v: "studio-mp3", l: "HD Studio Human Voice (MP3)" });
-    }
+    if (manifest && manifest[lang] && manifest[lang][tid]) opts.push({ v: "studio-mp3", l: "HD Studio Human Voice (MP3)" });
     opts.push({ v: "auto", l: "Auto Best Indian Voice (" + bcp + ")" });
     for (var i = 0; i < list.length; i++) opts.push({ v: list[i].key, l: list[i].name });
-
     sel.innerHTML = "";
     var hit = false;
     opts.forEach(function (o) {
@@ -871,37 +774,22 @@ try {
       sel.appendChild(op);
     });
     if (!hit && sel.options.length) sel.selectedIndex = 0;
-    var rv = resolveVoice(lang);
-    curVoiceLbl = rv ? rv.name : ("System " + bcp);
+    var found = list.filter(function (x) { return x.key === saved; })[0];
+    curVoiceLbl = saved === "studio-mp3" ? "HD Studio Human Voice (MP3)" : (found ? found.name : "Auto Best Indian Voice");
     updateHint();
-  }
-
-  async function refreshVoices() {
-    isNative = !!(window.Capacitor && typeof window.Capacitor.isNativePlatform === "function" && window.Capacitor.isNativePlatform());
-    try { if ("speechSynthesis" in window) { var wv = window.speechSynthesis.getVoices() || []; if (wv.length) webVoices = wv; } } catch (e) {}
-    try {
-      var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-      if (tts && typeof tts.getSupportedVoices === "function") {
-        var r = await tts.getSupportedVoices();
-        if (r && Array.isArray(r.voices)) capVoices = r.voices;
-      }
-    } catch (e) {}
-    populateVoices();
   }
 
   function stopHardware() {
     if (htmlAudio) { try { htmlAudio.pause(); htmlAudio.currentTime = 0; } catch (e) {} htmlAudio = null; }
-    var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-    if (tts && tts.stop) { try { tts.stop().catch(function () {}); } catch (e) {} }
+    var svc = nativeSvc();
+    if (svc) { try { svc.stop(); } catch (e) {} }
     if ("speechSynthesis" in window) { try { window.speechSynthesis.cancel(); } catch (e) {} }
   }
 
   function stop() {
     token++; playing = false; paused = false; studioMp3 = false;
     if (sleepId) { clearTimeout(sleepId); sleepId = null; }
-    stopHardware();
-    stopBackgroundKeepAlive();
-    emitState();
+    stopHardware(); emitState();
   }
 
   async function tryMp3(tid, lang, tk) {
@@ -932,78 +820,89 @@ try {
         htmlAudio.onended = function () {
           if (tk !== token) return;
           if (repeat) { htmlAudio.currentTime = 0; htmlAudio.play().catch(function () {}); return; }
-          playing = false; paused = false; studioMp3 = false;
-          stopBackgroundKeepAlive();
-          emitState();
+          playing = false; paused = false; studioMp3 = false; emitState();
         };
         await htmlAudio.play();
         playing = true; paused = false; studioMp3 = true;
-        curVoiceLbl = "HD Studio Human Voice (MP3)";
-        startBackgroundKeepAlive(curTitle);
-        updateHint(); emitState();
+        curVoiceLbl = "HD Studio Human Voice (MP3)"; updateHint(); emitState();
         return true;
       } catch (e) {}
     }
     return false;
   }
 
-  function speakChunk(text, lang, vc) {
-    var bcp = bcp47(lang);
-    var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
-    if (isNative && tts && typeof tts.speak === "function") {
-      var opts = { text: text, lang: bcp, rate: speed, pitch: 1.0, volume: 1.0, category: "ambient" };
-      if (vc && typeof vc.index === "number") opts.voice = vc.index;
-      return tts.speak(opts).catch(function () {});
-    }
-    if ("speechSynthesis" in window) {
-      return new Promise(function (resolve) {
-        var doneFlag = false;
-        function fin() { if (!doneFlag) { doneFlag = true; resolve(); } }
-        try {
-          var u = new SpeechSynthesisUtterance(text);
-          u.lang = bcp; u.rate = speed; u.pitch = 1.0;
-          if (vc && vc.voice) { u.voice = vc.voice; if (vc.voice.lang) u.lang = vc.voice.lang; }
-          u.onend = fin; u.onerror = fin;
-          window.speechSynthesis.speak(u);
-          setTimeout(fin, Math.max(9000, Math.round((text.length * 145) / Math.max(0.6, speed))));
-        } catch (e) { fin(); }
-      });
-    }
-    return Promise.resolve();
-  }
-
-  async function runFrom(idx) {
+  async function runWebQueue(idx) {
     var tk = ++token; stopHardware();
-    if (!queue.length) { playing = false; paused = false; stopBackgroundKeepAlive(); emitState(); return; }
+    if (!queue.length) { playing = false; paused = false; emitState(); return; }
     curIdx = Math.max(0, Math.min(idx, queue.length - 1));
-    var first = queue[curIdx], lang = first.lang, saved = getSavedVc(lang);
-    if (scope === "topic" && curIdx === 0 && (saved === "studio-mp3" || saved === "auto")) {
-      if (await tryMp3(first.topicId, lang, tk)) return;
-    }
-    var chosen = resolveVoice(lang);
-    if (chosen && chosen.isStudio) chosen = chosen.fallback;
+    var lang = queue[curIdx].lang, saved = getSavedVc(lang);
+    var list = curatedVoices(lang);
+    var chosen = list.filter(function (x) { return x.key === saved; })[0] || list[0] || null;
     curVoiceLbl = chosen ? chosen.name : ("System " + bcp47(lang));
     updateHint();
     playing = true; paused = false; studioMp3 = false;
-    startBackgroundKeepAlive(first.topicTitle);
 
     for (var i = curIdx; i < queue.length; i++) {
       if (tk !== token) return;
-      curIdx = i; curTopicId = queue[i].topicId; curTitle = queue[i].topicTitle;
+      curIdx = i; curTopicId = queue[i].topicId; curTitle = queue[i].topicTitle; curCaption = queue[i].text; curStepIdx = queue[i].stepIdx;
       emitState();
-      await speakChunk(queue[i].text, queue[i].lang, chosen);
+      await new Promise(function (resolve) {
+        var finFlag = false; function fin() { if (!finFlag) { finFlag = true; resolve(); } }
+        try {
+          var u = new SpeechSynthesisUtterance(queue[i].text);
+          u.lang = bcp47(queue[i].lang); u.rate = speed; u.pitch = 1.0;
+          if (chosen && chosen.voice) u.voice = chosen.voice;
+          u.onend = fin; u.onerror = fin;
+          window.speechSynthesis.speak(u);
+          setTimeout(fin, Math.max(9000, Math.round((queue[i].text.length * 145) / Math.max(0.6, speed))));
+        } catch (e) { fin(); }
+      });
       if (tk !== token) return;
-      if (!document.hidden) {
-        await new Promise(function (r) { setTimeout(r, 200); });
-      }
+      await new Promise(function (r) { setTimeout(r, 200); });
     }
     if (tk === token) {
-      if (repeat && scope === "topic") { runFrom(0); return; }
-      playing = false; paused = false;
-      stopBackgroundKeepAlive();
-      emitState();
+      if (repeat && scope === "topic") { runWebQueue(0); return; }
+      playing = false; paused = false; emitState();
     }
   }
+
+  async function startQueue(startIdx) {
+    if (!queue.length) return;
+    var tk = ++token;
+    stopHardware();
+    curIdx = Math.max(0, Math.min(startIdx || 0, queue.length - 1));
+    var first = queue[curIdx], lang = first.lang, saved = getSavedVc(lang);
+
+    if (scope === "topic" && curIdx === 0 && saved === "studio-mp3") {
+      if (await tryMp3(first.topicId, lang, tk)) return;
+    }
+
+    var svc = nativeSvc();
+    if (svc) {
+      playing = true; paused = false; studioMp3 = false;
+      curTopicId = first.topicId; curTitle = first.topicTitle; curCaption = first.text; curStepIdx = first.stepIdx;
+      var vName = (saved && saved !== "auto" && saved !== "studio-mp3") ? saved : "";
+      svc.playQueue(JSON.stringify(queue), bcp47(lang), speed, vName, curIdx, repeat);
+      emitState();
+      return;
+    }
+
+    runWebQueue(curIdx);
+  }
+
+  window.__lsOnNativeAudioState = function (jsonStr) {
+    try {
+      var s = JSON.parse(jsonStr || "{}");
+      playing = !!s.playing;
+      paused = !!s.paused;
+      if (typeof s.index === "number") curIdx = s.index;
+      if (s.title) curTitle = s.title;
+      if (s.caption !== undefined) curCaption = s.caption;
+      if (s.topicId) curTopicId = s.topicId;
+      if (typeof s.stepIdx === "number") curStepIdx = s.stepIdx;
+      emitState();
+    } catch (e) {}
+  };
 
   function playTopic(tid, forceProf) {
     var id = tid || (typeof state !== "undefined" && state.activeTopicId) || curTopicId;
@@ -1013,7 +912,7 @@ try {
     var items = buildTopicQueue(id, langNow(), teachMode);
     if (!items.length) return;
     scope = "topic"; queue = items; curIdx = 0; curTopicId = id; curTitle = items[0].topicTitle;
-    runFrom(0);
+    startQueue(0);
   }
 
   function playUnit(tid) {
@@ -1026,33 +925,50 @@ try {
     m.unit.topics.forEach(function (t) { if (t && t.id) all = all.concat(buildTopicQueue(t.id, lang, teachMode)); });
     if (!all.length) return;
     scope = "unit"; queue = all; curIdx = 0; curTopicId = all[0].topicId; curTitle = all[0].topicTitle;
-    runFrom(0);
+    startQueue(0);
   }
 
   function pause() {
     if (!playing || paused) return;
     paused = true;
+    var svc = nativeSvc();
     if (studioMp3 && htmlAudio) { try { htmlAudio.pause(); } catch (e) {} }
+    else if (svc) { svc.pause(); }
     else { token++; stopHardware(); }
-    stopBackgroundKeepAlive();
     emitState();
   }
+
   function resume() {
     if (!playing || !paused) return;
     paused = false;
-    startBackgroundKeepAlive(curTitle);
+    var svc = nativeSvc();
     if (studioMp3 && htmlAudio) { htmlAudio.playbackRate = speed; htmlAudio.play().catch(function () {}); emitState(); }
-    else runFrom(curIdx);
+    else if (svc) { svc.resume(); emitState(); }
+    else runWebQueue(curIdx);
   }
+
   function togglePlay() { if (playing && !paused) pause(); else if (playing && paused) resume(); else playTopic(); }
-  function prev() { if (!queue.length) return; if (studioMp3 && htmlAudio) { htmlAudio.currentTime = Math.max(0, htmlAudio.currentTime - 10); return; } runFrom(Math.max(0, curIdx - 1)); }
-  function next() { if (!queue.length) return; if (studioMp3 && htmlAudio && htmlAudio.duration) { htmlAudio.currentTime = Math.min(htmlAudio.duration - 0.5, htmlAudio.currentTime + 10); return; } runFrom(Math.min(queue.length - 1, curIdx + 1)); }
+  function prev() {
+    if (studioMp3 && htmlAudio) { htmlAudio.currentTime = Math.max(0, htmlAudio.currentTime - 10); return; }
+    var svc = nativeSvc(); if (svc && playing) { svc.prev(); return; }
+    if (queue.length) startQueue(Math.max(0, curIdx - 1));
+  }
+  function next() {
+    if (studioMp3 && htmlAudio && htmlAudio.duration) { htmlAudio.currentTime = Math.min(htmlAudio.duration - 0.5, htmlAudio.currentTime + 10); return; }
+    var svc = nativeSvc(); if (svc && playing) { svc.next(); return; }
+    if (queue.length) startQueue(Math.min(queue.length - 1, curIdx + 1));
+  }
 
   function setSpeed(val) {
     var r = parseFloat(val); if (!isFinite(r) || r < 0.6 || r > 1.8) return;
     speed = r; try { localStorage.setItem(K_SPD, String(speed)); } catch (e) {}
     updateHint();
-    if (playing && !paused) { if (studioMp3 && htmlAudio) htmlAudio.playbackRate = speed; else runFrom(curIdx); }
+    var svc = nativeSvc();
+    if (playing && !paused) {
+      if (studioMp3 && htmlAudio) htmlAudio.playbackRate = speed;
+      else if (svc) svc.setSpeed(speed);
+      else runWebQueue(curIdx);
+    }
     emitState();
   }
 
@@ -1077,31 +993,27 @@ try {
     }
   }
 
-  async function testVoice() {
-    var lang = langNow(), chosen = resolveVoice(lang);
-    stop();
+  function testVoice() {
+    var lang = langNow();
     var txt = lang === "te"
       ? "\u0c28\u0c2e\u0c38\u0c4d\u0c15\u0c3e\u0c30\u0c02 \u0c38\u0c4d\u0c1f\u0c42\u0c21\u0c46\u0c02\u0c1f\u0c4d\u0c38\u0c4d. \u0c07\u0c26\u0c3f \u0c32\u0c3e \u0c38\u0c4d\u0c1f\u0c21\u0c40\u0c38\u0c4d \u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c35\u0c3e\u0c2f\u0c3f\u0c38\u0c4d."
       : (lang === "hi"
         ? "\u0928\u092e\u0938\u094d\u0924\u0947 \u0938\u094d\u091f\u0942\u0921\u0947\u0902\u091f\u094d\u0938\u0964 \u092f\u0939 \u0932\u0949 \u0938\u094d\u091f\u0921\u0940\u091c\u093c \u0915\u0940 \u0939\u093f\u0902\u0926\u0940 \u0906\u0935\u093e\u091c\u093c \u0939\u0948\u0964"
-        : "Hello students. This is your selected Law Studyes Indian voice.");
-    if (chosen && chosen.isStudio) {
-      var tid = (typeof state !== "undefined" && state.activeTopicId) || curTopicId;
-      if (tid && await tryMp3(tid, lang, ++token)) return;
-      chosen = chosen.fallback;
-    }
-    if (typeof showToast === "function") showToast("Testing: " + (chosen ? chosen.name : ("System " + bcp47(lang))));
-    await speakChunk(txt, lang, chosen);
+        : "Hello students. Testing your selected Law Studyes voice.");
+    if (typeof showToast === "function") showToast("Testing: " + curVoiceLbl);
+    queue = [{ topicId: curTopicId || "test", topicTitle: "Voice Test", lang: lang, stepIdx: 0, text: txt }];
+    scope = "topic";
+    startQueue(0);
   }
 
   function getState() {
-    var it = queue[curIdx] || null, tot = queue.length || 0, pct = tot ? Math.round(((curIdx + 1) / tot) * 100) : 0;
+    var tot = queue.length || 0, pct = tot ? Math.round(((curIdx + 1) / tot) * 100) : 0;
     return {
       playing: playing, isPlaying: playing && !paused, paused: paused, topicId: curTopicId,
       title: curTitle || "Select a Topic to Listen", topicTitle: curTitle || "Select a Topic to Listen",
-      caption: studioMp3 ? "Playing HD Studio Human Voice (MP3)" : (it ? it.text : ""),
-      currentText: studioMp3 ? "Playing HD Studio Human Voice (MP3)" : (it ? it.text : ""),
-      stepIdx: it ? it.stepIdx : -1, index: curIdx, currentIndex: curIdx, total: tot, progress: pct, percent: pct,
+      caption: studioMp3 ? "Playing HD Studio Human Voice (MP3)" : curCaption,
+      currentText: studioMp3 ? "Playing HD Studio Human Voice (MP3)" : curCaption,
+      stepIdx: curStepIdx, index: curIdx, currentIndex: curIdx, total: tot, progress: pct, percent: pct,
       scope: scope, teachingMode: teachMode, repeat: repeat, speed: speed, lang: langNow(), voiceName: curVoiceLbl, studioMp3: studioMp3
     };
   }
@@ -1124,14 +1036,14 @@ try {
 
   function cleanClone(id) {
     var el = document.getElementById(id);
-    if (!el || el.__lsClean324) return el;
-    var c = el.cloneNode(true); c.__lsClean324 = true;
+    if (!el || el.__lsClean325) return el;
+    var c = el.cloneNode(true); c.__lsClean325 = true;
     if (el.parentNode) el.parentNode.replaceChild(c, el);
     return c;
   }
 
   function bindControls() {
-    removeDeadVoiceDropdowns();
+    removeDeadDropdowns();
     var b;
     if ((b = cleanClone("audioPlayPauseBtn")) && !b.__w) { b.__w = true; b.addEventListener("click", togglePlay); }
     if ((b = cleanClone("audioPrevBtn")) && !b.__w) { b.__w = true; b.addEventListener("click", prev); }
@@ -1151,19 +1063,23 @@ try {
       vcSel.__w = true;
       vcSel.addEventListener("change", function () {
         var l = langNow(); setSavedVc(l, vcSel.value);
-        var rv = resolveVoice(l); curVoiceLbl = rv ? rv.name : ("System " + bcp47(l));
-        updateHint();
+        populateVoices();
         if (typeof showToast === "function") showToast("Voice: " + curVoiceLbl);
-        if (playing && !paused) runFrom(vcSel.value === "studio-mp3" ? 0 : curIdx);
+        var svc = nativeSvc();
+        if (playing && !paused) {
+          if (vcSel.value === "studio-mp3") startQueue(0);
+          else if (svc) svc.setVoice(vcSel.value === "auto" ? "" : vcSel.value);
+          else runWebQueue(curIdx);
+        }
         emitState();
       });
     }
     var vcHost = document.getElementById("lsPwVoiceHost");
     if (vcHost) {
       var oldR = document.getElementById("lsPwVoiceActionRow");
-      if (oldR && !oldR.__v324) oldR.remove();
+      if (oldR && !oldR.__v325) oldR.remove();
       if (!document.getElementById("lsPwVoiceActionRow")) {
-        var row = document.createElement("div"); row.id = "lsPwVoiceActionRow"; row.__v324 = true;
+        var row = document.createElement("div"); row.id = "lsPwVoiceActionRow"; row.__v325 = true;
         row.style.cssText = "display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;";
         row.innerHTML = '<span id="lsPwVoiceActiveHint" style="font-size:11px;font-weight:700;color:#7B1E2B;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>' +
           '<button type="button" id="lsPwTestVoiceBtn" style="padding:5px 11px;border-radius:8px;border:1px solid #7B1E2B;background:#7B1E2B;color:#FFF;font-size:11px;font-weight:800;cursor:pointer;flex-shrink:0;">Test Voice</button>';
@@ -1176,23 +1092,29 @@ try {
 
   window.LSAudioEngine = {
     playTopic: playTopic, playUnit: playUnit, play: togglePlay, pause: pause, resume: resume, togglePlay: togglePlay,
-    stop: stop, stopHardware: stopHardware, prev: prev, next: next, jumpTo: runFrom, setSpeed: setSpeed,
+    stop: stop, stopHardware: stopHardware, prev: prev, next: next, jumpTo: startQueue, setSpeed: setSpeed,
     toggleTeachingMode: toggleTeach, toggleRepeat: toggleRepeat, setSleepTimer: setSleep,
-    testVoice: testVoice, refreshVoices: refreshVoices, emitState: emitState, getState: getState
+    testVoice: testVoice, refreshVoices: populateVoices, emitState: emitState, getState: getState
   };
 
-  function boot() { loadPrefs(); loadManifest().then(function () { refreshVoices().then(bindControls); }); }
-  if ("speechSynthesis" in window && "onvoiceschanged" in window.speechSynthesis) window.speechSynthesis.onvoiceschanged = refreshVoices;
+  function boot() {
+    loadPrefs();
+    try { if ("speechSynthesis" in window) webVoices = window.speechSynthesis.getVoices() || []; } catch (e) {}
+    loadManifest().then(bindControls);
+  }
+  if ("speechSynthesis" in window && "onvoiceschanged" in window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = function () { webVoices = window.speechSynthesis.getVoices() || []; populateVoices(); };
+  }
   window.addEventListener("ls:lang-changed", function () { stop(); populateVoices(); });
   window.addEventListener("DOMContentLoaded", function () {
     setTimeout(boot, 250); setTimeout(bindControls, 900); setTimeout(bindControls, 1800);
-    if (typeof window.renderReadingPane === "function" && !window.__lsAudHook324) {
-      window.__lsAudHook324 = true;
+    if (typeof window.renderReadingPane === "function" && !window.__lsAudHook325) {
+      window.__lsAudHook325 = true;
       var orig = window.renderReadingPane;
       window.renderReadingPane = function () { var r = orig.apply(this, arguments); setTimeout(populateVoices, 60); return r; };
     }
     if (typeof MutationObserver !== "undefined" && document.body) {
-      new MutationObserver(removeDeadVoiceDropdowns).observe(document.body, { childList: true, subtree: true });
+      new MutationObserver(removeDeadDropdowns).observe(document.body, { childList: true, subtree: true });
     }
   });
 })();
