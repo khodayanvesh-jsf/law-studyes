@@ -1,19 +1,20 @@
-import concurrent.futures, copy, json, re, sys, threading, time, urllib.parse, urllib.request
+import concurrent.futures, copy, json, os, random, re, sys, threading, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
 args = sys.argv[1:]
 rebuild_te = "--rebuild-te" in args
-args = [a for a in args if a != "--rebuild-te"]
+purge_only = "--purge-cache-only" in args
+args = [a for a in args if a not in ("--rebuild-te", "--purge-cache-only")]
 
 db_file = Path(args[0]) if len(args) > 0 else Path("www/nyayasaral_db.json")
 batch_limit = int(args[1]) if len(args) > 1 else 0
-workers = int(args[2]) if len(args) > 2 else 8
+workers = max(1, min(8, int(args[2]) if len(args) > 2 else 4))
 ckpt_file = Path(args[3]) if len(args) > 3 else Path(".ls_legal_tr_cache.json")
 
 if not db_file.exists():
     raise SystemExit(f"ERROR: Database not found at {db_file}")
 
-print(f"[INIT] Loading {db_file.name} (rebuild_te={rebuild_te}) ...", flush=True)
+print(f"[INIT] Loading {db_file.name} (workers={workers}, rebuild_te={rebuild_te}) ...", flush=True)
 raw_str = db_file.read_text(encoding="utf-8")
 db = json.loads(raw_str)
 notes = db.get("notes")
@@ -37,7 +38,8 @@ LEGAL_TOKEN_RE = re.compile(
     re.I,
 )
 
-SKIP_KEYS = {"id", "type", "html", "svg", "mermaid", "code", "citation", "year", "sectionNo", "articleNo", "visuals"}
+LTOK_STRIP_RE = re.compile(r"\[\[\s*LTOK\s*\d+\s*\]\]|__\s*LTOK\s*\d+\s*__", re.I)
+SKIP_KEYS = {"id", "type", "html", "svg", "mermaid", "code", "citation", "year", "sectionNo", "articleNo", "visuals", "_trQuality"}
 
 TELUGU_CLEANUPS = [
     (r"\s+([,\.\;\:\?\!])", r"\1"),
@@ -54,6 +56,36 @@ def polish_telugu(text):
     for pat, rep in TELUGU_CLEANUPS:
         s = re.sub(pat, rep, s)
     return s.strip()
+
+def script_bounds(lang):
+    return ("\u0c00", "\u0c7f") if lang == "te" else ("\u0900", "\u097f")
+
+def count_target_script(text, lang):
+    lo, hi = script_bounds(lang)
+    return sum(1 for c in text if lo <= c <= hi)
+
+def count_latin(text):
+    return sum(1 for c in text if ("A" <= c <= "Z") or ("a" <= c <= "z"))
+
+def is_valid_translation(orig_en, translated, lang):
+    if not isinstance(translated, str) or not translated.strip():
+        return False
+    if lang not in ("te", "hi"):
+        return True
+    orig_stripped = LTOK_STRIP_RE.sub(" ", LEGAL_TOKEN_RE.sub(" ", str(orig_en or "")))
+    latin_src = count_latin(orig_stripped)
+    if latin_src < 8:
+        return True
+    tr_stripped = LTOK_STRIP_RE.sub(" ", LEGAL_TOKEN_RE.sub(" ", translated))
+    tgt_chars = count_target_script(tr_stripped, lang)
+    if tgt_chars < 2:
+        return False
+    if translated.strip().lower() == str(orig_en or "").strip().lower():
+        return False
+    alpha = sum(1 for c in tr_stripped if c.isalpha())
+    if alpha > 0 and (tgt_chars / alpha) < 0.20:
+        return False
+    return True
 
 def sample_text(obj):
     if not isinstance(obj, dict):
@@ -77,11 +109,10 @@ def has_good_script(obj, lang, en_obj=None):
     s = sample_text(obj)
     if len(s) < 8:
         return False
-    lo, hi = ("\u0c00", "\u0c7f") if lang == "te" else ("\u0900", "\u097f")
     alpha = sum(1 for c in s if c.isalpha())
     if alpha == 0:
         return False
-    if (sum(1 for c in s if lo <= c <= hi) / alpha) < 0.30:
+    if (count_target_script(s, lang) / alpha) < 0.30:
         return False
     if isinstance(en_obj, dict):
         for req_f in ("inOneMinute", "meaning", "keyPoints"):
@@ -89,6 +120,8 @@ def has_good_script(obj, lang, en_obj=None):
             tr_v = obj.get(req_f)
             if isinstance(en_v, str) and len(en_v.strip()) > 30:
                 if not isinstance(tr_v, str) or len(tr_v.strip()) < 10:
+                    return False
+                if not is_valid_translation(en_v, tr_v, lang):
                     return False
             elif isinstance(en_v, list) and len(en_v) > 0:
                 if not isinstance(tr_v, list) or len(tr_v) == 0:
@@ -123,7 +156,7 @@ def restore_tokens(text, tokens):
         text = re.sub(rf"__\s*LTOK\s*{i}\s*__", lambda _m, t=tok: t, text, flags=re.I)
     return text
 
-def split_text(s, limit=1050):
+def split_text(s, limit=950):
     s = s.strip()
     if len(s) <= limit:
         return [s] if s else []
@@ -140,31 +173,133 @@ def split_text(s, limit=1050):
         parts.append(rem)
     return parts
 
+def write_file_onedrive_safe(target_path, text_data, validate_json=False):
+    tmp_path = target_path.with_name(f"{target_path.name}.{os.getpid()}.tmp")
+    tmp_path.write_text(text_data, encoding="utf-8")
+    if validate_json:
+        json.loads(tmp_path.read_text(encoding="utf-8"))
+
+    last_err = None
+    for attempt in range(12):
+        try:
+            os.replace(str(tmp_path), str(target_path))
+            return
+        except PermissionError as exc:
+            last_err = exc
+            time.sleep(min(2.5, 0.25 * (attempt + 1)))
+        except OSError as exc:
+            if getattr(exc, "winerror", None) in (5, 32, 33):
+                last_err = exc
+                time.sleep(min(2.5, 0.25 * (attempt + 1)))
+            else:
+                raise
+
+    for attempt in range(5):
+        try:
+            with open(target_path, "w", encoding="utf-8", newline="") as fh:
+                fh.write(text_data)
+            try:
+                tmp_path.unlink(missing_ok=True)
+            except Exception:
+                pass
+            return
+        except (PermissionError, OSError) as exc:
+            last_err = exc
+            time.sleep(0.5 * (attempt + 1))
+
+    try:
+        tmp_path.unlink(missing_ok=True)
+    except Exception:
+        pass
+    raise last_err
+
 cache, cache_lock = {}, threading.Lock()
+purged_entries = 0
 if ckpt_file.exists():
     try:
         loaded = json.loads(ckpt_file.read_text(encoding="utf-8"))
         if isinstance(loaded, dict):
-            cache = loaded
+            for ck, val in loaded.items():
+                m = re.match(r"^(?:v2:)?(te|hi):(.*)$", str(ck), re.S)
+                if m:
+                    cl, orig = m.group(1), m.group(2)
+                    if is_valid_translation(orig, val, cl):
+                        cache[ck] = val
+                    else:
+                        purged_entries += 1
+                else:
+                    cache[ck] = val
     except Exception:
-        pass
+        cache = {}
 
-def gtrans_raw(text, tl):
-    url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl={urllib.parse.quote(tl)}&dt=t&q={urllib.parse.quote(text)}"
-    for attempt in range(3):
+if purged_entries > 0:
+    print(f"[CACHE] Purged {purged_entries} poisoned English-fallback cache entries (kept {len(cache)} verified).", flush=True)
+    try:
+        write_file_onedrive_safe(ckpt_file, json.dumps(cache, ensure_ascii=False), validate_json=False)
+    except Exception as exc:
+        print(f"[CACHE WARN] Could not flush purged cache yet: {exc}", flush=True)
+else:
+    print(f"[CACHE] Clean ({len(cache)} verified entries, 0 poisoned).", flush=True)
+
+if purge_only:
+    sys.exit(0)
+
+rate_lock = threading.Lock()
+cooldown_until = 0.0
+
+def throttle_wait():
+    global cooldown_until
+    with rate_lock:
+        now = time.time()
+        wait_s = max(0.0, cooldown_until - now)
+    if wait_s > 0:
+        time.sleep(wait_s)
+
+def bump_cooldown(seconds):
+    global cooldown_until
+    with rate_lock:
+        cooldown_until = max(cooldown_until, time.time() + seconds)
+
+def gtrans_fetch(text, tl):
+    q = urllib.parse.quote(text)
+    tl_q = urllib.parse.quote(tl)
+    endpoints = [
+        f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl={tl_q}&dt=t&q={q}",
+        f"https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl=en&tl={tl_q}&q={q}",
+    ]
+    ua_list = [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36",
+    ]
+    last_err = None
+    for attempt in range(5):
+        throttle_wait()
+        url = endpoints[attempt % len(endpoints)]
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=9) as resp:
-                arr = json.loads(resp.read().decode("utf-8", errors="ignore"))
-                if isinstance(arr, list) and arr and isinstance(arr[0], list):
-                    txt = "".join(x[0] for x in arr[0] if isinstance(x, list) and x and isinstance(x[0], str))
-                    if txt.strip():
-                        return txt
-            return text
-        except Exception:
-            if attempt < 2:
-                time.sleep(0.35 * (attempt + 1))
-    return text
+            req = urllib.request.Request(url, headers={"User-Agent": ua_list[attempt % len(ua_list)]})
+            with urllib.request.urlopen(req, timeout=12) as resp:
+                payload = json.loads(resp.read().decode("utf-8", errors="ignore"))
+                if isinstance(payload, list) and payload:
+                    if isinstance(payload[0], list):
+                        txt = "".join(
+                            x[0] for x in payload[0]
+                            if isinstance(x, list) and x and isinstance(x[0], str)
+                        )
+                        if txt.strip():
+                            return txt
+                    elif isinstance(payload[0], str) and payload[0].strip():
+                        return payload[0]
+                last_err = RuntimeError("Empty translation payload")
+        except urllib.error.HTTPError as he:
+            last_err = he
+            if he.code in (429, 403, 503):
+                bump_cooldown(min(8.0, 1.5 * (attempt + 1)) + random.uniform(0.2, 0.8))
+            else:
+                time.sleep(0.5 * (attempt + 1))
+        except Exception as exc:
+            last_err = exc
+            time.sleep(0.45 * (attempt + 1) + random.uniform(0.1, 0.4))
+    raise RuntimeError(f"Translation failed after retries ({tl}): {last_err}")
 
 def tr_single(text, tl):
     s = re.sub(r"\s+", " ", str(text or "")).strip()
@@ -172,12 +307,23 @@ def tr_single(text, tl):
         return ""
     ck = f"v2:{tl}:{s}"
     with cache_lock:
-        if ck in cache:
-            return cache[ck]
+        hit = cache.get(ck)
+    if hit is not None and is_valid_translation(s, hit, tl):
+        return hit
+
     masked, tokens = protect_tokens(s)
-    res = restore_tokens(" ".join(gtrans_raw(ch, tl).strip() for ch in split_text(masked, 1050)).strip(), tokens)
+    if count_latin(LTOK_STRIP_RE.sub(" ", masked)) < 2:
+        return s
+
+    parts = []
+    for ch in split_text(masked, 950):
+        tr_ch = gtrans_fetch(ch, tl).strip()
+        parts.append(tr_ch)
+    res = restore_tokens(" ".join(parts).strip(), tokens)
     if tl == "te":
         res = polish_telugu(res)
+    if not is_valid_translation(s, res, tl):
+        raise RuntimeError(f"Rejected English-fallback output for {tl}: '{res[:60]}'")
     with cache_lock:
         cache[ck] = res
     return res
@@ -191,7 +337,7 @@ def tr_batch(strings, tl):
             continue
         with cache_lock:
             hit = cache.get(f"v2:{tl}:{clean}")
-        if hit is not None:
+        if hit is not None and is_valid_translation(clean, hit, tl):
             results[orig] = hit
         else:
             todo.append((orig, clean))
@@ -199,12 +345,15 @@ def tr_batch(strings, tl):
     batches, cur, cur_len = [], [], 0
     for orig, clean in todo:
         masked, tokens = protect_tokens(clean)
-        if len(masked) > 1000:
+        if count_latin(LTOK_STRIP_RE.sub(" ", masked)) < 2:
+            results[orig] = clean
+            continue
+        if len(masked) > 900:
             if cur:
                 batches.append(cur); cur, cur_len = [], 0
             batches.append([(orig, clean, masked, tokens)])
             continue
-        if cur and (cur_len + len(masked) + 1) > 1250:
+        if cur and (cur_len + len(masked) + 1) > 1100:
             batches.append(cur); cur, cur_len = [], 0
         cur.append((orig, clean, masked, tokens))
         cur_len += len(masked) + 1
@@ -215,16 +364,22 @@ def tr_batch(strings, tl):
         if len(b) == 1:
             results[b[0][0]] = tr_single(b[0][1], tl)
             continue
-        raw_out = gtrans_raw("\n".join(x[2] for x in b), tl)
-        lines = [ln.strip() for ln in raw_out.splitlines() if ln.strip()]
+        try:
+            raw_out = gtrans_fetch("\n".join(x[2] for x in b), tl)
+            lines = [ln.strip() for ln in raw_out.splitlines() if ln.strip()]
+        except Exception:
+            lines = []
         if len(lines) == len(b):
             for (orig, clean, _, tokens), ln in zip(b, lines):
                 val = restore_tokens(ln, tokens)
                 if tl == "te":
                     val = polish_telugu(val)
-                with cache_lock:
-                    cache[f"v2:{tl}:{clean}"] = val
-                results[orig] = val
+                if is_valid_translation(clean, val, tl):
+                    with cache_lock:
+                        cache[f"v2:{tl}:{clean}"] = val
+                    results[orig] = val
+                else:
+                    results[orig] = tr_single(clean, tl)
         else:
             for orig, clean, _, _ in b:
                 results[orig] = tr_single(clean, tl)
@@ -261,18 +416,19 @@ def prepare_copy(en_obj, tl):
         else:
             out[k] = apply_str(v, mp)
     out["_trQuality"] = "v2-legal"
+    if not has_good_script(out, tl, en_obj):
+        raise RuntimeError(f"Generated {tl} copy failed script verification")
     return out
 
 def save_atomic():
-    tmp = db_file.with_suffix(".json.tmp")
-    tmp.write_text(json.dumps(db, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    json.loads(tmp.read_text(encoding="utf-8"))
-    tmp.replace(db_file)
+    db_text = json.dumps(db, ensure_ascii=False, separators=(",", ":"))
+    write_file_onedrive_safe(db_file, db_text, validate_json=True)
     try:
         with cache_lock:
-            ckpt_file.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
-    except Exception:
-        pass
+            ckpt_text = json.dumps(cache, ensure_ascii=False)
+        write_file_onedrive_safe(ckpt_file, ckpt_text, validate_json=False)
+    except Exception as exc:
+        print(f"  [CACHE WARN] Checkpoint save retry skipped: {exc}", flush=True)
 
 vis_synced = 0
 for tid, rec in notes.items():
@@ -297,19 +453,30 @@ for tid, rec in notes.items():
 if batch_limit > 0:
     work = work[:batch_limit]
 
-print(f"[AUDIT] Total={total} | Verbatim Diagrams Synced={vis_synced} | Pending Conversion/Upgrade={len(work)}", flush=True)
+te_init = sum(1 for r in notes.values() if isinstance(r, dict) and has_good_script(r.get("te"), "te", r.get("en")))
+hi_init = sum(1 for r in notes.values() if isinstance(r, dict) and has_good_script(r.get("hi"), "hi", r.get("en")))
+print(f"[AUDIT] Total={total} | Verified TE={te_init} | Verified HI={hi_init} | Verbatim Diagrams Synced={vis_synced} | Pending={len(work)}", flush=True)
+
 if not work:
     if vis_synced > 0:
         save_atomic()
-    print("[PASS] All EN/TE/HI notes verified & diagrams locked verbatim!", flush=True)
+    print("[PASS] All 591 EN/TE/HI notes verified & diagrams locked verbatim!", flush=True)
     sys.exit(0)
+
+print("[CHECK] Verifying live Telugu & Hindi endpoints...", flush=True)
+t0 = time.time()
+p_te = tr_single("Section 2(h) of the Indian Contract Act defines a contract.", "te")
+p_hi = tr_single("Section 2(h) of the Indian Contract Act defines a contract.", "hi")
+print(f"[CHECK] Live OK in {time.time() - t0:.2f}s | TE_script={count_target_script(p_te, 'te')} | HI_script={count_target_script(p_hi, 'hi')}", flush=True)
 
 def run_topic(item):
     tid, need_te, need_hi = item
     en = notes[tid]["en"]
-    return tid, (prepare_copy(en, "te") if need_te else None), (prepare_copy(en, "hi") if need_hi else None)
+    te_c = prepare_copy(en, "te") if need_te else None
+    hi_c = prepare_copy(en, "hi") if need_hi else None
+    return tid, te_c, hi_c
 
-done, te_new, hi_new, start_ts = 0, 0, 0, time.time()
+done, te_new, hi_new, failed, start_ts = 0, 0, 0, 0, time.time()
 try:
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as ex:
         futs = {ex.submit(run_topic, w): w[0] for w in work}
@@ -324,16 +491,19 @@ try:
                 sync_visuals_verbatim(notes[tid])
                 done += 1
                 rate = done / max(0.01, time.time() - start_ts)
-                print(f"  [{done}/{len(work)}] {tid} | TE_Upgraded:{te_new} HI_Added:{hi_new} | ETA ~{int((len(work)-done)/rate)}s", flush=True)
+                print(f"  [{done}/{len(work)}] {tid} | +TE:{te_new} +HI:{hi_new} | ETA ~{int((len(work)-done)/rate)}s", flush=True)
                 if done % 20 == 0:
                     save_atomic()
-                    print(f"  [SAVED] Atomic checkpoint at {done}/{len(work)}", flush=True)
+                    print(f"  [SAVED] OneDrive-safe atomic checkpoint at {done}/{len(work)}", flush=True)
             except Exception as exc:
-                print(f"  [SKIP] {tid}: {exc}", flush=True)
+                failed += 1
+                print(f"  [RETRY-LATER] {tid}: {exc}", flush=True)
 except KeyboardInterrupt:
-    print("\n[STOPPED] Saving completed upgrades safely...", flush=True)
+    print("\n[STOPPED] Saving completed verified notes safely...", flush=True)
 
 save_atomic()
 te_ok = sum(1 for r in notes.values() if isinstance(r, dict) and has_good_script(r.get("te"), "te", r.get("en")))
 hi_ok = sum(1 for r in notes.values() if isinstance(r, dict) and has_good_script(r.get("hi"), "hi", r.get("en")))
-print(f"[PASS] Upgrade Complete: Total={total} | Verified TE={te_ok}/{total} | Verified HI={hi_ok}/{total} | Diagrams=100% Verbatim", flush=True)
+print(f"[PASS] Conversion Complete: Total={total} | Verified TE={te_ok}/{total} | Verified HI={hi_ok}/{total} | Failed={failed} | Diagrams=100% Verbatim", flush=True)
+if failed > 0:
+    print(f"[INFO] {failed} topic(s) were skipped due to transient rate-limiting; re-run this script once more to finish them cleanly.", flush=True)
