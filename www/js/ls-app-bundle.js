@@ -1,4 +1,4 @@
-/* Law Studyes v3.1.2 - Unified Crash-Safe Module Bundle (Built 2026-11-25 17:59:56) */
+/* Law Studyes v3.2.0 - Unified Crash-Safe Module Bundle (Built 2026-11-26 17:39:39) */
 
 /* === MODULE: ls-store.js === */
 try {
@@ -1149,49 +1149,30 @@ try {
 try {
 (function () {
   "use strict";
-  if (window.__lsSourceDiagramsV311) return;
-  window.__lsSourceDiagramsV311 = true;
+  if (window.__lsDiagramsAsIsV320) return;
+  window.__lsDiagramsAsIsV320 = true;
 
   var mermaidReady = false;
   var zoomScale = 1;
   var walkTimer = null;
 
-  function injectSourceDiagramCss() {
-    if (document.getElementById("lsSourceDiagramCssV311")) return;
+  function injectNonDestructiveCss() {
+    if (document.getElementById("lsDiagAsIsCssV320")) return;
     var st = document.createElement("style");
-    st.id = "lsSourceDiagramCssV311";
+    st.id = "lsDiagAsIsCssV320";
     st.textContent =
-      ".ls-src-vis-wrap { margin-top:22px; display:flex; flex-direction:column; gap:14px; }" +
-      ".ls-src-vis-card { background:#FFFFFF; border:1px solid #E8E0D5; border-radius:16px; padding:14px; box-shadow:0 2px 10px rgba(31,27,24,0.04); overflow:hidden; }" +
-      ".ls-src-vis-head { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #F3EDE4; }" +
-      ".ls-src-vis-box { overflow-x:auto; -webkit-overflow-scrolling:touch; padding:4px 2px; max-width:100%; }" +
-      ".ls-src-vis-box figure { margin:0; }" +
-      ".ls-src-vis-box figcaption { margin-bottom:10px; font-size:12.5px; color:#3D352E; line-height:1.45; }" +
-      ".ls-src-vis-box .dg { margin:0; font-size:12.5px; color:#1F1B18; }" +
-      ".ls-src-vis-box .dg-title { display:block; font-weight:800; color:#7B1E2B; font-size:14px; margin-bottom:3px; }" +
-      ".ls-src-vis-box .dg-how { display:block; font-size:11.5px; color:#5F554E; margin-bottom:10px; font-weight:500; }" +
-      ".ls-src-vis-box .nest { border:2px solid #7B1E2B; border-radius:14px; padding:10px 12px; margin-top:8px; background:#FAF7F2; }" +
-      ".ls-src-vis-box .nest.n2, .ls-src-vis-box .nest .nest { border-color:#B45309; background:#FFFBF0; }" +
-      ".ls-src-vis-box .nest.n3, .ls-src-vis-box .nest .nest .nest { border-color:#0F766E; background:#F0FDFA; }" +
-      ".ls-src-vis-box .nest.n4, .ls-src-vis-box .nest .nest .nest .nest { border-color:#1D4ED8; background:#EFF6FF; }" +
-      ".ls-src-vis-box .nest-label { font-weight:800; font-size:12.5px; color:#1F1B18; }" +
-      ".ls-src-vis-box .nest-label small { display:block; font-weight:600; color:#7B1E2B; font-size:11px; margin-top:2px; }" +
-      ".ls-src-vis-box .dg-time ol, .ls-src-vis-box .dg-steps ol, .ls-src-vis-box .dg-flow ol { list-style:none; padding:0; margin:8px 0 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:9px; }" +
-      ".ls-src-vis-box .dg-time li, .ls-src-vis-box .dg-steps li, .ls-src-vis-box .dg-flow li { background:#FAF7F2; border:1px solid #E8E0D5; border-left:3.5px solid #7B1E2B; border-radius:10px; padding:9px 10px; font-size:12px; line-height:1.45; }" +
-      ".ls-src-vis-box .dg-time li.hi, .ls-src-vis-box .dg-time li.accent { background:#ECFDF5; border-color:#A7F3D0; border-left-color:#059669; }" +
-      ".ls-src-vis-box .dg-time .when, .ls-src-vis-box .dg-steps .step-no { display:block; font-weight:800; color:#7B1E2B; font-size:12.5px; margin-bottom:3px; }" +
-      ".ls-src-vis-box .dg-grid, .ls-src-vis-box .dg-cols, .ls-src-vis-box .dg-split { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; }" +
-      ".ls-src-vis-box .dg-box, .ls-src-vis-box .dg-col, .ls-src-vis-box .dg-card { background:#FAF7F2; border:1px solid #E8E0D5; border-radius:12px; padding:10px 12px; }" +
-      ".ls-src-vis-box .mermaid { text-align:center; padding:6px 0; }" +
-      ".ls-src-vis-box svg { max-width:100% !important; height:auto !important; display:block; margin:0 auto; }" +
-      ".ls-src-vis-box table { width:100%; border-collapse:collapse; font-size:12.5px; min-width:300px; }" +
-      ".ls-src-vis-box th { background:#FBF1F2; color:#7B1E2B; text-align:left; padding:8px 10px; border:1px solid #E8D5D8; font-weight:800; }" +
-      ".ls-src-vis-box td { padding:8px 10px; border:1px solid #E8E0D5; vertical-align:top; color:#1F1B18; }" +
-      ".ls-src-vis-box tr:nth-child(even) td { background:#FAF7F2; }";
+      ".ls-asis-wrap { margin-top:20px; display:flex; flex-direction:column; gap:14px; }" +
+      ".ls-asis-card { background:#FFFFFF; border:1px solid #E8E0D5; border-radius:14px; padding:12px; overflow:hidden; }" +
+      ".ls-asis-head { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid #F3EDE4; }" +
+      ".ls-asis-stage { overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; }" +
+      ".ls-asis-stage svg { max-width:100%; height:auto; }" +
+      ".ls-asis-stage img { max-width:100%; height:auto; }" +
+      ".ls-asis-stage table { width:100%; border-collapse:collapse; }" +
+      ".ls-asis-stage th, .ls-asis-stage td { border:1px solid #E8E0D5; padding:7px 9px; text-align:left; vertical-align:top; }";
     document.head.appendChild(st);
   }
 
-  function isGenuineVisual(v) {
+  function isRealVisual(v) {
     if (!v || !v.html) return false;
     var h = String(v.html).trim();
     if (!h) return false;
@@ -1202,78 +1183,43 @@ try {
     return true;
   }
 
-  function dedupeVisuals(list) {
-    var out = [];
-    var seen = {};
-    for (var i = 0; i < list.length; i++) {
-      var v = list[i];
-      if (!isGenuineVisual(v)) continue;
-      var norm = String(v.html)
-        .replace(/<[^>]+>/g, " ")
-        .replace(/&[a-z#0-9]+;/gi, " ")
-        .replace(/\s+/g, " ")
-        .trim()
-        .toLowerCase()
-        .slice(0, 150);
-      if (norm && seen[norm]) continue;
-      if (norm) seen[norm] = true;
-      out.push(v);
-    }
-    return out;
-  }
-
-  function initMermaidOnce() {
+  function initMermaidAsIs() {
     if (mermaidReady || !window.mermaid) return;
     mermaidReady = true;
     try {
       window.mermaid.initialize({
         startOnLoad: false,
         securityLevel: "loose",
-        theme: "base",
-        themeVariables: {
-          primaryColor: "#FBF1F2",
-          primaryTextColor: "#1F1B18",
-          primaryBorderColor: "#7B1E2B",
-          lineColor: "#7B1E2B",
-          secondaryColor: "#FFFBF0",
-          tertiaryColor: "#FAF7F2",
-          fontFamily: "system-ui, -apple-system, sans-serif",
-          fontSize: "13px"
-        },
-        flowchart: { htmlLabels: true, curve: "basis", useMaxWidth: true }
+        flowchart: { htmlLabels: true, useMaxWidth: true }
       });
     } catch (e) {}
   }
 
-  function renderMermaidSafe(rootEl) {
-    if (!rootEl) return;
-    var nodes = rootEl.querySelectorAll(".mermaid");
+  function renderMermaidAsIs(container) {
+    if (!container) return;
+    var nodes = container.querySelectorAll(".mermaid");
     if (!nodes.length) return;
     if (!window.mermaid) {
-      setTimeout(function () { renderMermaidSafe(rootEl); }, 350);
+      setTimeout(function () { renderMermaidAsIs(container); }, 350);
       return;
     }
-    initMermaidOnce();
+    initMermaidAsIs();
     nodes.forEach(function (node, idx) {
       if (node.getAttribute("data-processed") === "true") return;
-      var src = (node.textContent || "").trim();
-      if (!src) return;
-      var renderId = "ls_mm_" + Date.now() + "_" + idx + "_" + Math.floor(Math.random() * 1000);
+      var code = (node.textContent || "").trim();
+      if (!code) return;
+      var rid = "ls_asis_mm_" + Date.now() + "_" + idx;
       try {
-        var out = window.mermaid.render(renderId, src);
-        if (out && typeof out.then === "function") {
-          out.then(function (res) {
-            if (res && res.svg) {
-              node.innerHTML = res.svg;
+        var res = window.mermaid.render(rid, code);
+        if (res && typeof res.then === "function") {
+          res.then(function (out) {
+            if (out && out.svg) {
+              node.innerHTML = out.svg;
               node.setAttribute("data-processed", "true");
             }
-          }).catch(function () {
-            node.setAttribute("data-processed", "error");
-          });
+          }).catch(function () {});
         }
-      } catch (e) {
-        node.setAttribute("data-processed", "error");
-      }
+      } catch (e) {}
     });
   }
 
@@ -1281,8 +1227,8 @@ try {
     if (walkTimer) { clearInterval(walkTimer); walkTimer = null; }
     var c = document.getElementById("lsZoomCanvas");
     if (c) {
-      c.querySelectorAll(".ls-spotlight-dim, .ls-spotlight-active, .ls-row-flash").forEach(function (el) {
-        el.classList.remove("ls-spotlight-dim", "ls-spotlight-active", "ls-row-flash");
+      c.querySelectorAll(".ls-spotlight-dim, .ls-spotlight-active, .ls-row-flash").forEach(function (n) {
+        n.classList.remove("ls-spotlight-dim", "ls-spotlight-active", "ls-row-flash");
       });
     }
   }
@@ -1291,16 +1237,16 @@ try {
     stopWalk();
     var c = document.getElementById("lsZoomCanvas");
     if (!c) return;
-    var items = Array.prototype.slice.call(c.querySelectorAll("svg .node, .dg-time li, .dg-steps li, .nest, tbody tr"));
+    var items = Array.prototype.slice.call(c.querySelectorAll("svg .node, li, .nest, tbody tr"));
     if (!items.length) return;
     var step = 0;
-    items.forEach(function (el) { el.classList.add("ls-spotlight-dim"); });
+    items.forEach(function (n) { n.classList.add("ls-spotlight-dim"); });
     function tick() {
-      items.forEach(function (el, idx) {
+      items.forEach(function (n, idx) {
         var on = (idx === step);
-        el.classList.toggle("ls-spotlight-active", on);
-        el.classList.toggle("ls-spotlight-dim", !on);
-        if (el.tagName === "TR") el.classList.toggle("ls-row-flash", on);
+        n.classList.toggle("ls-spotlight-active", on);
+        n.classList.toggle("ls-spotlight-dim", !on);
+        if (n.tagName === "TR") n.classList.toggle("ls-row-flash", on);
       });
       step = (step + 1) % items.length;
     }
@@ -1310,125 +1256,1223 @@ try {
 
   function openZoom(cardEl, title) {
     try {
-      var modal = document.getElementById("lsZoomModal");
-      var canvas = document.getElementById("lsZoomCanvas");
-      var titleEl = document.getElementById("lsZoomTitle");
-      if (!modal || !canvas || !cardEl) return;
+      var m = document.getElementById("lsZoomModal");
+      var c = document.getElementById("lsZoomCanvas");
+      var t = document.getElementById("lsZoomTitle");
+      if (!m || !c || !cardEl) return;
       stopWalk();
       zoomScale = 1;
-      canvas.style.transform = "scale(1)";
-      if (titleEl) titleEl.textContent = title || "Study Diagram";
-      var box = cardEl.querySelector(".ls-src-vis-box");
-      canvas.innerHTML = box ? box.innerHTML : cardEl.innerHTML;
-      modal.classList.remove("hidden");
-      renderMermaidSafe(canvas);
+      c.style.transform = "scale(1)";
+      if (t) t.textContent = title || "Source Diagram";
+      var stage = cardEl.querySelector(".ls-asis-stage");
+      c.innerHTML = stage ? stage.innerHTML : cardEl.innerHTML;
+      m.classList.remove("hidden");
+      renderMermaidAsIs(c);
     } catch (e) {}
   }
 
-  function wireZoomOnce() {
-    var modal = document.getElementById("lsZoomModal");
-    if (!modal || modal.__lsDiagV311Wired) return;
-    modal.__lsDiagV311Wired = true;
-    var canvas = document.getElementById("lsZoomCanvas");
+  function wireZoom() {
+    var m = document.getElementById("lsZoomModal");
+    if (!m || m.__lsAsIsZoomBound) return;
+    m.__lsAsIsZoomBound = true;
+    var c = document.getElementById("lsZoomCanvas");
     var bCl = document.getElementById("lsZoomCloseBtn");
     var bIn = document.getElementById("lsZoomInBtn");
     var bOut = document.getElementById("lsZoomOutBtn");
     var bRs = document.getElementById("lsZoomResetBtn");
     var bWk = document.getElementById("lsMemoryPulseBtn");
-    if (bCl) bCl.addEventListener("click", function () { stopWalk(); modal.classList.add("hidden"); });
-    if (bIn) bIn.addEventListener("click", function () { zoomScale = Math.min(2.4, +(zoomScale + 0.25).toFixed(2)); if (canvas) canvas.style.transform = "scale(" + zoomScale + ")"; });
-    if (bOut) bOut.addEventListener("click", function () { zoomScale = Math.max(0.6, +(zoomScale - 0.25).toFixed(2)); if (canvas) canvas.style.transform = "scale(" + zoomScale + ")"; });
-    if (bRs) bRs.addEventListener("click", function () { zoomScale = 1; if (canvas) canvas.style.transform = "scale(1)"; });
+    if (bCl) bCl.addEventListener("click", function () { stopWalk(); m.classList.add("hidden"); });
+    if (bIn) bIn.addEventListener("click", function () { zoomScale = Math.min(2.5, +(zoomScale + 0.25).toFixed(2)); if (c) c.style.transform = "scale(" + zoomScale + ")"; });
+    if (bOut) bOut.addEventListener("click", function () { zoomScale = Math.max(0.5, +(zoomScale - 0.25).toFixed(2)); if (c) c.style.transform = "scale(" + zoomScale + ")"; });
+    if (bRs) bRs.addEventListener("click", function () { zoomScale = 1; if (c) c.style.transform = "scale(1)"; });
     if (bWk) bWk.addEventListener("click", startWalk);
-    modal.addEventListener("click", function (ev) {
-      if (ev.target === modal) { stopWalk(); modal.classList.add("hidden"); }
-    });
+    m.addEventListener("click", function (ev) { if (ev.target === m) { stopWalk(); m.classList.add("hidden"); } });
   }
 
-  function renderSourceDiagrams() {
+  function renderAsIsDiagrams() {
     try {
-      injectSourceDiagramCss();
-      wireZoomOnce();
+      injectNonDestructiveCss();
+      wireZoom();
       var pane = document.getElementById("readingPane");
       if (!pane || typeof state === "undefined" || !state.activeTopicId) return;
 
-      ["lsVisualDiagramsSection", "lsSourceVisualsSection"].forEach(function (oldId) {
-        var el = document.getElementById(oldId);
-        if (el) el.remove();
+      ["lsVisualDiagramsSection", "lsSourceVisualsSection", "lsAsIsDiagramsSection"].forEach(function (id) {
+        var old = document.getElementById(id);
+        if (old) old.remove();
       });
 
       var rec = state.notes && state.notes[state.activeTopicId];
       if (!rec) return;
-      var active = rec[state.lang] || rec.en;
-      var raw = (active && Array.isArray(active.visuals) && active.visuals.length)
-        ? active.visuals
-        : ((rec.en && Array.isArray(rec.en.visuals)) ? rec.en.visuals : []);
-      var visuals = dedupeVisuals(raw);
+
+      var srcList = (rec.en && Array.isArray(rec.en.visuals) && rec.en.visuals.length)
+        ? rec.en.visuals
+        : ((rec[state.lang] && Array.isArray(rec[state.lang].visuals)) ? rec[state.lang].visuals : []);
+
+      var visuals = [];
+      for (var i = 0; i < srcList.length; i++) {
+        if (isRealVisual(srcList[i])) visuals.push(srcList[i]);
+      }
       if (!visuals.length) return;
 
       var sec = document.createElement("section");
-      sec.id = "lsSourceVisualsSection";
-      sec.className = "ls-src-vis-wrap";
+      sec.id = "lsAsIsDiagramsSection";
+      sec.className = "ls-asis-wrap";
 
-      var header = document.createElement("div");
-      header.className = "flex items-center justify-between gap-2 px-1";
-      header.innerHTML =
-        '<div class="text-sm font-extrabold text-[#7B1E2B]">Source Diagrams, Flowcharts &amp; Tables (' + visuals.length + ')</div>' +
-        '<span class="text-[10.5px] font-bold px-2 py-0.5 rounded-full bg-[#FBF1F2] text-[#7B1E2B]">Offline Ready</span>';
-      sec.appendChild(header);
+      var head = document.createElement("div");
+      head.className = "flex items-center justify-between gap-2 px-1";
+      head.innerHTML =
+        '<div class="text-sm font-extrabold text-[#7B1E2B]">Original Diagrams &amp; Tables (' + visuals.length + ')</div>' +
+        '<span class="text-[10.5px] font-bold px-2 py-0.5 rounded-full bg-[#FBF1F2] text-[#7B1E2B]">Exact Source Copy</span>';
+      sec.appendChild(head);
 
       visuals.forEach(function (v, idx) {
         var card = document.createElement("div");
-        card.className = "ls-src-vis-card";
-        var cap = String(v.caption || (v.type === "table" ? "Comparison Table" : "Study Diagram " + (idx + 1)));
+        card.className = "ls-asis-card";
+        var cap = String(v.caption || (v.type === "table" ? "Reference Table" : "Diagram " + (idx + 1)));
 
-        var top = document.createElement("div");
-        top.className = "ls-src-vis-head";
-        top.innerHTML =
+        var bar = document.createElement("div");
+        bar.className = "ls-asis-head";
+        bar.innerHTML =
           '<div class="text-xs font-bold text-[#7B1E2B] truncate">' + cap.replace(/</g, "&lt;") + '</div>' +
-          '<button type="button" class="ls-zoom-btn px-2.5 py-1 rounded-lg bg-[#FAF7F2] border border-[#E8E0D5] text-[11px] font-bold text-[#7B1E2B] shrink-0">Zoom &amp; Walk</button>';
+          '<button type="button" class="ls-asis-zoom px-2.5 py-1 rounded-lg bg-[#FAF7F2] border border-[#E8E0D5] text-[11px] font-bold text-[#7B1E2B] shrink-0">Zoom &amp; Walk</button>';
 
-        var box = document.createElement("div");
-        box.className = "ls-src-vis-box";
-        box.innerHTML = v.html;
+        var stage = document.createElement("div");
+        stage.className = "ls-asis-stage";
+        stage.innerHTML = v.html;
 
-        top.querySelector(".ls-zoom-btn").addEventListener("click", function () {
-          openZoom(card, cap);
-        });
-
-        card.appendChild(top);
-        card.appendChild(box);
+        bar.querySelector(".ls-asis-zoom").addEventListener("click", function () { openZoom(card, cap); });
+        card.appendChild(bar);
+        card.appendChild(stage);
         sec.appendChild(card);
       });
 
       pane.appendChild(sec);
-      renderMermaidSafe(sec);
+      renderMermaidAsIs(sec);
     } catch (e) {}
   }
 
-  function hookReadingPane() {
+  function hook() {
     try {
-      if (typeof window.renderReadingPane === "function" && !window.__lsSrcDiagHookV311) {
-        window.__lsSrcDiagHookV311 = true;
+      if (typeof window.renderReadingPane === "function" && !window.__lsAsIsHookV320) {
+        window.__lsAsIsHookV320 = true;
         var orig = window.renderReadingPane;
         window.renderReadingPane = function () {
           var r = orig.apply(this, arguments);
-          renderSourceDiagrams();
+          renderAsIsDiagrams();
           return r;
         };
-        renderSourceDiagrams();
+        renderAsIsDiagrams();
       }
     } catch (e) {}
   }
 
-  window.LSDiagrams = { render: renderSourceDiagrams };
-
+  window.LSDiagrams = { render: renderAsIsDiagrams };
   window.addEventListener("DOMContentLoaded", function () {
-    setTimeout(hookReadingPane, 300);
-    setTimeout(hookReadingPane, 1100);
+    setTimeout(hook, 300);
+    setTimeout(hook, 1100);
   });
 })();
 } catch (__lsModErr) { console.error('[LS Module Error: ls-diagrams.js]', __lsModErr); }
+
+/* === MODULE: ls-note-converter.js === */
+try {
+(function () {
+  "use strict";
+  if (window.__lsNoteConverterV312) return;
+  window.__lsNoteConverterV312 = true;
+
+  var CACHE_PREFIX = "ls_legal_copy_v1_";
+  var busyKeys = {};
+
+  function hasScript(obj, lang) {
+    if (!obj || typeof obj !== "object") return false;
+    var s = String(obj.inOneMinute || "") + " " + String(obj.meaning || "") + " " + String(obj.legalProvision || "");
+    if (s.trim().length < 6) return false;
+    if (lang === "te") return /[\u0C00-\u0C7F]{3,}/.test(s);
+    if (lang === "hi") return /[\u0900-\u097F]{3,}/.test(s);
+    return true;
+  }
+
+  function protectTokens(text) {
+    var tokens = [];
+    var re = /(<[^>]+>|\b(?:Section|Sec\.|Article|Art\.|Order|Rule|Schedule|Clause)\s+\d+[A-Za-z0-9()\-/]*|\b(?:IPC|CrPC|CPC|BNS|BNSS|BSA|ICA|TPA|AIR|SCC|SCR)\b)/g;
+    var masked = String(text || "").replace(re, function (m) {
+      tokens.push(m);
+      return "__LTOK" + (tokens.length - 1) + "__";
+    });
+    return { masked: masked, tokens: tokens };
+  }
+
+  function restoreTokens(text, tokens) {
+    var out = String(text || "");
+    for (var i = 0; i < tokens.length; i++) {
+      out = out.replace(new RegExp("__\\s*LTOK\\s*" + i + "\\s*__", "gi"), tokens[i]);
+    }
+    return out;
+  }
+
+  async function trLegalStr(text, tl) {
+    var s = String(text || "").trim();
+    if (!s) return "";
+    var p = protectTokens(s.slice(0, 1100));
+    var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=" +
+      encodeURIComponent(tl) + "&dt=t&q=" + encodeURIComponent(p.masked);
+    var r = await fetch(url);
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    var d = await r.json();
+    var joined = "";
+    if (Array.isArray(d) && Array.isArray(d[0])) {
+      for (var i = 0; i < d[0].length; i++) {
+        if (d[0][i] && d[0][i][0]) joined += d[0][i][0];
+      }
+    }
+    return restoreTokens(joined.trim() || p.masked, p.tokens);
+  }
+
+  async function convertNode(val, tl) {
+    if (!val || (typeof val !== "string" && typeof val !== "object")) return val;
+    if (typeof val === "string") return await trLegalStr(val, tl);
+    if (Array.isArray(val)) {
+      var arr = [];
+      for (var i = 0; i < val.length; i++) arr.push(await convertNode(val[i], tl));
+      return arr;
+    }
+    var skip = { id: 1, type: 1, html: 1, svg: 1, mermaid: 1, code: 1, citation: 1, year: 1, visuals: 1 };
+    var out = {};
+    Object.keys(val).forEach(function (k) { out[k] = val[k]; });
+    var keys = Object.keys(val);
+    for (var j = 0; j < keys.length; j++) {
+      var k = keys[j];
+      if (!skip[k]) out[k] = await convertNode(val[k], tl);
+    }
+    return out;
+  }
+
+  async function ensureVerifiedCopy(topicId, lang, force) {
+    if (!topicId || (lang !== "te" && lang !== "hi")) return;
+    if (typeof state === "undefined" || !state.notes || !state.notes[topicId]) return;
+    var rec = state.notes[topicId];
+    if (!rec.en) return;
+    if (!force && hasScript(rec[lang], lang)) return;
+
+    if (!force) {
+      try {
+        var raw = localStorage.getItem(CACHE_PREFIX + lang + "_" + topicId);
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (hasScript(parsed, lang)) {
+            rec[lang] = parsed;
+            if (state.activeTopicId === topicId && state.lang === lang && typeof window.renderReadingPane === "function") window.renderReadingPane();
+            return;
+          }
+        }
+      } catch (e) {}
+    }
+
+    var lock = lang + ":" + topicId;
+    if (busyKeys[lock] || !navigator.onLine) return;
+    busyKeys[lock] = true;
+    try {
+      var conv = await convertNode(rec.en, lang);
+      conv.visuals = rec.en.visuals || [];
+      if (hasScript(conv, lang)) {
+        rec[lang] = conv;
+        try { localStorage.setItem(CACHE_PREFIX + lang + "_" + topicId, JSON.stringify(conv)); } catch (e) {}
+        if (state.activeTopicId === topicId && state.lang === lang && typeof window.renderReadingPane === "function") window.renderReadingPane();
+      }
+    } catch (e) {}
+    finally { delete busyKeys[lock]; }
+  }
+
+  function formatStudyCopy(topicId, lang, withEnglish) {
+    var rec = (typeof state !== "undefined" && state.notes) ? state.notes[topicId] : null;
+    if (!rec) return "";
+    var ld = rec[lang] || rec.en;
+    if (!ld) return "";
+    var meta = (typeof findTopicMeta === "function") ? findTopicMeta(topicId) : null;
+    var title = (meta && meta.topic && meta.topic.title) || topicId;
+    var lines = ["LAW STUDYES - " + title + " (" + String(lang || "en").toUpperCase() + ")"];
+    if (ld.inOneMinute) lines.push("\n[In One Minute]\n" + ld.inOneMinute);
+    if (ld.legalProvision) lines.push("\n[Legal Provision]\n" + ld.legalProvision);
+    if (ld.meaning) lines.push("\n[Meaning]\n" + ld.meaning);
+    if (Array.isArray(ld.keyPoints) && ld.keyPoints.length) {
+      lines.push("\n[Key Points]\n- " + ld.keyPoints.map(function (p) { return typeof p === "string" ? p : JSON.stringify(p); }).join("\n- "));
+    }
+    if (Array.isArray(ld.caseLaws) && ld.caseLaws.length) {
+      lines.push("\n[Leading Case Laws]");
+      ld.caseLaws.forEach(function (c) {
+        if (typeof c === "string") lines.push("- " + c);
+        else if (c) lines.push("- " + (c.name || c.title || "") + (c.summary ? ": " + c.summary : (c.principle ? ": " + c.principle : "")));
+      });
+    }
+    if (withEnglish && lang !== "en" && rec.en) {
+      lines.push("\n--- ENGLISH EXAM REFERENCE ---");
+      if (rec.en.legalProvision) lines.push("Provision: " + rec.en.legalProvision);
+      if (rec.en.inOneMinute) lines.push("Summary: " + rec.en.inOneMinute);
+    }
+    return lines.join("\n");
+  }
+
+  function copyText(txt, label) {
+    if (!txt) return;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(function () {
+        if (typeof showToast === "function") showToast(label + " copied!");
+      }).catch(function () { fallbackCopy(txt, label); });
+    } else {
+      fallbackCopy(txt, label);
+    }
+  }
+
+  function fallbackCopy(txt, label) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = txt; ta.style.cssText = "position:fixed;left:-9999px;top:0;";
+      document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove();
+      if (typeof showToast === "function") showToast(label + " copied!");
+    } catch (e) {}
+  }
+
+  function renderCopyToolbar() {
+    try {
+      if (typeof state === "undefined" || !state.activeTopicId) return;
+      var pane = document.getElementById("readingPane");
+      if (!pane) return;
+      var lang = state.lang || "en";
+      var rec = state.notes && state.notes[state.activeTopicId];
+      if (!rec) return;
+
+      if ((lang === "te" || lang === "hi") && !hasScript(rec[lang], lang)) {
+        ensureVerifiedCopy(state.activeTopicId, lang, false);
+      }
+
+      var old = document.getElementById("lsNoteCopyBar");
+      if (old) old.remove();
+
+      var bar = document.createElement("div");
+      bar.id = "lsNoteCopyBar";
+      bar.style.cssText = "display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px;padding:8px 10px;border-radius:12px;background:#FAF7F2;border:1px solid #E8E0D5;";
+      var langName = lang === "te" ? "Telugu" : (lang === "hi" ? "Hindi" : "English");
+      var btnCss = "padding:6px 10px;border-radius:9px;border:1px solid #E8D5D8;background:#FFFFFF;color:#7B1E2B;font-size:11.5px;font-weight:700;cursor:pointer;";
+
+      var bCopy = document.createElement("button");
+      bCopy.type = "button"; bCopy.style.cssText = btnCss;
+      bCopy.textContent = "Copy " + langName + " Note";
+      bCopy.addEventListener("click", function () { copyText(formatStudyCopy(state.activeTopicId, lang, false), langName + " note"); });
+      bar.appendChild(bCopy);
+
+      if (lang !== "en") {
+        var bDual = document.createElement("button");
+        bDual.type = "button"; bDual.style.cssText = btnCss + "background:#FBF1F2;";
+        bDual.textContent = "Copy " + langName + " + EN";
+        bDual.addEventListener("click", function () { copyText(formatStudyCopy(state.activeTopicId, lang, true), langName + " + English copy"); });
+        bar.appendChild(bDual);
+
+        if (!hasScript(rec[lang], lang)) {
+          var bFix = document.createElement("button");
+          bFix.type = "button"; bFix.style.cssText = btnCss + "background:#7B1E2B;color:#FFFFFF;border-color:#7B1E2B;";
+          bFix.textContent = "Prepare " + langName + " Now";
+          bFix.addEventListener("click", function () {
+            if (typeof showToast === "function") showToast("Preparing " + langName + " legal copy...");
+            ensureVerifiedCopy(state.activeTopicId, lang, true);
+          });
+          bar.appendChild(bFix);
+        }
+      }
+      pane.insertBefore(bar, pane.firstChild);
+    } catch (e) {}
+  }
+
+  function hook() {
+    try {
+      if (typeof window.renderReadingPane === "function" && !window.__lsNoteConvHookV312) {
+        window.__lsNoteConvHookV312 = true;
+        var orig = window.renderReadingPane;
+        window.renderReadingPane = function () { var r = orig.apply(this, arguments); renderCopyToolbar(); return r; };
+        renderCopyToolbar();
+      }
+    } catch (e) {}
+  }
+
+  window.LSNoteConverter = { ensureCopy: ensureVerifiedCopy, formatCopy: formatStudyCopy, hasScript: hasScript };
+  window.addEventListener("DOMContentLoaded", function () { setTimeout(hook, 350); setTimeout(hook, 1200); });
+})();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-note-converter.js]', __lsModErr); }
+
+/* === MODULE: ls-indian-professor.js === */
+try {
+(function () {
+  "use strict";
+  if (window.__lsIndianProfessorV320) return;
+  window.__lsIndianProfessorV320 = true;
+
+  var PREF_STYLE_KEY = "ls_prof_style_v1";
+  var PREF_GENDER_KEY = "ls_prof_gender_v1";
+  var AUDIO_CACHE_NAME = "ls-prof-audio-v1";
+  var CDN_BASE = "https://law-studyes.vercel.app";
+
+  var audioManifest = null;
+  var htmlAudio = null;
+  var profPlaying = false;
+  var profPaused = false;
+  var activeSentenceIdx = 0;
+  var activeSentences = [];
+  var speakToken = 0;
+
+  function getStyle() {
+    try { return localStorage.getItem(PREF_STYLE_KEY) || "professor"; } catch (e) { return "professor"; }
+  }
+  function setStyle(v) {
+    try { localStorage.setItem(PREF_STYLE_KEY, v); } catch (e) {}
+  }
+  function getGender() {
+    try { return localStorage.getItem(PREF_GENDER_KEY) || "female"; } catch (e) { return "female"; }
+  }
+  function setGender(v) {
+    try { localStorage.setItem(PREF_GENDER_KEY, v); } catch (e) {}
+  }
+
+  function cleanStr(s) {
+    return String(s || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  }
+
+  function getActiveBcp47(lang) {
+    var l = String(lang || "en").toLowerCase();
+    if (l === "te") return "te-IN";
+    if (l === "hi") return "hi-IN";
+    return "en-IN";
+  }
+
+  function getTopicTitle(topicId) {
+    try {
+      if (typeof findTopicMeta === "function") {
+        var meta = findTopicMeta(topicId);
+        if (meta && meta.topic && meta.topic.title) return meta.topic.title;
+      }
+    } catch (e) {}
+    return String(topicId || "Legal Topic").replace(/-/g, " ");
+  }
+
+  function extractPoints(ld) {
+    var out = [];
+    var kp = ld && ld.keyPoints;
+    if (Array.isArray(kp)) {
+      for (var i = 0; i < kp.length && out.length < 5; i++) {
+        var it = kp[i];
+        var txt = typeof it === "string" ? cleanStr(it) : cleanStr((it && (it.point || it.text || it.summary)) || "");
+        if (txt) out.push(txt);
+      }
+    }
+    return out;
+  }
+
+  function extractTopCase(ld) {
+    var cs = ld && ld.caseLaws;
+    if (!Array.isArray(cs) || !cs.length) return "";
+    var c = cs[0];
+    if (typeof c === "string") return cleanStr(c);
+    if (c && typeof c === "object") {
+      var n = cleanStr(c.name || c.title || "");
+      var p = cleanStr(c.principle || c.summary || "");
+      return n && p ? (n + " - " + p) : (n || p);
+    }
+    return "";
+  }
+
+  function buildLessonBlocks(topicId, lang) {
+    var rec = (typeof state !== "undefined" && state.notes) ? state.notes[topicId] : null;
+    if (!rec) return null;
+    var ld = rec[lang] || rec.en;
+    if (!ld) return null;
+
+    var title = getTopicTitle(topicId);
+    var oneMin = cleanStr(ld.inOneMinute);
+    var prov = cleanStr(ld.legalProvision);
+    var meaning = cleanStr(ld.meaning);
+    var pts = extractPoints(ld);
+    var topCase = extractTopCase(ld);
+
+    if (lang === "te") {
+      return {
+        heading: "\u0c07\u0c02\u0c21\u0c3f\u0c2f\u0c28\u0c4d \u0c2a\u0c4d\u0c30\u0c4a\u0c2b\u0c46\u0c38\u0c30\u0c4d \u0c15\u0c4d\u0c32\u0c3e\u0c38\u0c4d\u200c\u0c30\u0c42\u0c2e\u0c4d (AI Teaching Mode)",
+        sub: "\u0c38\u0c3f\u0c02\u0c2a\u0c41\u0c32\u0c4d \u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c15\u0c4d\u0c32\u0c3e\u0c38\u0c4d \u0c35\u0c3f\u0c35\u0c30\u0c23 + \u0c0e\u0c17\u0c4d\u0c1c\u0c3e\u0c2e\u0c4d \u0c1f\u0c3f\u0c2a\u0c4d\u0c38\u0c4d",
+        steps: [
+          { tag: "\u0c15\u0c4d\u0c32\u0c3e\u0c38\u0c4d \u0c38\u0c4d\u0c1f\u0c3e\u0c30\u0c4d\u0c1f\u0c4d", text: "\u0c28\u0c2e\u0c38\u0c4d\u0c15\u0c3e\u0c30\u0c02 \u0c38\u0c4d\u0c1f\u0c42\u0c21\u0c46\u0c02\u0c1f\u0c4d\u0c38\u0c4d! \u0c08\u0c30\u0c4b\u0c1c\u0c41 " + title + " \u0c1f\u0c3e\u0c2a\u0c3f\u0c15\u0c4d\u200c\u0c28\u0c3f \u0c1f\u0c46\u0c28\u0c4d\u0c37\u0c28\u0c4d \u0c32\u0c47\u0c15\u0c41\u0c02\u0c21\u0c3e \u0c38\u0c3f\u0c02\u0c2a\u0c41\u0c32\u0c4d\u200c\u0c17\u0c3e \u0c05\u0c30\u0c4d\u0c25\u0c02 \u0c1a\u0c47\u0c38\u0c41\u0c15\u0c41\u0c02\u0c26\u0c3e\u0c02." },
+          oneMin ? { tag: "\u0c12\u0c15\u0c4d\u0c15 \u0c2e\u0c3e\u0c1f\u0c32\u0c4b \u0c38\u0c3e\u0c30\u0c3e\u0c02\u0c36\u0c02", text: "\u0c2e\u0c41\u0c02\u0c26\u0c41\u0c17\u0c3e \u0c2e\u0c46\u0c2f\u0c3f\u0c28\u0c4d \u0c15\u0c3e\u0c28\u0c4d\u0c38\u0c46\u0c2a\u0c4d\u0c1f\u0c4d \u0c35\u0c3f\u0c28\u0c02\u0c21\u0c3f: " + oneMin } : null,
+          prov ? { tag: "\u0c0e\u0c17\u0c4d\u0c1c\u0c3e\u0c2e\u0c4d \u0c38\u0c46\u0c15\u0c4d\u0c37\u0c28\u0c4d \u0c39\u0c41\u0c15\u0c4d", text: "\u0c06\u0c28\u0c4d\u0c38\u0c30\u0c4d \u0c36\u0c40\u0c1f\u0c4d\u200c\u0c32\u0c4b \u0c2b\u0c38\u0c4d\u0c1f\u0c4d \u0c08 \u0c38\u0c46\u0c15\u0c4d\u0c37\u0c28\u0c4d \u0c30\u0c3e\u0c2f\u0c02\u0c21\u0c3f: " + prov } : null,
+          meaning ? { tag: "\u0c38\u0c30\u0c33\u0c2e\u0c48\u0c28 \u0c35\u0c3f\u0c35\u0c30\u0c23", text: meaning } : null,
+          pts.length ? { tag: "\u0c2e\u0c3e\u0c30\u0c4d\u0c15\u0c41\u0c32\u0c41 \u0c24\u0c46\u0c1a\u0c4d\u0c1a\u0c47 \u0c2a\u0c3e\u0c2f\u0c3f\u0c02\u0c1f\u0c4d\u0c32\u0c41", text: "\u0c08 \u0c2e\u0c41\u0c16\u0c4d\u0c2f \u0c2a\u0c3e\u0c2f\u0c3f\u0c02\u0c1f\u0c4d\u0c32\u0c41 \u0c17\u0c41\u0c30\u0c4d\u0c24\u0c41\u0c02\u0c1a\u0c41\u0c15\u0c4b\u0c02\u0c21\u0c3f: " + pts.join(" | ") } : null,
+          topCase ? { tag: "\u0c15\u0c47\u0c38\u0c4d \u0c32\u0c3e \u0c17\u0c41\u0c30\u0c4d\u0c24\u0c41", text: "\u0c08 \u0c15\u0c47\u0c38\u0c4d \u0c32\u0c3e \u0c24\u0c2a\u0c4d\u0c2a\u0c15\u0c41\u0c02\u0c21\u0c3e \u0c05\u0c02\u0c21\u0c30\u0c4d\u200c\u0c32\u0c48\u0c28\u0c4d \u0c1a\u0c47\u0c38\u0c3f \u0c30\u0c3e\u0c2f\u0c02\u0c21\u0c3f: " + topCase } : null,
+          { tag: "\u0c2a\u0c4d\u0c30\u0c4a\u0c2b\u0c46\u0c38\u0c30\u0c4d \u0c0e\u0c17\u0c4d\u0c1c\u0c3e\u0c2e\u0c4d \u0c1f\u0c3f\u0c2a\u0c4d", text: "\u0c38\u0c3f\u0c02\u0c2a\u0c41\u0c32\u0c4d \u0c2b\u0c3e\u0c30\u0c4d\u0c2e\u0c41\u0c32\u0c3e: \u0c38\u0c46\u0c15\u0c4d\u0c37\u0c28\u0c4d + \u0c2a\u0c3e\u0c2f\u0c3f\u0c02\u0c1f\u0c4d\u0c32\u0c41 + \u0c15\u0c47\u0c38\u0c4d \u0c32\u0c3e + \u0c1a\u0c3f\u0c28\u0c4d\u0c28 \u0c21\u0c2f\u0c3e\u0c17\u0c4d\u0c30\u0c2e\u0c4d \u0c35\u0c47\u0c38\u0c4d\u0c24\u0c47 \u0c0e\u0c17\u0c4d\u0c1c\u0c3e\u0c2e\u0c3f\u0c28\u0c30\u0c4d \u0c2b\u0c41\u0c32\u0c4d \u0c2e\u0c3e\u0c30\u0c4d\u0c15\u0c41\u0c32\u0c41 \u0c35\u0c47\u0c38\u0c4d\u0c24\u0c3e\u0c30\u0c41!" }
+        ].filter(Boolean)
+      };
+    }
+
+    if (lang === "hi") {
+      return {
+        heading: "\u0907\u0902\u0921\u093f\u092f\u0928 \u092a\u094d\u0930\u094b\u092b\u0947\u0938\u0930 \u0915\u094d\u0932\u093e\u0938\u0930\u0942\u092e (AI Teaching Mode)",
+        sub: "\u0906\u0938\u093e\u0928 \u0939\u093f\u0902\u0926\u0940 \u0915\u094d\u0932\u093e\u0938\u0930\u0942\u092e \u0938\u092e\u091d + \u090f\u0917\u094d\u091c\u093e\u092e \u091f\u094d\u0930\u093f\u0915\u094d\u0938",
+        steps: [
+          { tag: "\u0915\u094d\u0932\u093e\u0938 \u0936\u0941\u0930\u0942", text: "\u0928\u092e\u0938\u094d\u0924\u0947 \u0938\u094d\u091f\u0942\u0921\u0947\u0902\u091f\u094d\u0938! \u091a\u0932\u093f\u090f \u0906\u091c " + title + " \u0915\u094b \u092c\u093f\u0928\u093e \u0930\u091f\u094d\u091f\u093e \u092e\u093e\u0930\u0947 \u0926\u0947\u0938\u0940 \u0915\u094d\u0932\u093e\u0938\u0930\u0942\u092e \u0905\u0902\u0926\u093e\u091c \u092e\u0947\u0902 \u0938\u092e\u091d\u0924\u0947 \u0939\u0948\u0902\u0964" },
+          oneMin ? { tag: "\u0905\u0938\u0932\u0940 \u0915\u0949\u0928\u094d\u0938\u0947\u092a\u094d\u091f", text: "\u0927\u094d\u092f\u093e\u0928 \u0938\u0947 \u0938\u0941\u0928\u093f\u090f, \u092a\u0942\u0930\u0947 \u091f\u0949\u092a\u093f\u0915 \u0915\u093e \u0928\u093f\u091a\u094b\u0921\u093c \u092f\u0939 \u0939\u0948: " + oneMin } : null,
+          prov ? { tag: "\u090f\u0917\u094d\u091c\u093e\u092e \u0938\u0947\u0915\u094d\u0936\u0928", text: "\u0906\u0902\u0938\u0930 \u0915\u0940 \u0936\u0941\u0930\u0941\u0906\u0924 \u092e\u0947\u0902 \u092f\u0939 \u0938\u0947\u0915\u094d\u0936\u0928 \u091c\u0930\u0942\u0930 \u0932\u093f\u0916\u093f\u090f: " + prov } : null,
+          meaning ? { tag: "\u0906\u0938\u093e\u0928 \u092d\u093e\u0937\u093e \u092e\u0947\u0902 \u0905\u0930\u094d\u0925", text: meaning } : null,
+          pts.length ? { tag: "\u0938\u094d\u0915\u094b\u0930\u093f\u0902\u0917 \u092a\u0949\u0907\u0902\u091f\u094d\u0938", text: "\u092f\u0947 \u092e\u0941\u0916\u094d\u092f \u092c\u093e\u0924\u0947\u0902 \u092f\u093e\u0926 \u0930\u0916\u093f\u090f: " + pts.join(" | ") } : null,
+          topCase ? { tag: "\u0915\u0947\u0938 \u0932\u0949 \u0939\u093f\u091f", text: "\u092f\u0939 \u0915\u0947\u0938 \u0932\u0949 \u0905\u0902\u0921\u0930\u0932\u093e\u0907\u0928 \u0915\u0930\u0915\u0947 \u0932\u093f\u0916\u0947\u0902: " + topCase } : null,
+          { tag: "\u092a\u094d\u0930\u094b\u092b\u0947\u0938\u0930 \u090f\u0917\u094d\u091c\u093e\u092e \u091f\u093f\u092a", text: "\u0938\u0940\u0927\u093e \u092b\u0949\u0930\u094d\u092e\u0942\u0932\u093e: \u0938\u0947\u0915\u094d\u0936\u0928 + \u092a\u0949\u0907\u0902\u091f\u094d\u0938 + \u0915\u0947\u0938 \u0932\u0949 + \u092b\u094d\u0932\u094b\u091a\u093e\u0930\u094d\u091f \u092c\u0928\u093e \u0926\u0940\u091c\u093f\u090f, \u092c\u0922\u093c\u093f\u092f\u093e \u0928\u0902\u092c\u0930 \u092a\u0915\u094d\u0915\u0947 \u0939\u0948\u0902!" }
+        ].filter(Boolean)
+      };
+    }
+
+    return {
+      heading: "Indian Professor Classroom (AI Teaching Mode)",
+      sub: "Relatable Indian LL.B. classroom explanation + exam answer strategy",
+      steps: [
+        { tag: "Class Start", text: "Hello students! Relax and listen closely. Let us break down " + title + " in plain Indian classroom style so you remember it right inside the exam hall." },
+        oneMin ? { tag: "Core Logic (1 Min)", text: "First, catch the heart of this topic in one minute: " + oneMin } : null,
+        prov ? { tag: "Section Hook", text: "Always open your LL.B. answer with this exact provision: " + prov } : null,
+        meaning ? { tag: "Plain Meaning", text: "In everyday terms, here is what the law is actually saying: " + meaning } : null,
+        pts.length ? { tag: "Scoring Points", text: "Keep these exam-scoring points on your fingertips: " + pts.join(" | ") } : null,
+        topCase ? { tag: "Landmark Case", text: "Quote and underline this leading case law to impress the examiner: " + topCase } : null,
+        { tag: "Exam Formula", text: "Simple winning formula: Section Number + Crisp Points + Case Law + Source Flowchart = guaranteed strong marks!" }
+      ].filter(Boolean)
+    };
+  }
+
+  function injectCss() {
+    if (document.getElementById("lsProfCssV320")) return;
+    var st = document.createElement("style");
+    st.id = "lsProfCssV320";
+    st.textContent =
+      ".ls-prof-card { margin:14px 0 16px; border-radius:16px; background:linear-gradient(135deg,#FFFBF2 0%,#FDF4F5 100%); border:1.5px solid #E5C9A8; padding:12px 14px; box-shadow:0 4px 14px rgba(123,30,43,0.06); }" +
+      ".ls-prof-top { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; }" +
+      ".ls-prof-title { font-size:13.5px; font-weight:800; color:#7B1E2B; }" +
+      ".ls-prof-sub { font-size:11px; color:#6B5B4D; font-weight:600; }" +
+      ".ls-prof-controls { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-top:10px; }" +
+      ".ls-prof-btn { padding:6px 11px; border-radius:999px; border:1px solid #DFC5A4; background:#FFFFFF; color:#7B1E2B; font-size:11.5px; font-weight:800; cursor:pointer; }" +
+      ".ls-prof-btn.primary { background:#7B1E2B; color:#FFFFFF; border-color:#7B1E2B; }" +
+      ".ls-prof-btn.active { background:#8C6D46; color:#FFFFFF; border-color:#8C6D46; }" +
+      ".ls-prof-status { font-size:11px; color:#7B1E2B; font-weight:700; margin-top:8px; }" +
+      ".ls-prof-body { margin-top:10px; display:flex; flex-direction:column; gap:7px; }" +
+      ".ls-prof-step { background:#FFFFFF; border:1px solid #EFE4D6; border-left:3.5px solid #7B1E2B; border-radius:10px; padding:8px 10px; font-size:12.5px; line-height:1.55; color:#231D19; }" +
+      ".ls-prof-step.speaking { background:#FFF7E6; border-left-color:#B45309; box-shadow:0 0 0 2px rgba(180,83,9,0.18); }" +
+      ".ls-prof-tag { display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.3px; color:#7B1E2B; background:#FBF1F2; padding:2px 7px; border-radius:999px; margin-bottom:4px; }";
+    document.head.appendChild(st);
+  }
+
+  async function loadAudioManifest() {
+    if (audioManifest !== null) return audioManifest;
+    audioManifest = {};
+    try {
+      var r = await fetch("./audio/manifest.json", { cache: "no-store" });
+      if (r.ok) audioManifest = await r.json();
+    } catch (e) {}
+    return audioManifest;
+  }
+
+  function stopProfessorAudio() {
+    speakToken++;
+    profPlaying = false;
+    profPaused = false;
+    if (htmlAudio) {
+      try { htmlAudio.pause(); htmlAudio.currentTime = 0; } catch (e) {}
+      htmlAudio = null;
+    }
+    var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
+    if (tts && typeof tts.stop === "function") { try { tts.stop().catch(function () {}); } catch (e) {} }
+    if (typeof window.speechSynthesis !== "undefined") { try { window.speechSynthesis.cancel(); } catch (e) {} }
+    updateProfButtons();
+    highlightStep(-1);
+  }
+
+  function highlightStep(idx) {
+    var steps = document.querySelectorAll("#lsProfLessonBody .ls-prof-step");
+    steps.forEach(function (el, i) { el.classList.toggle("speaking", i === idx); });
+  }
+
+  function setStatusText(msg) {
+    var el = document.getElementById("lsProfStatus");
+    if (el) el.textContent = msg || "";
+  }
+
+  function updateProfButtons() {
+    var playBtn = document.getElementById("lsProfPlayBtn");
+    var stopBtn = document.getElementById("lsProfStopBtn");
+    if (playBtn) {
+      playBtn.textContent = profPlaying ? (profPaused ? "Resume Class" : "Pause Class") : "Listen to Professor";
+    }
+    if (stopBtn) stopBtn.style.display = (profPlaying || profPaused) ? "inline-block" : "none";
+  }
+
+  async function tryPlayStudioMp3(topicId, lang, myToken) {
+    var manifest = await loadAudioManifest();
+    var rel = (manifest && manifest[lang] && manifest[lang][topicId]) ? manifest[lang][topicId] : null;
+    if (!rel) return false;
+
+    var candidates = [rel, CDN_BASE + "/" + rel.replace(/^\.\//, "")];
+    for (var i = 0; i < candidates.length; i++) {
+      var url = candidates[i];
+      try {
+        var playUrl = url;
+        if ("caches" in window) {
+          var cache = await caches.open(AUDIO_CACHE_NAME);
+          var hit = await cache.match(url);
+          if (hit) {
+            playUrl = URL.createObjectURL(await hit.blob());
+          } else {
+            var resp = await fetch(url);
+            if (!resp.ok) continue;
+            try { cache.put(url, resp.clone()); } catch (e) {}
+            playUrl = URL.createObjectURL(await resp.blob());
+          }
+        }
+        if (myToken !== speakToken) return true;
+        htmlAudio = new Audio(playUrl);
+        htmlAudio.onended = function () {
+          profPlaying = false; profPaused = false;
+          setStatusText("Class completed (Studio Human Neural Voice).");
+          updateProfButtons();
+        };
+        htmlAudio.onerror = function () {
+          if (myToken === speakToken) { htmlAudio = null; }
+        };
+        await htmlAudio.play();
+        profPlaying = true; profPaused = false;
+        setStatusText("Playing Real Human Indian Neural Voice (Studio MP3 - Offline Cached)");
+        updateProfButtons();
+        return true;
+      } catch (e) {}
+    }
+    return false;
+  }
+
+  function pickBestIndianVoice(voices, bcp47, gender) {
+    if (!Array.isArray(voices) || !voices.length) return -1;
+    var target = bcp47.toLowerCase();
+    var pref = target.split("-")[0];
+    var femHints = /neerja|shruti|swara|heera|kalpana|veena|lekha|female|wavenet-a|wavenet-d|sfg|isf|inf/i;
+    var maleHints = /prabhat|mohan|madhur|ravi|hemant|male|wavenet-b|wavenet-c|ism|inm/i;
+    var bestIdx = -1, bestScore = -999;
+
+    for (var i = 0; i < voices.length; i++) {
+      var v = voices[i];
+      var vl = String((v && v.lang) || "").toLowerCase().replace("_", "-");
+      var vn = String((v && (v.name || v.voiceURI)) || "");
+      if (vl.indexOf("ar") === 0) continue;
+      if (vl !== target && vl.indexOf(pref + "-") !== 0) continue;
+
+      var sc = (vl === target) ? 50 : 20;
+      if (/neural|natural|network|wavenet|online|google/i.test(vn)) sc += 30;
+      if (gender === "female" && femHints.test(vn)) sc += 15;
+      if (gender === "male" && maleHints.test(vn)) sc += 15;
+      if (sc > bestScore) { bestScore = sc; bestIdx = i; }
+    }
+    return bestIdx;
+  }
+
+  async function speakSentenceNeural(text, lang, gender) {
+    var bcp47 = getActiveBcp47(lang);
+    var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
+    if (tts && typeof tts.speak === "function") {
+      var voiceIdx;
+      try {
+        if (typeof tts.getSupportedVoices === "function") {
+          var out = await tts.getSupportedVoices();
+          var pick = pickBestIndianVoice((out && out.voices) || [], bcp47, gender);
+          if (pick !== -1) voiceIdx = pick;
+        }
+      } catch (e) {}
+      var opts = { text: text, lang: bcp47, rate: 0.98, pitch: gender === "male" ? 0.95 : 1.02, volume: 1.0, category: "ambient" };
+      if (typeof voiceIdx === "number") opts.voice = voiceIdx;
+      await tts.speak(opts);
+      return;
+    }
+
+    if ("speechSynthesis" in window) {
+      await new Promise(function (resolve) {
+        try {
+          var u = new SpeechSynthesisUtterance(text);
+          u.lang = bcp47;
+          u.rate = 0.98;
+          u.pitch = gender === "male" ? 0.95 : 1.02;
+          var vs = window.speechSynthesis.getVoices ? window.speechSynthesis.getVoices() : [];
+          var pick = pickBestIndianVoice(vs, bcp47, gender);
+          if (pick !== -1 && vs[pick]) u.voice = vs[pick];
+          u.onend = resolve;
+          u.onerror = resolve;
+          window.speechSynthesis.speak(u);
+        } catch (e) { resolve(); }
+      });
+    }
+  }
+
+  async function startProfessorPlayback() {
+    if (typeof state === "undefined" || !state.activeTopicId) return;
+
+    if (profPlaying && !profPaused) {
+      profPaused = true;
+      if (htmlAudio) { try { htmlAudio.pause(); } catch (e) {} }
+      else {
+        speakToken++;
+        var tts = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.TextToSpeech;
+        if (tts && tts.stop) { try { tts.stop().catch(function () {}); } catch (e) {} }
+        if ("speechSynthesis" in window) { try { window.speechSynthesis.cancel(); } catch (e) {} }
+      }
+      setStatusText("Class paused.");
+      updateProfButtons();
+      return;
+    }
+
+    if (profPlaying && profPaused) {
+      profPaused = false;
+      if (htmlAudio) {
+        try { await htmlAudio.play(); } catch (e) {}
+        setStatusText("Resumed Studio Human Neural Voice.");
+        updateProfButtons();
+        return;
+      }
+      runSentenceLoop(activeSentenceIdx);
+      return;
+    }
+
+    if (window.LSAudioEngine && typeof window.LSAudioEngine.stop === "function") {
+      window.LSAudioEngine.stop();
+    }
+    stopProfessorAudio();
+
+    var myToken = ++speakToken;
+    var topicId = state.activeTopicId;
+    var lang = state.lang || "en";
+    var body = document.getElementById("lsProfLessonBody");
+    if (body) body.style.display = "flex";
+
+    setStatusText("Starting Indian Professor voice...");
+    var playedMp3 = await tryPlayStudioMp3(topicId, lang, myToken);
+    if (playedMp3) return;
+
+    var lesson = buildLessonBlocks(topicId, lang);
+    if (!lesson || !lesson.steps.length) return;
+    activeSentences = lesson.steps.map(function (s) { return s.text; });
+    activeSentenceIdx = 0;
+    runSentenceLoop(0);
+  }
+
+  async function runSentenceLoop(startIdx) {
+    var myToken = ++speakToken;
+    var lang = (typeof state !== "undefined" && state.lang) ? state.lang : "en";
+    var gender = getGender();
+    profPlaying = true;
+    profPaused = false;
+    updateProfButtons();
+    setStatusText("Speaking in Indian Professor Voice (" + getActiveBcp47(lang) + " - " + (gender === "male" ? "Sir" : "Ma'am") + ")");
+
+    for (var i = startIdx; i < activeSentences.length; i++) {
+      if (myToken !== speakToken) return;
+      activeSentenceIdx = i;
+      highlightStep(i);
+      await speakSentenceNeural(activeSentences[i], lang, gender);
+      if (myToken !== speakToken) return;
+      await new Promise(function (r) { setTimeout(r, 260); });
+    }
+    if (myToken === speakToken) {
+      profPlaying = false;
+      profPaused = false;
+      highlightStep(-1);
+      setStatusText("Classroom explanation complete!");
+      updateProfButtons();
+    }
+  }
+
+  function renderProfessorCard() {
+    try {
+      injectCss();
+      if (typeof state === "undefined" || !state.activeTopicId) return;
+      var pane = document.getElementById("readingPane");
+      if (!pane) return;
+
+      var old = document.getElementById("lsIndianProfessorCard");
+      if (old) old.remove();
+
+      var lang = state.lang || "en";
+      var lesson = buildLessonBlocks(state.activeTopicId, lang);
+      if (!lesson) return;
+
+      var card = document.createElement("section");
+      card.id = "lsIndianProfessorCard";
+      card.className = "ls-prof-card";
+
+      var gender = getGender();
+      card.innerHTML =
+        '<div class="ls-prof-top">' +
+          '<div>' +
+            '<div class="ls-prof-title">' + lesson.heading + '</div>' +
+            '<div class="ls-prof-sub">' + lesson.sub + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="ls-prof-controls">' +
+          '<button type="button" id="lsProfPlayBtn" class="ls-prof-btn primary">Listen to Professor</button>' +
+          '<button type="button" id="lsProfStopBtn" class="ls-prof-btn" style="display:none;">Stop</button>' +
+          '<button type="button" id="lsProfToggleBodyBtn" class="ls-prof-btn">Show Classroom Notes</button>' +
+          '<button type="button" id="lsProfVoiceFemBtn" class="ls-prof-btn' + (gender === "female" ? " active" : "") + '">Ma\'am Voice</button>' +
+          '<button type="button" id="lsProfVoiceMaleBtn" class="ls-prof-btn' + (gender === "male" ? " active" : "") + '">Sir Voice</button>' +
+        '</div>' +
+        '<div id="lsProfStatus" class="ls-prof-status"></div>' +
+        '<div id="lsProfLessonBody" class="ls-prof-body" style="display:none;"></div>';
+
+      var body = card.querySelector("#lsProfLessonBody");
+      lesson.steps.forEach(function (st) {
+        var row = document.createElement("div");
+        row.className = "ls-prof-step";
+        row.innerHTML = '<span class="ls-prof-tag">' + st.tag.replace(/</g, "&lt;") + '</span><div>' + st.text.replace(/</g, "&lt;") + '</div>';
+        body.appendChild(row);
+      });
+
+      card.querySelector("#lsProfPlayBtn").addEventListener("click", startProfessorPlayback);
+      card.querySelector("#lsProfStopBtn").addEventListener("click", stopProfessorAudio);
+      card.querySelector("#lsProfToggleBodyBtn").addEventListener("click", function (ev) {
+        var open = body.style.display !== "none";
+        body.style.display = open ? "none" : "flex";
+        ev.currentTarget.textContent = open ? "Show Classroom Notes" : "Hide Classroom Notes";
+      });
+      card.querySelector("#lsProfVoiceFemBtn").addEventListener("click", function () {
+        setGender("female");
+        card.querySelector("#lsProfVoiceFemBtn").classList.add("active");
+        card.querySelector("#lsProfVoiceMaleBtn").classList.remove("active");
+        if (typeof showToast === "function") showToast("Selected Indian Female Professor Voice");
+      });
+      card.querySelector("#lsProfVoiceMaleBtn").addEventListener("click", function () {
+        setGender("male");
+        card.querySelector("#lsProfVoiceMaleBtn").classList.add("active");
+        card.querySelector("#lsProfVoiceFemBtn").classList.remove("active");
+        if (typeof showToast === "function") showToast("Selected Indian Male Professor Voice");
+      });
+
+      var copyBar = document.getElementById("lsNoteCopyBar");
+      if (copyBar && copyBar.parentNode === pane) {
+        copyBar.insertAdjacentElement("afterend", card);
+      } else {
+        pane.insertBefore(card, pane.firstChild);
+      }
+      updateProfButtons();
+    } catch (e) {}
+  }
+
+  function hook() {
+    try {
+      if (typeof window.renderReadingPane === "function" && !window.__lsProfHookV320) {
+        window.__lsProfHookV320 = true;
+        var orig = window.renderReadingPane;
+        window.renderReadingPane = function () {
+          stopProfessorAudio();
+          var r = orig.apply(this, arguments);
+          renderProfessorCard();
+          return r;
+        };
+        renderProfessorCard();
+      }
+    } catch (e) {}
+  }
+
+  window.addEventListener("ls:lang-changed", stopProfessorAudio);
+  window.LSIndianProfessor = {
+    play: startProfessorPlayback,
+    stop: stopProfessorAudio,
+    getStyle: getStyle,
+    setStyle: setStyle
+  };
+
+  window.addEventListener("DOMContentLoaded", function () {
+    setTimeout(hook, 400);
+    setTimeout(hook, 1250);
+  });
+})();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-indian-professor.js]', __lsModErr); }
+
+/* === MODULE: ls-pdf-export.js === */
+try {
+(function () {
+  "use strict";
+  if (window.__lsPdfExportV320) return;
+  window.__lsPdfExportV320 = true;
+
+  var LABELS = {
+    en: {
+      medium: "English Medium",
+      oneMin: "In One Minute",
+      prov: "Legal Provision",
+      meaning: "Meaning & Definition",
+      points: "Key Scoring Points",
+      cases: "Leading Case Laws",
+      selfTest: "Exam Self-Test",
+      diagrams: "Original Diagrams & Reference Tables"
+    },
+    te: {
+      medium: "\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 \u0c2e\u0c40\u0c21\u0c3f\u0c2f\u0c02 (Telugu Medium)",
+      oneMin: "\u0c12\u0c15 \u0c28\u0c3f\u0c2e\u0c3f\u0c37\u0c02\u0c32\u0c4b",
+      prov: "\u0c1a\u0c1f\u0c4d\u0c1f\u0c2a\u0c30\u0c2e\u0c48\u0c28 \u0c28\u0c3f\u0c2c\u0c02\u0c27\u0c28",
+      meaning: "\u0c05\u0c30\u0c4d\u0c25\u0c02 & \u0c28\u0c3f\u0c30\u0c4d\u0c35\u0c1a\u0c28\u0c02",
+      points: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f \u0c05\u0c02\u0c36\u0c3e\u0c32\u0c41",
+      cases: "\u0c2e\u0c41\u0c16\u0c4d\u0c2f\u0c2e\u0c48\u0c28 \u0c15\u0c47\u0c38\u0c41\u0c32\u0c41",
+      selfTest: "\u0c38\u0c4d\u0c35\u0c2f\u0c02 \u0c2a\u0c30\u0c40\u0c15\u0c4d\u0c37",
+      diagrams: "\u0c05\u0c38\u0c32\u0c41 \u0c21\u0c2f\u0c3e\u0c17\u0c4d\u0c30\u0c2e\u0c4d\u200c\u0c32\u0c41 & \u0c1f\u0c47\u0c2c\u0c41\u0c33\u0c4d\u0c32\u0c41 (Source Copy)"
+    },
+    hi: {
+      medium: "\u0939\u093f\u0928\u094d\u0926\u0940 \u092e\u093e\u0927\u094d\u092f\u092e (Hindi Medium)",
+      oneMin: "\u090f\u0915 \u092e\u093f\u0928\u091f \u092e\u0947\u0902",
+      prov: "\u0935\u093f\u0927\u093f\u0915 \u092a\u094d\u0930\u093e\u0935\u0927\u093e\u0928",
+      meaning: "\u0905\u0930\u094d\u0925 \u0914\u0930 \u092a\u0930\u093f\u092d\u093e\u0937\u093e",
+      points: "\u092e\u0941\u0916\u094d\u092f \u092c\u093f\u0902\u0926\u0941",
+      cases: "\u092a\u094d\u0930\u092e\u0941\u0916 \u0928\u094d\u092f\u093e\u092f\u093f\u0915 \u0928\u093f\u0930\u094d\u0923\u092f",
+      selfTest: "\u0938\u094d\u0935-\u092a\u0930\u0940\u0915\u094d\u0937\u0923",
+      diagrams: "\u092e\u0942\u0932 \u0906\u0930\u0947\u0916 \u0914\u0930 \u0924\u093e\u0932\u093f\u0915\u093e\u090f\u0902 (Source Copy)"
+    }
+  };
+
+  function esc(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function safeFilename(name) {
+    return String(name || "LawStudyes-Notes")
+      .replace(/[^a-zA-Z0-9\-_]+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "")
+      .slice(0, 72) || "LawStudyes-Notes";
+  }
+
+  function isDualActive() {
+    try { return localStorage.getItem("ls_dual_mode_v1") === "1"; } catch (e) { return false; }
+  }
+
+  function getRenderedVisualsHtml(topicId, rec) {
+    try {
+      if (typeof state !== "undefined" && state.activeTopicId === topicId) {
+        var liveSec = document.getElementById("lsAsIsDiagramsSection") || document.getElementById("lsSourceVisualsSection");
+        if (liveSec) {
+          var cards = liveSec.querySelectorAll(".ls-asis-card, .ls-src-vis-card");
+          if (cards && cards.length) {
+            var chunks = [];
+            cards.forEach(function (c) {
+              var capEl = c.querySelector(".ls-asis-head div, .ls-src-vis-head div");
+              var stage = c.querySelector(".ls-asis-stage, .ls-src-vis-box");
+              if (stage && stage.innerHTML.trim()) {
+                var cap = capEl ? capEl.textContent : "Source Diagram";
+                chunks.push('<div class="pdf-vis-card"><div class="pdf-vis-cap">' + esc(cap) + '</div><div class="pdf-vis-stage">' + stage.innerHTML + '</div></div>');
+              }
+            });
+            if (chunks.length) return chunks.join("");
+          }
+        }
+      }
+    } catch (e) {}
+
+    var vis = (rec && rec.en && Array.isArray(rec.en.visuals)) ? rec.en.visuals : [];
+    var out = [];
+    for (var i = 0; i < vis.length; i++) {
+      var v = vis[i];
+      if (!v || !v.html) continue;
+      var h = String(v.html).trim();
+      if (v.type === "svg" && /viewbox=["']0 0 24 24["']/i.test(h) && h.length < 700) continue;
+      var cap = String(v.caption || (v.type === "table" ? "Reference Table" : "Source Diagram " + (i + 1)));
+      out.push('<div class="pdf-vis-card"><div class="pdf-vis-cap">' + esc(cap) + '</div><div class="pdf-vis-stage">' + h + '</div></div>');
+    }
+    return out.join("");
+  }
+
+  function buildTopicSectionHtml(topicId, title, subjectName, unitLabel, lang, includeDual) {
+    var rec = (typeof state !== "undefined" && state.notes) ? state.notes[topicId] : null;
+    if (!rec) return "";
+    var ld = rec[lang] || rec.en;
+    if (!ld) return "";
+    var lbl = LABELS[lang] || LABELS.en;
+
+    var parts = [];
+    parts.push('<article class="pdf-topic">');
+    parts.push('<div class="pdf-meta">' + esc(subjectName || "3-Year LL.B.") + (unitLabel ? " &middot; " + esc(unitLabel) : "") + ' &middot; ' + esc(lbl.medium) + '</div>');
+    parts.push('<h1 class="pdf-title">' + esc(title || topicId) + '</h1>');
+
+    if (ld.inOneMinute) {
+      parts.push('<div class="pdf-box highlight"><h2>' + esc(lbl.oneMin) + '</h2><p>' + esc(ld.inOneMinute) + '</p></div>');
+    }
+    if (ld.legalProvision) {
+      parts.push('<div class="pdf-box"><h2>' + esc(lbl.prov) + '</h2><p>' + esc(ld.legalProvision) + '</p></div>');
+    }
+    if (ld.meaning) {
+      parts.push('<div class="pdf-box"><h2>' + esc(lbl.meaning) + '</h2><p>' + esc(ld.meaning) + '</p></div>');
+    }
+    if (Array.isArray(ld.keyPoints) && ld.keyPoints.length) {
+      var lis = ld.keyPoints.map(function (pt) {
+        var t = typeof pt === "string" ? pt : (pt && (pt.point || pt.text || pt.summary) ? (pt.point || pt.text || pt.summary) : JSON.stringify(pt));
+        return '<li>' + esc(t) + '</li>';
+      }).join("");
+      parts.push('<div class="pdf-box"><h2>' + esc(lbl.points) + '</h2><ul>' + lis + '</ul></div>');
+    }
+    if (Array.isArray(ld.caseLaws) && ld.caseLaws.length) {
+      var casesHtml = ld.caseLaws.map(function (c) {
+        if (typeof c === "string") return '<li>' + esc(c) + '</li>';
+        if (!c || typeof c !== "object") return "";
+        var nm = c.name || c.title || "";
+        var yr = c.citation || c.year || "";
+        var pr = c.principle || c.summary || "";
+        return '<li><strong>' + esc(nm) + (yr ? " (" + esc(yr) + ")" : "") + '</strong>' + (pr ? ": " + esc(pr) : "") + '</li>';
+      }).join("");
+      parts.push('<div class="pdf-box"><h2>' + esc(lbl.cases) + '</h2><ul>' + casesHtml + '</ul></div>');
+    }
+    if (Array.isArray(ld.selfTest) && ld.selfTest.length) {
+      var qs = ld.selfTest.map(function (q, idx) {
+        if (typeof q === "string") return '<li>' + esc(q) + '</li>';
+        if (!q || typeof q !== "object") return "";
+        var qt = q.q || q.question || "";
+        var ans = q.a || q.answer || "";
+        return '<li><strong>Q' + (idx + 1) + ':</strong> ' + esc(qt) + (ans ? '<div class="pdf-ans"><em>Ans:</em> ' + esc(ans) + '</div>' : '') + '</li>';
+      }).join("");
+      parts.push('<div class="pdf-box"><h2>' + esc(lbl.selfTest) + '</h2><ol>' + qs + '</ol></div>');
+    }
+
+    if (includeDual && lang !== "en" && rec.en) {
+      parts.push('<div class="pdf-box dual"><h2>Dual-Medium English Exam Reference</h2>');
+      if (rec.en.legalProvision) parts.push('<p><strong>Provision:</strong> ' + esc(rec.en.legalProvision) + '</p>');
+      if (rec.en.inOneMinute) parts.push('<p><strong>Summary:</strong> ' + esc(rec.en.inOneMinute) + '</p>');
+      parts.push('</div>');
+    }
+
+    var visHtml = getRenderedVisualsHtml(topicId, rec);
+    if (visHtml) {
+      parts.push('<div class="pdf-vis-wrap"><h2>' + esc(lbl.diagrams) + '</h2>' + visHtml + '</div>');
+    }
+    parts.push('</article>');
+    return parts.join("");
+  }
+
+  function wrapA4Document(docTitle, bodyHtml) {
+    var dateStr = new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+    return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" />' +
+      '<meta name="viewport" content="width=device-width,initial-scale=1.0" />' +
+      '<title>' + esc(docTitle) + ' - Law Studyes Hard Copy</title>' +
+      '<style>' +
+      '@page { size: A4; margin: 14mm 13mm; }' +
+      '* { box-sizing: border-box; }' +
+      'body { font-family: "Noto Sans Telugu","Noto Sans Devanagari","Nirmala UI","Segoe UI",Roboto,Arial,sans-serif; color:#1A1715; background:#FFFFFF; margin:0; padding:18px; line-height:1.58; font-size:12.5px; }' +
+      '.pdf-toolbar { position:sticky; top:0; z-index:99; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 14px; margin-bottom:16px; background:#7B1E2B; color:#FFF; border-radius:10px; }' +
+      '.pdf-toolbar button { padding:7px 14px; border:0; border-radius:8px; background:#FFF; color:#7B1E2B; font-weight:800; font-size:12.5px; cursor:pointer; }' +
+      '.pdf-header { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2px solid #7B1E2B; padding-bottom:8px; margin-bottom:16px; }' +
+      '.pdf-brand { font-family:Georgia,serif; font-size:20px; font-weight:800; color:#7B1E2B; }' +
+      '.pdf-date { font-size:11px; color:#5F554E; text-align:right; }' +
+      '.pdf-topic { page-break-after: always; margin-bottom:18px; }' +
+      '.pdf-topic:last-child { page-break-after: auto; }' +
+      '.pdf-meta { font-size:11px; font-weight:700; color:#8C6D46; text-transform:uppercase; letter-spacing:0.35px; margin-bottom:4px; }' +
+      '.pdf-title { font-family:Georgia,serif; font-size:19px; color:#7B1E2B; margin:0 0 12px; }' +
+      '.pdf-box { border:1px solid #E4DBD0; border-radius:8px; padding:10px 12px; margin-bottom:10px; break-inside:avoid; }' +
+      '.pdf-box.highlight { background:#FBF6EE; border-color:#DFC5A4; }' +
+      '.pdf-box.dual { background:#FAF7F2; border:1.5px dashed #B89D7A; }' +
+      '.pdf-box h2, .pdf-vis-wrap > h2 { font-size:13px; color:#7B1E2B; margin:0 0 6px; padding-bottom:3px; border-bottom:1px solid #EFE7DC; }' +
+      '.pdf-box p { margin:4px 0; }' +
+      '.pdf-box ul, .pdf-box ol { margin:4px 0 2px; padding-left:18px; }' +
+      '.pdf-box li { margin-bottom:4px; }' +
+      '.pdf-ans { margin-top:2px; color:#4A423C; font-size:11.5px; }' +
+      '.pdf-vis-wrap { margin-top:12px; }' +
+      '.pdf-vis-card { border:1px solid #DDD2C5; border-radius:8px; padding:10px; margin-bottom:10px; break-inside:avoid; }' +
+      '.pdf-vis-cap { font-size:11.5px; font-weight:800; color:#7B1E2B; margin-bottom:6px; }' +
+      '.pdf-vis-stage svg, .pdf-vis-stage img { max-width:100% !important; height:auto !important; display:block; margin:0 auto; }' +
+      '.pdf-vis-stage table { width:100%; border-collapse:collapse; font-size:11.5px; }' +
+      '.pdf-vis-stage th { background:#FBF1F2; color:#7B1E2B; border:1px solid #DFC9CC; padding:6px 8px; text-align:left; }' +
+      '.pdf-vis-stage td { border:1px solid #E4DBD0; padding:6px 8px; vertical-align:top; }' +
+      '.pdf-footer { margin-top:18px; padding-top:8px; border-top:1px solid #E4DBD0; font-size:10.5px; color:#6B5E54; text-align:center; }' +
+      '@media print { body { padding:0; } .pdf-toolbar { display:none !important; } }' +
+      '</style></head><body>' +
+      '<div class="pdf-toolbar"><span><strong>Law Studyes</strong> &middot; A4 Hard-Copy Study Sheet</span><button onclick="window.print()">Print / Save as PDF</button></div>' +
+      '<div class="pdf-header"><div class="pdf-brand">&#9878; Law Studyes</div><div class="pdf-date">3-Year LL.B. Hard-Copy Notes<br/>Generated: ' + esc(dateStr) + '</div></div>' +
+      bodyHtml +
+      '<div class="pdf-footer">Law Studyes &middot; Free 3-Year LL.B. Trilingual Notes (EN / TE / HI) &middot; https://law-studyes.vercel.app</div>' +
+      '</body></html>';
+  }
+
+  function printA4Document(htmlText, fileBaseName) {
+    try {
+      var isNativeCap = !!(window.Capacitor && typeof window.Capacitor.isNativePlatform === "function" && window.Capacitor.isNativePlatform());
+      if (isNativeCap) {
+        exportPrintableFile(htmlText, fileBaseName, true);
+        return;
+      }
+
+      var oldFrame = document.getElementById("lsPdfPrintFrame");
+      if (oldFrame) oldFrame.remove();
+
+      var iframe = document.createElement("iframe");
+      iframe.id = "lsPdfPrintFrame";
+      iframe.style.cssText = "position:fixed;right:0;bottom:0;width:0;height:0;border:0;visibility:hidden;";
+      document.body.appendChild(iframe);
+
+      var idoc = iframe.contentWindow.document;
+      idoc.open();
+      idoc.write(htmlText);
+      idoc.close();
+
+      setTimeout(function () {
+        try {
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+          if (typeof showToast === "function") showToast("Select 'Save as PDF' or your printer in the dialog.");
+        } catch (err) {
+          exportPrintableFile(htmlText, fileBaseName, false);
+        }
+      }, 320);
+    } catch (e) {
+      exportPrintableFile(htmlText, fileBaseName, false);
+    }
+  }
+
+  async function exportPrintableFile(htmlText, fileBaseName, tryShare) {
+    var fname = safeFilename(fileBaseName) + "-A4-Print.html";
+    try {
+      var capFs = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Filesystem;
+      var capShare = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Share;
+      if (tryShare && capFs && typeof capFs.writeFile === "function") {
+        var b64 = btoa(unescape(encodeURIComponent(htmlText)));
+        var written = await capFs.writeFile({ path: fname, data: b64, directory: "CACHE" });
+        if (capShare && typeof capShare.share === "function" && written && written.uri) {
+          await capShare.share({
+            title: fileBaseName + " (A4 Hard Copy)",
+            text: "Open in Chrome and tap Print -> Save as PDF for hard-copy study.",
+            url: written.uri
+          });
+          return;
+        }
+      }
+    } catch (e) {}
+
+    try {
+      var blob = new Blob([htmlText], { type: "text/html;charset=utf-8" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = fname;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function () { try { URL.revokeObjectURL(url); } catch (e) {} }, 2500);
+      if (typeof showToast === "function") showToast("Downloaded " + fname + " (Open in Chrome -> Print -> Save as PDF)");
+    } catch (e) {
+      try { window.print(); } catch (err) {}
+    }
+  }
+
+  function exportCurrentTopic(asFileOnly) {
+    if (typeof state === "undefined" || !state.activeTopicId) return;
+    var tid = state.activeTopicId;
+    var lang = state.lang || "en";
+    var meta = (typeof findTopicMeta === "function") ? findTopicMeta(tid) : null;
+    var title = (meta && meta.topic && meta.topic.title) || tid;
+    var subj = (meta && meta.subject && meta.subject.title) || "3-Year LL.B.";
+    var unitLbl = (meta && meta.unit) ? ("Unit " + (meta.unit.unitNo || "") + (meta.unit.title ? ": " + meta.unit.title : "")) : "";
+
+    var body = buildTopicSectionHtml(tid, title, subj, unitLbl, lang, isDualActive());
+    var html = wrapA4Document(title + " (" + lang.toUpperCase() + ")", body);
+    var fname = "LawStudyes-" + title + "-" + lang.toUpperCase();
+    if (asFileOnly) exportPrintableFile(html, fname, true);
+    else printA4Document(html, fname);
+  }
+
+  function exportCurrentUnitBooklet() {
+    if (typeof state === "undefined" || !state.activeTopicId) return;
+    var lang = state.lang || "en";
+    var meta = (typeof findTopicMeta === "function") ? findTopicMeta(state.activeTopicId) : null;
+    if (!meta || !meta.unit || !Array.isArray(meta.unit.topics) || !meta.unit.topics.length) {
+      exportCurrentTopic(false);
+      return;
+    }
+    var subj = (meta.subject && meta.subject.title) || "3-Year LL.B.";
+    var unitLbl = "Unit " + (meta.unit.unitNo || "") + (meta.unit.title ? ": " + meta.unit.title : "");
+    var sections = [];
+    meta.unit.topics.forEach(function (t) {
+      if (t && t.id) {
+        sections.push(buildTopicSectionHtml(t.id, t.title || t.id, subj, unitLbl, lang, isDualActive()));
+      }
+    });
+    if (!sections.length) return;
+    var html = wrapA4Document(subj + " - " + unitLbl + " (" + lang.toUpperCase() + ")", sections.join(""));
+    printA4Document(html, "LawStudyes-" + subj + "-Unit" + (meta.unit.unitNo || "1") + "-" + lang.toUpperCase());
+  }
+
+  function renderPdfButtons() {
+    try {
+      if (typeof state === "undefined" || !state.activeTopicId) return;
+      var pane = document.getElementById("readingPane");
+      if (!pane) return;
+
+      var bar = document.getElementById("lsNoteCopyBar");
+      if (!bar) {
+        bar = document.createElement("div");
+        bar.id = "lsNoteCopyBar";
+        bar.style.cssText = "display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px;padding:8px 10px;border-radius:12px;background:#FAF7F2;border:1px solid #E8E0D5;";
+        pane.insertBefore(bar, pane.firstChild);
+      }
+
+      ["lsPdfTopicBtn", "lsPdfUnitBtn", "lsPdfXeroxBtn"].forEach(function (id) {
+        var old = document.getElementById(id);
+        if (old) old.remove();
+      });
+
+      var btnCss = "padding:6px 10px;border-radius:9px;border:1px solid #7B1E2B;background:#7B1E2B;color:#FFFFFF;font-size:11.5px;font-weight:800;cursor:pointer;";
+      var altCss = "padding:6px 10px;border-radius:9px;border:1px solid #C7B299;background:#FFFFFF;color:#7B1E2B;font-size:11.5px;font-weight:700;cursor:pointer;";
+
+      var bPdf = document.createElement("button");
+      bPdf.id = "lsPdfTopicBtn";
+      bPdf.type = "button";
+      bPdf.style.cssText = btnCss;
+      bPdf.textContent = "Download PDF (Hard Copy)";
+      bPdf.addEventListener("click", function () { exportCurrentTopic(false); });
+      bar.appendChild(bPdf);
+
+      var bUnit = document.createElement("button");
+      bUnit.id = "lsPdfUnitBtn";
+      bUnit.type = "button";
+      bUnit.style.cssText = altCss;
+      bUnit.textContent = "Unit PDF Booklet";
+      bUnit.addEventListener("click", exportCurrentUnitBooklet);
+      bar.appendChild(bUnit);
+
+      var bXerox = document.createElement("button");
+      bXerox.id = "lsPdfXeroxBtn";
+      bXerox.type = "button";
+      bXerox.style.cssText = altCss;
+      bXerox.textContent = "Save Print File";
+      bXerox.title = "Save self-contained A4 print file for Xerox shop or WhatsApp";
+      bXerox.addEventListener("click", function () { exportCurrentTopic(true); });
+      bar.appendChild(bXerox);
+    } catch (e) {}
+  }
+
+  function hook() {
+    try {
+      if (typeof window.renderReadingPane === "function" && !window.__lsPdfHookV320) {
+        window.__lsPdfHookV320 = true;
+        var orig = window.renderReadingPane;
+        window.renderReadingPane = function () {
+          var r = orig.apply(this, arguments);
+          setTimeout(renderPdfButtons, 20);
+          return r;
+        };
+        setTimeout(renderPdfButtons, 40);
+      }
+    } catch (e) {}
+  }
+
+  window.LSPdfExport = {
+    exportTopic: exportCurrentTopic,
+    exportUnit: exportCurrentUnitBooklet
+  };
+
+  window.addEventListener("DOMContentLoaded", function () {
+    setTimeout(hook, 450);
+    setTimeout(hook, 1300);
+  });
+})();
+} catch (__lsModErr) { console.error('[LS Module Error: ls-pdf-export.js]', __lsModErr); }
 
 /* === MODULE: ls-drill.js === */
 try {
@@ -1931,231 +2975,6 @@ try {
   window.LSNav = { openTab: openTab };
 })();
 } catch (__lsModErr) { console.error('[LS Module Error: ls-nav.js]', __lsModErr); }
-
-/* === MODULE: ls-note-converter.js === */
-try {
-(function () {
-  "use strict";
-  if (window.__lsNoteConverterV312) return;
-  window.__lsNoteConverterV312 = true;
-
-  var CACHE_PREFIX = "ls_legal_copy_v1_";
-  var busyKeys = {};
-
-  function hasScript(obj, lang) {
-    if (!obj || typeof obj !== "object") return false;
-    var s = String(obj.inOneMinute || "") + " " + String(obj.meaning || "") + " " + String(obj.legalProvision || "");
-    if (s.trim().length < 6) return false;
-    if (lang === "te") return /[\u0C00-\u0C7F]{3,}/.test(s);
-    if (lang === "hi") return /[\u0900-\u097F]{3,}/.test(s);
-    return true;
-  }
-
-  function protectTokens(text) {
-    var tokens = [];
-    var re = /(<[^>]+>|\b(?:Section|Sec\.|Article|Art\.|Order|Rule|Schedule|Clause)\s+\d+[A-Za-z0-9()\-/]*|\b(?:IPC|CrPC|CPC|BNS|BNSS|BSA|ICA|TPA|AIR|SCC|SCR)\b)/g;
-    var masked = String(text || "").replace(re, function (m) {
-      tokens.push(m);
-      return "__LTOK" + (tokens.length - 1) + "__";
-    });
-    return { masked: masked, tokens: tokens };
-  }
-
-  function restoreTokens(text, tokens) {
-    var out = String(text || "");
-    for (var i = 0; i < tokens.length; i++) {
-      out = out.replace(new RegExp("__\\s*LTOK\\s*" + i + "\\s*__", "gi"), tokens[i]);
-    }
-    return out;
-  }
-
-  async function trLegalStr(text, tl) {
-    var s = String(text || "").trim();
-    if (!s) return "";
-    var p = protectTokens(s.slice(0, 1100));
-    var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=" +
-      encodeURIComponent(tl) + "&dt=t&q=" + encodeURIComponent(p.masked);
-    var r = await fetch(url);
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    var d = await r.json();
-    var joined = "";
-    if (Array.isArray(d) && Array.isArray(d[0])) {
-      for (var i = 0; i < d[0].length; i++) {
-        if (d[0][i] && d[0][i][0]) joined += d[0][i][0];
-      }
-    }
-    return restoreTokens(joined.trim() || p.masked, p.tokens);
-  }
-
-  async function convertNode(val, tl) {
-    if (!val || (typeof val !== "string" && typeof val !== "object")) return val;
-    if (typeof val === "string") return await trLegalStr(val, tl);
-    if (Array.isArray(val)) {
-      var arr = [];
-      for (var i = 0; i < val.length; i++) arr.push(await convertNode(val[i], tl));
-      return arr;
-    }
-    var skip = { id: 1, type: 1, html: 1, svg: 1, mermaid: 1, code: 1, citation: 1, year: 1, visuals: 1 };
-    var out = {};
-    Object.keys(val).forEach(function (k) { out[k] = val[k]; });
-    var keys = Object.keys(val);
-    for (var j = 0; j < keys.length; j++) {
-      var k = keys[j];
-      if (!skip[k]) out[k] = await convertNode(val[k], tl);
-    }
-    return out;
-  }
-
-  async function ensureVerifiedCopy(topicId, lang, force) {
-    if (!topicId || (lang !== "te" && lang !== "hi")) return;
-    if (typeof state === "undefined" || !state.notes || !state.notes[topicId]) return;
-    var rec = state.notes[topicId];
-    if (!rec.en) return;
-    if (!force && hasScript(rec[lang], lang)) return;
-
-    if (!force) {
-      try {
-        var raw = localStorage.getItem(CACHE_PREFIX + lang + "_" + topicId);
-        if (raw) {
-          var parsed = JSON.parse(raw);
-          if (hasScript(parsed, lang)) {
-            rec[lang] = parsed;
-            if (state.activeTopicId === topicId && state.lang === lang && typeof window.renderReadingPane === "function") window.renderReadingPane();
-            return;
-          }
-        }
-      } catch (e) {}
-    }
-
-    var lock = lang + ":" + topicId;
-    if (busyKeys[lock] || !navigator.onLine) return;
-    busyKeys[lock] = true;
-    try {
-      var conv = await convertNode(rec.en, lang);
-      conv.visuals = rec.en.visuals || [];
-      if (hasScript(conv, lang)) {
-        rec[lang] = conv;
-        try { localStorage.setItem(CACHE_PREFIX + lang + "_" + topicId, JSON.stringify(conv)); } catch (e) {}
-        if (state.activeTopicId === topicId && state.lang === lang && typeof window.renderReadingPane === "function") window.renderReadingPane();
-      }
-    } catch (e) {}
-    finally { delete busyKeys[lock]; }
-  }
-
-  function formatStudyCopy(topicId, lang, withEnglish) {
-    var rec = (typeof state !== "undefined" && state.notes) ? state.notes[topicId] : null;
-    if (!rec) return "";
-    var ld = rec[lang] || rec.en;
-    if (!ld) return "";
-    var meta = (typeof findTopicMeta === "function") ? findTopicMeta(topicId) : null;
-    var title = (meta && meta.topic && meta.topic.title) || topicId;
-    var lines = ["LAW STUDYES - " + title + " (" + String(lang || "en").toUpperCase() + ")"];
-    if (ld.inOneMinute) lines.push("\n[In One Minute]\n" + ld.inOneMinute);
-    if (ld.legalProvision) lines.push("\n[Legal Provision]\n" + ld.legalProvision);
-    if (ld.meaning) lines.push("\n[Meaning]\n" + ld.meaning);
-    if (Array.isArray(ld.keyPoints) && ld.keyPoints.length) {
-      lines.push("\n[Key Points]\n- " + ld.keyPoints.map(function (p) { return typeof p === "string" ? p : JSON.stringify(p); }).join("\n- "));
-    }
-    if (Array.isArray(ld.caseLaws) && ld.caseLaws.length) {
-      lines.push("\n[Leading Case Laws]");
-      ld.caseLaws.forEach(function (c) {
-        if (typeof c === "string") lines.push("- " + c);
-        else if (c) lines.push("- " + (c.name || c.title || "") + (c.summary ? ": " + c.summary : (c.principle ? ": " + c.principle : "")));
-      });
-    }
-    if (withEnglish && lang !== "en" && rec.en) {
-      lines.push("\n--- ENGLISH EXAM REFERENCE ---");
-      if (rec.en.legalProvision) lines.push("Provision: " + rec.en.legalProvision);
-      if (rec.en.inOneMinute) lines.push("Summary: " + rec.en.inOneMinute);
-    }
-    return lines.join("\n");
-  }
-
-  function copyText(txt, label) {
-    if (!txt) return;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(txt).then(function () {
-        if (typeof showToast === "function") showToast(label + " copied!");
-      }).catch(function () { fallbackCopy(txt, label); });
-    } else {
-      fallbackCopy(txt, label);
-    }
-  }
-
-  function fallbackCopy(txt, label) {
-    try {
-      var ta = document.createElement("textarea");
-      ta.value = txt; ta.style.cssText = "position:fixed;left:-9999px;top:0;";
-      document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove();
-      if (typeof showToast === "function") showToast(label + " copied!");
-    } catch (e) {}
-  }
-
-  function renderCopyToolbar() {
-    try {
-      if (typeof state === "undefined" || !state.activeTopicId) return;
-      var pane = document.getElementById("readingPane");
-      if (!pane) return;
-      var lang = state.lang || "en";
-      var rec = state.notes && state.notes[state.activeTopicId];
-      if (!rec) return;
-
-      if ((lang === "te" || lang === "hi") && !hasScript(rec[lang], lang)) {
-        ensureVerifiedCopy(state.activeTopicId, lang, false);
-      }
-
-      var old = document.getElementById("lsNoteCopyBar");
-      if (old) old.remove();
-
-      var bar = document.createElement("div");
-      bar.id = "lsNoteCopyBar";
-      bar.style.cssText = "display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px;padding:8px 10px;border-radius:12px;background:#FAF7F2;border:1px solid #E8E0D5;";
-      var langName = lang === "te" ? "Telugu" : (lang === "hi" ? "Hindi" : "English");
-      var btnCss = "padding:6px 10px;border-radius:9px;border:1px solid #E8D5D8;background:#FFFFFF;color:#7B1E2B;font-size:11.5px;font-weight:700;cursor:pointer;";
-
-      var bCopy = document.createElement("button");
-      bCopy.type = "button"; bCopy.style.cssText = btnCss;
-      bCopy.textContent = "Copy " + langName + " Note";
-      bCopy.addEventListener("click", function () { copyText(formatStudyCopy(state.activeTopicId, lang, false), langName + " note"); });
-      bar.appendChild(bCopy);
-
-      if (lang !== "en") {
-        var bDual = document.createElement("button");
-        bDual.type = "button"; bDual.style.cssText = btnCss + "background:#FBF1F2;";
-        bDual.textContent = "Copy " + langName + " + EN";
-        bDual.addEventListener("click", function () { copyText(formatStudyCopy(state.activeTopicId, lang, true), langName + " + English copy"); });
-        bar.appendChild(bDual);
-
-        if (!hasScript(rec[lang], lang)) {
-          var bFix = document.createElement("button");
-          bFix.type = "button"; bFix.style.cssText = btnCss + "background:#7B1E2B;color:#FFFFFF;border-color:#7B1E2B;";
-          bFix.textContent = "Prepare " + langName + " Now";
-          bFix.addEventListener("click", function () {
-            if (typeof showToast === "function") showToast("Preparing " + langName + " legal copy...");
-            ensureVerifiedCopy(state.activeTopicId, lang, true);
-          });
-          bar.appendChild(bFix);
-        }
-      }
-      pane.insertBefore(bar, pane.firstChild);
-    } catch (e) {}
-  }
-
-  function hook() {
-    try {
-      if (typeof window.renderReadingPane === "function" && !window.__lsNoteConvHookV312) {
-        window.__lsNoteConvHookV312 = true;
-        var orig = window.renderReadingPane;
-        window.renderReadingPane = function () { var r = orig.apply(this, arguments); renderCopyToolbar(); return r; };
-        renderCopyToolbar();
-      }
-    } catch (e) {}
-  }
-
-  window.LSNoteConverter = { ensureCopy: ensureVerifiedCopy, formatCopy: formatStudyCopy, hasScript: hasScript };
-  window.addEventListener("DOMContentLoaded", function () { setTimeout(hook, 350); setTimeout(hook, 1200); });
-})();
-} catch (__lsModErr) { console.error('[LS Module Error: ls-note-converter.js]', __lsModErr); }
 
 /* === MODULE: ls-ota-diag.js === */
 try {
