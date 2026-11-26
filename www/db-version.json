@@ -1,5 +1,5 @@
 {
-  "dbVersion": "2026.11.25.2154",
+  "dbVersion": "2026.11.26.0842",
   "totalSubjects": 6,
   "totalNotes": 591,
   "totalVisuals": 2065,
@@ -7,5 +7,5 @@
   "mermaidDiagrams": 740,
   "tables": 1400,
   "images": 0,
-  "updatedAt": "2026-11-25T21:54:02.618339+00:00"
+  "updatedAt": "2026-11-26T08:42:50.579683+00:00"
 }
