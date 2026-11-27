@@ -1,10 +1,10 @@
 {
   "app": "Law Studyes",
-  "version": "3.2.6-11271010",
+  "version": "3.2.6-11271019",
   "bundle": "ota-bundle.zip",
   "url": "https://law-studyes.vercel.app/ota-bundle.zip",
-  "sha256": "f2739afef2a475e08fbe55ebaaef952abad534c57796616504a892795b0ab86a",
-  "checksum": "f2739afef2a475e08fbe55ebaaef952abad534c57796616504a892795b0ab86a",
+  "sha256": "87d50ad382af9701611fefa35daa36bdcf72fe4862d65fc225851d2f71420517",
+  "checksum": "87d50ad382af9701611fefa35daa36bdcf72fe4862d65fc225851d2f71420517",
   "sizeBytes": 7147656,
-  "updatedAt": "2026-11-27T10:10:55Z"
+  "updatedAt": "2026-11-27T10:19:12Z"
 }
