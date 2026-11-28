@@ -1,0 +1,170 @@
+{
+  "subjects": [
+    {
+      "id": "public-international-law",
+      "title": "Public International Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Definition, Nature, Basis, Municipal Law Relationship (Monism/Dualism), Subjects & Sources (Art. 38 ICJ Statute)",
+          "topics": [
+            {"id": "pil-u1-t1", "title": "1. Definition, Nature, Evolution & Basis of Public International Law (Is International Law True Law?)"},
+            {"id": "pil-u1-t2", "title": "2. Relationship Between International Law and Municipal Law - Monism, Dualism & Indian Practice (Arts. 51, 73 & 253)"},
+            {"id": "pil-u1-t3", "title": "3. Subjects of International Law - States, International Organizations, Individuals & Reparation for Injuries Case"},
+            {"id": "pil-u1-t4", "title": "4. Sources of International Law - Article 38(1) ICJ Statute (Treaties, Custom, General Principles, Judicial Decisions & Jus Cogens)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "pil-u1-t1": {
+      "id": "pil-u1-t1",
+      "subtitle": "Public International Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Public International Law (Law of Nations - coined by Jeremy Bentham in 1780) is the body of legally binding rules, treaties, and customs governing relations among sovereign States, international organizations, and (in human rights/criminal law) individuals. Although John Austin dismissed it as 'Positive Morality' lacking a single world sovereign, Oppenheim, Starke, and modern State practice affirm it as true - though 'weak' - law grounded in Consent, Pacta Sunt Servanda, and Natural Law.",
+        "legalProvision": "Classical Definitions (Oppenheim, Starke, Brierly); Hugo Grotius ('De Jure Belli ac Pacis', 1625); UN Charter, 1945",
+        "meaning": "International Law is a horizontal legal system among co-equal sovereign States rather than a vertical sovereign-to-subject command system, enforced via reciprocity, diplomatic pressure, ICJ rulings, and UN Security Council sanctions.",
+        "keyPoints": [
+          "Classic Definitions & Evolution: Hugo Grotius ('Father of International Law', 1625) laid natural-law foundations; Oppenheim defined it as customary and treaty rules legally binding on States (later updated by Jennings & Watts to include international organizations and individuals); Starke emphasizes rules regulating State conduct plus international institutions. Evolved through Peace of Westphalia (1648 - sovereign nation-state system), League of Nations (1919), and United Nations Charter (1945).",
+          "Is International Law 'True Law'? (Austin vs Oppenheim/Starke): Austin, Hobbes, and Holland argued International Law is NOT true law ('Positive International Morality' / 'vanishing point of jurisprudence') because it lacks a determinate sovereign legislature, compulsory judiciary, and police force. Counter-arguments (Oppenheim, Starke, Louis Henkin): (1) States routinely invoke it as binding LAW (not mere courtesy), (2) Courts (ICJ, ITLOS, ICC, WTO) apply legal rules, (3) Sanctions exist via UN Security Council (Chapter VII), countermeasures, and diplomatic isolation, and (4) As Henkin noted, 'almost all nations observe almost all principles of international law almost all of the time.'",
+          "True Basis of International Law (Three Theories): (1) Naturalist Theory (Grotius, Pufendorf - rooted in universal reason and justice), (2) Positivist / Consent Theory (Bynkershoek, Oppenheim, Triepel - binding because States consent expressly via treaties or tacitly via custom, backed by 'Pacta Sunt Servanda' - agreements must be kept), and (3) Eclectic / Grotian Synthesis (modern view combining State consent with peremptory Jus Cogens norms)."
+        ],
+        "caseLaws": [
+          {
+            "name": "S.S. Lotus Case (France v. Turkey)",
+            "citation": "1927 PCIJ Series A No. 10",
+            "principle": "Classic Positivist authority holding that rules of International Law binding upon States emanate from their own free will expressed in conventions or customary usages; restrictions upon State independence cannot be presumed."
+          },
+          {
+            "name": "The Paquete Habana",
+            "citation": "1900 175 US 677",
+            "principle": "US Supreme Court affirmed that 'International Law is part of our law' and must be ascertained and administered by courts as true law whenever rights depending on it arise."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why did John Austin describe International Law as 'Positive Morality', and give three arguments proving it is 'True Law' today?",
+            "a": "Austin argued it lacked a determinate sovereign command backed by centralized sanctions. It is true law because (1) States treat and invoke it as binding legal obligation, (2) international courts (ICJ/ICC/WTO) and municipal courts enforce it, and (3) UN Charter Chapter VII and reciprocity provide real sanctions."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u1-t2": {
+      "id": "pil-u1-t2",
+      "subtitle": "Public International Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Two classic doctrines explain how International Law interacts with domestic Municipal Law: Monism (Kelsen, Lauterpacht - one single unified legal order where international law operates directly and prevails) and Dualism (Triepel, Anzilotti - two separate legal orders requiring domestic legislative 'Transformation' before treaties bind citizens). India largely follows Dualism for treaties (Arts. 73 & 253) alongside harmonious judicial incorporation of customary norms and human rights treaties where domestic law is silent (Vishaka; Gramophone Co.).",
+        "legalProvision": "Articles 51(c), 73, 253, & 372, Constitution of India; Monism, Dualism, Specific Adoption & Transformation Theories",
+        "meaning": "Because executive treaty-making in India does not automatically alter citizens' domestic rights without Parliamentary legislation (Art. 253), Indian courts bridge international commitments and domestic justice through harmonious construction.",
+        "keyPoints": [
+          "Monistic Theory (Kelsen, Wright, Lauterpacht): Views International Law and Municipal Law as parts of ONE SINGLE UNIFIED legal system regulating human conduct; international rules apply directly without transformation (Doctrine of Incorporation), and in conflict, International Law prevails.",
+          "Dualistic Theory (Triepel, Anzilotti, Oppenheim): Views International Law and Municipal Law as TWO COMPLETELY SEPARATE legal systems differing in Sources (treaties/custom vs statutes), Subjects (States vs individuals), and Substance (inter-State relations vs domestic governance); treaties CANNOT bind domestic courts unless transformed by national legislation (Specific Adoption / Transformation Theory).",
+          "UK & USA Practice: UK applies Incorporation for Customary International Law (unless contrary to Act of Parliament - Trendtex Trading) and Transformation for Treaties affecting private rights; USA Constitution (Art. VI) makes self-executing treaties 'Supreme Law of the Land' on par with federal statutes.",
+          "Indian Constitutional & Judicial Practice (Arts. 51(c), 73 & 253): Article 51(c) (DPSP) directs the State to foster respect for international law and treaty obligations; Executive signs treaties under Art. 73, while Parliament alone enacts implementing legislation under Art. 253 (Maganbhai Ishwarbhai Patel; Jolly George Varghese - unincorporated treaties cannot override clear Indian statutes). However, Customary International Law NOT conflicting with Indian statutes is automatically incorporated (Gramophone Co. v. Birendra Bahadur Pandey), and international conventions (CEDAW, ICCPR) are read directly into Fundamental Rights to fill domestic legislative gaps (Vishaka v. State of Rajasthan)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Vishaka v. State of Rajasthan",
+            "citation": "AIR 1997 SC 3011",
+            "principle": "Read India's international obligations under CEDAW directly into Articles 14, 15, 19, and 21 to frame binding workplace sexual-harassment guidelines in the absence of conflicting domestic legislation."
+          },
+          {
+            "name": "Gramophone Co. of India Ltd. v. Birendra Bahadur Pandey",
+            "citation": "AIR 1984 SC 667",
+            "principle": "Held that rules of Customary International Law not contrary to municipal statutes are deemed incorporated into Indian domestic law, though clear Parliamentary statutes prevail in case of irreconcilable conflict."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Monism and Dualism, and explain India's constitutional position under Articles 51(c) and 253 regarding international treaties vs customary international law.",
+            "a": "Monism treats international and municipal law as one unified order, whereas Dualism treats them as two separate orders needing domestic legislation for treaties. In India, treaties affecting citizens' rights require Parliamentary legislation under Art. 253 (Dualism), while non-conflicting customary international law is incorporated automatically (Gramophone Co.) and conventions fill statutory vacuums (Vishaka)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u1-t3": {
+      "id": "pil-u1-t3",
+      "subtitle": "Public International Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A 'Subject of International Law' is an entity possessing international legal personality - capacity to hold international rights and duties and bring/face international claims. While classic Realist theory recognized ONLY sovereign States as subjects, modern Functional Theory (crystallized by the ICJ in the Reparation for Injuries Case, 1949) recognizes States as primary subjects alongside International Organizations (UN), Individuals (human rights & war-crimes liability), and Non-State Entities.",
+        "legalProvision": "ICJ Advisory Opinion: Reparation for Injuries Suffered in the Service of the UN (1949); Nuremberg Charter (1945); Rome Statute of ICC (1998)",
+        "meaning": "International legal personality is no longer uniform across all actors: States possess full plenary personality, whereas the UN and individuals hold specialized functional personality tailored to their roles.",
+        "keyPoints": [
+          "Three Doctrinal Theories on Subjects: (1) REALIST / CLASSICAL THEORY (Oppenheim - ONLY sovereign States are subjects; individuals are mere 'objects'), (2) FICTIONAL THEORY (Kelsen, Westlake - ONLY human individuals are ultimate subjects because States are mere abstractions), and (3) FUNCTIONAL / MODERN THEORY (Starke, Friedmann - States are the primary subjects, while International Organizations, Individuals, and certain non-State entities are secondary/functional subjects).",
+          "States as Primary Subjects: Sovereign States hold full international legal capacity to conclude treaties, send/receive diplomats, claim territory, and appear before the ICJ (Art. 34 ICJ Statute restricts contentious cases strictly to States).",
+          "International Organizations (Reparation for Injuries Case, 1949): After UN mediator Count Folke Bernadotte was assassinated in Jerusalem, the ICJ ruled unanimously that the United Nations possesses OBJECTIVE INTERNATIONAL LEGAL PERSONALITY (distinct from a super-State) enabling it to bring international claims for reparation against member and non-member States.",
+          "Place of Individuals in Modern International Law: No longer mere 'objects' - individuals bear direct INTERNATIONAL CRIMINAL RESPONSIBILITY (piracy, genocide, war crimes, crimes against humanity - Nuremberg Tribunal, ICTY/ICTR, and International Criminal Court under Rome Statute, 1998) AND hold direct INTERNATIONAL RIGHTS (Universal Declaration of Human Rights 1948, ICCPR Optional Protocol petitions, ECHR individual standing, and ICSID investor-State arbitration)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Reparation for Injuries Suffered in the Service of the United Nations (Bernadotte Case)",
+            "citation": "1949 ICJ Rep 174",
+            "principle": "Landmark ICJ Advisory Opinion holding that subjects of international law are not necessarily identical in nature: the UN is an international legal person with capacity to maintain its rights by bringing international claims."
+          },
+          {
+            "name": "Nuremberg Trial Judgment (IMT)",
+            "citation": "1946 41 AJIL 172",
+            "principle": "Declared that 'crimes against international law are committed by men, not by abstract entities' - establishing direct individual criminal responsibility under international law."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What did the ICJ hold in the Reparation for Injuries Case (1949), and give two areas showing that Individuals are no longer mere 'objects' of International Law?",
+            "a": "The ICJ held that the United Nations possesses objective international legal personality (different from a State) empowering it to bring international claims for injuries to its agents. Individuals now hold direct duties in international criminal law (Nuremberg/ICC) and direct rights/remedies in human rights treaties (ECHR/ICCPR Optional Protocol)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u1-t4": {
+      "id": "pil-u1-t4",
+      "subtitle": "Public International Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 38(1) of the Statute of the International Court of Justice (ICJ) is universally accepted as the authoritative list of Sources of International Law: three PRIMARY sources - International Conventions/Treaties, International Custom (State Practice + Opinio Juris), and General Principles of Law Recognized by Civilized Nations - plus two SUBSIDIARY means - Judicial Decisions (no strict stare decisis under Art. 59) and Teachings of Publicists - supplemented by Jus Cogens (Art. 53 VCLT) and UN Resolutions.",
+        "legalProvision": "Article 38(1)-(2) & Article 59, Statute of the International Court of Justice; Article 53, Vienna Convention on the Law of Treaties (VCLT), 1969",
+        "meaning": "Unlike national legal systems with a Parliament, International Law derives its binding rules horizontally from treaties negotiated by States, consistent customary practice accepted as law, and universal legal principles.",
+        "keyPoints": [
+          "1. International Conventions / Treaties (Art. 38(1)(a)): Express written agreements between States governed by 'Pacta Sunt Servanda' (Art. 26 VCLT); split into Law-Making Treaties (multilateral conventions laying general norms - UN Charter, Geneva Conventions, UNCLOS) and Treaty-Contracts (bilateral extradition/trade deals binding parties only).",
+          "2. International Custom (Art. 38(1)(b)): 'Evidence of a general practice accepted as law' - requires TWO mandatory elements: (a) MATERIAL / OBJECTIVE ELEMENT (State Practice: uniform, consistent, general duration - Asylum Case; North Sea Continental Shelf), AND (b) PSYCHOLOGICAL / SUBJECTIVE ELEMENT ('Opinio Juris sive necessitatis' - belief that the practice is legally obligatory, NOT mere courtesy/comity). Regional/bilateral custom also recognized (Right of Passage Over Indian Territory: Portugal v. India, 1960). Note: 'Persistent Objector' rule allows a State objecting from inception to opt out (except Jus Cogens).",
+          "3. General Principles of Law Recognized by Civilized Nations (Art. 38(1)(c)): Universal principles common to domestic legal systems filling 'non-liquet' gaps - Res Judicata, Estoppel, Good Faith, Unjust Enrichment, Reparation for Breach (Chorzow Factory Case), and Natural Justice.",
+          "4. Subsidiary Means & Ex Aequo et Bono (Art. 38(1)(d) & Art. 38(2)): Judicial Decisions (ICJ judgments bind ONLY the parties to that case under Art. 59 - no strict stare decisis, though highly persuasive) and Juristic Writings (Grotius, Oppenheim, Brownlie); under Art. 38(2), ICJ may decide 'Ex Aequo et Bono' (pure equity/fairness) ONLY if BOTH parties expressly agree.",
+          "5. Jus Cogens & Modern Sources (Art. 53 VCLT): Peremptory norms of general international law from which NO derogation is permitted (prohibition of genocide, slavery, torture, aggressive force, apartheid - any conflicting treaty is VOID); UN General Assembly Resolutions (soft law crystallizing Opinio Juris - Nicaragua Case) and binding UN Security Council Resolutions (Art. 25 UN Charter)."
+        ],
+        "caseLaws": [
+          {
+            "name": "North Sea Continental Shelf Cases (Germany v. Denmark / Netherlands)",
+            "citation": "1969 ICJ Rep 3",
+            "principle": "Held that proving Customary International Law under Article 38(1)(b) strictly requires BOTH widespread/uniform State Practice AND 'Opinio Juris' (sense of legal obligation), though custom can form rapidly if practice is extensive and virtually uniform."
+          },
+          {
+            "name": "Right of Passage Over Indian Territory (Portugal v. India)",
+            "citation": "1960 ICJ Rep 6",
+            "principle": "Recognized that a binding Local / Bilateral Custom can validly exist between just TWO States (civilian passage between Daman and Dadra-Nagar Haveli enclaves, excluding armed troops)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List all four sources under Article 38(1) of the ICJ Statute, state the two essential elements of International Custom, and define 'Jus Cogens' under Article 53 VCLT.",
+            "a": "Art. 38(1): (a) International conventions, (b) International custom, (c) General principles of law, and (d) Judicial decisions & publicists' teachings (subsidiary). Custom requires State Practice + Opinio Juris. Jus Cogens is a peremptory norm allowing no derogation (e.g., ban on genocide/torture) voiding conflicting treaties."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "subjects": [
+    {
+      "id": "principles-of-taxation-law",
+      "title": "Principles of Taxation Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Goods and Services Tax (GST) - Dual Model (CGST/SGST/IGST), Supply, ITC, Composition Scheme, GST Council & Appeals",
+          "topics": [
+            {"id": "tax-u5-t1", "title": "1. GST Overview & Dual Model (CGST, SGST/UTGST & IGST), Concept of 'Supply' (Sec. 7), Composite vs Mixed Supply & Reverse Charge (RCM)"},
+            {"id": "tax-u5-t2", "title": "2. Time, Place & Value of Supply (Secs. 12-15 CGST & IGST Act), Exemptions & Composition Scheme (Sec. 10)"},
+            {"id": "tax-u5-t3", "title": "3. Input Tax Credit / ITC (Secs. 16-18), Blocked Credits (Sec. 17(5)), Cross-Utilization, Registration (Secs. 22-24), Returns & E-Way Bill"},
+            {"id": "tax-u5-t4", "title": "4. GST Council (Art. 279A), Anti-Profiteering (Sec. 171), Demand/Recovery & Appellate Hierarchy (GSTAT, High Court & SC)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "tax-u5-t1": {
+      "id": "tax-u5-t1",
+      "subtitle": "Principles of Taxation Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Launched on 1 July 2017 via the 101st Constitutional Amendment ('One Nation, One Tax'), Goods and Services Tax (GST) is a comprehensive, multi-stage, DESTINATION-BASED Value Added Tax that subsumed 17 central/state indirect taxes (Excise, Service Tax, VAT, CST, Octroi) to eliminate cascading 'tax on tax'. India uses a Dual GST Model - CGST + SGST/UTGST on intra-State supplies and IGST on inter-State supplies/imports - anchored on the single taxable event of 'Supply' (Sec. 7 CGST Act).",
+        "legalProvision": "Articles 246A, 269A, & 366(12A), Constitution of India; Sections 7, 8, & 9, CGST Act, 2017; IGST Act, 2017",
+        "meaning": "Because GST is destination-based, tax revenue flows strictly to the State where goods or services are CONSUMED (not where they are manufactured), while petroleum crude, petrol, diesel, ATF, natural gas, and alcoholic liquor for human consumption remain temporarily/constitutionally outside GST.",
+        "keyPoints": [
+          "Dual GST Structure & Excluded Items: (1) INTRA-STATE SUPPLY (within same State/UT) -> CGST (Central Govt) + SGST/UTGST (State/UT Govt) levied simultaneously at equal half-rates (e.g., 9% CGST + 9% SGST = 18%); (2) INTER-STATE SUPPLY & IMPORTS -> IGST (Central Govt collects and apportions destination State's share under Art. 269A). Permanently outside GST under Art. 366(12A): Alcoholic liquor for human consumption; Temporarily outside until GST Council recommends: 5 petroleum products (crude, petrol, diesel, ATF, natural gas).",
+          "Taxable Event - 'Supply' (Sec. 7 & Schedules I-III CGST Act): Replaces manufacture/sale/service with wide 'Supply' (sale, transfer, barter, exchange, licence, rental, lease, disposal) made for CONSIDERATION in the course/furtherance of business + Import of services for consideration (even non-business!). Schedule I deems 4 transactions 'Supply' EVEN WITHOUT CONSIDERATION (permanent disposal of ITC business assets, related/distinct-person branch transfers, principal-agent supply, import of services from related party); Schedule II classifies supply as goods vs services; Schedule III lists 'Negative List' non-supplies (employee services to employer, court/tribunal services, funeral services, sale of land/completed building, actionable claims other than lottery/betting/gambling).",
+          "Composite Supply vs Mixed Supply (Sec. 8) & Reverse Charge Mechanism / RCM (Sec. 9(3)-(4)): COMPOSITE SUPPLY = naturally bundled supplies in ordinary course of business (e.g., laptop + warranty, hotel stay + breakfast) -> taxed at the rate of the PRINCIPAL SUPPLY. MIXED SUPPLY = two or more individual supplies bundled artificially for a single price (e.g., Diwali gift hamper of chocolates + dry fruits + tie) -> taxed at the HIGHEST tax rate among all items! Under RCM (Sec. 9(3)), the RECIPIENT (not supplier) pays GST directly to Government on notified supplies (e.g., Goods Transport Agency / GTA, legal services by advocate to business entity, import of services)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Union of India v. VKC Footsteps India Pvt. Ltd.",
+            "citation": "2022 2 SCC 603",
+            "principle": "Explained the structural architecture of GST as a destination-based value-added tax and upheld Section 54(3) CGST Act restricting inverted-duty-structure ITC refunds strictly to input goods (not input services)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'Composite Supply' and 'Mixed Supply' under Section 8 CGST Act with one example each, and name two items listed in Schedule III (Negative List) outside GST.",
+            "a": "Composite Supply is naturally bundled (e.g., flight ticket + in-flight meal) taxed at the Principal Supply rate, whereas Mixed Supply is artificially bundled for one price (e.g., gift basket) taxed at the HIGHEST applicable rate. Schedule III non-supplies include employee services to employer and sale of land/completed buildings."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u5-t2": {
+      "id": "tax-u5-t2",
+      "subtitle": "Principles of Taxation Law - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To levy GST accurately, three statutory rules answer WHEN, WHERE, and ON WHAT AMOUNT tax applies: Time of Supply (Secs. 12-13 CGST Act - fixes liability date), Place of Supply (Secs. 10-13 IGST Act - determines Intra-State CGST+SGST vs Inter-State IGST), and Value of Supply (Sec. 15 - Transaction Value where parties are unrelated). Small businesses with turnover up to Rs. 1.5 Crore (Rs. 50 Lakhs for services) may opt for the simplified flat-rate Composition Scheme (Sec. 10).",
+        "legalProvision": "Sections 10, 11, 12, 13, & 15, CGST Act, 2017; Sections 10-13, IGST Act, 2017",
+        "meaning": "Place of Supply is the backbone of destination-based GST: a wrong classification between Intra-State and Inter-State supply causes tax payment to the wrong Government head (remedied via Sec. 77 refund without interest).",
+        "keyPoints": [
+          "Time of Supply (Secs. 12-13 CGST Act): For GOODS (Sec. 12) -> Date of issue of invoice OR last statutory date to issue invoice (at/before removal of goods), whichever is earlier (advances on goods are exempt from immediate GST!). For SERVICES (Sec. 13) -> Date of invoice (if issued within 30 days) or date of payment, whichever is earlier (if delayed beyond 30 days -> date of provision of service or payment).",
+          "Place of Supply (Secs. 10-13 IGST Act): Goods involving movement -> Location where movement TERMINATES for delivery to recipient (Sec. 10(1)(a)); Bill-to-Ship-to -> Principal place of business of the third person; Immovable-property services -> Location of the immovable property (Sec. 12(3)); General B2B Services -> Location of registered recipient; B2C Services -> Location of recipient on record (else supplier location). Exports & SEZ supplies are 'Zero-Rated Supplies' (Sec. 16 IGST Act - full ITC refund!).",
+          "Value of Supply (Sec. 15 CGST Act): Transaction Value (price actually paid/payable) where supplier and recipient are UNRELATED and price is the SOLE consideration - INCLUDES non-GST taxes/duties, incidental packing/commission charges, interest/late fees, and private subsidies (EXCLUDES Central/State Govt subsidies and pre-agreed trade discounts shown on invoice).",
+          "Composition Scheme for Small Taxpayers (Sec. 10): Optional flat-rate quarterly scheme for intra-State suppliers with aggregate turnover up to Rs. 1.5 CRORE (Rs. 75 Lakhs in specified special-category States) paying flat 1% (traders/manufacturers) or 5% (restaurants) - or up to Rs. 50 LAKHS for small service providers paying 6% (Sec. 10(2A)). Restrictions: CANNOT collect GST from customers, CANNOT claim Input Tax Credit (ITC), and CANNOT make inter-State outward supplies."
+        ],
+        "caseLaws": [
+          {
+            "name": "Skill Lotto Solutions Pvt. Ltd. v. Union of India",
+            "citation": "2021 15 SCC 667",
+            "principle": "Upheld inclusion of lotteries, betting, and gambling as taxable 'goods' and affirmed uniform statutory valuation under Section 15 CGST Act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the turnover limit, flat tax rates, and three key restrictions on a taxpayer opting for the GST Composition Scheme under Section 10 CGST Act.",
+            "a": "Limit: Rs. 1.5 Crore for goods/restaurants (Rs. 50 Lakhs for services). Rates: 1% traders/manufacturers, 5% restaurants, 6% services. Restrictions: cannot collect GST from buyers, cannot claim Input Tax Credit (ITC), and cannot make inter-State outward supplies."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u5-t3": {
+      "id": "tax-u5-t3",
+      "subtitle": "Principles of Taxation Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Input Tax Credit (ITC - Secs. 16-18 CGST Act) is the lifeblood of GST: every registered business sets off GST paid on business inputs/capital goods/input services against its output GST liability, eliminating cascading 'tax on tax'. Claiming ITC requires 5 strict conditions (including GSTR-2B matching and supplier's actual tax deposit), excludes 'Blocked Credits' under Section 17(5), follows statutory IGST-first cross-utilization (Sec. 49A), and rests on Registration (Secs. 22-24), periodic Returns (GSTR-1/3B), and E-Way Bills.",
+        "legalProvision": "Sections 16, 17(5), 22-24, 37-39, 49A, & 68, CGST Act, 2017; Rule 138 CGST Rules (E-Way Bill)",
+        "meaning": "ITC is a statutory concession (not an absolute vested right - Jayam & Co. / Safari Retreats context), so strict invoice matching and non-blocked business use are strictly enforced.",
+        "keyPoints": [
+          "Conditions for Claiming ITC (Sec. 16(2)): (1) Possession of valid Tax Invoice/Debit Note, (2) Invoice details furnished by supplier in GSTR-1 and auto-reflected in recipient's GSTR-2B (Sec. 16(2)(aa)), (3) ACTUAL RECEIPT of goods/services, (4) Supplier has ACTUALLY PAID the tax to Government (Sec. 16(2)(c)), and (5) Recipient has filed return (GSTR-3B) and pays supplier within 180 DAYS (else ITC reverses with interest). Cut-off deadline: 30th November following end of financial year (Sec. 16(4)).",
+          "Blocked Credits - ITC Strictly Disallowed (Sec. 17(5)): (a) Passenger motor vehicles (<= 13 seats) UNLESS used for resale, passenger transport, or driving training, (b) Food & beverages, outdoor catering, beauty treatment, health services, club memberships, life/health insurance (except statutory employer mandate), (c) Works contract/construction of immovable property on own account (note Chief Commissioner of CGST v. Safari Retreats, 2024 on 'plant or machinery' functionality test), (d) Goods lost, stolen, destroyed, written off, or given as free samples/gifts, and (e) Personal consumption or Composition-scheme purchases.",
+          "Order of Cross-Utilization of ITC (Sec. 49 & Sec. 49A): (1) IGST credit MUST be exhausted FIRST completely (against IGST, then CGST/SGST in any order/proportion); (2) CGST credit sets off against CGST, then IGST (NEVER against SGST!); (3) SGST credit sets off against SGST, then IGST (NEVER against CGST!).",
+          "Registration Thresholds (Secs. 22-24), Returns & E-Way Bill: Mandatory Registration (Sec. 22) when aggregate turnover exceeds Rs. 40 LAKHS (exclusive goods suppliers in most States; Rs. 20 Lakhs in Telangana/specified States) or Rs. 20 LAKHS for services (Rs. 10 Lakhs in Manipur/Mizoram/Nagaland/Tripura). Compulsory Registration regardless of turnover (Sec. 24): inter-State goods suppliers, casual/non-resident taxable persons, RCM payers, and e-commerce operators. Key Returns: GSTR-1 (outward supplies), GSTR-3B (monthly/QRMP summary payment), GSTR-9 (annual). E-Way Bill (Rule 138): mandatory electronic transit permit for movement of goods exceeding Rs. 50,000."
+        ],
+        "caseLaws": [
+          {
+            "name": "Chief Commissioner of CGST v. Safari Retreats Pvt. Ltd.",
+            "citation": "2024 SCC OnLine SC 2691",
+            "principle": "Upheld constitutional validity of Section 17(5)(c)-(d) blocked credits while clarifying that a mall/building constructed specifically for leasing may qualify as 'plant' under the functionality test if it serves as the essential apparatus of the service business."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the golden cross-utilization rule for IGST, CGST, and SGST Input Tax Credit under Section 49A, and list three Blocked Credits under Section 17(5) CGST Act.",
+            "a": "IGST credit must be exhausted completely first (against IGST, then CGST/SGST); CGST pays CGST then IGST (never SGST); SGST pays SGST then IGST (never CGST). Blocked credits (Sec. 17(5)): passenger motor vehicles (<= 13 seats), food/catering/club memberships, and goods lost/stolen/given as free gifts."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u5-t4": {
+      "id": "tax-u5-t4",
+      "subtitle": "Principles of Taxation Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 279A establishes India's unique federal GST Council (Union Finance Minister as Chair + Union MoS Finance + State Finance Ministers) taking decisions by a 3/4ths weighted majority (Centre 1/3rd, States 2/3rds) to harmonize rates, exemptions, and laws nationwide. Enforcement operates through Anti-Profiteering (Sec. 171), Demand/Recovery notices (Secs. 73-74 / new unified Sec. 74A), and a four-tier Appellate Hierarchy culminating in the GST Appellate Tribunal (GSTAT), High Court, and Supreme Court.",
+        "legalProvision": "Article 279A, Constitution of India; Sections 73-74A, 107-118, & 171, CGST Act, 2017",
+        "meaning": "The GST Council embodies 'Cooperative Federalism' (Union of India v. Mohit Minerals, 2022), ensuring neither the Centre nor States can unilaterally dictate national GST policy.",
+        "keyPoints": [
+          "GST Council - Composition, Quorum & Voting (Art. 279A): Chairperson = Union Finance Minister; Members = Union Minister of State (Revenue/Finance) + Finance/Taxation Minister nominated by EVERY State & UT with legislature. Quorum = 50% of total members. Decisions require NOT LESS THAN THREE-FOURTHS (75%) weighted majority of members present and voting -> Central Government vote carries 1/3rd weightage, ALL State Governments combined carry 2/3rds weightage (so neither Centre alone nor States alone can pass a resolution!). Makes recommendations on GST rates, threshold limits, exemptions, special provisions for NE/hill States, and when petroleum products enter GST (recommendations are persuasive per Mohit Minerals, 2022).",
+          "Anti-Profiteering Measure (Sec. 171 CGST Act): Any reduction in GST rate OR benefit of Input Tax Credit MUST be passed on to ultimate consumers by commensurate reduction in prices (upheld as valid consumer-welfare legislation in Reckitt Benckiser India v. Union of India, 2024; jurisdiction transitioned from NAA to CCI / GSTAT Principal Bench).",
+          "Demand & Recovery (Secs. 73, 74 & Unified Sec. 74A inserted 2024): Traditionally Sec. 73 covered bona fide non-fraud short-payment (3-year order limit; 10% penalty) while Sec. 74 covered fraud/wilful misstatement/suppression (5-year limit; 100% penalty) - Finance (No. 2) Act, 2024 introduced unified Section 74A (42-month common timeline from FY 2024-25 onwards) while keeping lower vs higher penalty differentiation.",
+          "GST Appellate Hierarchy (Secs. 107-118): (1) Adjudicating Authority (Proper Officer) -> (2) FIRST APPELLATE AUTHORITY (Sec. 107 - within 3 months; 10% disputed tax pre-deposit) -> (3) GST APPELLATE TRIBUNAL / GSTAT (Secs. 109-112 - Principal Bench at New Delhi & State Benches; within 3 months; additional 10% pre-deposit) -> (4) HIGH COURT (Sec. 117 - within 180 days strictly on Substantial Question of Law; note Place-of-Supply disputes from GSTAT Principal Bench appeal directly to SC!) -> (5) SUPREME COURT (Sec. 118)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Union of India v. Mohit Minerals Pvt. Ltd.",
+            "citation": "2022 10 SCC 700",
+            "principle": "Held that Article 279A GST Council embodies 'uncoercive cooperative federalism' - its recommendations carry immense persuasive value, yet Parliament and State Legislatures retain independent constitutional sovereignty under Article 246A."
+          },
+          {
+            "name": "Reckitt Benckiser India Pvt. Ltd. v. Union of India",
+            "citation": "2024 SCC OnLine Del 588",
+            "principle": "Delhi High Court upheld the constitutional validity of Section 171 CGST Act (Anti-Profiteering) as a legitimate consumer-protection measure ensuring GST rate cuts are not pocketed by businesses."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the weighted voting formula of the GST Council under Article 279A, explain Section 171 (Anti-Profiteering), and list the four appellate tiers under the CGST Act, 2017.",
+            "a": "GST Council decisions need >= 3/4ths (75%) weighted majority with Centre holding 1/3rd weight and all States combined holding 2/3rds weight. Sec. 171 mandates passing GST rate cuts/ITC benefits to consumers via lower prices. Tiers: First Appellate Authority -> GSTAT -> High Court (substantial question of law) -> Supreme Court."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-property",
+      "title": "Law of Property (TPA)",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Lease (Essentials, Kinds, Rights/Liabilities, Termination & Forfeiture), Exchange, Gifts & Transfer of Actionable Claims",
+          "topics": [
+            {"id": "lop-u4-t1", "title": "1. Lease - Definition, Essential Features, Kinds of Leases & Mode of Creation (Secs. 105-107 TPA)"},
+            {"id": "lop-u4-t2", "title": "2. Rights and Liabilities of Lessor and Lessee (Sec. 108 TPA)"},
+            {"id": "lop-u4-t3", "title": "3. Termination / Determination of Lease, Forfeiture, Waiver & Holding Over (Secs. 111-116 TPA)"},
+            {"id": "lop-u4-t4", "title": "4. Exchange - Definition, Formalities, Rights & Liabilities of Parties (Secs. 118-121 TPA)"},
+            {"id": "lop-u4-t5", "title": "5. Gifts - Definition, Essentials, Kinds, Registration, Suspension/Revocation & Onerous/Universal Donee (Secs. 122-129 TPA)"},
+            {"id": "lop-u4-t6", "title": "6. Transfer of Actionable Claims - Meaning, Mode, Notice, Warranty & Disqualifications (Secs. 3 & 130-137 TPA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lop-u4-t1": {
+      "id": "lop-u4-t1",
+      "subtitle": "Law of Property (TPA) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 105 TPA defines a Lease of immovable property as a transfer of the RIGHT TO ENJOY such property for a certain time (express or implied) or in perpetuity, in consideration of a price paid/promised (Premium) or periodic money/crops/service (Rent). Under Section 107, leases from year to year, exceeding 1 year, or reserving yearly rent MUST be made by a registered instrument executed by BOTH lessor and lessee.",
+        "legalProvision": "Sections 105, 106, 107, & 117, Transfer of Property Act, 1882",
+        "meaning": "Unlike Sale (which transfers ownership), Lease carves out a partial proprietary right of exclusive possession and enjoyment while ownership (reversion) remains with the lessor.",
+        "keyPoints": [
+          "Five Essential Features of Lease (Sec. 105): (1) Competent Lessor (owner/authorized) and Lessee (must be competent to contract because lease creates bilateral covenants), (2) Specific Immovable Property, (3) Transfer of RIGHT OF EXCLUSIVE ENJOYMENT (demise / interest in property, NOT mere personal permission), (4) Duration - fixed term, periodic, or perpetual, and (5) Consideration - Premium (lump sum) and/or Rent (periodic money, share of crops, or services).",
+          "Kinds of Leases: (1) Lease for a Fixed Term, (2) Periodic Lease (year-to-year or month-to-month), (3) Perpetual Lease (permanent tenancy), (4) Tenancy-at-Will (terminable anytime by either party), (5) Tenancy by Sufferance (tenant staying after expiry without landlord's assent - no notice needed to evict), and (6) Tenancy by Holding Over (Sec. 116 - landlord accepts rent after expiry, renewing the lease).",
+          "Statutory Duration & Notice to Quit (Sec. 106 - Amended 2002): Absent written contract/local usage, a lease for AGRICULTURAL OR MANUFACTURING purposes is deemed year-to-year (terminable by 6 MONTHS' written notice); a lease for ANY OTHER PURPOSE (residential/commercial) is deemed month-to-month (terminable by 15 DAYS' written notice). The 2002 Amendment removed the technical trap requiring notice to expire strictly with the end of the tenancy month.",
+          "Mode of Creation & Agricultural Exemption (Secs. 107 & 117): Lease from year to year, for any term exceeding 1 year, or reserving a yearly rent MUST be by REGISTERED instrument signed by BOTH lessor and lessee; all other leases may be registered OR oral accompanied by delivery of possession. Agricultural leases are exempted from Chapter V unless notified by the State Government (Sec. 117)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Associated Hotels of India Ltd. v. R.N. Kapoor",
+            "citation": "AIR 1959 SC 1262",
+            "principle": "Laid down the classic 4-point test for Lease under Section 105: if a document creates an interest in property and transfers exclusive possession (rather than mere personal permission), it is a Lease regardless of the label used."
+          },
+          {
+            "name": "Anthony v. K.C. Ittoop & Sons",
+            "citation": "2000 6 SCC 394",
+            "principle": "Held that even where a 5-year lease deed is void for non-registration under Section 107, a tenant inducted into possession paying monthly rent is treated as a valid month-to-month lessee under Section 106."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the default statutory notice periods under Section 106 TPA for agricultural/manufacturing leases vs residential leases, and state which leases require compulsory registration under Section 107.",
+            "a": "Agricultural/manufacturing leases require 6 months' notice; residential/other leases require 15 days' notice. Under Sec. 107, leases from year to year, for a term exceeding 1 year, or reserving yearly rent MUST be registered."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u4-t2": {
+      "id": "lop-u4-t2",
+      "subtitle": "Law of Property (TPA) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 108 TPA codifies the implied statutory Rights and Liabilities of the Lessor (Part A: Clauses (a)-(c)) and Lessee (Part B: Clauses (d)-(q)) governing every lease unless modified by express contract. The lessor must disclose latent material defects, deliver possession, and guarantee quiet enjoyment, while the lessee enjoys rights to accessions, repairs-deduction, fixture removal, and sub-letting alongside duties to pay rent, prevent waste, and restore possession.",
+        "legalProvision": "Sections 108 (Parts A & B) & 109, Transfer of Property Act, 1882",
+        "meaning": "Section 108 acts as a built-in tenancy contract filling every gap where a lease deed is silent, balancing the tenant's peaceful enjoyment against protection of the landlord's reversionary title.",
+        "keyPoints": [
+          "Lessor's Three Core Liabilities (Sec. 108(a)-(c)): (a) Disclose any MATERIAL LATENT DEFECT in the property relating to its intended use (known to lessor, not discoverable by lessee with ordinary care), (b) Deliver POSSESSION on lessee's request, and (c) Implied Covenant for QUIET ENJOYMENT - as long as lessee pays rent and performs covenants, he shall hold the property without interruption by lessor or anyone claiming through him (runs with the land).",
+          "Lessee's Key Rights (Sec. 108(d)-(j)): (d) Benefit of Accessions made during lease, (e) Option to VOID lease if material part is wholly destroyed/rendered substantially unfit by fire, flood, tempest, or mob violence without lessee's fault (note: COVID lockdown alone does NOT constitute physical destruction under Sec. 108(e) - Ramanand v. Dr. Girish Soni), (f) Deduct cost of lessor-bound repairs from rent after notice, (g) Deduct unpaid lessor taxes/charges, (h) Remove fixtures/structures erected by lessee before quitting, (i) Right to harvest sown crops on uncertain-term lease termination, and (j) Power to TRANSFER/SUB-LET/MORTGAGE leasehold interest unless prohibited by lease.",
+          "Lessee's Key Liabilities (Sec. 108(k)-(q)): (k) Disclose material facts materially increasing value of lessor's interest, (l) Pay premium/rent at proper time and place, (m) Keep and restore property in as good condition as received (normal wear-and-tear & irresistible force excepted) and allow inspection, (n) Notify lessor of any encroachment/title suit, (o) Use property as a prudent owner and NOT commit destructive waste, (p) Erect NO permanent structure without lessor's consent (except agricultural purposes), and (q) Restore vacant possession upon determination of lease.",
+          "Rights of Lessor's Transferee (Sec. 109 TPA): If lessor sells leased land during the tenancy, the buyer automatically steps into all lessor's rights (attornment not mandatory, though tenant paying rent to old landlord before notice is protected)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Raja Dhruv Dev Chand v. Raja Harmohinder Singh",
+            "citation": "AIR 1968 SC 1024",
+            "principle": "Held that Section 56 of the Contract Act (Frustration) does NOT apply to completed leases; a lessee's relief upon destruction by fire, flood, or violence is governed strictly by Section 108(e) TPA."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three implied liabilities of a Lessor under Section 108(a)-(c) TPA, and explain when a lessee may void a lease under Section 108(e).",
+            "a": "Lessor must (1) disclose material latent defects, (2) deliver possession, and (3) guarantee quiet enjoyment. Under Sec. 108(e), the lessee may void the lease if a material part is wholly destroyed or rendered substantially and permanently unfit by fire, tempest, flood, or mob violence without lessee's fault."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u4-t3": {
+      "id": "lop-u4-t3",
+      "subtitle": "Law of Property (TPA) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 111 TPA enumerates EIGHT exhaustive modes of Determination (Termination) of a Lease - efflux of time, happening of specified event, termination of lessor's interest, merger, express/implied surrender, Forfeiture (Sec. 111(g)), and expiry of Notice to Quit (Sec. 111(h)). Forfeiture can be waived by accepting subsequent rent (Sec. 112) or relieved by court on paying arrears (Sec. 114), while post-expiry rent acceptance creates 'Holding Over' (Sec. 116).",
+        "legalProvision": "Sections 111 to 116, Transfer of Property Act, 1882",
+        "meaning": "Termination rules prevent arbitrary midnight evictions by requiring strict compliance with notice and forfeiture procedures, while equitable relief under Sections 112-114A gives defaulting tenants a fair chance to cure non-payment or minor breaches.",
+        "keyPoints": [
+          "Eight Modes of Determination of Lease (Sec. 111(a)-(h)): (a) Efflux of limited time, (b) Happening of specified terminating event, (c) Termination of lessor's own limited interest/power, (d) Merger (lessee buys lessor's ownership - both interests vest in same person in same right), (e) Express Surrender (mutual agreement), (f) Implied Surrender (accepting a new incompatible lease or relinquishing possession), (g) FORFEITURE, and (h) Expiration of valid Notice to Quit (Sec. 106).",
+          "Three Grounds of Forfeiture (Sec. 111(g)): Lease determines by forfeiture ONLY when (1) lessee breaks an EXPRESS condition carrying a right of re-entry, (2) lessee DENIES LANDLORD'S TITLE by setting up title in a third person or himself (disclaimer), OR (3) lessee is adjudicated insolvent with an express re-entry clause - AND in ALL three cases, lessor MUST serve a WRITTEN NOTICE expressing intention to determine the lease.",
+          "Waiver of Forfeiture (Sec. 112) & Waiver of Notice to Quit (Sec. 113): Accepting rent due AFTER forfeiture (with knowledge of breach) or distraining for rent WAIVES forfeiture (unless ejectment suit is already filed); under Sec. 113, Notice to Quit is waived by any express/implied act (e.g., accepting subsequent rent with mutual consent) showing intent to treat lease as subsisting.",
+          "Statutory Relief Against Forfeiture (Secs. 114 & 114A): For non-payment of rent, if lessee pays/tenders all arrears + interest + full suit costs at hearing, court may relieve against forfeiture (Sec. 114); for OTHER remediable express-condition breaches, lessor MUST first serve a written notice specifying the breach and granting reasonable time to remedy it before suing for ejectment (Sec. 114A).",
+          "Effect of Holding Over (Sec. 116 TPA): If lessee remains in possession after lease expiry AND lessor accepts rent or otherwise assents to his continuing, the lease is RENEWED from year-to-year or month-to-month (Sec. 106) - distinct from mere 'Tenant at Sufferance' (no landlord assent) or statutory tenant protected under State Rent Control Acts (Bhawanji Lakhamshi)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bhawanji Lakhamshi v. Himatlal Jamnadas Dani",
+            "citation": "1972 1 SCC 388",
+            "principle": "Clarified Holding Over under Section 116: mere acceptance of rent from a statutory tenant protected under Rent Control legislation does NOT automatically create a fresh contractual tenancy unless bilateral assent to renew is proved."
+          },
+          {
+            "name": "Namdeo Lokman Lodhi v. Narmadabai",
+            "citation": "AIR 1953 SC 228",
+            "principle": "Held that the requirement of written notice under Section 111(g) for forfeiture is a strict statutory mandate (not a mere rule of equity) and courts liberally grant relief under Section 114 where arrears and costs are paid."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three grounds of Forfeiture under Section 111(g) TPA, and explain the difference between a 'Tenant Holding Over' (Sec. 116) and a 'Tenant at Sufferance'.",
+            "a": "Forfeiture grounds: breach of express condition with re-entry clause, denial of landlord's title, or lessee's insolvency with re-entry clause (all requiring written notice). Holding Over occurs when the landlord assents/accepts rent after expiry (renewing the lease), whereas a Tenant at Sufferance stays on WITHOUT landlord's assent."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u4-t4": {
+      "id": "lop-u4-t4",
+      "subtitle": "Law of Property (TPA) - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 118 TPA defines Exchange as a mutual transfer of OWNERSHIP of one thing for ownership of another, where NEITHER thing OR BOTH things are money only (e.g., swapping a house for farmland, or exchanging Rs. 500 notes for Rs. 100 notes - never land for money, which is Sale). It follows the exact registration formalities of Sale, confers reciprocal Seller-Buyer rights (Sec. 120), and grants a statutory remedy for defect of title (Sec. 119).",
+        "legalProvision": "Sections 118, 119, 120, & 121, Transfer of Property Act, 1882",
+        "meaning": "Exchange covers both movable barter and immovable property swaps. Unlike Partition (dividing pre-existing joint ownership), Exchange involves two distinct owners mutually conveying completely separate properties.",
+        "keyPoints": [
+          "Definition & Essentials (Sec. 118 TPA): (1) Mutual transfer of ABSOLUTE OWNERSHIP between two competent living persons, (2) Subject matter may be movable or immovable (land for land, house for shares, or currency notes for currency notes), and (3) Neither thing OR both things are money ONLY (Note: if land is swapped for another plot PLUS a small cash 'owelty' to equalize value, it STILL remains an Exchange, not Sale!).",
+          "Mode of Transfer (Sec. 118 Para 2): Follows the exact rules of SALE (Sec. 54) - if immovable property worth Rs. 100 or more is exchanged, a REGISTERED deed is mandatory; for movables, delivery of possession suffices.",
+          "Right of Party Deprived of Thing Received (Sec. 119 TPA): Implied statutory warranty of title - if either party is deprived of the property received in exchange due to a DEFECT IN THE OTHER PARTY'S TITLE, the other party is liable at the deprived party's OPTION either (a) to pay compensation for the loss, OR (b) to RETURN the original property transferred by the deprived party (if still in possession of the other party, his legal representative, or a transferee without consideration).",
+          "Mutual Rights & Liabilities (Sec. 120) & Exchange of Money (Sec. 121): Under Sec. 120, each party has the rights and liabilities of a SELLER as to what he gives and of a BUYER as to what he takes (Sec. 55 applies mutually). Under Sec. 121, on an exchange of money (e.g., foreign currency or denominations), each party warrants the GENUINENESS of the money he gives."
+        ],
+        "caseLaws": [
+          {
+            "name": "Commissioner of Income Tax v. Motors & General Stores (P) Ltd.",
+            "citation": "AIR 1968 SC 200",
+            "principle": "Distinguished Sale from Exchange under Section 118 TPA: transferring a cinema house in consideration of preference shares in a company (not cash price) is an 'Exchange', NOT a 'Sale'."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "If A transfers his house to B in return for B's agricultural plot plus Rs. 2 lakhs cash to equalize values, is it a Sale or an Exchange, and what remedy does Section 119 provide if B's title turns out defective?",
+            "a": "It is an Exchange under Section 118 TPA (since consideration is not money alone). Under Section 119, A may at his option either claim monetary compensation from B OR recover his original house back (if still with B, B's heirs, or a gratuitous transferee)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u4-t5": {
+      "id": "lop-u4-t5",
+      "subtitle": "Law of Property (TPA) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 122 TPA defines a Gift as the voluntary transfer of existing movable or immovable property WITHOUT CONSIDERATION, accepted by or on behalf of the donee during the donor's lifetime. Under Section 123, a gift of IMMOVABLE property of ANY value MUST be made by a registered, signed deed attested by two witnesses (Muslim Hiba is exempted under Sec. 129), while Sections 124-128 govern future/onerous gifts, universal donees, and strict revocation limits.",
+        "legalProvision": "Sections 122 to 129, Transfer of Property Act, 1882; Section 17(1)(a), Registration Act, 1908",
+        "meaning": "Because gifts strip an owner of property for free, Section 123 demands strict registration and attestation for immovable gifts to prevent forged or coerced claims, while Section 126 prevents donors from arbitrarily taking back completed gifts.",
+        "keyPoints": [
+          "Essentials of Valid Gift (Sec. 122): (1) Competent Donor (major, sound mind, free consent) and Donee (may even be a minor/unsound person accepting through guardian), (2) EXISTING movable or immovable property (gift of future property is VOID under Sec. 124; if mixed, valid only for existing part), (3) Made VOLUNTARILY and WITHOUT CONSIDERATION (natural love & affection is NOT legal consideration), and (4) ACCEPTED by or on behalf of donee DURING DONOR'S LIFETIME while donor is still capable of giving (if donee dies before acceptance, gift is void).",
+          "Registration & Mode of Transfer (Sec. 123 TPA & Sec. 129 Exception): For IMMOVABLE property of ANY value (even Rs. 10!) -> MANDATORY REGISTERED instrument signed by/on behalf of donor and attested by at least TWO witnesses (delivery of possession is NOT mandatory under Sec. 123, unlike Muslim Hiba; once validly executed/accepted, donor cannot block registration - K. Balakrishnan v. K. Kamalam). For MOVABLE property -> EITHER registered attested deed OR simple delivery of possession. Section 129 EXEMPTS Muslim Hiba and death-bed gifts (Donatio Mortis Causa) from Chapter VII.",
+          "Different Types of Gifts (Secs. 124-128): (1) Gift to Several Donees (Sec. 125 - if one refuses, void only as to his share), (2) Onerous Gift (Sec. 127 - single transfer containing both beneficial and burdened properties: donee must accept ALL or NONE; if separate independent transfers, may accept beneficial and reject onerous; minor donee can repudiate onerous gift on attaining majority), (3) Universal Donee (Sec. 128 - receives donor's ENTIRE property; becomes personally liable for all donor's existing debts UP TO the value of gifted property), and (4) Void / Conditional Gifts.",
+          "Suspension & Revocation of Gift (Sec. 126 TPA): A completed gift CANNOT be revoked unilaterally at donor's whim - revocable ONLY on TWO statutory grounds: (1) By prior agreement on happening of a specified event NOT depending on donor's will (e.g., donee predeceasing donor), OR (2) On any ground making a contract voidable (coercion, undue influence, fraud, or misrepresentation - EXCEPT want/failure of consideration). Also see Sec. 23, Senior Citizens Act, 2007 allowing elderly parents to cancel conditional maintenance-linked gifts."
+        ],
+        "caseLaws": [
+          {
+            "name": "K. Balakrishnan v. K. Kamalam",
+            "citation": "2004 1 SCC 581",
+            "principle": "Held that under Sections 122-123 TPA, a minor can validly accept a non-onerous gift (acceptance inferred from custody of deed/possession or silence), and a donor reserving a life-enjoyment right does not invalidate an immediate gift."
+          },
+          {
+            "name": "Renikuntla Rajamma v. K. Sarwanamma",
+            "citation": "2014 9 SCC 445",
+            "principle": "3-judge Supreme Court Bench held that under Section 123 TPA, delivery of physical possession is NOT a mandatory condition for a valid registered gift of immovable property (even if the donor retains possession/usufruct for life)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Is delivery of possession mandatory for a registered Hindu gift of immovable property under Section 123 TPA, and on what two grounds can a completed gift be revoked under Section 126?",
+            "a": "No - delivery of possession is NOT required under Section 123 TPA (Renikuntla Rajamma, unlike Muslim Hiba saved by Sec. 129). Under Section 126, a gift can be revoked ONLY (1) on a prior agreed event independent of donor's will, or (2) for coercion, fraud, misrepresentation, or undue influence."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u4-t6": {
+      "id": "lop-u4-t6",
+      "subtitle": "Law of Property (TPA) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 3 TPA defines an Actionable Claim as a claim to (1) any UNSECURED debt (not secured by mortgage of immovable property or pledge of movables), OR (2) any beneficial interest in movable property NOT in the claimant's possession (e.g., arrears of rent, life insurance policy proceeds, fixed deposit receipts, provident fund). Under Sections 130-137 TPA, Actionable Claims are freely transferable by a signed WRITTEN instrument (registration NOT required), while Section 136 bars judges and lawyers from buying them.",
+        "legalProvision": "Sections 3, 6(e), & 130-137, Transfer of Property Act, 1882",
+        "meaning": "Actionable claims convert intangible receivables into tradable commercial assets (factoring, insurance assignments, bank receivables), while cleanly separating them from non-transferable 'Mere Rights to Sue' (Sec. 6(e)).",
+        "keyPoints": [
+          "What IS vs Is NOT an Actionable Claim (Sec. 3 TPA): IS an Actionable Claim -> Unsecured money debt, arrears of rent, unpaid Muslim Mahr claim, life insurance policy sum, partner's right to sue for accounts of dissolved firm, lottery ticket (Sunrise Associates v. Govt. of NCT of Delhi), right to claim benefit of an executory contract. NOT an Actionable Claim -> Mortgage debt / pledged debt (already secured), Court Decree / judgment debt, Copyright / Patent / Shares (governed by IPR/Companies Act), and Mere Right to Sue for unliquidated tort/breach damages (non-transferable under Sec. 6(e)).",
+          "Mode of Transfer (Sec. 130 TPA): Effected ONLY by execution of an INSTRUMENT IN WRITING signed by the transferor or his duly authorized agent (NO registration, NO attestation, and NO delivery of possession required); immediately vests all rights and remedies in the transferee, who may sue in his OWN name without joining the transferor.",
+          "Notice to Debtor & Equities (Secs. 130 Proviso, 131 & 132): Transfer is complete between assignor and assignee upon execution even WITHOUT notice to debtor, BUT if the debtor innocently pays the old creditor before receiving WRITTEN NOTICE signed by transferor (Sec. 131), the debtor is discharged! Under Section 132, the transferee takes the claim SUBJECT TO ALL EXISTING EQUITIES and set-offs that the debtor had against the transferor.",
+          "Warranty of Solvency (Sec. 133) & Judicial/Legal Disqualification (Sec. 136): Transferor warrants the debtor's solvency ONLY at the date of transfer (capped at consideration received - Sec. 133). Under Section 136, NO Judge, legal practitioner (advocate), or court officer shall buy or traffic in any actionable claim (preventing champerty and courtroom conflict of interest). Section 137 exempts Negotiable Instruments, shares, and debentures from Chapter VIII."
+        ],
+        "caseLaws": [
+          {
+            "name": "Sunrise Associates v. Government of NCT of Delhi",
+            "citation": "2006 5 SCC 603",
+            "principle": "5-judge Constitution Bench held that a lottery ticket represents a conditional beneficial interest in movable property not in possession - making it an 'Actionable Claim' under Section 3 TPA, not 'goods' liable to sales tax."
+          },
+          {
+            "name": "ICICI Bank Ltd. v. Official Liquidator of APS Star Industries Ltd.",
+            "citation": "2010 10 SCC 1",
+            "principle": "Upheld inter-bank assignment of non-performing loan portfolios (NPA debts) along with underlying securities as lawful commercial transfers under Section 130 TPA and Banking Regulation Act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Give three examples each of what IS and what is NOT an Actionable Claim under Section 3 TPA, and state who is barred from purchasing actionable claims under Section 136.",
+            "a": "Actionable claims: unsecured debt, arrears of rent, life insurance policy/lottery ticket. NOT actionable claims: mortgage/secured debt, court decree, mere right to sue for tort damages, or shares/patents. Under Sec. 136, Judges, legal practitioners (advocates), and court officers are barred from buying actionable claims."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "subjects": [
+    {
+      "id": "land-laws",
+      "title": "Land Laws",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "RFCTLARR Act, 2013 (Land Acquisition) - SIA, Consent, Public Purpose, Compensation Award, R&R, Urgency & Sec. 24 Lapse",
+          "topics": [
+            {"id": "lan-u3-t1", "title": "1. RFCTLARR Act, 2013 - Object, Scope, Public Purpose (Sec. 2), Consent Requirements (70%/80%) & Social Impact Assessment / SIA (Secs. 4-9)"},
+            {"id": "lan-u3-t2", "title": "2. Food Security Safeguard (Sec. 10), Preliminary Notification (Sec. 11), Hearing Objections (Sec. 15), Declaration (Sec. 19) & Urgency Clause (Sec. 40)"},
+            {"id": "lan-u3-t3", "title": "3. Determination of Market Value & Award (Secs. 23-30 - Multiplier, 100% Solatium & 12% Interest) & Section 24 Lapse (Indore Development Authority)"},
+            {"id": "lan-u3-t4", "title": "4. Rehabilitation & Resettlement / R&R Award (Secs. 31-42 & Second/Third Schedules), Return of Unutilized Land (Sec. 101) & LARR Authority (Secs. 51-74)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lan-u3-t1": {
+      "id": "lan-u3-t1",
+      "subtitle": "Land Laws - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Replacing the colonial 120-year-old Land Acquisition Act, 1894, the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement (RFCTLARR) Act, 2013 (effective 1 Jan 2014) humanizes Eminent Domain by mandating prior Social Impact Assessment (SIA - Secs. 4-8), strict Prior Consent of affected landowners (70% for PPP projects; 80% for Private Companies - Sec. 2(2)), enhanced market-value compensation, and compulsory Rehabilitation & Resettlement (R&R).",
+        "legalProvision": "Sections 2, 4-9, & 105, RFCTLARR Act, 2013 (with Telangana State Amendment Act, 2016 - Act 21 of 2017)",
+        "meaning": "Unlike the 1894 Act (which allowed forcible State acquisition without consulting displaced families or providing R&R), the 2013 Act makes displacement humane, transparent, and participatory.",
+        "keyPoints": [
+          "Public Purpose & Prior Consent Matrix (Sec. 2): (1) Government / PSU projects for defence, strategic, or public infrastructure (Sec. 2(1)) -> NO prior consent required; (2) PUBLIC-PRIVATE PARTNERSHIP (PPP) PROJECTS (ownership stays with Govt - Sec. 2(2)(b)(ii)) -> Mandatory prior consent of AT LEAST 70% of affected families; (3) PRIVATE COMPANIES for public purpose (Sec. 2(2)(b)(i)) -> Mandatory prior consent of AT LEAST 80% of affected families (Note: Telangana State Amendment Act, 2016 added Sec. 10A/Sec. 30A allowing exemptions from SIA/consent for notified defence, rural infrastructure, affordable housing, and irrigation projects & voluntary consent agreements!).",
+          "Social Impact Assessment / SIA (Secs. 4-8): Before issuing Preliminary Notification, appropriate Government consults Panchayat/Municipality and conducts a time-bound SIA study (completed within 6 MONTHS) evaluating whether acquisition serves genuine public purpose, exact number of affected families (including landless labourers/tenants!), whether bare minimum land is sought, and whether social costs outweigh benefits; mandatory Public Hearing (Sec. 5) -> appraised by an independent Multi-Disciplinary Expert Group (Sec. 7) -> reviewed by appropriate Government (Sec. 8). SIA lapses if Preliminary Notification is not issued within 12 months (Sec. 14).",
+          "Exemption Under Section 105 (Fourth Schedule): Originally excluded 13 central Acts (National Highways Act, Railways Act, Atomic Energy Act, etc.), though compensation and R&R schedules (First, Second & Third) were extended to them by Central Order from 1 Jan 2015."
+        ],
+        "caseLaws": [
+          {
+            "name": "Radhy Shyam v. State of Uttar Pradesh",
+            "citation": "2011 5 SCC 553",
+            "principle": "Landmark pre-2013 judgment condemning arbitrary use of the colonial urgency clause for private residential townships, directly inspiring the strict SIA, consent, and narrow urgency safeguards in the 2013 LARR Act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the mandatory landowner consent percentages required under Section 2(2) of the RFCTLARR Act, 2013 for PPP projects vs Private Company projects, and state the time limit for completing SIA.",
+            "a": "70% prior consent of affected families for PPP projects and 80% for Private Companies (zero consent needed for pure Government projects). SIA study must be completed within 6 months (Sec. 4)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u3-t2": {
+      "id": "lan-u3-t2",
+      "subtitle": "Land Laws - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To protect India's food security, Section 10 strictly bars acquiring Irrigated Multi-Cropped Agricultural Land except as a demonstrable last resort (subject to State percentage caps and equivalent wasteland development). Acquisition then moves sequentially through Preliminary Notification (Sec. 11 - freezing sales), Hearing of Objections within 60 days (Sec. 15), Final Declaration within 12 months (Sec. 19), and Collector's Notice/Inquiry (Sec. 21) - with the Urgency Clause (Sec. 40) severely narrowed strictly to defence, national security, or natural calamities.",
+        "legalProvision": "Sections 10, 11, 15, 19, 21, 25, & 40, RFCTLARR Act, 2013",
+        "meaning": "Strict statutory timelines prevent governments from freezing a farmer's land indefinitely without paying compensation: if Final Declaration is not issued within 12 months of Sec. 11 (or Award not passed within 12 months of Sec. 19), the ENTIRE acquisition lapses automatically.",
+        "keyPoints": [
+          "Special Food Security Safeguard (Sec. 10): Irrigated multi-cropped land SHALL NOT be acquired except in exceptional demonstrable last-resort cases (capped at State-notified % of district total, and State must develop an EQUAL area of culturable wasteland or deposit equivalent funds for food security).",
+          "Preliminary Notification (Sec. 11) & Hearing of Objections (Sec. 15): Published in Official Gazette, TWO daily newspapers (one regional language), local Panchayat/Municipal office, and Government website; freezes transactions/encumbrances without Collector permission (Sec. 11(4)). Any person interested may file written objections within 60 DAYS (on area/suitability, public purpose justification, or SIA findings), and the Collector MUST afford a personal hearing (statutory Natural Justice - Sec. 15).",
+          "Final Declaration (Sec. 19) & 12-Month Lapse Deadlines: Must be published within 12 MONTHS of Sec. 11 Preliminary Notification (only AFTER R&R Scheme is approved and requiring body deposits cost of acquisition - Sec. 19(2)); failure causes Sec. 11 notification to LAPSE automatically (Sec. 19(7)). Thereafter Collector issues public/personal notice (Sec. 21) and MUST pass the final Award within 12 MONTHS of Sec. 19 Declaration (else entire proceeding lapses under Sec. 25!).",
+          "Severely Restricted Urgency Clause (Sec. 40): Unlike the abused 1894 Sec. 17, Urgency bypassing SIA and Sec. 15 hearing is permitted ONLY for minimum area needed for (1) DEFENCE of India, (2) NATIONAL SECURITY, or (3) Emergencies arising out of NATURAL CALAMITIES (or Parliament-approved emergencies) - AND requires paying 80% advance compensation BEFORE taking possession + an ADDITIONAL 75% of total compensation as penalty/solatium for urgency!"
+        ],
+        "caseLaws": [
+          {
+            "name": "Hindustan Petroleum Corporation Ltd. v. Darius Shapur Chenai",
+            "citation": "2005 7 SCC 627",
+            "principle": "Held that the right to file objections and be heard (formerly Sec. 5A of 1894 Act, now Sec. 15 of 2013 Act) is akin to a Fundamental Right under Article 300A; bypassing or conducting a sham hearing vitiates the entire acquisition."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three strictly limited grounds on which the Urgency Clause (Sec. 40) can be invoked under the 2013 LARR Act, and state the statutory lapse deadlines under Sections 19 and 25.",
+            "a": "Sec. 40 Urgency applies strictly to defence, national security, or natural calamity emergencies (paying 80% advance + 75% extra compensation). Final Declaration (Sec. 19) must follow within 12 months of Sec. 11, and the Award (Sec. 25) must follow within 12 months of Sec. 19, or proceedings lapse."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u3-t3": {
+      "id": "lan-u3-t3",
+      "subtitle": "Land Laws - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 26-30 & First Schedule of the 2013 Act radically multiplied landowner payouts: Market Value (highest of stamp-duty circle rate, top-50% average of recent 3-year sale deeds, or consented PPP/private price) x Multiplier (1.0 in Urban; 1.0 to 2.0 in Rural areas) + Asset Value + 100% SOLATIUM (up from 30% in 1894!) + 12% annual interest - yielding up to 2x market value in urban areas and 4x in remote rural areas. Meanwhile, a 5-judge Bench in Indore Development Authority v. Manoharlal (2020) definitively settled Section 24(2) lapse of old 1894 acquisitions.",
+        "legalProvision": "Sections 23-30, First Schedule, & Section 24(2), RFCTLARR Act, 2013",
+        "meaning": "The 2013 compensation formula ends systematic undervaluation of farmland by anchoring market value to the top half of local registered sale deeds and doubling total compensation via 100% Solatium.",
+        "keyPoints": [
+          "Step-by-Step Compensation Formula (Secs. 26-30 & First Schedule): (1) BASE MARKET VALUE (Sec. 26) = HIGHEST of (a) Stamp Duty / Ready Reckoner minimum value, (b) Average sale price of TOP 50% of sale deeds of similar land in the village during preceding 3 years, or (c) Consented price in PPP/private acquisition; (2) RURAL MULTIPLIER (First Schedule) = 1.0 in Urban areas, and 1.0 to 2.0 in Rural areas (sliding scale by distance from urban area); (3) VALUE OF ASSETS ATTACHED (Sec. 29 - buildings, trees, crops, wells); (4) 100% SOLATIUM (Sec. 30(1) - mandatory extra 100% over total of Market Value x Multiplier + Assets, replacing 1894's 30%!); and (5) ADDITIONAL 12% P.A. INTEREST (Sec. 30(3) - from SIA notification to Award/possession). Total = up to 2x Market Value (Urban) and up to 4x Market Value (Rural)!",
+          "Delay Interest (Sec. 80): If compensation is unpaid/undeposited upon taking possession, Collector pays 9% p.a. for the first year and 15% p.a. thereafter.",
+          "Section 24(2) Lapse of Old 1894 Acquisitions (Indore Development Authority v. Manoharlal, 2020 - 5-Judge Bench): Section 24(2) stated that where an 1894 Award was made >= 5 years prior to 1 Jan 2014 AND physical possession was NOT taken OR compensation was NOT paid, proceedings lapse. Overruling Pune Municipal Corp. (2014), the 5-judge Constitution Bench read 'OR' as 'AND' - holding that an old 1894 acquisition lapses ONLY IF BOTH conditions concur (NEITHER possession was taken NOR compensation was paid/tendered in treasury), and drawing a Panchnama/memo constitutes valid taking of possession!"
+        ],
+        "caseLaws": [
+          {
+            "name": "Indore Development Authority v. Manoharlal",
+            "citation": "2020 8 SCC 129",
+            "principle": "5-judge Constitution Bench overruled Pune Municipal Corp. and held that under Section 24(2) of the 2013 Act, lapse occurs ONLY when BOTH possession has not been taken AND compensation has not been paid/tendered; treasury deposit counts as valid tender."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Write the 2013 LARR Act compensation formula showing how remote rural land receives up to 4 times Base Market Value, and state the 5-judge Bench ruling in Indore Development Authority (2020) on Section 24(2).",
+            "a": "(Base Market Value x Rural Multiplier up to 2.0 + Assets) + 100% Solatium = up to 4x Market Value (plus 12% p.a. under Sec. 30(3)). In Indore Development Authority, the SC held 'or' in Sec. 24(2) means 'and' - lapse occurs ONLY if NEITHER possession was taken NOR compensation was paid/tendered."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u3-t4": {
+      "id": "lan-u3-t4",
+      "subtitle": "Land Laws - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A hallmark of the 2013 Act is mandatory Rehabilitation and Resettlement (R&R - Secs. 31-42 & Second/Third Schedules) extending not just to title-holding landowners, but ALSO to landless agricultural labourers, tenants, artisans, and forest gatherers dependent on the acquired land for 3+ years! Possession CANNOT be taken until full compensation and R&R monetary entitlements are paid (Sec. 38), unutilized land reverts after 5 years (Sec. 101), and disputes go to a dedicated LARR Authority (Secs. 51-74).",
+        "legalProvision": "Sections 31, 38, 41-42 (SC/ST Safeguards), 51-74 (LARR Authority), & 101, RFCTLARR Act, 2013; Second & Third Schedules",
+        "meaning": "The 2013 Act recognizes that land acquisition destroys entire livelihood ecosystems, not merely title deeds - enforcing 'Land for Land', annuity/jobs, housing, and community infrastructure before bulldozers arrive.",
+        "keyPoints": [
+          "Mandatory R&R Entitlements (Sec. 31 & Second Schedule): (1) Housing Unit for displaced families losing a house (Indira Awas/50 sq.m. urban plinth OR Rs. 1.5L cash option), (2) Land-for-Land in irrigation projects (min 1 acre) and 20% developed land in urbanization projects, (3) Choice of Employment (1 family member) OR Rs. 5 LAKHS one-time payment OR Rs. 2,000/month inflation-indexed annuity for 20 years, (4) Subsistence Grant of Rs. 3,000/month for 1 year (+ Rs. 50,000 extra for SC/ST in Scheduled Areas), (5) Rs. 50,000 transportation + Rs. 50,000 resettlement allowance, and (6) 25 basic infrastructural amenities at resettlement site (Third Schedule: roads, school, health centre, drinking water, power).",
+          "Possession Bar (Sec. 38) & SC/ST Protections (Secs. 41-42): Collector takes possession ONLY after paying full monetary compensation (within 3 months of Award) and R&R monetary entitlements (within 6 months). Under Sec. 41, acquisition in Scheduled Areas is strictly a LAST RESORT requiring prior Gram Sabha / PESA consent, special Development Plan, and 1/3rd upfront compensation.",
+          "Return of Unutilized Land (Sec. 101) & Sharing of Resale Profit (Sec. 102): If acquired land remains unutilized for 5 YEARS from taking possession, it MUST be returned to the original owners/heirs or Land Bank (Sec. 101 - note Telangana Amendment allows keeping it in Land Bank for other public purposes). If acquired land is resold undeveloped at higher price, 40% of appreciated profit is shared with original owners (Sec. 102).",
+          "LARR Authority & Appeals (Secs. 51-74): Replaces old Civil Court reference with a dedicated one-person Land Acquisition, Rehabilitation and Resettlement Authority (sitting/retired District Judge or 7-year advocate) deciding compensation/apportionment/R&R references within 6 months (Sec. 60); Civil Court jurisdiction is BARRED (Sec. 63); appeal lies to HIGH COURT within 60 DAYS (Sec. 74)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Orissa Mining Corporation Ltd. v. Ministry of Environment & Forest (Niyamgiri Case)",
+            "citation": "2013 6 SCC 476",
+            "principle": "Reinforced mandatory prior consent of tribal Gram Sabhas under PESA/FRA in Scheduled Areas before diverting tribal lands for industrial/mining projects - mirrored in Section 41 of the 2013 LARR Act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Who besides registered landowners is entitled to R&R benefits under the 2013 LARR Act, what does Section 101 mandate for unutilized acquired land, and where does an appeal from the LARR Authority lie?",
+            "a": "Landless agricultural labourers, tenants, artisans, and livelihood-dependants for 3+ years also receive R&R. Under Sec. 101, land remaining unutilized for 5 years reverts to original owners/heirs or the Land Bank. Appeal from the LARR Authority lies to the High Court within 60 days (Sec. 74)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

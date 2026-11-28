@@ -15,3 +15,8 @@ desktop-console/dist/
 .ls_te_hi_cache.json
 www/nyayasaral_db.json.bak
 .ls_legal_tr_cache.json
+.ls_mp3_stage_tmp/
+Push-LawStudyes-OTA.ps1.pre-lean.bak
+.ls_backups/
+.vercel
+.env*

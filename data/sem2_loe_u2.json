@@ -1,0 +1,204 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-evidence",
+      "title": "Law of Evidence (IEA / BSA)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Admissions, Confessions (Police Bar, Sec. 27 Discovery & Co-Accused), Dying Declarations & Prior Statements",
+          "topics": [
+            {"id": "loe-u2-t1", "title": "1. Admissions - General Principles, Persons Making Admissions & Distinction Between Admission and Confession"},
+            {"id": "loe-u2-t2", "title": "2. Confessions - Inducement/Threat/Promise (Sec. 24), Confessions to Police & in Police Custody (Secs. 25-26 IEA / Secs. 22-23 BSA)"},
+            {"id": "loe-u2-t3", "title": "3. Discovery Statement in Police Custody (Sec. 27 IEA / Sec. 23 Proviso BSA) & Confession Against Co-Accused (Sec. 30 / Sec. 24 BSA)"},
+            {"id": "loe-u2-t4", "title": "4. Dying Declaration - Grounds, Evidentiary Value & Safeguards (Sec. 32(1) IEA / Sec. 26(a) BSA)"},
+            {"id": "loe-u2-t5", "title": "5. Other Statements by Unavailable Persons (Sec. 32(2)-(8) / Sec. 26 BSA) & Evidence in Previous Judicial Proceedings (Sec. 33 / Sec. 27 BSA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loe-u2-t1": {
+      "id": "loe-u2-t1",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "An Admission (Sec. 17 IEA / Sec. 15 BSA) is an oral, documentary, or electronic statement suggesting any inference as to a fact in issue or relevant fact made by a party, agent, or interested predecessor. Admissions bind as estoppel (not conclusive proof - Sec. 31), cannot normally be proved in favour of the maker (Sec. 21), and form the broader genus of which criminal Confessions are a specialized species.",
+        "legalProvision": "Sections 17-23 & 31, Indian Evidence Act, 1872 (Sections 15-21 & 25, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "'What a party himself admits to be true may reasonably be presumed to be so.' Admissions save trial time by shifting the burden of proof onto the party who made the self-harming statement.",
+        "keyPoints": [
+          "Who Can Make a Valid Admission (Secs. 18-20 IEA / Secs. 16-18 BSA): (1) Parties to the proceeding, (2) Authorized agents, (3) Suing/sued representatives in representative character, (4) Persons having proprietary/pecuniary interest or predecessors-in-title, (5) Persons whose position/liability must be proved against a party (Sec. 19), and (6) Referees expressly named by a party for information (Sec. 20).",
+          "Proof of Admissions & Three Exceptions (Sec. 21 / Sec. 19 BSA): Admissions are relevant AGAINST their maker, NOT in his own favour - EXCEPT when (1) relevant under Sec. 32 if maker were dead (e.g., captain's ship log), (2) showing state of mind/body made at the time with corroborating conduct, or (3) otherwise relevant (e.g., Res Gestae).",
+          "Civil 'Without Prejudice' Protection (Sec. 23 / Sec. 21 BSA) & Evidentiary Value (Sec. 31 / Sec. 25 BSA): Admissions made during civil settlement talks 'without prejudice' are protected to encourage compromise; under Sec. 31, admissions are NOT conclusive proof, though they may operate as Estoppel.",
+          "Admission vs Confession (Pakala Narayana Swami): (1) Genus vs Species - all confessions are admissions, not all admissions are confessions; (2) Scope - admissions apply to BOTH civil and criminal cases, confessions ONLY to criminal cases; (3) Maker - admissions can be made by agents/predecessors, confessions MUST be made personally by the accused; (4) Evidentiary Weight - voluntary judicial confession alone can sustain conviction, whereas admissions are not conclusive proof; (5) Co-party effect - co-plaintiff's admission rarely binds another, whereas co-accused confession may be considered under Sec. 30 / Sec. 24 BSA."
+        ],
+        "caseLaws": [
+          {
+            "name": "Pakala Narayana Swami v. Emperor",
+            "citation": "AIR 1939 PC 47",
+            "principle": "Lord Atkin gave the classic definition of Confession: it must either admit in terms the offence OR substantially all facts constituting the offence; a statement containing merely a gravely incriminating fact (e.g., owning the murder knife) is an Admission, not a Confession."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four differences between an Admission and a Confession, and explain why Section 23 IEA / Section 21 BSA protects 'without prejudice' statements in civil cases.",
+            "a": "Admissions apply to civil/criminal cases, can be made by agents, and are not conclusive proof; Confessions apply strictly to criminal trials, must be made personally by the accused admitting the offence/all its facts (Pakala Narayana Swami), and can sustain conviction. Sec. 23 protects 'without prejudice' talks to encourage out-of-court civil settlements."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u2-t2": {
+      "id": "loe-u2-t2",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To prevent police torture and coerced self-incrimination, Indian law strictly excludes confessions caused by inducement, threat, or promise from a person in authority (Sec. 24 IEA / Sec. 22 BSA), ALL confessions made to a police officer (Sec. 25 / Sec. 23(1) BSA), and ALL confessions made while in police custody UNLESS made in the immediate presence of a Magistrate (Sec. 26 / Sec. 23(2) BSA).",
+        "legalProvision": "Sections 24, 25, 26, 28, & 29, Indian Evidence Act, 1872 (Sections 22 & 23, Bharatiya Sakshya Adhiniyam, 2023); Section 164 CrPC / Section 183 BNSS",
+        "meaning": "Confessions are classified as Judicial (recorded by a Magistrate under Sec. 164 CrPC / Sec. 183 BNSS after warning and reflection time) or Extra-Judicial (made to private persons/relatives - weak evidence requiring strict corroboration). BSA Section 22 expressly adds 'coercion' alongside inducement, threat, or promise.",
+        "keyPoints": [
+          "Confession by Inducement, Threat, Coercion or Promise (Sec. 24 IEA / Sec. 22 BSA): Irrelevant if it appears to the court to have been caused by inducement, threat, coercion (explicitly added in BSA), or promise having reference to the charge, proceeding from a person in authority (police, magistrate, employer), and sufficient to raise a temporal hope/fear (becomes relevant ONLY if impression is fully removed - Sec. 28 / Sec. 22 Proviso 1).",
+          "Absolute Bar on Confession to Police Officer (Sec. 25 IEA / Sec. 23(1) BSA): NO confession made to a police officer shall be proved against an accused (even if made in an FIR - Aghnoo Nagesia v. State of Bihar, or before arrest). Test of 'police officer' is power to file a charge sheet under Sec. 173 CrPC (Customs/NDPS officers: note Tofan Singh v. State of Tamil Nadu, 2020 held NDPS officers under Sec. 53 are police officers barred by Sec. 25).",
+          "Confession in Police Custody (Sec. 26 IEA / Sec. 23(2) BSA): NO confession made by any person whilst in police custody (even to a doctor, friend, or fellow prisoner) is admissible UNLESS made in the IMMEDIATE PRESENCE OF A MAGISTRATE.",
+          "Confession Otherwise Relevant (Sec. 29 / Sec. 22 Proviso 2 BSA): A voluntary confession is NOT rendered inadmissible merely because it was made under a promise of secrecy, deception, drunkenness, or without prior warning.",
+          "Retracted Confession: A judicial confession later retracted at trial is NOT automatically void, but as a rule of prudence courts require independent corroboration on material particulars before convicting (Pyare Lal Bhargava)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Aghnoo Nagesia v. State of Bihar",
+            "citation": "AIR 1966 SC 119",
+            "principle": "Held that where an accused himself lodges an FIR confessing to murder, the entire confessional portion of the FIR is hit by Section 25 and inadmissible - except non-confessional facts like motive or Section 27 recovery."
+          },
+          {
+            "name": "Tofan Singh v. State of Tamil Nadu",
+            "citation": "2021 4 SCC 1",
+            "principle": "3-judge Bench (2:1) held that officers invested with investigation powers under Section 53 of the NDPS Act are 'police officers' within Section 25 IEA, rendering confessions recorded by them under Section 67 NDPS inadmissible."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Under what single exception is a confession made while in police custody admissible under Section 26 IEA / Section 23(2) BSA, and what new word did BSA Section 22 add?",
+            "a": "Only if made in the immediate presence of a Magistrate (Sec. 164 CrPC / Sec. 183 BNSS safeguards). BSA Section 22 explicitly added 'coercion' alongside inducement, threat, or promise."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u2-t3": {
+      "id": "loe-u2-t3",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 27 IEA (Proviso to Section 23(2) BSA, 2023) carves out a narrow 'Doctrine of Confirmation by Subsequent Facts' exception to Sections 25-26: ONLY that exact portion of an accused's custodial statement which directly leads to the physical discovery of a previously unknown incriminating fact (e.g., hidden murder weapon) is admissible. Section 30 IEA (Section 24 BSA) allows a court to 'take into consideration' a proved confession of one jointly tried accused against a co-accused purely as corroboration.",
+        "legalProvision": "Sections 27 & 30, Indian Evidence Act, 1872 (Sections 23 Proviso & 24, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Section 27 admits discovery statements because finding the hidden object exactly where the accused said verifies truthfulness - yet it strictly excludes incriminating admissions of guilt ('with which I murdered X'). Similarly, a co-accused's confession under Section 30 can NEVER be the sole foundation of conviction.",
+        "keyPoints": [
+          "Essentials of Section 27 Discovery (Pulukuri Kottaya v. Emperor, 1947): (1) Person must be accused of an offence AND in police custody (includes constructive/formal surrender - State of U.P. v. Deoman Upadhyaya), (2) Information must distinctly relate to a physical fact discovered in consequence thereof (NOT already known to police), and (3) ONLY the bare discovery link ('I hid the knife in the bush') is admissible - past user/confessional words ('the knife with which I stabbed B') MUST be excised.",
+          "Meaning of 'Fact Discovered' (Pulukuri Kottaya): Includes the physical object found, the exact place from which it is produced, AND the accused's exclusive knowledge of its concealment - NOT the object alone.",
+          "Constitutional Validity (State of U.P. v. Deoman Upadhyaya & State of Bombay v. Kathi Kalu Oghad): Upheld against Article 14 and Article 20(3) (self-incrimination), provided the statement was not extracted by compulsion/torture.",
+          "Confession of Co-Accused (Sec. 30 IEA / Sec. 24 BSA): Four conditions - (1) Joint trial of accused persons, (2) For the SAME offence, (3) Confession is legally proved, and (4) Confession implicates the maker HIMSELF substantially to the same extent as the co-accused (no self-exculpatory finger-pointing!). Note: BSA Section 24 Explanation II explicitly clarifies that a trial of multiple persons where one has absconded/failed to respond to proclamation counts as a joint trial.",
+          "Evidentiary Value of Co-Accused Confession (Kashmira Singh v. State of M.P.): Weakest kind of evidence (not sworn testimony, not cross-examined); court must first assess independent evidence against the co-accused and use the Section 30 confession ONLY to lend assurance/corroboration."
+        ],
+        "caseLaws": [
+          {
+            "name": "Pulukuri Kottaya v. King Emperor",
+            "citation": "AIR 1947 PC 67",
+            "principle": "Foundational authority on Section 27: held that 'fact discovered' means the place and accused's knowledge of the hidden item, strictly excluding confessional statements connecting the weapon to the murder itself."
+          },
+          {
+            "name": "Kashmira Singh v. State of Madhya Pradesh",
+            "citation": "AIR 1952 SC 159",
+            "principle": "Held that a co-accused's confession under Section 30 is NOT substantive evidence and can never be the starting point or sole basis for convicting another accused; it only lends assurance to other independent evidence."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "If an accused in police custody tells police 'I will show the axe with which I killed Ramu hidden behind my shed', which exact portion is admissible under Section 27 IEA / Section 23 Proviso BSA?",
+            "a": "ONLY 'I will show the axe hidden behind my shed' (linking accused's knowledge to the recovered axe) is admissible; the confessional phrase 'with which I killed Ramu' MUST be excluded (Pulukuri Kottaya)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u2-t4": {
+      "id": "loe-u2-t4",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Dying Declaration (Sec. 32(1) IEA / Sec. 26(a) BSA, 2023) is a statement made by a person as to the cause of his death or any circumstances of the transaction resulting in his death. Grounded in the maxim 'Nemo moriturus praesumitur mentire' (a dying person will not meet his Maker with a lie on his lips), it is a major exception to the hearsay rule and CAN form the sole basis of conviction without corroboration if found wholly truthful and voluntary.",
+        "legalProvision": "Section 32(1), Indian Evidence Act, 1872 (Section 26(a), Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Unlike English law (which requires imminent expectation of death and limits dying declarations to homicide trials), Indian law under Section 32(1) / Section 26(a) BSA applies to BOTH civil and criminal cases AND does NOT require the declarant to be under expectation of death when speaking (Pakala Narayana Swami).",
+        "keyPoints": [
+          "Essential Conditions (Sec. 32(1) / Sec. 26(a) BSA): (1) Declarant MUST be dead (if he survives, it is NOT a dying declaration, though usable for corroboration under Sec. 157 or contradiction under Sec. 145), (2) Statement relates directly to the CAUSE OF DEATH or ANY CIRCUMSTANCES OF THE TRANSACTION resulting in death (e.g., victim telling wife he is going to accused's town to collect a debt - Pakala Narayana Swami), and (3) Cause of death is in question in the proceeding.",
+          "Form & Recorder: Can be oral, written, signed/unsigned, recorded by a Magistrate (highest credibility), doctor, police officer, or even communicated via intelligible gestures/nods (Queen Empress v. Abdullah - throat-slit victim pointing/nodding).",
+          "Doctor's Fitness Certificate (Laxman v. State of Maharashtra, 2002): 5-judge Constitution Bench held that a doctor's medical certification of mental fitness is a rule of caution, NOT a mandatory legal prerequisite - if the Magistrate is satisfied the declarant was conscious and fit, the dying declaration is valid.",
+          "Evidentiary Value & Sole Basis of Conviction (Khushal Rao v. State of Bombay, 1958): A dying declaration is substantive evidence and CAN sustain conviction WITHOUT corroboration if voluntary, consistent, free from tutoring/prompting, and made in a fit state of mind. In case of Multiple Dying Declarations, courts scrutinize consistency and give greatest weight to the earliest voluntary Magistrate-recorded statement (Irfan @ Naka v. State of U.P., 2023)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Khushal Rao v. State of Bombay",
+            "citation": "AIR 1958 SC 22",
+            "principle": "Laid down the classic propositions on Dying Declarations: there is no absolute rule of law requiring corroboration; a wholly reliable, un-tutored dying declaration alone can form the sole basis of conviction."
+          },
+          {
+            "name": "Laxman v. State of Maharashtra",
+            "citation": "2002 6 SCC 710",
+            "principle": "5-judge Constitution Bench overruled Paparambaka Rosamma, holding that absence of a formal doctor's fitness certificate does not automatically invalidate a Magistrate-recorded dying declaration if eyewitness/Magistrate evidence proves mental fitness."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two key differences between Indian law and English law on Dying Declarations, and state what happens if the declarant survives.",
+            "a": "Unlike English law, Indian law (Sec. 32(1) / Sec. 26(a) BSA) does NOT require imminent expectation of death and applies to both civil and criminal cases. If the declarant survives, the statement cannot be admitted under Section 32(1), though it may corroborate/contradict his court testimony under Secs. 157/145."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u2-t5": {
+      "id": "loe-u2-t5",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Beyond dying declarations, Section 32(2)-(8) IEA (Section 26(b)-(h) BSA, 2023) admits seven other categories of hearsay statements made by persons who are dead, untraceable, incapable of giving evidence, or unavailable without unreasonable delay/expense. Section 33 IEA (Section 27 BSA) further admits sworn witness testimony recorded in a PREVIOUS judicial proceeding into a subsequent proceeding subject to three strict safeguards.",
+        "legalProvision": "Sections 32(2)-(8) & 33, Indian Evidence Act, 1872 (Sections 26(b)-(h) & 27, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Both sections operate on the twin principles of Necessity (the witness cannot be brought to court) and Circumstantial Guarantee of Trustworthiness (business records, self-harming admissions, family pedigrees, or prior cross-examined testimony carry inherent reliability).",
+        "keyPoints": [
+          "Four Threshold Triggers (Sec. 32 / Sec. 26 BSA): Applies ONLY when the maker (1) is dead, (2) cannot be found, (3) has become incapable of giving evidence, or (4) attendance cannot be procured without unreasonable delay or expense.",
+          "Seven Other Categories Under Sec. 32(2)-(8) / Sec. 26(b)-(h) BSA: (2) Made in ordinary course of business (account books, hospital entries, professional diaries), (3) Against pecuniary/proprietary interest of the maker OR exposing him to criminal prosecution/suit, (4) Opinion as to public right, custom, or matter of general interest (made BEFORE controversy arose), (5) Existence of family relationship by blood/marriage/adoption (Ante Litem Motam - before dispute), (6) Family pedigree in Wills, deeds, or tombstones, (7) Statements in deeds/documents relating to Sec. 13 transactions, and (8) Collective feelings/impressions expressed by several persons.",
+          "Evidence in Previous Judicial Proceeding (Sec. 33 IEA / Sec. 27 BSA): Sworn evidence given by a witness in an earlier judicial proceeding (or before a person authorized by law) is relevant in a later judicial proceeding (or later stage of the same proceeding) when the witness is dead, missing, incapable, kept away by the adverse party, or unavailable without unreasonable delay/expense.",
+          "Three Mandatory Provisos to Section 33 / Section 27 BSA: (1) Proceeding was between the SAME parties or their representatives-in-interest, (2) The adverse party in the first proceeding had the RIGHT AND OPPORTUNITY TO CROSS-EXAMINE the witness, and (3) The questions in issue were SUBSTANTIALLY THE SAME in both proceedings (e.g., criminal trial evidence after witness's death used in retrial)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Dolgobinda Paricha v. Nimai Charan Misra",
+            "citation": "AIR 1959 SC 914",
+            "principle": "Explained Section 32(5) (family relationship statements) alongside Section 50, holding that statements made by deceased family members having special means of knowledge before any dispute arose (ante litem motam) are admissible to prove pedigree."
+          },
+          {
+            "name": "V.M. Mathew v. V.S. Sharma",
+            "citation": "1995 6 SCC 122",
+            "principle": "Clarified Section 33: strict proof of the witness's unavailability AND actual opportunity of cross-examination by the adverse party in the earlier proceeding are mandatory conditions precedent."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three mandatory conditions required under the Proviso to Section 33 IEA (Section 27 BSA) to admit testimony from a previous judicial proceeding.",
+            "a": "(1) Same parties or their representatives-in-interest, (2) Adverse party in the first proceeding had the right and opportunity to cross-examine, and (3) Questions in issue are substantially the same in both proceedings."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "subjects": [
+    {
+      "id": "land-laws",
+      "title": "Land Laws",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Classification & Ownership of Land, Eminent Domain/Escheat/Bona Vacantia, Telangana ROR & Bhu Bharati Act 2025 & Torrens Land Titling",
+          "topics": [
+            {"id": "lan-u1-t1", "title": "1. Classification of Lands (Public, Private, Patta, Assigned, Forest, Abadi & Inam) & Ownership of Land (Absolute vs Limited Ownership)"},
+            {"id": "lan-u1-t2", "title": "2. Sovereign Doctrines Over Land - Doctrine of Eminent Domain, Doctrine of Escheat & Doctrine of Bona Vacantia (Art. 296 & Art. 300A)"},
+            {"id": "lan-u1-t3", "title": "3. Land Records, Pattas, Pahani/Adangal & Telangana Record of Rights - ROR Act 1971, 2020 Dharani & Telangana Bhu Bharati Act, 2025"},
+            {"id": "lan-u1-t4", "title": "4. Land Titling Systems - Presumptive vs Conclusive Title, Torrens System (Mirror, Curtain & Insurance Principles) & Digital India Land Records (DILRMP)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lan-u1-t1": {
+      "id": "lan-u1-t1",
+      "subtitle": "Land Laws - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Land in Telangana and India is legally classified by tenure, utility, and ownership into Government/Public lands (Poramboke, Shikham, Forest, Ceiling Surplus, Grazing/Gairan), Private Patta lands, Assigned/Laoni lands (non-alienable welfare grants to landless poor), Abadi (village habitation), and Endowment/Waqf/Inam lands. Ownership of land divides juristically into Absolute Ownership (full plenary bundle of possession, enjoyment, and alienation subject to law) and Limited Ownership (restricted in duration or disposal, such as life estates, leaseholds, or conditional assigned pattas).",
+        "legalProvision": "Telangana Land Revenue Act, 1317 Fasli; Telangana Assigned Lands (Prohibition of Transfers) Act, 1977 (POT Act); Article 300A, Constitution of India",
+        "meaning": "Accurate land classification determines whether a parcel can be freely bought, sold, mortgaged, or converted to non-agricultural use (NALA) - purchasing prohibited Government, Assigned, or Shikham (tank-bed) land conveys ZERO title.",
+        "keyPoints": [
+          "Classification of Lands by Ownership & Revenue Tenure (Telangana): (1) PRIVATE PATTA / RYOTWARI LAND - held directly by registered occupant/pattadar with heritable and transferable title; (2) GOVERNMENT / PUBLIC LANDS - Poramboke (communal/public-utility land like roads, burial grounds, grazing 'Gairan'), Shikham / Cheruvu (tank-bed/water-body lands barred from patta), Reserve/Protected Forests, and Waste/Banjara lands; (3) ASSIGNED / LAONI LANDS - Government land granted free to landless poor under D-Form/Laoni patta, strictly HERITABLE BUT NON-ALIENABLE under the Telangana Assigned Lands (Prohibition of Transfers) Act, 1977 (POT Act); (4) ABADI / GRAMAKANTAM - non-agricultural village residential site; (5) INAM, ENDOWMENT & WAQF LANDS - religious/charitable service grants placed on prohibited transfer lists (Sec. 22A Registration Act).",
+          "Classification by Utility & Irrigation: Agricultural Land (Wet/Irrigated 'Tari' vs Dry/Rainfed 'Khushki') vs Non-Agricultural Land (residential, commercial, industrial - requiring conversion under Telangana Agricultural Land Conversion for Non-Agricultural Purposes Act, 2006 / NALA).",
+          "Ownership of Land - Absolute vs Limited Ownership: ABSOLUTE OWNERSHIP (Austin's plenary right) vests ALL incidents of ownership in the holder - indefinite user, unrestricted alienation (sale/gift/mortgage/will), and perpetual inheritance (e.g., private Patta land). LIMITED OWNERSHIP restricts either duration, user, or alienation (e.g., Life Estate under a Will, Lessee's tenure, Assignee holding non-transferable Assigned Land under POT Act, or historical pre-1956 Hindu Widow's Estate elevated to absolute ownership by Sec. 14(1) Hindu Succession Act, 1956).",
+          "State Ultimate Control Over Subsoil & Minerals: Even private absolute surface ownership in India is subject to statutory zoning, land ceiling, taxation, and sovereign State vesting of underground mines and minerals (Threesiamma Jacob v. Geologist clarified old Ryotwari/Jenmam nuance vs statutory vesting under State Acts)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jagpal Singh v. State of Punjab",
+            "citation": "2011 11 SCC 396",
+            "principle": "Directed all State Governments to evict illegal encroachments on village common lands (Gairan/Poramboke/water bodies) and strictly prohibited regularizing private grabs of community public lands."
+          },
+          {
+            "name": "State of Andhra Pradesh v. Nallamilli Rami Reddi",
+            "citation": "2001 7 SCC 708",
+            "principle": "Upheld statutory restrictions protecting charitable/religious endowment lands from unauthorized alienation, affirming legislative power to regulate specific land classes in public interest."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Absolute Ownership and Limited Ownership of land with one Telangana example of each, and explain why Assigned (Laoni) land cannot be validly sold.",
+            "a": "Absolute ownership gives full plenary rights of use, inheritance, and free sale (e.g., private Patta land), whereas Limited ownership restricts duration or alienation (e.g., life estate or assigned land). Assigned land is heritable but strictly non-alienable under the Telangana POT Act, 1977 to prevent landless poor from being dispossessed."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u1-t2": {
+      "id": "lan-u1-t2",
+      "subtitle": "Land Laws - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Three sovereign constitutional doctrines define the State's ultimate authority over land: (1) Eminent Domain - sovereign power to compulsorily acquire private land for a 'public purpose' upon paying fair compensation (Art. 300A & LARR Act, 2013), (2) Escheat - reversion of real/immovable property to the State when an owner dies intestate leaving ZERO legal heirs (Art. 296 & Sec. 29 HSA), and (3) Bona Vacantia - vesting of ownerless movable/abandoned goods or dissolved-company assets in the State (Art. 296).",
+        "legalProvision": "Articles 296 & 300A, Constitution of India; Section 29, Hindu Succession Act, 1956; RFCTLARR Act, 2013",
+        "meaning": "Property cannot remain in a legal vacuum ('the law abhors a vacuum of ownership') - Escheat and Bona Vacantia make the State the ultimate heir of last resort, while Eminent Domain subordinates private landholding to essential public infrastructure.",
+        "keyPoints": [
+          "Doctrine of Eminent Domain (Hugo Grotius, 1625): Inherent sovereign right of the State to compulsorily take private property WITHOUT the owner's consent for public infrastructure, welfare, or defence - rooted in two Latin maxims: 'Salus populi est suprema lex' (welfare of the people is the supreme law) and 'Necessitas publica major est quam privata' (public necessity outweighs private necessity). Two mandatory constitutional safeguards (Art. 300A & K.T. Plantation v. State of Karnataka, 2011): (1) Valid statutory authority ('authority of law') for a PUBLIC PURPOSE, and (2) Payment of FAIR COMPENSATION (governed by LARR Act, 2013).",
+          "Eminent Domain vs Police Power: Police Power regulates/restricts property use (zoning, demolition of unsafe buildings, pollution bans) WITHOUT taking ownership and ordinarily WITHOUT compensation; Eminent Domain actually ACQUIRES ownership/possession for public use WITH compensation.",
+          "Doctrine of Escheat (Art. 296 & Sec. 29 Hindu Succession Act): Historically feudal reversion of land to the Crown when a tenant died without heirs; under Article 296, any property in India which would have accrued to the Crown by ESCHEAT or LAPSE vests in the STATE (if situated in a State) or the UNION (otherwise). Under Sec. 29 HSA, if an intestate leaves NO qualified Class I/II/Agnate/Cognate heir, the estate devolves on the Government SUBJECT TO ALL OBLIGATIONS AND LIABILITIES (debts/mortgages) to which an heir would be subject (State of Bihar v. Radha Krishna Singh - heavy burden on State to prove total absence of heirs).",
+          "Doctrine of Bona Vacantia (Art. 296): Literally 'vacant/ownerless goods' - covers personal/movable property, unclaimed bank deposits, buried treasure, or residual assets of a dissolved corporation having NO lawful owner; vests in the State/Union under Article 296 (Pierce Leslie & Co. v. Violet Ouchterlony)."
+        ],
+        "caseLaws": [
+          {
+            "name": "K.T. Plantation Pvt. Ltd. v. State of Karnataka",
+            "citation": "2011 9 SCC 1",
+            "principle": "5-judge Constitution Bench held that although Article 300A is not a Fundamental Right, public purpose and payment of compensation are inherent constitutional limits on Eminent Domain - expropriatory statutes paying illusory/nil compensation fail judicial review."
+          },
+          {
+            "name": "State of Bihar v. Radha Krishna Singh",
+            "citation": "AIR 1983 SC 684",
+            "principle": "Held that before the State can claim property by Escheat under Article 296, it bears a strict burden of proving a complete failure of all lawful heirs; Escheat is a last resort."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Escheat and Bona Vacantia under Article 296 of the Constitution, and state the two constitutional limitations on Eminent Domain affirmed in K.T. Plantation (2011).",
+            "a": "Escheat traditionally vests immovable land in the State when an owner dies intestate with zero heirs (subject to debts), whereas Bona Vacantia vests ownerless/abandoned movable property or dissolved-company assets in the State. K.T. Plantation affirmed that Eminent Domain under Art. 300A requires (1) a valid statute for Public Purpose, and (2) non-illusory Compensation."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u1-t3": {
+      "id": "lan-u1-t3",
+      "subtitle": "Land Laws - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Land Records (Pattas, Pahani/Adangal, Sethwar, Khasra Pahani, and Pattadar Passbook-cum-Title Deed) record land ownership, possession, survey boundaries, and crops for revenue collection and statutory presumption of truth (though revenue entries alone do NOT create title - Suraj Bhan v. Financial Commissioner). Telangana modernized its ROR regime through three eras: the 1971 ROR Act, the 2020 Dharani Act, and now the Telangana Bhu Bharati (Record of Rights in Land) Act, 2025 (Act No. 1 of 2025, in force from 14 April 2025).",
+        "legalProvision": "Telangana Bhu Bharati (Record of Rights in Land) Act, 2025 (Act No. 1 of 2025); repealing Telangana ROR Act, 2020 (Dharani) & 1971 ROR Act",
+        "meaning": "Understanding Telangana's shift from the 1971 Act -> 2020 Dharani Act -> 2025 Bhu Bharati Act is essential for Osmania University exams and real-world Telangana land practice.",
+        "keyPoints": [
+          "Core Telangana Revenue & Land Records: (1) SETHWAR / TIPPAN - original survey & settlement register fixing survey numbers, extents, and boundary measurements; (2) KHASRA PAHANI (1954-55) - foundational post-Jagir/Inam record of rights; (3) PAHANI / ADANGAL - annual village record showing pattadar (owner), enjoyer/cultivator, extent, soil class, and crop; (4) PATTA & PATTADAR PASSBOOK-CUM-TITLE DEED - statutory ownership booklet issued to pattadars (prima facie evidentiary value, NOT conclusive proof of title against Civil Court decree - Suraj Bhan).",
+          "Evolution from ROR Act 1971 to Dharani Act 2020: The 1971 Act provided mutation, RDO appeal, and Collector revision. The 2020 Act introduced the online 'Dharani' portal with instant Tahsildar registration-cum-mutation, BUT abolished revenue appeals/revisions, removed rectification modules for clerical errors, dropped the possessor/enjoyer column, and left farmers forced to approach Civil Courts or the High Court.",
+          "Telangana Bhu Bharati (Record of Rights in Land) Act, 2025 (Act No. 1 of 2025, effective 14 April 2025): Repealed the 2020 Dharani Act and established the 'Bhu Bharati' ROR Portal with major citizen-friendly reforms: (1) RECTIFICATION OF ERRORS & NEW ENTRIES (Sec. 4(5)-(6) - dedicated route to correct erroneous entries/omissions), (2) SEPARATE ROR FOR ABADI & NON-AGRICULTURAL LANDS (Sec. 4(2)), (3) BHUDHAAR CARD (unique parcel identification number + GPS survey map integration before registration/mutation), (4) REGISTRATION & MUTATION (Sec. 5 for sale/gift/mortgage/partition; Sec. 7 for Inheritance/Will with mandatory notice and deemed-mutation timeline), (5) REGULARIZATION OF SADA BAINAMA (Sec. 6 - plain-paper unregistered deeds for small/marginal farmers having < 2.5 acres wet or < 5 acres dry land), (6) RESTORATION OF TWO-TIER APPEAL & REVISION (RDO / District Collector / Land Tribunal) + free legal aid, and (7) CCLA power to cancel fraudulent pattas over Government, Bhoodan, Assigned, Endowment, and Waqf lands + maintenance of Village Revenue Registers."
+        ],
+        "caseLaws": [
+          {
+            "name": "Suraj Bhan v. Financial Commissioner",
+            "citation": "2007 6 SCC 186",
+            "principle": "Settled rule of Indian land law: entries in Record of Rights (ROR) / revenue mutation are strictly for fiscal/revenue purposes and carry only a rebuttable presumption - they do NOT confer or extinguish title, which is decided finally by a Civil Court."
+          },
+          {
+            "name": "Chinnam Pandurangam v. Mandal Revenue Officer",
+            "citation": "AIR 2008 AP 15 (FB)",
+            "principle": "Full Bench held that Natural Justice (written notice to all affected persons entered in ROR) is mandatory before amending or mutating Record of Rights - principle now expressly codified in the Telangana Bhu Bharati Act, 2025."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four major reforms introduced by the Telangana Bhu Bharati (Record of Rights in Land) Act, 2025 replacing the 2020 Dharani Act, and explain whether a mutation entry creates ownership title.",
+            "a": "Bhu Bharati reforms: (1) Error rectification & missing-entry remedies, (2) Two-tier statutory appeals/revision restored, (3) Unique Bhudhaar ID with survey map integration & separate Abadi/Non-Agri ROR, and (4) Sec. 6 Sada Bainama regularization for small/marginal farmers. No - revenue mutation only updates fiscal records and does not confer title (Suraj Bhan)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u1-t4": {
+      "id": "lan-u1-t4",
+      "subtitle": "Land Laws - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "India currently operates a 'Deed Registration / Presumptive Titling' system (Registration Act, 1908 + State ROR Acts), where registration records only a transaction without State guarantee of title - causing over 60% of Indian civil litigation to be land disputes. To cure this, land reform policy advocates the 'Torrens System of Conclusive Land Titling' (originating in South Australia, 1858), resting on three pillars - Mirror, Curtain, and Insurance Principles - advanced via DILRMP, Bhu-Aadhaar (ULPIN), and Model Conclusive Land Titling Bills.",
+        "legalProvision": "Registration Act, 1908; Torrens System (Sir Robert Torrens, 1858); Digital India Land Records Modernization Programme (DILRMP); NITI Aayog Model Conclusive Land Titling Bill, 2020",
+        "meaning": "Under Presumptive Titling, a buyer must trace 30 years of past sale deeds and still risk hidden lawsuits; under Conclusive Titling (Torrens), the State register itself is conclusive, State-guaranteed proof of ownership.",
+        "keyPoints": [
+          "Presumptive Title System (Current Indian Position): Registration under Registration Act, 1908 registers the DEED (transaction), NOT the TITLE (validity of seller's ownership); Sub-Registrar does not verify title chain, revenue records are maintained separately from registration, and entries are merely presumptive/rebuttable in Civil Court (high litigation, Benami/fraud risk, difficulty obtaining agricultural/housing credit).",
+          "Torrens System of Conclusive Land Titling (Sir Robert Torrens, South Australia, 1858): Register of Title itself creates and guarantees ownership through THREE classic principles: (1) MIRROR PRINCIPLE - the land register accurately and completely reflects ALL current ownership interests, mortgages, and easements affecting the parcel; (2) CURTAIN PRINCIPLE - the register draws a curtain over past historical title chains, so a buyer NEVER needs to investigate 30 years of old deeds behind the current certificate; and (3) INSURANCE / INDEMNITY PRINCIPLE - the State GUARANTEES the accuracy of title and compensates from a statutory Assurance Fund anyone who suffers loss due to a register error or fraud.",
+          "Indian Modernization Initiatives (DILRMP, ULPIN/Bhudhaar & SVAMITVA): Central Government's DILRMP digitizes cadastral maps, links Sub-Registrar offices with Tahsildar ROR portals, and assigns a 14-digit Unique Land Parcel Identification Number (ULPIN / Bhu-Aadhaar - mirrored by Telangana's Bhudhaar under Bhu Bharati 2025). SVAMITVA uses drone surveys to grant rural Abadi property cards; NITI Aayog's Model Conclusive Land Titling Bill (2020) proposes Title Registration Officers, 3-year dispute window, and State-backed conclusive title (note: Andhra Pradesh repealed its 2022 Land Titling Act in 2024 amid due-process/litigation concerns, showing transition challenges)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jitendra Singh v. State of Madhya Pradesh",
+            "citation": "2021 SCC OnLine SC 802",
+            "principle": "Reaffirmed that under India's current presumptive land-record system, mutation entries confer no title and contested title questions (such as Wills) must be resolved by a Civil Court."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the three foundational principles of the Torrens System of Conclusive Land Titling (Mirror, Curtain, and Insurance) and contrast Presumptive Title with Conclusive Title.",
+            "a": "Mirror: register accurately reflects all current rights/encumbrances; Curtain: buyer need not look behind register at past deeds; Insurance: State guarantees title and indemnifies errors. Presumptive title (current India) merely registers deeds with rebuttable revenue entries, whereas Conclusive title makes the State register final, guaranteed ownership."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

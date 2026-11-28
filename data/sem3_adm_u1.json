@@ -1,0 +1,151 @@
+{
+  "subjects": [
+    {
+      "id": "administrative-law",
+      "title": "Administrative Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Nature, Scope, Definition, Evolution, Reasons for Growth & Relationship with Constitutional Law",
+          "topics": [
+            {"id": "adm-u1-t1", "title": "1. Meaning, Definition, Nature & Scope of Administrative Law"},
+            {"id": "adm-u1-t2", "title": "2. Historical Evolution of Administrative Law (UK, USA, France & India)"},
+            {"id": "adm-u1-t3", "title": "3. Reasons for the Rapid Growth of Administrative Law in the Modern Welfare State"},
+            {"id": "adm-u1-t4", "title": "4. Relationship & Distinction Between Administrative Law and Constitutional Law (Watershed Area)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "adm-u1-t1": {
+      "id": "adm-u1-t1",
+      "subtitle": "Administrative Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Administrative Law is the branch of public law that governs the organization, powers, duties, and limits of administrative authorities (executive agencies, ministries, regulators, and tribunals) and provides judicial remedies against administrative arbitrariness. Unlike rigid private-law codes, it is largely judge-made, dynamic, and focused on balancing efficient State governance with individual liberty.",
+        "legalProvision": "Definitions by Ivor Jennings, Kenneth Culp Davis, H.W.R. Wade, & I.P. Massey; Articles 32, 136, 226, & 227, Constitution of India",
+        "meaning": "As I.P. Massey observes, Administrative Law is not merely a law of administrative power - it is primarily the law of CONTROLLING administrative power so public officials stay within legal bounds and observe fairness.",
+        "keyPoints": [
+          "Classic Juristic Definitions: Ivor Jennings ('law relating to the administration - determines the organization, powers, and duties of administrative authorities'); Kenneth Culp Davis ('law concerning the powers and procedures of administrative agencies, especially judicial review of administrative action'); H.W.R. Wade ('law relating to the control of governmental power'); I.P. Massey (four-pronged Indian focus: structure/powers, limits, procedures, and remedies).",
+          "Nature of Administrative Law: (1) Branch of Public Law (governs State-citizen relations, not private contracts), (2) Largely Uncodified & Judge-Made in India/UK (evolved through landmark Supreme Court writ decisions like Kraipak and Maneka Gandhi, unlike France's Conseil d'Etat), (3) Functional & Pragmatic (prioritizes substantive fairness over hyper-technical procedure), and (4) Preventive and Remedial (stops ultra vires action before/after harm).",
+          "Core Scope of Administrative Law: Covers (a) Delegated Legislation (executive rule-making & controls), (b) Administrative Adjudication & Tribunals (quasi-judicial bodies), (c) Principles of Natural Justice (Bias & Fair Hearing), (d) Judicial Control of Administrative Discretion (Wednesbury, Proportionality, Legitimate Expectation), (e) Writs & Remedies against State (Arts. 32/226, Lokpal, RTI), and (f) State Liability in Torts & Contracts & Public Corporations.",
+          "Red Light vs Green Light Theories (Harlow & Rawlings): 'Red Light Theory' views administrative law as a brake/control mechanism to curb executive excess through courts; 'Green Light Theory' views it as a facilitator helping welfare agencies deliver public services efficiently. Modern Indian law blends both ('Amber Light' approach)."
+        ],
+        "caseLaws": [
+          {
+            "name": "A.K. Kraipak v. Union of India",
+            "citation": "AIR 1970 SC 150",
+            "principle": "Held that the primary aim of Administrative Law in a welfare State is to prevent miscarriage of justice; the thin line between administrative and quasi-judicial action is being obliterated to enforce fairness."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Compare Sir Ivor Jennings's definition of Administrative Law with Kenneth Culp Davis's definition, and explain the 'Red Light' vs 'Green Light' theories.",
+            "a": "Jennings focuses broadly on organization, powers, and duties of administration (including internal structure), whereas Davis focuses strictly on agency powers, procedures, and judicial review (excluding internal organization). Red Light theory emphasizes judicial control/brakes on State power, while Green Light theory emphasizes facilitating efficient welfare governance."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u1-t2": {
+      "id": "adm-u1-t2",
+      "subtitle": "Administrative Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Administrative Law evolved as the State transformed from a passive 19th-century 'Police State' (laissez-faire) into an active 20th-century 'Social Welfare State'. While France developed a separate Droit Administratif (Conseil d'Etat) early, UK and USA expanded through regulatory agencies and statutory reforms (Donoughmore Committee 1932; US APA 1946), and India evolved from ancient Mauryan/Mughal governance and British-era regulations into a vibrant constitutional administrative jurisprudence post-1950.",
+        "legalProvision": "French Droit Administratif; UK Tribunals & Inquiries Act; US Administrative Procedure Act, 1946; Constitution of India, 1950 (Arts. 32, 226, 323A-B)",
+        "meaning": "Understanding comparative evolution explains why India rejected France's separate administrative-court bar on ordinary courts and instead empowered constitutional High Courts and the Supreme Court to police executive action.",
+        "keyPoints": [
+          "Evolution in UK: A.V. Dicey initially denied the existence of Administrative Law in England (1885), fearing French-style official immunity. World Wars I & II and the welfare state forced massive delegated legislation and tribunals -> Donoughmore Committee (1932), Crown Proceedings Act (1947), Franks Committee (1957), and Tribunals & Inquiries Acts established modern UK administrative law.",
+          "Evolution in USA: Rapid industrialization led to Independent Regulatory Commissions starting with the Interstate Commerce Commission (1887); New Deal expansion culminated in the landmark Administrative Procedure Act (APA), 1946 codifying notice-and-comment rule-making and judicial review.",
+          "Evolution in France (Droit Administratif): Built on strict separation keeping ordinary courts out of executive affairs; specialized administrative courts headed by the Conseil d'Etat (1799) developed progressive judge-made protections (strict liability of State, abuse of power review).",
+          "Evolution in India: (1) Ancient & Medieval India (Mauryan Arthashastra, Gupta & Mughal revenue/judicial administration guided by Dharma), (2) British Colonial Era (East India Company regulations, Charter Acts, massive executive licensing/police powers with minimal judicial checks), and (3) Post-1950 Constitutional Era (Welfare State under DPSPs, Planning/Regulatory bodies like SEBI/TRAI/RBI, 42nd Amendment adding Arts. 323A-323B Tribunals, Lokpal Act 2013, RTI Act 2005, and expansive Supreme Court judicial review)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ridge v. Baldwin",
+            "citation": "1964 AC 40 (HL)",
+            "principle": "Landmark House of Lords turning point in UK administrative law that revitalized Natural Justice (Audi Alteram Partem) across administrative dismissals, influencing Indian jurisprudence deeply."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why did A.V. Dicey originally oppose Administrative Law in Britain, and what 1946 statute codified administrative procedure in the USA?",
+            "a": "Dicey mistakenly believed French Droit Administratif shielded government officials from ordinary law and violated Rule of Law. The USA codified federal agency rule-making and judicial review in the Administrative Procedure Act (APA), 1946."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u1-t3": {
+      "id": "adm-u1-t3",
+      "subtitle": "Administrative Law - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Administrative Law became the fastest-growing branch of 20th- and 21st-century law because the modern Social Welfare State regulates nearly every facet of life ('from cradle to grave') - creating technical, urgent, and high-volume governance demands that slow legislatures and overburdened traditional courts cannot handle alone.",
+        "legalProvision": "Directive Principles of State Policy (Part IV, Constitution of India); Regulatory & Welfare Statutes (SEBI, TRAI, NGT, Consumer Commissions)",
+        "meaning": "The shift from Laissez-Faire ('least government is best government') to the Welfare State (social security, environmental protection, telecom, banking, urban planning) made administrative agencies, delegated legislation, and specialized tribunals indispensable.",
+        "keyPoints": [
+          "1. Radical Change in Philosophy of the State: Transition from a minimalist 'Police State' (defence, taxes, law & order only) to a proactive 'Social Welfare State' (education, healthcare, labour welfare, consumer protection, infrastructure, and economic regulation under Part IV DPSPs).",
+          "2. Inadequacy of Traditional Courts: Ordinary civil/criminal courts are slow, expensive, hyper-technical in evidence/procedure, and lack domain expertise - necessitating speedy, inexpensive, expert Administrative Tribunals (e.g., NGT, CAT, NCLT, Labour Courts, Consumer Commissions).",
+          "3. Pressure on Parliamentary Time & Technical Complexity: Legislatures lack both time and specialized scientific/economic expertise to draft detailed rules for aviation, nuclear energy, telecom spectrum, or GST rates -> Parliament passes skeletal Parent Acts and delegates detail-filling to executive experts.",
+          "4. Need for Preventive Action & Experimentation: Unlike courts (which act ONLY after a dispute is filed), administrative authorities can take swift PREVENTIVE measures (licensing, safety inspections, food/drug recalls, quarantine) and experiment/amend rules rapidly during emergencies (pandemics, market crashes, cyber threats).",
+          "5. Rise of Public-Sector Undertakings & Independent Regulators: Post-liberalization India shifted from direct State monopoly to independent sector regulators (RBI, SEBI, TRAI, CCI, IRDAI) wielding combined rule-making, licensing, and adjudicatory powers."
+        ],
+        "caseLaws": [
+          {
+            "name": "S.P. Sampath Kumar v. Union of India",
+            "citation": "AIR 1987 SC 386",
+            "principle": "Recognized the practical necessity of specialized Administrative Tribunals to relieve docket explosion in High Courts, while emphasizing that tribunals must maintain judicial independence."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State five primary reasons for the rapid growth of Administrative Law in modern India.",
+            "a": "(1) Shift from Police State to Social Welfare State, (2) Overburdened, slow, and expensive traditional courts, (3) Lack of legislative time and technical expertise requiring delegated legislation, (4) Need for swift preventive action and regulatory flexibility, and (5) Rise of specialized sector regulators and tribunals."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u1-t4": {
+      "id": "adm-u1-t4",
+      "subtitle": "Administrative Law - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Constitutional Law and Administrative Law are deeply intertwined branches of public law with no airtight wall between them ('the watershed area' in India). As Maitland and Holland famously distinguished: Constitutional Law studies the State AT REST (structure, sovereignty, Fundamental Rights, and basic organs), whereas Administrative Law studies the State IN MOTION (day-to-day functioning, powers, procedures, and judicial control of administrative agencies).",
+        "legalProvision": "Articles 14, 19, 21, 32, 136, 226, 227, 299, 300, 311, & 323A-323B, Constitution of India",
+        "meaning": "In countries with a written Constitution like India, Constitutional Law is the 'genus' (supreme parent norm) and Administrative Law is its 'species' - every administrative act must conform to constitutional limits (especially Arts. 14, 19, 21, and judicial review).",
+        "keyPoints": [
+          "Classic Juristic Metaphor (Holland & Maitland): Constitutional Law describes the various organs of government AT REST (their composition and broad powers); Administrative Law describes those organs IN MOTION (how executive officers actually exercise powers, make rules, and adjudicate).",
+          "Four Key Points of Distinction: (1) Status - Constitutional Law is the supreme law of the land (written Constitution in India), whereas Administrative Law is subordinate and largely judge-made/statutory; (2) Focus - Constitutional Law deals with general principles, federalism, and major State organs, whereas Administrative Law deals with operational details, administrative discretion, delegated rules, and tribunals; (3) Scope of Rights - Constitutional Law defines Fundamental Rights, whereas Administrative Law ensures everyday administrative fairness (Natural Justice) when implementing policies; (4) Remedies - Constitutional Law creates writ courts (Arts. 32/226), whereas Administrative Law governs the substantive grounds on which writs quash executive orders.",
+          "The 'Watershed Area' (Overlap in India): A large shared zone belongs to BOTH Constitutional Law and Administrative Law - including Articles 14/21 (non-arbitrariness & Natural Justice - Maneka Gandhi), Writ Jurisdiction (Arts. 32/226/227), Civil Service Safeguards (Art. 311), Government Contracts & Tort Liability (Arts. 299-300), Administrative Tribunals (Arts. 323A-323B), and Inter-State Trade/Water Authorities.",
+          "Why the Distinction Matters in India: Because India has a written supreme Constitution, administrative action is tested not only against the parent statute (statutory ultra vires) but ALSO directly against Fundamental Rights and Basic Structure (constitutional ultra vires)."
+        ],
+        "caseLaws": [
+          {
+            "name": "E.P. Royappa v. State of Tamil Nadu",
+            "citation": "AIR 1974 SC 555",
+            "principle": "Bridged Constitutional Law and Administrative Law by holding that Article 14 strikes at arbitrariness in EVERY State/administrative action: 'equality and arbitrariness are sworn enemies'."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain Holland's 'State at Rest vs State in Motion' distinction between Constitutional Law and Administrative Law, and give four examples from India's 'watershed area'.",
+            "a": "Constitutional Law studies the structure and organs of government at rest, whereas Administrative Law studies how administrative organs function in motion. India's watershed overlap includes Writ Jurisdiction (Arts. 32/226), Article 14 non-arbitrariness, Civil Services (Art. 311), State Liability (Arts. 299-300), and Tribunals (Arts. 323A-323B)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

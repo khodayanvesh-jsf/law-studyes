@@ -1,0 +1,146 @@
+{
+  "subjects": [
+    {
+      "id": "land-laws",
+      "title": "Land Laws",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Telangana Land Reforms (Ceiling on Agricultural Holdings) Act, 1973, Survey & Boundaries Act, 1923 & NALA Act, 2006",
+          "topics": [
+            {"id": "lan-u4-t1", "title": "1. Telangana Land Reforms (Ceiling on Agricultural Holdings) Act, 1973 - Object, Family Unit (Sec. 3(f)), Standard Holding (Sec. 5) & Ceiling Area (Sec. 4)"},
+            {"id": "lan-u4-t2", "title": "2. Declarations (Sec. 8), Determination & Surrender of Surplus Land (Secs. 9-11), Vesting, Allotment to Landless Poor (Sec. 14) & Transfers Barred (Sec. 7)"},
+            {"id": "lan-u4-t3", "title": "3. Exemptions (Sec. 23), Land Reforms Tribunals & Appellate Tribunals (Secs. 6 & 20-21) & Urban Land Ceiling Act Repeal Overview"},
+            {"id": "lan-u4-t4", "title": "4. Telangana Survey and Boundaries Act, 1923 (Demarcation, Appeals & Civil Suit Sec. 14) & NALA Conversion Act, 2006"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lan-u4-t1": {
+      "id": "lan-u4-t1",
+      "subtitle": "Land Laws - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Enacted under Article 39(b)-(c) and placed in the Ninth Schedule to break rural land monopolies, the Telangana Land Reforms (Ceiling on Agricultural Holdings) Act, 1973 (notified date: 1 January 1975) caps agricultural landholding at ONE 'Standard Holding' per 'Family Unit' (up to 5 members), ranging from 10 to 27 acres of Wet land or 35 to 54 acres of Dry land depending on soil/irrigation classification (Classes A to K).",
+        "legalProvision": "Sections 3(f), 4, 4A, & 5, Telangana Land Reforms (Ceiling on Agricultural Holdings) Act, 1973 (Act 1 of 1973)",
+        "meaning": "Instead of fixing a flat acreage that would treat arid rocky land the same as double-crop canal-irrigated paddy land, the 1973 Act uses a scientifically graded 'Standard Holding' across 11 soil classes.",
+        "keyPoints": [
+          "Definition of 'Family Unit' (Sec. 3(f)): Means (a) an individual, his/her spouse(s), and their MINOR sons and UNMARRIED MINOR daughters (Note: MAJOR sons and major unmarried daughters are NOT included inside parents' Family Unit - each major son/individual counts as a SEPARATE independent unit entitled to his own separate ceiling holding under Sec. 4A!).",
+          "Ceiling Area Rules (Secs. 4 & 4A): (1) Family Unit of UP TO 5 MEMBERS -> 1 Standard Holding; (2) Family Unit of MORE THAN 5 MEMBERS -> 1 Standard Holding PLUS 1/5th of a Standard Holding for EACH additional member beyond 5, subject to an absolute MAXIMUM CAP of 2 STANDARD HOLDINGS (Sec. 4(2)); (3) Individual / Single person -> 1 Standard Holding; (4) Major Son allowance (Sec. 4A) increases family ceiling if major son holds less than 1 Standard Holding independently.",
+          "Standard Holding & 11 Land Classes (Sec. 5 & First Schedule): Classified by irrigation and taram/bhaganna soil quality -> (a) DOUBLE-CROP WET LAND (Classes A to F): 10 acres (Class A best) to 18 acres (Class F); (b) SINGLE-CROP WET LAND (Classes A to F): 15 acres to 27 acres; (c) DRY / RAINFED LAND (Classes G to K): 35 acres (Class G) to 54 acres (Class K poorest dry land)."
+        ],
+        "caseLaws": [
+          {
+            "name": "M. Venkata Rao v. State of Andhra Pradesh",
+            "citation": "AIR 1975 AP 315 (FB)",
+            "principle": "Full Bench upheld the constitutional validity of the 1973 Ceiling Act (including the Family Unit aggregation concept under Section 3(f)) as protected by Articles 31A, 31B, and 31C."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Who is included in a 'Family Unit' under Section 3(f) of the Telangana Agricultural Land Ceiling Act, 1973, and what is the ceiling range for Double-Crop Wet Land vs Dry Land under Section 5?",
+            "a": "Individual, spouse(s), minor sons, and unmarried minor daughters (major sons are excluded and get separate units). Double-crop wet land ranges from 10 to 18 acres; Dry land ranges from 35 to 54 acres per Standard Holding."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u4-t2": {
+      "id": "lan-u4-t2",
+      "subtitle": "Land Laws - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To prevent landlords from dodging ceiling limits through last-minute benami transfers, Section 7 of the 1973 Ceiling Act voids/disregards mala fide alienations made on or after 24 January 1971 (and completely bans alienations after 2 May 1972 pending declaration). Every holder above the threshold must file a Declaration (Sec. 8), surrender determined Surplus Land to Government (Secs. 9-11), receive statutory compensation (Sec. 15), and Government redistributes the surplus land to landless poor (50% reserved for SC/ST - Sec. 14).",
+        "legalProvision": "Sections 7, 8, 9, 10, 11, 14, 15, & 17, Telangana Land Reforms (Ceiling on Agricultural Holdings) Act, 1973",
+        "meaning": "Sections 7 and 14 form the twin teeth of land-ceiling social justice: blocking paper partitions/sales to relatives while channelling surrendered surplus acres directly to landless Dalit, tribal, and backward-class tillers.",
+        "keyPoints": [
+          "Anti-Evasion Restrictions on Transfers (Secs. 7 & 17): Any sale, gift, lease, trust, or partition made on or after 24 JANUARY 1971 in anticipation of the ceiling law is DISREGARDED (burden on transferor to prove bona fide non-evasive purpose; transfers after 2 MAY 1972 are declared NULL AND VOID under Sec. 7(2) read with Act 13 of 1972). Under Sec. 17, future acquisitions pushing a holding above ceiling require fresh declaration within 60 days (prohibiting registration without declaration).",
+          "Declaration, Inquiry & Surrender of Surplus Land (Secs. 8-11): Every person/family holding >= 10 acres wet or >= 25 acres dry on notified date (1 Jan 1975) must file Declaration before Land Reforms Tribunal (Sec. 8) -> Tribunal verifies revenue records and passes Order determining exact Surplus Land (Sec. 9) -> Holder specifies which parcels to surrender (Sec. 10 - Tribunal may reject fragmented/unusable/encumbered parcels!) -> Surplus land vests in Government FREE OF ALL ENCUMBRANCES (Sec. 11).",
+          "Allotment & Redistribution of Surplus Land (Sec. 14) & Compensation (Sec. 15): Vested surplus land is allotted to landless agricultural poor for agriculture or house-sites (NOT LESS THAN 50% reserved for Scheduled Castes and Scheduled Tribes, and 2/3rds of remainder for Backward Classes!) on payment of nominal 15-year instalments - allotted land is HERITABLE BUT NON-ALIENABLE (protected by POT Act, 1977). Dispossessed owner receives statutory amount calculated as multiples of land revenue (Sec. 15 & Second Schedule)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Authorised Officer, Land Reforms v. M. Ramachandra Reddy",
+            "citation": "1995 Supp (2) SCC 484",
+            "principle": "Held that a landholder cannot defeat Section 10 surrender obligations by offering uncultivable, disputed, or encumbered land while retaining prime fertile parcels."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why does Section 7 of the 1973 Telangana Ceiling Act scrutinize transfers back to 24 January 1971, and what reservation quota applies when redistributing surplus land under Section 14?",
+            "a": "To prevent landlords from evading the ceiling through sham sales/gifts/partitions made after the ceiling policy was announced. Under Sec. 14, at least 50% of surplus land must be allotted to SCs and STs (with 2/3rds of the balance to BCs)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u4-t3": {
+      "id": "lan-u4-t3",
+      "subtitle": "Land Laws - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 23 of the 1973 Ceiling Act exempts specific public and institutional lands (Government, local authority, religious/charitable endowments, Waqfs, universities, and coffee/tea/rubber plantations) from ceiling caps. Ceiling disputes are adjudicated exclusively by specialized Land Reforms Tribunals (Sec. 6) with Appeal to the Land Reforms Appellate Tribunal (Sec. 20) and Revision to the High Court (Sec. 21) - while parallel Urban Land Ceiling (ULCRA, 1976) was repealed in 1999 (adopted in AP/Telangana in 2008).",
+        "legalProvision": "Sections 6, 20, 21, 23, & 26, Telangana Land Reforms (Ceiling on Agricultural Holdings) Act, 1973; Urban Land (Ceiling and Regulation) Repeal Act, 1999",
+        "meaning": "Specialized Revenue Tribunals and Civil Court exclusion (Sec. 26) keep agrarian ceiling redistribution swift, while the repeal of ULCRA unlocked urban real-estate housing supply.",
+        "keyPoints": [
+          "Exemptions from Agricultural Ceiling (Sec. 23): Exempts lands held by (a) Central/State Government or local authorities, (b) Religious, charitable, or educational institutions including Waqfs and public trusts (where income is exclusively devoted to public/charitable objects), (c) Co-operative farming societies, banks, and universities, (d) Coffee, tea, cocoa, cardamom, or rubber plantations, and (e) Lands notified for industrial/non-agricultural public purposes.",
+          "Tribunals, Appeals & Revision (Secs. 6, 20, 21 & 26): (1) LAND REFORMS TRIBUNAL (Sec. 6 - RDO/Deputy Collector rank officer) decides declarations, exclusions, and surplus orders; (2) LAND REFORMS APPELLATE TRIBUNAL (Sec. 20 - District Judge rank Chairman + Revenue Member) hears appeals within 30 DAYS; (3) HIGH COURT REVISION (Sec. 21) lies on jurisdictional error or material irregularity (within 90 days); Civil Court jurisdiction is strictly BARRED under Section 26.",
+          "Urban Land Ceiling Act, 1976 & Repeal (ULCRA Repeal Act, 1999 - Adopted in AP/Telangana on 27 March 2008): Originally capped vacant urban land (500 to 2,000 sq. metres by city category - 1,000 sq.m. in Hyderabad); failed due to massive litigation and corruption -> repealed by Parliament in 1999 and adopted in AP/Telangana in 2008 (abating all pending proceedings where physical possession under Sec. 10(6) was NOT taken before repeal - State of U.P. v. Hari Ram, 2013)."
+        ],
+        "caseLaws": [
+          {
+            "name": "State of Uttar Pradesh v. Hari Ram",
+            "citation": "2013 4 SCC 280",
+            "principle": "Held that upon repeal of the Urban Land Ceiling Act, 1976, mere paper vesting under Section 10(3) is insufficient - unless actual physical possession was lawfully taken under Section 10(5)-(6) prior to repeal, the land reverts to the owner."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List four categories of land exempt from agricultural ceiling under Section 23 of the 1973 Act, and state the three-tier adjudicatory/revision hierarchy under Sections 6, 20, and 21.",
+            "a": "Exempt: Government/local-body land, public religious/charitable/Waqf institutions, universities/banks, and tea/coffee/rubber plantations. Hierarchy: Land Reforms Tribunal (Sec. 6) -> Land Reforms Appellate Tribunal (Sec. 20, 30 days) -> High Court Revision (Sec. 21)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u4-t4": {
+      "id": "lan-u4-t4",
+      "subtitle": "Land Laws - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Boundary and land-use clarity in Telangana rests on two key revenue enactments: the Telangana Survey and Boundaries Act, 1923 (governing cadastral survey, boundary demarcation, Tippan/FMB maps, appeal under Sec. 11, and 3-year Civil Suit finality under Sec. 14) and the Telangana Agricultural Land (Conversion for Non-Agricultural Purposes) Act, 2006 / NALA Act (mandating prior conversion permission and conversion fee before using agricultural land for residential/commercial/industrial projects).",
+        "legalProvision": "Sections 5-14, Telangana Survey and Boundaries Act, 1923; Sections 3-7, Telangana Agricultural Land (Conversion for Non-Agricultural Purposes) Act, 2006 (NALA)",
+        "meaning": "Without accurate cadastral boundaries (FMB/Tippan) under the 1923 Act, land-grabbing and overlapping sale deeds thrive; without NALA conversion, agricultural land cannot legally be plotted into layouts or factories.",
+        "keyPoints": [
+          "Telangana Survey and Boundaries Act, 1923 (Secs. 5-14): State Government orders cadastral survey of Government or estate lands (Sec. 5) -> Survey Officer notifies landholders (Sec. 6), demarcates undisputed boundaries (Sec. 9), and determines DISPUTED BOUNDARIES after recording evidence and giving written reasons (Sec. 10). Appeal lies to superior Survey Officer within 3 MONTHS (Sec. 11); completion of survey is notified under Section 13 (conclusive proof unless modified by Civil Court). Under Section 14, ANY aggrieved person may institute a CIVIL SUIT within 3 YEARS from the Sec. 13 notification to challenge the boundary determination.",
+          "Telangana NALA Act, 2006 (Agricultural to Non-Agricultural Conversion): Under Section 3, NO agricultural land in Telangana shall be put to non-agricultural use (residential layout, commercial mall, industry) WITHOUT prior conversion permission of the Competent Authority (Tahsildar / RDO - online instant NALA via Bhu Bharati / Dharani portal) upon paying a one-time statutory CONVERSION FEE (3% of basic market value in Telangana; 2% in notified zones). Violators face 50% penalty over fee + stop-work orders (Sec. 6). Exemptions (Sec. 7): Government/local authority lands, charitable/educational/hospital public-purpose lands, and small rural farmer-dwelling structures.",
+          "Telangana Land Revenue Administration: Hierarchical revenue chain -> Chief Commissioner of Land Administration (CCLA) -> District Collector -> Additional Collector (Revenue) -> Revenue Divisional Officer (RDO) -> Tahsildar (Mandal Revenue Officer) -> Village Revenue Administration / Surveyor."
+        ],
+        "caseLaws": [
+          {
+            "name": "Muramalla Padmavathi v. State of Andhra Pradesh",
+            "citation": "2016 3 ALD 650 (AP/TS HC)",
+            "principle": "Held that a registered pattadar has a statutory right to seek F-line demarcation and boundary survey of his land under the Survey and Boundaries Act, 1923 upon paying prescribed challan fees, and authorities cannot arbitrarily refuse survey."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Within what limitation period can an aggrieved landowner file a Civil Suit to challenge a final Section 13 survey notification under Section 14 of the Telangana Survey and Boundaries Act, 1923, and what is the purpose of NALA conversion?",
+            "a": "Within 3 years from the Section 13 notification (Sec. 14). NALA (2006 Act) mandates prior permission and conversion fee before diverting agricultural land to residential, commercial, or industrial non-agricultural use."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

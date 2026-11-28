@@ -1,0 +1,282 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-property",
+      "title": "Law of Property (TPA)",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Election, Covenants, Ostensible Owner, Feeding the Grant by Estoppel, Lis Pendens, Fraudulent Transfer & Part-Performance",
+          "topics": [
+            {"id": "lop-u2-t1", "title": "1. Doctrine of Election (Sec. 35 TPA)"},
+            {"id": "lop-u2-t2", "title": "2. Covenants Running with Land & Restrictive Covenants (Secs. 11 & 40 TPA)"},
+            {"id": "lop-u2-t3", "title": "3. Transfer by Ostensible Owner (Sec. 41 TPA & Prohibition of Benami Property Transactions Act)"},
+            {"id": "lop-u2-t4", "title": "4. Doctrine of Feeding the Grant by Estoppel (Sec. 43 TPA)"},
+            {"id": "lop-u2-t5", "title": "5. Doctrine of Lis Pendens - Transfer Pending Litigation (Sec. 52 TPA)"},
+            {"id": "lop-u2-t6", "title": "6. Fraudulent Transfer to Defeat or Delay Creditors (Sec. 53 TPA)"},
+            {"id": "lop-u2-t7", "title": "7. Doctrine of Part-Performance (Sec. 53A TPA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lop-u2-t1": {
+      "id": "lop-u2-t1",
+      "subtitle": "Law of Property (TPA) - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 35 TPA codifies the equitable Doctrine of Election ('Allegans contraria non est audiendus' - a person cannot approbate and reprobate at the same time). Where a transferor professes to transfer another person's property and, as part of the SAME transaction, confers a direct benefit on the true owner, that owner must ELECT either to confirm the whole transfer or dissent and relinquish the benefit.",
+        "legalProvision": "Section 35, Transfer of Property Act, 1882; Sections 180-190, Indian Succession Act, 1925",
+        "meaning": "Election forces a choice between two inconsistent rights in a single instrument so a party cannot cherry-pick the benefit while rejecting the accompanying burden.",
+        "keyPoints": [
+          "Four Essential Conditions (Sec. 35): (1) Transferor professes to transfer property NOT his own (whether believing it to be his or not), (2) In the SAME transaction confers a DIRECT benefit on the true owner (indirect benefit does not trigger election), (3) Owner receives a choice to either Confirm (keep benefit, give up his own property) or Dissent (keep his own property, forfeit the conferred benefit), and (4) Owner must hold both interests in the same legal capacity.",
+          "Modes & Time of Election: Express or Implied (2 years' enjoyment of benefit with knowledge presumes confirmation; rendering property impossible to restore also implies confirmation). If owner fails to elect within 1 year after transfer, transferor/representatives may require election within reasonable time.",
+          "Rights of Disappointed Transferee (English Compensation vs Indian Forfeiture): If the owner dissents, the relinquished benefit reverts to the transferor; where the transfer was GRATUITOUS and the transferor has died/become incapable before fresh transfer, OR in ALL transfers FOR CONSIDERATION, the transferor/estate MUST make good the value of the property to the disappointed transferee out of the relinquished property.",
+          "Exception & Disability: Independent benefits received under a separate clause/transaction are NOT forfeited on dissent; for a minor/disabled owner, election is postponed until disability ceases or is made by a competent guardian."
+        ],
+        "caseLaws": [
+          {
+            "name": "Cooper v. Cooper",
+            "citation": "1874 LR 7 HL 53",
+            "principle": "Classic House of Lords authority defining Election as an equitable obligation to choose between two inconsistent or alternative rights where the donor clearly intended the beneficiary not to enjoy both."
+          },
+          {
+            "name": "Muhammad Afzal v. Ghulam Kasim",
+            "citation": "1903 ILR 30 Cal 843 (PC)",
+            "principle": "Held that Section 35 does NOT apply where the owner acquires a benefit independently from a third source (government grant) rather than from the transferor in the same transaction."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When is a disappointed transferee entitled to compensation from a dissenting owner's relinquished benefit under Section 35 TPA?",
+            "a": "Always if the transfer was for consideration; and if gratuitous, ONLY when the transferor has died or become incapable of making a fresh transfer before the owner dissented."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u2-t2": {
+      "id": "lop-u2-t2",
+      "subtitle": "Law of Property (TPA) - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Covenant is a binding promise or stipulation attached to land - either Affirmative (requiring expenditure/positive action) or Restrictive/Negative (barring a specific use, like keeping open space for light). Under Section 40 TPA (codifying Tulk v. Moxhay), the burden of a RESTRICTIVE covenant (and contractual obligations like an agreement to sell) runs with the land and binds subsequent transferees WITH NOTICE or gratuitous transferees, but NOT a bona fide purchaser for value without notice.",
+        "legalProvision": "Sections 11 (Second Para) & 40, Transfer of Property Act, 1882",
+        "meaning": "Ordinarily, contractual promises bind only the original parties (privity of contract). Section 40 carves out a vital equitable exception so negative land-use protections and prior sale agreements are not defeated by collusive sales to third parties.",
+        "keyPoints": [
+          "Two Limbs of Section 40 TPA: (1) Restrictive Covenant - right of a third person to restrain enjoyment of immovable property in a particular manner for the MORE BENEFICIAL ENJOYMENT of his own adjoining land (e.g., keeping a garden unbuilt for light/air - Tulk v. Moxhay), and (2) Obligation Annexed to Ownership - contractual obligation arising out of contract not amounting to an interest/easement (chiefly a prior Agreement to Sell under Sec. 54).",
+          "Affirmative vs Restrictive Covenants: Affirmative covenants (requiring spending money, e.g., repairing a boundary wall) do NOT run with the land against subsequent buyers (Austerberry v. Corporation of Oldham), whereas RESTRICTIVE (negative) covenants DO run with the land in equity under Sec. 40.",
+          "Who Is Bound Under Section 40?: Enforceable against (a) a Transferee FOR CONSIDERATION WITH NOTICE (actual or constructive), AND (b) ANY Gratuitous Transferee (e.g., donee/heir, even without notice); NEVER enforceable against a bona fide transferee for value WITHOUT notice.",
+          "Interplay with Section 11 Second Paragraph: While Sec. 11 voids general enjoyment restraints on absolute sales, its second paragraph expressly saves restrictive covenants imposed by a seller for the beneficial enjoyment of his own retained adjoining property."
+        ],
+        "caseLaws": [
+          {
+            "name": "Tulk v. Moxhay",
+            "citation": "1848 2 Ph 774",
+            "principle": "Foundational equity precedent codified in Section 40 TPA: a subsequent purchaser buying land WITH NOTICE of a restrictive covenant (to keep Leicester Square garden unbuilt) is bound in equity not to breach it."
+          },
+          {
+            "name": "Ram Baran Prasad v. Ram Mohit Hazra",
+            "citation": "AIR 1967 SC 744",
+            "principle": "Held that a covenant of pre-emption creates a personal contractual obligation enforceable against transferees with notice or gratuitous transferees under Section 40 TPA."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why does Section 40 TPA enforce restrictive covenants against a subsequent buyer with notice but NOT against a bona fide purchaser for value without notice?",
+            "a": "Because Section 40 is grounded in equity and notice: a buyer who pays value honestly without notice acquires clean title, whereas a buyer with notice (or a gratuitous donee) takes subject to the equitable restriction."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u2-t3": {
+      "id": "lop-u2-t3",
+      "subtitle": "Law of Property (TPA) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 41 TPA creates an important statutory exception to 'Nemo dat quod non habet' (no one can convey a better title than he has): if an Ostensible Owner (apparent owner holding paper title with the real owner's express or implied consent) transfers immovable property FOR CONSIDERATION, the transfer cannot be voided by the real owner provided the transferee acted in good faith after taking reasonable care to verify title.",
+        "legalProvision": "Section 41, Transfer of Property Act, 1882; Prohibition of Benami Property Transactions Act, 1988 (as amended in 2016)",
+        "meaning": "Derived from Ramcoomar Koondoo v. Macqueen (1872), Section 41 protects innocent third-party buyers where the real owner's own conduct created the illusion of ownership - though modern Benami law now largely bars real owners from claiming Benami properties back at all.",
+        "keyPoints": [
+          "Four Mandatory Conditions (Sec. 41 TPA): (1) Transferor is the OSTENSIBLE OWNER (apparent owner holding title deeds/revenue mutation/possession - not a mere manager, tenant, or agent), (2) Holding with the EXPRESS OR IMPLIED CONSENT of the real owner (must be competent adult consent, never a minor's), (3) Transfer is FOR CONSIDERATION (gratuitous gifts are NOT protected), and (4) Transferee acted in GOOD FAITH and took REASONABLE CARE to ascertain transferor's power to transfer (checking title chain, possession, and encumbrance certificate - mere mutation entry alone is insufficient).",
+          "Burden of Proof: Lies strictly on the transferee claiming Section 41 protection to prove BOTH ostensible ownership with real owner's consent AND diligent title inquiry in good faith.",
+          "Impact of Benami Transactions (Prohibition) Act, 1988 (Amended 2016): Section 4 bars any real owner from suing to recover Benami property held by a benamidar (with narrow statutory exceptions for Karta/HUF, fiduciary trustees, spouse/children bought from known sources); thus Section 41 TPA now operates mainly within those valid statutory exceptions.",
+          "Leading Principle (Ramcoomar Koondoo v. Macqueen): Where one of two innocent persons must suffer from a fraud, the loss falls on the real owner who enabled the ostensible owner to appear as true owner."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ramcoomar Koondoo v. Macqueen",
+            "citation": "1872 11 Beng LR 46 (PC)",
+            "principle": "Privy Council laid down the exact equitable rule codified into Section 41 TPA: a real owner who allows another to hold himself out as ostensible owner cannot recover the property from a bona fide purchaser for value without notice."
+          },
+          {
+            "name": "Jayadayal Poddar v. Bibi Hazra",
+            "citation": "AIR 1974 SC 171",
+            "principle": "Listed six tests to identify a Benami / ostensible ownership transaction, emphasizing source of purchase money, custody of title deeds, possession, and motive."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List the four essential conditions required for a buyer to claim protection under Section 41 TPA (Transfer by Ostensible Owner), and state whether a donee (gift) can invoke Section 41.",
+            "a": "(1) Transferor is ostensible owner, (2) with express/implied consent of real owner, (3) transfer is for consideration, and (4) transferee acted in good faith after reasonable care/title inquiry. No - gratuitous transferees (donees) cannot claim Section 41."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u2-t4": {
+      "id": "lop-u2-t4",
+      "subtitle": "Law of Property (TPA) - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 43 TPA codifies the equitable Doctrine of Feeding the Grant by Estoppel: if a person fraudulently or erroneously represents that he is authorized to transfer certain immovable property and transfers it FOR CONSIDERATION, any title/interest he SUBSEQUENTLY acquires in that property automatically feeds the earlier defective transfer at the OPTION of the transferee, so long as the contract still subsists.",
+        "legalProvision": "Section 43, Transfer of Property Act, 1882; Section 115 IEA / Section 121 BSA (Estoppel)",
+        "meaning": "Built on the equitable maxims 'equity regards as done that which ought to be done' and estoppel, Section 43 stops a seller who had no title on sale day (e.g., selling father's land before inheriting it) from later keeping the inherited land away from the deceived buyer.",
+        "keyPoints": [
+          "Five Essential Conditions (Sec. 43 TPA): (1) Transferor makes a FRAUDULENT OR ERRONEOUS REPRESENTATION of authority to transfer (if transferee already KNEW the transferor lacked title, Sec. 43 fails!), (2) Transfer is FOR CONSIDERATION (not a gratuitous gift), (3) Transferor SUBSEQUENTLY acquires interest in the same property, (4) The contract of transfer STILL SUBSISTS (not rescinded), and (5) Transferee exercises his OPTION to enforce it.",
+          "Protected Third Party (Proviso to Sec. 43): Does NOT impair the right of a subsequent transferee in good faith for consideration WITHOUT NOTICE of the prior option (e.g., if the seller inherits the land and sells it to an innocent second buyer before the first buyer asserts Sec. 43).",
+          "Harmonizing Section 6(a) vs Section 43 (Jumma Masjid v. Kodimaniandra Deviah, 1962): Section 6(a) voids an open transfer of bare spes successionis where BOTH parties know it is merely an expectancy; Section 43 applies where the transferor fraudulently misrepresents that he ALREADY holds present title and the buyer relies on that representation in good faith.",
+          "Section 41 vs Section 43 TPA: In Sec. 41, the transferor is an ostensible owner acting with the real owner's consent and buyer must prove reasonable care; in Sec. 43, the transferor has NO consent/title initially, misrepresents authority, and acquires title LATER - transferee need only show belief in the representation (no duty of extensive independent inquiry)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jumma Masjid, Mercara v. Kodimaniandra Deviah",
+            "citation": "AIR 1962 SC 847",
+            "principle": "4-judge Bench harmonized Section 6(a) and Section 43 TPA: where a reversioner fraudulently represents he has present title and sells land for value, Section 43 operates the moment he later inherits the property."
+          },
+          {
+            "name": "Kartar Singh v. Harbans Kaur",
+            "citation": "1994 4 SCC 730",
+            "principle": "Held that Section 43 does NOT apply where the transferee already knew the seller (a mother selling her minor son's share without court sanction) lacked legal authority to transfer."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How did the Supreme Court in Jumma Masjid (1962) reconcile Section 6(a) (Spes Successionis void) with Section 43 (Feeding the Grant by Estoppel)?",
+            "a": "Section 6(a) voids a transfer knowingly made of a bare chance of succession, whereas Section 43 protects a bona fide transferee for value misled by the transferor's fraudulent/erroneous representation of holding present title once the transferor later acquires the property."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u2-t5": {
+      "id": "lop-u2-t5",
+      "subtitle": "Law of Property (TPA) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 52 TPA embodies the Doctrine of Lis Pendens ('Ut lite pendente nihil innovetur' - nothing new should be introduced during pending litigation). While a non-collusive suit or proceeding directly and specifically concerning any right to immovable property is pending in a competent court, NEITHER party can transfer or otherwise deal with the property so as to affect the opponent's rights under the final decree - unless permitted by the court.",
+        "legalProvision": "Section 52, Transfer of Property Act, 1882 (as amended in 1929)",
+        "meaning": "Lis Pendens rests on PUBLIC POLICY AND NECESSITY (not notice - Bellamy v. Sabine): without it, a losing litigant could endlessly sell disputed land mid-trial and defeat every court decree.",
+        "keyPoints": [
+          "Six Essential Conditions (Sec. 52 TPA): (1) Pendency of a suit or proceeding (starts from presentation of plaint and continues until final disposal including appeals and full execution - Explanation), (2) Before a COMPETENT court in India, (3) Suit must NOT be collusive (a sham/friendly suit engineered to defraud third parties gets no Sec. 52 protection), (4) A RIGHT TO IMMOVABLE PROPERTY is directly and specifically in question (e.g., title, partition, mortgage, specific performance - NOT pure money/maintenance suits unless charge claimed), (5) Property is transferred/dealt with by ANY party to the suit (covers involuntary court-auction sales too - Samarendra Nath Sinha), and (6) Transfer affects the rights of any other party under the decree.",
+          "Effect of Lis Pendens (NOT Void Ab Initio): A transfer pendente lite is NOT automatically void - it is SUBSERVIENT / SUBORDINATE to the final court decree (Nagubai Ammal; Thomson Press). If the seller wins the suit, the pendente lite buyer keeps valid title; if the seller loses, the buyer is strictly bound by the decree even if he bought in good faith without notice!",
+          "Exception - With Authority of Court: A party may validly transfer property during pendency ONLY with prior leave of the court on terms imposed by the court.",
+          "Rationale (Bellamy v. Sabine, 1857): Grounded in expediency and finality of litigation (NOT constructive notice), so even an innocent purchaser with zero knowledge of the pending suit is strictly bound by the outcome."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bellamy v. Sabine",
+            "citation": "1857 1 De G & J 566",
+            "principle": "Established that the Doctrine of Lis Pendens rests on public necessity (preventing endless frustration of court decrees), NOT on constructive notice."
+          },
+          {
+            "name": "Thomson Press (India) Ltd. v. Nanak Builders & Investors Pvt. Ltd.",
+            "citation": "2013 5 SCC 397",
+            "principle": "Reaffirmed that a pendente lite transfer in breach of Section 52 is not void ab initio, but remains strictly subservient to the decree ultimately passed in the pending litigation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Is a sale executed during pendency of a title suit void ab initio under Section 52 TPA, and can a bona fide purchaser without notice escape Lis Pendens?",
+            "a": "No - it is NOT void ab initio, only strictly subject/subservient to the final decree of the court. No - because Lis Pendens is based on public necessity rather than notice, even a bona fide buyer without notice is bound."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u2-t6": {
+      "id": "lop-u2-t6",
+      "subtitle": "Law of Property (TPA) - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 53 TPA protects creditors and subsequent buyers from dishonest debtors who strip away their assets. Under Section 53(1), every transfer of immovable property made with intent to defeat or delay creditors is VOIDABLE at the option of any defeated/delayed creditor (via a representative suit), while Section 53(2) makes a prior gratuitous transfer intended to defraud a subsequent purchaser for value voidable by that purchaser.",
+        "legalProvision": "Section 53 (Sub-sections 1 & 2), Transfer of Property Act, 1882; Order I Rule 8 CPC (Representative Suit)",
+        "meaning": "Justice requires a debtor to be just before being generous. While a debtor may lawfully prefer one genuine creditor over another (Musahar Sahu v. Hakim Lal), transferring all assets to relatives in secrecy to cheat creditors as a body is struck down as fraudulent.",
+        "keyPoints": [
+          "First Rule - Transfer to Defeat or Delay Creditors (Sec. 53(1)): Applies to ANY transfer of immovable property made with intent to defeat or delay creditors (existing OR future creditors); transfer is VOIDABLE (valid until set aside), NOT void ab initio. Suit MUST be instituted on behalf of ALL creditors as a representative suit (Order I Rule 8 CPC).",
+          "Badges / Indicators of Fraudulent Intent: Secret transfer, grossly inadequate consideration, transferring virtually ALL assets leaving nothing for creditors, retaining physical possession after 'sale', or transferring to close family members right before a decree/insolvency.",
+          "Preference of One Genuine Creditor Is NOT Fraudulent (Musahar Sahu v. Hakim Lal): Paying or transferring property genuinely to satisfy one real creditor's debt (even if other creditors get less) is lawful under Section 53(1) (though challengeable as fraudulent preference under Insolvency law within lookback period).",
+          "Two Statutory Exceptions to Sec. 53(1): (1) Bona fide Transferee in good faith FOR CONSIDERATION (even if debtor had fraudulent intent, honest buyer for value is fully protected), and (2) Insolvency laws (IBC, 2016 / Provincial Insolvency Act) remain unaffected.",
+          "Second Rule - Defrauding Subsequent Transferee (Sec. 53(2)): Every GRATUITOUS transfer (without consideration) made with intent to defraud a subsequent transferee is voidable at the option of that subsequent transferee (mere fact of a later transfer for value does NOT automatically presume the earlier gift was fraudulent)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Musahar Sahu v. Hakim Lal",
+            "citation": "AIR 1915 PC 115",
+            "principle": "Privy Council held that transferring property in good faith to discharge a genuine debt of one creditor is NOT a fraudulent transfer under Section 53 TPA merely because other creditors are left unpaid."
+          },
+          {
+            "name": "Abdul Shukoor Saheb v. Arji Papa Rao",
+            "citation": "AIR 1963 SC 1150",
+            "principle": "Held that once creditors establish badges of fraud under Section 53(1), the burden shifts to the transferee to prove both valuable consideration AND good faith without notice of the debtor's fraud."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Is a transfer of property by a debtor to pay off one genuine creditor voidable under Section 53(1) TPA, and what procedural requirement applies to a creditor's suit under Section 53(1)?",
+            "a": "No - genuine preference of one real creditor is valid under Section 53(1) (Musahar Sahu). A creditor's suit to avoid a fraudulent transfer MUST be filed as a representative suit on behalf of all creditors under Order I Rule 8 CPC."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u2-t7": {
+      "id": "lop-u2-t7",
+      "subtitle": "Law of Property (TPA) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Inserted in 1929 and amended in 2001, Section 53A TPA codifies the equitable Doctrine of Part-Performance: where a transferee takes possession of immovable property under a written, signed contract for consideration and performs (or is willing to perform) his part, the transferor is DEBARRED from evicting him merely because the formal sale deed was not completed - operating strictly as a defensive SHIELD, not an offensive SWORD of title.",
+        "legalProvision": "Section 53A, Transfer of Property Act, 1882; Section 17(1A), Registration Act, 1908 (Inserted by Act 48 of 2001)",
+        "meaning": "Section 53A stops dishonest sellers from taking purchase money, handing over possession, and later suing to eject the buyer on technical non-completion. Crucially, after the 2001 Amendment (24 September 2001), the agreement MUST be REGISTERED to claim Section 53A protection.",
+        "keyPoints": [
+          "Six Mandatory Essentials of Section 53A TPA: (1) Written contract to transfer immovable property FOR CONSIDERATION, signed by or on behalf of the transferor, from which terms are ascertainable with reasonable certainty (oral contracts NOT covered - unlike English equity!), (2) Transferee has taken POSSESSION of the property (or, if already in possession as tenant, continues in possession AND does some overt act in furtherance of the contract), (3) Transferee has performed OR is ready and willing to perform his part of the contract, (4) Contract is REGISTERED if executed on or after 24 Sept 2001 (Sec. 17(1A) Registration Act inserted by Act 48 of 2001), (5) Transfer was not completed in legally prescribed manner, and (6) Proviso protects a subsequent bona fide transferee for value WITHOUT notice.",
+          "Shield, Not Sword (Prabodh Kumar Das v. Dantmara Tea Co.): Section 53A does NOT confer ownership title on the transferee; it acts ONLY as a DEFENSIVE SHIELD to protect his possession against the transferor (though the transferee may sue as plaintiff to defend possession against unlawful dispossession by the seller - Shrimant Shamrao Suryavanshi).",
+          "Survival Even After Limitation Expires (Shrimant Shamrao Suryavanshi v. Pralhad Bhairoba Suryavanshi, 2002): Even if the transferee's right to file a suit for Specific Performance has become time-barred under the Limitation Act, his defensive shield under Section 53A STILL SURVIVES to protect his possession!",
+          "Indian Law vs English Equity (Maddison v. Alderson): English Part-Performance applies even to ORAL agreements and can be used as both sword and shield; Indian Section 53A requires a WRITTEN, SIGNED (and post-2001 REGISTERED) contract and works strictly as a defensive shield."
+        ],
+        "caseLaws": [
+          {
+            "name": "Prabodh Kumar Das v. Dantmara Tea Co. Ltd.",
+            "citation": "AIR 1940 PC 1",
+            "principle": "Privy Council laid down the famous rule that Section 53A confers no active title on the transferee - it is available strictly as a defence ('a shield, not a sword')."
+          },
+          {
+            "name": "Shrimant Shamrao Suryavanshi v. Pralhad Bhairoba Suryavanshi",
+            "citation": "2002 3 SCC 676",
+            "principle": "Held that the Law of Limitation bars only a plaintiff's suit, NOT a defendant's defence - so a transferee fulfilling Section 53A conditions retains his shield even after the limitation period for specific performance expires."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why is Section 53A TPA called 'a shield, not a sword', and what crucial requirement did the 2001 Amendment add via Section 17(1A) of the Registration Act?",
+            "a": "Because Section 53A confers no ownership title and only bars the transferor from disturbing the transferee's possession. Since 24 September 2001, Section 17(1A) of the Registration Act makes REGISTRATION of the written contract mandatory to claim Section 53A protection."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

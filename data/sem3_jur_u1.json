@@ -1,0 +1,190 @@
+{
+  "subjects": [
+    {
+      "id": "jurisprudence",
+      "title": "Jurisprudence",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper I",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Meaning, Ancient Indian Jurisprudence, Schools of Jurisprudence, Theories/Classification of Law, Equity & Sovereignty",
+          "topics": [
+            {"id": "jur-u1-t1", "title": "1. Meaning & Definition of Jurisprudence (General vs Particular) & Elements of Ancient Indian Jurisprudence"},
+            {"id": "jur-u1-t2", "title": "2. Schools of Jurisprudence - Analytical Positivism (Austin, Hart, Kelsen) & Historical School (Savigny, Maine)"},
+            {"id": "jur-u1-t3", "title": "3. Schools of Jurisprudence - Philosophical/Natural Law, Sociological (Pound, Duguit) & Realist Schools"},
+            {"id": "jur-u1-t4", "title": "4. Theories of Law - Meaning, Nature, Function, Purpose & Classification of Law"},
+            {"id": "jur-u1-t5", "title": "5. Equity, Law and Justice & Theory of Sovereignty"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "jur-u1-t1": {
+      "id": "jur-u1-t1",
+      "subtitle": "Jurisprudence - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Jurisprudence (from Latin 'Jurisprudentia' - knowledge of law) is the 'eye of law' and science of fundamental legal principles underlying all legal systems. Austin divided it into General Jurisprudence (principles common to mature systems) and Particular Jurisprudence (specific to one nation), while Ancient Indian Jurisprudence grounded law in 'Dharma' (cosmic moral order binding even the King).",
+        "legalProvision": "Classical Juristic Definitions (Ulpian, Austin, Holland, Salmond, Pound); Ancient Indian Dharmashastras (Vedas, Smritis, Mimamsa, Arthashastra)",
+        "meaning": "Rather than memorizing individual statutes, jurisprudence investigates the skeleton of law - what makes a rule 'law', why citizens obey it, and how concepts like rights, ownership, and liability operate across legal orders.",
+        "keyPoints": [
+          "Classic Definitions: Ulpian ('knowledge of things divine and human, science of the just and unjust'); Austin ('philosophy of positive law'); Holland ('formal science of positive law'); Salmond ('science of the first principles of civil law'); Roscoe Pound ('science of social engineering').",
+          "General vs Particular Jurisprudence: Austin's General Jurisprudence studies concepts shared across mature legal systems (rights, duty, possession, ownership), whereas Particular Jurisprudence examines the actual legal system of one specific country (e.g., Indian Jurisprudence). Salmond & Holland criticized Particular Jurisprudence as a contradiction in terms since science is universal.",
+          "Elements of Ancient Indian Jurisprudence (Dharma): Unlike Austin's command of a sovereign above the law, Ancient Indian law placed 'Dharma' (righteousness, duty, and cosmic order - Rta) SUPREME over the King himself ('Kshatrasya Kshatram' - law is the King of Kings, Brihadaranyaka Upanishad). Sources were Sruti (Vedas), Smriti (Manu, Yajnavalkya, Narada), Sadachara (approved custom), and Nyaya/Yukti (equity/reason).",
+          "Arthashastra, Mimamsa & Practical Legacy: Kautilya's Arthashastra distinguished Dharmasthiya (civil courts) and Kantakasodhana (criminal/administrative courts) and elevated royal edicts (Rajasasana) for governance; Jaimini's Mimamsa rules laid down India's earliest principles of statutory interpretation still cited by the Supreme Court."
+        ],
+        "caseLaws": [
+          {
+            "name": "A.S. Narayana Deekshitulu v. State of Andhra Pradesh",
+            "citation": "1996 9 SCC 548",
+            "principle": "Explained the distinction between 'Religion' and Ancient Indian 'Dharma' (duty, moral order, and Rule of Law sustaining society), noting how Dharma underpins constitutional ethics."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between General Jurisprudence and Particular Jurisprudence, and explain how Ancient Indian 'Dharma' differed from Austin's concept of a sovereign above the law.",
+            "a": "General Jurisprudence studies universal legal concepts common to mature legal systems, whereas Particular Jurisprudence studies one nation's specific legal system. Under Ancient Indian Dharma, law was supreme even over the King ('King of Kings'), whereas Austin placed the sovereign legally above positive law."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u1-t2": {
+      "id": "jur-u1-t2",
+      "subtitle": "Jurisprudence - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Analytical (Positivist) School treats law strictly as it IS ('Positum') separated from morality - led by Bentham, Austin (Command Theory), Hans Kelsen (Pure Theory & Grundnorm), and H.L.A. Hart (Primary & Secondary Rules). Opposing legislative artificiality, the Historical School led by Savigny (Volksgeist) and Sir Henry Maine ('Status to Contract') insists that law is FOUND organically in a people's history and customs, not arbitrarily made.",
+        "legalProvision": "Analytical Positivism (Bentham, Austin, Kelsen, Hart) & Historical School (Savigny, Puchta, Maine)",
+        "meaning": "Analytical jurists look to sovereign authority and formal validity inside legal systems, whereas Historical jurists trace law back to evolving community spirit and custom.",
+        "keyPoints": [
+          "John Austin (Command Theory / Imperative School): Defined Positive Law as 'Command of the Sovereign backed by Sanction' (distinguishing law 'as it is' from law 'as it ought to be'); criticized for ignoring customs, international law, constitutional limits, and enabling laws (like Wills/Contracts).",
+          "Jeremy Bentham (Utilitarianism & Father of English Positivism): Advocated 'greatest happiness of the greatest number' measured by the felicific calculus (pleasure vs pain) and championed statutory codification.",
+          "Hans Kelsen (Pure Theory of Law) & H.L.A. Hart (Modern Positivism): Kelsen purged law of morality/politics/sociology, viewing law as a hierarchy of 'Ought' Norms deriving validity from a supreme presupposed 'Grundnorm' (in India, the Constitution). H.L.A. Hart defined law as a union of Primary Rules (duty-imposing) and Secondary Rules (Rules of Recognition, Change, and Adjudication) accepted from an 'internal point of view'.",
+          "Friedrich Karl von Savigny (Volksgeist - Father of Historical School): Argued 'law grows with the growth of the people, strengthens with their strength, and dies when the nation loses its nationality' - law embodies 'Volksgeist' (spirit of the people) like language, making Custom superior to hasty codification.",
+          "Sir Henry Maine (Comparative Historical Jurisprudence): Distinguished Static societies from Progressive societies (which evolve through Legal Fictions, Equity, and Legislation) and formulated the famous generalization: 'The movement of progressive societies has hitherto been a movement from Status to Contract.'"
+        ],
+        "caseLaws": [
+          {
+            "name": "Kesavananda Bharati v. State of Kerala",
+            "citation": "AIR 1973 SC 1461",
+            "principle": "Illustrates Kelsen's Grundnorm in Indian constitutional jurisprudence: the Constitution (and its Basic Structure) serves as the ultimate validating norm from which all statutes derive legal validity."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain Savigny's concept of 'Volksgeist' and state how H.L.A. Hart improved upon Austin's Command Theory.",
+            "a": "Volksgeist means the common consciousness or spirit of the people, from which custom and law organically evolve like language. Hart replaced Austin's coercive 'gunman-like' command model with a union of Primary (duty-imposing) and Secondary Rules (Recognition, Change, Adjudication) explaining enabling laws and continuity."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u1-t3": {
+      "id": "jur-u1-t3",
+      "subtitle": "Jurisprudence - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Philosophical / Natural Law School (Aristotle, Aquinas, Locke, Kant, Stammler, Fuller) measures human law against universal reason, morality, and justice. The Sociological School (Comte, Ehrlich, Duguit, Roscoe Pound) studies 'law in action' as an instrument of Social Engineering balancing competing interests, while the Realist School (Holmes, Llewellyn, Frank) defines law as what courts actually DO in practice.",
+        "legalProvision": "Natural Law Philosophy; Sociological Jurisprudence (Social Engineering & Social Solidarity); American & Scandinavian Legal Realism",
+        "meaning": "While Analytical jurisprudence asks 'what is valid law?', Natural Law asks 'what is JUST law?', Sociological jurisprudence asks 'how does law serve society?', and Realism asks 'how do judges actually decide cases?'",
+        "keyPoints": [
+          "Philosophical / Natural Law School: Evolved across 4 eras - Ancient (Aristotle, Stoics: universal reason), Medieval (St. Thomas Aquinas: Eternal, Natural, Divine & Human Law), Classical/Social Contract (Grotius, Hobbes, Locke's natural rights to life/liberty/property, Rousseau's General Will; Kant's categorical imperative), and Modern Revival (Stammler's 'Natural Law with a variable content', Lon Fuller's 'Inner Morality of Law' - 8 principles of legality).",
+          "Natural Law in Indian Constitution: Reflected directly in Principles of Natural Justice, Article 14 non-arbitrariness, and Article 21 substantive due process (Maneka Gandhi v. Union of India).",
+          "Sociological School - Roscoe Pound (Social Engineering): Compared jurists to engineers building society with minimum friction and waste by balancing three competing interests - Individual, Public, and Social Interests - guided by five Jural Postulates.",
+          "Other Sociological Jurists: Leon Duguit (Doctrine of 'Social Solidarity' - no absolute rights, only social duties based on human interdependence); Eugen Ehrlich ('Living Law' practiced in society vs formal state law); Rudolf von Ihering (Social Utilitarianism - law reconciles individual and social purpose).",
+          "Legal Realist School (Left Wing of Functional School): Justice Oliver Wendell Holmes ('The life of the law has not been logic; it has been experience'; 'Bad Man Theory' - law is prophecies of what courts will actually do); Karl Llewellyn (rule-skepticism); Jerome Frank (fact-skepticism - trial outcomes depend on judicial psychology and witness perception); Scandinavian Realists (Hagerstrom, Alf Ross)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Maneka Gandhi v. Union of India",
+            "citation": "AIR 1978 SC 597",
+            "principle": "Infused Natural Law morality and fairness into Article 21, holding that 'procedure established by law' must be fair, just, and reasonable - not arbitrary or oppressive."
+          },
+          {
+            "name": "Olga Tellis v. Bombay Municipal Corporation",
+            "citation": "AIR 1986 SC 180",
+            "principle": "Exemplifies Roscoe Pound's Social Engineering: balanced the social/individual interest in right to livelihood of pavement dwellers against the public interest in unobstructed pedestrian roads."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What did Roscoe Pound mean by 'Social Engineering', and what is Leon Duguit's principle of 'Social Solidarity'?",
+            "a": "Pound's Social Engineering treats law as a tool to balance competing individual, public, and social interests with minimal friction. Duguit's Social Solidarity holds that all humans are interdependent in society, so the sole validity test of law is whether it promotes social interdependence and duties."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u1-t4": {
+      "id": "jur-u1-t4",
+      "subtitle": "Jurisprudence - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Law is a dynamic body of rules recognized and enforced by the State to administer justice, preserve social order, and balance individual freedom with collective welfare. Jurists classify law across distinct axes - Imperative vs Physical/Moral/Conventional/Customary/International/Civil Law, Public vs Private Law, Substantive vs Procedural Law, and Municipal vs International Law.",
+        "legalProvision": "Salmond's Eight-Fold Classification of Law; Public vs Private & Substantive vs Procedural Law",
+        "meaning": "Because no single definition captures every dimension of law (Austin stresses sovereign command, Salmond stresses court-enforced justice, Pound stresses social control), understanding its functions, purposes, and classifications provides a complete framework.",
+        "keyPoints": [
+          "Meaning & Nature of Law: Defined by Salmond as 'the body of principles recognized and applied by the State in the administration of justice' (combining territoriality, uniformity, binding force, and judicial enforcement); characterized by generality, certainty, adaptability, and coercive State sanction.",
+          "Functions & Purposes of Law: (1) Delivering Justice (primary end per Salmond), (2) Maintaining Peace, Order & Security, (3) Protecting Fundamental Rights & Freedoms, (4) Resolving Disputes peacefully via impartial courts, and (5) Promoting Social Change & Welfare (welfare state legislation like labour, consumer, and environmental laws).",
+          "Salmond's Classification of Law: (1) Imperative Law (positive rules enforced by superior power), (2) Physical/Scientific Law (laws of nature like gravity), (3) Natural/Moral Law (ethical principles of right/wrong), (4) Conventional Law (rules agreed by parties - contracts, club/sports rules), (5) Customary Law, (6) Practical/Technical Law (rules of art/engineering), (7) International Law (rules governing States), and (8) Civil Law (Law of the Land / Municipal Law).",
+          "Key Functional Classifications of Civil Law: (a) Public Law (Constitutional, Administrative, Criminal - State is a party) vs Private Law (Contract, Tort, Property, Family - between individuals); (b) Substantive Law (defines rights & duties - IPC/BNS, ICA, TPA) vs Procedural/Adjective Law (prescribes enforcement machinery - CPC, CrPC/BNSS, Evidence/BSA); (c) Municipal Law vs International Law."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bhim Singhji v. Union of India",
+            "citation": "AIR 1981 SC 234",
+            "principle": "Observed that modern Indian law functions not merely as a police mechanism for order, but as an active instrument of distributive socio-economic justice."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Substantive Law and Procedural (Adjective) Law with two Indian statutory examples of each.",
+            "a": "Substantive Law defines rights, duties, and offences (e.g., Indian Contract Act, BNS/IPC, Transfer of Property Act), whereas Procedural Law governs the courtroom machinery and proof for enforcing them (e.g., CPC, BNSS/CrPC, BSA/Indian Evidence Act)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u1-t5": {
+      "id": "jur-u1-t5",
+      "subtitle": "Jurisprudence - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Equity ('aequitas' - fairness and conscience) arose historically to temper the harsh rigidity of strict law where 'Summum jus, summa injuria' (extreme law causes extreme injustice), forming a vital bridge between Law and Justice. Sovereignty is the supreme, independent legal authority of a State - classically framed as absolute and indivisible by Bodin and Austin, but limited in modern India by Constitutional Supremacy, Federalism, and Fundamental Rights.",
+        "legalProvision": "Principles of Equity & Justice; Austin's Monistic Sovereignty vs Pluralism & Indian Constitutional Sovereignty (Preamble)",
+        "meaning": "Strict rules sometimes produce unfair outcomes on unusual facts; Equity steps in to fulfill Justice ('Equity follows the law', 'He who comes to equity must come with clean hands'). Meanwhile, modern constitutional theory replaces Austin's omnipotent monarch with popular and constitutional sovereignty.",
+        "keyPoints": [
+          "Equity, Law & Justice: Justice is the ultimate moral goal (Distributive Justice - fair allocation of resources/opportunities; Corrective/Commutative Justice - rectifying wrongs); Law is the formal instrument to achieve it; Equity corrects strict law's rigidity (originated in English Courts of Chancery and incorporated into Indian statutes like Specific Relief Act, 1963, Indian Trusts Act, 1882, Sec. 53A TPA Part Performance, and Sec. 151 CPC inherent powers).",
+          "Core Maxims of Equity: 'Equity will not suffer a wrong to be without a remedy', 'Equity follows the law', 'He who seeks equity must do equity', 'He who comes to equity must come with clean hands', and 'Delay defeats equities'.",
+          "Theory of Sovereignty (Internal & External): Internal Sovereignty = supreme authority over all persons and associations within territory; External Sovereignty = complete independence from foreign control. Legal Sovereignty (authority making binding law) vs Political Sovereignty (the electorate / 'We, the People').",
+          "Austin's Monistic Theory vs Pluralist Critique: Austin viewed Sovereignty as (1) Determinate, (2) Absolute/Illimitable, (3) Indivisible, and (4) Permanently obeyed by the bulk of society while obeying no superior. Pluralists (Laski, Duguit, Dicey) criticized Austin because in federal constitutional democracies like India and the USA, sovereign power is DIVIDED between Union and States and LIMITED by Fundamental Rights, Judicial Review, and International Law.",
+          "Sovereignty in India: Political sovereignty vests in 'We, the People of India' (Preamble), while legal sovereignty is distributed across Constitutionally limited organs under the Supreme Constitution (Kesavananda Bharati)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Minerva Mills Ltd. v. Union of India",
+            "citation": "AIR 1980 SC 1789",
+            "principle": "Held that India does NOT have an Austinian omnipotent sovereign Parliament; the Constitution is supreme, and every organ including Parliament exercises limited sovereign authority."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the four essential features of Austin's Theory of Sovereignty and explain why Austin's theory does not strictly fit the Indian Constitution.",
+            "a": "Austin's sovereign is determinate, absolute/illimitable, indivisible, and habitually obeyed without obeying any superior. It does not strictly fit India because power is federally divided between Union and States and legally limited by Fundamental Rights and the Basic Structure Doctrine."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

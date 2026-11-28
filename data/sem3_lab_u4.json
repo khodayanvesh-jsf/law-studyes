@@ -1,0 +1,155 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-i",
+      "title": "Labour Law - I",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Authorities Under ID Act (Works Committee, Conciliation, Courts & Tribunals), Reference (Sec. 10), Arbitration & Strikes/Lockouts",
+          "topics": [
+            {"id": "lab-u4-t1", "title": "1. Preventive & Conciliation Authorities - Works Committee (Sec. 3), Conciliation Officers (Sec. 4), Board (Sec. 5) & Court of Inquiry (Sec. 6)"},
+            {"id": "lab-u4-t2", "title": "2. Adjudication Machinery - Labour Court (Sec. 7), Industrial Tribunal (Sec. 7A), National Tribunal (Sec. 7B) & Voluntary Arbitration (Sec. 10A)"},
+            {"id": "lab-u4-t3", "title": "3. Reference of Industrial Disputes by Government (Sec. 10), Powers of Tribunals (Sec. 11A) & Awards/Settlements (Secs. 17-19)"},
+            {"id": "lab-u4-t4", "title": "4. Strikes and Lockouts - Definitions, Prohibition in Public Utility & General Services, Illegal Strikes/Lockouts & Wages (Secs. 22-25)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab-u4-t1": {
+      "id": "lab-u4-t1",
+      "subtitle": "Labour Law - I - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter II of the Industrial Disputes Act, 1947 establishes a multi-tier non-adjudicatory hierarchy to prevent and settle disputes amicably before litigation: Works Committees inside factories (Sec. 3), Conciliation Officers (Sec. 4), Boards of Conciliation (Sec. 5), and fact-finding Courts of Inquiry (Sec. 6).",
+        "legalProvision": "Sections 3, 4, 5, 6, 12, & 13, Industrial Disputes Act, 1947",
+        "meaning": "Industrial peace works best when disputes are resolved at the shop-floor or through mediated settlement rather than protracted tribunal trials.",
+        "keyPoints": [
+          "1. Works Committee (Sec. 3): Mandatory by government order in industrial establishments employing 100 OR MORE workmen; equal representation of employer and workmen (chosen in consultation with registered union); promotes amity, good relations, and comments on matters of common daily interest (cannot decide major policy wages/bonus - Northbrook Jute Co.).",
+          "2. Conciliation Officers (Sec. 4 & Sec. 12): Appointed by appropriate Government for specified areas/industries; duty to mediate and induce a fair, amicable settlement (MANDATORY in Public Utility Services upon Sec. 22 strike/lockout notice). Submits Settlement Report (Sec. 12(3) - binding on ALL workmen) or Failure Report within 14 days (Sec. 12(4)).",
+          "3. Board of Conciliation (Sec. 5 & Sec. 13): Ad-hoc tripartite body (independent Chairman + 2 or 4 equal employer/workman members) constituted for complex disputes; submits report within 2 months.",
+          "4. Court of Inquiry (Sec. 6 & Sec. 14): Independent fact-finding body (one or more independent persons) inquiring into any matter connected with an industrial dispute and reporting within 6 months (purely fact-finding/recommendatory, not an adjudication)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Northbrook Jute Co. Ltd. v. Their Workmen",
+            "citation": "AIR 1960 SC 879",
+            "principle": "Held that Works Committees under Section 3 are consultative shop-floor bodies for day-to-day harmony and cannot override Trade Unions by approving major rationalization or retrenchment schemes."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Compare the statutory roles of a Works Committee (Sec. 3), Conciliation Officer (Sec. 4), and Court of Inquiry (Sec. 6) under the ID Act, 1947.",
+            "a": "Works Committee promotes day-to-day shop-floor amity in 100+ worker units; Conciliation Officer mediates settlements (mandatory in public utility notices) and sends a 14-day report; Court of Inquiry conducts independent fact-finding into dispute issues and reports within 6 months."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u4-t2": {
+      "id": "lab-u4-t2",
+      "subtitle": "Labour Law - I - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "When conciliation fails, the ID Act provides a three-tier compulsory judicial Adjudication hierarchy - Labour Court (Sec. 7 - Second Schedule individual/standing-order matters), Industrial Tribunal (Sec. 7A - Second & Third Schedule collective wages/bonus/retrenchment matters), and National Industrial Tribunal (Sec. 7B - national importance or multi-State disputes) - plus Voluntary Arbitration under Section 10A.",
+        "legalProvision": "Sections 7, 7A, 7B, 7C, & 10A, Industrial Disputes Act, 1947; Second & Third Schedules",
+        "meaning": "Industrial Tribunals possess wider power than ordinary civil courts: they are not restricted to enforcing existing contracts and can even create new wage structures and fair service conditions.",
+        "keyPoints": [
+          "1. Labour Court (Sec. 7 & Second Schedule): One-person presiding officer (High Court Judge, or District/Addl. District Judge for 3+ years, or 7+ years judicial office); adjudicates Second Schedule matters - propriety/legality of employer orders under Standing Orders, interpretation of Standing Orders, discharge/dismissal & reinstatement of workmen, withdrawal of customary concession, and illegality of strike/lockout.",
+          "2. Industrial Tribunal (Sec. 7A & Third Schedule): One-person presiding officer (High Court Judge or District/Addl. District Judge for 3+ years; Central Govt may appoint 2 Assessors); wider jurisdiction covering BOTH Second Schedule AND Third Schedule matters (wages, allowances, hours of work, leave, bonus, profit-sharing, PF/gratuity, rationalization, and retrenchment/closure).",
+          "3. National Industrial Tribunal (Sec. 7B): Constituted exclusively by CENTRAL GOVERNMENT (presided over by a sitting/retired High Court Judge) for disputes involving questions of NATIONAL IMPORTANCE or affecting industrial establishments situated in MORE THAN ONE STATE (bars Labour Courts/State Tribunals from parallel adjudication - Sec. 10(6)).",
+          "4. Voluntary Arbitration (Sec. 10A): At any time BEFORE a dispute is referred under Sec. 10, employer and workmen may agree in writing to refer the dispute to named Arbitrator(s); arbitration award is published by Government and binds parties like a Tribunal Award (Engineering Mazdoor Sabha - Sec. 10A arbitrator is a quasi-judicial tribunal amenable to Art. 226/136 review)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bharat Bank Ltd. v. Employees of Bharat Bank Ltd.",
+            "citation": "AIR 1950 SC 188",
+            "principle": "Constitution Bench held that Industrial Tribunals are judicial/quasi-judicial tribunals discharging state judicial functions and are subject to Supreme Court appellate jurisdiction under Article 136."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between the jurisdiction of a Labour Court (Sec. 7) and an Industrial Tribunal (Sec. 7A), and state when the Central Government constitutes a National Tribunal (Sec. 7B).",
+            "a": "Labour Court adjudicates Second Schedule matters (dismissal, Standing Orders, strike illegality), whereas Industrial Tribunal adjudicates BOTH Second and Third Schedule matters (wages, bonus, hours, retrenchment). National Tribunal (Sec. 7B) is constituted by Central Govt for disputes of national importance or spanning multiple States."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u4-t3": {
+      "id": "lab-u4-t3",
+      "subtitle": "Labour Law - I - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 10 of the ID Act, 1947, the appropriate Government exercises an administrative function in referring an existing or apprehended industrial dispute to a Board, Court, Labour Court, or Tribunal (mandatory if public utility notice is given unless frivolous/inexpedient). Once referred, Section 11A empowers Labour Courts/Tribunals to sit in appeal over domestic dismissal inquiries and substitute lesser punishments, while Sections 17-19 govern Award publication and binding duration.",
+        "legalProvision": "Sections 10, 11A, 17, 17A, 17B, 18, & 19, Industrial Disputes Act, 1947",
+        "meaning": "Section 10 prevents the Government from deciding the merits itself (Telco Convoy Drivers), while Section 11A and Section 17B protect dismissed workmen from harsh victimization and prolonged appellate delays.",
+        "keyPoints": [
+          "Reference Power of Appropriate Government (Sec. 10): Administrative (not judicial) function; Government cannot adjudicate disputed merits while refusing reference (Telco Convoy Drivers Mazdoor Sangh v. State of Bihar), though it must record and communicate written reasons if refusing reference (Sec. 12(5)). Tribunal cannot travel beyond the exact 'Terms of Reference' (Sec. 10(4)).",
+          "Power to Give Appropriate Relief in Discharge/Dismissal (Sec. 11A - inserted 1971): Overrides old Indian Iron & Steel Co. limits; if satisfied that discharge/dismissal was NOT justified, Labour Court/Tribunal may set aside the order, direct REINSTATEMENT with or without back wages, OR award lesser punishment in lieu of dismissal (relying ONLY on material on record, without taking fresh evidence if domestic inquiry was fair - Firestone Tyre).",
+          "Publication, Commencement & Binding Effect of Awards & Settlements (Secs. 17-19): Award is published within 30 days of receipt (Sec. 17) and becomes enforceable 30 days after publication (Sec. 17A); under Sec. 18(3), a Tribunal Award or Conciliation Settlement binds ALL parties, heirs/successors, and ALL present and future workmen of the establishment (whereas a private out-of-conciliation settlement under Sec. 18(1) binds ONLY the signing parties!). Award remains in operation for 1 YEAR (Sec. 19(3)).",
+          "Full Wages Pending Higher Court Appeal (Sec. 17B): Where a Labour Court/Tribunal orders REINSTATEMENT and the employer challenges it in High Court/Supreme Court, employer MUST pay the workman 100% last-drawn wages during pendency of appeal if workman files an affidavit of unemployment."
+        ],
+        "caseLaws": [
+          {
+            "name": "Telco Convoy Drivers Mazdoor Sangh v. State of Bihar",
+            "citation": "AIR 1989 SC 1565",
+            "principle": "Held that while exercising power under Section 10(1), the Government acts administratively and CANNOT adjudicate the disputed question of whether drivers are 'workmen' - it must refer the dispute to the Tribunal."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between a private settlement under Section 18(1) and a conciliation settlement/award under Section 18(3), and state the protection granted by Section 17B.",
+            "a": "A Sec. 18(1) private settlement binds only the signing parties, whereas a Sec. 18(3) conciliation settlement or Tribunal Award binds ALL workmen (present and future) of the establishment. Under Sec. 17B, an employer appealing a reinstatement award must pay full last-drawn wages to the unemployed workman during appeal."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u4-t4": {
+      "id": "lab-u4-t4",
+      "subtitle": "Labour Law - I - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Strike (Sec. 2(q)) is a concerted cessation or refusal of work by workmen, whereas a Lockout (Sec. 2(l)) is the temporary closing of a place of employment or refusal by an employer to continue employing workers - antithetical industrial weapons regulated by Sections 22-25 ID Act. Strikes and lockouts are strictly prohibited without advance notice in Public Utility Services (Sec. 22) and during pending conciliation/tribunal proceedings in ALL establishments (Sec. 23), with wages depending on whether a strike is BOTH legal and justified.",
+        "legalProvision": "Sections 2(l), 2(n), 2(q), 22, 23, 24, 25, & 26, Industrial Disputes Act, 1947; Sections 62-64, Industrial Relations Code, 2020",
+        "meaning": "While strike is a recognized statutory weapon of collective bargaining (NOT an absolute Fundamental Right - T.K. Rangarajan), illegal or unjustified strikes forfeit wages and attract penal consequences.",
+        "keyPoints": [
+          "Definitions & Kinds: Strike (Sec. 2(q)) = concerted cessation/refusal of work by a body of persons acting in combination (includes stay-in/sit-down strike, pen-down strike - Punjab National Bank, token strike, sympathetic strike; 'go-slow' is serious misconduct, not a legitimate strike - Bharat Sugar Mills). Lockout (Sec. 2(l)) = employer's temporary closure/suspension of work or refusal to employ (distinct from Lay-off and Closure).",
+          "Prohibition in Public Utility Services (Sec. 22 - Railways, Postal, Power, Water, Hospitals, Banking, etc.; note IR Code, 2020 extends notice requirement to ALL industrial establishments!): NO strike or lockout without (1) giving notice within 6 WEEKS before striking/locking out, (2) waiting at least 14 DAYS after notice, (3) NOT before the expiry date specified in notice, and (4) NEVER during pendency of conciliation proceedings before a Conciliation Officer and 7 DAYS after conclusion.",
+          "General Prohibition in ALL Establishments (Sec. 23): NO workman shall strike and NO employer shall declare a lockout (a) during pendency of conciliation before a Board + 7 days, (b) during pendency before Labour Court/Tribunal/National Tribunal + 2 MONTHS, (c) during Arbitration proceedings + 2 months, or (d) during any period in which a Settlement or Award is in operation on covered matters.",
+          "Illegal Strikes/Lockouts (Sec. 24) & Right to Wages (Syndicate Bank v. K. Umesh Nayak): A strike/lockout commenced in contravention of Sec. 22 or 23 or continued in breach of a Sec. 10(3) prohibitory order is ILLEGAL (a lockout declared in consequence of an illegal strike is NOT illegal - Sec. 24(3)). Under Syndicate Bank (1994), workmen get strike-period wages ONLY if the strike is BOTH LEGAL AND JUSTIFIED (if illegal OR unjustified -> NO wages on 'No Work, No Pay')."
+        ],
+        "caseLaws": [
+          {
+            "name": "Syndicate Bank v. K. Umesh Nayak",
+            "citation": "1994 5 SCC 572",
+            "principle": "5-judge Constitution Bench resolved conflicting rulings: to claim wages for a strike period, workmen must prove the strike was BOTH legal (complying with Secs. 22-23) AND justified (reasonable demands, peaceful conduct)."
+          },
+          {
+            "name": "T.K. Rangarajan v. Government of Tamil Nadu",
+            "citation": "2003 6 SCC 581",
+            "principle": "Held that government employees have neither a fundamental, legal, nor moral right to go on strike."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the four mandatory notice/cooling-off conditions under Section 22 ID Act for a strike in a Public Utility Service, and state when workmen are entitled to wages during a strike (Syndicate Bank).",
+            "a": "(1) Notice within 6 weeks before strike, (2) at least 14 days' waiting period, (3) not before date specified in notice, and (4) not during conciliation before a Conciliation Officer + 7 days. Per Syndicate Bank, wages are payable ONLY if the strike is BOTH legal AND justified."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

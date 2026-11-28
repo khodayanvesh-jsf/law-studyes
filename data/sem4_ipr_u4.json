@@ -1,0 +1,158 @@
+{
+  "subjects": [
+    {
+      "id": "intellectual-property-law",
+      "title": "Intellectual Property Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Patents Act, 1970 - Patentability, Sec. 3 Non-Patentable Inventions, Procedure, Compulsory Licensing, Revocation & Infringement",
+          "topics": [
+            {"id": "ipr-u4-t1", "title": "1. Patents Act, 1970 - Patentability Criteria (Sec. 2(1)(j)) & Non-Patentable Inventions (Secs. 3 & 4 - Novartis Sec. 3(d) & Software Sec. 3(k))"},
+            {"id": "ipr-u4-t2", "title": "2. Procedure for Grant of Patent - Filing, Specifications (Secs. 9-10), Publication, Examination, Pre/Post-Grant Opposition (Sec. 25) & Term (Sec. 53)"},
+            {"id": "ipr-u4-t3", "title": "3. Rights & Obligations of Patentee (Sec. 48), Working of Patents, Compulsory Licensing (Secs. 84, 92 & 92A - Bayer v. Natco) & Govt Use"},
+            {"id": "ipr-u4-t4", "title": "4. Revocation & Surrender of Patents (Secs. 63-66), Patent Infringement, Statutory Defences (Bolar Exemption Sec. 107A) & Remedies"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "ipr-u4-t1": {
+      "id": "ipr-u4-t1",
+      "subtitle": "Intellectual Property Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Patent is a 20-year statutory monopoly granted by the State in exchange for full public technical disclosure of a new invention. Under Section 2(1)(j) of the Patents Act, 1970, an invention is patentable ONLY if it satisfies THREE cumulative criteria - Novelty (absolute global newness), Inventive Step (technical advance / non-obviousness to a person skilled in the art - Sec. 2(1)(ja)), and Industrial Applicability - AND does NOT fall within the 16 strict statutory exclusions of Section 3 (notably anti-evergreening Sec. 3(d) & software Sec. 3(k)) or Atomic Energy (Sec. 4).",
+        "legalProvision": "Sections 2(1)(j), 2(1)(ja), 2(1)(ac), 3(a)-(p), & 4, Patents Act, 1970 (as amended in 2002 & 2005)",
+        "meaning": "India's Section 3 acts as a powerful public-interest filter stopping frivolous pharmaceutical evergreening, monopolization of traditional knowledge (neem/turmeric), medical-treatment patents, and abstract software algorithms.",
+        "keyPoints": [
+          "Three Cumulative Criteria of Patentability (Sec. 2(1)(j)): (1) NOVELTY (Sec. 2(1)(l) - NOT anticipated by prior publication or public use anywhere in the world before filing/priority date), (2) INVENTIVE STEP / NON-OBVIOUSNESS (Sec. 2(1)(ja) - involves a technical advance over existing knowledge OR economic significance, making the invention NOT OBVIOUS to a 'person skilled in the art' - Bishwanath Prasad Radhey Shyam v. H.M. Industries), and (3) CAPABLE OF INDUSTRIAL APPLICATION (Sec. 2(1)(ac) - can be made or used in an industry).",
+          "Key Non-Patentable Inventions Under Section 3 & Section 4 (High-Yield Exam Clauses): Sec. 3(a) frivolous / contrary to natural laws; Sec. 3(b) contrary to public order/morality or serious prejudice to human/animal/plant life/environment; Sec. 3(c) mere DISCOVERY of a scientific principle or living/non-living thing occurring in nature; Sec. 3(d) ANTI-EVERGREENING CLAUSE (mere discovery of a NEW FORM of a known substance - salts, esters, polymorphs - NOT patentable UNLESS it results in SIGNIFICANT ENHANCEMENT OF KNOWN THERAPEUTIC EFFICACY - Novartis AG v. Union of India, 2013!); Sec. 3(e) mere admixture; Sec. 3(f) mere workshop rearrangement of known devices; Sec. 3(h) method of agriculture/horticulture; Sec. 3(i) medical/surgical/diagnostic treatment of humans/animals; Sec. 3(j) plants & animals in whole/part (other than micro-organisms) and essentially biological processes; Sec. 3(k) mathematical/business method, COMPUTER PROGRAMME PER SE, or algorithms (Ferid Allani - computer-related inventions showing 'technical effect/contribution' ARE patentable!); Sec. 3(p) Traditional Knowledge (TKDL protects turmeric/neem/basmati); Section 4 bars Atomic Energy inventions.",
+          "2005 Product Patent Shift: India originally permitted only Process Patents for pharma/food/chemicals (1970 Act); the TRIPS-mandated 2005 Amendment restored Product Patents in pharma while simultaneously adding Section 3(d) to safeguard generic affordable medicines."
+        ],
+        "caseLaws": [
+          {
+            "name": "Novartis AG v. Union of India",
+            "citation": "2013 6 SCC 1",
+            "principle": "Landmark global public-health patent ruling: rejected Novartis's patent claim for Glivec (beta-crystalline form of imatinib mesylate) under Section 3(d), holding 'efficacy' for pharmaceuticals strictly means THERAPEUTIC EFFICACY, not merely better bioavailability or storage stability."
+          },
+          {
+            "name": "Bishwanath Prasad Radhey Shyam v. Hindustan Metal Industries",
+            "citation": "AIR 1982 SC 1444",
+            "principle": "Foundational Indian authority on Inventive Step: a mere workshop improvement or obvious combination of known mechanical parts lacks inventive step and is liable to revocation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three cumulative patentability requirements under Section 2(1)(j), and explain what the Supreme Court ruled in Novartis AG (2013) regarding 'efficacy' under Section 3(d).",
+            "a": "Novelty, Inventive Step (non-obviousness), and Industrial Applicability. In Novartis, the SC held that under Section 3(d), a new form of a known drug is patentable ONLY if it demonstrates enhanced THERAPEUTIC efficacy, blocking evergreening of existing medicines."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u4-t2": {
+      "id": "ipr-u4-t2",
+      "subtitle": "Intellectual Property Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Obtaining a patent under Sections 6-53 of the Patents Act, 1970 moves through six disciplined stages: Filing by True & First Inventor/Assignee (Provisional or Complete Specification under Secs. 9-10), Publication at 18 months (Sec. 11A), Request for Examination within 31 months (Sec. 11B - amended 2024 Rules!), Substantive Examination & FER compliance, Pre-Grant Opposition by ANY person (Sec. 25(1)), and Grant (Sec. 43) for a uniform 20-YEAR TERM from filing date (Sec. 53) - open to Post-Grant Opposition within 1 year (Sec. 25(2)).",
+        "legalProvision": "Sections 6-11B, 12-21, 25(1)-(2), 43, & 53, Patents Act, 1970 (read with Patents Amendment Rules, 2024)",
+        "meaning": "Complete Specification (Sec. 10) is the heart of a patent: it must disclose the invention clearly enough for a skilled technician to replicate it once the 20-year monopoly ends, and define the exact legal fence through 'Claims'.",
+        "keyPoints": [
+          "Who May Apply (Sec. 6) & Specifications (Secs. 9-10): True & first inventor, assignee, or legal representative. May file PROVISIONAL SPECIFICATION first to lock an early priority date, followed strictly within 12 MONTHS by a COMPLETE SPECIFICATION (Sec. 9 - else deemed abandoned). Complete Specification (Sec. 10) MUST include Title, Abstract, Full Written Description + Best Method of Performing the Invention, Claims defining exact monopoly scope, and Unity of Invention.",
+          "Publication (Sec. 11A) & Examination (Secs. 11B & 12-21): Application is published in Patent Journal automatically after 18 MONTHS from filing/priority date (early publication optional on fee). Examination is NOT automatic - applicant must file Request for Examination (RFE) within 31 MONTHS (shortened from 48 months by Patents Amendment Rules, 2024!) -> Examiner issues First Examination Report (FER) -> Applicant must put application in order for grant within 6 months (extendable by 3 months under Sec. 21).",
+          "Pre-Grant Opposition (Sec. 25(1)) vs Post-Grant Opposition (Sec. 25(2)): Unique Indian double-check against bad patents -> PRE-GRANT OPPOSITION: Filed by 'ANY PERSON' (even NGOs/patient groups!) after publication and BEFORE grant on 11 statutory grounds (no fee/simple representation); POST-GRANT OPPOSITION: Filed ONLY by a 'PERSON INTERESTED' within 1 YEAR after publication of grant, examined by a 3-member Opposition Board (Sec. 25(3)).",
+          "Grant & Term of Patent (Secs. 43 & 53): Uniform Term = 20 YEARS from the date of filing of the application (for PCT national phase, 20 years from international PCT filing date - Sec. 53), subject to annual renewal fees starting from 3rd year; enters Public Domain immediately upon expiry."
+        ],
+        "caseLaws": [
+          {
+            "name": "J. Mitra & Co. Pvt. Ltd. v. Assistant Controller of Patents & Designs",
+            "citation": "2008 10 SCC 368",
+            "principle": "Distinguished Pre-Grant Opposition under Section 25(1) (open to 'any person' as an aid to examination before grant) from Post-Grant Opposition under Section 25(2) (restricted to 'persons interested' within 1 year of grant)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two key differences between Pre-Grant Opposition (Sec. 25(1)) and Post-Grant Opposition (Sec. 25(2)), and state the uniform term of a Patent under Section 53.",
+            "a": "Pre-Grant Opposition can be filed by ANY person between publication and grant, whereas Post-Grant Opposition can be filed ONLY by a 'person interested' within 1 year after grant (reviewed by an Opposition Board). Uniform Patent Term under Sec. 53 is 20 years from filing date."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u4-t3": {
+      "id": "ipr-u4-t3",
+      "subtitle": "Intellectual Property Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 48 confers exclusive rights on a patentee to prevent unauthorized making, using, offering for sale, selling, or importing the patented product/process in India - paired under Section 83 with a public-interest obligation to commercially 'work' the invention in India (Form 27). If a patentee abuses monopoly through exorbitant prices or non-working, Sections 84, 92, and 92A empower the Controller to grant a Compulsory Licence to a generic manufacturer (famously exercised in Bayer v. Natco for cancer drug Nexavar).",
+        "legalProvision": "Sections 47, 48, 83, 84, 92, 92A, 100, & 146, Patents Act, 1970; TRIPS Article 31 & 31bis",
+        "meaning": "Section 83 explicitly declares that patents are NOT granted merely to enable patentees to enjoy a monopoly for importing expensive foreign goods - they must foster domestic technology transfer and affordable public access.",
+        "keyPoints": [
+          "Rights of Patentee (Sec. 48) & Statutory Conditions (Sec. 47): Product Patent -> exclusive right to stop third parties from making, using, offering for sale, selling, or importing that product in India. Process Patent -> stops unauthorized use of the process AND commercial dealing in products obtained directly by that process. Section 47 subjects EVERY patent to four built-in conditions: Government own use, experimental/research/teaching use, and Government import/distribution of medicines for public hospitals.",
+          "Compulsory Licensing on Application (Sec. 84 - Bayer v. Natco Pharma, 2012/2014): At any time AFTER 3 YEARS from date of grant, any 'person interested' may apply to Controller for a Compulsory Licence on ANY ONE of THREE grounds: (1) Reasonable requirements of the public with respect to the patented invention have NOT been satisfied, (2) Patented invention is NOT available to the public at a REASONABLY AFFORDABLE PRICE, OR (3) Patented invention is NOT WORKED IN THE TERRITORY OF INDIA. Controller fixes reasonable royalty for patentee (e.g., 6-7% in Bayer v. Natco).",
+          "Special Compulsory Licences (Secs. 92 & 92A) & Government Use (Secs. 100-102): Section 92 empowers Central Government to notify immediate Compulsory Licences WITHOUT waiting 3 years during 'National Emergency, Extreme Urgency, or Public Non-Commercial Use' (epidemics/pandemics); Section 92A (implementing Doha Art. 31bis) allows Compulsory Licences to manufacture and EXPORT patented medicines to Least Developed Countries lacking pharma manufacturing capacity; Section 100 allows direct Government use/acquisition (Sec. 102) on royalty/compensation."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bayer Corporation v. Union of India & Natco Pharma Ltd.",
+            "citation": "AIR 2014 Bom 178 (SLP dismissed by SC 2014)",
+            "principle": "Upheld India's first-ever Compulsory Licence under Section 84 to Hyderabad-based Natco Pharma for kidney/liver cancer drug Sorafenib Tosylate (Nexavar), cutting monthly price from Rs. 2.8 lakhs to Rs. 8,800 because Bayer failed all three Section 84 grounds."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the waiting period and three statutory grounds for granting a Compulsory Licence under Section 84 of the Patents Act, 1970, and explain the emergency bypass under Section 92.",
+            "a": "Waiting period: 3 years from patent grant. Grounds: (1) public's reasonable requirements unsatisfied, (2) not available at a reasonably affordable price, or (3) not worked in India (Bayer v. Natco). Sec. 92 waives the 3-year wait during national emergency, extreme urgency, or public non-commercial use."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u4-t4": {
+      "id": "ipr-u4-t4",
+      "subtitle": "Intellectual Property Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A granted patent is NEVER presumed permanently valid (Sec. 13(4)): it can be voluntarily Surrendered (Sec. 63) or Revoked by the High Court on petition or infringement counter-claim across 17 grounds (Sec. 64), by Central Government in public interest (Sec. 66), or for persistent non-working (Sec. 85). Patent Infringement suits (literal or Doctrine of Equivalents) allow civil injunctions and damages (NO criminal jail for patent infringement in India!), balanced by key defences including the Bolar Regulatory Exemption and Parallel Imports under Section 107A.",
+        "legalProvision": "Sections 63, 64, 65, 66, 85, 104, 104A, 107, 107A, & 108, Patents Act, 1970",
+        "meaning": "Unlike Copyright and Trademarks, Patent Infringement in India is STRICTLY A CIVIL WRONG (zero criminal imprisonment) because patent validity and claim boundaries involve complex technical disputes.",
+        "keyPoints": [
+          "Surrender (Sec. 63) & Revocation of Patents (Secs. 64-66 & 85): Patentee may surrender patent anytime by notice to Controller (Sec. 63). Under Section 64, a patent may be REVOKED by the High Court (on petition of any person interested, Central Govt, or defendant's Counter-Claim in an infringement suit) on grounds including prior claiming, lack of entitlement, wrongful obtaining, lack of novelty/inventive step/utility, non-patentable subject matter (Sec. 3), insufficient disclosure, failure to disclose foreign filings (Sec. 8), or undisclosed biological/traditional-knowledge origin. Section 65 revokes Atomic Energy patents; Section 66 empowers Central Govt to revoke a patent mischievous to State or generally prejudicial to public; Section 85 revokes for non-working 2 years after a Compulsory Licence.",
+          "Patent Infringement, Reversal of Burden (Sec. 104A) & Jurisdiction (Sec. 104): Covers LITERAL INFRINGEMENT (copying every element of claims) and DOCTRINE OF EQUIVALENTS (colourable/insubstantial technical substitution achieving the same function-way-result - F. Hoffmann-La Roche v. Cipla). Under Sec. 104A (TRIPS Art. 34), in a PROCESS PATENT suit for a NEW product, the court may shift the burden onto the defendant to prove his manufacturing process is different! Suit starts in District Court, but if defendant files a Sec. 64 Counter-Claim for Revocation, the ENTIRE suit transfers compulsorily to the HIGH COURT (Sec. 104 Proviso).",
+          "Crucial Statutory Defences (Secs. 107 & 107A): (1) Every Sec. 64 revocation ground works as an infringement defence (Sec. 107); (2) BOLAR / REGULATORY EXEMPTION (Sec. 107A(a) - generic pharma companies may make/use/export a patented drug strictly for R&D and regulatory approval submissions BEFORE patent expiry so generic versions launch on Day 1 after expiry - Bayer v. Union of India, 2019 Del HC!); and (3) PARALLEL IMPORTS / INTERNATIONAL EXHAUSTION (Sec. 107A(b) - importing patented products from any person duly authorized under law to produce/sell them abroad is NOT infringement).",
+          "Civil Remedies (Sec. 108): Temporary/permanent injunctions, Damages OR Account of Profits (not both), and seizure/forfeiture/destruction of infringing goods (note: innocent infringer unaware of patent is exempted from damages under Sec. 111)."
+        ],
+        "caseLaws": [
+          {
+            "name": "F. Hoffmann-La Roche Ltd. v. Cipla Ltd.",
+            "citation": "2015 65 PTC 1 (Del HC DB)",
+            "principle": "Laid down India's authoritative analytical framework for patent claim construction, inventive-step scrutiny, and comparing patented claims against allegedly infringing pharmaceutical products (Erlotinib / Tarceva)."
+          },
+          {
+            "name": "Bayer Corporation v. Union of India (Bolar Exemption Case)",
+            "citation": "2019 78 PTC 521 (Del HC DB)",
+            "principle": "Broadly interpreted Section 107A(a) (Bolar Exemption), holding that exporting patented active pharmaceutical ingredients solely for foreign regulatory bio-equivalence/approval testing is completely lawful and NOT infringement."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Is Patent Infringement a criminal offence in India, what happens if a defendant files a revocation counter-claim in a District Court suit (Sec. 104), and what does the 'Bolar Exemption' under Section 107A(a) protect?",
+            "a": "No - patent infringement is strictly a civil wrong in India. Under Sec. 104 Proviso, filing a revocation counter-claim transfers the entire suit automatically to the High Court. Sec. 107A(a) (Bolar Exemption) allows generic drug makers to test/submit/export patented drugs strictly for regulatory approval before patent expiry."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

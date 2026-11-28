@@ -1,0 +1,155 @@
+{
+  "subjects": [
+    {
+      "id": "land-laws",
+      "title": "Land Laws",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Protective Land Laws in Telangana - Scheduled Areas LTR 1/70, Assigned Lands POT Act 1977, Land Grabbing Act 1982 & FRA/PESA",
+          "topics": [
+            {"id": "lan-u5-t1", "title": "1. Telangana Scheduled Areas Land Transfer Regulation (LTR) 1 of 1959 & 1 of 1970 - Absolute Ban, Presumption & Samatha Case"},
+            {"id": "lan-u5-t2", "title": "2. Telangana Assigned Lands (Prohibition of Transfers) Act, 1977 (POT Act) - Void Transfers, Exceptions (Sec. 3(5)) & Restoration (Sec. 4)"},
+            {"id": "lan-u5-t3", "title": "3. Telangana Land Grabbing (Prohibition) Act, 1982 - Land Grabber Definition, Special Court Powers, Burden of Proof & Penalties"},
+            {"id": "lan-u5-t4", "title": "4. Scheduled Tribes & Other Traditional Forest Dwellers (Forest Rights Act / FRA), 2006 & PESA Act, 1996 (Tribal Self-Governance)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lan-u5-t1": {
+      "id": "lan-u5-t1",
+      "subtitle": "Land Laws - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Enacted by the Governor under Paragraph 5(2) of the Fifth Schedule of the Constitution to stop non-tribal exploitation in Telangana's Agency / Scheduled Areas (Adilabad, Komaram Bheem Asifabad, Bhadradri Kothagudem, Mulugu, Khammam, Nagarkurnool, etc.), Regulation 1 of 1959 as strengthened by Regulation 1 of 1970 ('LTR 1/70') renders ABSOLUTELY NULL AND VOID EVERY transfer of immovable property in a Scheduled Area to ANY non-tribal - even between two non-tribals! In Samatha v. State of A.P. (1997), the Supreme Court extended 'person' even to the STATE GOVERNMENT, banning private mining leases in Scheduled Areas.",
+        "legalProvision": "Fifth Schedule (Art. 244(1)), Constitution of India; Telangana Scheduled Areas Land Transfer Regulation, 1959 (as amended by Regulation 1 of 1970 - Sec. 3)",
+        "meaning": "LTR 1/70 is India's strongest tribal land shield: a non-tribal owning land in a Scheduled Area can sell it ONLY to a Scheduled Tribe member or a tribal co-operative society - never to another non-tribal.",
+        "keyPoints": [
+          "Absolute Prohibition on Transfers (Sec. 3(1)(a) - Amended by Reg. 1 of 1970, effective 3 Feb 1970): Notwithstanding anything in any law, ANY transfer of immovable property situated in Agency/Scheduled Areas by a person (WHETHER OR NOT SUCH PERSON IS A MEMBER OF A SCHEDULED TRIBE!) is ABSOLUTELY NULL AND VOID unless made strictly in favour of a SCHEDULED TRIBE member or a society composed solely of ST members. Even a non-tribal CANNOT transfer land in a Scheduled Area to another non-tribal (upheld by 5-judge Bench in P. Rami Reddy v. State of A.P., 1988!).",
+          "Statutory Presumption Against Non-Tribals (Sec. 3(1)(b)): Until the contrary is proved, ANY immovable property in the Agency tracts found in the possession of a NON-TRIBAL is PRESUMED to have been acquired through a void transfer from a Scheduled Tribe member - placing the heavy burden on the non-tribal to prove lawful pre-1970/pre-1959 possession.",
+          "Eviction & Restoration Machinery (Sec. 3(2)-(3)): Agent to Government (District Collector), Agency Divisional Officer (RDO), or Special Deputy Collector (Tribal Welfare) may suo motu or on application summarily eject the non-tribal transferee and restore land to the tribal transferor/heirs (or assign to landless STs if transferor unavailable). Appeal lies to Agent to Government / State Govt; Civil Court attachment/sale of ST land in execution is strictly barred (Sec. 3(1)(c)).",
+          "Samatha Judgment (1997): Held that the word 'person' in Section 3(1) INCLUDES THE STATE GOVERNMENT - so even the State cannot grant mining leases over Government/forest land in Fifth Schedule Areas to private non-tribal companies (only to tribal co-operatives or State instrumentalities like SCCL/APMDC)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Samatha v. State of Andhra Pradesh",
+            "citation": "1997 8 SCC 191",
+            "principle": "3-judge Bench held that under Regulation 1 of 1970 (Sec. 3(1)), 'person' includes the State Government itself; private non-tribal mining leases in Fifth Schedule tribal areas are void, protecting tribal land, ecology, and livelihood."
+          },
+          {
+            "name": "P. Rami Reddy v. State of Andhra Pradesh",
+            "citation": "1988 3 SCC 433",
+            "principle": "Upheld the constitutionality of the 1970 Amendment prohibiting even non-tribal-to-non-tribal land sales in Scheduled Areas as a reasonable restriction under Article 19(5) safeguarding vulnerable tribals."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can a non-tribal lawfully sell his own patta land situated inside a Scheduled Area of Telangana to another non-tribal under Regulation 1 of 1970, and what did Samatha (1997) hold about the word 'person'?",
+            "a": "No - Section 3(1)(a) renders EVERY transfer in a Scheduled Area (including non-tribal to non-tribal) null and void unless made to a Scheduled Tribe member or ST society (P. Rami Reddy). Samatha held 'person' includes the State Government, barring private non-tribal mining leases in Scheduled Areas."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u5-t2": {
+      "id": "lan-u5-t2",
+      "subtitle": "Land Laws - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Telangana Assigned Lands (Prohibition of Transfers) Act, 1977 (POT Act - Act 9 of 1977) protects Government lands assigned free to landless poor (including Laoni/D-Form pattas and ceiling surplus grants) by declaring ALL transfers (sale, gift, mortgage, lease, or court-decree attachment) VOID AB INITIO with retrospective effect (Sec. 3), while narrowly protecting an innocent landless-poor purchaser who bought in good faith BEFORE 21 January 1977 (Sec. 3(5)).",
+        "legalProvision": "Sections 2(1), 3, 4, 4A, 4B, 5, & 7, Telangana Assigned Lands (Prohibition of Transfers) Act, 1977 (POT Act)",
+        "meaning": "Assigned lands are welfare assets granted to lift landless rural families out of poverty - heritable by heirs, never sellable to rich land sharks (except mortgaging to specified cooperative/scheduled banks for crop loans).",
+        "keyPoints": [
+          "Definition of 'Assigned Land' (Sec. 2(1)): Lands assigned by Government to landless poor persons under rules for the time being in force, SUBJECT TO THE CONDITION OF NON-ALIENATION (includes lands allotted under ceiling laws; Note: pre-1954 Telangana Laoni pattas issued WITHOUT a non-alienation condition fall outside POT Act - G.O.Ms.No. 1406 of 1958 introduced the non-alienation clause in Telangana!).",
+          "Absolute Prohibition & Nullity (Secs. 3 & 5): No assigned land shall be transferred, and NO right or title is acquired by any transferee (Sec. 3(1)-(3) - retrospective!). Registration Officers are strictly prohibited from registering any sale/gift deed covering assigned land (Sec. 5 & Sec. 22A Registration Act). EXCEPTION FOR INSTITUTIONAL CREDIT: Assignee may mortgage assigned land ONLY to Central/State Govt, Co-operative Society, or Scheduled Bank for agricultural credit.",
+          "Solitary Bona Fide Purchaser Exception (Sec. 3(5)): Saves ONLY a purchaser who (1) is HIMSELF A LANDLESS POOR PERSON (holding <= 2.5 acres wet or <= 5 acres dry), (2) purchased the assigned land IN GOOD FAITH FOR VALUABLE CONSIDERATION, and (3) purchased it PRIOR TO COMMENCEMENT OF THE ACT (21 January 1977) (purchases after 21 Jan 1977 get ZERO protection!).",
+          "Resumption, Restoration & Compensation (Sec. 4 & LAO-cum-RDO v. Mekala Pandu, 2004): District Collector / Tahsildar (after Form I & II notice to both assignee and transferee) resumes transferred assigned land and restores it to the original assignee/heirs ONCE (on a second violation, vests permanently in Government - Sec. 4(1)(b)). Under Mekala Pandu (7-judge Full Bench), if the State compulsorily acquires assigned land for a public project, the assignee MUST be paid FULL MARKET VALUE compensation on par with private patta owners!"
+        ],
+        "caseLaws": [
+          {
+            "name": "LAO-cum-RDO, Chevella Division v. Mekala Pandu",
+            "citation": "AIR 2004 AP 250 (7-Judge FB)",
+            "principle": "Landmark 7-judge Full Bench holding that assignees of Government land are constitutional owners under Article 300A: if the State resumes assigned land for a public purpose, it MUST pay full market value + solatium exactly like private patta land, not ex-gratia pittance."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three cumulative conditions required for a buyer to claim protection under Section 3(5) of the Telangana POT Act, 1977, and state what the 7-judge Full Bench held in Mekala Pandu (2004).",
+            "a": "Under Sec. 3(5), the buyer must be (1) a landless poor person himself, (2) buying in good faith for valuable consideration, (3) PRIOR to 21 January 1977. Mekala Pandu held that assignees whose assigned land is acquired for public projects are entitled to full market-value compensation on par with patta owners."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u5-t3": {
+      "id": "lan-u5-t3",
+      "subtitle": "Land Laws - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Enacted to crush organized urban and peri-urban land mafias illegally grabbing Government, endowment, Waqf, local-body, and private urban lands, the Telangana Land Grabbing (Prohibition) Act, 1982 criminalizes 'Land Grabbing' (Secs. 3-4: 6 months to 5 years' imprisonment + fine), empowers Special Tribunals (District Judge) and a Special Court (High Court Judge Chairman) with combined Civil + Criminal jurisdiction, and shifts the BURDEN OF PROOF onto the alleged land grabber once prima facie ownership is shown (Sec. 10).",
+        "legalProvision": "Sections 2(d), 2(e), 3, 4, 7, 7A, 8, 9, & 10, Telangana Land Grabbing (Prohibition) Act, 1982 (Act 12 of 1982)",
+        "meaning": "Unlike slow ordinary civil title suits (taking 15+ years while grabbers build and sell apartments), the 1982 Act combines speedy eviction, mesne profits/compensation, and criminal jail in a single specialized forum.",
+        "keyPoints": [
+          "Definitions of 'Land Grabbing' (Sec. 2(e)) & 'Land Grabber' (Sec. 2(d)): 'Land Grabbing' means EVERY activity of grabbing ANY land (Government, local authority, religious/charitable endowment, Waqf, or private urban/notified land) WITHOUT ANY LAWFUL ENTITLEMENT and with a view to illegally taking possession, entering unauthorizedly, constructing structures, or creating fraudulent leases/sales (requires mens rea / dishonest grabbing intent, NOT a bona fide title dispute - Konda Lakshmana Bapuji v. Govt. of A.P., 2002!). 'Land Grabber' includes the direct grabber, FINANCIERS, ABETTORS, land-mafia promoters, and successors-in-interest.",
+          "Criminal Offence & Penalties (Secs. 3-5): Land grabbing is declared strictly unlawful (Sec. 3); committing or abetting land grabbing is punishable with IMPRISONMENT OF 6 MONTHS TO 5 YEARS AND FINE UP TO Rs. 5,000 (Sec. 4); selling/creating sham titles/financing grabbed land carries equal punishment (Sec. 5).",
+          "Special Court (Secs. 7-9) & Special Tribunal (Sec. 7A): SPECIAL COURT (constituted at State level with sitting/retired High Court Judge as Chairman + Judicial & Revenue Members) has combined powers of a Civil Court AND a Court of Session (Sec. 9), deciding title, possession, eviction, compensation/profits, AND criminal punishment together within 6 months (Note: following abolition/reorganization of the separate Special Court bench in Telangana, District Courts / Special Tribunals under Sec. 7A handle Land Grabbing Original Petitions - LGOPs). SPECIAL TRIBUNAL (District Judge - Sec. 7A) handles civil title/eviction claims with appeal to Special Court/High Court.",
+          "Reversal of Burden of Proof (Sec. 10): Once the applicant proves prima facie that the land belongs to Government/endowment/private owner and was grabbed, the STATUTORY BURDEN OF PROOF shifts directly onto the alleged land grabber to prove he has NOT grabbed the land!"
+        ],
+        "caseLaws": [
+          {
+            "name": "Konda Lakshmana Bapuji v. Government of Andhra Pradesh",
+            "citation": "2002 3 SCC 258",
+            "principle": "Landmark Supreme Court ruling interpreting Section 2(d)-(e) of the 1982 Act: 'land grabbing' requires an intentional, unlawful act of taking possession without lawful entitlement (initial lawful possession turned into a bona fide dispute is not grabbing, though forcible/fraudulent usurpation is)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Define 'Land Grabbing' under Section 2(e) of the Telangana Land Grabbing (Prohibition) Act, 1982, explain Konda Lakshmana Bapuji's clarification, and state how Section 10 alters the Burden of Proof.",
+            "a": "Land grabbing is taking possession or dealing with Government, endowment, Waqf, or private land without lawful entitlement with dishonest intent. Konda Lakshmana Bapuji clarified it requires unlawful grabbing intent, not a bona fide title dispute. Under Sec. 10, once prima facie grabbing is shown, the burden shifts onto the alleged grabber to prove lawful entitlement."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lan-u5-t4": {
+      "id": "lan-u5-t4",
+      "subtitle": "Land Laws - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Two landmark Central statutes protect tribal land, forest livelihoods, and self-governance in Telangana's Scheduled and forest areas: (1) the Scheduled Tribes and Other Traditional Forest Dwellers (Recognition of Forest Rights) Act, 2006 ('Forest Rights Act / FRA' - recognizing Individual 'Podu' forest-land pattas up to 4 hectares and Community Forest Rights for families in occupation before 13 December 2005), and (2) the PESA Act, 1996 (empowering tribal Gram Sabhas to prevent land alienation and approve land acquisition/minor minerals).",
+        "legalProvision": "Scheduled Tribes and Other Traditional Forest Dwellers (Recognition of Forest Rights) Act, 2006 (Secs. 3-6); Panchayats (Extension to the Scheduled Areas) Act, 1996 (PESA - Sec. 4)",
+        "meaning": "FRA 2006 undoes 'historical injustice' done during colonial forest reservation (which labelled traditional tribal forest dwellers as 'encroachers'), while PESA puts the tribal Gram Sabha at the centre of land and resource decisions.",
+        "keyPoints": [
+          "Forest Rights Act / FRA, 2006 - Eligibility & Cut-Off Date (Secs. 2 & 4): Recognizes pre-existing forest rights of (a) Forest Dwelling Scheduled Tribes (FDSTs) primarily residing in and dependent on forests BEFORE 13 DECEMBER 2005, and (b) Other Traditional Forest Dwellers (OTFDs) residing/dependent on forest land for AT LEAST 3 GENERATIONS (75 YEARS) prior to 13 December 2005.",
+          "Individual & Community Forest Rights (Sec. 3 FRA): (1) INDIVIDUAL FOREST RIGHTS (IFR - 'Podu' land pattas in Telangana) to hold and live in forest land under actual occupation for self-cultivation UP TO A MAXIMUM OF 4 HECTARES (~10 acres) - strictly HERITABLE, NOT ALIENABLE OR TRANSFERABLE, and registered JOINTLY in the names of BOTH spouses (Sec. 4(4)!); (2) COMMUNITY FOREST RIGHTS (CFR) - nistar rights, ownership/collection/sale of Minor Forest Produce (MFP - tendu, mahua, bamboo, honey), grazing, fishing, and right to protect/conserve/manage Community Forest Resources (Sec. 3(1)(i)). No eviction until full verification process completes (Sec. 4(5)).",
+          "Three-Tier Recognition Process (Sec. 6 FRA): Initiated strictly by the GRAM SABHA (via Forest Rights Committee) -> verified by Sub-Divisional Level Committee (SDLC) -> finally approved and title issued by District Level Committee (DLC chaired by District Collector).",
+          "PESA Act, 1996 (Panchayats Extension to Scheduled Areas - Sec. 4): Extends Part IX Panchayats to Fifth Schedule Areas with sweeping tribal self-governance powers -> (1) Mandatory GRAM SABHA CONSULTATION before land acquisition or resettlement (Sec. 4(i)), (2) Mandatory Gram Sabha recommendation for prospecting licences / minor mineral leases (Sec. 4(k)-(l)), (3) Power of Gram Sabha to PREVENT ALIENATION OF TRIBAL LAND AND RESTORE UNLAWFULLY ALIENATED LAND (Sec. 4(m)(iii)), and (4) Ownership of Minor Forest Produce & control over local markets/moneylending."
+        ],
+        "caseLaws": [
+          {
+            "name": "Orissa Mining Corporation Ltd. v. Ministry of Environment & Forest (Vedanta / Niyamgiri Case)",
+            "citation": "2013 6 SCC 476",
+            "principle": "3-judge Bench upheld the supreme statutory authority of tribal Gram Sabhas under FRA 2006 and PESA 1996 to decide religious, cultural, and forest-livelihood rights before forest diversion for mining."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the cut-off date and maximum land area for Individual Forest Rights (IFR / Podu patta) under the Forest Rights Act, 2006, and state two land-protection powers of a Gram Sabha under PESA, 1996.",
+            "a": "Cut-off date: occupation prior to 13 December 2005 (75 years / 3 generations for OTFDs); max area: 4 hectares (heritable, non-alienable, joint spouse title). Under PESA Sec. 4, the Gram Sabha has mandatory consultation before land acquisition and power to prevent tribal land alienation and restore unlawfully alienated land."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

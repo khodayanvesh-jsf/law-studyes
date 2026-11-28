@@ -1,0 +1,245 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-crimes",
+      "title": "Law of Crimes (IPC / BNS)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Offences Affecting Human Body - Homicide, Hurt, Restraint, Assault, Kidnapping & Sexual Offences",
+          "topics": [
+            {"id": "loc-u3-t1", "title": "1. Culpable Homicide (Sec. 299 IPC / Sec. 100 BNS), Murder (Sec. 300 / Sec. 101 BNS), Exceptions & Dowry/Negligent Death"},
+            {"id": "loc-u3-t2", "title": "2. Hurt, Grievous Hurt (Secs. 319-325 IPC / Secs. 114-117 BNS) & Acid Attacks"},
+            {"id": "loc-u3-t3", "title": "3. Wrongful Restraint and Wrongful Confinement (Secs. 339-348 IPC / Secs. 126-127 BNS)"},
+            {"id": "loc-u3-t4", "title": "4. Criminal Force, Assault (Secs. 349-358 IPC / Secs. 128-136 BNS) & Outraging Modesty"},
+            {"id": "loc-u3-t5", "title": "5. Kidnapping and Abduction (Secs. 359-366 IPC / Secs. 137-142 BNS)"},
+            {"id": "loc-u3-t6", "title": "6. Sexual Offences (Rape, Aggravated Rape & BNS Sec. 69) & Unnatural Offences (Sec. 377 IPC / Navtej Singh Johar)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loc-u3-t1": {
+      "id": "loc-u3-t1",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Culpable Homicide (Sec. 299 IPC / Sec. 100 BNS) is the genus and Murder (Sec. 300 IPC / Sec. 101 BNS) is its aggravated species distinguished by higher degree of probability of death (R. v. Govinda). Five statutory exceptions reduce murder to culpable homicide not amounting to murder, alongside related fatal offences: Death by Negligence (Sec. 304A / Sec. 106 BNS) and Dowry Death (Sec. 304B / Sec. 80 BNS).",
+        "legalProvision": "Sections 299-304B IPC, 1860 (Sections 80 & 100-106 BNS, 2023)",
+        "meaning": "All murder is culpable homicide, but not all culpable homicide is murder. Courts evaluate both the offender's mental state (intention/knowledge) and the objective medical sufficiency of the injury to cause death (Virsa Singh).",
+        "keyPoints": [
+          "Culpable Homicide vs Murder (R. v. Govinda): Sec. 299 covers causing death with (a) intention of causing death, (b) intention of causing bodily injury LIKELY to cause death, or (c) knowledge that act is LIKELY to cause death. Sec. 300 elevates this to Murder when bodily injury is SUFFICIENT IN THE ORDINARY COURSE OF NATURE to cause death (Clause Thirdly - Virsa Singh) or act is SO IMMINENTLY DANGEROUS that death is in all probability certain (Clause Fourthly).",
+          "Five Exceptions Reducing Murder to Culpable Homicide (Sec. 300 / Sec. 101 BNS): (1) Grave and sudden provocation without cooling-off period (K.M. Nanavati), (2) Exceeding private defence in good faith, (3) Public servant exceeding lawful authority in good faith, (4) Sudden fight without premeditation or undue advantage, and (5) Death of consenting adult above 18.",
+          "Punishments & Mob Lynching (BNS Update): Murder carries Death or Life Imprisonment (Sec. 302 IPC / Sec. 103(1) BNS; BNS Sec. 103(2) specifically penalizes mob lynching by 5+ persons on race/caste/community grounds with death/life); Culpable Homicide not amounting to murder carries life or up to 10 years (Sec. 304 / Sec. 105 BNS).",
+          "Causing Death by Negligence (Sec. 304A IPC / Sec. 106 BNS) & Dowry Death (Sec. 304B / Sec. 80 BNS): Rash/negligent driving or medical gross negligence carries up to 2 years under IPC (enhanced to 5 years under Sec. 106(1) BNS, with 2 years for registered medical practitioners; Sec. 106(2) hit-and-run enhancement currently deferred). Dowry Death (unnatural death of wife within 7 years of marriage with prior dowry cruelty) carries minimum 7 years up to life imprisonment."
+        ],
+        "caseLaws": [
+          {
+            "name": "Virsa Singh v. State of Punjab",
+            "citation": "AIR 1958 SC 465",
+            "principle": "Laid down the classic 4-part test for Murder under Clause Thirdly of Section 300: once intentional infliction of an injury objectively sufficient in the ordinary course of nature to cause death is proved, it is murder."
+          },
+          {
+            "name": "K.M. Nanavati v. State of Maharashtra",
+            "citation": "AIR 1962 SC 605",
+            "principle": "Held that Grave and Sudden Provocation (Exception 1) fails if sufficient time elapsed for passion to cool down before the fatal act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Culpable Homicide (Sec. 299) and Murder (Sec. 300) under Clause Thirdly, and state the five exceptions to Murder.",
+            "a": "Under Sec. 299 the injury is 'likely' to cause death, whereas under Sec. 300 Clause Thirdly the injury is 'sufficient in the ordinary course of nature' to cause death (Virsa Singh). Five exceptions: grave & sudden provocation, exceeding private defence, public servant exceeding power, sudden fight, and adult consent."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u3-t2": {
+      "id": "loc-u3-t2",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Simple Hurt (Sec. 319 IPC / Sec. 114 BNS) is causing bodily pain, disease, or infirmity to any person, whereas Grievous Hurt (Sec. 320 IPC / Sec. 116 BNS) is restricted to eight grave enumerated injuries including fracture, permanent loss of sight/hearing, disfiguration, or severe incapacitation for 20 days (reduced to 15 days under BNS). Acid Attacks carry severe minimum 10-year imprisonment.",
+        "legalProvision": "Sections 319-326B IPC, 1860 (Sections 114-124 BNS, 2023)",
+        "meaning": "Gradation between simple hurt, grievous hurt, hurt by dangerous weapons, and acid attacks ensures penal proportionality based on physical gravity and permanent disability.",
+        "keyPoints": [
+          "Simple Hurt (Secs. 319 & 321-323 IPC / Secs. 114-115 BNS): Voluntarily causing bodily pain, disease, or infirmity without fatal intent; punishable with up to 1 year imprisonment and/or Rs. 1,000 fine (enhanced to Rs. 10,000 fine under Sec. 115(2) BNS); non-cognizable and bailable unless dangerous weapon is used (Sec. 324 / Sec. 118(1) BNS - up to 3 years).",
+          "Eight Kinds of Grievous Hurt (Sec. 320 IPC / Sec. 116 BNS): (1) Emasculation, (2) Permanent privation of sight of either eye, (3) Permanent privation of hearing of either ear, (4) Privation of any member or joint, (5) Destruction/permanent impairing of powers of any member/joint, (6) Permanent disfiguration of head or face, (7) Fracture or dislocation of a bone or tooth, and (8) Any hurt endangering life OR causing severe bodily pain / inability to follow ordinary pursuits for 20 days under IPC (reduced to 15 DAYS under BNS Sec. 116(h)).",
+          "Punishment for Grievous Hurt (Secs. 325-326 IPC / Secs. 117-118 BNS): Voluntarily causing grievous hurt carries up to 7 years and fine (Sec. 325 / Sec. 117(2) BNS); causing grievous hurt by dangerous weapons or corrosive substances carries life imprisonment or up to 10 years (Sec. 326 / Sec. 118(2) BNS); BNS Sec. 117(3) adds enhanced punishment (min 10 years to life) for permanent disability or persistent vegetative state.",
+          "Acid Attacks (Secs. 326A & 326B IPC / Sec. 124 BNS): Inserted by the Criminal Law Amendment Act, 2013; throwing acid causing permanent/partial damage carries minimum 10 years up to life imprisonment + fine paid directly to victim for medical treatment (Laxmi v. Union of India); attempting to throw acid carries 5-7 years."
+        ],
+        "caseLaws": [
+          {
+            "name": "Laxmi v. Union of India",
+            "citation": "2014 4 SCC 427",
+            "principle": "Regulated over-the-counter sale of acid across India and mandated free medical treatment plus minimum Rs. 3 lakh victim compensation for acid attack survivors."
+          },
+          {
+            "name": "Rambaran Mahton v. The State",
+            "citation": "AIR 1958 Pat 452",
+            "principle": "Clarified that merely staying in hospital for 20 days does not automatically establish Clause Eighthly of Section 320 unless the victim was actually unable to follow ordinary pursuits due to severe bodily pain."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List the eight categories of Grievous Hurt under Section 320 IPC / Section 116 BNS and state the key change BNS made to the 8th category.",
+            "a": "Emasculation, permanent loss of eye/ear/member/joint, permanent impairing of member/joint, permanent disfiguration of head/face, fracture/dislocation of bone or tooth, and hurt endangering life or disabling ordinary pursuits. BNS Section 116(h) reduced the disability period from 20 days to 15 days."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u3-t3": {
+      "id": "loc-u3-t3",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Wrongful Restraint (Sec. 339 IPC / Sec. 126 BNS) voluntarily obstructs a person from proceeding in ANY ONE direction in which they have a right to go, whereas Wrongful Confinement (Sec. 340 IPC / Sec. 127 BNS) restricts liberty in ALL directions within circumscribing limits. Both are cognizable and bailable offences protecting personal freedom of movement.",
+        "legalProvision": "Sections 339-348 IPC, 1860 (Sections 126-127 BNS, 2023)",
+        "meaning": "Every wrongful confinement includes wrongful restraint, but wrongful restraint is narrower because escape paths remain open. Private right-of-way obstruction in good faith is expressly exempted under the Section 339 Exception.",
+        "keyPoints": [
+          "Wrongful Restraint (Secs. 339 & 341 IPC / Sec. 126 BNS): Voluntarily obstructing a person's movement in one direction where he has a lawful right to proceed (e.g., blocking a public road or locking a tenant's entry path); Exception protects good-faith obstruction of a private way/water believed to belong to the obstructor. Punishable with up to 1 month simple imprisonment and/or Rs. 500 fine (raised to Rs. 5,000 fine under BNS Sec. 126(2)).",
+          "Wrongful Confinement (Secs. 340 & 342-348 IPC / Sec. 127 BNS): Wrongfully restraining a person so as to prevent him from proceeding beyond certain circumscribing limits (e.g., locking someone in a room, surrounding them on a road, or placing armed guards outside a house). Note: physical walls are not necessary if threat of immediate force prevents leaving.",
+          "Graded Punishments for Wrongful Confinement: Ordinary confinement -> up to 1 year and/or Rs. 1,000 fine (Rs. 5,000 under BNS); for 3+ days -> up to 3 years (Sec. 127(3) BNS; 2 years under IPC Sec. 343); for 10+ days -> up to 5 years (Sec. 127(4) BNS; 3 years under IPC Sec. 344); confinement in secret or to extort property/confession -> aggravated terms up to 3 years + fine.",
+          "Key Distinction Chart: Restraint = partial obstruction (one direction blocked, alternative route available), lighter penalty (1 month); Confinement = total obstruction (all directions blocked within boundaries), heavier penalty (1 to 5 years)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bird v. Jones",
+            "citation": "1845 7 QB 742",
+            "principle": "Classic distinction applied in Indian courts: blocking one side of a bridge while allowing the person to walk back or cross the other side is only wrongful restraint, NOT wrongful confinement (false imprisonment)."
+          },
+          {
+            "name": "Shyam Lal Sharma v. State of M.P.",
+            "citation": "1972 1 SCC 764",
+            "principle": "Held that detaining a person inside a police station without lawful arrest authority constitutes Wrongful Confinement under Section 342 IPC."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Wrongful Restraint and Wrongful Confinement with one illustration each, and state the Section 339 Exception.",
+            "a": "Blocking a person from walking north while east/west/south remain open is Wrongful Restraint (Sec. 339 / Sec. 126 BNS); locking them inside a room blocking all exits is Wrongful Confinement (Sec. 340 / Sec. 127 BNS). The Exception protects good-faith obstruction of a private path believed to be one's own."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u3-t4": {
+      "id": "loc-u3-t4",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Force (Sec. 349) becomes Criminal Force (Sec. 350 IPC / Sec. 129 BNS) when intentionally used against a person without consent to commit an offence or cause injury, fear, or annoyance. Assault (Sec. 351 IPC / Sec. 130 BNS) is a gesture or preparation causing immediate apprehension of criminal force WITHOUT actual physical contact, while Sections 354-354D IPC / Sections 74-78 BNS punish outraging a woman's modesty, sexual harassment, voyeurism, and stalking.",
+        "legalProvision": "Sections 349-358 IPC, 1860 (Sections 74-78 & 128-136 BNS, 2023)",
+        "meaning": "Criminal force corresponds roughly to 'Battery' in tort law (requires physical contact/motion), whereas Assault stops just short of contact (raising a fist or pointing a loaded gun). Mere angry words alone NEVER constitute assault unless accompanied by threatening gestures.",
+        "keyPoints": [
+          "Force & Criminal Force (Secs. 349-350 IPC / Secs. 128-129 BNS): Causing motion, change of motion, or cessation of motion to a person directly, via an object, or via an animal (e.g., unleashing a dog, pulling a chair away, throwing boiling water, or removing a woman's veil) without consent intending offence, injury, fear, or annoyance.",
+          "Assault (Sec. 351 IPC / Sec. 130 BNS): Making any gesture or preparation intending or knowing it likely to cause a person present to apprehend immediate use of criminal force (e.g., shaking a fist or unmuzzling a fierce dog). Explanation: Mere words do NOT amount to assault, though words may give threatening meaning to gestures.",
+          "General & Aggravated Punishments (Secs. 352-358 IPC / Secs. 131-136 BNS): Simple assault/criminal force -> 3 months / Rs. 500 fine (Rs. 1,000 BNS); assaulting a Public Servant to deter duty (Sec. 353 / Sec. 132 BNS) -> up to 2 years; assault to dishonour or commit theft of carried property -> up to 2 years.",
+          "Outraging Modesty & Offences Against Women (Secs. 354-354D IPC / Secs. 74-78 BNS): Assault/criminal force to outrage a woman's modesty (Sec. 354 / Sec. 74 BNS - min 1 to 5 years; Rupan Deol Bajaj), Sexual Harassment (Sec. 354A / Sec. 75 BNS), Disrobing (Sec. 354B / Sec. 76 BNS - 3 to 7 years), Voyeurism (Sec. 354C / Sec. 77 BNS), and Physical/Cyber Stalking (Sec. 354D / Sec. 78 BNS)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rupan Deol Bajaj v. Kanwar Pal Singh Gill",
+            "citation": "1995 6 SCC 194",
+            "principle": "Held that slapping a senior woman IAS officer on her posterior at a social gathering outraged her modesty under Section 354 IPC, defining modesty as the essence of a woman's dignity regardless of age."
+          },
+          {
+            "name": "State of Punjab v. Major Singh",
+            "citation": "AIR 1967 SC 63",
+            "principle": "Held that even a 7.5-month-old female infant possesses modesty by virtue of her sex; the culpable intention and nature of the act determine an offence under Section 354 IPC."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Assault and Criminal Force, and state whether threatening words alone amount to Assault under Section 351 IPC / Section 130 BNS.",
+            "a": "Criminal Force requires actual physical contact or motion without consent, whereas Assault is a gesture/preparation causing immediate apprehension of criminal force without physical contact. Mere words alone NEVER constitute assault unless paired with threatening gestures."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u3-t5": {
+      "id": "loc-u3-t5",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Kidnapping (Secs. 359-361 IPC / Sec. 137 BNS) has two forms - Kidnapping from India (any age, without consent) and Kidnapping from Lawful Guardianship (strict-liability offence protecting minors: under 16 male / under 18 female under IPC, now UNIFIED to under 18 for ALL children under BNS Sec. 137). Abduction (Sec. 362 / Sec. 138 BNS) is compelling by force or deceitfully inducing ANY person of any age to go from any place, punishable ONLY when coupled with criminal intent.",
+        "legalProvision": "Sections 359-366 & 364A IPC, 1860 (Sections 137-142 BNS, 2023)",
+        "meaning": "Kidnapping protects parental/guardian custody (so a minor's consent is legally irrelevant, though mere passive accompaniment without active 'taking or enticing' is NOT kidnapping - S. Varadarajan), whereas Abduction is an auxiliary continuing offence requiring proof of aggravated criminal intent (murder, ransom, forced marriage, or illicit intercourse).",
+        "keyPoints": [
+          "Kidnapping from Lawful Guardianship (Sec. 361 IPC / Sec. 137(1)(b) BNS): Taking or enticing a minor (under 16 male / under 18 female under IPC; UNIFIED to under 18 for BOTH boys and girls under BNS Sec. 137) or person of unsound mind out of lawful guardian's keeping WITHOUT guardian's consent. Minor's consent is immaterial; offender's good/bad motive is immaterial (strict liability); completes the instant minor leaves guardianship (not a continuing offence). Carries up to 7 years + fine (Sec. 363 / Sec. 137(2) BNS).",
+          "Meaning of 'Taking or Enticing' (S. Varadarajan v. State of Madras, 1965): If a minor girl on the verge of majority voluntarily leaves her father's home on her own initiative and asks the accused to marry her without any active inducement/lure by him, it is NOT 'taking' under Section 361.",
+          "Abduction (Sec. 362 IPC / Sec. 138 BNS): Compelling by force OR inducing by deceitful means ANY person (any age) to go from any place. Not an offence by itself - becomes punishable ONLY when coupled with unlawful intent (e.g., to murder Sec. 364, for ransom Sec. 364A / Sec. 140(2) BNS carrying death/life, to secretly confine Sec. 365, or to compel marriage/illicit intercourse Sec. 366). It is a CONTINUING offence.",
+          "Key Distinction Table (Kidnapping vs Abduction): (1) Age: Minor (<18 BNS) / unsound mind vs Any age; (2) Guardianship: Essential vs Not required; (3) Means: Taking/enticing (even peacefully) vs Force or deceit; (4) Consent of victim: Immaterial vs Free adult consent is a complete defence; (5) Nature: Substantive one-time offence vs Auxiliary continuing offence requiring specific criminal intent."
+        ],
+        "caseLaws": [
+          {
+            "name": "S. Varadarajan v. State of Madras",
+            "citation": "AIR 1965 SC 942",
+            "principle": "Held that merely helping a college-going minor girl who voluntarily abandoned her father's home on her own without any solicitation or enticement does not amount to 'taking' under Section 361 IPC."
+          },
+          {
+            "name": "Thakorlal D. Vadgama v. State of Gujarat",
+            "citation": "AIR 1973 SC 2313",
+            "principle": "Clarified S. Varadarajan: if the accused actively induced, encouraged, or created circumstances luring the minor away earlier, it squarely constitutes 'enticing' and kidnapping."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four differences between Kidnapping from Lawful Guardianship and Abduction, and note the age change introduced by BNS Section 137.",
+            "a": "(1) Kidnapping applies to minors/unsound mind, Abduction to any age; (2) Kidnapping requires lawful guardianship, Abduction does not; (3) Kidnapping is complete upon taking/enticing (intent immaterial), Abduction is a continuing offence requiring force/deceit + specific criminal intent. BNS Sec. 137 unified the minor age limit to under 18 for both boys and girls."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u3-t6": {
+      "id": "loc-u3-t6",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Rape (Sec. 375 IPC / Sec. 63 BNS - expanded after the 2013 Criminal Law Amendment) covers non-consensual penetrative sexual acts across 7 statutory circumstances (including age of consent 18), punishable with minimum 10 years up to life imprisonment (Sec. 376 / Sec. 64 BNS) and up to death for child/gang rape. BNS Section 69 newly penalizes sexual intercourse by deceitful promise of marriage, while Section 377 IPC was read down in Navtej Singh Johar (2018) and omitted from BNS.",
+        "legalProvision": "Sections 375-377 IPC, 1860 (Sections 63-71 BNS, 2023); POCSO Act, 2012; Criminal Law Amendment Acts, 2013 & 2018",
+        "meaning": "Indian sexual-offence jurisprudence shifted from narrow physical-resistance tests toward unequivocal, affirmative consent ('unequivocal voluntary agreement' - Explanation 2 to Sec. 375 / Sec. 63 BNS) and strict protection of minors and survivors' dignity.",
+        "keyPoints": [
+          "Definition of Rape & Seven Circumstances (Sec. 375 IPC / Sec. 63 BNS): Broadened in 2013 beyond penile-vaginal intercourse to non-consensual penetration/insertion of any object/body part or oral acts under 7 clauses: (1) against will, (2) without consent, (3) consent via fear of death/hurt, (4) impersonating husband, (5) unsoundness of mind/intoxication, (6) girl UNDER 18 YEARS (with or without consent), or (7) inability to communicate consent. Mere absence of physical struggle does NOT imply consent.",
+          "Marital Rape Exception (Exception 2 to Sec. 375 / Sec. 63 BNS): In Independent Thought v. Union of India (2017), the Supreme Court read down Exception 2 to make sexual intercourse with a minor wife under 18 ALWAYS rape (now reflected directly in BNS Sec. 63 Exception 2: wife must be 18+); intercourse with a judicially separated wife without consent is punishable under Sec. 376B IPC / Sec. 67 BNS.",
+          "Punishments & Aggravated Forms (Secs. 376-376E IPC / Secs. 64-71 BNS): Standard rape -> min 10 years to life; Custodial/police/hospital/repeated rape (Sec. 376(2) / Sec. 64(2)) -> min 10 years to remainder of natural life; Rape of girl under 12 or Gang Rape of girl under 18 (Sec. 376AB / Sec. 65 & Sec. 70(2) BNS) -> min 20 years, life, or DEATH penalty.",
+          "New BNS Offence - Sexual Intercourse by Deceitful Means (Section 69 BNS): Punishes sexual intercourse obtained by deceitful means or making a false promise to marry without intention of fulfilling it (not amounting to rape) with up to 10 years' imprisonment and fine.",
+          "Unnatural Offences (Sec. 377 IPC -> Omitted in BNS, 2023): Historically penalized carnal intercourse against the order of nature; in Navtej Singh Johar v. Union of India (2018), a 5-judge Constitution Bench unanimously DECRIMINALIZED consensual sexual acts between adults in private as protected by Articles 14, 15, 19, and 21 (retaining non-consensual acts/minors/bestiality). Note: BNS, 2023 omitted Section 377 altogether."
+        ],
+        "caseLaws": [
+          {
+            "name": "Independent Thought v. Union of India",
+            "citation": "2017 10 SCC 800",
+            "principle": "Read down Exception 2 to Section 375 IPC to criminalize sexual intercourse by a husband with his minor wife aged 15-18, aligning IPC with POCSO and age of consent (18)."
+          },
+          {
+            "name": "Navtej Singh Johar v. Union of India",
+            "citation": "2018 10 SCC 1",
+            "principle": "5-judge Constitution Bench overruled Suresh Kumar Koushal (2013) and decriminalized consensual adult same-sex relations under Section 377 IPC as violative of dignity, privacy, and equality."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the statutory meaning of 'consent' under Explanation 2 to Section 375 IPC / Section 63 BNS, and what did Navtej Singh Johar (2018) hold regarding Section 377 IPC?",
+            "a": "Consent means an unequivocal voluntary agreement communicated by words, gestures, or non-verbal communication; lack of physical resistance does not imply consent. Navtej Singh Johar decriminalized consensual sexual conduct between adults in private under Section 377 IPC (now omitted from BNS)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

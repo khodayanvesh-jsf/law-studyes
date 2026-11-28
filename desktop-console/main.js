@@ -58,7 +58,7 @@ function createWindow() {
     height: 860,
     minWidth: 1040,
     minHeight: 700,
-    title: "Law Studyes - Founder & Admin Console v3.0.8",
+    title: "Law Studyes - Founder & Admin Console v3.2.3",
     backgroundColor: "#FAF7F2",
     icon: fs.existsSync(iconPath) ? iconPath : undefined,
     webPreferences: {

@@ -1,0 +1,163 @@
+{
+  "subjects": [
+    {
+      "id": "principles-of-taxation-law",
+      "title": "Principles of Taxation Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Constitutional Framework of Taxation (Arts. 265-289), Canons of Taxation, Direct vs Indirect Taxes & Tax vs Fee",
+          "topics": [
+            {"id": "tax-u1-t1", "title": "1. Concept, Objectives & Canons of Taxation (Adam Smith), Direct vs Indirect Taxes & Progressive/Proportional/Regressive Taxes"},
+            {"id": "tax-u1-t2", "title": "2. Distinction Between Tax, Fee, Cess, Duty & Surcharge (Quid Pro Quo Test - Shirur Mutt Case)"},
+            {"id": "tax-u1-t3", "title": "3. Constitutional Framework of Taxation - Art. 265, Distribution of Taxing Powers (Seventh Schedule & Art. 246A GST) & Residuary Power"},
+            {"id": "tax-u1-t4", "title": "4. Constitutional Restrictions on Taxing Power (Arts. 14, 19(1)(g), 27, 269A, 285-289 & 301-304) & Intergovernmental Tax Immunity"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "tax-u1-t1": {
+      "id": "tax-u1-t1",
+      "subtitle": "Principles of Taxation Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Tax is a compulsory exaction of money by a public authority for public purposes enforceable by law, imposed WITHOUT any specific 'quid pro quo' (special return) to the taxpayer (Matthews v. Chicory Marketing Board). Guided by Adam Smith's four classic Canons of Taxation (Equality, Certainty, Convenience, Economy), taxes divide fundamentally into Direct Taxes (impact & incidence on the same person, e.g., Income Tax) and Indirect Taxes (burden shifted to consumers, e.g., GST & Customs).",
+        "legalProvision": "Article 265 & Article 366(28), Constitution of India; Adam Smith's 'Wealth of Nations' (1776)",
+        "meaning": "Modern taxation goes far beyond funding police and defence: it is the State's chief fiscal instrument for redistributing wealth, curbing inflation, incentivizing priority industries, and financing welfare infrastructure.",
+        "keyPoints": [
+          "Characteristics of a Tax (Commissioner, HRE v. Sri Lakshmindra Thirtha Swamiar / Shirur Mutt): (1) Compulsory exaction imposed by sovereign statutory authority, (2) Payable in money for general public purposes (merges into Consolidated Fund), (3) Absence of 'quid pro quo' (no direct proportional service promised to the individual payer), and (4) Imposed according to objective ability-to-pay or transaction criteria.",
+          "Adam Smith's Four Classic Canons of Taxation (+ Modern Canons): (1) CANON OF EQUALITY / EQUITY (taxpayers contribute in proportion to their respective abilities), (2) CANON OF CERTAINTY (time, manner, and exact amount of payment must be clear and non-arbitrary), (3) CANON OF CONVENIENCE (collected at the time/manner easiest for the taxpayer, e.g., TDS/harvest season), and (4) CANON OF ECONOMY (administrative collection cost must be minimal compared to revenue raised). Modern canons add Productivity, Elasticity, Simplicity, and Diversity.",
+          "Direct Taxes vs Indirect Taxes: DIRECT TAX -> Impact (initial legal liability) and Incidence (final economic burden) fall on the SAME person and CANNOT be shifted (e.g., Income Tax, Corporate Tax); generally PROGRESSIVE (higher income pays higher rate), equitable, and anti-inflationary. INDIRECT TAX -> Impact falls on supplier/manufacturer while Incidence is shifted onto the ultimate consumer in the price of goods/services (e.g., GST, Customs Duty, State Excise on liquor); generally REGRESSIVE in effect (rich and poor pay the same tax rate on bread/soap), convenient to collect, and broad-based.",
+          "Progressive, Proportional & Regressive Taxation: Progressive = tax rate increases as taxable income rises (Indian Income Tax slabs); Proportional = flat uniform rate across all incomes (e.g., flat corporate tax rate); Regressive = effective burden takes a larger percentage of a poorer person's income than a rich person's."
+        ],
+        "caseLaws": [
+          {
+            "name": "Matthews v. Chicory Marketing Board",
+            "citation": "1938 60 CLR 263 (Australia) (adopted by Indian SC)",
+            "principle": "Latham CJ gave the classic definition adopted by India's Supreme Court: 'A tax is a compulsory exaction of money by public authority for public purposes enforceable by law and is not payment for services rendered.'"
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between a Direct Tax and an Indirect Tax using 'impact' and 'incidence', and name Adam Smith's four Canons of Taxation.",
+            "a": "In a Direct Tax both impact (initial payer) and incidence (final burden) fall on the same person (e.g., Income Tax), whereas in an Indirect Tax the burden is shifted to the final consumer (e.g., GST). Adam Smith's four canons: Equality, Certainty, Convenience, and Economy."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u1-t2": {
+      "id": "tax-u1-t2",
+      "subtitle": "Principles of Taxation Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Distinguishing a 'Tax' from a 'Fee' is constitutionally critical in India because the Seventh Schedule lists Taxes and Fees under separate entries and Article 27 bars taxes (NOT fees!) for promoting any religion. In the landmark Shirur Mutt Case (1954), the Supreme Court held that a Tax is collected for general public revenue with NO quid pro quo, whereas a Fee is charged for a specific service or regulatory benefit rendered to the payer - though modern cases (Sreenivasa General Traders) relax strict mathematical correlation.",
+        "legalProvision": "Articles 27, 110(2), 199(2), & Seventh Schedule (List I Entry 96, List II Entry 66, List III Entry 47), Constitution of India",
+        "meaning": "While both taxes and fees are compulsory statutory levies, a Fee must show a reasonable relationship to the cost of rendering a service or regulatory supervision, whereas a Tax feeds general government expenditure.",
+        "keyPoints": [
+          "Tax vs Fee (Four Key Distinctions - Shirur Mutt, 1954): (1) QUID PRO QUO - Tax has NO quid pro quo (no special benefit promised to payer), whereas Fee traditionally rests on quid pro quo (service or regulatory benefit rendered to payer/class); (2) DESTINATION OF FUNDS - Tax merges into the Consolidated Fund for general public expenditure, whereas Fee is earmarked/correlated to defray the cost of the specific service/regulation; (3) CONSTITUTIONAL EFFECT - A Money Bill covers taxes (Art. 110) but expressly excludes fees for licences/services (Art. 110(2)), and Art. 27 bars taxes (not temple-administration fees) for religion; (4) REGULATORY VS COMPENSATORY FEE - Regulatory fees (e.g., SEBI registration, liquor licence fees) need only a broad regulatory purpose rather than direct service benefit.",
+          "Evolution of 'Quid Pro Quo' Test (Strict to Broad Correlation): Earlier Shirur Mutt (1954) and Ratilal Panachand demanded strict ear-marking and direct quid pro quo; later in Sreenivasa General Traders v. State of A.P. (1983) and Krishi Upaj Mandi Samiti, the Supreme Court softened the test - holding a 'broad and general correlation' (not mathematical exactness) between total fees collected and services/regulatory infrastructure suffices.",
+          "Cess, Surcharge & Duty: CESS = a tax earmarked for a SPECIFIC statutory purpose (e.g., Health & Education Cess @ 4% on income tax, GST Compensation Cess - Shinde Brothers; cannot be diverted to unrelated objects); SURCHARGE = an additional 'tax on tax' levied exclusively by the Union under Article 271 (NOT shared with States in the divisible Finance Commission pool!); DUTY = traditionally a tax on commodities/transactions (Customs Duty, Excise Duty, Stamp Duty)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Commissioner, Hindu Religious Endowments, Madras v. Sri Lakshmindra Thirtha Swamiar (Shirur Mutt Case)",
+            "citation": "AIR 1954 SC 282",
+            "principle": "7-judge Constitution Bench established the classic distinction between Tax (compulsory exaction for general revenue without quid pro quo) and Fee (charge correlated to special services rendered, permissible even for religious-endowment regulation under Art. 27)."
+          },
+          {
+            "name": "Sreenivasa General Traders v. State of Andhra Pradesh",
+            "citation": "AIR 1983 SC 1246",
+            "principle": "Modernized the Fee doctrine: traditional strict 'quid pro quo' has undergone a sea-change; a broad, reasonable correlation between fee collections and regulatory/market facilities suffices without mathematical exactitude."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three differences between a 'Tax' and a 'Fee', and distinguish a 'Cess' from a 'Surcharge' under Article 271.",
+            "a": "Tax lacks quid pro quo, merges into general Consolidated Fund, and is barred for religious promotion (Art. 27); Fee correlates to specific services/regulation, defrays service costs, and is excluded from Money Bill definition (Art. 110(2)). A Cess is a tax earmarked for a specific purpose, whereas a Surcharge (Art. 271) is an additional Union tax-on-tax not shared with States."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u1-t3": {
+      "id": "tax-u1-t3",
+      "subtitle": "Principles of Taxation Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 265 enshrines the supreme principle of Indian taxation: 'No tax shall be levied or collected except by authority of law' (meaning a valid legislative statute, NEVER a mere executive order or resolution). Under the Seventh Schedule, taxing powers are strictly separated between Union (List I: Entries 82-92C + Residuary Entry 97) and States (List II: Entries 45-63), with ZERO overlapping taxes EXCEPT the historic 101st Constitutional Amendment (2016) inserting Article 246A for concurrent GST.",
+        "legalProvision": "Articles 246, 246A, 248, 265, 268-279A, & Seventh Schedule, Constitution of India (101st Amendment Act, 2016)",
+        "meaning": "Unlike general legislative subjects, India's Constitution originally kept Union and State taxing entries mutually exclusive to prevent double taxation - until the 101st Amendment created India's federal cooperative GST architecture.",
+        "keyPoints": [
+          "Rule of Legality of Taxation (Art. 265): Covers BOTH 'levy' (imposition/assessment) AND 'collection' (recovery) - a tax cannot be imposed by executive notification, administrative circular, or cabinet resolution without backing of a valid legislative Act (Chhotabhai Jethabhai Patel; Tangkhul v. Simirei Shailei). Any tax collected without authority of law must be refunded (subject to Unjust Enrichment doctrine - Mafatlal Industries).",
+          "Distribution of Taxing Powers (Seventh Schedule): Taxing entries are distinct from general regulatory entries (M.P.V. Sundararamier v. State of A.P.) -> UNION LIST (List I, Entries 82-92C): Taxes on income OTHER THAN agricultural income (Entry 82), Customs duties (83), Union Excise on tobacco/petroleum (84), Corporation Tax (85), Capital value of assets (86), Stamp duty on financial instruments (91), and RESIDUARY TAXING POWER (Art. 248 + Entry 97 - e.g., Expenditure Tax, Wealth Tax, Gift Tax, Service Tax pre-GST: Union of India v. H.S. Dhillon). STATE LIST (List II, Entries 45-63): Land Revenue (45), Agricultural Income Tax (46), Land & Buildings Tax (49), State Excise on alcoholic liquor for human consumption (51), Taxes on sale of petroleum/alcohol (54), Vehicles Tax (57), Profession Tax capped at Rs. 2,500/year under Art. 276 (60), and Stamp Duty on property deeds (63). CONCURRENT LIST (List III): Contains NO taxing entry (only Fee Entry 47).",
+          "101st Constitutional Amendment Act, 2016 (GST Architecture - Arts. 246A, 269A & 279A): Inserted Article 246A granting SIMULTANEOUS concurrent power to Parliament and State Legislatures to levy GST (CGST + SGST on intra-State supplies), while giving Parliament exclusive power over inter-State GST (IGST - Art. 246A(2) & Art. 269A). Created the federal GST Council (Art. 279A - Union Finance Minister + State Finance Ministers; 1/3rd Centre + 2/3rds States weightage, 3/4ths majority required; Union of India v. Mohit Minerals, 2022 held GST Council recommendations are persuasive, not binding mandates overriding legislative sovereignty)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Union of India v. H.S. Dhillon",
+            "citation": "AIR 1972 SC 1061",
+            "principle": "7-judge Constitution Bench upheld Parliament's Residuary Taxing Power under Article 248 read with Entry 97 List I to levy Wealth Tax even on agricultural land, so long as the tax does not squarely fall inside List II."
+          },
+          {
+            "name": "Union of India v. Mohit Minerals Pvt. Ltd.",
+            "citation": "2022 10 SCC 700",
+            "principle": "Held that under Article 246A, Parliament and State Legislatures possess simultaneous, equal powers over GST, and GST Council recommendations under Article 279A are collaborative/persuasive rather than binding dictates."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What does Article 265 mandate regarding both levy and collection of taxes, and how did the 101st Constitutional Amendment (Art. 246A) alter the Seventh Schedule tax distribution?",
+            "a": "Art. 265 mandates that no tax shall be levied or collected except by authority of a valid legislative law (never an executive order). Art. 246A broke the traditional mutually-exclusive division by conferring simultaneous concurrent power on Parliament and State Legislatures to levy GST (with exclusive Parliamentary power over inter-State IGST)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u1-t4": {
+      "id": "tax-u1-t4",
+      "subtitle": "Principles of Taxation Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Taxing statutes are NOT above the Constitution: every tax law must survive Fundamental Rights scrutiny (Art. 14 equality/non-arbitrariness, Art. 19(1)(g) non-confiscatory trade freedom, Art. 27 ban on religious-promotion tax), Freedom of Inter-State Trade & Commerce (Arts. 301-304), Territorial Nexus (Art. 245), Restrictions on Sales Tax (Art. 286), and Intergovernmental Tax Immunity between Union and States (Arts. 285 & 289).",
+        "legalProvision": "Articles 14, 19(1)(g), 27, 245, 276, 285, 286, 289, & 301-304, Constitution of India",
+        "meaning": "While courts give legislatures wide 'latitude in classification' in fiscal matters (R.K. Garg v. Union of India), discriminatory, colourable, confiscatory, or barrier-creating taxes are struck down as unconstitutional.",
+        "keyPoints": [
+          "Fundamental Rights Limits (Arts. 14, 19(1)(g) & 27): (1) ARTICLE 14 - A tax must satisfy intelligible differentia + rational nexus; blatant uniform flat land tax ignoring productivity was struck down in K.T. Moopil Nair v. State of Kerala (1961), though legislatures enjoy wide economic latitude (East India Tobacco; R.K. Garg); (2) ARTICLE 19(1)(g) - Reasonable taxation does not violate trade freedom, EXCEPT an expropriatory/confiscatory tax destroying business altogether; (3) ARTICLE 27 - No person shall be compelled to pay any TAX whose proceeds are specifically appropriated for promotion/maintenance of any particular religion.",
+          "Inter-State Trade & Commerce Limits (Arts. 301-304): Article 301 guarantees free trade/commerce across India; under Article 304(a), a State CANNOT impose discriminatory taxes on goods imported from other States higher than similar local goods (Jindal Stainless Ltd. v. State of Haryana, 2016, 9-judge Bench overruled Atiabari/Automobile compensatory-tax test and held non-discriminatory entry taxes do NOT violate Art. 301!).",
+          "Sales/Supply Restrictions (Art. 286) & Territorial Nexus (Art. 245): Under Art. 286, no State law can tax supply of goods/services taking place OUTSIDE the State OR in the course of IMPORT/EXPORT outside India; under Art. 245, State tax laws require a real 'Territorial Nexus' with the State (Tata Iron & Steel Co. v. State of Bihar).",
+          "Intergovernmental Tax Immunity (Arts. 285 & 289): ARTICLE 285 -> Property of the UNION is COMPLETELY EXEMPT from all State/municipal taxes unless Parliament permits. ARTICLE 289 -> Property and income of a STATE are exempt from Union taxation, EXCEPT Parliament MAY tax any TRADE OR BUSINESS carried on by a State Government (Art. 289(2)) - AND importantly, In re Sea Customs Act (1963) held that Art. 289 exempts States ONLY from DIRECT taxes (income/property), NOT INDIRECT taxes like Customs or Excise/GST on goods imported/manufactured by States!"
+        ],
+        "caseLaws": [
+          {
+            "name": "Kunnathat Thathunni Moopil Nair v. State of Kerala",
+            "citation": "AIR 1961 SC 552",
+            "principle": "5-judge Constitution Bench struck down a flat uniform land tax of Rs. 2 per acre imposed regardless of soil fertility or income potential as confiscatory and violative of Article 14."
+          },
+          {
+            "name": "In re Sea Customs Act (Section 20(2))",
+            "citation": "AIR 1963 SC 1760",
+            "principle": "9-judge Constitution Bench held that State immunity from Union taxation under Article 289(1) applies strictly to DIRECT taxes on property/income, NOT to indirect taxes like Customs or Excise duties."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Compare Intergovernmental Tax Immunity of the Union (Art. 285) vs States (Art. 289), and state what In re Sea Customs Act (1963) held regarding indirect taxes on States.",
+            "a": "Union property is totally exempt from State taxes (Art. 285), whereas State immunity from Union tax (Art. 289) does NOT cover commercial trade/business run by a State (Art. 289(2)). In re Sea Customs Act held Art. 289 shields States only from DIRECT taxes, not indirect taxes like Customs/Excise/GST."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

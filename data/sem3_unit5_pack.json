@@ -1,0 +1,266 @@
+{
+  "subjects": [
+    {
+      "id": "jurisprudence",
+      "title": "Jurisprudence",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Obligations, Mens Rea, Negligence, Hohfeld's Analysis & Sovereignty",
+          "topics": [
+            {"id": "jurisprudence-u5-t1", "title": "1. Hohfeld's Jural Relations, Obligations (Simple & Solidary), Mens Rea, Negligence, Sanctions & Sovereignty"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "law-of-property",
+      "title": "Law of Property (TPA)",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Wills (Indian Succession Act, 1925), Exchange & Licenses",
+          "topics": [
+            {"id": "law-of-property-u5-t1", "title": "1. Wills (Kinds, Execution, Attestation, Revocation & Probate), Exchange (Secs. 118-121 TPA) & Licenses (Easements Act)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "administrative-law",
+      "title": "Administrative Law",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Administrative Discretion, Commissions of Inquiry, RTI & Droit Administratif",
+          "topics": [
+            {"id": "administrative-law-u5-t1", "title": "1. Judicial Control of Administrative Discretion (Wednesbury & Proportionality), Commissions of Inquiry (1952), RTI Act (2005) & Droit Administratif"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "company-law",
+      "title": "Company Law",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Corporate Governance, CSR, Company Secretary, Audit, Mergers & NCLT",
+          "topics": [
+            {"id": "company-law-u5-t1", "title": "1. Corporate Governance, CSR (Sec. 135), Key Managerial Personnel (Company Secretary), Statutory Audit, Mergers (Secs. 230-232) & NCLT"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "labour-law-i",
+      "title": "Labour Law - I",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Disciplinary Proceedings, Sec. 33/33C Safeguards, Unfair Labour Practices & IR Code, 2020",
+          "topics": [
+            {"id": "labour-law-i-u5-t1", "title": "1. Industrial Disciplinary Proceedings, Sec. 33 Pendency Safeguards, Sec. 33C Recovery, Unfair Labour Practices & Industrial Relations Code, 2020"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "jurisprudence-u5-t1": {
+      "id": "jurisprudence-u5-t1",
+      "subtitle": "Jurisprudence - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Hohfeld refined legal rights into four jural correlatives (Right-Duty, Privilege-No-Right, Power-Liability, Immunity-Disability). Legal Obligations (Contractual, Delictal, Quasi-contractual, Innominate) may be Simple or Solidary, while criminal culpability hinges on Mens Rea ('Actus non facit reum nisi mens sit rea') and Negligence, enforced by sovereign Sanctions.",
+        "legalProvision": "Hohfeld's Jural Scheme; Salmond on Obligations, Mens Rea & Negligence; Section 304A IPC / Section 106 BNS, 2023",
+        "meaning": "Jurisprudence links State Sovereignty (supreme internal and external legal authority) with individual legal responsibility. Even where an act causes harm, criminal law ordinarily requires guilty mind (Mens Rea) or gross carelessness (Negligence), except in strict-liability statutory offences.",
+        "keyPoints": [
+          "Hohfeld's Four Jural Correlatives & Opposites: Right <-> Duty (Opposite: No-Right), Privilege/Liberty <-> No-Right (Opposite: Duty), Power <-> Liability (Opposite: Disability), and Immunity <-> Disability (Opposite: Liability) - clarifying ambiguity in the word 'right'.",
+          "Kinds & Sources of Obligations: An Obligation (Vinculum Juris) is a legal bond between creditor and debtor arising from Contract, Tort (Delict), Quasi-Contract, or Innominate sources (e.g., Trust/Wakf). Simple Obligation binds one debtor; Solidary Obligation binds two or more co-debtors (e.g., principal debtor and surety, or joint tortfeasors) where each is liable for the full debt.",
+          "Mens Rea & Negligence: Under 'Actus non facit reum nisi mens sit rea', an act is criminal only with a guilty mind (intention, knowledge, recklessness), subject to strict liability exceptions (public welfare, food adulteration, traffic offences). Negligence is breach of legal duty of care causing damage - both a civil tort and a crime (e.g., death by negligence under Sec. 304A IPC / Sec. 106 BNS).",
+          "Kinds of Legal Sanctions: Death sentence (rarest of rare), Life Imprisonment, Rigorous vs Simple Imprisonment, Solitary Confinement (capped at 3 months total under Sec. 73 IPC / Sec. 11 BNS), Forfeiture of Property, Fine, and Community Service (newly added under BNS, 2023).",
+          "Sovereignty & Classification of Law: Sovereignty denotes supreme independent authority (internal supremacy and external independence); Law is classified into Imperative/Statutory Law, Customary Law, Conventional Law, Moral Law, Physical/Scientific Law, and Practical/Technical rules."
+        ],
+        "caseLaws": [
+          {
+            "name": "Nathulal v. State of Madhya Pradesh",
+            "citation": "AIR 1966 SC 43",
+            "principle": "Held that Mens Rea is an essential element of every statutory offence unless expressly or by necessary implication excluded by the statute."
+          },
+          {
+            "name": "Donoghue v. Stevenson",
+            "citation": "1932 AC 562",
+            "principle": "Established the modern 'Neighbour Principle' of legal duty of care and Negligence in jurisprudence and tort law."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List Hohfeld's four pairs of Jural Correlatives and distinguish between Simple and Solidary Obligations.",
+            "a": "Right-Duty, Privilege-No-Right, Power-Liability, and Immunity-Disability. A Simple Obligation binds a single debtor, whereas a Solidary Obligation binds multiple co-debtors (such as principal debtor and surety) jointly and severally for the full performance."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-property-u5-t1": {
+      "id": "law-of-property-u5-t1",
+      "subtitle": "Law of Property (TPA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under the Indian Succession Act, 1925, a Will (testamentary declaration effective only after death) must be executed by a competent testator with free consent and attested by two witnesses (except Privileged Wills by soldiers/mariners). Under TPA Sections 118-121, Exchange mutually transfers ownership of one thing for another, while Sections 52-64 of the Easements Act govern revocable Licenses.",
+        "legalProvision": "Indian Succession Act, 1925 (Sections 2(h), 59, 63, 65-66, 70, & 213); Transfer of Property Act, 1882 (Sections 51 & 118-121); Indian Easements Act, 1882 (Sections 52-64)",
+        "meaning": "Testamentary succession enables property owners to distribute assets peacefully and prevent family litigation, with registration and stamp duty strictly optional. Meanwhile, Exchange and License complete the statutory spectrum of property transfers and permissions.",
+        "keyPoints": [
+          "Essentials of Unprivileged Will (Secs. 59 & 63, Indian Succession Act, 1925): Testator must be a major of sound mind acting with free consent; Will must be signed/thumb-marked by the testator and attested by at least two witnesses who saw the testator sign (or received personal acknowledgment); stamp paper and registration are optional.",
+          "Kinds of Wills: Privileged Will (Secs. 65-66 - oral or informal written Will by soldiers/airmen on expedition or mariners at sea), Unprivileged Will (all other written Wills requiring two witnesses), Holograph Will (entirely in testator's handwriting - still requires 2 witnesses under Indian Sec. 63 unless privileged), Joint Will, Mutual Will, Contingent/Conditional Will, and Duplicate Will.",
+          "Revocation & Probate of Will (Secs. 70 & 213): Testator may revoke a Will anytime before death by executing a subsequent Will/Codicil, written revocation, or intentional destruction (burning/tearing); marriage revokes prior Wills for Christians/Parsis (Sec. 69, not Hindus/Muslims). Probate is a court-certified copy of a Will establishing an executor's authority.",
+          "Exchange (Secs. 118-121, TPA): Mutual transfer of ownership of one thing for ownership of another, neither thing or both things being money only; governed by Sale formalities (registered deed if immovable property >= Rs. 100), with statutory warranty of title and right to recover property if deprived by defect of title (Sec. 119).",
+          "Licenses & Irrevocable Licenses (Secs. 52-64, Indian Easements Act, 1882): A License grants personal permission to use land without transferring any property interest; generally revocable at grantor's will EXCEPT under Section 60 when (a) coupled with a transfer of property, or (b) the licensee, acting on the license, executes a work of permanent character incurring expenses."
+        ],
+        "caseLaws": [
+          {
+            "name": "H. Venkatachala Iyengar v. B.N. Thimmajamma",
+            "citation": "AIR 1959 SC 443",
+            "principle": "Laid down the authoritative test for proving a Will under Section 63: the propounder must prove sound disposing mind, due attestation, and dispel all suspicious circumstances."
+          },
+          {
+            "name": "Ram Sarup Gupta v. Bishun Narain Inter College",
+            "citation": "AIR 1987 SC 1242",
+            "principle": "Held under Section 60(b) of the Indian Easements Act that once a licensee constructs a permanent building acting upon a license, the license becomes irrevocable."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Who can execute a Privileged Will under Section 65 of the Indian Succession Act, 1925, and when does a License become irrevocable under Section 60 of the Easements Act?",
+            "a": "Soldiers/airmen engaged in actual warfare/expedition and mariners at sea (aged 18+) can make Privileged Wills. A License becomes irrevocable under Section 60 when coupled with a transfer of property or when the licensee executes a permanent work incurring expenses."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "administrative-law-u5-t1": {
+      "id": "administrative-law-u5-t1",
+      "subtitle": "Administrative Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Modern governance grants wide Administrative Discretion, controlled by courts against mala fides, irrelevant considerations, fettering discretion, Wednesbury unreasonableness, and lack of proportionality. Institutional transparency relies on the Commissions of Inquiry Act, 1952, RTI Act, 2005, and CVC, contrasted with France's Droit Administratif (Conseil d'Etat).",
+        "legalProvision": "Articles 14, 19(1)(a), 32, & 226, Constitution of India; Commissions of Inquiry Act, 1952; Right to Information Act, 2005; Central Vigilance Commission Act, 2003",
+        "meaning": "Discretionary power is never absolute in a constitutional democracy ('discretion means sound discretion guided by law'). Alongside judicial review, public inquiry commissions and the Right to Information compel executive transparency and accountability.",
+        "keyPoints": [
+          "Judicial Control of Administrative Discretion: Courts invalidate discretionary orders on two broad grounds - (1) Failure to Exercise Discretion (acting under dictation, mechanical application of policy, unlawful sub-delegation) and (2) Abuse of Discretion (mala fides/bad faith, improper purpose, irrelevant considerations, ignoring relevant factors, violating Fundamental Rights).",
+          "Wednesbury Unreasonableness, Proportionality & Legitimate Expectation: Under Wednesbury, courts quash decisions so outrageous that no sensible authority could reach them; Proportionality (Om Kumar) checks whether administrative punishment/restriction is excessive relative to the goal; Legitimate Expectation protects citizens' fair expectations based on consistent past government practice or clear promises.",
+          "Commissions of Inquiry Act, 1952: Empowers Central/State Governments to appoint statutory Inquiry Commissions on definite matters of public importance (vested with civil court summoning powers); reports are fact-finding and recommendatory, NOT binding judicial verdicts.",
+          "Right to Information Act, 2005 (RTI) & CVC: Enforces citizens' Article 19(1)(a) right to access public-authority records within 30 days (48 hours for life/liberty) via Public Information Officers (PIOs) and Information Commissions (CIC/SIC), subject to Section 8 exemptions (national security, cabinet papers, privacy); CVC investigates central civil-service corruption.",
+          "Comparative Law - French Droit Administratif & Conseil d'Etat: France maintains a separate administrative law system and apex administrative court (Conseil d'Etat) distinct from ordinary civil courts; Dicey initially criticized it as favouring officials, though modern Conseil d'Etat vigorously protects citizens against executive excess."
+        ],
+        "caseLaws": [
+          {
+            "name": "Associated Provincial Picture Houses Ltd. v. Wednesbury Corporation",
+            "citation": "1948 1 KB 223",
+            "principle": "Established the classic 'Wednesbury Unreasonableness' standard for judicial review of administrative discretion when an authority acts absurdly or on irrelevant considerations."
+          },
+          {
+            "name": "Om Kumar v. Union of India",
+            "citation": "2001 2 SCC 386",
+            "principle": "Clarified the Doctrine of Proportionality in Indian administrative law: courts apply primary review (proportionality) where Fundamental Rights are restricted and secondary review (Wednesbury) to ordinary administrative penalties."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'Failure to Exercise Discretion' and 'Abuse of Discretion', and explain the role of Conseil d'Etat in French Droit Administratif.",
+            "a": "Failure to exercise discretion includes acting under dictation or mechanical policy adherence, whereas abuse includes mala fides, irrelevant considerations, or Wednesbury unreasonableness. Conseil d'Etat is France's specialized apex administrative court hearing disputes between citizens and State authorities outside ordinary civil courts."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "company-law-u5-t1": {
+      "id": "company-law-u5-t1",
+      "subtitle": "Company Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Companies Act, 2013 modernized Indian corporate governance by mandating Independent Directors, Audit Committees, Key Managerial Personnel (including qualified Company Secretaries), Statutory Audits (Secs. 139-148), and Corporate Social Responsibility (CSR under Section 135 - 2% of average net profits). Corporate restructuring (Mergers & Amalgamations, Secs. 230-232) and insolvency are adjudicated by NCLT/NCLAT.",
+        "legalProvision": "Sections 128-148, 135, 149(4), 177, 203-205, 230-232, & 408-410, Companies Act, 2013; Insolvency and Bankruptcy Code (IBC), 2016",
+        "meaning": "Modern corporate law shifts focus from pure shareholder profit to stakeholder accountability - requiring independent board oversight, transparent financial auditing, mandatory social spending by large companies, and specialized tribunal resolution for mergers and distressed companies.",
+        "keyPoints": [
+          "Corporate Governance Pillars: Listed and prescribed public companies must appoint Independent Directors (at least 1/3rd of Board for listed companies - Sec. 149(4)), at least one Woman Director, an Audit Committee (Sec. 177), Vigil Mechanism/Whistleblower Policy, and Nomination & Remuneration Committee.",
+          "Corporate Social Responsibility (CSR - Section 135 & Schedule VII): Mandatory for companies meeting any one threshold in the preceding financial year - Net Worth >= Rs. 500 crore, Turnover >= Rs. 1,000 crore, or Net Profit >= Rs. 5 crore; must form a CSR Committee and spend at least 2% of average net profits of the preceding 3 years on Schedule VII social causes (education, healthcare, environment, rural development).",
+          "Key Managerial Personnel & Company Secretary (Secs. 203-205): KMP includes MD/CEO/WTD, CFO, and Company Secretary (ICSI-qualified compliance officer); the Company Secretary ensures secretarial standard compliance, convenes Board/General meetings, maintains statutory registers, and advises the Board on governance.",
+          "Books of Account & Statutory Audit (Secs. 128-148): Every company must maintain accrual-based books of account showing a 'true and fair view' (Sec. 128) and appoint an independent Chartered Accountant as Statutory Auditor (Sec. 139, mandatory rotation for listed companies) who reports to shareholders in the AGM.",
+          "Mergers, Amalgamations (Secs. 230-232) & NCLT/NCLAT (Secs. 408-410): Schemes of compromise, merger, or demerger require approval by a majority in number representing 75% in value of creditors/members plus NCLT sanction (fast-track mergers under Sec. 233 for small/holding-subsidiary companies); NCLT and NCLAT serve as specialized corporate and IBC adjudicatory tribunals."
+        ],
+        "caseLaws": [
+          {
+            "name": "Miheer H. Mafatlal v. Mafatlal Industries Ltd.",
+            "citation": "1997 1 SCC 579",
+            "principle": "Laid down the classic 9-point scope of judicial/tribunal scrutiny in approving a Merger or Scheme of Arrangement: courts check statutory compliance, bona fides, and fairness without substituting their commercial wisdom for the majority shareholders'."
+          },
+          {
+            "name": "Madras Bar Association v. Union of India",
+            "citation": "2015 8 SCC 583",
+            "principle": "Upheld the constitutional validity of the National Company Law Tribunal (NCLT) and NCLAT under the Companies Act, 2013 subject to strict judicial independence safeguards."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What financial thresholds trigger mandatory CSR under Section 135 of the Companies Act, 2013, and what percentage of profits must be spent?",
+            "a": "Net worth of Rs. 500 crore+, turnover of Rs. 1,000 crore+, or net profit of Rs. 5 crore+ in the preceding financial year; eligible companies must spend at least 2% of their average net profits of the preceding 3 financial years on Schedule VII CSR activities."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "labour-law-i-u5-t1": {
+      "id": "labour-law-i-u5-t1",
+      "subtitle": "Labour Law - I - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Industrial disciplinary action requires a fair Domestic Enquiry (Charge Sheet, Explanation, Impartial Enquiry Officer, Cross-Examination, Enquiry Report, and Proportionate Punishment). Sections 33 and 33A of the ID Act protect workers from victimization during pending disputes, Section 33C enables speedy recovery of dues, Fifth Schedule bans Unfair Labour Practices, and the Industrial Relations Code, 2020 consolidates all three core statutes.",
+        "legalProvision": "Sections 11A, 25T-25U, 33, 33A, & 33C and Fifth Schedule, Industrial Disputes Act, 1947; Industrial Relations Code, 2020 (consolidating Trade Unions Act 1926, Standing Orders Act 1946, & ID Act 1947)",
+        "meaning": "Industrial jurisprudence ensures that management cannot use dismissal to crush union activity or punish workers arbitrarily. Under Section 11A ID Act, Labour Courts and Tribunals can re-appreciate domestic enquiry evidence and reduce disproportionate punishments.",
+        "keyPoints": [
+          "Step-by-Step Domestic Enquiry Procedure: (1) Preliminary fact-finding, (2) Issue of clear, specific Charge Sheet, (3) Reasonable time for employee's written Explanation, (4) Suspension pending enquiry with mandatory Subsistence Allowance (50% wages for first 90 days, 75% thereafter under Standing Orders), (5) Impartial Enquiry Officer conducts hearing with right to cross-examine and defence representative, (6) Supply of Enquiry Report before punishment (ECIL v. B. Karunakar), and (7) Reasoned order of proportionate punishment.",
+          "Labour Court Power under Section 11A: If a dismissal/discharge is unjustified or the punishment is shockingly disproportionate to the misconduct, the Labour Court/Tribunal may set it aside and order reinstatement or lesser punishment.",
+          "Protection During Pendency (Secs. 33 & 33A): While conciliation or adjudication is pending, an employer CANNOT alter service conditions to a workman's prejudice or dismiss a 'protected workman' without prior express permission (Sec. 33(1)/(3)), and for unrelated misconduct must apply for approval and pay 1 month's wages (Sec. 33(2)(b)); breach lets the worker file a direct complaint under Section 33A.",
+          "Recovery of Money Due (Sec. 33C) & Unfair Labour Practices (Secs. 25T-25U & Fifth Schedule): Section 33C(1) allows government recovery certificate for settled dues, while Section 33C(2) lets Labour Courts compute money/benefits due from an employer; Fifth Schedule prohibits Unfair Labour Practices by employers (anti-union victimization, bad-faith transfers, keeping workers casual indefinitely) and by trade unions (coercion, illegal strikes, violence).",
+          "Industrial Relations Code, 2020 Highlights: Consolidates Trade Unions Act (1926), Standing Orders Act (1946), and ID Act (1947); raises threshold for mandatory Standing Orders and prior-permission Lay-Off/Retrenchment/Closure from 100 to 300 workers, introduces Negotiating Union (51% support), legalizes Fixed-Term Employment with pro-rata gratuity, and creates a Worker Re-skilling Fund."
+        ],
+        "caseLaws": [
+          {
+            "name": "Workmen of Firestone Tyre & Rubber Co. v. Management",
+            "citation": "AIR 1973 SC 1227",
+            "principle": "Explained Section 11A of the ID Act: Labour Courts and Tribunals now have full power to re-appreciate evidence from a domestic enquiry and interfere with disproportionate dismissal orders."
+          },
+          {
+            "name": "Jaipur Zila Sahakari Bhoomi Vikas Bank Ltd. v. Ram Gopal Sharma",
+            "citation": "2002 2 SCC 244",
+            "principle": "5-judge Constitution Bench held that failure to obtain mandatory approval under Section 33(2)(b) renders an order of discharge or dismissal void and inoperative ab initio."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the legal consequence if an employer dismisses a workman during pending industrial adjudication without seeking approval under Section 33(2)(b), and what three statutes does the Industrial Relations Code, 2020 consolidate?",
+            "a": "The dismissal is void and inoperative ab initio (Jaipur Zila Sahakari Bank, 2002). The Industrial Relations Code, 2020 consolidates the Trade Unions Act (1926), Industrial Employment (Standing Orders) Act (1946), and Industrial Disputes Act (1947)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

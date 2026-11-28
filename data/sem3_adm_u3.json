@@ -1,0 +1,159 @@
+{
+  "subjects": [
+    {
+      "id": "administrative-law",
+      "title": "Administrative Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Classification of Administrative Functions & Delegated Legislation (Growth, Classification, Judicial & Legislative Control)",
+          "topics": [
+            {"id": "adm-u3-t1", "title": "1. Classification of Administrative Functions - Legislative, Quasi-Judicial, Administrative & Ministerial"},
+            {"id": "adm-u3-t2", "title": "2. Delegated Legislation - Meaning, Reasons for Growth & Classification (Title, Discretion, Purpose, Authority)"},
+            {"id": "adm-u3-t3", "title": "3. Permissible & Impermissible Delegation (Essential Legislative Function & Henry VIII Clause)"},
+            {"id": "adm-u3-t4", "title": "4. Judicial Control (Substantive & Procedural Ultra Vires) & Legislative/Parliamentary Control of Delegated Legislation"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "adm-u3-t1": {
+      "id": "adm-u3-t1",
+      "subtitle": "Administrative Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Modern administrative authorities perform four distinct categories of functions: Legislative (making general rules for future conduct), Quasi-Judicial (adjudicating specific rights/disputes with a duty to act fairly), Purely Administrative (policy execution/discretionary action), and Ministerial (routine mechanical acts with zero discretion, like issuing a stamped receipt).",
+        "legalProvision": "Functional Classification of Administrative Action (Donoughmore Committee); Articles 136 & 226, Constitution of India",
+        "meaning": "Classifying an administrative act determines which legal safeguards apply - e.g., Quasi-Judicial acts strictly require Natural Justice and are reviewable via Certiorari/Prohibition, whereas Legislative acts require publication/laying rather than prior individual hearing.",
+        "keyPoints": [
+          "1. Legislative (Rule-Making) Function: Lays down general, prospective rules of conduct for the public or a class (e.g., fixing prices, framing GST/traffic rules); normally does NOT require prior individual hearing (audi alteram partem) unless statute mandates consultation.",
+          "2. Quasi-Judicial Function: Administrative authority decides a specific dispute or affects civil rights of individuals based on facts and law (e.g., tax assessment, cancelling a licence, disciplinary dismissal). Requires a 'lis' (or duty to act judicially - Ridge v. Baldwin), strict Natural Justice, reasoned orders, and is amenable to Certiorari/Prohibition.",
+          "3. Purely Administrative (Executive) Function: Residuary discretionary policy execution (e.g., preventive detention, acquisition, granting/refusing tenders, referring industrial disputes). Since A.K. Kraipak (1970), the thin line between administrative and quasi-judicial action has blurred - even administrative orders with 'civil consequences' MUST follow fairness and Natural Justice.",
+          "4. Ministerial Function: Purely mechanical, routine duty prescribed by law with ZERO discretion (e.g., registering a valid deed, issuing a birth certificate, maintaining electoral rolls) - enforced directly by Writ of Mandamus."
+        ],
+        "caseLaws": [
+          {
+            "name": "A.K. Kraipak v. Union of India",
+            "citation": "AIR 1970 SC 150",
+            "principle": "Held that the dividing line between administrative and quasi-judicial power is thin and gradually obliterated; Natural Justice applies to administrative inquiries whenever civil consequences follow."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between a Quasi-Judicial function and a Ministerial function, and explain how A.K. Kraipak narrowed the gap between administrative and quasi-judicial acts.",
+            "a": "Quasi-judicial functions adjudicate rights using legal criteria and require Natural Justice, whereas Ministerial functions are purely mechanical with zero discretion. Kraipak held that Natural Justice applies even to administrative actions if they entail civil consequences."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u3-t2": {
+      "id": "adm-u3-t2",
+      "subtitle": "Administrative Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Delegated (Subordinate) Legislation is law made by an executive authority under powers expressly conferred by a Parent Act of Parliament or State Legislature (Rules, Regulations, Bye-laws, Orders, Notifications). Driven by parliamentary time constraints, technical complexity, and emergency needs, it is classified by Title, Discretion (Conditional vs Subordinate), Purpose, and Authority (Sub-delegation).",
+        "legalProvision": "Parent/Enabling Statutes; In re Delhi Laws Act, 1951; Delegatus Non Potest Delegare",
+        "meaning": "Today, delegated rules outnumber Parliamentary Acts by more than 10 to 1. Without delegated legislation, modern economic, environmental, and digital regulation would grind to a halt.",
+        "keyPoints": [
+          "Meaning & Reasons for Growth: Executive law-making under statutory authority. Five growth drivers: (1) Pressure on Parliamentary time, (2) Technicality of modern subjects (aviation, pharma, telecom, cyber), (3) Flexibility & experimentation (amending rules quickly), (4) Emergency/crisis response (epidemics, war, inflation), and (5) Confidentiality/local adaptation.",
+          "Classification by Title & Purpose: Rules, Regulations, Bye-laws (municipal/corporate), Schemes, Notifications, and Orders. By Purpose: Enabling Acts (setting commencement date), Extension/Application Acts, Dispensing/Suspending Acts, Classifying/Tax-rate Acts, and Removal of Difficulties ('Henry VIII Clause').",
+          "Conditional Legislation vs Delegated Legislation: In Conditional Legislation (Queen v. Burah, 1878), the legislature makes the COMPLETE law itself and merely leaves to the executive the power to decide WHEN or WHERE to bring it into force upon a factual condition; in Delegated Legislation, the executive actually fills in substantive details/rules.",
+          "Sub-Delegation ('Delegatus Non Potest Delegare'): A delegate CANNOT further sub-delegate legislative power to a lower officer UNLESS the Parent Act expressly or by necessary implication authorizes sub-delegation (A.K. Roy v. State of Punjab)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Queen v. Burah",
+            "citation": "1878 5 IA 178 (PC)",
+            "principle": "Recognized Conditional Legislation in India: empowering the Lieutenant-Governor to extend an existing Act to specified districts was valid conditional legislation, not an abdication of legislative power."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Conditional Legislation and Delegated Legislation, and state the rule governing Sub-Delegation.",
+            "a": "In Conditional Legislation the legislature enacts the complete law and only lets the executive trigger its commencement/extension, whereas in Delegated Legislation the executive drafts substantive rules. Under 'Delegatus non potest delegare', sub-delegation is invalid unless authorized by the Parent Act."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u3-t3": {
+      "id": "adm-u3-t3",
+      "subtitle": "Administrative Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "In India (In re Delhi Laws Act, 1951), Parliament may delegate ancillary/detail-filling rule-making power after laying down clear legislative policy, but CANNOT abdicate its 'Essential Legislative Function'. Impermissible delegations include unlimited taxing power, creating new offences/penalties, retrospective operation without express authority, ousting court jurisdiction, and unguided Henry VIII clauses.",
+        "legalProvision": "In re Delhi Laws Act (1951); Raj Narain Singh (1954); Article 265, Constitution of India",
+        "meaning": "The 'Essential Legislative Function' test draws the constitutional boundary preventing Parliament from signing a blank legislative cheque to bureaucrats.",
+        "keyPoints": [
+          "What CAN Be Delegated (Permissible): (1) Commencement/extension of an Act, (2) Inclusion/exclusion of items in a Schedule within statutory policy (Edward Mills), (3) Supplying technical details and procedural forms, (4) Modifying an Act in non-essential respects to adapt it to a territory, and (5) Fixing tax rates within a statutory maximum/minimum ceiling guided by legislative policy (Devi Das Gopal Krishnan).",
+          "What CANNOT Be Delegated (Impermissible / Essential Legislative Function): (1) Laying down core legislative policy and standards, (2) Repealing or modifying essential features of the Parent Act, (3) Imposing a brand-new tax without statutory guidance (Art. 265), (4) Creating new criminal offences or heavy penalties without statutory limits, (5) Giving RETROSPECTIVE effect to rules unless expressly authorized by the Parent Act, and (6) Ousting judicial review of courts.",
+          "Henry VIII Clause (Removal of Difficulties): A clause empowering the executive to modify/amend the Parent Act itself to remove practical difficulties in implementation - narrowly tolerated in India ONLY for transitional/minor adjustments without altering essential policy (Jalan Trading Co. v. Mill Mazdoor Sabha struck down an unguided Henry VIII clause in the Bonus Act)."
+        ],
+        "caseLaws": [
+          {
+            "name": "In re The Delhi Laws Act, 1912",
+            "citation": "AIR 1951 SC 332",
+            "principle": "7-judge Constitution Bench held that Indian legislatures cannot abdicate their 'essential legislative function' (formulating legislative policy), though ancillary rule-making may be validly delegated."
+          },
+          {
+            "name": "Jalan Trading Co. Pvt. Ltd. v. Mill Mazdoor Sabha",
+            "citation": "AIR 1967 SC 691",
+            "principle": "Struck down Section 37 of the Payment of Bonus Act, 1965 (Henry VIII clause) as excessive delegation because it gave unguided power to the Central Government to remove difficulties with finality."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is a 'Henry VIII Clause', and list three matters that Parliament CANNOT delegate to the executive?",
+            "a": "A Henry VIII clause empowers the executive to modify/amend the Parent Act itself to remove implementation difficulties (valid only if narrow/transitional). Parliament cannot delegate (1) essential legislative policy, (2) unguided taxation/new offences, or (3) retrospective rule-making without express statutory authority."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u3-t4": {
+      "id": "adm-u3-t4",
+      "subtitle": "Administrative Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Delegated legislation is kept within constitutional and statutory limits through two primary controls: Judicial Control via the Doctrine of Ultra Vires (Substantive Ultra Vires and Procedural Ultra Vires, including mandatory Publication and Consultation) and Legislative/Parliamentary Control (Debates, Laying Procedures - Simple, Negative, Affirmative - and Scrutiny Committees on Subordinate Legislation).",
+        "legalProvision": "Doctrine of Ultra Vires; Section 23, General Clauses Act, 1897 (Previous Publication); Parliamentary Committees on Subordinate Legislation",
+        "meaning": "Because delegated rules are drafted by unelected officials behind closed doors, judicial review and parliamentary laying/committees ensure transparency, legality, and democratic accountability.",
+        "keyPoints": [
+          "Judicial Control - Substantive Ultra Vires: A delegated rule is struck down if (1) Parent Act itself is unconstitutional, (2) Delegated rule violates the Constitution / Fundamental Rights (Air India v. Nergesh Meerza; Chintaman Rao), (3) Delegated rule exceeds the scope of the Parent Act (Dwarka Nath v. MCD), (4) Rule is manifestly arbitrary/unreasonable (Kruse v. Johnson; Indian Express Newspapers), (5) Mala fide or unauthorized retrospective effect, or (6) Conflicts with general law.",
+          "Judicial Control - Procedural Ultra Vires: Occurs when the executive breaches MANDATORY statutory procedures - chiefly (1) Failure to PUBLISH rules in the Official Gazette (Harla v. State of Rajasthan - secret law is no law; ignorance of law is no excuse ONLY if law is published!), and (2) Failure to conduct mandatory prior CONSULTATION with affected interests (Sec. 23, General Clauses Act).",
+          "Legislative / Parliamentary Control - Laying Procedures: Statutes require placing rules before Parliament via (a) Simple Laying (for information only), (b) Negative Resolution Laying (rule takes effect unless annulled/modified by Parliament within 30 days - most common in India), or (c) Affirmative Resolution Laying (rule takes effect ONLY after positive Parliamentary approval). Failure to lay is usually directory unless Parent Act makes it a mandatory condition precedent (Atlas Cycle Industries).",
+          "Parliamentary Scrutiny Committees: Both Lok Sabha and Rajya Sabha maintain dedicated 'Committees on Subordinate Legislation' (15 members, no Ministers) that scrutinize every rule for constitutionality, tax/retrospective overreach, unusual delay in publication, and ouster of courts."
+        ],
+        "caseLaws": [
+          {
+            "name": "Harla v. State of Rajasthan",
+            "citation": "AIR 1951 SC 467",
+            "principle": "Held that an unpublished Jaipur Opium Act resolution could not bind citizens: Natural Justice and Rule of Law require promulgation/publication of delegated legislation before it can take legal effect."
+          },
+          {
+            "name": "Indian Express Newspapers (Bombay) Pvt. Ltd. v. Union of India",
+            "citation": "1985 1 SCC 641",
+            "principle": "Held that subordinate legislation can be struck down not only for exceeding the Parent Act, but also for manifest arbitrariness under Article 14."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Substantive Ultra Vires and Procedural Ultra Vires, and name the three types of Parliamentary Laying procedures.",
+            "a": "Substantive Ultra Vires strikes down rules exceeding constitutional/statutory authority or manifesting arbitrariness, whereas Procedural Ultra Vires strikes down rules breaching mandatory procedures like Official Gazette publication (Harla) or prior consultation. Three laying procedures: Simple, Negative Resolution, and Affirmative Resolution."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "subjects": [
+    {
+      "id": "intellectual-property-law",
+      "title": "Intellectual Property Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Trade Marks Act, 1999 - Registration, Grounds of Refusal, Well-Known Marks, Infringement vs Passing Off & Domain Names",
+          "topics": [
+            {"id": "ipr-u3-t1", "title": "1. Trade Marks Act, 1999 - Definition, Functions, Kinds of Marks (Service, Collective, Certification, Well-Known) & Registration Procedure (Secs. 2 & 18-26)"},
+            {"id": "ipr-u3-t2", "title": "2. Absolute Grounds (Sec. 9) & Relative Grounds (Sec. 11) of Refusal, Honest Concurrent Use (Sec. 12) & Well-Known Marks Protection"},
+            {"id": "ipr-u3-t3", "title": "3. Infringement of Registered Trade Mark (Sec. 29), Passing Off Action (Sec. 27 - Cadila Health Care) & Infringement vs Passing Off"},
+            {"id": "ipr-u3-t4", "title": "4. Assignment & Licensing (Secs. 37-54), Domain Names & Cybersquatting (Satyam Infoway, UDRP/INDRP) & Civil/Criminal Remedies"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "ipr-u3-t1": {
+      "id": "ipr-u3-t1",
+      "subtitle": "Intellectual Property Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 2(1)(zb) of the Trade Marks Act, 1999, a Trade Mark is a mark capable of being represented graphically AND capable of distinguishing the goods or services of one person from those of others - including shapes of goods, packaging, and combinations of colours. Registration (Secs. 18-26) follows the 45-class Nice Classification, lasts 10 YEARS, and is PERPETUALLY RENEWABLE every 10 years indefinitely (Sec. 25).",
+        "legalProvision": "Sections 2(1)(m), 2(1)(zb), 2(1)(zg), 18-26, 61-78, Trade Marks Act, 1999; Nice Classification (Classes 1-34 Goods, 35-45 Services)",
+        "meaning": "A trademark serves both consumers (preventing confusion and signalling consistent quality/origin) and businesses (protecting commercial goodwill as a perpetually renewable brand asset).",
+        "keyPoints": [
+          "Definition & Four Core Functions (Sec. 2(1)(m) & (zb)): 'Mark' includes device, brand, heading, label, ticket, name, signature, word, letter, numeral, shape of goods, packaging, or colour combination (sound marks like Yahoo yodel/ICICI jingle are registrable via musical notation!). Functions: (1) Origin/source indicator, (2) Quality guarantee, (3) Advertising/marketing tool, and (4) Consumer protection against deception.",
+          "Kinds of Trade Marks: (1) PRODUCT & SERVICE MARKS (Classes 1-34 goods; Classes 35-45 services - newly added in 1999 Act), (2) COLLECTIVE MARKS (Sec. 61 - owned by an association to distinguish its members' goods/services, e.g., 'CA' by ICAI), (3) CERTIFICATION MARKS (Sec. 69 - certifies origin, material, mode of manufacture, or quality, e.g., ISI, AGMARK, Woolmark, FSSAI - proprietor CANNOT trade in certified goods himself!), (4) ASSOCIATED & SERIES MARKS (Secs. 15-16), and (5) WELL-KNOWN TRADE MARKS (Sec. 2(1)(zg) - e.g., Tata, Reliance, Benz, Amul).",
+          "Registration Procedure & Term (Secs. 18-26): Application in Form TM-A to Registrar of Trade Marks (Sec. 18) -> Examination Report (objections under Secs. 9/11) -> Acceptance & Advertisement in Trade Marks Journal (Sec. 20) -> 4-MONTH window for third-party Opposition (Sec. 21) -> Registration Certificate (Sec. 23, retroactive to filing date). Initial Term = 10 YEARS, renewable indefinitely for successive 10-year blocks (Sec. 25); non-use for 5 continuous years + 3 months invites removal/rectification (Sec. 47)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Laxmikant V. Patel v. Chetanbhat Shah",
+            "citation": "2002 3 SCC 65",
+            "principle": "Explained that trademark law protects commercial goodwill and consumer clarity; even an honest trader cannot adopt a deceptively similar business name ('Muktajivan Colour Lab') that diverts an established rival's customers."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between a Collective Mark (Sec. 61) and a Certification Mark (Sec. 69), and state the statutory duration and renewal rule for a registered Trade Mark under Section 25.",
+            "a": "A Collective Mark identifies goods/services of members of an association, whereas a Certification Mark guarantees specific quality/origin standards (like ISI/AGMARK) and its owner cannot himself sell the certified goods. Registration lasts 10 years and is renewable perpetually every 10 years."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u3-t2": {
+      "id": "ipr-u3-t2",
+      "subtitle": "Intellectual Property Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Not every word or logo can be monopolized as a trademark. Section 9 bars marks on 'Absolute Grounds' (inherent defects: devoid of distinctiveness, purely descriptive, generic, deceptive, obscene, or functional shape - EXCEPT where the mark has acquired 'Secondary Meaning' through long use!), while Section 11 bars marks on 'Relative Grounds' (conflict/confusion with earlier identical/similar marks or Well-Known Marks across even DISSIMILAR classes), subject to Honest Concurrent Use (Sec. 12).",
+        "legalProvision": "Sections 9, 11, 12, 13, & 2(1)(zg), Trade Marks Act, 1999",
+        "meaning": "Trademark distinctiveness follows a spectrum from strongest to weakest: Coined/Fanciful ('Kodak', 'Xerox') -> Arbitrary ('Apple' computers) -> Suggestive -> Descriptive (registrable ONLY with Secondary Meaning) -> Generic (NEVER registrable).",
+        "keyPoints": [
+          "Absolute Grounds for Refusal (Sec. 9): Refused if mark (1) is DEVOID OF DISTINCTIVE CHARACTER (Sec. 9(1)(a)), (2) consists exclusively of DESCRIPTIVE indications of kind, quality, quantity, intended purpose, value, or geographical origin (Sec. 9(1)(b) - e.g., 'Sweet' for sugar or 'Simla' for apples), (3) is CUSTOMARY / GENERIC in current trade language (Sec. 9(1)(c)), (4) deceives/confuses public, hurts religious susceptibilities, contains scandalous/obscene matter, or violates Emblems & Names Act 1950 (Sec. 9(2)), OR (5) consists exclusively of a functional/technical shape or shape giving substantial value to goods (Sec. 9(3)). CRUCIAL PROVISO (Secondary Meaning): A descriptive mark under Sec. 9(1) SHALL NOT be refused if it acquired a distinctive 'secondary meaning' through prior extensive use or is a well-known mark (e.g., 'Infosys', 'Reddaway v. Banham' Camel Hair Belting)!",
+          "Relative Grounds for Refusal (Sec. 11): Refused if identical/similar to an EARLIER TRADE MARK for identical/similar goods/services creating a LIKELIHOOD OF CONFUSION/ASSOCIATION among the public (Sec. 11(1)-(2)), OR if use is prevented by law of Passing Off or Copyright (Sec. 11(3)). Section 13 bars chemical element/INN generic drug names.",
+          "Cross-Class Protection of Well-Known Trade Marks (Sec. 2(1)(zg) & Sec. 11(2), (6)-(10)): A mark known to a substantial segment of the public (judged by recognition, duration, geography, promotion & enforcement under Sec. 11(6) - e.g., Benz, Tata, Whirlpool) is protected EVEN AGAINST DISSIMILAR GOODS/SERVICES (Daimler Benz v. Hybo Hindustan - 'Benz' stopped from being used on underwear due to trademark dilution!).",
+          "Honest Concurrent Use (Sec. 12): Registrar may permit co-existing registration of identical/similar marks by more than one proprietor upon proving honest concurrent adoption and use (London Rubber Co. v. Durex Products) subject to territorial/usage conditions."
+        ],
+        "caseLaws": [
+          {
+            "name": "Daimler Benz Aktiengesellschaft v. Hybo Hindustan",
+            "citation": "AIR 1994 Del 239",
+            "principle": "Landmark Indian trademark dilution / well-known mark ruling: restrained an Indian garment maker from using 'Benz' and the three-pointed star on undergarments despite completely dissimilar goods."
+          },
+          {
+            "name": "N.R. Dongre v. Whirlpool Corporation",
+            "citation": "1996 5 SCC 714",
+            "principle": "Established 'Trans-border Reputation' in India: even without physical local sales or Indian registration, a globally advertised well-known mark ('Whirlpool') enjoying spill-over reputation in India is protected against local adoption."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When can a descriptive trademark overcome refusal under Section 9(1) (Secondary Meaning), and how does Section 11(2) protect a Well-Known Trade Mark differently from an ordinary mark?",
+            "a": "Under the Proviso to Sec. 9(1), a descriptive mark is registrable if it has acquired secondary distinctive character through extensive prior use before filing. Unlike ordinary marks (protected within same/similar classes), a Well-Known Mark under Sec. 11(2) is protected across EVEN DISSIMILAR goods/services against unfair advantage or dilution."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u3-t3": {
+      "id": "ipr-u3-t3",
+      "subtitle": "Intellectual Property Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 27 of the Trade Marks Act, 1999, NO person can institute a statutory Infringement suit for an UNREGISTERED mark (Sec. 27(1)), BUT common-law 'Passing Off' rights are expressly preserved (Sec. 27(2)). Statutory Infringement (Sec. 29) protects registered owners against identical/deceptively similar marks and dilution, whereas Passing Off protects prior goodwill against commercial misrepresentation ('Classic Trinity': Goodwill, Misrepresentation, Damage) - tested strictly for pharmaceutical confusion under Cadila Health Care (2001).",
+        "legalProvision": "Sections 27, 28, 29, 30, & 34, Trade Marks Act, 1999",
+        "meaning": "Registration gives the owner a clean statutory shortcut under Section 29 (no need to prove market reputation afresh), while Passing Off ensures that a prior honest user ('first in the market' - Sec. 34) always defeats even a later registered copycat!",
+        "keyPoints": [
+          "Infringement of Registered Trade Mark (Sec. 29): Committed by unauthorized use in the course of trade of (1) Identical mark for identical goods/services (confusion PRESUMED - Sec. 29(3)), (2) Identical/deceptively similar mark for identical/similar goods causing likelihood of confusion (Sec. 29(2)), (3) Well-known/reputed mark for DISSIMILAR goods taking unfair advantage or causing DILUTION/tarnishment (Sec. 29(4)), (4) Trade name/corporate name misuse (Sec. 29(5)), (5) Unfair comparative advertising disparaging a rival's mark (Sec. 29(8)), or (6) Spoken/phonetic use (Sec. 29(9)). Defences (Secs. 30 & 34): Nominative/descriptive fair use, honest prior use (Sec. 34 - prior user ALWAYS prevails over registered owner: S. Syed Mohideen v. P. Sulochana Bai!), and exhaustion of rights.",
+          "Action for Passing Off (Sec. 27(2) - Classic Trinity): Grounded in equity ('nobody has any right to represent his goods as the goods of somebody else'). Plaintiff MUST prove THREE elements (Reckitt & Colman / Jif Lemon): (1) GOODWILL / reputation attached to plaintiff's goods/services, (2) MISREPRESENTATION by defendant (intentional or innocent) likely to deceive consumers, and (3) LIKELIHOOD OF DAMAGE to plaintiff's goodwill.",
+          "Deceptive Similarity & Pharma Strictness (Amritdhara Pharmacy & Cadila Health Care, 2001): Tested from the viewpoint of a man of 'average intelligence and imperfect recollection' (overall structural, visual & phonetic impression - NEVER side-by-side microscopic comparison!). For MEDICINES (Cadila Health Care: 'Falcitab' vs 'Falcigo'), courts apply an extra-strict standard because confusion between drugs can be FATAL.",
+          "Infringement vs Passing Off (Four Key Distinctions): (1) Basis - Statutory remedy (Sec. 29) vs Common-law tort remedy (Sec. 27(2)); (2) Registration - Mandatory for Infringement vs NOT required for Passing Off; (3) Burden - Mere deceptive similarity of registered mark suffices (no proof of actual deception/added matter defence fails - Ruston & Hornsby) vs Must prove Goodwill + Misrepresentation + Damage (distinctive packaging/get-up may defeat Passing Off); (4) Scope - Confined to registered class (except well-known marks) vs Extends to any commercial field where goodwill spills over."
+        ],
+        "caseLaws": [
+          {
+            "name": "Cadila Health Care Ltd. v. Cadila Pharmaceuticals Ltd.",
+            "citation": "2001 5 SCC 73",
+            "principle": "3-judge Bench laid down the 7 classic factors for deciding deceptive similarity in Passing Off and held that for medicinal/pharmaceutical products, even a slight possibility of confusion warrants an injunction to protect public health."
+          },
+          {
+            "name": "S. Syed Mohideen v. P. Sulochana Bai",
+            "citation": "2016 2 SCC 683",
+            "principle": "Affirmed Section 34 supremacy: Passing Off rights of a PRIOR USER ('Iruttukadai Halwa') prevail over even a subsequent REGISTERED trademark proprietor because registration only recognizes, not destroys, prior common-law rights."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four differences between Trade Mark Infringement (Sec. 29) and Passing Off (Sec. 27(2)), and explain why a prior unregistered user defeats a subsequent registered proprietor under Section 34.",
+            "a": "Infringement is statutory, requires registration, presumes exclusivity in class, and ignores added packaging differences; Passing Off is common-law, needs no registration, and requires proving Goodwill, Misrepresentation, and Damage. Under Sec. 34 (S. Syed Mohideen), prior continuous use overrides later registration."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u3-t4": {
+      "id": "ipr-u3-t4",
+      "subtitle": "Intellectual Property Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Registered and unregistered trademarks are commercial assets transferable by Assignment (with or without goodwill under Secs. 37-45) or permitted to third parties through Registered User / Common-Law Licensing (Secs. 48-54, requiring quality control to avoid 'naked licensing'). In the digital era, Indian courts treat Domain Names as virtual trademarks entitled to full Passing Off and anti-cybersquatting protection (Satyam Infoway v. Siffynet Solutions), supplemented by ICANN's UDRP and India's INDRP (.in) arbitration.",
+        "legalProvision": "Sections 37-54, 103-104, & 134-135, Trade Marks Act, 1999; ICANN UDRP (1999) & NIXI INDRP (.in Policy)",
+        "meaning": "Just as physical shops rely on signboards, online businesses rely on domain names - making bad-faith domain hoarding ('Cybersquatting') an actionable online Passing Off and UDRP violation.",
+        "keyPoints": [
+          "Assignment & Transmission (Secs. 37-45): Assignment is transfer of ownership by act of parties (registered marks assignable WITH OR WITHOUT GOODWILL under Sec. 38; unregistered marks also assignable with or without goodwill under Sec. 39!). Restrictions (Sec. 40): Assignment CANNOT create multiple conflicting exclusive rights in different hands for similar goods likely to deceive the public. Assignment without goodwill requires Registrar's advertisement direction within 6 months (Sec. 42).",
+          "Licensing & Registered Users (Secs. 48-54): Registered owner may license mark via written agreement (optionally recorded as 'Registered User' under Sec. 49) - MUST retain strict QUALITY CONTROL over licensee's goods/services (else 'trafficking' or 'naked licensing' invalidates the mark). Permitted use by licensee enures to proprietor's benefit (prevents Sec. 47 non-use cancellation).",
+          "Domain Names & Cybersquatting (Satyam Infoway v. Siffynet Solutions, 2004): Domain names (e.g., www.sifynet.com vs www.siffynet.com) are not merely internet addresses - they identify commercial origin on a global scale and qualify for full Passing Off protection under the Trade Marks Act! Cybersquatting (registering famous brand domains in bad faith to extort ransom or divert traffic - e.g., Yahoo! Inc. v. Akash Arora; Tata Sons v. Manu Kosuri) is policed by BOTH Indian courts AND fast-track arbitration under ICANN's UDRP (.com/.org) and NIXI's INDRP (.in domains - requiring 3 proofs: identical/confusingly similar mark, registrant has no legitimate interest, and bad-faith registration/use).",
+          "Civil, Criminal & Administrative Remedies (Secs. 103-104 & 134-135): Civil suit in District/Commercial Court (plaintiff's place of business permitted under Sec. 134(2) for infringement, NOT pure passing off!) -> Injunctions, Damages/Account of Profits, Anton Piller/Mareva orders, delivery-up. Criminal (Secs. 103-104): Falsifying/falsely applying trademark carries 6 MONTHS to 3 YEARS' imprisonment + Rs. 50,000 to Rs. 2 LAKHS fine (police DSP+ search/seizure under Sec. 115(4) after Registrar opinion)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Satyam Infoway Ltd. v. Siffynet Solutions Pvt. Ltd.",
+            "citation": "2004 6 SCC 145",
+            "principle": "Landmark Supreme Court ruling holding that a Domain Name has all characteristics of a Trademark and is fully protected against deceptive imitation and cybersquatting via Passing Off under Indian law."
+          },
+          {
+            "name": "Yahoo! Inc. v. Akash Arora",
+            "citation": "1999 78 DLT 285 (Del HC)",
+            "principle": "India's first landmark cybersquatting injunction: restrained 'yahooindia.com' for passing off against 'Yahoo!', holding that internet users are easily confused by identical domain names."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What did the Supreme Court hold in Satyam Infoway (2004) regarding Domain Names, and what three elements must a brand owner prove under UDRP/INDRP to recover a cybersquatted domain?",
+            "a": "Satyam Infoway held that Domain Names function as business identifiers equivalent to Trademarks protected by Passing Off. UDRP/INDRP requires proving (1) domain is identical/confusingly similar to complainant's mark, (2) registrant has no legitimate right/interest, and (3) bad-faith registration and/or use."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

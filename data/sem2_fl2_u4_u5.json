@@ -1,0 +1,375 @@
+{
+  "subjects": [
+    {
+      "id": "family-law-ii",
+      "title": "Family Law - II (Muslim Law & Other Personal Laws)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Waqf, Waqf Act 1995 (Amended 2025), Mutawalli, Waqf Tribunals & Muslim Succession",
+          "topics": [
+            {"id": "fl2-u4-t1", "title": "1. Waqf - Definition, Legal Incidents & Essentials of a Valid Waqf"},
+            {"id": "fl2-u4-t2", "title": "2. Kinds of Waqf (Public, Private / Waqf-alal-Aulad), Creation & Revocation"},
+            {"id": "fl2-u4-t3", "title": "3. Mutawalli - Qualification, Appointment, Powers, Duties, Management & Removal"},
+            {"id": "fl2-u4-t4", "title": "4. Waqf Act, 1995 (as Amended by 2025 UMEED Act), Waqf Boards & Waqf Tribunals"},
+            {"id": "fl2-u4-t5", "title": "5. Muslim Succession - Application of Estate, Administration & Heirs as Legal Representatives"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Special Marriage Act 1954, Indian Divorce Act 1869, Domicile, Maintenance & Christian Succession",
+          "topics": [
+            {"id": "fl2-u5-t1", "title": "1. Special Marriage Act, 1954 - Conditions, Solemnization, Registration, Effects & Divorce"},
+            {"id": "fl2-u5-t2", "title": "2. Salient Features of the Indian Divorce Act, 1869 (as Amended in 2001)"},
+            {"id": "fl2-u5-t3", "title": "3. Law of Domicile (Indian Succession Act, 1925 - Sections 4 to 19)"},
+            {"id": "fl2-u5-t4", "title": "4. Maintenance to Spouses & Dependants (SMA 1954, IDA 1869 & Sec. 125 CrPC / Sec. 144 BNSS)"},
+            {"id": "fl2-u5-t5", "title": "5. Intestate Succession of Christians Under the Indian Succession Act, 1925 (Secs. 31-49)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "fl2-u4-t1": {
+      "id": "fl2-u4-t1",
+      "subtitle": "Family Law - II - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Waqf (literally 'detention' or 'tying up') is the permanent dedication by a Muslim of any movable or immovable property for any purpose recognized by Muslim law as pious, religious, or charitable. Once validly created, ownership vests perpetually in Almighty God, making the property irrevocable and inalienable.",
+        "legalProvision": "Section 3(r), Waqf Act, 1995 (Unified Waqf Management, Empowerment, Efficiency and Development Act, 1995); Classical Hanafi & Shia Law of Waqf",
+        "meaning": "Unlike a secular trust (where legal ownership vests in trustees and the trust need not be permanent), a Waqf extinguishes the founder's (Waqif's) proprietary title forever and dedicates the usufruct/income to religious or charitable beneficiaries.",
+        "keyPoints": [
+          "Definition (Imam Abu Yusuf & Waqf Act): Permanent dedication of property for pious, religious, or charitable purposes; ownership transfers immediately to God, while income benefits mankind.",
+          "Four Core Legal Characteristics: (1) Perpetuity (a temporary Waqf for a fixed term is void), (2) Irrevocability (cannot be revoked once completed), (3) Inalienability (cannot be sold, gifted, or mortgaged except with strict statutory sanction), and (4) Unconditional vesting (contingent Waqfs are void).",
+          "Competency of Founder (Waqif): Must be a sane adult (18+ under Indian Majority Act) who lawfully owns the dedicated property at the time of dedication (note: the 2025 Amendment's 5-year practising-Muslim mandate was stayed by the Supreme Court in September 2025 pending rules).",
+          "Valid Subject Matter & Objects: Any tangible movable or immovable property capable of yielding benefit (land, mosques, schools, cash/shares); valid objects include mosques, graveyards, orphanages, hospitals, scholarships, and poverty relief (anti-Islamic or purely private gambling objects are void)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Vidya Varuthi Thirtha v. Balusami Ayyar",
+            "citation": "AIR 1922 PC 123",
+            "principle": "Held that Waqf property vests directly in Almighty God and the Mutawalli is merely a manager/superintendent, NOT a trustee holding legal title."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the four indispensable legal characteristics of a valid Waqf and how a Waqf differs from an ordinary Trust.",
+            "a": "Perpetuity, irrevocability, inalienability, and unconditional dedication. In a Trust, legal title vests in trustees and it may be temporary or revocable; in a Waqf, ownership vests perpetually and irrevocably in God."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u4-t2": {
+      "id": "fl2-u4-t2",
+      "subtitle": "Family Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Waqfs are classified into Public Waqfs (for public religious/charitable benefit) and Private / Family Waqfs (Waqf-alal-Aulad, validated by the Mussalman Wakf Validating Act, 1913 provided ultimate benefit goes to charity). A Waqf may be created inter vivos or by Will (capped at 1/3rd); once completed, an inter vivos Waqf is irrevocable, whereas a testamentary Waqf may be revoked before death.",
+        "legalProvision": "Mussalman Wakf Validating Act, 1913 (Sec. 3); Waqf Act, 1995 (as amended by Waqf (Amendment) Act, 2025)",
+        "meaning": "Historically, the Privy Council invalidated family Waqfs in Abdul Fata Mahomed Ishak (1894) as illusory perpetuities, prompting Parliament to pass the 1913 Act restoring Waqf-alal-Aulad. Modern statutory reforms under the 2025 Amendment prohibit using Waqf-alal-Aulad to deny women heirs their inheritance rights and abolish future 'Waqf by user' without a formal Waqf deed.",
+        "keyPoints": [
+          "Public Waqf vs Private Waqf (Waqf-alal-Aulad): Public Waqf serves general community charity (mosques, madrasas, hospitals); Waqf-alal-Aulad benefits the Waqif's family, children, and descendants first, with an express or implied ultimate reservation for the poor/charity after the family line fails (Sec. 3, 1913 Act).",
+          "Protection of Women Heirs (2025 Amendment): Clarifies that creating a Waqf-alal-Aulad cannot result in denying inheritance rights to any heir of the Waqif, expressly protecting female heirs.",
+          "Modes of Creation: (1) Inter Vivos by written Waqf Deed (Waqfnama) - under Hanafi law, mere declaration completes it (Abu Yusuf), whereas Shia law also requires delivery of possession; (2) Testamentary Waqf by Will (valid up to 1/3rd of net estate without heirs' consent); (3) Historically by immemorial user ('Waqf by user' - prospectively abolished by the 2025 Amendment requiring a formal Waqf deed).",
+          "Waqf During Marz-ul-Maut (Death-Illness): Treated like a testamentary Waqf and capped at 1/3rd of net estate unless heirs consent after death.",
+          "Revocation of Waqf: An inter vivos Waqf is strictly IRREVOCABLE once completed (any clause reserving revocation makes the Waqf void ab initio); ONLY a Testamentary Waqf (created by Will) can be revoked by the Waqif at any time before death."
+        ],
+        "caseLaws": [
+          {
+            "name": "Abdul Fata Mahomed Ishak v. Rasamaya Dhur Chowdhri",
+            "citation": "1894 22 IA 76 (PC)",
+            "principle": "Privy Council struck down a family Waqf where charitable gift was remote/illusory - directly leading to the enactment of the Mussalman Wakf Validating Act, 1913."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When can a Waqf be validly revoked, and what was the purpose of the Mussalman Wakf Validating Act, 1913?",
+            "a": "An inter vivos Waqf is irrevocable once completed; ONLY a testamentary Waqf (by Will) can be revoked before the Waqif's death. The 1913 Act overturned Abdul Fata Mahomed Ishak and validated family Waqfs (Waqf-alal-Aulad) having an ultimate charitable dedication."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u4-t3": {
+      "id": "fl2-u4-t3",
+      "subtitle": "Family Law - II - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Mutawalli is the superintendent or manager of Waqf property - NOT its legal owner or trustee. Any sound-minded adult (including a woman or non-Muslim, where no religious/spiritual duties are involved) may be appointed Mutawalli, exercising managerial powers subject to statutory restrictions on alienation and removal under Section 64 of the Waqf Act.",
+        "legalProvision": "Sections 3(i), 50, 51, 63, & 64, Waqf Act, 1995; Classical Muslim Law of Mutawalli",
+        "meaning": "Because ownership of Waqf property vests in God, the Mutawalli acts strictly as a fiduciary caretaker responsible for preserving assets, collecting rents, filing annual accounts with the Waqf Board, and distributing income strictly per the Waqfnama.",
+        "keyPoints": [
+          "Who Can Be a Mutawalli?: Any adult of sound mind; a WOMAN or even a non-Muslim can be appointed Mutawalli for secular managerial Waqfs, EXCEPT where the office entails religious/spiritual duties (e.g., Sajjadanashin, Imam leading prayers, or Khatib).",
+          "Modes of Appointment: Appointed in order by (1) the Founder (Waqif) in the Waqfnama (founder may also appoint himself as first Mutawalli), (2) the Waqif's Executor, (3) an outgoing Mutawalli on his deathbed if founder/executor are dead, or (4) the State Waqf Board / Court (Sec. 63).",
+          "Powers & Restrictions on Alienation: May manage property, collect rent, repair structures, and grant short-term leases (within statutory limits); CANNOT sell, gift, mortgage, exchange, or grant long-term leases of Waqf property without prior express sanction of the Waqf Board (Sec. 51 - unauthorized alienation is void).",
+          "Statutory Duties (Section 50): Carry out directions of the Waqf Board, furnish annual returns and audited accounts, pay mandatory Waqf Board contribution (reduced from 7% to 5% by the 2025 Amendment), allow inspection, and clear encroachments.",
+          "Removal of Mutawalli (Section 64): Even the Waqif cannot remove a Mutawalli unless such power was reserved in the Waqfnama; the State Waqf Board (by 2/3rds majority after inquiry) may remove a Mutawalli for criminal conviction, unsoundness of mind, insolvency, misappropriation/breach of trust, persistent failure to submit accounts, or unlawful alienation."
+        ],
+        "caseLaws": [
+          {
+            "name": "Shahabuddin v. Sohan Lal",
+            "citation": "1907 PR 75",
+            "principle": "Affirmed that a woman is fully eligible to hold the office of Mutawalli wherever the duties involve secular administration and management rather than leading congregational prayers."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can a woman be appointed as Mutawalli, and can a Mutawalli sell or mortgage Waqf land on his own authority?",
+            "a": "Yes, a woman can be Mutawalli for secular/managerial Waqfs (not spiritual roles like Imam). No, a Mutawalli cannot sell, gift, or mortgage Waqf property without prior express sanction of the Waqf Board under Section 51."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u4-t4": {
+      "id": "fl2-u4-t4",
+      "subtitle": "Family Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Waqf Act, 1995 (amended in 2013 and renamed the Unified Waqf Management, Empowerment, Efficiency and Development Act, 1995 by the Waqf (Amendment) Act, 2025) establishes Central Waqf Council, State Waqf Boards, compulsory registration/audits, and specialized Waqf Tribunals with exclusive jurisdiction over Waqf disputes (barring ordinary civil courts under Section 85).",
+        "legalProvision": "Waqf Act, 1995 (Sections 9, 13, 36, 52, 83, & 85); Waqf (Amendment) Act, 2025 (UMEED Act); In re: Waqf (Amendment) Act, 2025 (SC Interim Order, Sept 2025)",
+        "meaning": "Statutory Waqf administration prevents encroachment and mismanagement of thousands of crores worth of charitable assets through mandatory registration, independent auditing, and dedicated judicial tribunals.",
+        "keyPoints": [
+          "Institutional Architecture (Waqf Act, 1995): Central Waqf Council (advisory body under Ministry of Minority Affairs), State Waqf Boards (body corporate exercising general superintendence over all Waqfs in the State), Chief Executive Officer (CEO), and mandatory registration of every Waqf with full property schedules (Sec. 36).",
+          "Waqf Tribunals & Exclusive Jurisdiction (Sections 83 & 85): State Governments constitute 3-member Waqf Tribunals (headed by a District/Sessions Judge rank Chairman + State Civil Service officer + Muslim law expert) exercising civil court powers over any dispute whether a property is Waqf, Mutawalli removal, or eviction of encroachers; Section 85 bars ordinary civil courts from entertaining matters determinable by a Waqf Tribunal.",
+          "Key Changes Under Waqf (Amendment) Act, 2025 (Assented 5 April 2025): Renamed 1995 Act to UMEED Act; repealed Mussalman Wakf Act, 1923; abolished prospective 'Waqf by user'; applied Limitation Act, 1963 to Waqf claims (omitting Sec. 107); introduced direct statutory appeal to the High Court within 90 days against Tribunal orders; reduced mandatory Board contribution from 7% to 5% and mandated government audits for Waqfs earning over Rs. 1 lakh/year.",
+          "Supreme Court Interim Order (15 Sept 2025 - 2025 INSC 1116): Refused to stay the entire 2025 Act, but STAYED (1) the 5-year practising-Muslim requirement (Sec. 3(r)) pending rules, and (2) executive power under Section 3C to alter Waqf status of disputed government land until final adjudication by a Waqf Tribunal; capped non-Muslim representation at max 4 in CWC (22 members) and max 3 in State Waqf Boards (11 members)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ramesh Gobindram v. Sugra Humayun Mirza Wakf",
+            "citation": "2010 8 SCC 726",
+            "principle": "Clarified the boundary of Section 85 bar: Waqf Tribunals have exclusive jurisdiction over disputes expressly assigned under the Waqf Act (later expanded by the 2013 Amendment to include eviction of tenants/encroachers)."
+          },
+          {
+            "name": "In re: Waqf (Amendment) Act, 2025",
+            "citation": "2025 INSC 1116 (SC)",
+            "principle": "Declined to stay the 2025 Amendment as a whole, upheld prospective removal of 'Waqf by user' and application of the Limitation Act, while staying the 5-year practice rule and Section 3C executive dispossession clauses pending final hearing."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the effect of Section 85 of the Waqf Act, 1995, and what two major clauses of the 2025 Amendment were stayed by the Supreme Court in September 2025?",
+            "a": "Section 85 bars ordinary civil courts from entertaining disputes that a Waqf Tribunal is empowered to decide. In September 2025, the Supreme Court stayed the 5-year practising-Muslim condition (Sec. 3(r)) and executive alteration of Waqf status under Section 3C pending Tribunal determination."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u4-t5": {
+      "id": "fl2-u4-t5",
+      "subtitle": "Family Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Muslim law, inheritance opens strictly upon death ('Nemo est haeres viventis' - no birthright or joint family survivorship). Before distributing shares among heirs, the deceased's estate must be applied in strict statutory priority: funeral expenses, estate administration costs, wages/debts (including unpaid Mahr), and valid Wills (up to 1/3rd). Heirs succeed immediately as tenants-in-common and are personally liable for debts only up to the value of assets inherited.",
+        "legalProvision": "Classical Muslim Law of Administration & Mirath (Inheritance); Indian Succession Act, 1925 (Secs. 211 & 214 - Probate/Succession Certificate)",
+        "meaning": "Unlike Hindu Mitakshara coparcenary (where sons acquire an interest by birth), a Muslim heir has merely a spes successionis (bare chance of inheriting) during the ancestor's lifetime. Upon death, the estate vests immediately in the heirs in definite fractional shares without needing an executor, unless an executor/administrator is appointed.",
+        "keyPoints": [
+          "Order of Application of Deceased Muslim's Property: (1) Funeral and death-bed medical expenses, (2) Expenses of obtaining Probate/Letters of Administration, (3) Wages due for personal domestic service within 3 months before death, (4) All lawful debts of the deceased (including widow's unpaid Mahr as an unsecured debt), (5) Valid legacies under a Will up to 1/3rd of the remaining surplus, and (6) Distribution of the net residue among legal heirs.",
+          "Legal Position of Heirs as Representatives: Where no executor/administrator is appointed, heirs succeed directly as tenants-in-common (each owning a distinct fractional share, NOT joint tenants with survivorship) and represent the estate.",
+          "Proportionate Liability for Debts (Jafri Begam v. Amir Muhammad Khan): Heirs are NOT personally liable beyond the estate inherited; each heir is liable for the deceased's debts ONLY in proportion to his own inherited share (Section 52 CPC).",
+          "Alienation by an Heir Before Debt Payment: Because an heir acquires immediate title upon death, a bona fide purchaser for value from an heir gets a valid title to that heir's share even if the deceased's debts remain unpaid (creditor can recover from the selling heir or unsold shares, not from a bona fide buyer).",
+          "Sunni vs Shia Distribution Overview: Sunni (Hanafi) law distributes residue across (1) Sharers (12 Quranic heirs), (2) Residuaries (Asabah / agnates), and (3) Distant Kindred (Dhawil-Arham), applying Doctrines of Aul (proportionate reduction when shares exceed 1) and Radd (return of surplus). Shia law divides heirs into Heirs by Consanguinity (Classes I-III, no agnatic preference) and Heirs by Marriage."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jafri Begam v. Amir Muhammad Khan",
+            "citation": "1885 ILR 7 All 822 (FB)",
+            "principle": "Full Bench held that upon a Muslim's death, the estate devolves immediately upon the heirs (not suspended until debts are paid), and each heir is liable for debts only proportionately to his inherited share."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the priority order in which a deceased Muslim's property must be applied before heirs take their shares, and explain whether an heir is liable for the deceased's entire debt.",
+            "a": "Order: (1) Funeral expenses, (2) Administration costs, (3) 3 months' domestic wages, (4) Lawful debts including unpaid Mahr, (5) Valid Wills up to 1/3rd, and (6) Distribution to heirs. An heir is liable ONLY proportionately to his own inherited share (Jafri Begam)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u5-t1": {
+      "id": "fl2-u5-t1",
+      "subtitle": "Family Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Special Marriage Act, 1954 provides a secular civil form of marriage (and registration of existing religious marriages) for any two citizens of India regardless of religion, caste, or creed. It mandates monogamy, age 21 (male)/18 (female), 30 days' prior notice, solemnization before a Marriage Officer and 3 witnesses, and shifts succession from personal law to the Indian Succession Act, 1925.",
+        "legalProvision": "Special Marriage Act, 1954 (Sections 4, 5-14, 15, 19, 21, 22-28, & 36-37)",
+        "meaning": "Designed as a voluntary step toward a Uniform Civil Code, the Special Marriage Act allows inter-faith and inter-caste couples to marry without either spouse converting religions, while guaranteeing uniform statutory remedies for nullity, judicial separation, divorce, and mutual consent.",
+        "keyPoints": [
+          "Conditions of Valid Marriage (Section 4): Neither party has a living spouse (strict monogamy), sound mind/valid consent, male completed 21 years and female completed 18 years, and parties are NOT within degrees of prohibited relationship (unless custom of at least one party permits).",
+          "Solemnization Procedure (Sections 5-13): Written Notice to Marriage Officer of the district where either party resided for 30+ days -> Publication of notice for 30 days inviting objections (Sec. 7) -> Inquiry into objections -> Declaration & solemnization before Marriage Officer and 3 witnesses -> Marriage Certificate (conclusive proof under Sec. 13). Existing religious marriages may also be registered under Section 15.",
+          "Legal Consequences of Marriage (Sections 19 & 21): (1) A Hindu, Buddhist, Sikh, or Jain marrying a non-Hindu under SMA suffers severance from the Hindu Undivided Family (Sec. 19; saved if BOTH spouses are Hindus under Section 21A), and (2) Succession to the property of parties married under SMA is governed strictly by the Indian Succession Act, 1925 (Sec. 21), NOT Hindu or Muslim personal law.",
+          "Matrimonial Remedies (Sections 22-28): Restitution of Conjugal Rights (Sec. 22), Judicial Separation (Sec. 23), Void/Voidable Marriages (Secs. 24-25), Fault Divorce grounds (Sec. 27 - adultery, 2 years' desertion, 7+ years' imprisonment, cruelty, venereal disease, unsoundness of mind, 7 years unheard of; wife gets additional grounds like rape/sodomy/bestiality), and Divorce by Mutual Consent (Sec. 28 - 1 year separation + 6-18 month cooling period)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Lata Singh v. State of U.P.",
+            "citation": "AIR 2006 SC 2522",
+            "principle": "Held that inter-caste and inter-religious marriages between consenting adults under the Special Marriage Act are wholly lawful and protected by police against honour violence or harassment."
+          },
+          {
+            "name": "Safiya Sultana v. State of U.P.",
+            "citation": "2021 SCC OnLine All 19",
+            "principle": "Allahabad High Court held that mandatory public publication of the 30-day notice under Sections 6-7 SMA infringes the fundamental right to privacy (Puttaswamy) and should be optional at the couple's written request."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What law governs intestate succession to the property of a Hindu and a Muslim who marry under the Special Marriage Act, 1954?",
+            "a": "Under Section 21 of the Special Marriage Act, 1954, succession to their property is governed exclusively by the secular Indian Succession Act, 1925 (not Hindu or Muslim personal law)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u5-t2": {
+      "id": "fl2-u5-t2",
+      "subtitle": "Family Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Indian Divorce Act, 1869 (renamed the Divorce Act, 1869 and overhauled by the Indian Divorce (Amendment) Act, 2001) governs matrimonial reliefs - Divorce, Mutual Consent Divorce, Nullity, Judicial Separation, Restitution of Conjugal Rights, and Alimony - where at least one spouse professes the Christian religion.",
+        "legalProvision": "Divorce Act, 1869 (as amended in 2001 - Sections 2, 10, 10A, 18-19, 22, 32, & 36-37)",
+        "meaning": "Before 2001, Section 10 of the 1869 Act was heavily discriminatory against Christian women (a husband could divorce for simple adultery, whereas a wife had to prove adultery PLUS cruelty, desertion, or bigamy). Following judicial nudges (Mary Sonia Zachariah; Ammini E.J.), the 2001 Amendment established gender-equal divorce grounds and introduced mutual consent divorce.",
+        "keyPoints": [
+          "Gender-Equal Fault Grounds for Divorce (Section 10(1), 2001 Amendment): Either husband or wife may petition District/Family Court on 10 uniform grounds - adultery, conversion from Christianity, incurable unsound mind for 2+ years, communicable venereal disease for 2+ years, unheard of for 7+ years, wilful refusal to consummate, non-compliance with RCR decree for 2+ years, continuous desertion for 2+ years, or cruelty (leprosy omitted in 2019). Wife gets an additional ground if husband is guilty of rape, sodomy, or bestiality (Sec. 10(2)).",
+          "Divorce by Mutual Consent (Section 10A): Introduced in 2001; spouses living separately for 2 years (read down to 1 year by Kerala/Karnataka/Supreme Court rulings to ensure Article 14 parity with HMA and SMA) may jointly petition for mutual consent divorce.",
+          "Nullity of Marriage (Sections 18-19): Decree of nullity granted for impotency, prohibited degrees of consanguinity/affinity, lunacy/idiocy at marriage, former spouse living, or consent obtained by force/fraud.",
+          "Judicial Separation (Sec. 22) & Restitution of Conjugal Rights (Sec. 32): Allows spouses to live apart without dissolving marriage, or compel cohabitation where one withdraws without reasonable excuse.",
+          "Abolition of Confirmation by 3-Judge HC Bench (2001 Reform): Previously, every District Court divorce decree required confirmation by a 3-judge High Court Bench (former Sec. 17) - abolished in 2001, making District/Family Court decrees final subject to regular appeal."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ammini E.J. v. Union of India",
+            "citation": "AIR 1995 Ker 252 (FB)",
+            "principle": "Struck down discriminatory portions of old Section 10 requiring Christian wives to prove aggravated adultery, paving the way for the gender-equal Indian Divorce (Amendment) Act, 2001."
+          },
+          {
+            "name": "Saumya Ann Thomas v. Union of India",
+            "citation": "2010 1 KLT 869",
+            "principle": "Read down the 2-year separation period in Section 10A(1) of the Divorce Act to 1 year to eliminate arbitrary Article 14 discrimination against Christians compared to Hindu and Special Marriage laws."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What major gender-equality reforms were introduced by the Indian Divorce (Amendment) Act, 2001?",
+            "a": "It replaced discriminatory adultery rules with uniform fault grounds for both spouses (Sec. 10), introduced Divorce by Mutual Consent (Sec. 10A), removed the 1/5th alimony ceiling, and abolished mandatory High Court confirmation of District Court decrees."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u5-t3": {
+      "id": "fl2-u5-t3",
+      "subtitle": "Family Law - II - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Part II (Sections 4-19) of the Indian Succession Act, 1925, Domicile means a person's permanent home - the country where they reside with the fixed intention of making it their permanent home. Every person has ONE domicile at any time (never none, never two), governing succession to MOVABLE property (Lex Domicilii), whereas IMMOVABLE property follows the law of the place where the land lies (Lex Situs).",
+        "legalProvision": "Sections 4 to 19, Indian Succession Act, 1925",
+        "meaning": "Domicile is distinct from Nationality (political allegiance) and mere Residence (physical presence). Section 5 codifies the core Conflict of Laws rule in Indian succession: immovable property in India always follows Indian law regardless of domicile, while movable property follows the deceased's domicile at death.",
+        "keyPoints": [
+          "Effect of Domicile on Succession (Section 5): Succession to IMMOVABLE property in India is governed by Indian law (Lex Situs) irrespective of the deceased's domicile; succession to MOVABLE property is governed by the law of the country in which the deceased was domiciled at the time of death (Lex Domicilii).",
+          "Three Kinds of Domicile: (1) Domicile of Origin (Secs. 7-8 - acquired at birth: legitimate child takes father's domicile; illegitimate child takes mother's domicile; posthumous child takes father's domicile at death), (2) Domicile of Choice (Sec. 10 - acquired by taking up fixed habitation in another country with intention of permanent residence, i.e., Factum + Animus Manendi), and (3) Domicile by Operation of Law / Dependence (Secs. 14-16 - minor follows parent's domicile; married woman follows husband's domicile under Secs. 15-16 except during judicial separation or husband's sentence).",
+          "Unity & Continuity Rules (Sections 6 & 9): A person can have ONLY ONE domicile for succession purposes (Sec. 6); Domicile of Origin persists and revives automatically until a new Domicile of Choice is validly acquired (Sec. 9).",
+          "Special Modes & Exclusions (Sections 11-12): A person may acquire Indian domicile by making a written declaration after 1 year's residence (Sec. 11); diplomatic envoys, consuls, and armed forces personnel posted abroad do NOT acquire a new domicile merely by official residence (Sec. 12).",
+          "Single Indian Domicile (Pradeep Jain v. Union of India): Constitutionally, India recognizes ONE single Indian domicile (not separate State domiciles like 'Telangana domicile'), though States may use 'residence' criteria."
+        ],
+        "caseLaws": [
+          {
+            "name": "Central Bank of India Ltd. v. Ram Narain",
+            "citation": "AIR 1955 SC 36",
+            "principle": "Defined Domicile as requiring two concurrent elements: (1) Factum of actual residence, and (2) Animus Manendi (fixed intention to reside permanently or indefinitely)."
+          },
+          {
+            "name": "Dr. Pradeep Jain v. Union of India",
+            "citation": "AIR 1984 SC 1420",
+            "principle": "Held that under the Constitution of India there is only one single domicile - the 'Domicile of India' - and no separate State domiciles exist."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the rule in Section 5 of the Indian Succession Act, 1925 regarding movable vs immovable property, and name the two essential elements of a Domicile of Choice.",
+            "a": "Immovable property is governed by Lex Situs (Indian law if situated in India), while movable property is governed by Lex Domicilii (law of deceased's domicile at death). Domicile of Choice requires Factum (actual residence) + Animus Manendi (intention of permanent home)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u5-t4": {
+      "id": "fl2-u5-t4",
+      "subtitle": "Family Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Indian family law protects spouses and dependants from vagrancy through both secular criminal/quasi-civil remedies (Section 125 CrPC / Section 144 BNSS, 2023 and the Maintenance and Welfare of Parents and Senior Citizens Act, 2007) and matrimonial statutes (Sections 36-37 of the Special Marriage Act, 1954 and Sections 36-37 of the Divorce Act, 1869).",
+        "legalProvision": "Section 125 CrPC, 1973 / Section 144 BNSS, 2023; Sections 36-37, Special Marriage Act, 1954; Sections 36-37, Divorce Act, 1869; Senior Citizens Act, 2007",
+        "meaning": "Maintenance is a social-justice measure aimed at preventing destitution of wives, minor/disabled children, and elderly parents. In Rajnesh v. Neha (2020), the Supreme Court harmonized overlapping maintenance claims across all personal and secular laws with mandatory income-asset affidavits.",
+        "keyPoints": [
+          "Secular Maintenance (Section 125 CrPC / Section 144 BNSS, 2023): Applies across ALL religions (Hindus, Muslims, Christians, Parsis, SMA couples); entitles (1) wife (including divorced, unremarried wife), (2) legitimate/illegitimate minor children, (3) physically/mentally disabled major children, and (4) parents unable to maintain themselves to monthly maintenance from a person having sufficient means who neglects or refuses to maintain them.",
+          "Special Marriage Act, 1954 (Sections 36-37): Section 36 grants Alimony Pendente Lite (interim maintenance + litigation expenses) to the WIFE during proceedings; Section 37 empowers the court to award Permanent Alimony and Maintenance (gross sum or monthly payments) to the wife at or after decree, modifiable on changed circumstances or remarriage/unchastity.",
+          "Divorce Act, 1869 (Sections 36-37 - Christian Law): Section 36 allows interim alimony pendente lite to the wife (the archaic 1/5th net-income ceiling was deleted by the 2001 Amendment, with disposal directed within 60 days); Section 37 empowers District/Family Courts to award permanent alimony upon divorce or judicial separation, alongside child custody/maintenance under Sections 41-44.",
+          "Maintenance of Elderly Parents (Senior Citizens Act, 2007): Provides a fast, non-lawyer Tribunal mechanism for parents/senior citizens (60+) unable to maintain themselves to claim monthly maintenance from adult children or property-inheriting relatives, and even void property transfers made on unfulfilled care conditions (Sec. 23).",
+          "Overlapping Claims & Mandatory Disclosure (Rajnesh v. Neha, 2020): A claimant may apply under multiple statutes (e.g., SMA/PWDVA + Sec. 125 CrPC), but MUST disclose prior awards so courts adjust/set off amounts; both spouses must file standardized Affidavits of Assets and Liabilities, and maintenance is payable from the DATE OF APPLICATION."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rajnesh v. Neha",
+            "citation": "2021 2 SCC 324",
+            "principle": "Laid down binding pan-India guidelines for all maintenance cases: mandatory Affidavits of Disclosure of Assets and Liabilities, adjustment of overlapping awards, and award of maintenance from the date of filing the application."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two key binding guidelines laid down by the Supreme Court in Rajnesh v. Neha (2020) for maintenance claims across Indian family statutes.",
+            "a": "(1) Both parties must file mandatory Affidavits of Assets and Liabilities; (2) Maintenance is awarded from the date of application (not date of order), and prior awards under other statutes must be disclosed and adjusted."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u5-t5": {
+      "id": "fl2-u5-t5",
+      "subtitle": "Family Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Intestate succession of Indian Christians (and couples married under the Special Marriage Act) is governed by Part V (Sections 31-49) of the Indian Succession Act, 1925 - a completely gender-neutral scheme making NO distinction between male and female intestates, sons and daughters, or paternal and maternal kindred, with fixed priority shares for the surviving spouse, lineal descendants, and kindred.",
+        "legalProvision": "Sections 31 to 49, Indian Succession Act, 1925 (Chapter II, Part V)",
+        "meaning": "Unlike classical Hindu or Muslim rules, Christian intestate succession treats sons and daughters identically, recognizes no joint family coparcenary or birthright, and guarantees the surviving widow or widower a minimum 1/3rd or 1/2 share (or the entire estate if no kindred exist).",
+        "keyPoints": [
+          "Rule 1 - Surviving Spouse's Share (Sections 33 & 35): (a) If intestate leaves Spouse + Lineal Descendants (children/grandchildren): Spouse takes 1/3rd, Lineal Descendants share the remaining 2/3rds; (b) If intestate leaves Spouse + Kindred (no lineal descendants): Spouse takes 1/2, Kindred share the remaining 1/2 (note Sec. 33A: if net estate <= Rs. 5,000 and intestate died childless leaving widow, widow takes the whole); (c) If NO lineal descendants and NO kindred: Spouse takes the ENTIRE property (100%). Section 35 gives a widower the EXACT same rights as a widow.",
+          "Rule 2 - Distribution Among Lineal Descendants (Sections 36-40): Children share equally regardless of gender (sons and daughters get equal shares); if a child has predeceased leaving children (grandchildren), those grandchildren take their deceased parent's share by Representation (Per Stirpes); if all surviving descendants are in the same degree (e.g., all grandchildren, no living children), they share equally Per Capita.",
+          "Rule 3 - Distribution Among Kindred When No Lineal Descendants Exist (Sections 41-48): (1) Father takes the entire share (Sec. 42) - excludes mother, brothers, and sisters; (2) If father is dead, Mother + Brothers + Sisters (and children of predeceased siblings by representation) share EQUALLY (Secs. 43-45); (3) If father and all siblings/their children are dead, Mother takes the entire share (Sec. 46); (4) Failing parents and siblings, property passes equally to nearest kindred in degree (Sec. 48).",
+          "No Distinctions & Escheat (Section 27 & Section 34): No distinction between paternal and maternal relatives, full-blood and half-blood, or male and female heirs (illegitimate children do NOT inherit under classical ISA text); if neither spouse nor any kindred survive, property escheats to the Government (Sec. 34).",
+          "Landmark Gender-Equality Ruling (Mary Roy v. State of Kerala, 1986): Struck down the discriminatory Travancore Christian Succession Act, 1916 (which restricted Syrian Christian daughters to 1/4th of a son's share or Rs. 5,000) and applied the equal Indian Succession Act, 1925 across Kerala."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mary Roy v. State of Kerala",
+            "citation": "AIR 1986 SC 1011",
+            "principle": "Held that the Indian Succession Act, 1925 superseded the Travancore Christian Succession Act, 1916, guaranteeing Syrian Christian women equal intestate inheritance rights alongside their brothers."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Under Section 33 of the Indian Succession Act, 1925, what share does a Christian widow receive if her husband dies intestate leaving (a) a widow and two children, and (b) a widow and his father (no children)?",
+            "a": "(a) Widow receives 1/3rd and the two children share the remaining 2/3rds equally (1/3rd each); (b) Widow receives 1/2 and the father receives the remaining 1/2 (subject to Sec. 33A for estates up to Rs. 5,000)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

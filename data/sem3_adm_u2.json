@@ -1,0 +1,160 @@
+{
+  "subjects": [
+    {
+      "id": "administrative-law",
+      "title": "Administrative Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Basic Concepts - Rule of Law (Dicey's Interpretation & Modern Trends) & Theory of Separation of Powers (India, UK & USA)",
+          "topics": [
+            {"id": "adm-u2-t1", "title": "1. Rule of Law - Concept, Origin & A.V. Dicey's Three Principles (Interpretation & Criticism)"},
+            {"id": "adm-u2-t2", "title": "2. Modern Trends in Rule of Law (Delhi Declaration 1959) & Rule of Law Under the Indian Constitution"},
+            {"id": "adm-u2-t3", "title": "3. Theory of Separation of Powers - Montesquieu's Doctrine, Meaning, Merits & Defects"},
+            {"id": "adm-u2-t4", "title": "4. Separation of Powers - Comparative Position in USA, UK & India (Checks & Balances)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "adm-u2-t1": {
+      "id": "adm-u2-t1",
+      "subtitle": "Administrative Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Rule of Law ('La Principe de Legalite' - government based on principles of law, not whims of men) was popularized by Prof. A.V. Dicey in 1885 through three famous pillars: (1) Supremacy of Law (absence of arbitrary/wide discretionary power), (2) Equality Before the Law (one ordinary law and court for all), and (3) Predominance of Legal Spirit (rights flow from judicial decisions, not paper constitutions). While Dicey's anti-arbitrariness core remains timeless, his rigid rejection of administrative discretion and tribunals proved outdated.",
+        "legalProvision": "A.V. Dicey's 'Introduction to the Study of the Law of the Constitution' (1885); Sir Edward Coke ('Rex non debet esse sub homine, sed sub Deo et lege')",
+        "meaning": "Derived from Edward Coke's stand against King James I ('the King must be under God and the Law'), Rule of Law is the bedrock against tyranny - demanding that every executive order rest on valid legal authority.",
+        "keyPoints": [
+          "Dicey's Pillar 1 - Supremacy of Law (Absence of Arbitrary Power): No person can be punished or made to suffer in body or goods except for a distinct breach of law established before ordinary courts; Dicey equated 'discretion' with 'arbitrariness' and opposed wide executive discretion.",
+          "Dicey's Pillar 2 - Equality Before the Law: Equal subjection of all classes (from Prime Minister to ordinary citizen) to the ordinary law of the land administered by ordinary courts - Dicey used this to criticize France's Droit Administratif (separate administrative courts).",
+          "Dicey's Pillar 3 - Predominance of Legal Spirit: In Britain's unwritten constitution, individual rights (personal liberty, free speech) are the RESULT of ordinary court judgments, NOT the source/gift of a written constitutional document (contrast India's written Part III).",
+          "Four Major Criticisms of Dicey's Formulation: (1) Misunderstood Discretion - modern welfare governance CANNOT function without regulated administrative discretion (discretion != arbitrariness if controlled by law), (2) Ignored Existing Exemptions in 1885 UK - Crown immunity ('King can do no wrong'), diplomatic immunity, and special statutory authorities already existed, (3) Misread French Droit Administratif - France's Conseil d'Etat actually protected citizens strongly against State excess, and (4) Pillar 3 does not fit written-constitution democracies like India and USA where the Constitution itself is the supreme source of rights."
+        ],
+        "caseLaws": [
+          {
+            "name": "Entick v. Carrington",
+            "citation": "1765 19 St Tr 1029",
+            "principle": "Classic English Rule of Law precedent: executive officers breaking into a citizen's house to seize papers without specific statutory authority were held liable for trespass; 'State necessity' is no excuse."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State A.V. Dicey's three principles of Rule of Law and explain two major criticisms of his formulation in the modern welfare State.",
+            "a": "Dicey's 3 pillars: (1) Supremacy of Law / absence of arbitrary power, (2) Equality before ordinary law and courts, and (3) Predominance of legal spirit (rights from judicial decisions). Criticisms: he wrongly equated all administrative discretion with arbitrariness, ignored existing UK immunities, and misjudged France's Conseil d'Etat."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u2-t2": {
+      "id": "adm-u2-t2",
+      "subtitle": "Administrative Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Modern Rule of Law moved beyond Dicey's negative 'hands-off' concept toward a dynamic, substantive ideal (codified in the International Commission of Jurists' Delhi Declaration, 1959) combining civil-political freedoms with social, economic, and educational dignity. Under India's Constitution, Rule of Law is an inviolable part of the Basic Structure (Kesavananda Bharati; Indira Nehru Gandhi), anchored in the Preamble, Articles 14, 19, 21, and Judicial Review (Arts. 32/226).",
+        "legalProvision": "Delhi Declaration (ICJ, 1959); Preamble & Articles 13, 14, 19, 21, 32, 226, & 300A, Constitution of India",
+        "meaning": "In modern India, Rule of Law means not merely 'Rule BY Law' (blind obedience to any harsh statute), but 'Rule OF Just Law' - requiring fairness, non-arbitrariness, independent courts, and constitutional accountability.",
+        "keyPoints": [
+          "Modern Trends - Delhi Declaration (1959, International Commission of Jurists): Redefined Rule of Law as a DYNAMIC concept requiring not just curbing executive abuse, but actively creating social, economic, educational, and cultural conditions under which citizens realize human dignity - resting on representative legislature, accountable executive, fair criminal process, and an independent judiciary & fearless Bar.",
+          "Kenneth Culp Davis's Seven Modern Meanings: Law & order, fixed rules, elimination of discretion, due process/fairness, Natural Law principles, preference for judges over executive officials, and judicial review of administrative action.",
+          "Rule of Law in the Indian Constitution: (1) Constitutional Supremacy (all three organs bound by Constitution - Art. 13), (2) Equality & Anti-Arbitrariness (Art. 14 - E.P. Royappa & Maneka Gandhi), (3) Protection of Life & Liberty (Art. 21 - substantive due process), (4) Independent Judiciary & Judicial Review (Arts. 32, 136, 226, 227), and (5) Basic Structure Status (Kesavananda Bharati, 1973; Indira Nehru Gandhi v. Raj Narain, 1975).",
+          "Exceptions & Practical Realities in India: Constitutional immunities (Art. 361 President/Governor, Arts. 105/194 legislative privilege), reasonable classification (Art. 14), specialized statutory tribunals, and wide executive discretion - all strictly policed by courts so Rule of Law never collapses (ADM Jabalpur's dark Emergency exception was permanently buried by the 44th Amendment and K.S. Puttaswamy, 2017)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kesavananda Bharati v. State of Kerala",
+            "citation": "AIR 1973 SC 1461",
+            "principle": "Declared Rule of Law and Judicial Review to be inviolable features of the Basic Structure of the Indian Constitution beyond Parliament's amending power."
+          },
+          {
+            "name": "Bachan Singh v. State of Punjab",
+            "citation": "AIR 1982 SC 1325",
+            "principle": "Justice P.N. Bhagwati emphasized that Rule of Law permeates the entire fabric of the Indian Constitution, excluding arbitrariness and unreasonableness in every legislative and executive act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How did the 1959 Delhi Declaration modernize Dicey's concept of Rule of Law, and where is Rule of Law anchored in the Indian Constitution?",
+            "a": "The Delhi Declaration expanded Rule of Law from a negative check on executive power into a dynamic duty to secure social, economic, and educational conditions for human dignity alongside independent courts. In India, it is anchored in the Preamble, Articles 13, 14, 19, 21, 32, and 226 as part of the Basic Structure."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u2-t3": {
+      "id": "adm-u2-t3",
+      "subtitle": "Administrative Law - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Formulated classically by French jurist Montesquieu in 'The Spirit of Laws' (1748) (building on Aristotle and John Locke), the Theory of Separation of Powers warns that concentrating Legislative, Executive, and Judicial powers in the same hands destroys liberty ('Power corrupts, and absolute power corrupts absolutely'). While absolute watertight separation is unworkable in a modern welfare State, functional separation with 'Checks and Balances' remains vital to prevent tyranny.",
+        "legalProvision": "Montesquieu's 'De L'Esprit des Lois' (1748); Constitutional Doctrine of Checks and Balances",
+        "meaning": "Separation of Powers rests on three strict propositions: (1) the same person should not form part of more than one organ, (2) one organ should not control or interfere with another, and (3) one organ should not exercise the functions of another.",
+        "keyPoints": [
+          "Historical Origin & Montesquieu's Formulation (1748): Traced to Aristotle's three governmental elements and John Locke's division of powers; Montesquieu crystallized it in 'L'Esprit des Lois' (1748): 'When legislative and executive powers are united in the same person, there can be no liberty; nor if judicial power is not separated from both.'",
+          "Three Core Elements of Strict Separation: (1) Structural / Personnel separation (no overlapping membership), (2) Functional separation (Legislature ONLY makes law, Executive ONLY executes law, Judiciary ONLY adjudicates), and (3) Non-interference (each organ operates independently).",
+          "Merits & Value in Administrative Law: Prevents concentration of despotic power, protects citizens' Fundamental Rights, guarantees an independent impartial judiciary, and promotes administrative specialization and efficiency.",
+          "Defects & Practical Limitations of Strict Watertight Separation: (1) Historically flawed (Montesquieu misread Britain's parliamentary cabinet system), (2) Unworkable in modern welfare governance (administrative agencies MUST exercise delegated rule-making and tribunal adjudication to handle complex technical regulation), (3) Risks deadlocks and friction between organs without coordination, and (4) Modern consensus replaces rigid watertight compartments with FUNCTIONAL SEPARATION + CHECKS AND BALANCES."
+        ],
+        "caseLaws": [
+          {
+            "name": "Indira Nehru Gandhi v. Raj Narain",
+            "citation": "AIR 1975 SC 2299",
+            "principle": "Held that while India does not follow rigid American separation, broad Separation of Powers is a Basic Structure feature - Parliament cannot usurp judicial power to adjudicate a specific election dispute by constitutional amendment."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State Montesquieu's three propositions of Separation of Powers and explain why strict watertight separation is unworkable in a modern welfare State.",
+            "a": "Propositions: no overlapping personnel, no interference/control between organs, and no organ performing another's functions. Rigid separation is unworkable today because complex welfare governance requires delegated legislation (executive rule-making), administrative tribunals (quasi-judicial adjudication), and inter-organ coordination."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u2-t4": {
+      "id": "adm-u2-t4",
+      "subtitle": "Administrative Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Separation of Powers operates very differently across the three major jurisdictions: the USA embeds it rigidly in Articles I-III with Presidential Checks & Balances (yet permits independent regulatory agencies); the UK follows Parliamentary fusion of Executive and Legislature (upgraded by the Constitutional Reform Act, 2005 creating an independent Supreme Court); and India adopts functional differentiation (not rigid separation - Ram Jawaya Kapur) while elevating Separation of Powers and Judicial Independence (Art. 50) to Basic Structure status.",
+        "legalProvision": "US Constitution (Arts. I, II, III); UK Constitutional Reform Act, 2005; Constitution of India (Articles 50, 53, 74, 121-122, 123, 211-212, & 361)",
+        "meaning": "Comparative constitutional analysis shows that NO country practices 100% pure separation - every working democracy relies on Checks and Balances while protecting the core judicial function from political takeover.",
+        "keyPoints": [
+          "Position in USA (Strictest Separation + Checks & Balances): Art. I vests legislative power in Congress, Art. II executive power in the directly elected President (NOT a member of Congress), and Art. III judicial power in the Supreme Court. Built-in Checks & Balances: Presidential veto, Senate confirmation of judges/treaties, Congressional impeachment, and Judicial Review (Marbury v. Madison). Practical Dilution: Independent Regulatory Agencies (FTC, SEC, FCC) exercise combined rule-making, enforcement, and adjudication (Panama Refining Co. / Schechter Poultry limits).",
+          "Position in UK (Parliamentary Fusion + 2005 Judicial Separation): No written separation; the Prime Minister and Cabinet sit INSIDE Parliament (fusion of Executive & Legislature - Bagehot's 'efficient secret'). Historically the Lord Chancellor sat in all three branches - reformed by the Constitutional Reform Act, 2005, which abolished the Law Lords' parliamentary role and created an independent UK Supreme Court.",
+          "Position in India (Functional Separation, Not Rigid): India adopted the Westminster Parliamentary model (Council of Ministers drawn from Parliament - Arts. 74-75), with ONLY Article 50 (DPSP) directing separation of Judiciary from Executive. Overlap exists: President/Governor issue Ordinances (Arts. 123/213 - legislative) and Pardons (Arts. 72/161 - judicial); Parliament impeaches Judges/President (Arts. 61/124 - judicial); Courts frame court rules (Art. 145) and issue PIL guidelines.",
+          "Indian Judicial Position (Ram Jawaya Kapur -> Indira Nehru Gandhi -> Kesavananda Bharati): In Ram Jawaya Kapur (1955), the Supreme Court held India has NOT recognized Separation of Powers in its absolute rigidity, BUT the functions of different branches are sufficiently differentiated so one organ CANNOT usurp the ESSENTIAL core function of another (reaffirmed as Basic Structure in Kesavananda Bharati and Indira Nehru Gandhi v. Raj Narain)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rai Sahib Ram Jawaya Kapur v. State of Punjab",
+            "citation": "AIR 1955 SC 549",
+            "principle": "5-judge Constitution Bench laid down India's classic position: the Constitution has not adopted Separation of Powers in absolute rigidity, yet functions are sufficiently differentiated that no organ may assume the essential functions of another."
+          },
+          {
+            "name": "Asif Hameed v. State of Jammu & Kashmir",
+            "citation": "AIR 1989 SC 1899",
+            "principle": "Held that while courts exercise judicial review over executive and legislative acts, the judiciary must exercise self-restraint and not take over executive policy-making functions."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Compare the position of Separation of Powers in the USA, UK, and India, and cite the landmark Indian case defining India's functional approach.",
+            "a": "USA has strict structural separation (Arts. I-III) with Checks & Balances; UK fuses Executive and Legislature via Cabinet (separating Judiciary via 2005 Act); India has functional differentiation without rigid separation (Art. 50 separates judiciary from executive) where no organ can usurp another's essential function (Ram Jawaya Kapur, 1955)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

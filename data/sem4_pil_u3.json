@@ -1,0 +1,163 @@
+{
+  "subjects": [
+    {
+      "id": "public-international-law",
+      "title": "Public International Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "State Jurisdiction & Immunities, Nationality, Extradition & Asylum, and Diplomatic & Consular Agents",
+          "topics": [
+            {"id": "pil-u3-t1", "title": "1. State Jurisdiction (Territorial, Nationality, Protective, Passive Personality & Universal) & Sovereign Immunity"},
+            {"id": "pil-u3-t2", "title": "2. Nationality - Modes of Acquisition & Loss, Double Nationality, Statelessness & Effective Link (Nottebohm Case)"},
+            {"id": "pil-u3-t3", "title": "3. Extradition (Essentials, Double Criminality, Rule of Speciality & Political Offence) & Asylum (Territorial vs Diplomatic)"},
+            {"id": "pil-u3-t4", "title": "4. Diplomatic Agents & Consuls - Classification, Immunities, Inviolability & Persona Non Grata (Vienna Conventions, 1961 & 1963)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "pil-u3-t1": {
+      "id": "pil-u3-t1",
+      "subtitle": "Public International Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "State Jurisdiction is a State's legal authority to prescribe, adjudicate, and enforce laws over persons, property, and events - exercised primarily on FIVE bases: Territorial (Subjective & Objective), Nationality, Protective, Passive Personality, and Universal Jurisdiction (piracy, genocide, war crimes). Foreign sovereign States enjoy Sovereign Immunity before another State's domestic courts ('Par in parem non habet imperium'), narrowed today to the Restrictive Theory (immune for Sovereign 'Acta Jure Imperii', NOT Commercial 'Acta Jure Gestionis').",
+        "legalProvision": "Harvard Draft Convention (1935); UN Convention on Jurisdictional Immunities of States (2004); Section 86, Code of Civil Procedure, 1908 (India)",
+        "meaning": "While a State enjoys supreme jurisdiction inside its borders, sovereign equality forbids one State from sitting in judgment over another sovereign State's public governmental acts without consent.",
+        "keyPoints": [
+          "Five Bases of Criminal Jurisdiction: (1) TERRITORIAL PRINCIPLE - primary basis covering offences committed within territory (Subjective: crime commences inside State; Objective/Effects Doctrine: crime started abroad takes effect inside State - S.S. Lotus Case), (2) NATIONALITY / ACTIVE PERSONALITY - jurisdiction over own nationals for crimes committed abroad (e.g., Sec. 4 IPC / Sec. 1(5) BNS), (3) PROTECTIVE PRINCIPLE - punishes aliens abroad threatening vital national security, currency counterfeiting, or terrorism (Joyce v. DPP), (4) PASSIVE PERSONALITY - based on nationality of the victim (controversial, applied in terrorism/hostage-taking), and (5) UNIVERSAL JURISDICTION - ANY State may prosecute 'hostis humani generis' (enemies of all mankind: piracy, genocide, war crimes, torture, hijacking) regardless of locus or nationality.",
+          "Sovereign Immunity (Absolute vs Restrictive Theory): Grounded in 'Par in parem non habet imperium' (an equal has no authority over an equal - Schooner Exchange v. McFaddon). Classical ABSOLUTE IMMUNITY shielded foreign States from ALL suits; modern RESTRICTIVE IMMUNITY (Trendtex Trading Corp. v. Central Bank of Nigeria; 2004 UN Convention) grants immunity ONLY for sovereign/public acts ('Acta Jure Imperii'), NOT commercial/trading transactions ('Acta Jure Gestionis').",
+          "Indian Position (Sec. 86 CPC & Ethiopian Airlines): Section 86 CPC requires prior Central Government consent before suing a foreign State in Indian civil courts - in Ethiopian Airlines v. Ganesh Narain Saboo (2011), the Supreme Court affirmed Restrictive Immunity, holding foreign State-owned airlines operating commercial flights are NOT immune from consumer/commercial liability."
+        ],
+        "caseLaws": [
+          {
+            "name": "The Schooner Exchange v. McFaddon",
+            "citation": "1812 11 US (7 Cranch) 116",
+            "principle": "Chief Justice Marshall laid down the foundational doctrine of Sovereign Immunity: a foreign warship entering a friendly port is exempt from local territorial jurisdiction by implied sovereign consent."
+          },
+          {
+            "name": "Trendtex Trading Corporation v. Central Bank of Nigeria",
+            "citation": "1977 QB 529 (CA)",
+            "principle": "Lord Denning adopted the modern Restrictive Theory of Sovereign Immunity: a State entity engaging in ordinary commercial letters of credit ('Acta Jure Gestionis') enjoys NO sovereign immunity."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name the five recognized bases of State Jurisdiction and distinguish between 'Acta Jure Imperii' and 'Acta Jure Gestionis' under Sovereign Immunity.",
+            "a": "Territorial, Nationality, Protective, Passive Personality, and Universal Jurisdiction. 'Acta Jure Imperii' are sovereign/governmental acts enjoying immunity, whereas 'Acta Jure Gestionis' are commercial/trading acts enjoying NO immunity under the modern Restrictive Theory."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u3-t2": {
+      "id": "pil-u3-t2",
+      "subtitle": "Public International Law - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Nationality is the legal bond of membership linking an individual to a State, entitling the individual to diplomatic protection abroad and obliging allegiance. While each State determines nationality under domestic law (Indian Citizenship Act, 1955), the ICJ in the Nottebohm Case (1955) held that for international diplomatic protection, nationality must reflect a 'genuine and effective link' rather than a sham paper naturalization.",
+        "legalProvision": "Article 15, UDHR (1948); Hague Convention on Nationality Laws (1930); 1954 & 1961 Statelessness Conventions; Citizenship Act, 1955 (India)",
+        "meaning": "Nationality is the gateway through which individuals receive international protection: stateless persons ('heimatlos') lack any State to champion their rights diplomatically.",
+        "keyPoints": [
+          "Five Modes of Acquiring Nationality: (1) BIRTH - via 'Jus Soli' (place of birth) or 'Jus Sanguinis' (parentage/blood), (2) NATURALIZATION - formal grant on residence, marriage, or adoption, (3) RESUMPTION / REINTEGRATION - recovering lost nationality, (4) SUBJUGATION / CESSION - inhabitants of transferred territory, and (5) OPTION / REGISTRATION.",
+          "Five Modes of Losing Nationality: (1) RELEASE (voluntary discharge upon acquiring another nationality), (2) DEPRIVATION / DENATURALIZATION (revoked for fraud/disloyalty), (3) LONG RESIDENCE ABROAD / EXPIRATION, (4) RENUNCIATION (voluntary declaration), and (5) SUBSTITUTION (acquiring foreign citizenship - e.g., Sec. 9 Indian Citizenship Act automatically terminates Indian citizenship).",
+          "Double Nationality & Statelessness: DOUBLE NATIONALITY arises from conflict between Jus Soli and Jus Sanguinis (e.g., child of Indian parents born in USA; resolved internationally via 'Master/Effective Nationality' test - Canevaro Case). STATELESSNESS (person not considered a national by any State) arises from conflicting laws, territorial shifts, or arbitrary deprivation - curbed by Art. 15 UDHR and the 1954/1961 UN Statelessness Conventions.",
+          "Effective Link Doctrine (Nottebohm Case, 1955): Even if a State validly grants domestic citizenship, other States need NOT recognize it for diplomatic protection unless a real social, residential, and economic bond exists."
+        ],
+        "caseLaws": [
+          {
+            "name": "Nottebohm Case (Liechtenstein v. Guatemala)",
+            "citation": "1955 ICJ Rep 4",
+            "principle": "ICJ held that Liechtenstein could not espouse a diplomatic claim against Guatemala for Friedrich Nottebohm (a German long resident in Guatemala) because his hurried 1939 Liechtenstein naturalization lacked a 'genuine and effective link'."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'Jus Soli' and 'Jus Sanguinis', and state the 'Genuine Link' principle laid down by the ICJ in the Nottebohm Case (1955).",
+            "a": "Jus Soli confers nationality based on place of birth, whereas Jus Sanguinis confers it by descent/parentage. Nottebohm held that to invoke international diplomatic protection, a person's nationality must rest on a genuine, effective social and factual attachment to the claiming State."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u3-t3": {
+      "id": "pil-u3-t3",
+      "subtitle": "Public International Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Extradition is the formal surrender of an accused or convicted fugitive by the asylum State to the requesting State based on treaty/reciprocity ('Aut dedere aut judicare' - extradite or prosecute), governed by Double Criminality, Rule of Speciality, and the Political Offence Exception (Extradition Act, 1962 in India). Asylum is the converse - sovereign shelter granted to a persecuted foreign national, split into Territorial Asylum (inside host State's own land) and Diplomatic Asylum (inside an embassy abroad, strictly restricted per ICJ's Asylum Case).",
+        "legalProvision": "Indian Extradition Act, 1962; Article 14, UDHR (1948); 1951 Refugee Convention (Non-Refoulement - Art. 33)",
+        "meaning": "Extradition stops fugitives from escaping justice across borders, while Asylum shields genuine political/human-rights refugees from persecution - always subject to 'Non-Refoulement' (no return to torture/persecution).",
+        "keyPoints": [
+          "Essential Conditions of Extradition: (1) EXISTENCE OF EXTRADITION TREATY OR RECIPROCITY (no customary legal duty to extradite absent treaty - Savarkar Case), (2) EXTRADITABLE OFFENCE (serious offence meeting treaty/penalty threshold), (3) RULE OF DOUBLE CRIMINALITY (act MUST be a crime under laws of BOTH requesting and requested States), (4) RULE OF SPECIALITY (requesting State may try the surrendered fugitive ONLY for the EXACT offence for which extradition was granted - Daya Singh Lahoria; Abu Salem v. State of Maharashtra), (5) PRIMA FACIE EVIDENCE OF GUILT, and (6) NON-EXTRADITION OF POLITICAL CRIMINALS (EXCEPTIONS: 'Attentat Clause' - assassination of Head of State/family, terrorism, hijacking, genocide, and war crimes are NEVER political offences!).",
+          "Territorial Asylum: Shelter granted by a State within its OWN territory; flows directly from territorial sovereignty (Art. 14 UDHR gives a right to 'seek and enjoy' asylum, though States retain sovereign discretion to grant it, bound by customary 'Non-Refoulement' - not returning refugees to danger of life/freedom).",
+          "Diplomatic / Extra-Territorial Asylum (Asylum Case, 1950): Shelter granted inside a foreign embassy/legation located inside the territorial State. Because it directly derogates from the host State's territorial sovereignty, it is NOT a general right in international law - permitted ONLY under a specific treaty, established regional custom (Latin America), or urgent humanitarian necessity against mob violence."
+        ],
+        "caseLaws": [
+          {
+            "name": "Asylum Case (Colombia v. Peru)",
+            "citation": "1950 ICJ Rep 266",
+            "principle": "ICJ held that Colombia had NO unilateral right to qualify Peruvian rebel leader Haya de la Torre's crime as 'political' to grant him Diplomatic Asylum inside its Lima embassy without an established uniform regional custom or treaty."
+          },
+          {
+            "name": "Abu Salem Abdul Qayoom Ansari v. State of Maharashtra",
+            "citation": "2011 11 SCC 214",
+            "principle": "Examined the Rule of Speciality under Section 21 of the Indian Extradition Act, 1962: Indian courts strictly respected sovereign assurances given to Portugal (no death penalty; trial confined to extradited & closely connected offences)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the 'Rule of Double Criminality' and the 'Rule of Speciality' in Extradition, and state why Diplomatic Asylum is far more restricted than Territorial Asylum.",
+            "a": "Double Criminality requires the offence to be punishable under both States' laws; Rule of Speciality restricts prosecution solely to the offences for which extradition was granted. Territorial Asylum is a normal exercise of sovereignty within one's own territory, whereas Diplomatic Asylum interferes with the territorial sovereignty of the host State (Asylum Case)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u3-t4": {
+      "id": "pil-u3-t4",
+      "subtitle": "Public International Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Diplomatic Agents represent their sending State politically under the Vienna Convention on Diplomatic Relations, 1961 (classified into Ambassadors/Nuncios, Envoys/Ministers, and Charges d'Affaires), enjoying full personal/premises inviolability and immunity from criminal and civil jurisdiction based on Functional Necessity - checked by host State's power to declare a diplomat 'Persona Non Grata' (Art. 9). Consuls (Vienna Convention on Consular Relations, 1963) handle trade, visas, and citizen welfare and enjoy narrower functional immunity (Kulbhushan Jadhav Case).",
+        "legalProvision": "Vienna Convention on Diplomatic Relations (VCDR), 1961; Vienna Convention on Consular Relations (VCCR), 1963; Diplomatic Relations (Vienna Convention) Act, 1972 (India)",
+        "meaning": "Diplomatic immunity is NOT a personal license to break laws - it protects the sending State's mission so ambassadors can communicate fearlessly; the sending State may always waive immunity (Art. 32), or the host State may expel the diplomat instantly.",
+        "keyPoints": [
+          "Theories & Classification of Diplomatic Agents (Art. 14 VCDR, 1961): Modern basis is FUNCTIONAL NECESSITY (plus Representative Character; old 'Exterritoriality' fiction is rejected). Three classes: (1) Ambassadors / Papal Nuncios / Commonwealth High Commissioners (accredited to Head of State), (2) Envoys Extraordinary & Ministers Plenipotentiary (Head of State), and (3) Charges d'Affaires (accredited to Foreign Minister).",
+          "Core Diplomatic Privileges & Immunities (Arts. 22-37 VCDR): (1) INVIOLABILITY OF MISSION PREMISES (Art. 22 - host police/agents CANNOT enter embassy even during fire/crime without Head of Mission's consent; host State has positive duty to protect embassy - US Diplomatic & Consular Staff in Tehran Case, 1980), (2) INVIOLABILITY OF ARCHIVES & DIPLOMATIC BAG (Arts. 24 & 27 - diplomatic pouch cannot be opened or detained), (3) PERSONAL INVIOLABILITY (Art. 29 - diplomat cannot be arrested or detained), (4) ABSOLUTE IMMUNITY FROM CRIMINAL JURISDICTION & broad civil/administrative immunity (Art. 31 - civil exceptions: private local real estate, private inheritance, or private commercial activity), and (5) Tax/customs exemptions & family coverage (Arts. 34-37).",
+          "Persona Non Grata (Art. 9) & Waiver (Art. 32): Receiving State may AT ANY TIME without giving ANY reason notify sending State that a diplomat is 'Persona Non Grata' (unacceptable person), compelling immediate recall/termination. Only the SENDING STATE (never the individual diplomat!) can expressly waive immunity (Art. 32).",
+          "Consular Officers vs Diplomatic Agents (VCCR, 1963): Consuls protect commercial interests, issue passports/visas, and assist arrested nationals (Art. 36 VCCR - MANDATORY CONSULAR ACCESS enforced by ICJ in LaGrand, Avena, and Jadhav Case: India v. Pakistan, 2019). Unlike ambassadors, consuls are immune ONLY for official consular acts ('functional immunity') and may be arrested for grave crimes."
+        ],
+        "caseLaws": [
+          {
+            "name": "United States Diplomatic and Consular Staff in Tehran (USA v. Iran)",
+            "citation": "1980 ICJ Rep 3",
+            "principle": "ICJ held Iran internationally responsible for failing to protect the US Embassy and endorsing the hostage-taking of diplomats, affirming the absolute inviolability of diplomatic premises and personnel under the 1961 VCDR."
+          },
+          {
+            "name": "Jadhav Case (India v. Pakistan)",
+            "citation": "2019 ICJ Rep 418",
+            "principle": "ICJ held that Pakistan violated Article 36(1) of the 1963 Vienna Convention on Consular Relations by denying Indian national Kulbhushan Jadhav consular access without delay, ordering effective review and reconsideration of his military death sentence."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three core immunities of a Diplomatic Agent under the 1961 Vienna Convention, explain 'Persona Non Grata' (Art. 9), and state what Article 36 of the 1963 Consular Convention guarantees.",
+            "a": "Inviolability of embassy premises (Art. 22), personal inviolability from arrest (Art. 29), and absolute criminal immunity (Art. 31). 'Persona Non Grata' lets the host State demand a diplomat's recall at any time without reasons. Art. 36 VCCR guarantees prompt Consular Access to detained foreign nationals (Jadhav Case)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "subjects": [
+    {
+      "id": "public-international-law",
+      "title": "Public International Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Statehood, State Territory (Acquisition & Loss Modes), State Recognition (De Jure / De Facto) & State Succession",
+          "topics": [
+            {"id": "pil-u2-t1", "title": "1. Statehood (Montevideo Convention, 1933), Kinds of States & Scope of State Territory (Land, Water & Airspace)"},
+            {"id": "pil-u2-t2", "title": "2. Modes of Acquisition and Loss of State Territory (Occupation, Prescription, Accretion, Cession, Conquest & Uti Possidetis)"},
+            {"id": "pil-u2-t3", "title": "3. State Recognition - Theories (Constitutive vs Declaratory), De Jure vs De Facto Recognition, Retroactivity & Consequences"},
+            {"id": "pil-u2-t4", "title": "4. State Succession - Meaning, Kinds (Universal vs Partial), Theories & Legal Consequences (Treaties, Debts, Contracts & Nationality)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "pil-u2-t1": {
+      "id": "pil-u2-t1",
+      "subtitle": "Public International Law - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 1 of the Montevideo Convention on Rights and Duties of States (1933) lays down four classic criteria of Statehood: (1) Permanent Population, (2) Defined Territory, (3) Effective Government, and (4) Capacity to Enter into Relations with Other States (Independence/Sovereignty). State Territory defines the three-dimensional geographic sphere - land, internal/territorial waters, subsoil, and national airspace - within which a State exercises exclusive territorial sovereignty.",
+        "legalProvision": "Article 1, Montevideo Convention on Rights and Duties of States, 1933; Article 2(1) & 2(4), UN Charter, 1945; Chicago Convention, 1944",
+        "meaning": "Territorial sovereignty means independence ('Island of Palmas Case'): within its defined boundaries, a State exercises exclusive legislative, executive, and judicial authority free from foreign interference.",
+        "keyPoints": [
+          "Four Criteria of Statehood (Art. 1, Montevideo Convention, 1933): (1) PERMANENT POPULATION (no minimum size - Nauru/Vatican qualify), (2) DEFINED TERRITORY (exact borders need not be completely undisputed - e.g., Israel/India-Pakistan border disputes do not negate statehood), (3) GOVERNMENT (effective political authority maintaining order), and (4) CAPACITY TO ENTER INTO INTERNATIONAL RELATIONS (external sovereignty/independence from another State's control).",
+          "Kinds of States: Sovereign Independent States (Unitary & Federal States - e.g., India, USA), Confederation (loose union of independent states), Permanently Neutralized States (Switzerland, Austria - treaty-bound never to wage war except self-defence), Condominium (joint sovereignty over one territory by two States, e.g., historical Anglo-Egyptian Sudan), Micro-States, and historical Protectorates/Vassal/Trust Territories (UN Trusteeship system now completed).",
+          "Components of State Territory: (1) Land surface and subsoil down to earth's centre (minerals/tunnels), (2) Internal Waters (rivers, lakes, bays, ports) and Territorial Sea (up to 12 nautical miles under UNCLOS, 1982), and (3) National Airspace directly above land and territorial sea (Chicago Convention, 1944 grants complete and exclusive sovereignty over airspace - NOT outer space, which is 'res communis' under the 1967 Outer Space Treaty)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Island of Palmas Arbitration (Netherlands v. USA)",
+            "citation": "1928 2 RIAA 829",
+            "principle": "Arbitrator Max Huber defined Territorial Sovereignty as the exclusive right to display State activities within a portion of the globe, paired with the correlative duty to protect other States' rights therein."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the four criteria of Statehood under Article 1 of the Montevideo Convention, 1933, and distinguish sovereignty over Airspace vs Outer Space.",
+            "a": "Permanent population, defined territory, effective government, and capacity to enter into relations with other States. A State holds complete exclusive sovereignty over its national airspace (Chicago Convention, 1944), whereas Outer Space is free for all nations and cannot be appropriated (Outer Space Treaty, 1967)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u2-t2": {
+      "id": "pil-u2-t2",
+      "subtitle": "Public International Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Traditional International Law recognizes five modes of Acquiring State Territory - Occupation (effective control over uninhabited 'terra nullius'), Prescription (long peaceful adverse possession), Accretion (natural alluvial/volcanic land gain), Cession (peaceful treaty transfer), and Subjugation/Conquest (now STRICTLY ILLEGAL under Article 2(4) UN Charter!) - plus Adjudication/Plebiscite and Uti Possidetis. Territory is correspondingly lost by Cession, Dereliction (abandonment), Operation of Nature, Prescription, or Secession/Revolt.",
+        "legalProvision": "Article 2(4), UN Charter, 1945 (Ban on Forceful Annexation); Doctrine of Uti Possidetis Juris",
+        "meaning": "Modern post-1945 international law abolished conquest and colonial 'discovery' alone as valid title - requiring effective, peaceful display of sovereign functions ('Effectivites') or lawful bilateral consent.",
+        "keyPoints": [
+          "1. Occupation (Terra Nullius ONLY): Acquiring sovereignty over ownerless/uninhabited territory ('terra nullius' - NOT land inhabited by organized indigenous tribes: Western Sahara Advisory Opinion, 1975). Requires TWO elements: (a) Animus Occupandi (intention to act as sovereign) and (b) Corpus / Effective Control (actual continuous peaceful administration - Island of Palmas & Legal Status of Eastern Greenland Case; mere flag-planting/discovery gives only temporary 'inchoate title').",
+          "2. Prescription (Acquisitive): Acquiring title to territory ALREADY belonging to another State through continuous, uninterrupted, peaceful, and open exercise of sovereignty ('a titre de souverain') over a long period WITHOUT protest/acquiescence by the former sovereign (unlike Occupation, applies to previously owned land).",
+          "3. Accretion & 4. Cession: ACCRETION = gradual natural addition of new land by river alluvion, delta formation, or volcanic island rising inside territorial sea (Anna Case; sudden 'avulsion' does not change river boundary). CESSION = voluntary peaceful transfer of sovereignty from one State to another by Treaty (sale - Alaska 1867, gift, exchange, or merger - Pondicherry/Chandernagore from France to India; follows 'Nemo dat quod non habet').",
+          "5. Subjugation / Annexation (ILLEGAL Today) & Uti Possidetis: Historically conquest + formal annexation conferred title; today Article 2(4) UN Charter and UNGA Resolution 2625 STRICTLY PROHIBIT territorial acquisition by threat or use of force. Newly decolonized States inherit former colonial administrative frontiers under 'Uti Possidetis Juris' (Frontier Dispute: Burkina Faso v. Mali, 1986).",
+          "Modes of Loss of Territory: Cession (transfer to another State), Operation of Nature (submergence/erosion of an island), Dereliction / Abandonment (physical withdrawal PLUS clear intention to abandon), Prescription by another State, and Revolt / Successful Secession (e.g., Bangladesh from Pakistan in 1971)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Legal Status of Eastern Greenland Case (Denmark v. Norway)",
+            "citation": "1933 PCIJ Series A/B No. 53",
+            "principle": "Held that valid Occupation requires intention to act as sovereign PLUS actual display of authority - noting that in thinly populated Arctic regions, relatively little actual sovereign activity suffices if no competing State shows a superior claim."
+          },
+          {
+            "name": "Western Sahara Advisory Opinion",
+            "citation": "1975 ICJ Rep 12",
+            "principle": "Held that territories inhabited by socially and politically organized tribes/peoples were NOT 'terra nullius' open to unilateral colonial occupation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Occupation and Prescription as modes of acquiring territory, and explain why Conquest/Annexation is no longer a valid mode of acquisition.",
+            "a": "Occupation applies strictly to ownerless 'terra nullius' via effective control, whereas Prescription acquires territory previously owned by another State through long peaceful possession without protest. Article 2(4) of the UN Charter strictly outlaws acquiring territory by threat or use of force."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u2-t3": {
+      "id": "pil-u2-t3",
+      "subtitle": "Public International Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Recognition is the formal political-legal acknowledgment by an existing State that a new entity possesses the qualifications of Statehood (or that a new regime effectively governs a State). Two competing theories debate its effect - Constitutive Theory (recognition CREATES international personality) vs Declaratory Theory (predominant today: recognition merely ACKNOWLEDGES pre-existing factual Statehood) - operated via De Facto (provisional) or De Jure (final, irrevocable) recognition with retroactive legal effect.",
+        "legalProvision": "Articles 3 & 6, Montevideo Convention, 1933; Estrada Doctrine (1930) & Tobar / Stimson Doctrines",
+        "meaning": "While recognition is primarily a discretionary political act of States, once granted it carries decisive legal consequences in domestic courts - granting diplomatic immunity, sovereign right to sue, and recognition of laws.",
+        "keyPoints": [
+          "Constitutive vs Declaratory Theories: CONSTITUTIVE THEORY (Oppenheim, Hegel, Lauterpacht) holds that ONLY recognition by existing States clothes a new entity with international personality (criticized because it creates absurd relativity where State X exists for State A but not State B). DECLARATORY / EVIDENTIARY THEORY (Brierly, Hall, Art. 3 Montevideo Convention) holds that Statehood exists as an objective fact once Montevideo criteria are met, and recognition merely acknowledges it (dominant modern view).",
+          "De Facto vs De Jure Recognition: DE FACTO RECOGNITION is provisional, revocable acknowledgment that a regime exercises actual effective territorial control, though doubts remain about stability/legitimacy (no full diplomatic ambassadors exchanged; cannot claim state property situated abroad - Haile Selassie v. Cable & Wireless). DE JURE RECOGNITION is final, unconditional, and IRREVOCABLE acknowledgment of full legal sovereignty (full diplomatic relations, sovereign immunity, right to claim state assets abroad; e.g., UK recognized USSR de facto in 1921 and de jure in 1924).",
+          "Modes & Doctrines of Recognition: Express (formal treaty/declaration) vs Implied (bilateral treaty/exchange of ambassadors - NOT mere multilateral UN membership or trade talks); Recognition of Governments (Tobar Doctrine opposes unconstitutional coups; Estrada Doctrine of Mexico abolishes formal government recognition altogether; Stimson Doctrine refuses recognition of territories seized by unlawful force).",
+          "Legal Consequences & Retroactivity (Luther v. Sagor, 1921): Recognition enables the recognized State to sue in recognizing State's courts, claim sovereign/diplomatic immunity, have its legislative/executive acts respected, and access overseas state property. Crucially, recognition operates RETROACTIVELY back to the exact date the new State/government actually came into existence (Luther v. Sagor; Civil Air Transport v. Central Air Transport)."
+        ],
+        "caseLaws": [
+          {
+            "name": "A.M. Luther v. James Sagor & Co.",
+            "citation": "1921 3 KB 532 (CA)",
+            "principle": "Held that once the British Government granted De Facto recognition to the Soviet Government in 1921, recognition operated RETROACTIVELY back to 1917, validating the Soviet 1918 nationalization decree over timber sold in England."
+          },
+          {
+            "name": "Haile Selassie v. Cable and Wireless Ltd. (No. 2)",
+            "citation": "1939 Ch 182",
+            "principle": "Highlighted the sharp legal difference between De Facto and De Jure recognition: until Britain switched from De Facto to De Jure recognition of Italian rule in Ethiopia, Emperor Haile Selassie retained title to Ethiopian assets in London."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three key differences between De Facto and De Jure recognition, and explain the principle of Retroactivity established in Luther v. Sagor (1921).",
+            "a": "De Facto is provisional, revocable, and does not carry full diplomatic exchange or title to overseas state assets, whereas De Jure is final, irrevocable, and confers full diplomatic and property rights. Retroactivity (Luther v. Sagor) means recognition relates back to the actual inception of the recognized regime, validating its prior governmental acts."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u2-t4": {
+      "id": "pil-u2-t4",
+      "subtitle": "Public International Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "State Succession (Art. 2(1)(b), Vienna Convention on Succession of States in Respect of Treaties, 1978) is the replacement of one State by another in the responsibility for the international relations of territory - classified as Universal Succession (complete absorption/dismemberment like USSR/Czechoslovakia) or Partial Succession (cession/secession like Bangladesh or India-Pakistan 1947). Modern law rejects automatic universal inheritance and applies tailored rules across Treaties ('Clean Slate' vs Localized Treaties), Public Debts, Contracts, Torts, and Nationality.",
+        "legalProvision": "Vienna Convention on Succession of States in Respect of Treaties, 1978; Vienna Convention on State Property, Archives and Debts, 1983",
+        "meaning": "State Succession (change of sovereignty over territory) must be distinguished from Government Succession (mere internal regime/revolution change like 1917 Russia, where State continuity remains 100% intact).",
+        "keyPoints": [
+          "Kinds & Theories of State Succession: UNIVERSAL SUCCESSION = predecessor State completely disappears (dissolution of Yugoslavia/USSR, merger of North/South Yemen or East/West Germany); PARTIAL SUCCESSION = predecessor State survives while losing part of its territory (secession of Bangladesh 1971, cession of territory). Theories: (1) Universal Succession Theory (Grotius - successor inherits ALL rights/duties like a Roman heir - rejected today), (2) Clean Slate / Tabula Rasa / Negative Theory (newly independent post-colonial States start completely free of predecessor's treaties - Art. 16, 1978 Convention), and (3) Modern Continuity / Functional Differentiation.",
+          "Effect on Treaties (1978 Vienna Convention): (1) POLITICAL / PERSONAL TREATIES (alliances, extradition, mutual defence) -> Do NOT pass (extinguished); (2) COMMERCIAL / MULTILATERAL TREATIES -> Newly independent States enjoy the 'Clean Slate' right to opt in/out (Art. 16), while uniting/separating States generally follow continuity; (3) LOCALIZED / DISPOSITIVE / BOUNDARY TREATIES (borders, river navigation, demilitarization - Arts. 11-12) -> ALWAYS PASS AUTOMATICALLY to the successor State to preserve international stability (Gabcikovo-Nagymaros Project, 1997).",
+          "Effect on Public Property, Debts & Contracts (1983 Vienna Convention): Public State property situated in the territory passes automatically to the successor; LOCALIZED PUBLIC DEBTS (borrowed specifically for local infrastructure like a dam/railway) pass to the successor (general national debt is divided equitably, EXCEPT 'Odious Debts' incurred for war/oppression against the territory, which do NOT pass - Tinoco Concessions principle). Acquired private property rights are respected, though unliquidated TORT CLAIMS against the predecessor do NOT pass (Robert E. Brown Claim).",
+          "Effect on Nationality & Membership of UN: Inhabitants habitually resident in the transferred territory ordinarily acquire the nationality of the successor State (subject to right of option); UN Membership NEVER passes automatically by succession - a new successor State must apply afresh under Art. 4 UN Charter (e.g., India retained original UN seat in 1947 while Pakistan applied as a new member)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Gabcikovo-Nagymaros Project (Hungary v. Slovakia)",
+            "citation": "1997 ICJ Rep 7",
+            "principle": "ICJ affirmed Article 12 of the 1978 Vienna Convention as customary law: a territorial/localized treaty (1977 Danube dam/river regime) automatically bound Slovakia as successor State upon the dissolution of Czechoslovakia."
+          },
+          {
+            "name": "Robert E. Brown Claim (USA v. Great Britain)",
+            "citation": "1923 6 RIAA 120",
+            "principle": "Held that a successor State (Britain annexing South African Republic) does NOT inherit liability for unliquidated international tort / denial-of-justice claims committed by the predecessor State."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Universal and Partial State Succession, explain the 'Clean Slate' rule under the 1978 Vienna Convention, and state which treaties ALWAYS survive State Succession.",
+            "a": "Universal succession occurs when the predecessor State totally disappears (dissolution/merger), whereas Partial succession occurs when the predecessor continues after losing part of its territory (secession/cession). Under the Clean Slate rule, newly independent post-colonial States are not automatically bound by predecessor treaties - EXCEPT boundary and localized/territorial treaties (Arts. 11-12; Gabcikovo-Nagymaros), which ALWAYS pass."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

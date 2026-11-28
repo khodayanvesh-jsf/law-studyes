@@ -1,0 +1,168 @@
+{
+  "subjects": [
+    {
+      "id": "administrative-law",
+      "title": "Administrative Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Judicial Control of Administrative Action, Principles of Natural Justice & Administrative Discretion",
+          "topics": [
+            {"id": "adm-u4-t1", "title": "1. Judicial Control of Administrative Action - Grounds of Review (Illegality, Irrationality, Procedural Impropriety & Proportionality)"},
+            {"id": "adm-u4-t2", "title": "2. Principles of Natural Justice - Rule Against Bias (Nemo Judex in Causa Sua)"},
+            {"id": "adm-u4-t3", "title": "3. Principles of Natural Justice - Fair Hearing (Audi Alteram Partem), Reasoned Decisions & Exceptions"},
+            {"id": "adm-u4-t4", "title": "4. Administrative Discretion & Its Judicial Control (Failure to Exercise vs Abuse of Discretion)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "adm-u4-t1": {
+      "id": "adm-u4-t1",
+      "subtitle": "Administrative Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Judicial Review of Administrative Action is NOT an appeal on merits - courts review the DECISION-MAKING PROCESS, not the decision itself (Tata Cellular v. Union of India). Lord Diplock's classic CCSU (1985) triad sets three primary grounds of judicial control: Illegality (ultra vires), Irrationality (Wednesbury unreasonableness), and Procedural Impropriety (Natural Justice) - expanded in India by Proportionality and Legitimate Expectation.",
+        "legalProvision": "Articles 32, 136, 226, & 227, Constitution of India; CCSU Triad (1985); Tata Cellular Principles (1994)",
+        "meaning": "Judicial review keeps administrative agencies honest without turning judges into super-administrators. Courts intervene only when an authority acts without jurisdiction, arbitrarily, mala fide, or unfairly.",
+        "keyPoints": [
+          "Judicial Review vs Appeal: Appeal re-examines facts and merits to substitute the court's own judgment; Judicial Review examines strictly whether the authority acted legally, rationally, and fairly within its jurisdiction.",
+          "CCSU Triad of Grounds (Council of Civil Service Unions v. Minister for Civil Service, 1985): (1) ILLEGALITY (decision-maker misunderstood the law, lacked jurisdiction, or exceeded statutory limits), (2) IRRATIONALITY / Wednesbury Unreasonableness (decision so outrageous in defiance of logic or accepted moral standards that no sensible person could have reached it - Associated Provincial Picture Houses v. Wednesbury Corp., 1948), and (3) PROCEDURAL IMPROPRIETY (breach of mandatory statutory procedure or Principles of Natural Justice).",
+          "Doctrine of Proportionality (Om Kumar v. Union of India, 2001): Where Fundamental Rights (Arts. 14/19/21) or disciplinary punishments are involved, Indian courts go beyond Wednesbury and check whether the administrative measure is 'proportionate' (not using a sledgehammer to crack a nut - least restrictive means).",
+          "Doctrine of Legitimate Expectation (Navjyoti Co-op Group Housing Society): Where a public authority's consistent past practice or express representation creates a reasonable expectation of a benefit or hearing, it cannot abruptly reverse course arbitrarily without overriding public interest."
+        ],
+        "caseLaws": [
+          {
+            "name": "Tata Cellular v. Union of India",
+            "citation": "1994 6 SCC 651",
+            "principle": "Laid down the authoritative Indian framework for judicial review of administrative/tender decisions: courts review the decision-making process (illegality, irrationality, procedural impropriety), not the merits of administrative policy."
+          },
+          {
+            "name": "Om Kumar v. Union of India",
+            "citation": "2001 2 SCC 386",
+            "principle": "Explained when Indian courts apply the stricter Doctrine of Proportionality (Fundamental Rights / disproportionate penalties) versus secondary Wednesbury review."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State Lord Diplock's three classic grounds of Judicial Review in CCSU (1985) and explain how Judicial Review differs from an Appeal.",
+            "a": "Illegality, Irrationality (Wednesbury unreasonableness), and Procedural Impropriety (plus Proportionality). Judicial review examines the legality and fairness of the decision-making process, whereas an appeal re-evaluates the merits/facts."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u4-t2": {
+      "id": "adm-u4-t2",
+      "subtitle": "Administrative Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Principles of Natural Justice are unwritten rules of 'fair play in action' embedded in Articles 14 and 21. Its first pillar is the Rule Against Bias - 'Nemo judex in causa sua' (no one should be a judge in his own cause) - rooted in the maxim that justice must not only be done, but manifestly and undoubtedly be SEEN to be done (R. v. Sussex Justices).",
+        "legalProvision": "Maxim 'Nemo Judex in Causa Sua'; Articles 14 & 21, Constitution of India",
+        "meaning": "Bias means an operative prejudice or predisposition preventing an impartial decision. Crucially, a challenger need NOT prove actual bias in the officer's mind - a 'real likelihood' or 'reasonable apprehension' of bias from an objective standpoint vitiates the entire proceeding.",
+        "keyPoints": [
+          "Four Kinds of Bias: (1) PECUNIARY BIAS (even the slightest financial interest - e.g., owning shares in a party company - AUTOMATICALLY disqualifies the decision-maker regardless of actual fairness: Dimes v. Grand Junction Canal; J. Mohapatra v. State of Orissa), (2) PERSONAL BIAS (friendship, family relationship, hostility, or being a candidate on the selection board yourself - A.K. Kraipak v. Union of India), (3) OFFICIAL / SUBJECT-MATTER / DEPARTMENTAL BIAS (over-zealous commitment to departmental policy - requires proving a closed mind, not mere official role: Gullapalli Nageswara Rao v. APSRTC), and (4) JUDICIAL OBSTINACY (judge stubbornly sticking to his own reversed view).",
+          "Test of Bias (Real Likelihood vs Reasonable Suspicion): Indian courts apply the 'Real Likelihood / Reasonable Apprehension of Bias' test judged from the standpoint of a reasonable, informed observer - not hypersensitive speculation (A.K. Kraipak; Ranjit Thakur v. Union of India).",
+          "Two Narrow Exceptions to Rule Against Bias: (1) DOCTRINE OF NECESSITY (where NO other legally competent authority exists to decide the matter - e.g., Chief Election Commissioner / Statutory Board where disqualification would paralyze law: Election Commission v. Dr. Subramanian Swamy), and (2) STATUTORY EXCLUSION / WAIVER (where a party knowing of the bias consciously participates without objection)."
+        ],
+        "caseLaws": [
+          {
+            "name": "A.K. Kraipak v. Union of India",
+            "citation": "AIR 1970 SC 150",
+            "principle": "Quashed an IFS selection list because the Acting Chief Conservator of Forests sat on the Selection Board while himself being a candidate - classic Personal Bias vitiating administrative action."
+          },
+          {
+            "name": "Gullapalli Nageswara Rao v. APSRTC",
+            "citation": "AIR 1959 SC 308",
+            "principle": "Held that the Secretary of the Transport Department who framed the bus-nationalization scheme could not impartially hear objections against his own scheme (Official Bias + 'one who hears must decide')."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why does Pecuniary Bias disqualify automatically compared to Official Bias, and what is the Doctrine of Necessity exception?",
+            "a": "Even the smallest financial interest creates an automatic conclusive presumption of bias (Dimes), whereas Official Bias requires proving an actual closed mind. Under the Doctrine of Necessity, a biased authority may still decide if NO other competent statutory authority exists to act."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u4-t3": {
+      "id": "adm-u4-t3",
+      "subtitle": "Administrative Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The second pillar of Natural Justice is 'Audi Alteram Partem' (hear the other side - no one should be condemned unheard), comprising Adequate Notice, Fair Opportunity to Be Heard, Disclosure of Adverse Material, and the third modern pillar: Reasoned Decisions ('Speaking Orders'). Exceptions apply in urgent emergencies, confidentiality, legislative acts, or impractical mass situations (with Post-Decisional Hearing as a safeguard per Maneka Gandhi).",
+        "legalProvision": "Maxim 'Audi Alteram Partem'; Articles 14, 21, & 311(2), Constitution of India",
+        "meaning": "Fair hearing ensures accurate fact-finding and human dignity before the State inflicts civil consequences (cancelling a passport, blacklisting a contractor, or expelling a student).",
+        "keyPoints": [
+          "Core Ingredients of Audi Alteram Partem: (1) ADEQUATE NOTICE (clear time, place, specific charges/grounds, and proposed action - vague notice voids proceedings), (2) FAIR OPPORTUNITY TO REPRESENT (written representation generally suffices; oral hearing & cross-examination are required where complex disputed facts/witness credibility are involved - Hira Nath Mishra limits cross-exam where witnesses face intimidation), (3) DISCLOSURE OF ADVERSE EVIDENCE (no reliance on secret material behind the party's back; supplying Inquiry Report is mandatory - ECIL v. B. Karunakar), and (4) ONE WHO HEARS MUST DECIDE (Gullapalli Nageswara Rao).",
+          "Third Pillar - Reasoned Decisions / Speaking Orders (S.N. Mukherjee v. Union of India, 1990): Administrative and quasi-judicial bodies MUST record reasons for their orders - preventing arbitrariness, enabling effective appellate/writ review, and building public confidence.",
+          "Post-Decisional Hearing (Maneka Gandhi v. Union of India, 1978): Where urgent public interest prevents a pre-decisional hearing (e.g., impounding a passport to stop flight), a prompt, fair POST-DECISIONAL hearing cures the defect.",
+          "Exceptions to Natural Justice: (1) Emergency/Urgent preventive action (demolishing a collapsing building, seizing spoiled food), (2) Confidentiality / National Security (Art. 311(2) Proviso (c)), (3) Legislative / Policy-making functions, (4) Impracticability (e.g., mass-copying cancellation of entire exam centre - Bihar School Exam Board v. Subhas Chandra Sinha), (5) Academic evaluation / contractual termination, and (6) 'Useless Formality Theory' (where facts are wholly admitted/indisputable - applied very narrowly)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Maneka Gandhi v. Union of India",
+            "citation": "AIR 1978 SC 597",
+            "principle": "7-judge Constitution Bench read Audi Alteram Partem directly into Article 21 and evolved Post-Decisional Hearing where immediate pre-decisional notice would frustrate urgent public purpose."
+          },
+          {
+            "name": "S.N. Mukherjee v. Union of India",
+            "citation": "AIR 1990 SC 1984",
+            "principle": "5-judge Constitution Bench established 'Reasoned Decisions' (Speaking Orders) as an independent third pillar of Natural Justice for quasi-judicial and administrative orders."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List four core components of 'Audi Alteram Partem', and state when courts permit dispensing with pre-decisional hearing.",
+            "a": "Components: Adequate notice, fair opportunity to represent/rebut, disclosure of all adverse material, and a reasoned speaking order. Pre-decisional hearing may be dispensed with in emergencies, national security/confidentiality, legislative acts, or mass impracticability (e.g., mass exam copying)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u4-t4": {
+      "id": "adm-u4-t4",
+      "subtitle": "Administrative Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Administrative Discretion is the statutory freedom given to an executive authority to choose between two or more lawful alternatives based on subjective satisfaction ('may', 'if satisfied', 'in public interest'). Because absolute unfettered discretion is 'a ruthless master', Indian courts police discretion rigorously at two stages - Failure to Exercise Discretion AND Abuse of Discretion.",
+        "legalProvision": "Articles 14, 19, & 21, Constitution of India; Doctrines of Mala Fides, Non-Application of Mind & Fettering Discretion",
+        "meaning": "Discretion is essential for individualized welfare governance, yet every statutory discretion carries implied legal boundaries: it must be exercised personally, honestly, for the statutory purpose, and on relevant grounds.",
+        "keyPoints": [
+          "Stage 1 - Control at Conferment (Constitutionality of Statute): A statute granting totally unguided, canalized, naked discretion violating Article 14 or imposing unreasonable restrictions under Article 19 is struck down as unconstitutional (State of West Bengal v. Anwar Ali Sarkar; Dwarka Prasad Laxmi Narain).",
+          "Stage 2A - Failure to Exercise Discretion (Four Grounds): (1) SUB-DELEGATION without authority, (2) ACTING UNDER DICTATION (mechanically obeying a superior Minister's order instead of applying one's own statutory mind - Commissioner of Police v. Gordhandas Bhanji), (3) NON-APPLICATION OF MIND (mechanical cyclostyled detention orders - Jagannath Misra), and (4) FETTERING DISCRETION (rigid self-imposed policy refusing to consider individual case merits).",
+          "Stage 2B - Abuse / Excess of Discretion (Six Grounds): (1) MALA FIDES / Bad Faith (personal spite/malice in fact - Pratap Singh v. State of Punjab, or malice in law), (2) IMPROPER PURPOSE / Colourable Exercise (using power for an unauthorized collateral objective - S.R. Venkataraman), (3) IRRELEVANT CONSIDERATIONS or ignoring relevant considerations (Barium Chemicals; Rampur Distillery), (4) UNREASONABLENESS / Arbitrariness (Wednesbury / Art. 14), (5) DISPROPORTIONALITY (Ranjit Thakur), and (6) VIOLATION OF NATURAL JUSTICE."
+        ],
+        "caseLaws": [
+          {
+            "name": "Commissioner of Police, Bombay v. Gordhandas Bhanji",
+            "citation": "AIR 1952 SC 16",
+            "principle": "Quashed cancellation of a cinema licence where the Police Commissioner abdicated his statutory discretion and acted purely under dictation of the State Government."
+          },
+          {
+            "name": "Pratap Singh v. State of Punjab",
+            "citation": "AIR 1964 SC 72",
+            "principle": "Quashed suspension and disciplinary inquiry against a Civil Surgeon as vitiated by Mala Fides (personal vendetta of the Chief Minister), proving that even subjective executive discretion falls to bad faith."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'Failure to Exercise Discretion' and 'Abuse of Discretion' with two concrete examples of each.",
+            "a": "Failure to exercise occurs when the authority does not apply its own mind (e.g., acting under dictation - Gordhandas Bhanji, or mechanical non-application of mind). Abuse of discretion occurs when power is exercised wrongly (e.g., mala fides/personal spite - Pratap Singh, or irrelevant considerations/improper purpose)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

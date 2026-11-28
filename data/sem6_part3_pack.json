@@ -1,0 +1,266 @@
+{
+  "subjects": [
+    {
+      "id": "drafting-pleading-conveyancing",
+      "title": "Drafting, Pleading & Conveyancing (DPC)",
+      "semester": "Semester 6",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Drafting Principles, Plaint Essentials, Rejection, Amendment, Affidavit & Perjury",
+          "topics": [
+            {"id": "drafting-pleading-conveyancing-u3-t1", "title": "1. Essentials of Good Drafting, Plaint Format (Order VII Rules 1-8), Rejection (Rule 11), Amendment (Order VI Rule 17), Affidavit & Verification"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Practical Civil, Matrimonial, Criminal & Writ Drafting",
+          "topics": [
+            {"id": "drafting-pleading-conveyancing-u4-t1", "title": "1. Drafting Recovery Suits, Matrimonial Petitions (RCR/Divorce), Bail Applications, Sec. 138 Cheque Bounce, Defamation, Execution & Revision"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Specialized Conveyancing Deeds & Legal Notices",
+          "topics": [
+            {"id": "drafting-pleading-conveyancing-u5-t1", "title": "1. Drafting Partition, Partnership, Release, Adoption, Trust & Divorce Settlement Deeds, Codicil, Agreement of Sale & Promissory Note Notice"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moot-court",
+      "title": "Moot Court & Trial Advocacy",
+      "semester": "Semester 6",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Civil Moot Trial - Eviction, Bona Fide Need, Mesne Profits & Deserted Wife's Rights",
+          "topics": [
+            {"id": "moot-court-u3-t1", "title": "1. Civil Eviction Moot (Mahesh v. Rekha) - Jurisdiction, Limitation, Secs. 5-6 SRA, Notice to Quit, Mesne Profits & B.P. Achala Anand"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Criminal Appellate Moot & Viva Distinctions",
+          "topics": [
+            {"id": "moot-court-u4-t1", "title": "1. Criminal Appeals (Sec. 374), Suspension of Sentence/Bail Pending Appeal (Sec. 389), Discharge vs Acquittal, Police vs Judicial Custody & Benefit of Doubt"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Court Observation, Client Interviewing, PIL Guidelines & Oral Advocacy",
+          "topics": [
+            {"id": "moot-court-u5-t1", "title": "1. Clinical Legal Education (Moot, Trial Observation & Client Counselling), Supreme Court PIL Guidelines & Oral Advocacy Etiquette"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "drafting-pleading-conveyancing-u3-t1": {
+      "id": "drafting-pleading-conveyancing-u3-t1",
+      "subtitle": "Drafting, Pleading & Conveyancing (DPC) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Effective legal drafting rests on four core pillars - Precision, Clarity, Adaptability, and Lucidity. Under CPC, a Plaint must strictly follow Order VII Rules 1-8 (else face rejection under Rule 11), pleadings may be amended with court leave (Order VI Rule 17), and every plaint must be verified and supported by a sworn Affidavit (Section 26 & Order XIX), with false verification attracting perjury prosecution.",
+        "legalProvision": "Section 26; Orders VI (Rules 15 & 17), VII (Rules 1-8 & 11), & XIX, Code of Civil Procedure, 1908; Sections 191 & 193 IPC (Sections 227 & 229 BNS, 2023)",
+        "meaning": "Because civil trials are confined strictly to what parties plead, a defective plaint can be rejected at the threshold without trial. Verification and supporting affidavits bind litigants to truthfulness under criminal penalty of perjury.",
+        "keyPoints": [
+          "Four Pillars of Good Drafting: (1) Precision (concise yet complete), (2) Clarity (unambiguous sentences with logical paragraph flow), (3) Adaptability (tailored to exact facts and governing law), and (4) Lucidity (plain, direct legal language).",
+          "Mandatory Particulars of a Plaint (Order VII Rules 1-8 CPC): Name of court, full name/description/address of plaintiff and defendant, statement if either party is a minor or of unsound mind, facts constituting Cause of Action and when it arose, facts establishing territorial/pecuniary jurisdiction, specific relief/prayer claimed, any set-off/relinquishment, and valuation for jurisdiction and court fees.",
+          "Rejection of Plaint (Order VII Rule 11 CPC): Court shall reject a plaint if it (a) fails to disclose a cause of action, (b) is undervalued and not corrected, (c) is insufficiently stamped under the Court Fees Act, (d) appears barred by any law (e.g., limitation), (e) is not filed in duplicate, or (f) violates Rule 9 compliance.",
+          "Amendment of Pleadings (Order VI Rule 17 CPC): Court may allow either party to amend pleadings at any stage if necessary to determine the real questions in controversy (after trial commences, only if the party proves it could not raise the matter earlier despite due diligence).",
+          "Affidavit (Order XIX), Verification (Order VI Rule 15) & Perjury: An Affidavit is a written statement sworn on oath by a deponent before an authorized officer (mandatory with every plaint under Section 26(2)); Verification confirms which paragraphs are true to personal knowledge vs legal advice; intentional false verification or false affidavit constitutes Perjury under Section 191 IPC, punishable with up to 7 years' imprisonment and fine under Section 193 IPC (Sections 227 & 229 BNS, 2023)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Saleem Bhai v. State of Maharashtra",
+            "citation": "2003 1 SCC 557",
+            "principle": "Held that while deciding an application for Rejection of Plaint under Order VII Rule 11 CPC, the court must examine ONLY the averments made in the plaint, and the defendant's written statement is wholly irrelevant."
+          },
+          {
+            "name": "Revajeetu Builders & Developers v. Narayanaswamy & Sons",
+            "citation": "2009 10 SCC 84",
+            "principle": "Laid down guiding factors for Amendment of Pleadings under Order VI Rule 17: amendments must be bona fide, necessary for real justice, and must not cause irreparable prejudice or fundamentally change the nature of the suit."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four statutory grounds for Rejection of a Plaint under Order VII Rule 11 CPC, and state the criminal consequence of filing a false verification or affidavit.",
+            "a": "Failure to disclose a cause of action, undervaluation/insufficient court-fee stamp, suit barred by law (e.g., limitation), or failure to file in duplicate. Intentional false verification or false affidavit is Perjury (Sec. 191/193 IPC; Sec. 227/229 BNS), punishable up to 7 years' imprisonment and fine."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "drafting-pleading-conveyancing-u4-t1": {
+      "id": "drafting-pleading-conveyancing-u4-t1",
+      "subtitle": "Drafting, Pleading & Conveyancing (DPC) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Practical litigation drafting spans Civil suits (Money Recovery, Execution Petitions, Interlocutory Applications, Revision under Sec. 115 CPC), Matrimonial petitions (RCR Sec. 9 & Divorce Sec. 13 HMA), Criminal complaints/bail (Sec. 138 NI Act cheque bounce, Defamation, Criminal Trespass, Secs. 438-439 CrPC / Secs. 482-483 BNSS), and Constitutional Writs (Arts. 32 & 226).",
+        "legalProvision": "Sections 26, 115 & Orders VII, XXI, XXXIX CPC; Sections 9 & 13 HMA, 1955; Section 138 NI Act, 1881; Sections 438-439 CrPC (Secs. 482-483 BNSS); Sections 441 & 499 IPC (Secs. 329 & 356 BNS); Articles 32 & 226, Constitution",
+        "meaning": "Every petition or complaint must cite the exact enabling statutory provision in the cause title, state jurisdictional facts chronologically, attach mandatory annexures/affidavits, and end with a precise prayer clause matching the relief the forum is competent to grant.",
+        "keyPoints": [
+          "Civil Recovery Suit, I.A., Execution & Revision: Money recovery plaints (Sec. 26, Order VII Rules 1-2) must state the exact principal, interest rate, and limitation; Interlocutory Applications (I.A.) seek urgent interim relief (e.g., temporary injunction under Order XXXIX); Execution Petitions (Order XXI Rule 11) tabulate decree particulars; Civil Revision Petitions lie to the High Court under Section 115 CPC for jurisdictional errors.",
+          "Matrimonial Petitions (Hindu Marriage Act, 1955): Restitution of Conjugal Rights (Section 9) pleads withdrawal from society without reasonable excuse; Divorce Petition (Section 13(1)) pleads specific grounds such as adultery, cruelty (13(1)(ia)), continuous desertion for 2+ years (13(1)(ib)), conversion, or incurable unsoundness of mind, plus mandatory no-collusion declaration (Section 20).",
+          "Cheque Bounce Complaint (Section 138 NI Act, 1881): Must clearly plead (1) legally enforceable debt, (2) cheque presentation within 3 months' validity (per RBI directive, superseding the older 6-month text), (3) bank dishonour memo, (4) written demand notice within 30 days, and (5) failure to pay within 15 days, filed within 1 month thereafter.",
+          "Criminal Complaints & Bail Applications: Defamation complaints (Sec. 499 IPC / Sec. 356 BNS) and Criminal Trespass complaints (Sec. 441 IPC / Sec. 329 BNS) are filed before a Magistrate under Section 200 CrPC (Sec. 223 BNSS); Regular Bail (Sec. 439 CrPC / Sec. 483 BNSS) and Anticipatory Bail (Sec. 438 CrPC / Sec. 482 BNSS) highlight roots in society, cooperation with investigation, and absence of flight risk or witness tampering.",
+          "Writ Petitions (Articles 32 & 226): Drafted with Synopsis, List of Dates, Facts, Grounds of constitutional violation, declaration that no alternative efficacious remedy exists, Prayer for appropriate writ (Habeas Corpus, Mandamus, Certiorari, Prohibition, Quo Warranto), and supporting Affidavit (note Article 226(3) requiring disposal of stay-vacation applications within 2 weeks)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bridgestone India Pvt. Ltd. v. Inderpal Singh",
+            "citation": "2016 2 SCC 75",
+            "principle": "Confirmed that following the 2015 NI Act Amendment (Section 142(2)), a Section 138 cheque-bounce complaint must be drafted and filed before the Magistrate having jurisdiction over the branch where the payee maintains his bank account."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Which statutory provisions govern drafting petitions for Restitution of Conjugal Rights, Divorce, Anticipatory Bail, Regular Bail before Sessions/HC, and Civil Revision?",
+            "a": "RCR: Sec. 9 HMA; Divorce: Sec. 13 HMA; Anticipatory Bail: Sec. 438 CrPC / Sec. 482 BNSS; Regular Bail (Sessions/HC): Sec. 439 CrPC / Sec. 483 BNSS; Civil Revision: Sec. 115 CPC."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "drafting-pleading-conveyancing-u5-t1": {
+      "id": "drafting-pleading-conveyancing-u5-t1",
+      "subtitle": "Drafting, Pleading & Conveyancing (DPC) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Beyond Sale, Mortgage, Lease, Gift, GPA, and Will, practical conveyancing covers specialized instruments - Partition Deed, Partnership Deed, Release Deed, Adoption Deed, Codicil, Trust Deed, Deed of Divorce Settlement, Agreement of Sale, Loan Agreement, and Legal Notice of Default on a Promissory Note - all requiring proper recitals, property schedules, stamp duty, attestation, and registration where mandatory.",
+        "legalProvision": "Transfer of Property Act, 1882; Indian Partnership Act, 1932; Indian Trusts Act, 1882; Hindu Adoptions and Maintenance Act, 1956 (Sec. 16); Indian Stamp Act, 1899; Registration Act, 1908 (Sec. 17)",
+        "meaning": "Conveyancing prevents future litigation by translating commercial and family arrangements into airtight written deeds. Every conveyance draft must carefully verify the transferor's title, exact consideration, stamp duty slab, compulsory registration threshold, and witness attestation.",
+        "keyPoints": [
+          "Partition Deed & Release (Relinquishment) Deed: A Partition Deed divides joint family or co-owned property into specific exclusive schedules (Schedules A, B, C) among co-owners and requires registration if effecting partition in praesenti; a Release Deed formally relinquishes one co-owner's share in favour of another co-owner (with or without consideration) and extinguishes title.",
+          "Partnership Deed & Trust Deed: A Partnership Deed specifies firm name, business nature, capital contribution, profit/loss sharing ratios, partner duties, banking operations, and dissolution/arbitration clauses; a Trust Deed names the Settlor, Trustees, Beneficiaries, trust property, charitable/private objects, and powers of management.",
+          "Adoption Deed & Codicil: An Adoption Deed records names of biological and adoptive parents, adoptee details, proof of actual giving-and-taking ceremony, and statutory compliance under HAMA 1956 (a registered adoption deed carries a presumption of validity under Section 16 HAMA); a Codicil specifies the exact original Will being modified and sets out alterations/additions with two attesting witnesses.",
+          "Agreement of Sale, Loan Agreement & Divorce Settlement Deed: An Agreement of Sale records total price, earnest money, time for completion, and clear-title covenants prior to final Sale Deed; a Loan Agreement records principal, interest rate, repayment schedule, security, and default clauses; a Divorce Settlement Deed records permanent alimony, stridhan return, child custody/visitation, and withdrawal of pending cases.",
+          "Legal Notice of Default on Promissory Note: Sent through an advocate (Registered Post AD) detailing date/amount of the Pronote, agreed interest, total outstanding balance, prior demands, a clear grace period (e.g., 15 days) to pay, and explicit warning of civil recovery suit with costs and interest upon default."
+        ],
+        "caseLaws": [
+          {
+            "name": "Roshan Singh v. Zile Singh",
+            "citation": "AIR 1988 SC 881",
+            "principle": "Distinguished a formal Partition Deed (which itself creates/extinguishes rights in immovable property and requires compulsory registration under Section 17) from a mere Memorandum of Past Family Settlement (which does not require registration)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the evidentiary advantage of registering an Adoption Deed under Section 16 of HAMA, 1956, and what must a Legal Notice for Default of a Promissory Note contain?",
+            "a": "Under Section 16 HAMA, a registered adoption deed signed by both giving and taking parties raises a statutory presumption that the adoption complied with law. A Pronote default notice must specify party names, pronote date/principal/interest, total dues, a fixed payment deadline, and warning of civil recovery action."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "moot-court-u3-t1": {
+      "id": "moot-court-u3-t1",
+      "subtitle": "Moot Court & Trial Advocacy - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Civil eviction moots (such as Mr. Mahesh v. Mrs. Rekha on non-payment of rent and elderly landlord's bona fide personal need vs deserted wife's right of residence) test mastery of civil jurisdiction, 3-year limitation for rent arrears, valid Notice to Quit (Section 106 TPA), Mesne Profits (Section 2(12) CPC), Sections 5-6 Specific Relief Act, and B.P. Achala Anand v. S. Appi Reddy.",
+        "legalProvision": "Sections 2(12), 9, 15-20 CPC; Sections 106, 108, & 111, Transfer of Property Act, 1882; Sections 5 & 6, Specific Relief Act, 1963; Telangana Civil Courts Act, 1972; Article 52, Limitation Act, 1963",
+        "meaning": "A civil trial moot requires both sides to balance statutory property rights with equitable and socio-legal protections. The landlord relies on ownership, termination of tenancy by valid notice, wilful default, and genuine personal occupation need, while the tenant invokes due process against forcible dispossession and matrimonial residence protection.",
+        "keyPoints": [
+          "Parties, Cause of Action & Jurisdiction: Landlord (Plaintiff) sues Tenant/Deserted Spouse (Defendants) for eviction, arrears of rent, and mesne profits; Cause of Action comprises rental default, bona fide need of elderly owners for the ground floor, and refusal to vacate after valid notice; civil jurisdiction requires Territorial, Pecuniary, and Subject-Matter competence (Telangana Civil Courts Act, 1972 / Rent Control Court where applicable).",
+          "Plaintiff's Statutory Basis (Eviction & Mesne Profits): Recovery of possession based on title under Section 5 of the Specific Relief Act, 1963; valid termination of monthly tenancy by 15 days' written Notice to Quit under Section 106 & Section 111(h) TPA (with landlord's bona fide personal requirement under Rent Control law); recovery of arrears within 3 years (Article 52, Limitation Act) plus Mesne Profits under Section 2(12) CPC for wrongful post-termination occupation.",
+          "Defendant's Statutory & Equitable Defences: Under Section 6 of the Specific Relief Act, 1963, even a tenant cannot be forcibly dispossessed without due process of law; tenant may plead absence of wilful default due to COVID-19 job loss/State moratorium GOs, offer rent payment in instalments, and assert pending Domestic Violence (PWDVA) shared-household/residence hardship.",
+          "Key Precedent Balancing Both Sides (B.P. Achala Anand v. S. Appi Reddy, 2005): A deserted wife residing in tenanted matrimonial premises has locus standi to contest an eviction suit in place of her deserting husband and cannot be placed in a position worse than a sub-tenant, provided she is willing to pay/deposit arrears and rent; however, her right cannot exceed the tenant-husband's lawful tenancy rights against a landlord proving genuine bona fide need.",
+          "Substantive vs Procedural Laws in Civil Moot: Substantive laws govern rights/obligations (Transfer of Property Act, 1882; Specific Relief Act, 1963; Rent Control Act; PWDVA 2005), while procedural laws govern trial conduct (CPC, 1908; Indian Evidence Act / BSA; Limitation Act, 1963)."
+        ],
+        "caseLaws": [
+          {
+            "name": "B.P. Achala Anand v. S. Appi Reddy",
+            "citation": "2005 3 SCC 313",
+            "principle": "Held that a deserted wife staying in rented matrimonial premises is entitled to be impleaded and defend an eviction suit against the landlord, though her rights remain co-extensive with the husband's tenancy obligations."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are Mesne Profits under Section 2(12) CPC, and how does B.P. Achala Anand (2005) protect a deserted wife in a landlord's eviction suit?",
+            "a": "Mesne profits are profits actually received (or reasonably receivable) by a person in wrongful possession of property after tenancy termination. In B.P. Achala Anand, the Supreme Court held that a deserted wife cannot be placed worse than a sub-tenant and can defend the eviction suit by complying with rent obligations."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "moot-court-u4-t1": {
+      "id": "moot-court-u4-t1",
+      "subtitle": "Moot Court & Trial Advocacy - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "In criminal appellate moots (such as Rajesh Kapoor v. State of Telangana challenging a Sessions conviction under Sections 304B/498A IPC), viva judges routinely test Burden of Proof & Benefit of Doubt, Discharge vs Acquittal, Police Remand vs Judicial Custody (Section 167 CrPC / Section 187 BNSS), Criminal Appeal Hierarchy (Sections 372-379), and Bail Pending Appeal (Section 389 CrPC / Section 430 BNSS).",
+        "legalProvision": "Sections 167, 227, 232, 372-379, & 389 CrPC, 1973 (Sections 187, 250, 255, 413-420, & 430 BNSS, 2023); Sections 101-102 IEA (Sections 104-105 BSA, 2023)",
+        "meaning": "Criminal trials demand proof 'beyond reasonable doubt' rather than the civil 'preponderance of probabilities.' In a criminal appeal against conviction, the appellant's counsel demonstrates breaks in the prosecution chain (e.g., inconclusive autopsy showing accidental drug/alcohol overdose rather than homicidal cruelty), while seeking suspension of sentence and bail pending appeal.",
+        "keyPoints": [
+          "Burden of Proof & Benefit of Doubt: Under Section 101 IEA (Sec. 104 BSA), the initial burden always lies on the prosecution to prove guilt beyond reasonable doubt; if two reasonable views emerge from the evidence (e.g., inconclusive autopsy in Rajesh Kapoor) or essential ingredients of Section 304B are unproved, the accused is entitled to Benefit of Doubt and acquittal.",
+          "Discharge vs Acquittal: Discharge (Sec. 227/239 CrPC) occurs BEFORE framing of charge when there is no sufficient ground to proceed (does not bar fresh prosecution on new material); Acquittal (Sec. 232/235) occurs AFTER full trial on merits and bars retrial under Section 300 CrPC (Autrefois Acquit).",
+          "Police Custody (Remand) vs Judicial Custody (Sec. 167 CrPC / Sec. 187 BNSS): Police Custody keeps the accused in police lock-up for interrogation (max 15 days under CrPC, spreadable within initial 40/60 days under BNSS); Judicial Custody keeps the accused in central/district prison under Magistrate control (default/statutory bail arises if charge sheet is not filed within 60 days, or 90 days for offences punishable with 10+ years/life/death).",
+          "Bail for a Convict Pending Appeal (Section 389 CrPC / Section 430 BNSS): Once convicted, regular pre-trial bail ends; a convict obtains release during appeal by applying to the Appellate Court for Suspension of Sentence and Bail under Section 389(1), or temporary bail from the trial court under Section 389(3) where sentence does not exceed 3 years.",
+          "Hierarchy of Criminal Appeals & Civil vs Criminal Cases: Magistrate conviction -> Sessions Court (Sec. 374(3)); Sessions Court conviction (7+ years) -> High Court (Sec. 374(2)); High Court reversal of acquittal into death/life/10+ years -> Supreme Court (Sec. 379 / Art. 134). Civil cases adjudicate private rights/compensation on preponderance of probabilities, whereas criminal cases punish public wrongs via State prosecution beyond reasonable doubt."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kali Ram v. State of Himachal Pradesh",
+            "citation": "AIR 1973 SC 2773",
+            "principle": "Held that the golden thread of criminal jurisprudence is presumption of innocence - if two views are possible on the evidence adduced, the view favourable to the accused must be adopted (Benefit of Doubt)."
+          },
+          {
+            "name": "Kashmira Singh v. State of Punjab",
+            "citation": "AIR 1977 SC 2147",
+            "principle": "Laid down guiding principles for suspending sentence and granting bail pending appeal under Section 389 CrPC where disposal of the appeal is likely to take considerable time."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Discharge and Acquittal, and state under which section a convicted person applies for bail pending appeal.",
+            "a": "Discharge happens before framing of charge for lack of prima facie grounds (not a bar to fresh trial), whereas Acquittal happens after full trial on merits and bars retrial under Section 300 CrPC. A convict applies for suspension of sentence and bail pending appeal under Section 389 CrPC (Section 430 BNSS)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "moot-court-u5-t1": {
+      "id": "moot-court-u5-t1",
+      "subtitle": "Moot Court & Trial Advocacy - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Bar Council of India Rules of Legal Education, the 100-mark Moot Court clinical paper comprises four compulsory components: Moot Court exercises (30 marks), Trial Observation in Civil and Criminal Courts (30 marks), Client Interviewing & Pre-Trial Preparation (30 marks), and Viva Voce (10 marks) - bridging classroom law with real courtroom advocacy.",
+        "legalProvision": "Bar Council of India Rules of Legal Education, 2008 (Schedule II - Paper IV Compulsory Clinical Course); Supreme Court PIL Guidelines (Balwant Singh Chaufal, 2010)",
+        "meaning": "Clinical legal education transforms LL.B. graduates into court-ready advocates by combining appellate memorial research, live courtroom observation, empathetic client counselling, and disciplined oral submissions before a questioning Bench.",
+        "keyPoints": [
+          "Four Compulsory BCI Components (100 Marks): (1) Moot Court (30 marks: 3 assigned moot problems - written memorials + oral arguments), (2) Observance of Trial (30 marks: attending 1 civil and 1 criminal proceeding and maintaining a court diary of pleadings, witnesses, and orders), (3) Interviewing Techniques & Pre-Trial Preparation (30 marks: 2 client interviewing sessions + drafting preparation diary at an advocate's chamber/legal aid office), and (4) Viva Voce (10 marks).",
+          "Supreme Court PIL Guidelines (State of Uttaranchal v. Balwant Singh Chaufal, 2010): Courts must encourage genuine public-interest petitions while strictly screening out frivolous, politically motivated, or private-gain PILs by verifying petitioner credentials, checking prima facie substance, and imposing exemplary costs for abuse of process.",
+          "Client Interviewing & Pre-Trial Preparation Essentials: Establish rapport and confidentiality (Section 126 IEA / Section 132 BSA), listen without interrupting, build a chronological fact sheet, verify original documents, check limitation and jurisdiction, advise realistically on ADR vs litigation, and obtain signed Vakalatnama.",
+          "Framing Issues & Structuring Oral Submissions: Frame crisp, neutral legal issues ('Whether...'), open with a 60-second Roadmap of submissions, cite authoritative statutes and ratio decidendi of Supreme Court/High Court precedents, concede weak factual points gracefully without losing core legal ground, and conclude with a clear Prayer.",
+          "Courtroom & Moot Etiquette: Wear formal advocate attire (black coat, white shirt, black trousers/saree), stand when the Bench enters/leaves, address judges as 'Your Lordships / My Lords' or 'Your Honour', never interrupt a judge or opposing counsel, and answer every Bench question directly ('Yes/No, Your Lordship, because...') before returning to your submission."
+        ],
+        "caseLaws": [
+          {
+            "name": "State of Uttaranchal v. Balwant Singh Chaufal",
+            "citation": "2010 3 SCC 402",
+            "principle": "Issued 8 comprehensive Supreme Court guidelines to preserve the purity and sanctity of Public Interest Litigation (PIL) and curb frivolous or mala fide petitions with exemplary costs."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the four mandatory clinical components of the 100-mark Moot Court paper under BCI Rules, and what did Balwant Singh Chaufal (2010) establish for PILs?",
+            "a": "Moot Court (30 marks), Trial Observation of 1 civil & 1 criminal case (30 marks), Client Interviewing & Pre-Trial Preparation (30 marks), and Viva Voce (10 marks). Balwant Singh Chaufal laid down binding Supreme Court guidelines to verify bona fides and penalize frivolous/mala fide PILs."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-property",
+      "title": "Law of Property (TPA)",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Concept & Kinds of Property, Transferable/Non-Transferable Property, Competency, Restraints, Unborn Person, Vested/Contingent & Conditional Transfers",
+          "topics": [
+            {"id": "lop-u1-t1", "title": "1. Meaning, Concept & Kinds of Property - Immovable vs Movable Property (Sec. 3 TPA & General Clauses Act)"},
+            {"id": "lop-u1-t2", "title": "2. Transfer of Property (Sec. 5) & Transferable vs Non-Transferable Property (Sec. 6 TPA)"},
+            {"id": "lop-u1-t3", "title": "3. Who Can Transfer (Sec. 7), Operation (Sec. 8), Mode of Transfer (Sec. 9) & Restraints on Alienation/Enjoyment (Secs. 10-12)"},
+            {"id": "lop-u1-t4", "title": "4. Transfer to Unborn Person (Sec. 13), Rule Against Perpetuity (Sec. 14) & Accumulation (Secs. 15-18 TPA)"},
+            {"id": "lop-u1-t5", "title": "5. Vested Interest (Sec. 19) vs Contingent Interest (Sec. 21) & Distinction Between Them"},
+            {"id": "lop-u1-t6", "title": "6. Conditional Transfers - Void & Unlawful Conditions (Sec. 25), Condition Precedent (Sec. 26) & Condition Subsequent (Secs. 27-34 TPA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lop-u1-t1": {
+      "id": "lop-u1-t1",
+      "subtitle": "Law of Property (TPA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Transfer of Property Act, 1882 regulates voluntary INTER VIVOS (between living persons) transfers of property - chiefly Immovable Property (excluding succession, court sales, and Muslim gifts under Sec. 2/129). Under Section 3 TPA read with Section 3(26) of the General Clauses Act, 1897, Immovable Property includes land, benefits arising out of land, and things permanently attached to the earth, but EXCLUDES standing timber, growing crops, and grass.",
+        "legalProvision": "Sections 2 & 3, Transfer of Property Act, 1882; Section 3(26), General Clauses Act, 1897; Section 2(6), Registration Act, 1908",
+        "meaning": "Distinguishing Immovable from Movable property is vital because immovable transfers above Rs. 100 require stamp duty, attestation, and compulsory registration (Registration Act, 1908), whereas movable sales follow the Sale of Goods Act, 1930.",
+        "keyPoints": [
+          "Concept & Kinds of Property: Broadly covers every transferable proprietary interest - classified into Movable vs Immovable, Tangible (Corporeal) vs Intangible (Incorporeal - actionable claims, IPR, easements), Public vs Private, and Real vs Personal property.",
+          "Statutory Definition of Immovable Property (Sec. 3(26) GCA + Sec. 3 TPA): Includes (1) Land, (2) Benefits to arise out of land (e.g., right to catch fish from a lake - Anand Behera, right to collect lac/tendu leaves or market tolls, right of way, hereditary office), and (3) Things 'attached to the earth' (Sec. 3 TPA: rooted in earth like fruit-bearing trees; embedded in earth like buildings/walls; attached to what is embedded for permanent beneficial enjoyment like doors/windows).",
+          "Three Express Exclusions (Sec. 3 TPA - Movable Property): (1) Standing Timber (trees like teak, bamboo, shisham meant solely to be cut and used as wood - Shantabai v. State of Bombay; contrast fruit-bearing mango/mahua trees meant to stand for years, which ARE immovable), (2) Growing Crops (paddy, wheat, sugarcane), and (3) Grass (fodder).",
+          "Doctrine of Fixtures (Degree & Object of Annexation): Machinery bolted to a concrete floor solely to prevent vibration while running a tenant's factory is MOVABLE, whereas heavy plant permanently embedded by the owner to enhance the building's permanent value is IMMOVABLE (Duncan Industries v. State of U.P.).",
+          "Key Section 3 Definitions: 'Attested' (requires 2+ witnesses signing in executant's presence after seeing executant sign or receiving personal acknowledgment) and 'Notice' (Actual express notice OR Constructive notice via wilful abstention, gross negligence, registration, actual possession, or notice to agent)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Shantabai v. State of Bombay",
+            "citation": "AIR 1958 SC 532",
+            "principle": "Laid down the 'Intention Test' distinguishing Standing Timber (movable) from Trees (immovable): if trees are meant to be cut immediately for wood they are movable; if left to draw nourishment from soil over years (e.g., 12-year forest lease), the right is immovable property."
+          },
+          {
+            "name": "Anand Behera v. State of Orissa",
+            "citation": "AIR 1956 SC 17",
+            "principle": "Held that a right to enter a lake and catch and carry away fish ('profit a prendre') is a 'benefit arising out of land' and therefore Immovable Property requiring registration."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What three items does Section 3 TPA expressly exclude from 'Immovable Property', and how do courts distinguish a mango tree from standing timber?",
+            "a": "Standing timber, growing crops, and grass are excluded. Under Shantabai's Intention Test, a fruit-bearing mango tree left rooted to yield fruit over years is Immovable Property, whereas a teak tree meant to be felled immediately for wood is movable Standing Timber."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u1-t2": {
+      "id": "lop-u1-t2",
+      "subtitle": "Law of Property (TPA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 5 TPA defines 'Transfer of Property' as an act by which a living person conveys property, in present or in future, to one or more other living persons (or to himself and others) - including companies/associations. Section 6 declares that property of ANY kind may be transferred EXCEPT ten strictly non-transferable categories (Clauses (a) to (i)), headlined by Spes Successionis (bare chance of inheritance) and Mere Right to Sue.",
+        "legalProvision": "Sections 5 & 6 (Clauses (a) to (i)), Transfer of Property Act, 1882",
+        "meaning": "Alienability is the lifeblood of commerce ('free circulation of property'), so Section 6 starts with a general presumption of transferability and bars only speculative, personal, or public-policy-sensitive rights.",
+        "keyPoints": [
+          "Essentials of 'Transfer of Property' (Sec. 5): Must be (1) an act of conveyance of EXISTING property (not future non-existent property, though conveyance itself may operate in present or future), (2) INTER VIVOS between living persons (includes companies/associations, excludes Wills/intestate succession), and (3) creates a new title/interest. Note: Partition of joint family property, family settlement, surrender, or relinquishment is NOT a 'transfer' under Section 5 (V.N. Sarin v. Ajit Kumar Poplai).",
+          "Non-Transferable Property - Speculative Chances (Sec. 6(a) - Spes Successionis): Cannot transfer (i) the bare chance of an heir-apparent succeeding to an estate (Jumma Masjid v. Kodimaniandra Deviah), (ii) chance of a relation obtaining a legacy on a kinsman's death, or (iii) any other mere possibility of a like nature (void to protect expectant heirs from predatory moneylenders).",
+          "Non-Transferable Property - Personal & Protective Rights (Sec. 6(b)-(e)): (b) Mere right of re-entry for breach of a condition subsequent (cannot be transferred alone apart from ownership), (c) Easement apart from the dominant heritage, (d) Interest restricted in enjoyment to the owner personally (e.g., religious priestly office, service tenure), (dd) Right to future maintenance (arrears already due CAN be transferred), and (e) Mere Right to Sue (e.g., unliquidated tort/breach damages claim - prevents champerty/litigation trading; contrast Actionable Claim/fixed debt, which IS transferable).",
+          "Non-Transferable Property - Public Policy Bars (Sec. 6(f)-(i)): (f) Public office or salary of a public officer, (g) Political/military/civil stipends and pensions, (h) Transfers opposed to nature of interest, unlawful object/consideration (Sec. 23 ICA), or to a legally disqualified transferee (Sec. 136 TPA - judges/lawyers buying actionable claims), and (i) Untransferable occupancy tenancy or farmer's estate."
+        ],
+        "caseLaws": [
+          {
+            "name": "V.N. Sarin v. Ajit Kumar Poplai",
+            "citation": "AIR 1966 SC 432",
+            "principle": "Held that Partition of Hindu Undivided Family property is merely a severance of joint status and adjustment of pre-existing shares, NOT a 'transfer of property' within Section 5 TPA."
+          },
+          {
+            "name": "Jumma Masjid, Mercara v. Kodimaniandra Deviah",
+            "citation": "AIR 1962 SC 847",
+            "principle": "Harmonized Section 6(a) (void transfer of spes successionis) with Section 43 (feeding the grant by estoppel) where a transferor fraudulently misrepresents that he already holds present title."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why is Partition of joint family property not a 'transfer' under Section 5 TPA, and list five non-transferable properties under Section 6 TPA.",
+            "a": "Partition only divides pre-existing joint ownership into separate shares without conveying new title from one person to another. Five non-transferables under Sec. 6: Spes successionis (chance of heir-apparent), mere right to sue, right to future maintenance, public office/pension, and easement apart from dominant heritage."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u1-t3": {
+      "id": "lop-u1-t3",
+      "subtitle": "Law of Property (TPA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 7 TPA, a valid transferor must be competent to contract (18+, sound mind, not disqualified) AND either own the property or have authority to dispose of it. Section 8 passes ALL interest and legal incidents automatically unless reserved, Section 9 permits oral transfer wherever writing is not mandated by law, and Sections 10-12 strike down absolute restraints on alienation or enjoyment as void to keep property marketable.",
+        "legalProvision": "Sections 7, 8, 9, 10, 11, & 12, Transfer of Property Act, 1882; Section 11, Indian Contract Act, 1872",
+        "meaning": "While a transferor must be competent to contract (a minor CANNOT transfer property himself), a minor CAN be a valid TRANSFEREE receiving a gift or paid sale deed because Section 7 imposes competency strictly on the transferor.",
+        "keyPoints": [
+          "Who Can Transfer (Sec. 7 TPA): Transferor must satisfy TWO cumulative conditions - (1) Competent to contract under Sec. 11 ICA (major aged 18+, sound mind, not disqualified by law), AND (2) Entitled to transferable property OR authorized to dispose of it (e.g., Karta for legal necessity, Power of Attorney holder, Guardian with court permission). Note: A minor CAN be a Transferee where no onerous obligation is imposed on him.",
+          "Operation of Transfer (Sec. 8 TPA): Unless a different intention is expressed or necessarily implied, a transfer IMMEDIATELY passes to the transferee ALL the interest the transferor is then capable of passing, PLUS all 'legal incidents' (for land: easements, rents/profits accruing after transfer, and fixtures; for machinery: movable parts; for house: locks, keys, doors, windows; for debt: securities).",
+          "Oral / Mode of Transfer (Sec. 9 TPA): Transfer of property may be made WITHOUT WRITING in every case where writing is NOT expressly required by law (e.g., Partition, Family Settlement, Oral Muslim Hiba, Sale of tangible immovable property under Rs. 100 by delivery of possession). Writing + Registration ARE expressly required for Sale/Mortgage >= Rs. 100, Lease > 1 year, Gift of immovable property (Sec. 123), Exchange >= Rs. 100, and Actionable Claims (Sec. 130).",
+          "Rule Against Absolute Restraint on Alienation (Sec. 10 TPA): Any condition ABSOLUTELY restraining a transferee from parting with or disposing of his interest is VOID (transfer remains valid, condition drops - Rosher v. Rosher). Partial restraints (e.g., 'do not sell outside the family' - Muhammad Raza v. Abbas Bandi Bibi) ARE VALID. Two Statutory Exceptions where even absolute restraint is valid: (1) Lease for lessor's benefit (barring sub-letting), and (2) Married woman (non-Hindu/Muslim/Buddhist) during marriage.",
+          "Repugnant Enjoyment Restraints (Sec. 11) & Insolvency Forfeiture (Sec. 12): Once absolute ownership is transferred, directions controlling HOW the owner must enjoy it (e.g., 'must reside personally') are void under Sec. 11 (exception: restrictive covenant benefiting transferor's adjoining land - Tulk v. Moxhay); Sec. 12 voids any condition terminating ownership on insolvency (except in Leases)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rosher v. Rosher",
+            "citation": "1884 26 Ch D 801",
+            "principle": "A condition requiring a transferee who wished to sell land worth 15,000 pounds to first offer it to the transferor's widow for a fixed 3,000 pounds was struck down as a disguised absolute restraint on alienation (Sec. 10 principle)."
+          },
+          {
+            "name": "Muhammad Raza v. Abbas Bandi Bibi",
+            "citation": "AIR 1932 PC 158",
+            "principle": "Upheld a compromise condition barring alienation to strangers outside the family as a valid PARTIAL restraint, distinguishing it from void absolute restraints under Section 10 TPA."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can a minor be a transferee of property under TPA, and what are the two statutory exceptions to the Rule Against Restraint on Alienation under Section 10?",
+            "a": "Yes - Section 7 requires competency to contract only for the Transferor; a minor can validly receive property (like a gift or fully paid sale). Section 10's two exceptions are (1) a Lease restricting sub-letting/assignment for the lessor's benefit, and (2) property transferred to a married non-Hindu/Muslim/Buddhist woman during marriage."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u1-t4": {
+      "id": "lop-u1-t4",
+      "subtitle": "Law of Property (TPA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Because Section 5 requires transfers between living persons, you CANNOT transfer property directly to an unborn person. Section 13 TPA provides an indirect mechanism (Prior Life Interest to a living person + ABSOLUTE remainder to the unborn), paired with Section 14's Rule Against Perpetuity (vesting cannot be delayed beyond Life(s) in Being + Minority of 18 years) to stop dead hands from locking up land forever.",
+        "legalProvision": "Sections 13, 14, 15, 16, 17, 18, & 20, Transfer of Property Act, 1882",
+        "meaning": "Sections 13 and 14 work together as a double lock against perpetual family tie-ups: Section 13 forbids giving a mere life estate to an unborn person (double possibilities rule), while Section 14 sets the maximum outer time ceiling for vesting.",
+        "keyPoints": [
+          "Three Strict Conditions for Transfer to Unborn Person (Sec. 13 TPA): (1) NO direct transfer - MUST create a Prior Life Interest in favour of one or more living persons (or trustees), (2) The unborn person MUST come into existence (at least conceived in the womb) BEFORE the expiry of the last prior life interest (else property reverts to transferor), and (3) The unborn person MUST receive the WHOLE REMAINING / ABSOLUTE INTEREST of the transferor (giving a mere life estate to an unborn person is VOID - Whitby v. Mitchell / Girjesh Dutt v. Data Din).",
+          "When Unborn Acquires Vested Interest (Sec. 20 TPA): The moment the unborn child is BORN ALIVE, he acquires a Vested Interest (even if enjoyment is postponed until the prior life-holder's death).",
+          "Rule Against Perpetuity (Sec. 14 TPA): No transfer can create an interest taking effect AFTER (1) the lifetime of one or more living persons at the date of transfer ('Lives in Being'), PLUS (2) the MINORITY (18 years under Indian Majority Act, + gestation period if in womb) of the ultimate unborn beneficiary who must exist at the end of those lives. Note: Courts look at POSSIBLE events at the date of transfer, not actual events - if vesting COULD happen at age 21 (beyond 18), the transfer is VOID!",
+          "Class Transfer (Sec. 15), Prior Failure (Sec. 16) & Rule Against Accumulation (Sec. 17): Under Sec. 15, if a transfer to a class fails for some members under Sec. 13/14, it fails ONLY for those members (valid for the rest - amended 1929). Under Sec. 16, if a prior interest fails under Sec. 13/14, any subsequent ulterior transfer dependent on it also fails. Under Sec. 17, directions to accumulate income are void beyond the transferor's life OR 18 years (except for paying debts, children's portions, or property preservation).",
+          "Public Benefit Exception (Sec. 18 TPA): Sections 14, 16, and 17 do NOT apply to transfers for the benefit of the PUBLIC (advancement of religion, knowledge, commerce, health, safety, or charity - e.g., perpetual charitable trusts and Waqfs)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Girjesh Dutt v. Data Din",
+            "citation": "AIR 1934 Oudh 35",
+            "principle": "Classic Indian authority on Sections 13 and 16: gifting a life estate to a living niece, then a life estate to her unborn daughters, and remainder to male descendants was held VOID under Section 13 because the unborn daughters did not receive the absolute interest."
+          },
+          {
+            "name": "R. Kempraj v. Burton Son & Co.",
+            "citation": "AIR 1970 SC 1872",
+            "principle": "Held that Section 14 (Rule Against Perpetuity) applies strictly to transfers creating future proprietary interests in land, NOT to personal contractual covenants like a lessee's option for renewal of a lease."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the maximum permissible perpetuity period under Section 14 TPA, and explain why gifting a 'life interest' to an unborn grandson is void under Section 13.",
+            "a": "Maximum perpetuity period = Lifetime of one or more living persons ('lives in being') + Minority (18 years) of the ultimate unborn beneficiary (+ actual gestation period). Section 13 mandates transferring the WHOLE remaining/absolute interest to the unborn person - a limited life interest to an unborn is strictly void."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u1-t5": {
+      "id": "lop-u1-t5",
+      "subtitle": "Law of Property (TPA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Vested Interest (Sec. 19 TPA) confers an immediate, fixed proprietary right whose enjoyment may simply be postponed until a CERTAIN event (like someone's death), making it transferable, heritable, and attachable in execution. A Contingent Interest (Sec. 21 TPA) depends entirely on the happening or non-happening of a specified UNCERTAIN future event - remaining a mere conditional chance until that event occurs.",
+        "legalProvision": "Sections 19, 20, 21, 22, 23, & 24, Transfer of Property Act, 1882",
+        "meaning": "The decisive test separating Vested from Contingent interest is CERTAINTY of the event: 'A transfers land to B for life and then to C' gives C a VESTED interest right away (because B's death is certain); 'A transfers land to B if B marries C' gives B a CONTINGENT interest (because marriage is uncertain).",
+        "keyPoints": [
+          "Vested Interest (Sec. 19 TPA): Created when no time is specified, OR it takes effect forthwith, OR upon an event WHICH MUST HAPPEN (e.g., 'to A for life, remainder to B'). Explanation: Postponement of enjoyment, a prior life interest, accumulation of income, or a conditional limitation ('if B dies before A, to C') does NOT stop an interest from being Vested.",
+          "Legal Incidents of Vested Interest: (1) Present fixed right of ownership (enjoyment may be immediate or postponed), (2) NOT defeated by transferee's death before taking possession - passes to his legal heirs (Heritable), (3) Freely Transferable (inter vivos & by Will), and (4) Attachable and saleable in court decree execution (Sec. 60 CPC).",
+          "Contingent Interest (Sec. 21 TPA): Created when the interest takes effect ONLY if a specified UNCERTAIN event happens OR does not happen (e.g., 'to B if B passes LL.B.' or 'to B if C dies before age 25'). Exception: Where an interest is given at a specified age (e.g., 21) AND the transferee is ALSO given the interim income from the property until then, it becomes VESTED immediately.",
+          "Special Contingent Rules (Secs. 22-24 TPA): Class attaining a particular age (Sec. 22 - vests only in members reaching that age); Event with no time specified (Sec. 23 - fails unless event happens before/at expiry of prior interest); Transfer to survivors (Sec. 24 - goes to those alive when prior interest ends).",
+          "Key Distinction Chart (Vested vs Contingent): Event: Certain / Uncertain; Title: Immediate fixed right / Conditional chance maturing only upon event; Death before possession: Heritable (heirs inherit) / Generally lapses if contingency is personal; Attachment in court decree: Attachable / NOT attachable under Sec. 60 CPC (though transferable under TPA)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rajesh Kanta Roy v. Shanti Debi",
+            "citation": "AIR 1957 SC 255",
+            "principle": "Laid down the authoritative Supreme Court test for Sections 19 vs 21: courts examine the settlor's true intention from the entire deed, leaning in favour of Vested Interest whenever language is ambiguous; mere postponement of possession to discharge debts does not make an interest contingent."
+          },
+          {
+            "name": "Usha Subbarao v. B.N. Vishveswaraiah",
+            "citation": "1996 5 SCC 201",
+            "principle": "Reaffirmed that an interest is Vested if the beneficiary's right is already fixed and only enjoyment/division is deferred until a future certain date or death of a life-tenant."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "A transfers a house 'to B for life, and after B's death to C'. C dies before B. Does the house pass to C's heirs or revert to A, and why?",
+            "a": "It passes to C's heirs. Because B's death is a certain event, C acquired an immediate Vested Interest under Section 19 TPA, which is heritable and is NOT defeated by C's death before taking possession."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u1-t6": {
+      "id": "lop-u1-t6",
+      "subtitle": "Law of Property (TPA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Conditional Transfer attaches a stipulation governing when an interest begins (Condition Precedent - Sec. 26) or terminates (Condition Subsequent - Secs. 28-32). Under Section 25 TPA, any transfer dependent on an impossible, unlawful, fraudulent, injurious, or immoral/public-policy-opposed condition is VOID; Condition Precedent requires only SUBSTANTIAL compliance (Sec. 26), whereas Condition Subsequent requires STRICT literal compliance (Sec. 29).",
+        "legalProvision": "Sections 25 to 34, Transfer of Property Act, 1882",
+        "meaning": "Because Conditions Subsequent divest an already-vested owner of his property, courts construe them strictly (voiding unlawful subsequent conditions while letting the transferee keep the property free of the condition), whereas an unlawful Condition Precedent prevents the transfer from taking effect at all.",
+        "keyPoints": [
+          "Void & Unlawful Conditions (Sec. 25 TPA): An interest dependent on a condition fails completely if fulfilment of the condition is (1) IMPOSSIBLE (e.g., walk 100 miles in an hour), (2) FORBIDDEN BY LAW (e.g., murder C), (3) Defeats provisions of any law, (4) FRAUDULENT, (5) Involves/implies INJURY to person or property of another, or (6) IMMORAL or opposed to public policy (e.g., deserting one's spouse - Sec. 23 ICA parallel).",
+          "Condition Precedent (Sec. 26 TPA - Doctrine of Cypres / Substantial Compliance): Must be fulfilled BEFORE the interest vests (creates a Contingent interest). Law is lenient: SUBSTANTIAL compliance suffices (e.g., A gifts Rs. 5,000 to B if B marries with consent of C, D & E; E dies and B marries with consent of C & D -> condition is substantially fulfilled and gift is VALID).",
+          "Condition Subsequent & Ulterior Transfers (Secs. 27-32 TPA): Operates AFTER vesting to divest/forfeit an existing estate and shift it to a third person (Conditional Limitation - Sec. 28). Under Section 29, Condition Subsequent MUST be STRICTLY fulfilled (exact compliance required); under Section 30, if the ulterior disposition is invalid, the PRIOR disposition remains completely UNAFFECTED; under Section 32, an invalid subsequent condition is ignored and the transferee keeps the estate absolutely.",
+          "Doctrine of Acceleration (Sec. 27 TPA): If a prior transfer fails (e.g., prior transferee dies or refuses - NOT because it was void ab initio under Sec. 13/14), the subsequent ulterior transfer immediately ACCELERATES and takes effect early (unless transferor stipulated failure in a specific manner).",
+          "Fraudulent Prevention of Condition (Sec. 34 TPA): If a party directly interested in non-fulfilment fraudulently prevents a Condition Precedent from being performed, the condition is deemed FULFILLED; if he prevents a Condition Subsequent, it is deemed NOT fulfilled (no one can profit from his own fraud)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Avelyn v. Ward",
+            "citation": "1750 1 Ves Sen 420",
+            "principle": "Foundational authority behind Section 27 TPA (Doctrine of Acceleration): where a prior estate fails to take effect for a reason other than the exact mode contemplated, the subsequent gift accelerates immediately unless contrary intent is explicit."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three key differences between a Condition Precedent (Sec. 26) and a Condition Subsequent (Sec. 29) under the Transfer of Property Act, 1882.",
+            "a": "(1) Condition Precedent must be satisfied BEFORE vesting, whereas Condition Subsequent divests an ALREADY vested estate; (2) Condition Precedent requires only substantial compliance (Sec. 26), whereas Condition Subsequent requires strict literal compliance (Sec. 29); (3) An unlawful Condition Precedent voids the transfer (Sec. 25), whereas an unlawful Condition Subsequent is void itself while the transferee retains the property (Sec. 32)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-ii",
+      "title": "Labour Law - II",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper I",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Factories Act, 1948 - Scope, Approval/Licensing, Inspecting Staff, Health, Safety, Welfare, Working Hours & Leave",
+          "topics": [
+            {"id": "lab2-u1-t1", "title": "1. Factories Act, 1948 - Object, Factory & Worker Definitions (Sec. 2(m) & 2(l)), Approval/Licensing (Sec. 6) & Occupier (Sec. 2(n))"},
+            {"id": "lab2-u1-t2", "title": "2. Inspecting Staff (Secs. 8-10), Health Measures (Secs. 11-20) & Safety Provisions (Secs. 21-41)"},
+            {"id": "lab2-u1-t3", "title": "3. Welfare Measures (Secs. 42-50), Working Hours, Spread-Over, Weekly Holiday & Employment of Young Persons/Women (Secs. 51-78)"},
+            {"id": "lab2-u1-t4", "title": "4. Annual Leave with Wages (Secs. 79-83), Hazardous Processes (Sec. 41A-41H) & Penalties (Secs. 92-106)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab2-u1-t1": {
+      "id": "lab2-u1-t1",
+      "subtitle": "Labour Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Factories Act, 1948 regulates working conditions inside factories to protect industrial workers from occupational hazards, exhaustion, and exploitation (consolidated into the OSHWC Code, 2020). Under Section 2(m), a 'Factory' requires premises with a manufacturing process (Sec. 2(k)) employing 10+ workers with power or 20+ workers without power on any day of the preceding 12 months (excluding mines, railway running sheds, and armed forces).",
+        "legalProvision": "Sections 2(k), 2(l), 2(m), 2(n), 6, & 7, Factories Act, 1948; Occupational Safety, Health and Working Conditions (OSHWC) Code, 2020",
+        "meaning": "Manufacturing Process (Sec. 2(k)) is construed broadly by courts - covering making, altering, repairing, ornamenting, finishing, packing, oiling, washing, cleaning, breaking up, or demolishing any article for use/sale/transport (including printing, bidi rolling, salt panning, and ginning).",
+        "keyPoints": [
+          "Factory Threshold (Sec. 2(m)): Premises where manufacturing process is carried on (a) WITH AID OF POWER and 10 OR MORE workers are working (or worked on any day of preceding 12 months), OR (b) WITHOUT AID OF POWER and 20 OR MORE workers are working (excludes mines under Mines Act, railway running sheds, and armed forces units).",
+          "Manufacturing Process (Sec. 2(k)) & Worker (Sec. 2(l)): 'Worker' means any person employed directly or through an agency (including contractor) with or without knowledge of principal employer, for wages or not, in any manufacturing process, cleaning machinery/premises, or any other work incidental to/connected with manufacturing (excludes armed forces).",
+          "Occupier (Sec. 2(n)) & Approval/Licensing (Secs. 6-7): 'Occupier' is the person having ULTIMATE CONTROL over the affairs of the factory (in a company, any one of the directors must be designated as Occupier - Indian Oil Corp. v. CCI / J.K. Industries). Prior State Government/Chief Inspector approval of site & building plans and licence registration are mandatory under Sec. 6; notice of occupation goes to Chief Inspector at least 15 days before starting (Sec. 7)."
+        ],
+        "caseLaws": [
+          {
+            "name": "J.K. Industries Ltd. v. Chief Inspector of Factories and Boilers",
+            "citation": "1996 6 SCC 665",
+            "principle": "Held that in the case of a company owning a factory, the 'Occupier' under Section 2(n) must be a director of the company who holds ultimate control over the affairs of the factory."
+          },
+          {
+            "name": "Ardeshir H. Bhiwandiwala v. State of Bombay",
+            "citation": "AIR 1962 SC 29",
+            "principle": "Held that open-air salt works evaporating sea water to produce salt constitute a 'manufacturing process' and 'factory' within Sections 2(k) and 2(m)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the worker thresholds for a 'Factory' under Section 2(m) with power vs without power, and define 'Occupier' under Section 2(n).",
+            "a": "10 or more workers with power, or 20 or more workers without power on any day of the preceding 12 months. 'Occupier' is the person having ultimate control over the affairs of the factory (a director in the case of a company)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u1-t2": {
+      "id": "lab2-u1-t2",
+      "subtitle": "Labour Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter III (Secs. 11-20) of the Factories Act, 1948 mandates strict workplace Health standards (cleanliness, disposal of wastes, ventilation/temperature, dust/fumes, artificial humidification, overcrowding, lighting, drinking water, latrines/urinals, spittoons), while Chapter IV (Secs. 21-41) prescribes mandatory Safety guards on machinery, hoists, pressure vessels, confined spaces, and explosive dust/fumes, policed by Inspectors (Secs. 8-10).",
+        "legalProvision": "Sections 8-10, 11-20 (Health), & 21-41 (Safety), Factories Act, 1948",
+        "meaning": "Health and safety duties under Chapters III and IV are STRICT STATUTORY OBLIGATIONS of the occupier/manager - neither worker carelessness nor absence of prior complaint excuses unguarded dangerous machinery.",
+        "keyPoints": [
+          "Inspecting Staff (Secs. 8-10): State Government appoints Chief Inspector and Inspectors with powers to enter/inspect factories, examine premises/registers, take samples/photographs, and require inquiries; Certifying Surgeons (Sec. 10) examine young workers and dangerous occupations.",
+          "Key Health Provisions (Secs. 11-20): Daily sweeping/washing & weekly disinfecting (Sec. 11); effective waste/effluent disposal (Sec. 12); adequate ventilation & temperature control (Sec. 13); dust/fume exhaust (Sec. 14); minimum 14.2 cubic metres (500 cu. ft. in old factories) of space per worker ignoring heights above 4.2 metres (Sec. 16); wholesome cool drinking water marked 'Drinking Water' placed >= 6 metres from latrines/urinals (Sec. 19); separate sanitary latrines & urinals (Sec. 20).",
+          "Key Safety Provisions (Secs. 21-41): Secure fencing of EVERY moving part of prime movers, transmission machinery, and dangerous machinery (Sec. 21); work on/near machinery in motion restricted strictly to specially trained adult male workers wearing tight-fitting clothes (Sec. 22); prohibition of employment of young persons on dangerous machines without training/supervision (Sec. 23); striking gear & devices for cutting off power (Sec. 24); self-acting machines (Sec. 25); casing of new machinery (Sec. 26); prohibition of women/children near cotton openers (Sec. 27); hoists/lifts, cranes, revolving machinery, pressure vessels, floors/stairs, pits/sumps, excessive weights (Sec. 34), eye protection (Sec. 35), dangerous fumes/confined spaces (Sec. 36), explosive/inflammable dust/gas (Sec. 37), precautions against fire (Sec. 38), and Safety Officers in factories with 1,000+ workers or hazardous processes (Sec. 40B)."
+        ],
+        "caseLaws": [
+          {
+            "name": "John Summers & Sons Ltd. v. Frost",
+            "citation": "1955 AC 740 (HL)",
+            "principle": "Established strictness of statutory machinery-fencing duties: the duty to fence dangerous parts applies even if guarding makes a particular operation impractical or reduces output."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the minimum distance required between drinking water points and latrines/urinals under Section 19, and state the conditions under which a worker may work on machinery in motion (Sec. 22).",
+            "a": "Drinking water points must be at least 6 metres away from any latrine, urinal, or washing place (unless Inspector permits otherwise). Under Sec. 22, only a specially trained adult male worker wearing tight-fitting clothes may examine/adjust machinery in motion."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u1-t3": {
+      "id": "lab2-u1-t3",
+      "subtitle": "Labour Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter V (Secs. 42-50) mandates worker Welfare amenities (washing facilities, seating, first-aid boxes, canteens in 250+ worker factories, shelters/rest rooms in 150+ worker factories, creches in 30+ women worker factories, and Welfare Officers in 500+ worker factories). Chapter VI (Secs. 51-78) caps adult working hours at 9 hours/day and 48 hours/week (double wages for overtime under Sec. 59), mandates weekly off days, and regulates young persons and women.",
+        "legalProvision": "Sections 42-50 (Welfare), 51-66 (Adults), & 67-78 (Young Persons), Factories Act, 1948",
+        "meaning": "Statutory caps on daily/weekly hours, spread-over (max 10.5 hours, extendable to 12 hours by Chief Inspector), and night work protect workers from fatigue-induced accidents and preserve family life.",
+        "keyPoints": [
+          "Welfare Thresholds (Secs. 42-50): Washing facilities (Sec. 42); First-aid box (1 per 150 workers; Ambulance Room if > 500 workers - Sec. 45); Canteen (mandatory in factories with > 250 workers - Sec. 46); Shelters/rest rooms & lunch room (factories with > 150 workers - Sec. 47); Creche for children under 6 (factories ordinarily employing > 30 women workers - Sec. 48); Welfare Officer (factories with 500+ workers - Sec. 49).",
+          "Working Hours, Rest Intervals & Overtime (Secs. 51-59): Max 48 HOURS/week (Sec. 51) and max 9 HOURS/day (Sec. 54); at least 30 MINUTES rest interval after max 5 hours' work (Sec. 55); SPREAD-OVER (including rest & intervals) capped at 10.5 HOURS/day (extendable up to 12 hours by Chief Inspector for valid reasons - Sec. 56). OVERTIME (Sec. 59): work beyond 9 hours/day or 48 hours/week is paid at TWICE (2x) the ordinary rate of wages.",
+          "Weekly Holidays & Compensatory Holidays (Secs. 52-53): First day of the week (Sunday unless substituted) is a weekly holiday (no work on first day unless substituted by a holiday 3 days before or after, and no worker works > 10 consecutive days without a full holiday); exempted weekly holidays get compensatory holidays within the same month or next 2 months (Sec. 53).",
+          "Children & Young Persons (Secs. 67-78): Children BELOW 14 YEARS are PROHIBITED from working in any factory (Sec. 67 - aligned with Child Labour Act); Adolescents (15-18 years) require a fitness certificate from Certifying Surgeon (Sec. 69) and may work max 4.5 hours/day between 6 AM and 7 PM (boys up to 10 PM under notified conditions - Sec. 71). Under Sec. 66(1)(b), women generally work between 6 AM and 7 PM (State exemptions/safety safeguards apply under modern reforms)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Hyderabad Allwyn Metal Works Ltd. v. Labour Court",
+            "citation": "AIR 1962 AP 161",
+            "principle": "Emphasized strict adherence to statutory working-hour and overtime mandates under Sections 51-59 to prevent exploitation of factory workmen."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the maximum daily and weekly working hours for adult factory workers under Sections 51 and 54, the overtime wage rate under Section 59, and the creche threshold under Section 48.",
+            "a": "Max 9 hours/day (Sec. 54) and 48 hours/week (Sec. 51); Overtime rate is double (2x) the ordinary wage rate (Sec. 59). Creche is mandatory where > 30 women workers are ordinarily employed (Sec. 48)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u1-t4": {
+      "id": "lab2-u1-t4",
+      "subtitle": "Labour Law - II - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter VIII (Secs. 79-83) of the Factories Act, 1948 entitles every worker who has worked for at least 240 DAYS in a calendar year to Annual Leave with Wages (1 day for every 20 days worked for adults; 1 day for every 15 days worked for children), carrying forward up to 30 days (40 for children). Chapter IVA (Secs. 41A-41H, added in 1987) regulates Hazardous Processes, while Chapter X (Secs. 92-106) enforces penalties.",
+        "legalProvision": "Sections 41A-41H (Hazardous Processes), 79-83 (Annual Leave), & 92-106 (Penalties), Factories Act, 1948",
+        "meaning": "Inserted after the 1984 Bhopal Gas Tragedy, Chapter IVA imposes stringent disclosure, site appraisal, emergency planning, and worker-participation duties on factories handling hazardous substances.",
+        "keyPoints": [
+          "Annual Leave with Wages (Sec. 79): Earned by any worker working >= 240 DAYS in a calendar year (counting lay-off, maternity leave up to 12/26 weeks, and prior earned leave) at the rate of 1 DAY for every 20 days of work performed by an adult (1 day for every 15 days for a child); unavailed leave carries forward up to MAX 30 DAYS for an adult (40 days for a child); paid in advance before leave if leave >= 4 days (5 days for child).",
+          "Hazardous Processes Safeguards (Secs. 41A-41H - 1987 Amendment): Site Appraisal Committees evaluate hazardous factory sites (Sec. 41A); compulsory disclosure of health/safety hazards to workers, Chief Inspector, local authority, and general public (Sec. 41B); worker participation in safety management via bi-partite Safety Committees (Sec. 41G); and permissive right of workers to warn/apprehend imminent danger (Sec. 41H).",
+          "Penalties & Offences (Secs. 92-106): General contravention of Act/Rules by occupier or manager is punishable with imprisonment up to 2 YEARS, or fine up to Rs. 1,00,000, or BOTH (+ Rs. 1,000/day continuing default; enhanced penalties if contravention causes death or serious bodily injury - Sec. 92 Proviso). Cognizance requires complaint by/with sanction of Inspector within 3 MONTHS (6 months if offence is breach of written order - Sec. 106)."
+        ],
+        "caseLaws": [
+          {
+            "name": "M.C. Mehta v. Union of India (Shriram / Oleum Case)",
+            "citation": "AIR 1987 SC 965 & 1086",
+            "principle": "Catalyzed strict safety and hazardous-process accountability in Indian industries, aligning judicial protection with Chapter IVA of the Factories Act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How many working days in a calendar year qualify a factory worker for Annual Leave with Wages under Section 79, and what is the maximum carry-forward cap for adult workers?",
+            "a": "At least 240 days in a calendar year (earning 1 day of leave per 20 days worked for adults). Unavailed leave may be carried forward up to a maximum of 30 days for an adult worker (40 days for a child)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

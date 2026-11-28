@@ -1,0 +1,225 @@
+{
+  "subjects": [
+    {
+      "id": "family-law-ii",
+      "title": "Family Law - II (Muslim Law & Other Personal Laws)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Parentage, Legitimacy, Guardianship, Gift (Hiba) & Wills (Wasiyat)",
+          "topics": [
+            {"id": "fl2-u3-t1", "title": "1. Parentage (Maternity & Paternity), Legitimacy & Acknowledgement (Iqrar)"},
+            {"id": "fl2-u3-t2", "title": "2. Guardianship (Person, Property & Marriage) - Kinds, Removal & Shia vs Sunni Law"},
+            {"id": "fl2-u3-t3", "title": "3. Gift (Hiba) - Definition, Requisites, Formalities & Delivery of Possession"},
+            {"id": "fl2-u3-t4", "title": "4. Kinds of Gifts (Mushaa, Hiba-bil-Iwaz, Hiba-ba-Shart-ul-Iwaz, Marz-ul-Maut) & Revocation"},
+            {"id": "fl2-u3-t5", "title": "5. Wills (Wasiyat) - Meaning, Requisites, 1/3rd Rule & Revocation"},
+            {"id": "fl2-u3-t6", "title": "6. Distinction Between Will and Gift & Shia vs Sunni Law on Wills"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "fl2-u3-t1": {
+      "id": "fl2-u3-t1",
+      "subtitle": "Family Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "In Muslim law, Parentage is the legal relationship of a child with its parents - Maternity is established by birth, whereas Paternity flows strictly from a valid (or irregular) marriage. Because Islam does not recognize Adoption or Legitimation of a known illegitimate child, Acknowledgement of Paternity (Iqrar-e-Nasab) is used when marriage is uncertain (neither proved nor disproved).",
+        "legalProvision": "Classical Muslim Law of Nasab (Parentage); Section 112, Indian Evidence Act, 1872 (Section 116, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Legitimacy determines a child's status, guardianship, maintenance, and inheritance rights. While classical Muslim law presumed legitimacy for births between 6 months of marriage and 2 years after dissolution (Hanafi), Indian courts uniformly apply Section 112 IEA / Section 116 BSA (birth during valid marriage or within 280 days of dissolution while mother remains unmarried).",
+        "keyPoints": [
+          "Maternity vs Paternity: Under Sunni law, maternity is established in the biological mother by birth alone (even if the child is illegitimate, giving mutual inheritance between mother and child); under Shia law, an illegitimate child has neither legal paternity nor maternity. Paternity is established strictly by lawful wedlock (Sahih or consummated Fasid marriage).",
+          "Section 112 IEA / Section 116 BSA Overrides Classical Presumptions: Conclusive proof of legitimacy arises if a child is born during the continuance of a valid marriage or within 280 days after its dissolution (mother remaining unmarried), unless non-access between spouses is proved.",
+          "Acknowledgement of Legitimacy (Iqrar-e-Nasab): A father's express or implied declaration recognizing a child as his legitimate offspring; operates as proof of BOTH a valid marriage and legitimacy ONLY where marriage is uncertain - it CANNOT legitimize a child known to be born of Zina (adultery/fornication) or prohibited marriage.",
+          "Seven Conditions of Valid Acknowledgement: (1) Unknown paternity (not proved illegitimate), (2) Lawful marriage possible between father and mother, (3) Age gap of at least 12.5 years between acknowledger and child, (4) Child not disowning it (if adult), (5) Intention to confer legitimate status (not mere affection), (6) Acknowledger is competent, and (7) Once validly made, it is irrevocable.",
+          "No Adoption in Classical Muslim Law: Unlike Hindu law, Islam does not recognize adoption (though any Muslim may adopt under the secular Juvenile Justice Act, 2015 - Shabnam Hashmi v. Union of India, 2014)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Habibur Rahman Chowdhury v. Altaf Ali Chowdhury",
+            "citation": "AIR 1922 PC 159",
+            "principle": "Held that Acknowledgement of Legitimacy cannot legitimize a child proved to be the offspring of Zina; it applies only where the fact of marriage is uncertain and not disproved."
+          },
+          {
+            "name": "Shabnam Hashmi v. Union of India",
+            "citation": "2014 4 SCC 1",
+            "principle": "Held that the secular Juvenile Justice Act enables any prospective parent, including Muslims, to legally adopt a child irrespective of personal-law restrictions."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can a Muslim father validly acknowledge a child proved to be born out of adultery (Zina), and what is the statutory gestation window under Section 112 IEA / Section 116 BSA?",
+            "a": "No - Acknowledgement (Iqrar) applies only when marriage is uncertain, never to legitimize a known child of Zina (Habibur Rahman). Under Section 112 IEA / Section 116 BSA, legitimacy is presumed for birth during valid marriage or within 280 days of dissolution (mother unmarried)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u3-t2": {
+      "id": "fl2-u3-t2",
+      "subtitle": "Family Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Muslim law divides Guardianship (Wilayat) into three distinct spheres: (1) Guardianship of Person (Hizanat - initial custody vested in the mother), (2) Guardianship of Property (father, father's executor, paternal grandfather, or court-appointed guardian), and (3) Guardianship in Marriage (Jabr). All guardians are subject to removal by civil courts under the Guardians and Wards Act, 1890 for misconduct or neglect.",
+        "legalProvision": "Classical Muslim Law of Wilayat & Hizanat; Guardians and Wards Act, 1890 (Sections 7, 17, & 39); Indian Majority Act, 1875",
+        "meaning": "Age of majority for marriage, dower, and divorce under Muslim law is puberty (presumed at 15), whereas for property guardianship and court appointments it is 18 years (under the Indian Majority Act, 1875). A De Facto guardian (such as a mother or uncle without court order) has ZERO legal power to sell or mortgage a minor's immovable property.",
+        "keyPoints": [
+          "Custody of Person (Hizanat) - Sunni vs Shia: Mother has the paramount right to custody of young children (even after divorce, unless she remarries a stranger outside prohibited degrees) - in Hanafi (Sunni) law: boy up to 7 years and girl up to puberty; in Shia (Ithna Ashari) law: boy up to 2 years and girl up to 7 years; thereafter custody shifts to the father, always governed by the 'welfare of the minor' (Sec. 17 GWA).",
+          "Guardianship of Property (Four Legal Guardians Only): Strictly limited in order to (1) Father, (2) Executor appointed by father's Will, (3) Father's father (paternal grandfather), and (4) Executor appointed by paternal grandfather's Will; failing all four, ONLY a Court-appointed guardian under GWA, 1890 can manage property.",
+          "De Facto Guardian Has No Alienation Power: A mother, brother, or uncle managing a minor's land without court appointment is merely a De Facto guardian; any sale or mortgage of the minor's immovable property by a de facto guardian is VOID AB INITIO (Imambandi v. Mutsaddi).",
+          "Guardianship in Marriage (Wilayat-ul-Nikah): Father and agnatic male guardians in Sunni law (only father and paternal grandfather in Shia law) could contract a minor's marriage historically (subject to Option of Puberty and India's secular Prohibition of Child Marriage Act, 2006).",
+          "Removal of Guardian (Section 39, GWA 1890): Court may remove a guardian for abuse of trust, persistent failure to perform duties, incapacity/unsoundness of mind, ill-treatment/neglect of the ward, conviction for moral turpitude, insolvency, or adverse interest."
+        ],
+        "caseLaws": [
+          {
+            "name": "Imambandi v. Mutsaddi",
+            "citation": "1918 45 IA 73 (PC)",
+            "principle": "Landmark Privy Council ruling holding that a Muslim mother is NOT a legal guardian of her minor child's property; any transfer of the minor's immovable property by a de facto guardian is totally void."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Compare the mother's Hizanat (custody) age limits in Sunni (Hanafi) vs Shia law, and state whether a Muslim mother can sell her minor child's land without court permission.",
+            "a": "Hanafi law: boy up to 7 years, girl up to puberty; Shia law: boy up to 2 years, girl up to 7 years. No - a mother is only a de facto guardian of property and cannot alienate the minor's immovable property without court appointment and permission (Imambandi)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u3-t3": {
+      "id": "fl2-u3-t3",
+      "subtitle": "Family Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Hiba (Muslim Gift) is an immediate, unconditional transfer of existing property by one living person to another without consideration. Under Section 129 of the Transfer of Property Act, 1882, Muslim gifts are exempted from mandatory written registration and require strictly three essentials: Declaration (Ijab), Acceptance (Qubul), and Delivery of Possession (Qabza).",
+        "legalProvision": "Classical Muslim Law of Hiba; Section 129, Transfer of Property Act, 1882; Section 17, Registration Act, 1908",
+        "meaning": "Unlike Section 123 TPA (which requires a registered, attested deed for immovable gifts), an oral Hiba of immovable property of any value is completely valid in India if the three classical pillars are proved (Hafeeza Bibi v. Shaikh Farid, 2011). However, if a donor creates a gift exclusively through a written instrument intended to operate as the gift itself, registration rules apply.",
+        "keyPoints": [
+          "Three Indispensable Essentials of Valid Hiba: (1) Declaration of gift by the donor (Ijab) with bona fide intent, (2) Acceptance of the gift by or on behalf of the donee (Qubul), and (3) Actual or constructive Delivery of Possession (Qabza) by the donor to the donee.",
+          "Competency of Donor & Donee: Donor must be an adult Muslim (18+ under Indian Majority Act) of sound mind and owner of the property (may gift 100% of property during healthy life - unlike the 1/3rd Will limit); Donee may be ANY person regardless of religion, age, or mental capacity (for a minor, possession is accepted by the legal guardian).",
+          "Subject Matter of Hiba: Must be existing property in possession (movable, immovable, or actionable claim); gift of future/non-existent property (e.g., future crops or unborn child's share) is void.",
+          "Modes of Delivery of Possession (Qabza): Actual physical delivery for tangible movables/vacant land; Constructive delivery where physical handing over is impractical (e.g., handing over title deeds/keys, directing tenants to pay rent to donee, or donor vacating/mutating records; for husband-to-wife gifts of a shared house, mere declaration plus overt act suffices without husband leaving the house).",
+          "Oral Gift & Registration (Section 129 TPA): Registration is NOT mandatory for a valid oral Hiba (even if later recorded in an unregistered memorandum of past gift - Hafeeza Bibi v. Shaikh Farid)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Hafeeza Bibi v. Shaikh Farid",
+            "citation": "2011 5 SCC 654",
+            "principle": "Held that Section 129 TPA preserves Muslim personal law; a written memorandum merely recording a prior oral Hiba does NOT require compulsory registration under Section 17 of the Registration Act if Ijab, Qubul, and delivery of possession are proved."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the three mandatory essentials of a valid Muslim Gift (Hiba), and is registration mandatory for a Muslim gift of immovable property?",
+            "a": "Declaration (Ijab), Acceptance (Qubul), and Delivery of Possession (Qabza). Registration is NOT mandatory under Section 129 TPA for an oral Hiba or a memorandum recording an oral gift (Hafeeza Bibi)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u3-t4": {
+      "id": "fl2-u3-t4",
+      "subtitle": "Family Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Muslim law recognizes specialized forms of gift including Mushaa (gift of undivided share in co-owned property), Hiba-bil-Iwaz (gift for return consideration), Hiba-ba-Shart-ul-Iwaz (gift with express stipulation for return), Sadaqah (charitable gift), Ariyat (gratuitous loan of usufruct), and Marz-ul-Maut (death-bed gift capped at 1/3rd). Revocation is freely allowed before delivery of possession, but strictly restricted afterwards.",
+        "legalProvision": "Classical Muslim Law of Hiba, Mushaa, Marz-ul-Maut & Revocation",
+        "meaning": "Because possession is the lifeblood of Hiba, gifting an undivided share in divisible property (Mushaa) faces restrictions under Hanafi law unless partitioned or falling under recognized exceptions, while death-bed gifts (Marz-ul-Maut) are capped at 1/3rd so a dying person cannot disinherit Quranic heirs.",
+        "keyPoints": [
+          "Doctrine of Mushaa (Undivided Share): In Hanafi law, a gift of an undivided share in INDIVISIBLE property (e.g., staircase/well) is valid, whereas a gift of an undivided share in DIVISIBLE property without partition is Irregular (Fasid - curable by subsequent partition/possession). Exceptions where Mushaa is immediately valid: gift to a co-heir, gift of zamindari/share in a company, gift of freehold property in a large commercial town, or gift to a minor. Shia law holds Mushaa gifts completely valid.",
+          "Hiba-bil-Iwaz vs Hiba-ba-Shart-ul-Iwaz: In Indian Hiba-bil-Iwaz, two independent transfers occur where a return consideration (Iwaz) is actually paid - legally treated like a SALE (requires registered deed if immovable >= Rs. 100, attracts pre-emption, cannot be revoked, delivery of possession not essential); Hiba-ba-Shart-ul-Iwaz is a gift made with an express prior condition of return (requires delivery of possession, revocable until Iwaz is paid).",
+          "Sadaqah & Ariyat: Sadaqah is a charitable/religious gift made to earn spiritual merit (irrevocable once delivered, even without partition); Ariyat grants only temporary usufruct/use without transferring corpus/ownership (always revocable).",
+          "Gift During Death-Illness (Marz-ul-Maut): A gift made during a mortal illness inducing immediate apprehension of death (followed by death) combines rules of Gift and Will - requires delivery of possession like Hiba, but is restricted to 1/3rd of net estate and barred to an heir (Sunni law) like a Will.",
+          "Revocation of Gift: Freely revocable BEFORE delivery of possession. AFTER delivery of possession, revocation requires a court decree or mutual consent AND is completely BARRED when (1) gift is between spouses, (2) donor and donee are within prohibited blood degrees, (3) either party dies, (4) donee transfers/destroys/increases value of property, (5) return Iwaz was received, or (6) gift is Sadaqah."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mumtaz Ahmad v. Zubaida Jan",
+            "citation": "1889 16 IA 205 (PC)",
+            "principle": "Held that the Hanafi doctrine of Mushaa is wholly unadapted to a progressive society and must be kept strictly within narrow bounds; subsequent possession cures any Mushaa irregularity."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four circumstances in which a Muslim Gift (Hiba) CANNOT be revoked after delivery of possession, and explain the 1/3rd rule for Marz-ul-Maut gifts.",
+            "a": "Cannot be revoked if made between spouses, to a blood relative within prohibited degrees, if either party dies, if the property is sold/lost/improved, if Iwaz was paid, or if it is Sadaqah. A death-bed gift (Marz-ul-Maut) cannot exceed 1/3rd of the net estate (without heirs' consent) to protect Quranic heirs."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u3-t5": {
+      "id": "fl2-u3-t5",
+      "subtitle": "Family Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Muslim Will (Wasiyat) is a gratuitous disposition of property taking effect after the testator's death. Unlike the Indian Succession Act, 1925 (which does not govern Muslim Wills), a Muslim Will requires NO writing, signature, or attestation - but testamentary power is strictly capped at one-third (1/3rd) of the net estate (after funeral expenses and debts) unless heirs consent after the testator's death.",
+        "legalProvision": "Classical Muslim Law of Wasiyat; Section 58, Indian Succession Act, 1925 (exempting Muslims from Part VI)",
+        "meaning": "Islamic jurisprudence balances a person's charitable wish to reward non-heirs or needy relatives with the mandatory Quranic policy that at least two-thirds (2/3rds) of an estate must be preserved for legal heirs.",
+        "keyPoints": [
+          "Essentials & Form of Valid Wasiyat: Testator must be a sound-minded adult Muslim (18+ under Indian Majority Act) owning the property; NO specific form is mandated - an oral Will (proved strictly), written unsigned Will, or even clear gestures of a dying person are valid; no witness attestation or registration is legally required.",
+          "Two Strict Limits on Testamentary Power: (1) Quantitatively: Cannot bequeath MORE than 1/3rd of the surplus estate remaining after funeral expenses and debts (excess is invalid unless heirs consent AFTER the testator's death); (2) Qualitatively (Sunni Law): Cannot bequeath ANY share to an existing legal heir without other heirs' post-death consent.",
+          "Competency of Legatee: Any person (Muslim or non-Muslim, charitable institution, or child in the womb born alive within 6 months of the Will) can be a legatee; a person who murders the testator is disqualified (under Sunni law even accidental killing disqualifies; Shia law disqualifies only intentional homicide).",
+          "Abatement of Legacies: When total bequests to non-heirs exceed 1/3rd and heirs refuse consent, legacies are scaled down - under Sunni law proportionately (rateably), and under Shia law chronologically (preferential distribution: earlier bequests in the Will take full priority over later ones).",
+          "Revocation of Will: A Will is always revocable by the testator before death - Expressly (oral/written revocation or destroying the Will) or Impliedly (gifting/selling the bequeathed property, altering it completely, or executing an inconsistent subsequent Will)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mazhar Husen v. Bodha Bibi",
+            "citation": "1898 ILR 21 All 91 (PC)",
+            "principle": "Held that a letter written by a Muslim testator shortly before death directing how his property should be distributed constitutes a valid Wasiyat without needing formal signature or attestation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the two major restrictions on a Sunni Muslim's power to make a Will (Wasiyat), and when must heirs give consent to validate an excess bequest?",
+            "a": "(1) Total bequests cannot exceed 1/3rd of the net estate after funeral expenses and debts, and (2) no bequest can be made to an heir. Heirs' consent must be given AFTER the testator's death to validate any excess or heir-bequest."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u3-t6": {
+      "id": "fl2-u3-t6",
+      "subtitle": "Family Law - II - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "While both Hiba (Gift) and Wasiyat (Will) are voluntary transfers without consideration, Hiba is an immediate inter-vivos transfer of up to 100% of property requiring delivery of possession, whereas Wasiyat takes effect only after death, requires no immediate possession, and is capped at 1/3rd. Sunni and Shia laws further diverge sharply on bequests to heirs, consent timing, suicide testators, and abatement.",
+        "legalProvision": "Comparative Muslim Law of Hiba vs Wasiyat & Sunni vs Shia Testamentary Rules",
+        "meaning": "Mastering both comparative charts (Gift vs Will and Sunni vs Shia Wills) directly answers high-frequency Osmania University short and long questions in Family Law - II Unit 3.",
+        "keyPoints": [
+          "Gift (Hiba) vs Will (Wasiyat) - Timing & Possession: Hiba operates immediately during the donor's lifetime (inter vivos) and strictly requires Delivery of Possession (Qabza); Wasiyat takes effect only AFTER the testator's death and requires no delivery of possession during life.",
+          "Gift vs Will - Quantum & Heirs: A healthy Muslim may gift 100% of his property to anyone (including an heir); a Will is strictly capped at 1/3rd of the net estate (and barred to an heir in Sunni law without consent).",
+          "Gift vs Will - Revocation & Unborn Persons: Hiba cannot be revoked after delivery in protected relationships (spouses/blood relatives/death), whereas Wasiyat is ALWAYS revocable until death; Hiba to an unborn person is void, whereas Wasiyat to a child in the womb born within 6 months (Sunni) or 10 months (Shia) is valid.",
+          "Sunni vs Shia Wills - Bequest to an Heir & Consent Timing: Sunni law invalidates ANY bequest to an heir unless co-heirs consent AFTER the testator's death; Shia law ALLOWS bequeathing up to 1/3rd even to an heir WITHOUT any consent, and permits heirs' consent to excess bequests either BEFORE or AFTER death.",
+          "Sunni vs Shia Wills - Suicide, Murderer & Abatement: A Will made after attempting suicide is valid in Sunni law but VOID in Shia law; accidental killing by a legatee bars him in Sunni law (not in Shia law); excess legacies abate proportionately (rateably) in Sunni law vs chronologically (preferentially) in Shia law."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ghulam Mohammad v. Ghulam Husain",
+            "citation": "AIR 1932 PC 81",
+            "principle": "Reaffirmed the strict Hanafi rule that a bequest to an heir is invalid unless the other heirs consent to it after the testator's death, distinguishing Sunni law from Shia law."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four key differences between Sunni and Shia law regarding Wills (Wasiyat).",
+            "a": "(1) Shia law permits a bequest up to 1/3rd to an heir without co-heirs' consent (Sunni bars it); (2) Shia law allows heirs' consent before or after death (Sunni requires consent strictly after death); (3) excess legacies abate chronologically in Shia law vs proportionately in Sunni law; (4) a Will made after a suicide attempt is void in Shia law but valid in Sunni law."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "law-studyes-app",
-  "version": "1.2.0",
+  "version": "3.2.7",
   "description": "Law Studyes — Offline 3-Year LL.B. Audio & Notes App with Self-Hosted OTA",
   "scripts": {
     "sync": "npx cap sync android",

@@ -1,0 +1,242 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-crimes",
+      "title": "Law of Crimes (IPC / BNS)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Public Health/Safety/Morals & Offences Against Property - Theft, Extortion, Robbery, Dacoity, CBT, Cheating, Mischief & Trespass",
+          "topics": [
+            {"id": "loc-u4-t1", "title": "1. Offences Affecting Public Health, Safety, Convenience, Decency & Morals (Secs. 268-294A IPC / Secs. 270-297 BNS)"},
+            {"id": "loc-u4-t2", "title": "2. Theft (Sec. 378 / Sec. 303 BNS), Snatching (Sec. 304 BNS) & Extortion (Sec. 383 / Sec. 308 BNS)"},
+            {"id": "loc-u4-t3", "title": "3. Robbery and Dacoity (Secs. 390-402 IPC / Secs. 309-310 BNS)"},
+            {"id": "loc-u4-t4", "title": "4. Criminal Misappropriation of Property & Criminal Breach of Trust (Secs. 403-409 IPC / Secs. 314-316 BNS)"},
+            {"id": "loc-u4-t5", "title": "5. Cheating & Cheating by Personation (Secs. 415-420 IPC / Secs. 318-319 BNS)"},
+            {"id": "loc-u4-t6", "title": "6. Mischief (Secs. 425-440 IPC / Secs. 324-328 BNS) & Criminal Trespass / House-Breaking (Secs. 441-462 IPC / Secs. 329-333 BNS)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loc-u4-t1": {
+      "id": "loc-u4-t1",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter XIV IPC (Sections 268-294A) / Chapter XV BNS (Sections 270-297) protects collective civic welfare by criminalizing Public Nuisance, spreading infectious diseases, food/drug adulteration, rash and negligent driving, public-way obstruction, and sale/display of obscene material (tested under the modern Community Standards Test in Aveek Sarkar).",
+        "legalProvision": "Sections 268-294A IPC, 1860 (Sections 270-297 BNS, 2023)",
+        "meaning": "Unlike individual injuries, these offences endanger the public at large - making them actionable by the State even when no single person suffers special financial loss.",
+        "keyPoints": [
+          "Public Nuisance (Sec. 268 & Sec. 290 IPC / Sec. 270 & Sec. 292 BNS): Any act or illegal omission causing common injury, danger, or annoyance to the public or people in the vicinity (e.g., dumping industrial waste, noise pollution, blocking footpaths, foul water/air pollution under Secs. 277-278); general punishment enhanced from Rs. 200 (IPC) to Rs. 1,000 fine (BNS Sec. 292).",
+          "Public Health Offences (Secs. 269-276 IPC / Secs. 271-278 BNS): Negligent or malignant acts likely to spread dangerous infectious diseases (invoked widely during epidemics), disobedience to quarantine rules (Sec. 271), and adulteration/sale of noxious food, drink, or drugs (Secs. 272-276).",
+          "Public Safety & Rash Driving (Secs. 279-289 IPC / Secs. 281-291 BNS): Rash or negligent driving on a public way endangering human life (Sec. 279 / Sec. 281 BNS - up to 6 months and/or Rs. 1,000 fine), negligent handling of poisons, fire, explosives, machinery, building repairs, or ferocious animals.",
+          "Public Decency & Obscenity (Secs. 292-294 IPC / Secs. 294-296 BNS): Criminalizes selling, distributing, or publicly exhibiting obscene books/objects/electronic content (BNS Sec. 294 expressly includes electronic display) and obscene acts/songs in public places (Sec. 294 / Sec. 296 BNS). Exception protects bona fide science, literature, art, and ancient religious heritage.",
+          "Shift from Hicklin Test to Community Standards Test: India abandoned the archaic Victorian Hicklin test (Ranjit Udeshi, 1965) in Aveek Sarkar (2014), judging obscenity as a whole through contemporary national community standards."
+        ],
+        "caseLaws": [
+          {
+            "name": "Aveek Sarkar v. State of West Bengal",
+            "citation": "2014 4 SCC 257",
+            "principle": "Replaced the outdated Victorian Hicklin test with the modern 'Community Standards Test': a work must be judged as a whole to see whether it appeals to prurient interest and tends to deprave/corrupt, rather than by isolated nudity."
+          },
+          {
+            "name": "Municipal Council, Ratlam v. Vardichan",
+            "citation": "AIR 1980 SC 1622",
+            "principle": "Affirmed public nuisance remedies against municipal failure to clear open drains and filth, linking civic sanitation directly to human dignity and criminal nuisance provisions."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What legal test do Indian courts currently apply to decide whether a publication is 'obscene' under Section 292 IPC / Section 294 BNS?",
+            "a": "The 'Community Standards Test' laid down in Aveek Sarkar (2014), replacing the older Hicklin test - evaluating the work as a whole against contemporary national standards rather than isolated passages."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u4-t2": {
+      "id": "loc-u4-t2",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Theft (Sec. 378 IPC / Sec. 303 BNS) is the dishonest moving of movable property out of any person's possession without consent (even temporarily - Pyare Lal Bhargava), while BNS Section 304 newly creates the standalone offence of Snatching. Extortion (Sec. 383 IPC / Sec. 308 BNS) obtains movable OR immovable property by putting a person in fear of injury to compel wrongful consent.",
+        "legalProvision": "Sections 378-389 IPC, 1860 (Sections 303-308 BNS, 2023)",
+        "meaning": "Theft protects POSSESSION (not merely ownership - even an owner can commit theft of his own pledged watch from a pawnee!), whereas Extortion targets wrongful coercion/blackmail inducing delivery of property or valuable security.",
+        "keyPoints": [
+          "Five Essential Ingredients of Theft (Sec. 378 IPC / Sec. 303 BNS): (1) Dishonest intention to take property (even temporary retention causing wrongful loss suffices - Pyare Lal Bhargava; bona fide claim of right negates theft), (2) MOVABLE property (severing a tree or earth converts it to movable property the instant it is severed), (3) Out of another person's POSSESSION, (4) WITHOUT that person's consent, and (5) MOVING the property in order to such taking (slightest physical movement completes theft). Punishment: up to 3 years (BNS Sec. 303(2) allows community service for first-time petty theft under Rs. 5,000 if returned, and min 1-5 years for repeat theft).",
+          "New Standalone Offence - Snatching (Section 304 BNS, 2023): Theft becomes Snatching when the offender suddenly, quickly, or forcibly seizes/grabs movable property (e.g., chain or mobile snatching) from a person or his possession; punishable with up to 3 years' imprisonment and fine.",
+          "Essential Ingredients of Extortion (Sec. 383 IPC / Sec. 308 BNS): (1) Intentionally putting any person in fear of injury to himself or another (physical, reputational, or financial blackmail), and (2) Thereby dishonestly inducing the threatened person to deliver ANY property (movable OR immovable) or valuable security. Punishment: up to 3 years under IPC, enhanced to up to 7 YEARS under Section 308(2) BNS.",
+          "Theft vs Extortion: (1) Theft covers ONLY movable property, Extortion covers movable AND immovable property; (2) Theft is committed WITHOUT consent, Extortion obtains consent wrongfully via fear/threat; (3) In Theft the offender physically takes/moves the item, in Extortion the victim delivers it under coercion."
+        ],
+        "caseLaws": [
+          {
+            "name": "Pyare Lal Bhargava v. State of Rajasthan",
+            "citation": "AIR 1963 SC 1094",
+            "principle": "Held that temporarily removing an official government file from office custody without consent to show it to a private party caused wrongful gain/loss and squarely constituted Theft under Section 378 IPC."
+          },
+          {
+            "name": "K.N. Mehra v. State of Rajasthan",
+            "citation": "AIR 1957 SC 369",
+            "principle": "Air Force trainee flying away an aircraft without authorization to Pakistan was convicted of Theft; permanent deprivation is not necessary - temporary dishonest taking suffices."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can a person commit Theft of his own property, and how does BNS, 2023 treat mobile/chain snatching?",
+            "a": "Yes - because Theft protects lawful possession, an owner who dishonestly takes his own pledged goods from a pawnee without consent commits theft. BNS Section 304 created a new standalone offence of 'Snatching' punishable with up to 3 years' imprisonment and fine."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u4-t3": {
+      "id": "loc-u4-t3",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Robbery (Sec. 390 IPC / Sec. 309 BNS) is an aggravated form of either Theft or Extortion accompanied by violence or instant fear of death, hurt, or wrongful restraint. Dacoity (Sec. 391 IPC / Sec. 310 BNS) is Robbery committed or attempted conjointly by FIVE OR MORE persons - uniquely punishable at EVERY stage including Preparation and Assembling.",
+        "legalProvision": "Sections 390-402 IPC, 1860 (Sections 309-313 BNS, 2023)",
+        "meaning": "Every dacoity is robbery, and every robbery contains either theft or extortion. Because armed gangs terrorize entire communities, the law treats dacoity as one of the gravest property crimes, criminalizing mere preparation (Sec. 399 / Sec. 310(4) BNS) and dacoity with murder with the death penalty.",
+        "keyPoints": [
+          "When Theft Becomes Robbery (Sec. 390 / Sec. 309(2) BNS): Theft is robbery if, in order to commit theft, OR in committing it, OR in carrying away stolen property, the offender voluntarily causes or attempts to cause death, hurt, wrongful restraint, or fear of instant death/hurt/wrongful restraint (note: violence must be FOR the purpose of theft, not an unrelated subsequent scuffle).",
+          "When Extortion Becomes Robbery (Sec. 390 / Sec. 309(3) BNS): Extortion is robbery if the offender is PHYSICALLY PRESENT at the spot and puts the victim in fear of INSTANT death, instant hurt, or instant wrongful restraint, inducing immediate delivery of property on the spot.",
+          "Punishment for Robbery (Sec. 392 / Sec. 309(4) BNS): Up to 10 years' rigorous imprisonment and fine; if committed on a HIGHWAY between sunset and sunrise -> up to 14 years' RI; if armed with deadly weapon / grievous hurt caused (Sec. 397 / Sec. 311 BNS) -> minimum 7 years.",
+          "Dacoity - Five or More Persons (Sec. 391 / Sec. 310 BNS): Requires 5 or more persons conjointly committing OR attempting robbery (includes persons present and aiding, e.g., lookouts outside; if 5 are tried and 1 is acquitted leaving only 4 with no unknown accomplices, conviction drops from Dacoity to Robbery - Ram Shankar Singh). Punishments: Dacoity (Sec. 395 / Sec. 310(2)) -> life or 10 years' RI; Dacoity with Murder (Sec. 396 / Sec. 310(3)) -> Death, life, or min 10 years' RI for ALL members; Preparation (Sec. 399 / Sec. 310(4)) -> up to 10 years; Assembling (Sec. 402 / Sec. 310(5)) -> up to 7 years."
+        ],
+        "caseLaws": [
+          {
+            "name": "Harish Chandra v. State of U.P.",
+            "citation": "1976 2 SCC 795",
+            "principle": "Held that slapping a victim who tried to stop the accused from escaping with a snatched wristwatch amounted to using force in 'carrying away property', elevating Theft to Robbery under Section 390 IPC."
+          },
+          {
+            "name": "Ram Shankar Singh v. State of U.P.",
+            "citation": "AIR 1956 SC 441",
+            "principle": "Held that where 6 named accused were tried for Dacoity and 3 were acquitted (leaving only 3 participants with no unknown offenders), conviction under Section 395 (Dacoity) could not stand and was converted to Robbery (Sec. 392)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When does Extortion become Robbery under Section 390 IPC / Section 309 BNS, and why is Dacoity unique regarding the four stages of crime?",
+            "a": "Extortion becomes Robbery when the offender is physically present and induces immediate on-the-spot delivery by fear of INSTANT death, hurt, or wrongful restraint. Dacoity is unique because all four stages - including Preparation (Sec. 399) and Assembling (Sec. 402) - are independently punishable."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u4-t4": {
+      "id": "loc-u4-t4",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Dishonest Misappropriation of Property (Sec. 403 IPC / Sec. 314 BNS) occurs when a person lawfully or innocently comes into possession of movable property (e.g., finding lost goods) and later dishonestly converts it to his own use. Criminal Breach of Trust (Sec. 405 IPC / Sec. 316 BNS) involves initial ENTRUSTMENT of movable OR immovable property in a fiduciary capacity followed by dishonest misappropriation or violation of trust.",
+        "legalProvision": "Sections 403-409 IPC, 1860 (Sections 314-316 BNS, 2023)",
+        "meaning": "The critical divide separating Theft, Criminal Misappropriation, and Criminal Breach of Trust (CBT) is HOW the offender first got possession: Theft = dishonest taking without consent; Misappropriation = innocent/accidental possession followed by dishonest conversion; CBT = voluntary fiduciary entrustment followed by dishonest betrayal.",
+        "keyPoints": [
+          "Criminal Misappropriation (Secs. 403-404 IPC / Secs. 314-315 BNS): Applies ONLY to MOVABLE property; initial taking is innocent (e.g., taking a friend's book by mistake or finding a lost gold ring on the road) and dishonest intention arises LATER when keeping/converting it. Finder of lost goods must take reasonable steps to discover and notify the true owner (Explanation 2 to Sec. 403). Punishment: up to 2 years under IPC (min 6 months to 2 years under Sec. 314 BNS); aggravated up to 3 years for deceased person's property (Sec. 404 / Sec. 315 BNS).",
+          "Criminal Breach of Trust / CBT (Secs. 405-409 IPC / Sec. 316 BNS): Requires TWO pillars - (1) ENTRUSTMENT of property (movable OR immovable) or dominion over it (creating a fiduciary relationship, e.g., agent, trustee, warehouse keeper, partner, or employer deducting PF), and (2) Dishonest misappropriation, conversion, or disposal violating legal/contractual directions. Punishment: up to 3 years under IPC (enhanced to up to 5 YEARS under Sec. 316(2) BNS); aggravated up to 7 years for clerks/servants/carriers, and up to LIFE or 10 years for Public Servants, Bankers, Merchants, or Agents (Sec. 409 / Sec. 316(5) BNS).",
+          "Stridhan & CBT (Pratibha Rani v. Suraj Kumar, 1985): Husband and in-laws hold a married woman's Stridhan (wedding gifts/jewellery) strictly in trust; dishonest refusal to return Stridhan constitutes Criminal Breach of Trust under Section 406 IPC / Section 316(2) BNS.",
+          "Tripartite Comparison (Theft vs Misappropriation vs CBT): Property: Movable / Movable / Movable or Immovable; Initial Possession: Dishonest without consent / Innocent or accidental / Lawful fiduciary entrustment; Relationship: None / None / Fiduciary trust."
+        ],
+        "caseLaws": [
+          {
+            "name": "Pratibha Rani v. Suraj Kumar",
+            "citation": "AIR 1985 SC 628",
+            "principle": "Held that Stridhan remains the absolute property of the wife; if the husband or in-laws are entrusted with it and dishonestly misappropriate or refuse to return it, they are criminally liable for CBT under Section 406 IPC."
+          },
+          {
+            "name": "Velji Raghavji Patel v. State of Maharashtra",
+            "citation": "AIR 1965 SC 1433",
+            "principle": "Held that an ordinary partner has co-ownership over partnership assets and is not guilty of CBT unless there was a special agreement specifically entrusting exclusive dominion over a particular asset to him."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Criminal Misappropriation (Sec. 403 / Sec. 314 BNS) and Criminal Breach of Trust (Sec. 405 / Sec. 316 BNS) on three grounds.",
+            "a": "(1) CBT requires prior fiduciary 'entrustment', whereas Misappropriation starts with accidental/innocent possession without entrustment; (2) Misappropriation applies ONLY to movable property, whereas CBT covers both movable and immovable property; (3) CBT carries heavier punishment (up to 5 years / life for public servants/bankers under BNS) compared to Misappropriation (up to 2 years)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u4-t5": {
+      "id": "loc-u4-t5",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Cheating (Sec. 415 IPC / Sec. 318 BNS) is deceiving a person with fraudulent or dishonest intention FROM THE VERY INCEPTION to induce delivery of property or an act/omission causing harm to body, mind, reputation, or property. Mere subsequent breach of a civil contract without initial fraudulent intent is NOT cheating (Hridaya Ranjan Prasad Verma).",
+        "legalProvision": "Sections 415-420 IPC, 1860 (Sections 318-319 BNS, 2023)",
+        "meaning": "Unlike CBT (where initial entrustment is honest and dishonesty develops later), Cheating requires DECEPTION right at the start to procure the victim's induced consent. Courts strictly guard against turning ordinary commercial payment defaults into criminal Section 420 / Section 318(4) cases.",
+        "keyPoints": [
+          "Two Parts of Cheating (Sec. 415 IPC / Sec. 318(1) BNS): (1) Deceiving a person and FRAUDULENTLY OR DISHONESTLY inducing him to deliver property or consent to retention of property, OR (2) Deceiving a person and INTENTIONALLY inducing him to do or omit anything he would not otherwise do, causing or likely to cause damage/harm in body, mind, reputation, or property. Dishonest concealment of material facts is deception (Explanation).",
+          "Mens Rea at Inception is Mandatory: Prosecution MUST prove dishonest intention existed AT THE TIME of making the promise; subsequent inability to repay a loan or perform a contract is purely a civil breach, NOT cheating (Hridaya Ranjan; Vesa Holdings).",
+          "Cheating by Personation (Secs. 416 & 419 IPC / Sec. 319 BNS): Pretending to be another real or imaginary person, knowingly substituting one person for another, or misrepresenting identity (e.g., sitting an exam for someone else or posing as a government officer) - punishable up to 3 years under IPC (enhanced to up to 5 YEARS under Sec. 319(2) BNS).",
+          "Aggravated Cheating - Delivery of Property (Sec. 420 IPC / Sec. 318(4) BNS): Cheating that actually induces delivery of property or alteration/destruction of a valuable security carries up to 7 years' imprisonment and fine (general cheating under Sec. 417 / Sec. 318(2) BNS carries up to 3 years under BNS, raised from 1 year under IPC).",
+          "Cheating vs CBT (Mutually Exclusive - Delhi Race Club, 2024): In Cheating, dishonest deception exists from the very beginning; in CBT, initial entrustment is completely lawful and dishonest conversion occurs later."
+        ],
+        "caseLaws": [
+          {
+            "name": "Hridaya Ranjan Prasad Verma v. State of Bihar",
+            "citation": "2000 4 SCC 168",
+            "principle": "Distinguished mere civil breach of contract from criminal Cheating: fraudulent or dishonest intention must be proved to exist at the very beginning when the promise or representation was made."
+          },
+          {
+            "name": "Delhi Race Club (1940) Ltd. v. State of U.P.",
+            "citation": "2024 INSC 626 (SC)",
+            "principle": "Reaffirmed that Criminal Breach of Trust (Sec. 406) and Cheating (Sec. 420) are antithetical and cannot coexist on the same set of facts, directing magistrates to apply judicial mind before summoning."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why can an accused generally not be convicted of BOTH Cheating (Sec. 420 / Sec. 318(4) BNS) and Criminal Breach of Trust (Sec. 406 / Sec. 316(2) BNS) on the exact same transaction?",
+            "a": "Because in Cheating, dishonest deception exists at the very inception to induce transfer of property, whereas in CBT, the property is initially entrusted honestly and lawful trust is dishonestly betrayed afterwards (Delhi Race Club, 2024)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u4-t6": {
+      "id": "loc-u4-t6",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Mischief (Sec. 425 IPC / Sec. 324 BNS) punishes intentionally or knowingly destroying or damaging any property (even one's own property to defraud an insurer) causing wrongful loss without necessarily gaining anything. Criminal Trespass (Sec. 441 IPC / Sec. 329 BNS) punishes unlawful entry or remaining on another's property with intent to commit an offence or intimidate, insult, or annoy - escalating into House-Trespass, Lurking House-Trespass, and House-Breaking.",
+        "legalProvision": "Sections 425-440 & 441-462 IPC, 1860 (Sections 324-328 & 329-333 BNS, 2023)",
+        "meaning": "Mischief protects the integrity and value of property against vandalism, arson, and sabotage (public or private), while Criminal Trespass protects peaceful possession and domestic privacy against intruders and burglars.",
+        "keyPoints": [
+          "Mischief (Secs. 425-440 IPC / Secs. 324-328 BNS): Three essentials - (1) Intention or knowledge of likelihood to cause wrongful loss/damage to public or any person, (2) Causing destruction of any property OR any change in property/its situation that destroys or diminishes its value or utility (e.g., throwing a ring into a river, poisoning cattle, damaging crops/vehicles, or burning one's own insured house to cheat the insurer). Punishments: Simple mischief -> up to 6 months under BNS (3 months IPC); damage Rs. 20,000+ (BNS Sec. 324(4)) -> up to 2 years; killing/maiming animals -> up to 5 years (Sec. 325 BNS); Mischief by fire/explosive to dwelling house (Arson - Sec. 436 / Sec. 326(g) BNS) -> life or 10 years.",
+          "Criminal Trespass (Sec. 441 IPC / Sec. 329 BNS): Entering into or upon property in ANOTHER'S POSSESSION (or lawfully entering and unlawfully remaining) WITH INTENT to commit an offence, or to intimidate, insult, or annoy the person in possession (mere civil trespass without criminal intent is only a tort). Punishment: up to 3 months and/or Rs. 5,000 fine (BNS Sec. 329(3); Rs. 500 IPC).",
+          "House-Trespass (Sec. 442 / Sec. 329(2) BNS): Criminal trespass into any building, tent, or vessel used as a human dwelling, place of worship, or place for custody of property (up to 1 year and/or Rs. 5,000 fine).",
+          "Lurking House-Trespass (Sec. 443 / Sec. 330(1) BNS): Committing house-trespass while taking precautions to CONCEAL such trespass from anyone entitled to exclude/eject the intruder (e.g., hiding inside a house until midnight).",
+          "House-Breaking (Sec. 445 / Sec. 330(2) BNS): Committing house-trespass by entering or quitting through ANY of 6 unlawful modes - (1) making a passage oneself, (2) scaling/climbing a wall or window not meant for entry, (3) opening a locked passage, (4) breaking a lock, (5) using criminal force/assault/threat, or (6) opening an unfastened door/bolt fraudulently. Aggravated when committed AT NIGHT (after sunset and before sunrise - up to 3 to 14 years under Sec. 331 BNS)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mathri v. State of Punjab",
+            "citation": "AIR 1964 SC 986",
+            "principle": "Held that to prove Criminal Trespass under Section 441 IPC, the prosecution must establish that intimidating, insulting, or annoying the possessor was the dominant AIM/INTENT of entry - not merely a foreseeable side-effect of asserting a bona fide claim."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Civil Trespass and Criminal Trespass, and state how House-Trespass escalates into Lurking House-Trespass and House-Breaking.",
+            "a": "Criminal Trespass requires entry/remaining with specific criminal intent to commit an offence or intimidate, insult, or annoy the possessor (unlike civil trespass). House-Trespass (entering a dwelling/building) becomes Lurking House-Trespass when concealed from the occupant, and House-Breaking when entry/exit uses one of 6 forcible/unusual modes (scaling walls, breaking locks, forced entry)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

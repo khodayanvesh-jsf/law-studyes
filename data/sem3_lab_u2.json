@@ -1,0 +1,154 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-i",
+      "title": "Labour Law - I",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Industrial Employment (Standing Orders) Act, 1946 - Concept, Certification, Modification, Operation & Disciplinary Proceedings",
+          "topics": [
+            {"id": "lab-u2-t1", "title": "1. Concept, Object, Scope & Application of Industrial Employment (Standing Orders) Act, 1946 (Secs. 1-2 & Schedule)"},
+            {"id": "lab-u2-t2", "title": "2. Submission & Certification of Draft Standing Orders, Certifying Officer's Powers & Appeal (Secs. 3-6)"},
+            {"id": "lab-u2-t3", "title": "3. Operation, Posting, Binding Effect & Modification of Certified Standing Orders (Secs. 7-10 & 12A Model Standing Orders)"},
+            {"id": "lab-u2-t4", "title": "4. Subsistence Allowance During Suspension (Sec. 10A), Interpretation (Sec. 13A) & Disciplinary Proceedings / Domestic Inquiry"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab-u2-t1": {
+      "id": "lab-u2-t1",
+      "subtitle": "Labour Law - I - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Enacted to eliminate arbitrary 'hire and fire' verbal rules in factories, the Industrial Employment (Standing Orders) Act, 1946 requires employers of industrial establishments employing 100 or more workmen (50 in several States; 300 under Industrial Relations Code, 2020) to formally define conditions of employment in writing across 11 Schedule matters and get them certified by a statutory Certifying Officer.",
+        "legalProvision": "Sections 1, 2(e), 2(g), & Schedule, Industrial Employment (Standing Orders) Act, 1946 (Sections 28-39, Industrial Relations Code, 2020)",
+        "meaning": "Standing Orders are the 'internal constitution' of a workplace - making shift timings, leave, misconduct definitions, and dismissal procedures transparent, uniform, and binding on both management and workmen.",
+        "keyPoints": [
+          "Object & Scope (Preamble & Sec. 1): Compels employers in industrial establishments to define with sufficient precision the conditions of employment and make them known to workmen; applies to every industrial establishment wherein 100 OR MORE workmen are employed on any day of the preceding 12 months (appropriate Govt may notify lower threshold; IR Code, 2020 raised threshold to 300). Excludes establishments covered by Civil Service Rules.",
+          "Eleven Matters in the Schedule (Mandatory Contents of Standing Orders): (1) Classification of workmen (permanent, temporary, apprentices, probationers, badlis), (2) Manner of intimating work periods, hours, holidays, pay-days & wage rates, (3) Shift working, (4) Attendance and late coming, (5) Conditions/procedure for applying for leave and holidays, (6) Requirement to enter premises by certain gates and liability to search, (7) Closing and re-opening of sections & temporary stoppages, (8) Termination of employment and notice by employer/workmen, (9) Suspension or dismissal for misconduct and acts/omissions constituting MISCONDUCT, (10) Means of redress against unfair treatment/exactions, and (11) Any other prescribed matter (e.g., retirement age, sexual harassment clause).",
+          "Legal Nature of Certified Standing Orders (Sudhir Chandra Sarkar v. Tata Iron & Steel Co.): Statutory terms of employment overriding inconsistent individual contracts (Western India Match Co. v. Workmen - an employer CANNOT enter into a private contract with a workman that conflicts with Certified Standing Orders!)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Western India Match Co. Ltd. (WIMCO) v. Workmen",
+            "citation": "1974 3 SCC 330",
+            "principle": "Held that Certified Standing Orders have statutory force and prevail over inconsistent terms in an individual appointment letter - an employer cannot impose harsher probation/termination clauses outside Standing Orders."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the minimum workman threshold under the Industrial Employment (Standing Orders) Act, 1946 (and under the IR Code, 2020), and can an employer override Certified Standing Orders via an individual appointment contract?",
+            "a": "100 workmen under the 1946 Act (raised to 300 under the Industrial Relations Code, 2020). No - Certified Standing Orders prevail over any inconsistent individual appointment contract (WIMCO v. Workmen)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u2-t2": {
+      "id": "lab-u2-t2",
+      "subtitle": "Labour Law - I - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Sections 3-6 of the 1946 Act, an employer must submit Draft Standing Orders to the Certifying Officer within 6 months of the Act becoming applicable, conforming as far as practicable to Model Standing Orders. After hearing the Trade Union/workmen, the Certifying Officer adjudicates BOTH the 'fairness and reasonableness' of the draft (Sec. 4 - amended 1956) and certifies them, subject to a 30-day appeal to the Appellate Authority.",
+        "legalProvision": "Sections 3, 4, 5, 6, & 11, Industrial Employment (Standing Orders) Act, 1946",
+        "meaning": "Before 1956, the Certifying Officer could only check formal conformity with the Schedule; the 1956 Amendment empowered him to scrutinize substantive FAIRNESS AND REASONABLENESS so employers cannot sneak oppressive misconduct clauses into Standing Orders.",
+        "keyPoints": [
+          "Submission of Draft Standing Orders (Sec. 3): Within 6 MONTHS from the date the Act applies, employer must submit 5 copies of draft Standing Orders proposing provision for every Schedule item, conforming as far as practicable to Model Standing Orders, accompanied by prescribed workman/union particulars.",
+          "Conditions for Certification - Fairness & Reasonableness (Sec. 4): Standing Orders are certifiable ONLY if (a) provision is made for EVERY matter in the Schedule, (b) they are otherwise in conformity with the Act, AND (c) it is the statutory FUNCTION of the Certifying Officer/Appellate Authority to adjudicate upon the FAIRNESS OR REASONABLENESS of the provisions (Associated Cement Companies v. P.D. Vyas).",
+          "Certification Procedure & Certifying Officer's Powers (Secs. 5 & 11): Certifying Officer (Labour Commissioner / Regional Labour Commissioner) forwards draft to Trade Union (or elected workman representatives) calling objections within 15 days -> gives both sides opportunity of being heard -> decides modifications/additions -> certifies and sends authenticated copies within 7 days. Possesses Civil Court powers under Sec. 11 (summoning witnesses, oath, discovery of documents, correcting clerical errors).",
+          "Appeal Against Certification (Sec. 6): Any aggrieved employer, workman, or trade union may appeal within 30 DAYS to the Appellate Authority (Industrial Court / Tribunal), whose order is final (subject to writ review under Art. 226) and forwarded within 7 days."
+        ],
+        "caseLaws": [
+          {
+            "name": "Associated Cement Companies Ltd. v. P.D. Vyas",
+            "citation": "AIR 1960 SC 665",
+            "principle": "Held that after the 1956 Amendment to Section 4, the Certifying Officer and Appellate Authority have full jurisdiction and duty to examine whether draft Standing Orders are fair and reasonable, not merely whether they cover Schedule items."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Within what time must an employer submit Draft Standing Orders under Section 3, and what major power did the 1956 Amendment confer on the Certifying Officer under Section 4?",
+            "a": "Within 6 months of the Act becoming applicable. The 1956 Amendment empowered and required the Certifying Officer to adjudicate upon the 'fairness or reasonableness' of the draft Standing Orders."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u2-t3": {
+      "id": "lab-u2-t3",
+      "subtitle": "Labour Law - I - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Certified Standing Orders come into operation 30 days after authenticated copies are sent by the Certifying Officer (or 7 days after Appellate Authority order - Sec. 7), must be prominently posted in English and the local language (Sec. 9), and cannot be modified for 6 MONTHS except by mutual agreement (Sec. 10). Until certification takes effect, Model Standing Orders apply automatically under Section 12A.",
+        "legalProvision": "Sections 7, 8, 9, 10, 12, 12A, & 13, Industrial Employment (Standing Orders) Act, 1946",
+        "meaning": "Section 12A closes the loophole where employers delayed certification for years: from the very day the Act applies, statutory Model Standing Orders govern the establishment automatically until certified orders take effect.",
+        "keyPoints": [
+          "Date of Operation & Register (Secs. 7-8): Come into force on expiry of 30 DAYS from date authenticated copies are sent under Sec. 5(3) (or 7 DAYS from Appellate Authority's order under Sec. 6(2)); filed in a public Register maintained by Certifying Officer (Sec. 8).",
+          "Posting of Standing Orders (Sec. 9) & Oral Evidence Bar (Sec. 12): Employer MUST prominently post certified text in English AND in the language understood by the majority of workmen on special boards at entrance gates and departments; under Sec. 12, NO oral evidence contradicting Certified Standing Orders is admissible in court.",
+          "Duration & Modification (Sec. 10): Certified Standing Orders CANNOT be modified until expiry of 6 MONTHS from the date they (or last modification) came into operation, EXCEPT by mutual agreement between employer and workmen/trade union; after 6 months, either employer or workmen/union may apply to Certifying Officer for modification following the same certification procedure (Shahdara-Saharanpur Light Railway).",
+          "Temporary Application of Model Standing Orders (Sec. 12A): From the date the Act becomes applicable to an establishment until its own Certified Standing Orders come into operation, the prescribed MODEL STANDING ORDERS are deemed automatically adopted and binding.",
+          "Penalties (Sec. 13): Failure to submit draft -> fine up to Rs. 5,000 (+ Rs. 200/day continuing); acting in contravention of Certified Standing Orders -> fine up to Rs. 100 (+ Rs. 25/day)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Management of Shahdara (Delhi) Saharanpur Light Railway Co. Ltd. v. S.S. Railway Workers' Union",
+            "citation": "AIR 1969 SC 513",
+            "principle": "Held that an application for modification of Certified Standing Orders under Section 10 after 6 months is maintainable on grounds of fairness and reasonableness even without proving a change of circumstances."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When do Certified Standing Orders come into force under Section 7, what is the lock-in period before modification under Section 10, and what governs the workplace before certification (Section 12A)?",
+            "a": "30 days after authenticated copies are sent (or 7 days after appellate order). They cannot be modified for 6 months except by mutual agreement (Sec. 10). Before certification takes effect, prescribed Model Standing Orders apply automatically under Section 12A."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u2-t4": {
+      "id": "lab-u2-t4",
+      "subtitle": "Labour Law - I - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 10A of the 1946 Act, a workman suspended pending domestic inquiry into misconduct is entitled to statutory Subsistence Allowance (50% of wages for the first 90 days, and 75% thereafter if delay is not attributable to the workman). Any dispute on interpretation/application of Standing Orders goes directly to the Labour Court under Section 13A, while dismissal for misconduct MUST comply strictly with Natural Justice in a fair Domestic Inquiry.",
+        "legalProvision": "Sections 10A & 13A, Industrial Employment (Standing Orders) Act, 1946; Section 11A, Industrial Disputes Act, 1947",
+        "meaning": "A workman cannot be dismissed for misconduct on mere suspicion without a fair Domestic Inquiry: non-payment of subsistence allowance vitiates the inquiry itself by starving the workman's defence (Capt. M. Paul Anthony v. Bharat Gold Mines).",
+        "keyPoints": [
+          "Payment of Subsistence Allowance (Sec. 10A - inserted 1982): Where a workman is suspended by the employer pending investigation or inquiry into complaints/charges of misconduct, employer MUST pay subsistence allowance at (a) 50% OF WAGES for the first 90 DAYS of suspension, and (b) 75% OF WAGES for the remaining period beyond 90 days if delay in completing disciplinary proceedings is NOT directly attributable to the workman's conduct. Disputes over subsistence allowance are decided by the Labour Court (Sec. 10A(2)).",
+          "Interpretation of Standing Orders (Sec. 13A): If any question arises as to the application or interpretation of a Certified Standing Order, any employer, workman, or trade union may refer the question directly to a specified Labour Court, whose decision after hearing parties is final and binding.",
+          "Disciplinary Proceedings / Domestic Inquiry & Natural Justice: Before punishing a workman for misconduct listed in Standing Orders, management MUST follow mandatory Natural Justice steps: (1) Written Charge-Sheet specifying exact misconduct, (2) Fair opportunity to submit written explanation, (3) Appointment of an unbiased Inquiry Officer (not a witness or judge in own cause), (4) Examination of management witnesses in workman's presence with right to cross-examine and lead defence witnesses, (5) Supply of Inquiry Officer's Report before imposing penalty (Managing Director, ECIL v. B. Karunakar), and (6) Proportionate reasoned punishment order (reviewable by Labour Court/Tribunal under Section 11A of the ID Act, 1947)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Capt. M. Paul Anthony v. Bharat Gold Mines Ltd.",
+            "citation": "1999 3 SCC 679",
+            "principle": "Held that non-payment of Subsistence Allowance during suspension violates Article 21 and Natural Justice by depriving the employee of means to defend himself, vitiating the entire disciplinary inquiry."
+          },
+          {
+            "name": "Workmen of Firestone Tyre & Rubber Co. v. Management",
+            "citation": "AIR 1973 SC 1227",
+            "principle": "Explained Section 11A of the ID Act alongside Standing Orders: even if a domestic inquiry is defective or not held, the employer may adduce evidence directly before the Labour Court/Tribunal to justify dismissal."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the statutory rates of Subsistence Allowance payable to a suspended workman under Section 10A of the Standing Orders Act, 1946, and explain why non-payment vitiates a domestic inquiry.",
+            "a": "50% of wages for the first 90 days of suspension, increasing to 75% thereafter if delay is not caused by the workman. Non-payment starves the workman and prevents him from defending himself, violating Natural Justice and Article 21 (Capt. M. Paul Anthony)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "subjects": [
+    {
+      "id": "law-relating-to-women",
+      "title": "Law Relating to Women",
+      "semester": "Semester 6",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Evidence Act Safeguards, Offences Against Women (IPC/BNS) & Criminal Law Amendments",
+          "topics": [
+            {"id": "law-relating-to-women-u3-t1", "title": "1. Special Evidence Safeguards (Secs. 53A, 113A, 113B & 114A), Offences Against Women (IPC/BNS) & Criminal Law Amendment, 2013"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Child Marriage, Matrimonial Remedies, Succession, Immoral Traffic & NCW",
+          "topics": [
+            {"id": "law-relating-to-women-u4-t1", "title": "1. Prohibition of Child Marriage Act, 2006, Intestate Succession (Sec. 15 HSA), RCR, Child Custody, ITPA (1956) & NCW"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Women in Labour & Industrial Laws & International Human Rights Instruments",
+          "topics": [
+            {"id": "law-relating-to-women-u5-t1", "title": "1. Women in Factories, Mines & Equal Remuneration Laws, Pregnancy Bar (Nergesh Meerza) & ICCPR/ICESCR/CEDAW Protections"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "human-rights-law",
+      "title": "Human Rights Law",
+      "semester": "Semester 6",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "International Covenants (ICCPR & ICESCR), UNHRC & Domestic Jurisdiction",
+          "topics": [
+            {"id": "human-rights-law-u3-t1", "title": "1. ICCPR (1966), ICESCR (1966), UN Human Rights Council (UNHRC) & Domestic Jurisdiction (Article 2(7) UN Charter)"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Regional Human Rights Systems - European, American & African Conventions",
+          "topics": [
+            {"id": "human-rights-law-u4-t1", "title": "1. European Convention (1950), American Convention (1969) & African Charter on Human and Peoples' Rights (1981)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Thematic UN Conventions & World Conferences on Human Rights",
+          "topics": [
+            {"id": "human-rights-law-u5-t1", "title": "1. Conventions Against Genocide, Slavery, Torture & Statelessness, Child Rights (CRC 1989) & Vienna Conference (1993)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "law-relating-to-women-u3-t1": {
+      "id": "law-relating-to-women-u3-t1",
+      "subtitle": "Law Relating to Women - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Indian criminal and evidentiary law protects women through special statutory presumptions under the Evidence Act/BSA (Sections 53A, 113A, 113B, & 114A IEA) and targeted offences under IPC/BNS - strengthened dramatically by the Criminal Law (Amendment) Act, 2013 following the Justice Verma Committee Report.",
+        "legalProvision": "Sections 53A, 113A, 113B, 114A, & 146 Proviso IEA (Sections 48, 117, 118, 120, & 149 BSA, 2023); Sections 312, 354-354D, 375-376, 494, & 509 IPC (Sections 63-70, 74-79, 82, & 88 BNS, 2023)",
+        "meaning": "Because offences against women often occur behind closed doors without independent witnesses, evidentiary rules bar humiliating character assassination of survivors and shift the burden of proof in custodial rape and dowry deaths. Meanwhile, criminal law evolved to recognize stalking, voyeurism, acid attacks, and digital harassment.",
+        "keyPoints": [
+          "Special Evidence Safeguards: Section 53A & Section 146 Proviso IEA (Secs. 48 & 149 BSA) prohibit evidence or cross-examination on a survivor's character or past sexual experience; Section 114A IEA (Sec. 120 BSA) presumes absence of consent in aggravated/custodial rape if the survivor testifies she did not consent; Sections 113A & 113B IEA (Secs. 117-118 BSA) create presumptions for abetment of suicide and dowry death within 7 years of marriage.",
+          "Impact of Criminal Law (Amendment) Act, 2013: Enacted after the Nirbhaya case (Justice J.S. Verma Committee); broadened the definition of rape (Sec. 375), raised minimum punishments, criminalized Acid Attacks (Secs. 326A-326B), Sexual Harassment (Sec. 354A), Disrobing (Sec. 354B), Voyeurism (Sec. 354C), and Stalking including cyber stalking (Sec. 354D), and mandated zero-delay FIRs and free medical treatment.",
+          "Outraging & Insulting Modesty (Secs. 354 & 509 IPC / Secs. 74 & 79 BNS): Criminalizes assault or criminal force intending to outrage a woman's modesty, and words, gestures, or acts intended to insult a woman's modesty.",
+          "Bigamy & Mock Marriages (Secs. 493-496 IPC / Secs. 81-83 BNS): Punishes deceitful cohabitation inducing belief of lawful marriage (Sec. 493) and marrying again during a living spouse's lifetime (Sec. 494 - up to 7 years' imprisonment, non-cognizable, bailable; conversion to Islam without dissolving first Hindu marriage is void and punishable per Sarla Mudgal).",
+          "Adultery & Causing Miscarriage: Section 497 IPC (adultery) was struck down as unconstitutional in Joseph Shine (2018) and omitted from BNS, 2023 (remains a civil divorce ground); Sections 312-316 IPC (Secs. 88-92 BNS) punish forced or unlawful miscarriage outside the MTP Act, 1971."
+        ],
+        "caseLaws": [
+          {
+            "name": "Apparel Export Promotion Council v. A.K. Chopra",
+            "citation": "AIR 1999 SC 625",
+            "principle": "Expanded the legal understanding of sexual harassment by holding that actual physical contact is not essential - any unwelcome sexually determined conduct violating a woman's dignity is actionable."
+          },
+          {
+            "name": "Joseph Shine v. Union of India",
+            "citation": "2019 3 SCC 39",
+            "principle": "Constitution Bench struck down Section 497 IPC (adultery) as manifestly arbitrary and paternalistic, affirming that a wife is not the chattel or property of her husband."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name four new offences introduced by the Criminal Law (Amendment) Act, 2013, and explain Section 114A IEA (Section 120 BSA).",
+            "a": "Acid attacks (Secs. 326A-326B), sexual harassment (Sec. 354A), disrobing (Sec. 354B), voyeurism (Sec. 354C), and stalking (Sec. 354D). Under Section 114A IEA / Section 120 BSA, where sexual intercourse is proved in aggravated rape cases and the woman states she did not consent, the court shall presume she did not consent."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-relating-to-women-u4-t1": {
+      "id": "law-relating-to-women-u4-t1",
+      "subtitle": "Law Relating to Women - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Beyond dowry and domestic violence statutes, women's socio-legal rights are safeguarded by the Prohibition of Child Marriage Act, 2006 (voidable at the child's option), Hindu Succession & Guardianship rules, Immoral Traffic (Prevention) Act, 1956, and the statutory National Commission for Women (NCW Act, 1990).",
+        "legalProvision": "Prohibition of Child Marriage Act, 2006 (Secs. 2-3 & 9-12); Section 15, Hindu Succession Act, 1956; Section 9, Hindu Marriage Act, 1955; Immoral Traffic (Prevention) Act, 1956; National Commission for Women Act, 1990",
+        "meaning": "Socio-legal statutes address structural vulnerabilities - child marriage, trafficking, abandoned NRI brides, live-in partner maintenance, child custody, and intestate devolution of a Hindu female's property - backed by the NCW's civil-court inquiry powers.",
+        "keyPoints": [
+          "Prohibition of Child Marriage Act, 2006 (PCMA): Prescribes minimum marriageable age of 18 for females and 21 for males; a child marriage is VOIDABLE at the option of the child party within 2 years of attaining majority (Section 3 - void ab initio if involving trafficking/force under Section 12); children born are legitimate and entitled to maintenance; adult grooms and parents/performers face up to 2 years' RI and/or Rs. 1 lakh fine.",
+          "Intestate Succession of Hindu Female (Section 15, HSA 1956): General and self-acquired property devolves firstly upon sons, daughters, and husband; secondly upon husband's heirs (e.g., mother-in-law takes before parents if issueless - Om Prakash v. Radhacharan); only property inherited from parents reverts to father's heirs under Section 15(2)(a).",
+          "Restitution of Conjugal Rights (Section 9, HMA 1955) & Child Custody: RCR directs cohabitation unless the withdrawing spouse proves a 'reasonable excuse' such as cruelty (constitutionality upheld in Saroj Rani, overruling T. Sareetha); in custody disputes under HMGA 1956, the child's 'paramount welfare' governs, with custody of children under 5 ordinarily remaining with the mother (Section 6(a)).",
+          "Immoral Traffic (Prevention) Act, 1956 (ITPA) & Live-In / NRI Protections: ITPA criminalizes running brothels, living on earnings of prostitution, procuring, and trafficking women/children (rehabilitating rescued victims in Protective Homes); live-in partners in relationships 'in the nature of marriage' can claim PWDVA relief and maintenance (Chanmuniya; Lalita Toppo).",
+          "National Commission for Women (NCW Act, 1990 - established 1992): Statutory apex body (Chairperson + 5 Members + Member-Secretary) vested with civil court powers (summoning witnesses, calling public records, affidavits) to review laws, take suo motu notice of rights violations, inspect jails/remand homes, and organize Parivarik Mahila Lok Adalats."
+        ],
+        "caseLaws": [
+          {
+            "name": "Om Prakash v. Radhacharan",
+            "citation": "2009 15 SCC 66",
+            "principle": "Held that the self-acquired property of an issueless Hindu widow dying intestate devolves upon her husband's heirs under Section 15(1)(b) of the Hindu Succession Act, not upon her parents under Section 15(2)."
+          },
+          {
+            "name": "Saroj Rani v. Sudarshan Kumar Chadha",
+            "citation": "AIR 1984 SC 1562",
+            "principle": "Upheld the constitutional validity of Section 9 of the Hindu Marriage Act (Restitution of Conjugal Rights), overruling T. Sareetha and holding it serves a social purpose of preserving marriage."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Under the Prohibition of Child Marriage Act, 2006, is a marriage of a 16-year-old girl void or voidable, and within what time can she annul it?",
+            "a": "It is voidable at her option under Section 3 (unless involving force/trafficking under Section 12, which makes it void), and she may file an annulment petition up to 2 years after attaining majority (age 20)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-relating-to-women-u5-t1": {
+      "id": "law-relating-to-women-u5-t1",
+      "subtitle": "Law Relating to Women - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Indian labour law protects working women through Equal Remuneration (Article 39(d) & 1976 Act), Factories Act workplace safeguards (creches, shift notice, night-shift safety), and constitutional invalidation of discriminatory pregnancy/marriage bars (Air India v. Nergesh Meerza). Globally, ICCPR (1966), ICESCR (1966), and CEDAW (1979) anchor international gender equality.",
+        "legalProvision": "Articles 14, 15, 16, 39(d), & 42, Constitution of India; Factories Act, 1948 (Secs. 19, 27, 48, & 66); Equal Remuneration Act, 1976 (Code on Wages, 2019); ICCPR & ICESCR (1966); CEDAW (1979)",
+        "meaning": "Workplace gender laws ensure women do not face a 'motherhood penalty' or unequal wages, while balancing protective factory restrictions with modern equal-opportunity rulings allowing consenting women to work night shifts with mandatory transport and security.",
+        "keyPoints": [
+          "Equal Pay for Equal Work (Article 39(d) & Equal Remuneration Act, 1976): Prohibits paying women lower wages than men for the same or similar work and bars gender discrimination in recruitment, promotion, and training (now integrated in Code on Wages, 2019).",
+          "Factories Act, 1948 & Allied Labour Protections: Mandates separate toilets/washing facilities (Sec. 19), prohibits employing women near cotton openers (Sec. 27), requires creches where 30+ women are employed (Sec. 48), requires 24-hour shift-change notice, and regulates night work between 7 PM and 6 AM (Sec. 66 - modern courts in Triveni K.S. and State amendments permit voluntary night shifts with mandatory employer security and transport).",
+          "Unconstitutionality of Marriage & Pregnancy Termination Bars: Service regulations forcing women to retire upon marriage or first pregnancy violate Articles 14, 15, and 16 as manifestly arbitrary and an insult to womanhood (Air India v. Nergesh Meerza; reinforced by 2020 Permanent Commission ruling in Babita Puniya).",
+          "ICCPR (1966) & ICESCR (1966) Gender Guarantees: Articles 2, 3, and 26 of ICCPR guarantee equal civil/political rights, voting, and equality before law without sex discrimination; Articles 3, 7, and 10 of ICESCR guarantee equal remuneration, safe working conditions, and paid maternity protection.",
+          "CEDAW (1979) & Beijing Declaration (1995): CEDAW (ratified by India in 1993) obligates States to abolish discriminatory laws, modify gender stereotypes, suppress trafficking, and ensure rural women's equality; the Optional Protocol (1999) enables individual complaints and UN inquiries."
+        ],
+        "caseLaws": [
+          {
+            "name": "Air India v. Nergesh Meerza",
+            "citation": "AIR 1981 SC 1829",
+            "principle": "Struck down Air India's service regulation terminating air hostesses upon first pregnancy as manifestly arbitrary, callous, and violative of Article 14."
+          },
+          {
+            "name": "Secretary, Ministry of Defence v. Babita Puniya",
+            "citation": "2020 7 SCC 469",
+            "principle": "Directed grant of Permanent Commission and command appointments to women officers in the Indian Army, rejecting physiological and social stereotypes under Articles 14 and 16."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What did the Supreme Court hold in Air India v. Nergesh Meerza (1981), and what workplace facilities does the Factories Act, 1948 mandate specifically for women?",
+            "a": "The Court struck down termination of air hostesses on first pregnancy as arbitrary and unconstitutional under Article 14. The Factories Act mandates separate toilets (Sec. 19), creches for 30+ women workers (Sec. 48), prohibition near cotton openers (Sec. 27), and night-shift protections (Sec. 66)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "human-rights-law-u3-t1": {
+      "id": "human-rights-law-u3-t1",
+      "subtitle": "Human Rights Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Adopted in 1966 (in force 1976), the ICCPR (Civil and Political Rights) and ICESCR (Economic, Social and Cultural Rights) converted the aspirational UDHR into legally binding treaties. Globally, the UN Human Rights Council (UNHRC, replacing the 1946 Commission in 2006) monitors compliance, while gross human rights abuses transcend the Domestic Jurisdiction bar of Article 2(7) of the UN Charter.",
+        "legalProvision": "UN Charter (Articles 1(3), 2(7), 55, & 56); ICCPR (1966) & First/Second Optional Protocols; ICESCR (1966); UNGA Resolution 60/251 (2006 establishing UNHRC)",
+        "meaning": "While the UDHR (1948) was a General Assembly declaration, the two 1966 Covenants impose binding treaty obligations on ratifying States (India acceded to both in 1979). ICCPR rights demand immediate legal enforcement, whereas ICESCR rights require progressive realization to the maximum of available resources.",
+        "keyPoints": [
+          "ICCPR (1966 - First-Generation Rights): Guarantees right to life (Art. 6), freedom from torture and slavery (Arts. 7-8), liberty and fair trial (Arts. 9 & 14), freedom of thought/speech/assembly (Arts. 18-21), minority rights (Art. 27), and voting; monitored by the 18-member UN Human Rights Committee; Optional Protocol I allows individual complaints, and Protocol II aims to abolish the death penalty.",
+          "ICESCR (1966 - Second-Generation Rights): Guarantees right to work and just/favourable working conditions (Arts. 6-7 - fair wages, 8-hour limit, weekly rest, equal pay), right to form trade unions (Art. 8), social security (Art. 9), protection of mothers and children (Art. 10), adequate standard of living/health (Arts. 11-12), and free primary education (Art. 13); monitored by CESCR.",
+          "Indian Constitution Parallels: ICCPR mirrors Part III (Fundamental Rights - Articles 14-32), while ICESCR mirrors Part IV (Directive Principles of State Policy - Articles 36-51), harmonized by the Indian Supreme Court (Kesavananda Bharati; Minerva Mills).",
+          "From UN Commission on Human Rights (1946) to UNHRC (2006): The 1946 Commission drafted the UDHR, ICCPR, and ICESCR; in 2006 it was replaced by the 47-member UN Human Rights Council (Geneva), which conducts the Universal Periodic Review (UPR) of every UN member State.",
+          "Domestic Jurisdiction (Article 2(7), UN Charter): Bars the UN from intervening in matters essentially within a State's internal sovereignty, EXCEPT Chapter VII peace enforcement and gross/systematic human rights violations (genocide, apartheid, ethnic cleansing), which are matters of international concern."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jolly George Varghese v. Bank of Cochin",
+            "citation": "AIR 1980 SC 470",
+            "principle": "Relied directly on Article 11 of the ICCPR (prohibiting imprisonment merely for inability to fulfil a contractual debt) to interpret Section 51 CPC harmoniously with Article 21."
+          },
+          {
+            "name": "People's Union for Civil Liberties (PUCL) v. Union of India",
+            "citation": "AIR 1997 SC 568",
+            "principle": "Invoked Article 17 of the ICCPR (right against unlawful interference with privacy) to read strict procedural safeguards against telephone tapping into Article 21."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How do the implementation obligations under ICCPR (1966) and ICESCR (1966) differ, and what body replaced the 1946 UN Commission on Human Rights?",
+            "a": "ICCPR requires immediate legal enforcement of civil and political rights, whereas ICESCR requires progressive realization of socio-economic rights using maximum available resources. The 47-member UN Human Rights Council (UNHRC) replaced the Commission in 2006."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "human-rights-law-u4-t1": {
+      "id": "human-rights-law-u4-t1",
+      "subtitle": "Human Rights Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Three major regional treaties supplement UN human rights law with region-specific courts: the European Convention on Human Rights (ECHR, 1950 - enforced by the ECtHR in Strasbourg), the American Convention on Human Rights (Pact of San Jose, 1969 - enforced by the Inter-American Court), and the African Charter on Human and Peoples' Rights (Banjul Charter, 1981).",
+        "legalProvision": "European Convention on Human Rights (1950); American Convention on Human Rights (1969); African Charter on Human and Peoples' Rights (1981)",
+        "meaning": "Regional systems achieve stronger enforcement than global mechanisms because member States share geographic, cultural, and legal ties - allowing individuals to sue their own governments directly before binding regional human rights courts after exhausting domestic remedies.",
+        "keyPoints": [
+          "European Convention on Human Rights (ECHR, 1950 - Council of Europe): World's most effective regional system; guarantees right to life, prohibition of torture/slavery, fair trial, privacy, freedom of speech/religion, and no ex post facto punishment; Protocol 11 (1998) established a permanent single European Court of Human Rights (ECtHR, Strasbourg) open directly to individual petitions with binding judgments.",
+          "American Convention on Human Rights (Pact of San Jose, 1969 - OAS): Guarantees right to juridical personality, life (generally from conception), humane prison treatment, fair trial, double jeopardy bar, right of reply, and compensation for miscarriage of justice; enforced by a two-tier system - Inter-American Commission on Human Rights (Washington, D.C.) and Inter-American Court of Human Rights (San Jose, Costa Rica).",
+          "African Charter on Human and Peoples' Rights (Banjul Charter, 1981 - OAU/AU): Uniquely integrates (1) Individual civil/political & socio-economic rights (work, health, education), (2) Collective 'Peoples' Rights' (self-determination, development, peace, satisfactory environment), and (3) Individual Duties toward family, society, and the State (Articles 27-29).",
+          "Enforcement in Africa: Monitored by the African Commission on Human and Peoples' Rights and the African Court on Human and Peoples' Rights (Arusha, Tanzania, established by the 1998 Protocol).",
+          "Key Comparison: Only the African Charter explicitly codifies collective peoples' rights and individual duties alongside civil and socio-economic rights in one binding treaty; Asia still lacks a unified regional human rights court."
+        ],
+        "caseLaws": [
+          {
+            "name": "Velasquez Rodriguez v. Honduras",
+            "citation": "1988 Inter-Am Ct HR (Ser C) No. 4",
+            "principle": "Landmark Inter-American Court ruling holding States internationally responsible not only for direct abuses, but also for failing to exercise due diligence to prevent, investigate, and punish enforced disappearances."
+          },
+          {
+            "name": "Soering v. United Kingdom",
+            "citation": "1989 11 EHRR 439 (ECtHR)",
+            "principle": "European Court of Human Rights held that extraditing a fugitive to face the 'death row phenomenon' violates Article 3 ECHR (prohibition of inhuman or degrading treatment)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What distinguishes the African Charter on Human and Peoples' Rights (1981) from the European (1950) and American (1969) Conventions?",
+            "a": "The African Charter uniquely combines individual civil/socio-economic rights, collective 'Peoples' Rights' (such as right to development and environment), and explicit individual Duties toward family and society in a single treaty."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "human-rights-law-u5-t1": {
+      "id": "human-rights-law-u5-t1",
+      "subtitle": "Human Rights Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Specialized international treaties protect vulnerable groups and prohibit grave atrocities: the Genocide Convention (1948), Slavery Conventions (1926/1956), Convention Against Torture (1984), Statelessness Conventions (1954/1961), and Convention on the Rights of the Child (CRC, 1989). The Vienna World Conference (1993) declared all human rights universal, indivisible, and interdependent.",
+        "legalProvision": "Genocide Convention (1948); Slavery Conventions (1926 & 1956); UN Convention Against Torture (CAT, 1984); Statelessness Conventions (1954 & 1961); UN Convention on the Rights of the Child (CRC, 1989); Vienna Declaration (1993)",
+        "meaning": "General charters alone could not eradicate custodial torture, mass killings, bonded labour, statelessness, or child exploitation. Thematic UN treaties impose binding duties to criminalize these abuses domestically, while the 1993 Vienna Conference spurred nations like India to enact the Protection of Human Rights Act, 1993.",
+        "keyPoints": [
+          "Genocide Convention (1948): Defines genocide as acts committed with intent to destroy, in whole or in part, a national, ethnical, racial, or religious group (killing, serious harm, preventing births, forcible child transfer); requires States to prevent and punish genocide without political-offence refuge.",
+          "Slavery Conventions (League of Nations 1926 & UN Supplementary 1956): Abolishes chattel slavery, slave trade, debt bondage, serfdom, and forced child exploitation (mirrored in Article 23 of India's Constitution and Bonded Labour System (Abolition) Act, 1976).",
+          "UN Convention Against Torture (CAT, 1984 - following 1975 Declaration): Prohibits physical or mental torture by public officials with zero exceptions (even in war/emergency), mandates non-refoulement (no extradition to face torture), and requires criminal prosecution (India signed CAT in 1997; custodial torture is addressed via Article 21 and D.K. Basu guidelines).",
+          "Convention on the Rights of the Child (CRC, 1989 - following 1924 & 1959 Declarations): World's most widely ratified treaty (ratified by India in 1992); protects every person under 18 on four pillars - non-discrimination, best interests of the child, survival/development, and participation (reflected in India's RTE Act, POCSO Act, JJ Act 2015, and Child Labour Act).",
+          "Statelessness Conventions (1954 & 1961) & World Conferences (Tehran 1968 & Vienna 1993): The 1954/1961 Conventions protect stateless persons and prevent statelessness at birth; the Vienna World Conference (1993) affirmed that all human rights are universal, indivisible, and interdependent, created the UN High Commissioner for Human Rights (OHCHR), and encouraged National Human Rights Institutions (NHRC/SHRC, updated by India's 2019 Amendment fixing a 3-year term)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Nilabati Behera v. State of Orissa",
+            "citation": "AIR 1993 SC 1960",
+            "principle": "Established strict public-law monetary compensation under Articles 32 and 226 for custodial death caused by police torture, holding sovereign immunity inapplicable to Fundamental Rights violations."
+          },
+          {
+            "name": "Gaurav Jain v. Union of India",
+            "citation": "AIR 1997 SC 3021",
+            "principle": "Invoked the UN Convention on the Rights of the Child (CRC, 1989) alongside Articles 21 and 39(f) to direct rehabilitation, education, and dignity for children of sex workers."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What core principle was affirmed by the Vienna World Conference on Human Rights (1993), and what are the four foundational pillars of the UN Convention on the Rights of the Child (1989)?",
+            "a": "Vienna (1993) declared all human rights universal, indivisible, interdependent, and interrelated (and led to creating OHCHR). CRC's four pillars are non-discrimination, best interests of the child, right to life/survival/development, and respect for the child's views."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

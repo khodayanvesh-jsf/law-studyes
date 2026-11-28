@@ -1,0 +1,186 @@
+{
+  "subjects": [
+    {
+      "id": "company-law",
+      "title": "Company Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Membership, Directors (Appointment, Fiduciary Duties & Removal), Meetings, Resolutions & Dividends",
+          "topics": [
+            {"id": "com-u4-t1", "title": "1. Membership in a Company - Modes of Acquiring & Cessation of Membership and Register of Members (Secs. 2(55) & 88-95)"},
+            {"id": "com-u4-t2", "title": "2. Directors - Appointment, Qualifications, Disqualifications (Sec. 164), Independent/Women Directors (Sec. 149), Powers, Duties (Sec. 166) & Removal (Sec. 169)"},
+            {"id": "com-u4-t3", "title": "3. Company Meetings - Board Meetings, AGM (Sec. 96), EGM (Sec. 100), Notice, Quorum (Sec. 103), Proxy (Sec. 105) & Postal Ballot"},
+            {"id": "com-u4-t4", "title": "4. Resolutions (Ordinary vs Special - Sec. 114, Resolution Requiring Special Notice - Sec. 115) & Minutes (Sec. 118)"},
+            {"id": "com-u4-t5", "title": "5. Dividends - Declaration, Sources, Payment Rules & Investor Education and Protection Fund / IEPF (Secs. 123-127)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "com-u4-t1": {
+      "id": "com-u4-t1",
+      "subtitle": "Company Law - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 2(55) of the Companies Act, 2013, a 'Member' is (1) a subscriber to the MOA (deemed member upon incorporation even before register entry), (2) any person who agrees in writing to become a member AND whose name is entered in the Register of Members (Sec. 88), or (3) a beneficial owner holding shares in dematerialised depository records. Membership ceases upon share transfer, forfeiture, surrender, valid buy-back, death, or insolvency.",
+        "legalProvision": "Sections 2(55), 88-95, & 127, Companies Act, 2013",
+        "meaning": "While 'Shareholder' and 'Member' are often used synonymously, a subscriber to the MOA or a guarantee-company member without share capital is a Member before allotment, whereas a transferee holding an unregistered transfer deed is a Shareholder until entered in the Register of Members.",
+        "keyPoints": [
+          "Three Modes of Acquiring Membership (Sec. 2(55)): (1) By Subscribing to MOA (becomes member ipso facto on incorporation; cannot rescind even for misrepresentation - Metal Constituents Co.), (2) By Written Agreement + Entry in Register of Members (via allotment, transfer, or transmission - BOTH conditions must concur: Balkrishan Gupta v. Swadeshi Polytex), and (3) By Holding Demat Shares as Beneficial Owner in Depository (NSDL/CDSL) records.",
+          "Who Can Become a Member?: Any competent person; Minor CANNOT become a member by direct contract (void ab initio - Mohori Bibee), EXCEPT fully paid shares received via guardian/transmission (R. Balaraman); Partnership firm cannot be registered in firm name (shares held in partners' names); Subsidiary CANNOT hold shares in its Holding Company (Sec. 19 - except as legal representative/trustee or pre-subsidiary holding).",
+          "Cessation of Membership: Voluntary transfer (Sec. 56), valid forfeiture for unpaid calls, valid surrender, buy-back (Sec. 68), death (transmission to legal heir), insolvency (vests in Official Assignee), or winding up.",
+          "Register of Members & Rectification (Secs. 88 & 59): Every company must maintain a Register of Members (prima facie evidence under Sec. 95); NCLT may order rectification of register for wrongful entry or omission without sufficient cause under Section 59."
+        ],
+        "caseLaws": [
+          {
+            "name": "Balkrishan Gupta v. Swadeshi Polytex Ltd.",
+            "citation": "1985 2 SCC 167",
+            "principle": "Held that for non-subscribers, BOTH agreement in writing AND entry of name in the Register of Members under Section 2(55) are cumulative prerequisites to exercise membership voting rights."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three ways a person becomes a 'Member' under Section 2(55) of the Companies Act, 2013, and explain whether a subsidiary company can buy shares in its holding company.",
+            "a": "(1) Subscribing to MOA, (2) Written agreement + entry in Register of Members, or (3) Beneficial owner in Depository records. Under Section 19, a subsidiary is barred from acquiring shares in its holding company (save narrow trustee/legal-representative/pre-existing exceptions)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u4-t2": {
+      "id": "com-u4-t2",
+      "subtitle": "Company Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Directors (collectively the Board of Directors - Sec. 2(10) & Sec. 149) are the 'brain and directing mind' of a company, holding a dual legal position as Agents (Ferguson v. Wilson) and Fiduciary Trustees of corporate powers. Section 149 mandates min 3 directors (public), 2 (private), 1 (OPC), max 15 (extendable by Special Resolution), at least 1 Resident Director, 1 Woman Director in prescribed companies, and 1/3rd Independent Directors in listed public companies, governed by codified fiduciary duties under Section 166.",
+        "legalProvision": "Sections 149-172, 179-180, & 196-203, Companies Act, 2013",
+        "meaning": "Because dispersed shareholders cannot manage daily operations, the Companies Act, 2013 codified directors' fiduciary duties (Sec. 166) and strengthened boardroom accountability through Independent Directors and Audit Committees.",
+        "keyPoints": [
+          "Composition, Woman & Independent Directors (Sec. 149): Min 3 (public), 2 (private), 1 (OPC); max 15 (Special Resolution to exceed); max 20 directorships total / 10 public companies (Sec. 165). Mandatory Resident Director (stayed in India >= 182 days - Sec. 149(3)), Woman Director (listed + prescribed large public companies - Sec. 149(1) Proviso), and at least 1/3rd Independent Directors in listed public companies (Sec. 149(4)-(6) - non-executive, no pecuniary/promoter link, max two consecutive 5-year terms, exempt from retirement by rotation).",
+          "Appointment & Disqualifications (Secs. 152, 161 & 164): First directors named in AOA; subsequent directors appointed in General Meeting with DIN (2/3rds of public company directors retire by rotation, 1/3rd annually - Sec. 152(6)); Board may appoint Additional, Alternate, Nominee, and Casual Vacancy directors (Sec. 161). Disqualified under Sec. 164 for unsound mind, undischarged insolvency, conviction (6+ months -> 5-year bar; 7+ years -> permanent bar), non-payment of calls, or company default in filing financial statements/annual returns for 3 continuous years (Sec. 164(2)).",
+          "Powers of Board & Restrictions (Secs. 179-180): Board exercises all corporate powers not reserved to General Meeting (shareholders cannot interfere in routine Board powers unless Board acts mala fide/deadlocked - Automatic Self-Cleansing Filter Syndicate). Under Sec. 180, Board needs SPECIAL RESOLUTION to sell/lease whole undertaking, borrow beyond paid-up capital + free reserves, or remit director debt.",
+          "Codified Fiduciary Duties (Sec. 166) & Removal (Sec. 169): Must act per AOA, in good faith to promote company's objects for benefit of members, employees, community, and environment, exercise independent judgment & reasonable care (Re City Equitable Fire Insurance Co.), avoid conflicts of interest, make NO undue gain (liable to disgorge equal amount), and NOT assign office. Removable before expiry of term by ORDINARY RESOLUTION after Special Notice + right of representation (Sec. 169 - except NCLT-appointed directors)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Percival v. Wright",
+            "citation": "1902 2 Ch 421",
+            "principle": "Classic rule that directors owe fiduciary duties primarily to the COMPANY as a whole rather than to individual shareholders (now broadened under Section 166(2) to stakeholders and environment)."
+          },
+          {
+            "name": "Regal (Hastings) Ltd. v. Gulliver",
+            "citation": "1942 1 All ER 378 (HL)",
+            "principle": "Strict fiduciary accountability: directors who made personal profits using knowledge/opportunity acquired in office were held liable to account for every rupee even though the company itself could not have afforded the shares."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four statutory duties of a Director codified under Section 166 of the Companies Act, 2013, and explain how a director is removed before term expiry under Section 169.",
+            "a": "Duties under Sec. 166: act per AOA, act in good faith for company/stakeholders/environment, exercise due care and independent judgment, and avoid conflict of interest/undue gain. Under Sec. 169, a director is removed by Ordinary Resolution after Special Notice (14 days) and fair opportunity to be heard."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u4-t3": {
+      "id": "com-u4-t3",
+      "subtitle": "Company Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Corporate decisions are taken through properly convened Board Meetings (Sec. 173 - min 4 per year, max 120-day gap, quorum 1/3rd or 2 directors) and General Meetings of Shareholders: Annual General Meeting / AGM (Sec. 96 - mandatory annual review within 6 months of financial year close) and Extraordinary General Meeting / EGM (Sec. 100 - urgent business between AGMs). Valid meetings require 21 clear days' notice (Sec. 101), Quorum (Sec. 103), and fair voting (show of hands, poll, electronic voting, or postal ballot).",
+        "legalProvision": "Sections 96-111 & 173-174, Companies Act, 2013",
+        "meaning": "Strict meeting rules protect shareholder democracy - ensuring minority members receive advance notice, explanatory statements for special business (Sec. 102), and electronic participation rights.",
+        "keyPoints": [
+          "Annual General Meeting / AGM (Secs. 96-99): Mandatory for EVERY company (except OPC) once every calendar year -> First AGM within 9 months of first financial year close; subsequent AGMs within 6 months of financial year close with max 15-month gap between two AGMs; held during business hours (9 AM - 6 PM) on a non-National Holiday at registered office/same city. Transacts Ordinary Business (financial statements/audit reports, dividend declaration, retiring director replacement, auditor appointment) + Special Business (needs Explanatory Statement under Sec. 102). Default invites NCLT direction (Sec. 97) and heavy daily fines (Sec. 99).",
+          "Extraordinary General Meeting / EGM (Sec. 100): Called for urgent special business between AGMs by (1) Board suo motu, (2) Requisition of members holding >= 1/10th paid-up voting capital (if Board fails to call within 21 days / hold within 45 days, requisitionists may hold EGM themselves within 3 months), or (3) NCLT under Sec. 98.",
+          "Requisites of Valid General Meeting - Notice, Quorum & Proxy (Secs. 101, 103 & 105): 21 CLEAR DAYS' written/electronic notice (excluding day of service and meeting day; shorter notice allowed with 95% consent). Quorum (Sec. 103): Private company = 2 members personally present; Public company = 5 (up to 1,000 members), 15 (1,001-5,000), or 30 (> 5,000) personally present (proxies do NOT count in quorum!). Proxy (Sec. 105): Any member may appoint a proxy (filed 48 hours prior) who can vote ONLY on a poll and CANNOT speak at the meeting.",
+          "Voting, Electronic Voting & Postal Ballot (Secs. 107-110): Voting starts by show of hands (1 member = 1 vote - Sec. 107), superseded by Poll (1 share = 1 vote - Sec. 109) or mandatory Remote E-Voting for listed / 1,000+ member companies (Sec. 108); notified critical items (objects change, buy-back, winding up) pass via Postal Ballot / e-voting (Sec. 110)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Sharp v. Dawes",
+            "citation": "1876 2 QBD 26",
+            "principle": "Held that the word 'meeting' prima facie implies a coming together of more than one person - a single shareholder holding proxies cannot constitute a valid meeting (except statutory single-person exceptions like OPC or NCLT order)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the quorum requirements for a Public Company General Meeting under Section 103, and state two key restrictions on a Proxy under Section 105.",
+            "a": "Quorum (personally present): 5 members (up to 1,000 members), 15 (1,001-5,000), or 30 (above 5,000). A Proxy (1) cannot speak at the meeting, and (2) can vote ONLY on a poll (not on a show of hands) and does not count toward quorum."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u4-t4": {
+      "id": "com-u4-t4",
+      "subtitle": "Company Law - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Decisions of shareholders are expressed through Resolutions under Section 114 of the Companies Act, 2013: Ordinary Resolutions (passed by simple majority > 50% of votes cast) and Special Resolutions (requiring >= 75% / 3x majority of votes cast AND explicit notice specification for major structural acts like MOA/AOA alteration or capital reduction). Section 118 mandates recording fair, accurate Minutes within 30 days as prima facie evidence.",
+        "legalProvision": "Sections 114, 115, 117, 118, & 119, Companies Act, 2013",
+        "meaning": "Resolutions formalize collective corporate will while supermajority thresholds (75% Special Resolution) protect minority shareholders against hasty constitutional changes.",
+        "keyPoints": [
+          "Ordinary Resolution (Sec. 114(1)): Passed when votes cast IN FAVOUR exceed votes cast AGAINST (simple majority > 50% of valid votes actually cast - abstentions/invalid votes ignored; Chairman has a casting vote if AOA permits). Used for routine matters: adopting accounts, declaring dividend, appointing/removing directors (Sec. 169), increasing authorized capital (Sec. 61).",
+          "Special Resolution (Sec. 114(2)): Requires THREE mandatory conditions - (1) Intention to propose as a Special Resolution MUST be explicitly stated in the meeting notice, (2) Notice duly given, AND (3) Votes cast IN FAVOUR are AT LEAST THREE TIMES (75% or more) the votes cast AGAINST. Mandatory for altering MOA/AOA (Secs. 13-14), reducing share capital (Sec. 66), buy-back > 10% (Sec. 68), removing auditor, or voluntary winding up. Must be filed with ROC in Form MGT-14 within 30 days (Sec. 117).",
+          "Resolutions Requiring Special Notice (Sec. 115): Not a separate majority threshold (still passed by Ordinary Resolution), but requires the mover to give at least 14 CLEAR DAYS' advance notice to the company (which notifies members 7 days prior) - required for removing a director (Sec. 169) or appointing an auditor other than a retiring auditor (Sec. 140).",
+          "Minutes of Proceedings & Inspection (Secs. 118-119): Every company MUST prepare and sign Minutes of every General, Board, and Committee meeting within 30 DAYS in consecutively numbered pages (pasting loose leaves prohibited); signed Minutes are prima facie evidence of proceedings (Sec. 118(7)-(8)), and General Meeting Minutes must be open for free inspection by any member (Sec. 119)."
+        ],
+        "caseLaws": [
+          {
+            "name": "MacConnell v. E. Prill & Co. Ltd.",
+            "citation": "1916 2 Ch 57",
+            "principle": "Held that a Special Resolution is invalid unless the notice convening the meeting explicitly specifies the intention to propose the resolution as a Special Resolution."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three mandatory requirements for a valid Special Resolution under Section 114(2), and distinguish it from a 'Resolution Requiring Special Notice' under Section 115.",
+            "a": "Special Resolution requires (1) explicit specification in notice, (2) due notice, and (3) votes in favour >= 3 times (75%) votes against. Under Sec. 115, Special Notice is a 14-day advance notice requirement by the proposer (e.g., for removing a director), though the resolution itself still passes by simple Ordinary majority."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u4-t5": {
+      "id": "com-u4-t5",
+      "subtitle": "Company Law - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Dividend (Sec. 2(35) & Secs. 123-127, Companies Act, 2013) is the portion of divisible profits distributed to shareholders - recommended by the Board and declared by shareholders at the AGM (shareholders may reduce, NEVER increase, the Board's recommended dividend). Dividends can be paid ONLY out of current/accumulated profits (NEVER out of capital), must be paid within 30 days (Sec. 127), and if unclaimed for 7 years transfer to the Investor Education and Protection Fund / IEPF (Sec. 125).",
+        "legalProvision": "Sections 2(35) & 123-127, Companies Act, 2013",
+        "meaning": "Paying dividends out of share capital is strictly illegal because it secretly returns capital to owners and defrauds creditors - making directors personally liable for unlawful capital dividends.",
+        "keyPoints": [
+          "Sources & Rules for Declaration of Dividend (Sec. 123): Declared ONLY out of (a) current financial year profits after providing for depreciation (Schedule II), (b) past accumulated undistributed profits (free reserves), or (c) money provided by Central/State Government under guarantee. Unrealized/revaluation gains CANNOT be distributed. Board may declare Interim Dividend during the year (Sec. 123(3)); once declared at AGM, final dividend becomes an enforceable DEBT against the company.",
+          "Payment & Unpaid Dividend Account (Secs. 123(4) & 124): Declared dividend amount MUST be deposited in a separate scheduled bank account within 5 DAYS of declaration and paid strictly in cash/cheque/electronic transfer (NOT in kind, except bonus shares) within 30 DAYS to registered shareholders (Sec. 127 - default carries 18% p.a. simple interest + up to 2 years' imprisonment for directors!). Any dividend remaining unpaid/unclaimed after 30 days must be transferred within 7 days to an 'Unpaid Dividend Account' (Sec. 124).",
+          "Investor Education and Protection Fund / IEPF (Secs. 124(5)-(6) & 125): Any money in the Unpaid Dividend Account remaining unclaimed for 7 CONSECUTIVE YEARS (along with the underlying shares!) MUST be transferred to the Central Government's IEPF Authority (claimants may later apply to IEPF for refund)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Re Exchange Banking Co. (Flitcroft's Case)",
+            "citation": "1882 21 Ch D 519",
+            "principle": "Held that directors who knowingly pay dividends out of capital rather than real profits commit breach of trust and are jointly and severally liable to restore the entire sum to the company."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can shareholders at an AGM increase the rate of dividend recommended by the Board of Directors, and after how many years does unclaimed dividend transfer to the IEPF?",
+            "a": "No - shareholders may approve or reduce the Board's recommended dividend, never increase it. Under Section 124(5), dividend remaining unclaimed in the Unpaid Dividend Account for 7 consecutive years transfers to the Investor Education and Protection Fund (IEPF)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

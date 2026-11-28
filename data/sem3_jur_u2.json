@@ -1,0 +1,200 @@
+{
+  "subjects": [
+    {
+      "id": "jurisprudence",
+      "title": "Jurisprudence",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper I",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Sources of Law - Legislation, Statutory Interpretation, Precedent (Stare Decisis), Custom, Comparative Merits & Codification",
+          "topics": [
+            {"id": "jur-u2-t1", "title": "1. Sources of Law (Legal vs Historical) & Legislation (Supreme vs Subordinate, Direct vs Indirect)"},
+            {"id": "jur-u2-t2", "title": "2. Principles of Statutory Interpretation (Literal, Golden, Mischief & Harmonious Construction)"},
+            {"id": "jur-u2-t3", "title": "3. Judicial Precedent - Kinds, Stare Decisis, Ratio Decidendi, Obiter Dicta & Article 141"},
+            {"id": "jur-u2-t4", "title": "4. Custom - Definition, Kinds (General & Local), Custom vs Prescription & Requisites of a Valid Custom"},
+            {"id": "jur-u2-t5", "title": "5. Relative Merits & Demerits of Legislation, Precedent & Custom and Codification (Advantages & Disadvantages)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "jur-u2-t1": {
+      "id": "jur-u2-t1",
+      "subtitle": "Jurisprudence - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Salmond classifies Sources of Law into Formal Sources (the will of the State giving binding force) and Material Sources - split into Legal Sources (authoritative channels directly creating law: Legislation, Precedent, Custom, Agreement) and Historical Sources (persuasive origins like foreign codes or juristic writings). Legislation is the primary modern law-making source, classified into Supreme vs Subordinate (Delegated) and Direct vs Indirect.",
+        "legalProvision": "Salmond's Classification of Sources; Articles 245-246, Constitution of India; Delegated Legislation Safeguards",
+        "meaning": "Legal sources are recognized directly by courts as binding law, whereas historical sources only influence the content of law until adopted by a legislature or judge. Modern welfare states rely heavily on Subordinate/Delegated Legislation to handle technical detail.",
+        "keyPoints": [
+          "Legal vs Historical Sources (Salmond): Legal Sources are authoritative gates through which new rules enter binding law (Legislation, Precedent, Custom, Conventional law); Historical Sources are unauthoritative background influences (Roman law, English decisions in India, Law Commission reports, juristic textbooks) that gain legal force ONLY when incorporated by a legal source.",
+          "Definition & Kinds of Legislation: 'Legis' (law) + 'Latum' (to make) - declaration of legal rules by a competent authority. Direct Legislation = deliberate law-making by the legislature itself; Indirect Legislation = law-making through other agencies (delegated bodies, judicial law-making, or customary adoption).",
+          "Supreme Legislation: Proceeds directly from the supreme sovereign legislative authority (Parliament & State Legislatures in India) and cannot be repealed or controlled by any subordinate organ (subject only to the Constitution and Judicial Review).",
+          "Subordinate / Delegated Legislation (Five Kinds per Salmond): Proceeds from an authority other than the supreme legislature and depends on an enabling Parent Act - (1) Colonial, (2) Executive (rules, regulations, notifications by ministries), (3) Judicial (High Court/Supreme Court procedural rules under Art. 145/CPC), (4) Municipal (corporation bye-laws), and (5) Autonomous (university statutes, Bar Council rules).",
+          "Constitutional Limit on Delegated Legislation (In re Delhi Laws Act, 1951): Essential legislative function (laying down core legislative policy) CANNOT be delegated to the executive; subordinate rules exceeding the parent Act are struck down as ultra vires."
+        ],
+        "caseLaws": [
+          {
+            "name": "In re The Delhi Laws Act, 1912",
+            "citation": "AIR 1951 SC 332",
+            "principle": "7-judge Constitution Bench established India's foundational rule on Subordinate Legislation: Parliament may delegate ancillary/detail-filling power to the executive, but can NEVER abdicate its 'essential legislative function'."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Legal Sources and Historical Sources of law, and list the five kinds of Subordinate Legislation identified by Salmond.",
+            "a": "Legal sources (Legislation, Precedent, Custom) are directly authoritative and binding in courts, whereas Historical sources (foreign rulings, juristic texts) are only persuasive until adopted. Salmond's five subordinate legislations: Colonial, Executive, Judicial, Municipal, and Autonomous."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u2-t2": {
+      "id": "jur-u2-t2",
+      "subtitle": "Jurisprudence - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Statutory Interpretation is the judicial process of ascertaining the true intention of the legislature ('Sententia Legis') from the text of an enactment. Courts apply four primary rules - Literal/Grammatical Rule, Golden Rule (avoiding absurdity), Mischief Rule (Heydon's Case - suppressing the evil), and Harmonious Construction - aided by Internal Aids (Preamble, Proviso) and External Aids (Legislative History).",
+        "legalProvision": "Primary & Secondary Rules of Statutory Construction; General Clauses Act, 1897",
+        "meaning": "Because human language is inherently imperfect and legislatures cannot foresee every future scenario, structured canons of interpretation prevent judicial arbitrariness while ensuring statutes achieve their social purpose.",
+        "keyPoints": [
+          "Literal / Grammatical Rule (Primary Rule): Words must be given their plain, ordinary, natural grammatical meaning; if the text is clear and unambiguous, courts MUST give effect to it regardless of harshness ('Litera legis' - Sussex Peerage Case).",
+          "Golden Rule (Modifying Rule): Starts with ordinary meaning, but permits departing from literal text JUST ENOUGH to avoid glaring absurdity, repugnancy, or inconsistency with the rest of the statute (Grey v. Pearson; Becke v. Smith).",
+          "Mischief Rule / Purposive Construction (Heydon's Case, 1584): Judges examine four questions - (1) What was the prior common law before the Act? (2) What was the mischief/defect the prior law failed to fix? (3) What remedy did Parliament design? (4) What is the true reason of the remedy? - and construe the Act to suppress the mischief and advance the remedy (Bengal Immunity v. State of Bihar).",
+          "Harmonious Construction & Secondary Maxims: When two sections of an Act appear to clash, courts harmonize BOTH so neither becomes a dead letter (Venkataramana Devaru). Key Latin maxims: Ejusdem Generis (general words following specific words take the same class), Noscitur a Sociis (a word is known by the company it keeps), and Expressio Unius (express mention of one excludes others).",
+          "Strict vs Beneficial Construction: Penal and Taxing statutes are construed STRICTLY in favour of the accused/taxpayer, whereas social-welfare statutes (Labour, Consumer, Motor Vehicles) receive LIBERAL/BENEFICIAL construction."
+        ],
+        "caseLaws": [
+          {
+            "name": "Heydon's Case",
+            "citation": "1584 3 Co Rep 7a",
+            "principle": "Propounded the Mischief Rule (four-question purposive test) directing judges to interpret statutes so as to suppress the mischief and advance the statutory remedy."
+          },
+          {
+            "name": "Bengal Immunity Co. Ltd. v. State of Bihar",
+            "citation": "AIR 1955 SC 661",
+            "principle": "7-judge Supreme Court Bench applied Heydon's Mischief Rule to interpret Article 286 of the Constitution and prevent multiple inter-State sales taxation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the four questions asked by courts under Heydon's Mischief Rule, and distinguish Ejusdem Generis from Noscitur a Sociis.",
+            "a": "Heydon's 4 questions: prior law, mischief/defect in prior law, statutory remedy provided, and true reason for the remedy. Noscitur a Sociis is the broader rule (word understood from surrounding words), while Ejusdem Generis is its specific species (general words following a specific list are confined to the same genus/class)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u2-t3": {
+      "id": "jur-u2-t3",
+      "subtitle": "Jurisprudence - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Judicial Precedent is a prior court decision containing a binding legal principle ('Ratio Decidendi') that courts must follow in future similar cases under the Doctrine of Stare Decisis ('stand by things decided'). Precedents are classified as Authoritative vs Persuasive and Original vs Declaratory; in India, Article 141 makes Supreme Court law binding on all courts nationwide.",
+        "legalProvision": "Article 141, Constitution of India; Doctrine of Stare Decisis (Ratio Decidendi vs Obiter Dicta)",
+        "meaning": "Stare Decisis promotes legal certainty, predictability, and equal treatment of similar litigants, while doctrines like 'Distinguishing', 'Overruling', and 'Per Incuriam' preserve flexibility so law never fossilizes.",
+        "keyPoints": [
+          "Kinds of Precedents (Salmond): (1) Authoritative Precedent (judge MUST follow whether he agrees or not - split into Absolute Authoritative binding unconditionally, and Conditional Authoritative which may be departed from if manifestly wrong/contrary to reason), (2) Persuasive Precedent (not binding, only guiding - e.g., foreign rulings, another State's High Court judgment, Obiter Dicta), (3) Original Precedent (creates and applies a brand-new legal rule), and (4) Declaratory Precedent (merely applies an already existing rule of law).",
+          "Ratio Decidendi vs Obiter Dicta: Ratio Decidendi ('reason for deciding') is the core legal principle necessary for the decision - ONLY the Ratio is binding precedent (determined via Wambaugh's Inversion Test or Goodhart's Material Facts Test). Obiter Dicta ('things said by the way') are incidental judicial observations not strictly necessary to decide the dispute - persuasive, not binding (though Supreme Court obiter carries high respect in India).",
+          "Article 141 & Hierarchy in India: Law declared by the Supreme Court binds ALL courts in India, EXCEPT the Supreme Court itself, which may overrule its own erroneous earlier judgment via a larger Bench (Bengal Immunity Co. v. State of Bihar, 1955).",
+          "Circumstances Destroying / Weakening Precedent: (1) Abrogated by subsequent legislation, (2) Reversed on appeal or Overruled by a larger/superior bench, (3) Per Incuriam (decided in ignorance of a binding statute or earlier larger-bench precedent), (4) Sub Silentio (point passed without argument or judicial consideration), and (5) Distinguishing on material facts."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bengal Immunity Co. Ltd. v. State of Bihar",
+            "citation": "AIR 1955 SC 661",
+            "principle": "7-judge Constitution Bench held that 'all courts' in Article 141 does NOT include the Supreme Court itself; the Supreme Court is free to overrule its own earlier decision if clearly erroneous and harmful to public interest."
+          },
+          {
+            "name": "Union of India v. Raghubir Singh",
+            "citation": "1989 2 SCC 754",
+            "principle": "Laid down strict Stare Decisis discipline in India: a smaller bench is bound by a larger bench, and a co-equal bench disagreeing with an earlier ruling must refer the matter to a larger bench."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Ratio Decidendi and Obiter Dicta, and explain when a precedent loses binding force as 'Per Incuriam'.",
+            "a": "Ratio Decidendi is the binding core legal principle necessary for deciding the case, whereas Obiter Dicta are non-binding incidental remarks made in passing. A decision is Per Incuriam ('through lack of care') and non-binding when rendered in ignorance of an applicable statute or binding larger-bench judgment."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u2-t4": {
+      "id": "jur-u2-t4",
+      "subtitle": "Jurisprudence - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Custom is the oldest material source of law - a uniform course of conduct observed spontaneously by a community over long usage with a sense of legal obligation ('Opinio Juris'). Classified into Legal Custom (General and Local) and Conventional Custom (Usage), a valid binding custom must satisfy strict judicial tests: Antiquity, Continuity, Reasonableness, Certainty, Peaceable Enjoyment, Obligatory Force, and Conformity with Statute and Morality.",
+        "legalProvision": "Article 13(3)(a), Constitution of India (Custom as 'Law'); Section 3(a), Hindu Marriage Act, 1955; Section 13 IEA / Section 11 BSA",
+        "meaning": "Salmond called custom to society what law is to the State. Recognized expressly under Article 13(3)(a) of the Constitution (and saved in Indian family laws where not abrogated by statute), custom differs sharply from Prescription (which creates personal rights for an individual, not general law).",
+        "keyPoints": [
+          "Kinds of Custom: (1) Custom WITHOUT Sanction (non-binding social etiquette/fashion), (2) Custom WITH Sanction - split into (a) Conventional Custom / Usage (commercial/trade practice binding ONLY because parties implicitly incorporate it into contracts), and (b) Legal Custom (binding as law independent of parties' consent) -> further divided into GENERAL CUSTOM (prevailing throughout the entire country, e.g., common law) and LOCAL CUSTOM (confined to a specific locality, tribe, or family).",
+          "Custom vs Prescription: Custom is a source of OBJECTIVE LAW binding a whole community/locality and must be ancient/reasonable; Prescription (e.g., 20 years' easement under Sec. 15 Easements Act) is a source of a PRIVATE RIGHT acquired by a specific individual/owner over a fixed statutory period (need not be immemorial).",
+          "Requisites of a Valid Custom - Historical & Practice Tests (Gokal Chand v. Parvin Kumari): (1) Immemorial Antiquity (ancient, long observed beyond living memory in India, without English 1189 CE cutoff), (2) Continuity (unbroken observance), (3) Peaceable Enjoyment (nec vi, nec clam, nec precario - open, peaceful, as of right), and (4) Obligatory Force / Opinio Juris (observed as binding legal duty, not mere courtesy).",
+          "Requisites of a Valid Custom - Legal & Constitutional Tests: (5) Certainty (clear and definite, not vague), (6) Reasonableness (not oppressive or absurd), (7) Conformity with Public Policy & Morality (immoral customs like Sati or child marriage are void), and (8) Conformity with Statute Law & Fundamental Rights (Art. 13(3)(a))."
+        ],
+        "caseLaws": [
+          {
+            "name": "Gokal Chand v. Parvin Kumari",
+            "citation": "AIR 1952 SC 231",
+            "principle": "Held that a custom modifying general personal law must be proved strictly to be ancient, continuous, uniform, reasonable, certain, and not opposed to public policy or morality."
+          },
+          {
+            "name": "Collector of Madura v. Moottoo Ramalinga Sathupathy",
+            "citation": "1868 12 MIA 397 (PC)",
+            "principle": "Famous Privy Council dictum: under the Hindu system of law, clear proof of an established custom outweighs the written text of the law (unless abrogated by statute)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List six essential requisites of a valid legal custom and state two key differences between Custom and Prescription.",
+            "a": "Requisites: Antiquity, continuity, peaceable enjoyment, certainty, reasonableness, obligatory force, and conformity with statute, morality, and Fundamental Rights. Custom creates objective community law from ancient usage, whereas Prescription creates a private personal right (like an easement) over a fixed statutory period (e.g., 20 years)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u2-t5": {
+      "id": "jur-u2-t5",
+      "subtitle": "Jurisprudence - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Among the three core sources of law, Legislation excels in clarity, democratic speed, and proactive reform (abrogative power), Precedent excels in practical flexibility and real-world equity, while Custom reflects organic social consent. Codification systematically reduces scattered statutory, customary, and judge-made rules into a single accessible written Code (like BNS, BNSS, BSA, ICA, CPC), bringing certainty at the cost of some rigidity.",
+        "legalProvision": "Comparative Jurisprudence of Sources; Bentham vs Savigny Debate on Codification; Indian Law Commissions",
+        "meaning": "No single source suffices alone: modern legal systems like India use Codified Legislation as the backbone, Judicial Precedent to interpret and fill legislative gaps, and Custom where community practices deserve preservation.",
+        "keyPoints": [
+          "Legislation - Merits & Demerits: Merits -> Abrogative power (can abolish bad law immediately, unlike precedent), Prospective clarity (citizens know rules BEFORE acting), Systematic/accessible form, and Democratic legitimacy. Demerits -> Rigidity in wording, slow parliamentary backlog, and inability to foresee every factual nuance.",
+          "Precedent - Merits & Demerits: Merits -> Practical wisdom forged on real disputes (not abstract theory), Flexible organic growth via distinguishing, and fills legislative silence rapidly (e.g., Vishaka guidelines). Demerits -> Retrospective effect (parties learn the rule AFTER acting), Bulk and complexity across thousands of volumes, and risk of conflicting benches.",
+          "Custom - Merits & Demerits: Merits -> Reflects genuine people's will (Volksgeist), enjoys spontaneous voluntary compliance. Demerits -> Extremely slow to adapt to modern tech/economy, vague/hard to prove, and can perpetuate regressive/unequal practices.",
+          "Codification (Definition & Three Kinds): Systematic, authoritative reduction of an entire branch of law into a coherent statutory Code - classified as (1) Creative Codification (making brand-new law), (2) Consolidating Codification (gathering existing statutes/customs - e.g., TPA 1882), and (3) Amending & Consolidating Codification (reforming + unifying - e.g., BNS 2023, Hindu Code Acts 1955-56).",
+          "Codification - Advantages vs Disadvantages (Bentham vs Savigny): Advantages -> Certainty, simplicity, uniformity across regions, public accessibility, and elimination of contradictory precedents. Disadvantages -> Rigidity/ossification (Savigny's critique), legislative drafting gaps requiring heavy judicial interpretation, and disturbance of settled local customs."
+        ],
+        "caseLaws": [
+          {
+            "name": "Vishaka v. State of Rajasthan",
+            "citation": "AIR 1997 SC 3011",
+            "principle": "Demonstrates the complementary strength of Judicial Precedent filling a legislative vacuum until Parliament codified the Sexual Harassment of Women at Workplace (POSH) Act, 2013."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two key advantages of Legislation over Precedent, and list three major advantages and two disadvantages of Codification.",
+            "a": "Legislation has abrogative power (can repeal bad law outright) and operates prospectively with advance notice, unlike precedent. Codification advantages: certainty, uniformity, and accessibility; disadvantages: rigidity and inevitable drafting gaps requiring interpretation."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

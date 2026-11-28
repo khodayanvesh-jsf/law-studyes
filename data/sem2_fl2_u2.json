@@ -1,0 +1,267 @@
+{
+  "subjects": [
+    {
+      "id": "family-law-ii",
+      "title": "Family Law - II (Muslim Law & Other Personal Laws)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Divorce (Talaq), Dissolution Act 1939, Maintenance & 1986 Act",
+          "topics": [
+            {"id": "fl2-u2-t1", "title": "1. Classification of Divorce & Modes of Talaq (Sunnat, Biddat, Ila, Zihar, Khula & Mubaraat)"},
+            {"id": "fl2-u2-t2", "title": "2. Legal Consequences of Divorce & Iddat Period"},
+            {"id": "fl2-u2-t3", "title": "3. Dissolution of Muslim Marriages Act, 1939 (Judicial Divorce by Wife)"},
+            {"id": "fl2-u2-t4", "title": "4. Principles of Maintenance (Nafaqah) & Persons Entitled to Maintenance"},
+            {"id": "fl2-u2-t5", "title": "5. The Muslim Women (Protection of Rights on Divorce) Act, 1986 & Sec. 125 CrPC / Sec. 144 BNSS"},
+            {"id": "fl2-u2-t6", "title": "6. Effect of Conversion on Maintenance and Marriage"},
+            {"id": "fl2-u2-t7", "title": "7. Differences Between Shia and Sunni Law on Divorce and Maintenance"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "fl2-u2-t1": {
+      "id": "fl2-u2-t1",
+      "subtitle": "Family Law - II - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Muslim law classifies divorce into Extra-Judicial Divorce (by Husband: Talaq, Ila, Zihar; by Wife: Talaq-e-Tafweez; by Mutual Consent: Khula and Mubaraat) and Judicial Divorce (Lian and Dissolution of Muslim Marriages Act, 1939). Instant Triple Talaq (Talaq-ul-Biddat) is now unconstitutional, void, and a punishable offence in India.",
+        "legalProvision": "Classical Muslim Law of Divorce; Muslim Women (Protection of Rights on Marriage) Act, 2019 (Secs. 3-4); Dissolution of Muslim Marriages Act, 1939",
+        "meaning": "Because Muslim marriage is a civil contract, Islamic jurisprudence permits dissolution when marital harmony breaks down, prioritizing revocable modes that encourage reconciliation over irreversible pronouncements.",
+        "keyPoints": [
+          "Talaq-ul-Sunnat (Approved & Revocable): Sub-divided into Talaq-e-Ahsan (most approved - single pronouncement during a period of purity/Tuhr followed by abstinence during Iddat; revocable before Iddat ends) and Talaq-e-Hasan (three pronouncements across three successive Tuhrs; revocable before the third pronouncement).",
+          "Talaq-ul-Biddat (Instant Triple Talaq - Void & Criminalized): Three pronouncements in one sitting; struck down as manifestly arbitrary and unconstitutional in Shayara Bano (2017) and declared void and punishable with up to 3 years' imprisonment under the Muslim Women (Protection of Rights on Marriage) Act, 2019.",
+          "Constructive Divorce by Husband (Ila & Zihar): Ila is a vow of continence for 4+ months followed by non-cohabitation; Zihar is comparing the wife to a female within prohibited degrees (e.g., mother/sister), entitling the wife to refuse cohabitation until penance (Kaffara) or seek judicial divorce.",
+          "Delegated & Mutual Consent Divorce: Talaq-e-Tafweez allows the wife to pronounce Talaq under power delegated by the husband in the Nikahnama; Khula is divorce at the wife's instance for consideration (often releasing unpaid Mahr); Mubaraat is divorce by mutual aversion and consent of both spouses.",
+          "Lian (False Charge of Adultery): Where a husband falsely accuses his wife of adultery without proof, the wife can sue for judicial dissolution of marriage unless the husband retracts bona fide before trial."
+        ],
+        "caseLaws": [
+          {
+            "name": "Shayara Bano v. Union of India",
+            "citation": "2017 9 SCC 1",
+            "principle": "5-judge Constitution Bench held by a 3:2 majority that instant Triple Talaq (Talaq-ul-Biddat) is manifestly arbitrary, un-Islamic, and violative of Article 14, striking it down as unconstitutional."
+          },
+          {
+            "name": "Shamim Ara v. State of U.P.",
+            "citation": "2002 7 SCC 518",
+            "principle": "Held that Talaq cannot be presumed merely from a written statement in court; a valid Talaq must be for a reasonable cause and preceded by genuine reconciliation attempts by two arbiters."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Talaq-e-Ahsan, Talaq-e-Hasan, and Talaq-ul-Biddat, and state the current legal status of Talaq-ul-Biddat in India.",
+            "a": "Talaq-e-Ahsan is a single revocable pronouncement during Tuhr followed by Iddat; Talaq-e-Hasan is three pronouncements across three successive Tuhrs; Talaq-ul-Biddat (instant triple talaq) was declared unconstitutional in Shayara Bano (2017) and void/punishable under the 2019 Act."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u2-t2": {
+      "id": "fl2-u2-t2",
+      "subtitle": "Family Law - II - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Once a divorce becomes irrevocable, cohabitation becomes unlawful, deferred Mahr becomes immediately payable, mutual rights of inheritance cease, and the divorced wife must observe the mandatory waiting period of Iddat (3 menstrual courses / 3 lunar months, or until delivery if pregnant) before remarrying.",
+        "legalProvision": "Classical Muslim Law of Dissolution & Iddat; Section 3, Muslim Women (Protection of Rights on Divorce) Act, 1986",
+        "meaning": "Legal consequences of divorce protect the wife's financial dues (unpaid Mahr, return of bridal gifts, and maintenance) and ensure certainty of paternity for any unborn child through the Iddat period.",
+        "keyPoints": [
+          "Mandatory Iddat Period: After a consummated divorce, the wife must observe 3 menstrual courses (or 3 lunar months if not menstruating), or until delivery if pregnant; NO Iddat is required if the marriage was unconsummated. (On husband's death, Iddat is 4 months and 10 days, or until delivery if longer).",
+          "Right to Remarry: After completing Iddat, the woman may freely remarry another man; if the husband already had 4 wives, he cannot marry a 4th replacement wife until the divorced wife's Iddat expires.",
+          "Dower (Mahr) Entitlement: Entire unpaid Specified (Prompt + Deferred) or Proper Mahr becomes immediately due upon consummated divorce; if unconsummated, half of specified dower (or a customary gift/Mutat) is payable.",
+          "Cessation of Mutual Inheritance: Mutual inheritance rights survive during Iddat if the Talaq was revocable (Rajai), but terminate immediately once the divorce becomes irrevocable (Bain) - except in death-illness (Marz-ul-Maut) Talaq intended to defeat the wife's inheritance.",
+          "Maintenance & Property Return: Wife is entitled to maintenance and a reasonable and fair provision (1986 Act / Sec. 125 CrPC / Sec. 144 BNSS) plus full return of all gifts and properties given to her before, at, or after marriage."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rashid Ahmad v. Anisa Khatun",
+            "citation": "AIR 1932 PC 25",
+            "principle": "Held that once a divorce becomes irrevocable, sexual intercourse between the former spouses is unlawful and children born from post-divorce cohabitation without valid remarriage are illegitimate under classical law."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When is a divorced Muslim woman NOT required to observe Iddat, and when does her Deferred Mahr become payable?",
+            "a": "No Iddat is required when a marriage is dissolved by divorce BEFORE consummation. Deferred Mahr becomes immediately payable upon dissolution of marriage by divorce or death."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u2-t3": {
+      "id": "fl2-u2-t3",
+      "subtitle": "Family Law - II - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Dissolution of Muslim Marriages Act, 1939 empowers every Muslim wife (Sunni or Shia) to obtain a judicial decree of divorce from a civil/family court on nine statutory grounds under Section 2 - including 4 years' disappearance, 2 years' failure to maintain, 7+ years' imprisonment, impotence, insanity, cruelty, and Option of Puberty - without forfeiting her Mahr.",
+        "legalProvision": "Sections 2, 4, & 5, Dissolution of Muslim Marriages Act, 1939",
+        "meaning": "Prior to 1939, Hanafi women had virtually no judicial exit from abusive or deserting husbands, forcing some women into apostasy to dissolve marriage. Drawing from progressive Maliki jurisprudence, the 1939 Act granted Muslim wives broad, enforceable judicial divorce rights.",
+        "keyPoints": [
+          "Desertion, Maintenance Failure & Imprisonment (Sec. 2(i)-(iv)): Husband's whereabouts unknown for 4 years (decree takes effect after 6 months); failure/neglect to provide maintenance for 2 years; husband sentenced to imprisonment for 7 years or more (final sentence); failure to perform marital obligations for 3 years without reasonable cause.",
+          "Impotence, Insanity & Disease (Sec. 2(v)-(vi)): Husband impotent at marriage and continues to be so (court grants 1 year on husband's request to prove potency); husband insane for 2 years or suffering from virulent venereal disease (leprosy was omitted by the Personal Laws Amendment Act, 2019).",
+          "Option of Puberty / Khyar-ul-Bulugh (Sec. 2(vii)): Wife given in marriage by father or guardian before age 15 may repudiate the marriage before turning 18, provided the marriage has not been consummated.",
+          "Cruelty (Sec. 2(viii)): Broad statutory definition covering habitual physical assault, mental cruelty making life miserable, associating with women of evil repute, forcing immoral life, disposing of wife's property, obstructing religious practice, or failing to treat co-wives equitably.",
+          "Residuary Ground & Protection of Mahr (Secs. 2(ix) & 5): Any other ground valid under Muslim law (e.g., Lian, Zihar); Section 5 expressly preserves the wife's right to Mahr upon obtaining a judicial divorce decree."
+        ],
+        "caseLaws": [
+          {
+            "name": "Itwari v. Asghari",
+            "citation": "AIR 1960 All 684",
+            "principle": "Held that taking a second wife against the first wife's wishes can amount to legal cruelty entitling the first wife to refuse restitution of conjugal rights and seek relief."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List five statutory grounds on which a Muslim wife can seek judicial divorce under Section 2 of the Dissolution of Muslim Marriages Act, 1939.",
+            "a": "(1) Husband missing for 4 years, (2) Failure to maintain for 2 years, (3) Imprisonment for 7+ years, (4) Failure to perform marital obligations for 3 years, (5) Impotence, insanity for 2 years, Option of Puberty, or Cruelty."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u2-t4": {
+      "id": "fl2-u2-t4",
+      "subtitle": "Family Law - II - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Maintenance (Nafaqah) covers food, clothing, lodging, and basic medical/living necessities. Under Muslim law, a person is legally bound to maintain (1) his wife (absolute duty regardless of her wealth), (2) his minor/unmarried children, and (3) his needy parents and grandparents, with a wife's right taking priority over all other dependants.",
+        "legalProvision": "Classical Muslim Law of Nafaqah; Section 125 CrPC, 1973 / Section 144 BNSS, 2023",
+        "meaning": "Muslim law grounds maintenance on three legal sources: Marriage (highest priority), Blood Relationship (children and ascendants), and Property. Unlike relatives who must prove financial incapacity, a married wife is entitled to maintenance from her husband even if she has independent means.",
+        "keyPoints": [
+          "Wife's Priority Right to Maintenance: Arises from a valid marriage and is unconditional as long as she fulfills marital duties or lives separately for lawful cause (e.g., husband's cruelty, non-payment of prompt Mahr, or husband's second marriage); an unfaithful wife or one who deserts without valid cause forfeits maintenance.",
+          "Maintenance of Children: Father is primarily bound to maintain legitimate sons until puberty (or until able to earn if infirm) and unmarried/widowed/divorced daughters until marriage; if the father is indigent, liability shifts to the mother (if wealthy) or paternal grandfather. Under Section 125 CrPC / Section 144 BNSS, even illegitimate minor children can claim maintenance from their father.",
+          "Maintenance of Parents & Grandparents: Financially capable children (both sons and daughters) must maintain poor parents who cannot support themselves, even if the parents are non-Muslims; grandchildren must maintain indigent grandparents if parents are absent/unable.",
+          "Arrears of Maintenance: Under Hanafi law, past arrears of maintenance cannot be claimed unless fixed by prior court decree or mutual agreement; under Shafi'i and Shia law, past arrears are recoverable as a debt.",
+          "Maintenance via Anti-Nuptial Agreements: Reasonable stipulations in a Nikahnama granting separate maintenance if the husband ill-treats the wife or takes a second wife are valid and enforceable (Khawaja Muhammad Khan)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Noor Saba Khatoon v. Mohd. Quasim",
+            "citation": "AIR 1997 SC 3280",
+            "principle": "Held that the Muslim Women Act, 1986 does not curtail minor children's independent right to claim maintenance from their father under Section 125 CrPC until attaining majority (or marriage for daughters)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Who are the three primary categories of persons entitled to maintenance under Muslim law, and how does Hanafi law differ from Shia law regarding past arrears of maintenance?",
+            "a": "Wife, children, and needy parents/grandparents. Hanafi law denies past arrears unless fixed by prior agreement or court order, whereas Shia (and Shafi'i) law allows claiming past arrears."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u2-t5": {
+      "id": "fl2-u2-t5",
+      "subtitle": "Family Law - II - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Enacted after the landmark Shah Bano judgment (1985), the Muslim Women (Protection of Rights on Divorce) Act, 1986 obligates a former husband to make a 'reasonable and fair provision and maintenance' within the Iddat period (Section 3). In Danial Latifi (2001) and Mohd. Abdul Samad (2024), the Supreme Court held this provision covers the wife's entire post-Iddat future until remarriage AND confirmed her concurrent right under Section 125 CrPC / Section 144 BNSS.",
+        "legalProvision": "Sections 3, 4, & 5, Muslim Women (Protection of Rights on Divorce) Act, 1986; Section 125 CrPC, 1973 / Section 144 BNSS, 2023",
+        "meaning": "The 1986 Act was initially perceived as restricting divorced Muslim women's maintenance strictly to the 3-month Iddat period. Progressive constitutional interpretation harmonized Section 3 with Articles 14, 15, and 21 so divorced Muslim women are never left destitute.",
+        "keyPoints": [
+          "Background - Mohd. Ahmed Khan v. Shah Bano Begum (1985): 5-judge Constitution Bench held that Section 125 CrPC is secular, overrides personal law limitations, and entitles a divorced Muslim wife unable to maintain herself to lifetime maintenance until remarriage.",
+          "Four Statutory Entitlements Under Section 3(1) of the 1986 Act: (a) A reasonable and fair provision AND maintenance made and paid within Iddat, (b) 2 years' maintenance for children from birth, (c) Entire unpaid Mahr/dower, and (d) Delivery of all properties given to her before, at, or after marriage.",
+          "Danial Latifi Construction (2001): Supreme Court distinguished 'maintenance' (during Iddat) from 'reasonable and fair provision' (lump-sum/ongoing financial arrangement made WITHIN Iddat to cover the woman's entire future life until remarriage) - thereby upholding the 1986 Act constitutionally.",
+          "Fallback Maintenance Under Section 4: If a divorced woman remains unable to maintain herself after Iddat and has no remarriage, the Magistrate may direct relatives who would inherit her property (or, failing them, the State Waqf Board) to maintain her.",
+          "Concurrent Secular Remedy (Mohd. Abdul Samad v. State of Telangana, 2024): Reaffirmed that the 1986 Act does NOT extinguish a divorced Muslim woman's secular right to petition directly under Section 125 CrPC (now Section 144 BNSS, 2023) without needing the husband's Section 5 consent."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mohd. Ahmed Khan v. Shah Bano Begum",
+            "citation": "AIR 1985 SC 945",
+            "principle": "Held that Section 125 CrPC applies to all citizens irrespective of religion and entitles a divorced Muslim woman to maintenance beyond Iddat if she is unable to maintain herself."
+          },
+          {
+            "name": "Danial Latifi v. Union of India",
+            "citation": "2001 7 SCC 740",
+            "principle": "Interpreted Section 3(1)(a) of the 1986 Act to require the husband to make a reasonable and fair provision within Iddat sufficient for the divorced wife's entire future until remarriage."
+          },
+          {
+            "name": "Mohd. Abdul Samad v. State of Telangana",
+            "citation": "2024 INSC 506 (SC)",
+            "principle": "Held that a divorced Muslim woman can choose either the 1986 Act or Section 125 CrPC (Section 144 BNSS), as the secular remedy remains concurrently available."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How did Danial Latifi (2001) uphold the Muslim Women Act, 1986 without depriving divorced Muslim women of post-Iddat support?",
+            "a": "By holding that while the payment/arrangement must be made WITHIN the Iddat period, the 'reasonable and fair provision' under Section 3(1)(a) must cover the divorced wife's entire future livelihood beyond Iddat until remarriage."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u2-t6": {
+      "id": "fl2-u2-t6",
+      "subtitle": "Family Law - II - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Religious conversion affects maintenance differently depending on which spouse converts: if a Muslim husband renounces Islam, the marriage dissolves immediately and he remains liable for Mahr and maintenance; if a Muslim wife renounces Islam, her marriage continues under Section 4 of the 1939 Act (and her secular maintenance right under Section 125 CrPC / Section 144 BNSS survives).",
+        "legalProvision": "Section 4, Dissolution of Muslim Marriages Act, 1939; Section 125 CrPC / Section 144 BNSS, 2023; Caste Disabilities Removal Act, 1850",
+        "meaning": "Modern Indian law prevents either spouse from using religious conversion as a weapon to escape marital duties or maintenance obligations.",
+        "keyPoints": [
+          "Husband's Apostasy (Renouncing Islam): Immediately dissolves the Muslim marriage ipso facto; the wife is completely blameless, so she retains full entitlement to unpaid Mahr, Iddat maintenance, and secular maintenance under Section 125 CrPC / Section 144 BNSS.",
+          "Wife's Apostasy (Section 4, DMMA 1939): Does NOT automatically dissolve a Muslim marriage (unless she was a convert to Islam re-embracing her former faith). Under classical Hanafi law, an apostate wife forfeited personal-law maintenance during apostasy, but under India's secular Section 125 CrPC / Section 144 BNSS, religious conversion alone is NOT a disqualification from maintenance.",
+          "Non-Muslim Husband Converting to Islam: Cannot escape maintenance owed to his prior Hindu/Christian wife or children; his first marriage remains valid and enforceable, and his first wife retains full maintenance rights under HAMA 1956 and Section 125 CrPC / Section 144 BNSS.",
+          "Conversion of Parents or Children: Under Muslim law, a child's obligation to maintain poor parents continues even if the parent converts to another religion (since parental duty is based on blood tie and humanity, not identical faith); similarly, a father's duty to maintain minor children under Section 125 CrPC / Section 144 BNSS is unaffected by religion."
+        ],
+        "caseLaws": [
+          {
+            "name": "Sarla Mudgal v. Union of India",
+            "citation": "AIR 1995 SC 1531",
+            "principle": "Held that conversion to Islam does not dissolve an existing Hindu marriage or extinguish marital obligations; a subsequent marriage during the first marriage's subsistence is void and punishable for bigamy."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Does a Muslim husband's conversion to another religion end his obligation to pay Mahr and maintenance to his wife?",
+            "a": "No. Although his apostasy dissolves the marriage under classical Muslim law, he remains legally bound to pay her unpaid Mahr and maintenance (including under Section 125 CrPC / Section 144 BNSS)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u2-t7": {
+      "id": "fl2-u2-t7",
+      "subtitle": "Family Law - II - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Shia (Ithna Ashari) law imposes much stricter formal safeguards on Talaq than classical Sunni (Hanafi) law - requiring oral pronouncement in Arabic (if able), strict intention, and two adult male witnesses, while rejecting Talaq under compulsion or intoxication. On maintenance, Shia law permits claiming past arrears (unlike Hanafi law) and recognizes no maintenance in Muta marriage unless stipulated.",
+        "legalProvision": "Comparative Sunni (Hanafi) vs Shia (Ithna Ashari) Personal Law Principles",
+        "meaning": "Osmania University exam questions frequently test the exact doctrinal contrast between Sunni and Shia law on Talaq formalities, validity under coercion/intoxication, Ila/Zihar, and maintenance rights.",
+        "keyPoints": [
+          "Witnesses for Talaq: Shia law MANDATES presence of two adult male witnesses of good character at the time of Talaq (absence renders Talaq void); Sunni law requires NO witnesses for Talaq.",
+          "Mode & Form of Talaq: Shia law requires Talaq to be pronounced orally in explicit Arabic formula (writing allowed only if husband is physically unable to speak); Sunni law accepts oral or written Talaq in any clear words.",
+          "Compulsion, Jest & Intoxication: Under Shia (and Shafi'i) law, Talaq pronounced under compulsion, threat, jest, or intoxication is VOID; under classical Hanafi law, Talaq under compulsion or voluntary intoxication was historically treated as valid (now strictly curtailed by Shamim Ara and statutory reforms).",
+          "Conditional / Contingent Talaq & Triple Talaq: Shia law NEVER recognized instant Triple Talaq (Talaq-ul-Biddat) or conditional Talaq; Sunni law historically recognized both (until Shayara Bano and the 2019 Act abolished Talaq-ul-Biddat across India).",
+          "Maintenance Differences: (1) Past arrears of maintenance are recoverable by a wife under Shia (and Shafi'i) law, but NOT under Hanafi law unless fixed by prior decree/agreement; (2) A Muta wife (Shia) is NOT entitled to maintenance under classical Shia law unless expressly stipulated (though she may claim under secular Sec. 125 CrPC / Sec. 144 BNSS); (3) Shia law restricts relative maintenance strictly to ascendants and descendants (not collateral blood relatives like brothers/uncles, whom Hanafi law covers)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Syed Rashid Ahmad v. Anisa Khatun",
+            "citation": "AIR 1932 PC 25",
+            "principle": "Highlighted the classical Hanafi approach to Talaq formalities (contrasted with strict Shia witness and intention requirements and later modernized by Shamim Ara, 2002)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four major differences between Shia and Sunni (Hanafi) law regarding Talaq and Maintenance.",
+            "a": "(1) Shia law requires 2 male witnesses for Talaq, Sunni does not; (2) Shia law rejects Talaq under compulsion/intoxication and never recognized Talaq-ul-Biddat; (3) Shia law allows recovery of past maintenance arrears while Hanafi law requires a prior decree/agreement; (4) Shia law limits relative maintenance to direct ascendants/descendants, excluding collaterals."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

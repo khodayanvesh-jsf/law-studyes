@@ -1,0 +1,433 @@
+{
+  "subjects": [
+    {
+      "id": "constitutional-law-ii",
+      "title": "Constitutional Law - II",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Union & State Legislatures, Privileges, Anti-Defection Law & Union/State Executives",
+          "topics": [
+            {"id": "cl2-u1-t1", "title": "1. Union & State Legislatures - Composition, Qualifications & Sessions (Arts. 79-85 & 168-174)"},
+            {"id": "cl2-u1-t2", "title": "2. Powers, Functions, Legislative Procedure, Money Bills & Joint Sitting (Arts. 107-117 & 196-207)"},
+            {"id": "cl2-u1-t3", "title": "3. Parliamentary & State Legislative Privileges (Articles 105 & 194)"},
+            {"id": "cl2-u1-t4", "title": "4. Anti-Defection Law - Tenth Schedule (52nd & 91st Constitutional Amendments)"},
+            {"id": "cl2-u1-t5", "title": "5. Union Executive - President, Council of Ministers & Prime Minister (Arts. 52-78)"},
+            {"id": "cl2-u1-t6", "title": "6. State Executive - Governor, Council of Ministers & Constitutional Position (Arts. 153-167)"}
+          ]
+        },
+        {
+          "unitNo": 2,
+          "title": "Judiciary - Supreme Court, High Courts, Subordinate Judiciary, Independence & Accountability",
+          "topics": [
+            {"id": "cl2-u2-t1", "title": "1. Supreme Court of India - Composition, Appointment (Collegium) & Removal of Judges (Art. 124)"},
+            {"id": "cl2-u2-t2", "title": "2. Supreme Court Powers & Jurisdiction (Original, Writ, Appellate, SLP, Advisory & Review)"},
+            {"id": "cl2-u2-t3", "title": "3. High Courts - Composition, Appointment, Transfer of Judges & Jurisdiction (Arts. 214-231)"},
+            {"id": "cl2-u2-t4", "title": "4. Subordinate Judiciary - Appointment, High Court Control & Separation (Arts. 233-237 & Art. 50)"},
+            {"id": "cl2-u2-t5", "title": "5. Independence of Judiciary & Judicial Accountability"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "cl2-u1-t1": {
+      "id": "cl2-u1-t1",
+      "subtitle": "Constitutional Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Parliament (Article 79) consists of the President, Lok Sabha (House of the People, max 550 elected seats, 5-year term), and Rajya Sabha (Council of States, max 250 seats, permanent House with 1/3rd retiring every 2 years). State Legislatures (Article 168) comprise the Governor and either one House (Legislative Assembly) or two Houses (Assembly + Legislative Council, as in Telangana and Andhra Pradesh).",
+        "legalProvision": "Articles 79-85, 99-102, 168-174, & 190-191, Constitution of India; 104th Constitutional Amendment Act, 2019 (abolished Anglo-Indian nominations)",
+        "meaning": "India follows a bicameral federal legislature at the Union level and an optional bicameral structure in States (Parliament may create or abolish a State Legislative Council under Article 169 upon a State Assembly special resolution). Regular sessions ensure executive accountability, with no more than 6 months allowed between two sittings (Articles 85 & 174).",
+        "keyPoints": [
+          "Parliament Composition (Arts. 79-81): President is an integral part of Parliament (summons, prorogues, assents to Bills); Rajya Sabha (Art. 80) has max 250 members (238 elected by State MLAs via proportional representation + 12 Presidential nominees in literature, science, art, social service); Lok Sabha (Art. 81) has max 550 directly elected members (530 States + 20 UTs; 2 Anglo-Indian nominated seats discontinued by 104th Amendment, 2019).",
+          "State Legislature Composition (Arts. 168-171): Legislative Assembly (Vidhan Sabha) has 60 to 500 directly elected MLAs (smaller States like Goa/Sikkim exempted); Legislative Council (Vidhan Parishad - present in 6 States: Telangana, Andhra Pradesh, Bihar, Karnataka, Maharashtra, UP) is a permanent chamber capped at 1/3rd of Assembly strength (min 40) with indirect elections and Governor's nominations.",
+          "Qualifications & Disqualifications (Arts. 84, 102, 173 & 191): Must be an Indian citizen aged 25+ for Lok Sabha/Assembly and 30+ for Rajya Sabha/Council; disqualified for holding an 'office of profit', unsoundness of mind, undischarged insolvency, foreign citizenship, statutory disqualification under RPA 1951 (e.g., 2+ years' conviction - Lily Thomas), or Tenth Schedule defection.",
+          "Sessions, Quorum & Dissolution (Arts. 85, 100 & 174): Max 6-month gap between sessions; Quorum is 1/10th of total membership; Prorogation ends a session without lapsing pending Bills, whereas Dissolution ends Lok Sabha/Assembly (Bills pending in Lok Sabha or passed by Lok Sabha and pending in Rajya Sabha lapse; Bills pending solely in Rajya Sabha do NOT lapse)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Lily Thomas v. Union of India",
+            "citation": "2013 7 SCC 653",
+            "principle": "Struck down Section 8(4) of the Representation of the People Act, 1951, holding that an MP or MLA convicted of a specified offence with 2+ years' imprisonment stands immediately disqualified from membership upon conviction."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How is a State Legislative Council created or abolished under Article 169, and what is the maximum permissible gap between two sessions of Parliament?",
+            "a": "Parliament may create or abolish a Legislative Council by ordinary law if the State Legislative Assembly passes a resolution by a majority of total membership and 2/3rds of members present and voting. Under Article 85, the maximum gap between two sessions is 6 months."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u1-t2": {
+      "id": "cl2-u1-t2",
+      "subtitle": "Constitutional Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Parliament and State Legislatures perform law-making, financial control (Annual Budget & Consolidated Fund), and executive oversight. Ordinary Bills require passage by both Houses (deadlocks in Parliament resolved by a Joint Sitting under Article 108), whereas Money Bills (Article 110 / 199) can originate ONLY in the Lower House with the Speaker's certification and limited 14-day Upper House review.",
+        "legalProvision": "Articles 107-117, 196-207, & 200-201, Constitution of India",
+        "meaning": "Constitutional legislative procedure ensures democratic primacy of the directly elected Lower House in taxation and spending while using the Upper House as a revising chamber for ordinary legislation.",
+        "keyPoints": [
+          "Ordinary Bills & Joint Sitting (Arts. 107-108): May originate in either House and pass through Three Readings; if the Houses disagree or one House delays a Bill for over 6 months, the President may summon a Joint Sitting (Art. 108) presided over by the Lok Sabha Speaker (Art. 118(4)), decided by simple majority. Note: NO joint sitting exists for Money Bills, Constitutional Amendment Bills (Art. 368), or in State Legislatures (where Assembly overrides Council under Art. 197).",
+          "Money Bills (Arts. 109-110 & 198-199): Strictly confined to matters in Art. 110 (taxes, Union borrowing, custody/appropriation of Consolidated/Contingency Funds); introduced ONLY in Lok Sabha (or State Assembly) with prior Presidential/Governor's recommendation; Speaker's decision certifying a Bill as a Money Bill is final (subject to narrow judicial review for gross illegality - Rojer Mathew); Rajya Sabha/Council cannot amend or reject it and must return it within 14 days.",
+          "Financial Bills (Arts. 117 & 207): Category I (Art. 117(1)) contains Money Bill matters plus other provisions (introduced only in Lower House with prior recommendation, but Upper House has full amending/rejecting power and Joint Sitting applies); Category II (Art. 117(3)) involves expenditure from Consolidated Fund and may originate in either House.",
+          "Presidential & Governor's Assent (Arts. 111, 200 & 201): President may give assent, withhold assent, or return a non-Money Bill once for reconsideration (must assent if re-passed). A Governor (Art. 200) has a fourth option - reserving a State Bill for Presidential consideration under Article 201 (mandatory if the Bill derogates from High Court powers)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rojer Mathew v. South Indian Bank Ltd.",
+            "citation": "2020 6 SCC 1",
+            "principle": "5-judge Constitution Bench held that despite the finality clause in Article 110(3), the Speaker's certification of a Money Bill is not immune from judicial review if shown to be grossly unconstitutional or colourable."
+          },
+          {
+            "name": "State of Tamil Nadu v. Governor of Tamil Nadu",
+            "citation": "2025 INSC 481 (SC)",
+            "principle": "Clarified that a Governor cannot exercise an indefinite 'pocket veto' under Article 200; if a Bill is withheld and re-passed by the State Assembly, the Governor must act within reasonable constitutional bounds and cannot indefinitely stall State legislation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three key differences between an Ordinary Bill and a Money Bill under Articles 107-110.",
+            "a": "(1) Ordinary Bills may originate in either House, whereas Money Bills originate ONLY in Lok Sabha with Presidential recommendation; (2) Rajya Sabha can amend/reject an Ordinary Bill (triggering Art. 108 Joint Sitting), whereas it can only hold a Money Bill for 14 days; (3) the President can return an Ordinary Bill once for reconsideration, but not a Money Bill."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u1-t3": {
+      "id": "cl2-u1-t3",
+      "subtitle": "Constitutional Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Articles 105 (Parliament) and 194 (State Legislatures) confer special rights and immunities - Parliamentary Privileges - on each House and its members to safeguard fearless debate and legislative independence. Privileges include absolute freedom of speech inside the House, immunity from civil arrest during sessions, and power to punish for Contempt of the House - though bribery to vote is NOT protected (Sita Soren, 2024).",
+        "legalProvision": "Articles 105, 122, 194, 212, & 361A, Constitution of India; Section 135A CPC",
+        "meaning": "Privileges are not personal perks for politicians; they are institutional shields enabling legislators to speak candidly without fear of defamation suits or executive harassment. When legislative privilege clashes with Fundamental Rights, courts apply harmonious construction while preserving judicial review over gross illegality.",
+        "keyPoints": [
+          "Individual Privileges of Members: (1) Freedom of Speech inside the House & immunity from any court proceeding for anything said or any vote cast in the House or its committees (Arts. 105(2) & 194(2)), (2) Freedom from arrest in CIVIL cases (NOT criminal or preventive detention cases) during a session and 40 days before/after (Sec. 135A CPC), and (3) Exemption from jury/witness attendance while the House sits.",
+          "Collective Privileges of the House: Right to publish debates and prohibit unauthorized publication (subject to Art. 361A protecting substantially true media reports), right to exclude strangers/hold secret sittings, right to regulate internal procedure free from court interference (Arts. 122 & 212), and power to punish members or outsiders for Breach of Privilege / Contempt of the House (reprimand, suspension, expulsion - Raja Ram Pal).",
+          "Privileges vs Fundamental Rights: In M.S.M. Sharma (Searchlight Case, 1959), Article 19(1)(a) free speech was harmonized as subject to Art. 194(3) privilege; in In re Keshav Singh (U.P. Assembly Case, 1965), the Supreme Court held that Article 21 personal liberty and High Court writ jurisdiction (Art. 226) prevail over arbitrary legislative contempt warrants.",
+          "No Immunity for Legislative Bribery (Sita Soren v. Union of India, 2024): 7-judge Constitution Bench unanimously overruled P.V. Narasimha Rao (1998), holding that accepting a bribe to cast a vote or ask a question in Parliament/Assembly is an offence complete upon bribery and enjoys ZERO protection under Articles 105(2) or 194(2)."
+        ],
+        "caseLaws": [
+          {
+            "name": "In re Under Article 143 (Keshav Singh's Case)",
+            "citation": "AIR 1965 SC 745",
+            "principle": "7-judge Bench held that legislative privilege to punish for contempt is subject to Fundamental Rights (Article 21) and judicial review by High Courts and the Supreme Court."
+          },
+          {
+            "name": "Sita Soren v. Union of India",
+            "citation": "2024 5 SCC 629",
+            "principle": "7-judge Constitution Bench overruled P.V. Narasimha Rao (1998) and held that Articles 105(2) and 194(2) do NOT immunize MPs or MLAs from criminal prosecution for bribery connected to legislative speeches or votes."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Does Parliamentary Privilege protect an MP from criminal arrest during a session, or from bribery prosecution for voting in the House?",
+            "a": "No to both. Immunity from arrest applies ONLY to civil cases (not criminal or preventive detention), and Sita Soren (2024) held that bribery to vote enjoys zero privilege under Articles 105(2)/194(2)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u1-t4": {
+      "id": "cl2-u1-t4",
+      "subtitle": "Constitutional Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Inserted by the 52nd Constitutional Amendment Act, 1985 (Tenth Schedule) and tightened by the 91st Amendment Act, 2003, the Anti-Defection Law disqualifies MPs and MLAs who voluntarily give up party membership or defy a party whip - curbing the evil of political floor-crossing ('Aaya Ram, Gaya Ram'). The Presiding Officer (Speaker/Chairman) decides disqualification as a Tribunal subject to High Court/Supreme Court judicial review (Kihoto Hollohan).",
+        "legalProvision": "Articles 102(2) & 191(2) read with Tenth Schedule, Constitution of India (52nd Amendment, 1985 & 91st Amendment, 2003)",
+        "meaning": "Political defections destabilize elected governments and betray voters' mandates. While preserving legitimate party mergers (2/3rds threshold), the Tenth Schedule balances legislative stability with judicial scrutiny against partisan Speaker bias.",
+        "keyPoints": [
+          "Grounds for Disqualification (Paragraph 2, Tenth Schedule): (1) Elected party member voluntarily gives up membership (inferred even from conduct/anti-party statements without formal resignation - Ravi S. Naik), (2) Votes or abstains contrary to party whip without prior permission and uncondoned within 15 days, (3) Independent member joins any political party after election, or (4) Nominated member joins a political party AFTER 6 months from taking seat.",
+          "Exceptions (Paragraphs 4 & 5): (1) Merger - NO disqualification if at least TWO-THIRDS (2/3rds) of a legislature party agrees to merge with another party (note: the old 1/3rd 'Split' exception in Paragraph 3 was OMITTED by the 91st Amendment Act, 2003, which also capped Council of Ministers at 15% of Lower House strength); (2) Presiding Officer (Speaker/Deputy Speaker) resigning from party to preserve neutrality.",
+          "Deciding Authority & Judicial Review (Paragraphs 6-7 & Kihoto Hollohan): Speaker/Chairman decides defection petitions; in Kihoto Hollohan (1992), the Supreme Court struck down Paragraph 7 (which barred court jurisdiction) and held that the Speaker acts as a 'Tribunal' whose final order is subject to judicial review under Articles 136, 226, and 227 on grounds of mala fides, perversity, or violation of natural justice.",
+          "Timely Disposal Mandate (Keisham Meghachandra Singh, 2020): Speakers must decide disqualification petitions within a reasonable outer limit (ordinarily 3 months) and cannot defeat the Tenth Schedule by sitting indefinitely on petitions; courts urged Parliament to consider an independent Tribunal."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kihoto Hollohan v. Zachillhu",
+            "citation": "1992 Supp (2) SCC 651",
+            "principle": "Upheld the constitutional validity of the Tenth Schedule while striking down Paragraph 7, ruling that the Speaker's disqualification decision is open to judicial review as a Tribunal order."
+          },
+          {
+            "name": "Keisham Meghachandra Singh v. Hon'ble Speaker, Manipur Legislative Assembly",
+            "citation": "2020 16 SCC 503",
+            "principle": "Held that the Speaker must adjudicate Tenth Schedule disqualification petitions within a reasonable timeframe (generally 3 months) unless exceptional circumstances exist."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What major loophole was removed by the 91st Constitutional Amendment Act, 2003 in the Tenth Schedule, and what did Kihoto Hollohan hold about judicial review?",
+            "a": "The 91st Amendment abolished the 1/3rd 'Split' exemption (Paragraph 3), leaving only the 2/3rds Merger exemption. Kihoto Hollohan struck down Paragraph 7 and held that the Speaker acts as a Tribunal subject to judicial review under Articles 136 and 226."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u1-t5": {
+      "id": "cl2-u1-t5",
+      "subtitle": "Constitutional Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Articles 52-78, the President is the constitutional Head of State elected indirectly by an Electoral College of elected MPs and MLAs (Art. 54) for a 5-year term, while real executive power vests in the Prime Minister and Union Council of Ministers (collectively responsible to Lok Sabha under Article 75(3)). Under Article 74(1) (42nd & 44th Amendments), the President is bound to act on the aid and advice of the Council of Ministers.",
+        "legalProvision": "Articles 52-78 & 123, Constitution of India (42nd Amendment, 1976 & 44th Amendment, 1978)",
+        "meaning": "India adopted the Westminster Parliamentary Executive model (Ram Jawaya Kapur; Shamsher Singh): the President is the formal/titular head in whose name all Union executive actions run (Art. 77), whereas the elected Council of Ministers headed by the Prime Minister wields actual governing power.",
+        "keyPoints": [
+          "Election, Qualifications & Impeachment (Arts. 54-61): Citizen of India, 35+ years, qualified for Lok Sabha; elected via Proportional Representation (Single Transferable Vote) by elected MPs + elected MLAs of States/Delhi/Puducherry. Removable ONLY for 'violation of the Constitution' by Impeachment (Art. 61) requiring 14 days' notice signed by 1/4th members and passage by 2/3rds of TOTAL membership of BOTH Houses.",
+          "Powers of the President: Executive (appoints PM, Ministers, Governors, Judges, AG, CAG, ECs), Legislative (summons/prorogues Parliament, assents Bills, promulgates Ordinances under Art. 123 during recess - valid up to 6 weeks from reassembly; repromulgation is a constitutional fraud per Krishna Kumar Singh), Financial (Money Bills, Finance Commission), Judicial/Pardoning (Art. 72 - pardon, commute, remit, respite, reprieve even for death sentences, subject to limited judicial review per Epuru Sudhakar), Military & Emergency Powers.",
+          "Constitutional Position & Aid and Advice (Art. 74): Under Article 74(1), the President SHALL act in accordance with ministerial advice, with power (44th Amendment) to send advice back ONCE for reconsideration (bound to accept re-tendered advice). Narrow situational discretion exists only when no party commands a clear majority in a hung Lok Sabha or dismissing a defeated ministry.",
+          "Prime Minister & Council of Ministers (Arts. 75 & 78): PM is appointed by the President (leader of Lok Sabha majority); other Ministers are appointed on PM's advice (total strength capped at 15% of Lok Sabha under Art. 75(1A)). Ministers hold office during President's pleasure but are collectively responsible to Lok Sabha (sink or swim together); PM has a duty under Art. 78 to communicate Cabinet decisions to the President."
+        ],
+        "caseLaws": [
+          {
+            "name": "Shamsher Singh v. State of Punjab",
+            "citation": "AIR 1974 SC 2192",
+            "principle": "7-judge Constitution Bench held that the President and Governors are constitutional heads who must exercise their formal powers strictly on the aid and advice of their Council of Ministers, except in narrow express discretionary spheres."
+          },
+          {
+            "name": "Krishna Kumar Singh v. State of Bihar",
+            "citation": "2017 3 SCC 1",
+            "principle": "7-judge Bench held that repeated re-promulgation of Ordinances without placing them before the legislature is a fraud on the Constitution and subverts democratic law-making."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What majority is required to impeach the President under Article 61, and what power did the 44th Amendment give the President under Article 74(1)?",
+            "a": "A resolution passed by two-thirds of the TOTAL membership of each House separately. The 44th Amendment empowered the President to require the Council of Ministers to reconsider its advice ONCE, after which the President is bound by the reconsidered advice."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u1-t6": {
+      "id": "cl2-u1-t6",
+      "subtitle": "Constitutional Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Governor (Articles 153-167) serves a dual role as the constitutional Head of the State and the vital link between the Union and State. Appointed by the President (holding office during Presidential pleasure - Art. 156, safeguarded against arbitrary removal per B.P. Singhal), the Governor acts on the aid and advice of the Chief Minister and State Council of Ministers EXCEPT in express discretionary spheres under Article 163.",
+        "legalProvision": "Articles 153-167, 200-201, 213, & 356, Constitution of India",
+        "meaning": "While the President has no express constitutional discretion clause in Article 74, Article 163(1) expressly recognizes certain functions where the Governor acts in his own discretion - such as reserving State Bills for the President (Art. 200), reporting constitutional breakdown (Art. 356), and inviting a leader to form government in a hung Assembly.",
+        "keyPoints": [
+          "Appointment, Qualifications & Tenure (Arts. 155-158): Appointed by the President (NOT elected; same person may be Governor of two or more States); must be an Indian citizen aged 35+, not an MP/MLA, and holding no office of profit. Normal term is 5 years during President's pleasure - in B.P. Singhal (2010), the Supreme Court held a Governor cannot be removed arbitrarily merely due to change of central government.",
+          "Powers of the Governor: Executive (appoints CM, Ministers, Advocate General, SPSC members; all State actions run in Governor's name - Art. 166), Legislative (summons/prorogues/dissolves Assembly, assents/withholds/reserves Bills under Art. 200, promulgates State Ordinances under Art. 213), Financial (State Budget, Money Bills), and Judicial/Pardoning (Art. 161 - pardon/commute/remit offences under State laws, EXCEPT death sentences and court-martial sentences).",
+          "Constitutional Position & Discretionary Powers (Art. 163): Normally bound by the State Council of Ministers' aid and advice (Shamsher Singh; Nabam Rebia); constitutional discretion applies ONLY where required by or under the Constitution (e.g., Art. 200 Bill reservation, Art. 356 report, selecting CM in a hung House, granting prosecution sanction against a Minister where Cabinet is biased - M.P. Special Police Establishment).",
+          "Chief Minister & State Council of Ministers (Arts. 164 & 167): CM is appointed by the Governor and is the real executive head; Ministers are collectively responsible to the State Legislative Assembly (total size capped at 15% of Assembly strength, min 12 under Art. 164(1A)); CM must furnish all administrative/legislative information to the Governor (Art. 167)."
+        ],
+        "caseLaws": [
+          {
+            "name": "B.P. Singhal v. Union of India",
+            "citation": "2010 6 SCC 331",
+            "principle": "5-judge Constitution Bench held that the President's 'pleasure' under Article 156 is not unfettered; a Governor cannot be removed on whimsical, arbitrary, or political grounds merely because the ruling party at the Centre changed."
+          },
+          {
+            "name": "Nabam Rebia v. Deputy Speaker, Arunachal Pradesh Assembly",
+            "citation": "2016 8 SCC 1",
+            "principle": "5-judge Bench ruled that a Governor's discretion under Article 163 is strictly circumscribed; a Governor cannot unilaterally advance or summon an Assembly session against the advice of a Chief Minister enjoying majority support."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How does the Governor's pardoning power under Article 161 differ from the President's pardoning power under Article 72?",
+            "a": "The President (Art. 72) can pardon death sentences and court-martial punishments as well as Union-law offences, whereas the Governor (Art. 161) covers State-law offences and CANNOT pardon a death sentence (though the Governor may suspend, remit, or commute it) or court-martial sentences."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u2-t1": {
+      "id": "cl2-u2-t1",
+      "subtitle": "Constitutional Law - II - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Established under Article 124 as India's apex court of record (seat in New Delhi, Art. 130; currently max 34 judges including the CJI), Supreme Court judges are appointed by the President on the binding recommendation of the Supreme Court Collegium (CJI + 4 senior-most judges) and enjoy security of tenure until age 65, removable ONLY by Parliamentary impeachment for 'proved misbehaviour or incapacity'.",
+        "legalProvision": "Articles 124-130, Constitution of India; Judges (Inquiry) Act, 1968",
+        "meaning": "The appointment process evolved through the Four Judges Cases to insulate judicial selection from executive interference, culminating in the Supreme Court striking down the 99th Amendment / NJAC Act in 2015 as violating the Basic Structure of judicial independence.",
+        "keyPoints": [
+          "Composition & Qualifications (Art. 124): Currently 1 Chief Justice of India + 33 Judges (34 total). Qualifications: Citizen of India AND (a) High Court Judge for 5+ years, OR (b) High Court Advocate for 10+ years, OR (c) Distinguished Jurist in the President's opinion. Retires at age 65 and is barred from pleading in any Indian court post-retirement (Art. 124(7)).",
+          "Evolution of Appointment - The Four Judges Cases: (1) First Judges Case (S.P. Gupta, 1981 - executive primacy), (2) Second Judges Case (SCAORA, 1993 - created the Collegium; 'consultation' means 'concurrence' of CJI), (3) Third Judges Case (In re Special Reference, 1998 - expanded SC Collegium to CJI + 4 senior-most judges), and (4) Fourth Judges Case (NJAC Case, 2015 - struck down 99th Constitutional Amendment & NJAC Act, restoring the Collegium).",
+          "Ad-Hoc & Retired Judges (Arts. 127-128): CJI may request qualified High Court judges to sit as Ad-Hoc Judges (Art. 127) or invite retired SC/HC judges (Art. 128) with Presidential consent to clear backlogs.",
+          "Removal / Impeachment Procedure (Art. 124(4) & Judges Inquiry Act, 1968): Motion signed by 100 Lok Sabha MPs or 50 Rajya Sabha MPs -> Inquiry by 3-member committee (SC Judge + HC Chief Justice + distinguished jurist) -> If 'proved misbehaviour or incapacity' is found, BOTH Houses must pass an address in the SAME session by Special Majority (majority of total membership AND 2/3rds present and voting) -> President issues removal order."
+        ],
+        "caseLaws": [
+          {
+            "name": "Supreme Court Advocates-on-Record Association v. Union of India (Second Judges Case)",
+            "citation": "1993 4 SCC 441",
+            "principle": "9-judge Constitution Bench established judicial primacy and the Collegium system for appointing Supreme Court and High Court judges to protect judicial independence."
+          },
+          {
+            "name": "Supreme Court Advocates-on-Record Association v. Union of India (NJAC Case)",
+            "citation": "2016 5 SCC 1",
+            "principle": "5-judge Constitution Bench struck down the 99th Constitutional Amendment and NJAC Act, 2014 (4:1) as unconstitutional for compromising the independence of the judiciary (Basic Structure)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three alternative qualifications for appointment as a Supreme Court Judge under Article 124(3) and the two grounds for removal under Article 124(4).",
+            "a": "Indian citizen with (1) 5 years as HC Judge, OR (2) 10 years as HC Advocate, OR (3) Distinguished Jurist. Removal is strictly on 'proved misbehaviour' or 'incapacity' by Special Majority of both Houses."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u2-t2": {
+      "id": "cl2-u2-t2",
+      "subtitle": "Constitutional Law - II - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Supreme Court is a Court of Record (Art. 129) wielding six expansive jurisdictions: Exclusive Original Federal Jurisdiction (Art. 131), Fundamental Rights Writ Jurisdiction (Art. 32), Constitutional/Civil/Criminal Appellate Jurisdiction (Arts. 132-134), Extraordinary Special Leave to Appeal (Art. 136), Review & Complete Justice Powers (Arts. 137 & 142), and Presidential Advisory Jurisdiction (Art. 143).",
+        "legalProvision": "Articles 32, 129, 131-145, Constitution of India",
+        "meaning": "As the ultimate interpreter of the Constitution and sentinel on the qui vive for citizens' rights, the Supreme Court's declared law binds every court across India (Article 141), while Article 142 empowers it to pass any decree necessary for doing 'complete justice'.",
+        "keyPoints": [
+          "Court of Record (Art. 129) & Binding Precedent (Art. 141): Records have perpetual evidentiary value and the Court has plenary power to punish for contempt of itself (and subordinate courts); under Art. 141, law declared by the SC binds all Indian courts (though SC can overrule its own earlier rulings - Bengal Immunity).",
+          "Original Federal Jurisdiction (Art. 131) & Writ Jurisdiction (Art. 32): Art. 131 grants EXCLUSIVE original jurisdiction over legal disputes between Union and States or inter-State disputes (excludes private citizens, inter-State river water disputes under Art. 262, and pre-Constitution treaties). Art. 32 guarantees direct access to SC via five writs (Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto) for enforcing Part III Fundamental Rights.",
+          "Appellate Jurisdiction (Arts. 132-134A): Constitutional appeals on substantial questions of constitutional interpretation (Art. 132), Civil appeals on substantial questions of law of general importance (Art. 133), and Criminal appeals where HC reversed an acquittal into death/life/10+ years or withdrew a trial and imposed death (Art. 134).",
+          "Special Leave Petition / SLP (Art. 136): Extraordinary discretionary residuary power to grant special leave to appeal from ANY judgment, decree, or order of ANY court or tribunal in India (except armed forces tribunals).",
+          "Review (Art. 137), Curative Petition, Complete Justice (Art. 142) & Advisory Jurisdiction (Art. 143): SC may review its own judgments (Art. 137) and entertain rare Curative Petitions (Rupa Ashok Hurra); Art. 142 enables doing 'complete justice' (e.g., direct irretrievable-breakdown divorce or environmental remediation); Art. 143 empowers the President to seek SC's opinion on questions of public importance (5-judge Bench under Art. 145(3))."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rupa Ashok Hurra v. Ashok Hurra",
+            "citation": "2002 4 SCC 388",
+            "principle": "5-judge Bench created the extraordinary 'Curative Petition' under Articles 137 and 142 to prevent gross miscarriage of justice or bias even after dismissal of a review petition."
+          },
+          {
+            "name": "Pritam Singh v. The State",
+            "citation": "AIR 1950 SC 169",
+            "principle": "Held that Article 136 (SLP) confers an overriding discretionary power exercised sparingly only in exceptional circumstances where grave injustice or substantial constitutional/legal error occurs."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Which disputes fall under the Supreme Court's exclusive Original Jurisdiction (Article 131), and what court/tribunal orders are excluded from Article 136 (SLP)?",
+            "a": "Article 131 covers legal disputes between the Union and State(s) or between two or more States (excluding private parties and inter-State water disputes). Article 136(2) excludes judgments/orders of any court or tribunal constituted under law relating to the Armed Forces."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u2-t3": {
+      "id": "cl2-u2-t3",
+      "subtitle": "Constitutional Law - II - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "High Courts (Articles 214-231) stand at the apex of each State's judicial system (Parliament may establish a common High Court for two or more States under Art. 231). High Court judges are appointed via Collegium (retiring at age 62), transferable between High Courts under Article 222, and exercise wider Writ Jurisdiction (Article 226) plus Superintendence over all State courts and tribunals (Article 227).",
+        "legalProvision": "Articles 214 to 231, Constitution of India",
+        "meaning": "High Courts are independent constitutional Courts of Record (Art. 215) - NOT administratively subordinate to the Supreme Court - serving as the primary guardians of both Fundamental Rights and ordinary statutory rights at the State level.",
+        "keyPoints": [
+          "Composition, Qualifications & Tenure (Arts. 216-220): Chief Justice + such other judges as the President appoints via Collegium (CJI + 2 senior-most SC judges consulting State HC Collegium & Governor). Qualifications: Indian citizen with 10+ years' judicial office in India OR 10+ years as High Court advocate. Retires at age 62; permanent HC judges cannot practice in the SAME High Court or subordinate courts after retirement, but MAY practice in the Supreme Court and other High Courts (Art. 220).",
+          "Transfer of High Court Judges (Article 222): President may transfer a judge from one High Court to another after consulting the CJI (Collegium of CJI + 4 senior-most SC judges + Chief Justices of both HCs); transfer must be strictly in 'public interest' for better administration of justice, NEVER punitive (Sankalchand Sheth; Second Judges Case).",
+          "Wider Writ Jurisdiction (Article 226): Empowers High Courts to issue the five writs (Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto) for enforcing BOTH Part III Fundamental Rights AND 'for any other purpose' (ordinary legal rights) wherever the cause of action wholly or partly arises (Art. 226(2)); cannot be ousted even by constitutional amendment (L. Chandra Kumar).",
+          "Power of Superintendence (Article 227) & Control (Article 235): Confers BOTH administrative and judicial superintendence over all courts and tribunals within the State (except armed forces tribunals) to keep them within jurisdictional bounds.",
+          "Original, Appellate & Withdrawal Powers (Art. 228): High Courts hear civil/criminal appeals, Admiralty/Company/Election petitions (Original side in Bombay, Calcutta, Madras, Delhi, HP), and may withdraw any subordinate court case involving a substantial constitutional question (Art. 228)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Union of India v. Sankalchand Himatlal Sheth",
+            "citation": "AIR 1977 SC 2328",
+            "principle": "Held that while a High Court judge's prior consent is not strictly mandatory for transfer under Article 222, transfers must be strictly in public interest after full, effective consultation with the CJI - never as punishment."
+          },
+          {
+            "name": "L. Chandra Kumar v. Union of India",
+            "citation": "AIR 1997 SC 1125",
+            "principle": "7-judge Constitution Bench held that High Courts' powers of judicial review under Articles 226 and 227 are an inviolable part of the Basic Structure and extend over all statutory Tribunals."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two key distinctions between Articles 226 and 227 of the Constitution, and explain the rule governing post-retirement legal practice of a permanent High Court judge (Article 220).",
+            "a": "Article 226 is original writ jurisdiction against public authorities/State for Fundamental and legal rights, whereas Article 227 is administrative and judicial superintendence strictly over subordinate courts and tribunals. Under Article 220, a retired permanent HC judge may practice ONLY in the Supreme Court and other High Courts (never in the same HC or lower courts)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u2-t4": {
+      "id": "cl2-u2-t4",
+      "subtitle": "Constitutional Law - II - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Articles 233-237 (Chapter VI, Part VI) insulate the Subordinate Judiciary (District Judges, Civil Judges, and Judicial Magistrates) from executive interference. District Judges are appointed by the Governor in consultation with the High Court (Article 233), other judicial officers via SPSC and High Court rules (Article 234), and complete posting, promotion, and disciplinary control vests exclusively in the High Court (Article 235).",
+        "legalProvision": "Articles 50 & 233-237, Constitution of India",
+        "meaning": "Because over 90% of ordinary citizens encounter the justice system first in District and Taluka courts, Articles 233-235 and Article 50 (Separation of Judiciary from Executive) ensure district judges dispense justice fearlessly without State Government pressure.",
+        "keyPoints": [
+          "Appointment of District Judges (Article 233): Made by the Governor in effective consultation with the High Court via two streams - (1) Promotion from State Judicial Service, or (2) Direct recruitment from the Bar of advocates having at least 7 years' continuous practice, strictly recommended by the High Court (Chandra Mohan v. State of U.P.).",
+          "Recruitment of Other Judicial Officers (Article 234): Civil Judges (Junior Division) and Judicial Magistrates are appointed by the Governor under rules framed after consulting both the State Public Service Commission (SPSC) and the High Court.",
+          "Exclusive High Court Control (Article 235): Vests complete administrative and disciplinary control over District Courts and subordinate courts - including postings, transfers, promotions, leave, and disciplinary inquiries - EXCLUSIVELY in the High Court (State Government cannot bypass the High Court to suspend or dismiss a district judge, though formal dismissal order is issued by the Governor on HC recommendation).",
+          "Separation of Judiciary from Executive (Article 50 & Article 237): Article 50 directs the State to separate the judiciary from the executive in public services (implemented across India via the CrPC, 1973 / BNSS, 2023 separating Judicial Magistrates from Executive Magistrates like Collectors/Tahsildars).",
+          "National Service Conditions & Pay Parity (All India Judges' Association Cases): Supreme Court directed uniform service conditions, retirement age of 60 for subordinate judges, judicial academies, and independent pay commissions (Shetty & Second National Judicial Pay Commissions)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Chandra Mohan v. State of U.P.",
+            "citation": "AIR 1966 SC 1987",
+            "principle": "Held that the Governor's consultation with the High Court under Article 233 is mandatory and meaningful; 'service of the Union or State' in Article 233(2) means ONLY judicial service, barring executive officers from becoming District Judges."
+          },
+          {
+            "name": "State of West Bengal v. Nripendra Nath Bagchi",
+            "citation": "AIR 1966 SC 447",
+            "principle": "Held that the word 'control' in Article 235 includes exclusive disciplinary jurisdiction over subordinate judges; an executive inquiry conducted by the State Government bypassing the High Court is unconstitutional."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Who exercises disciplinary control, posting, and promotion authority over District and Subordinate Judges under Article 235, and what minimum Bar experience is required for direct recruitment as a District Judge?",
+            "a": "The High Court exercises exclusive control over postings, promotions, and disciplinary inquiries under Article 235. Direct recruitment from the Bar under Article 233(2) requires at least 7 years' standing as an advocate."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u2-t5": {
+      "id": "cl2-u2-t5",
+      "subtitle": "Constitutional Law - II - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Independence of the Judiciary is an inviolable part of the Basic Structure of India's Constitution, guaranteed through security of tenure, charged salaries, Collegium appointments, contempt power, and immunity from legislative criticism. Simultaneously, Judicial Accountability ensures power is never unchecked through impeachment (Art. 124(4)), the Supreme Court's In-House Procedure, Open Court transparency, RTI disclosure of CJI's office, and the Restatement of Values of Judicial Life.",
+        "legalProvision": "Articles 50, 121, 124(4), 125, 129, 146, 211, 215, 221, & 235, Constitution of India; Restatement of Values of Judicial Life (1997)",
+        "meaning": "An independent judge must decide strictly according to the Constitution and law without fear of the Executive or favour toward powerful litigants - yet independence does not mean unaccountability. Indian constitutional law balances fearless independence with institutional ethics and public transparency.",
+        "keyPoints": [
+          "Constitutional Safeguards of Judicial Independence: (1) Non-political Collegium appointment (Arts. 124 & 217), (2) Fixed tenure until age 65 (SC) / 62 (HC) removable ONLY by strict Parliamentary impeachment (Art. 124(4)), (3) Salaries and allowances charged on Consolidated Fund - non-votable and cannot be reduced except during Financial Emergency (Arts. 125 & 221), (4) Complete bar on discussing judges' conduct in Parliament/Assemblies except during impeachment (Arts. 121 & 211), (5) Power to punish for Contempt (Arts. 129 & 215), (6) Post-retirement practice restrictions (Arts. 124(7) & 220), and (7) Independent court staff control (Arts. 146 & 229).",
+          "Why Judicial Accountability Matters: High courts and the Supreme Court exercise vast powers of judicial review, bail, and contempt; without accountability mechanisms, delays, conflict of interest, or ethical lapses erode public trust.",
+          "Existing Accountability Mechanisms in India: (1) Parliamentary Impeachment (Art. 124(4) & Judges Inquiry Act, 1968), (2) Supreme Court's In-House Inquiry Procedure (1999 - 3-judge committee inquiring into misconduct short of impeachment, recommending resignation or withdrawal of judicial work), (3) Appellate & Review correction + Open Court reasoned judgments (now including live-streaming of Constitution Bench hearings), (4) Restatement of Values of Judicial Life (1997 - 16-point judicial code of ethics), and (5) High Court vigilance over subordinate judiciary (Art. 235).",
+          "Transparency & RTI Applicability (CPIO, Supreme Court v. Subhash Chandra Agarwal, 2019): 5-judge Constitution Bench held that the Office of the Chief Justice of India is a 'public authority' under the RTI Act, 2005 and judicial independence must be balanced with public-interest transparency (including asset declarations and Collegium resolutions)."
+        ],
+        "caseLaws": [
+          {
+            "name": "CPIO, Supreme Court of India v. Subhash Chandra Agarwal",
+            "citation": "2020 5 SCC 481",
+            "principle": "5-judge Constitution Bench held that the Office of the CJI comes under the Right to Information Act, 2005, affirming that judicial independence and judicial accountability/transparency go hand in hand."
+          },
+          {
+            "name": "K. Veeraswami v. Union of India",
+            "citation": "1991 3 SCC 655",
+            "principle": "Held that higher judiciary judges are 'public servants' under the Prevention of Corruption Act, but to protect judicial independence no FIR can be registered against a sitting HC/SC judge without prior consultation with the Chief Justice of India."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List five constitutional safeguards protecting the independence of the Indian judiciary, and state what the Supreme Court held in Subhash Chandra Agarwal (2019) on judicial accountability.",
+            "a": "Safeguards: Collegium appointment, security of tenure/impeachment, salaries charged on Consolidated Fund, bar on legislative discussion (Arts. 121/211), contempt power, and post-retirement practice restrictions. Subhash Chandra Agarwal held that the CJI's office is a public authority under the RTI Act."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

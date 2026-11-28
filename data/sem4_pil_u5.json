@@ -1,0 +1,153 @@
+{
+  "subjects": [
+    {
+      "id": "public-international-law",
+      "title": "Public International Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "United Nations (Organs & ICJ), Peaceful Settlement of Disputes, Use of Force & Self-Defence, IHL & War Crimes",
+          "topics": [
+            {"id": "pil-u5-t1", "title": "1. United Nations - Purposes & Principles (Arts. 1-2), Membership & Principal Organs (UNGA, UNSC, Veto & Uniting for Peace)"},
+            {"id": "pil-u5-t2", "title": "2. International Court of Justice (ICJ) - Composition, Contentious & Advisory Jurisdiction (Art. 36) & Enforcement of Judgments"},
+            {"id": "pil-u5-t3", "title": "3. Peaceful Settlement of International Disputes (Art. 33 UN Charter) & Coercive Means Short of War"},
+            {"id": "pil-u5-t4", "title": "4. Prohibition of Use of Force (Art. 2(4)), Self-Defence (Art. 51), Collective Security (Chapter VII), IHL (Geneva Conventions) & ICC"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "pil-u5-t1": {
+      "id": "pil-u5-t1",
+      "subtitle": "Public International Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Established on 24 October 1945 by the UN Charter (San Francisco), the United Nations aims to maintain international peace and security, foster friendly relations based on self-determination, and promote human rights and development (Art. 1), guided by seven sovereign-equality principles (Art. 2). It operates through SIX Principal Organs (Art. 7) - headlined by the democratic General Assembly (UNGA) and the 15-member Security Council (UNSC) wielding binding Chapter VII powers and the P5 Veto.",
+        "legalProvision": "Articles 1, 2, 4-7, 9-32, 61-72, & 97-101, Charter of the United Nations, 1945; Uniting for Peace Resolution (UNGA Res. 377A, 1950)",
+        "meaning": "Unlike the failed League of Nations (which required unanimous votes and lacked enforcement teeth), the UN Charter gave the Security Council binding enforcement authority while reserving domestic-jurisdiction non-intervention under Article 2(7).",
+        "keyPoints": [
+          "Purposes (Art. 1) & Principles (Art. 2): Purposes -> (1) Maintain international peace & security, (2) Friendly relations based on equal rights & self-determination of peoples, (3) International economic/social/human-rights cooperation, and (4) Centre for harmonizing nations' actions. Principles -> Sovereign equality (Art. 2(1)), Good faith (2(2)), Peaceful dispute settlement (2(3)), Ban on threat/use of force (2(4)), Assistance to UN (2(5)), Non-intervention in domestic jurisdiction EXCEPT Chapter VII enforcement (Art. 2(7)). Admission (Art. 4): peace-loving State recommended by UNSC + 2/3rds UNGA vote.",
+          "Six Principal Organs (Art. 7): (1) GENERAL ASSEMBLY / UNGA (all 193 members; 1 State = 1 vote; 2/3rds majority on important questions; approves budget & elects judges/non-permanent UNSC members; resolutions recommendatory except internal/budgetary), (2) SECURITY COUNCIL / UNSC (15 members: 5 Permanent Veto Powers 'P5' - USA, UK, France, Russia, China + 10 non-permanent elected for 2 years; primary responsibility for peace under Art. 24; decisions BINDING under Art. 25; substantive decisions need 9/15 votes including concurring votes of P5 - voluntary abstention of a P5 does NOT act as veto per Namibia Advisory Opinion!), (3) ECOSOC (54 members coordinating WHO, ILO, UNESCO, IMF, World Bank), (4) TRUSTEESHIP COUNCIL (suspended 1994 after Palau independence), (5) SECRETARIAT (headed by Secretary-General, chief administrative officer under Art. 97), and (6) ICJ (The Hague).",
+          "Uniting for Peace Resolution (UNGA Res. 377A(V), 1950): Adopted during the Korean War when UNSC was paralyzed by Soviet veto - empowers UNGA in emergency special session (24 hours) to recommend collective measures (including armed force) whenever P5 veto blocks UNSC action against aggression (upheld in Certain Expenses Advisory Opinion, 1962)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Legal Consequences for States of the Continued Presence of South Africa in Namibia (Advisory Opinion)",
+            "citation": "1971 ICJ Rep 16",
+            "principle": "ICJ confirmed that consistent UNSC practice treats a Permanent Member's voluntary abstention as NOT constituting a veto under Article 27(3) of the UN Charter."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name the six Principal Organs of the United Nations (Art. 7), explain how the P5 Veto works under Article 27(3), and state the purpose of the 1950 Uniting for Peace Resolution.",
+            "a": "UNGA, UNSC, ECOSOC, Trusteeship Council, Secretariat, and ICJ. Under Art. 27(3), non-procedural UNSC decisions require 9/15 votes with no negative vote (veto) from any P5 member (abstention is not a veto). Uniting for Peace lets UNGA recommend collective peace measures when a P5 veto deadlocks the UNSC."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u5-t2": {
+      "id": "pil-u5-t2",
+      "subtitle": "Public International Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Seated at the Peace Palace in The Hague, the International Court of Justice (ICJ - Art. 92 UN Charter & ICJ Statute) is the principal judicial organ of the UN, composed of 15 independent judges elected for 9-year terms by UNGA and UNSC. Only STATES may be parties in Contentious Cases (Art. 34) - strictly based on STATE CONSENT under Article 36 (Special Agreement, Treaty Clause, or Optional Clause) - alongside non-binding Advisory Opinions for UN organs/agencies (Art. 65).",
+        "legalProvision": "Articles 92-96, UN Charter; Articles 2-15, 34, 36, 41, 59, 60, & 65, Statute of the International Court of Justice",
+        "meaning": "Unlike a domestic Supreme Court, the ICJ has NO automatic compulsory jurisdiction over sovereign States unless both disputing States have consented through one of Article 36's pathways.",
+        "keyPoints": [
+          "Composition & Election (Arts. 2-15 & 31 ICJ Statute): 15 independent judges representing main forms of civilization and principal legal systems (no two judges from same nationality); elected by ABSOLUTE MAJORITY in BOTH UNGA and UNSC voting independently (NO P5 veto applies in judicial elections!); 9-year renewable term (5 retire every 3 years). If a disputing State has no national on the Bench, it may appoint an 'Ad Hoc Judge' (Art. 31).",
+          "Contentious Jurisdiction - Strictly States Only & Consent-Based (Arts. 34 & 36): Individuals/NGOs/UN CANNOT sue in contentious cases (Art. 34). Jurisdiction rests on consent via FOUR routes: (1) Special Agreement / Compromis (Art. 36(1)), (2) Compromissory Clause in a Treaty (e.g., Art. 36(1) VCCR Optional Protocol used by India in Jadhav Case), (3) OPTIONAL CLAUSE / COMPULSORY JURISDICTION (Art. 36(2) - unilateral declaration accepting ICJ jurisdiction subject to reciprocity & reservations like India's Commonwealth/domestic reservation; Connally self-judging reservation criticized in Norwegian Loans), and (4) Forum Prorogatum (implied consent by participating on merits).",
+          "Provisional Measures (Art. 41) & Enforcement (Art. 94 UN Charter): ICJ may indicate BINDING interim Provisional Measures to preserve rights (LaGrand Case, 2001 - e.g., staying Kulbhushan Jadhav's execution); judgments are final without appeal (Art. 60), bind only the parties to that case (Art. 59), and if a State defaults, the aggrieved party may seek UNSC enforcement under Article 94(2) UN Charter (subject to P5 veto!).",
+          "Advisory Jurisdiction (Art. 96 UN Charter & Art. 65 ICJ Statute): UNGA, UNSC, and authorized UN specialized agencies (WHO, UNESCO, ILO) - NOT individual States - may request non-binding (yet highly authoritative) Advisory Opinions on legal questions (e.g., Nuclear Weapons, Israeli Wall, Chagos Archipelago)."
+        ],
+        "caseLaws": [
+          {
+            "name": "LaGrand Case (Germany v. United States)",
+            "citation": "2001 ICJ Rep 466",
+            "principle": "ICJ definitively settled that Provisional Measures indicated under Article 41 of the ICJ Statute are LEGALLY BINDING on the parties, not mere moral recommendations."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can an individual or NGO file a contentious case before the ICJ (Art. 34), what are the three main ways States confer contentious jurisdiction under Article 36, and who may request Advisory Opinions?",
+            "a": "No - ONLY States may be parties in contentious cases (Art. 34). Contentious jurisdiction arises via (1) Special Agreement, (2) Treaty Compromissory Clause, or (3) Optional Clause declaration (Art. 36(2)). Only UNGA, UNSC, and authorized UN agencies may request Advisory Opinions (Art. 96)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u5-t3": {
+      "id": "pil-u5-t3",
+      "subtitle": "Public International Law - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 2(3) and Chapter VI (Article 33) of the UN Charter obligate States to settle international disputes peacefully so international peace and justice are not endangered. Peaceful methods divide into Diplomatic/Political means (Negotiation, Good Offices, Mediation, Enquiry, Conciliation) yielding non-binding solutions, and Legal/Adjudicatory means (Arbitration & Judicial Settlement via ICJ/ITLOS) yielding binding awards - contrasted with traditional Coercive Means Short of War (Retorsion, Reprisals, Embargo, Pacific Blockade).",
+        "legalProvision": "Articles 2(3) & 33-38 (Chapter VI), Charter of the United Nations, 1945; Hague Conventions (1899 & 1907)",
+        "meaning": "Choosing between diplomatic mediation and judicial adjudication depends on whether States want flexible face-saving compromise or a strict legally binding ruling.",
+        "keyPoints": [
+          "Diplomatic / Political Means (Non-Binding - Art. 33): (1) NEGOTIATION - direct bilateral talks between disputing States (fastest, most common; e.g., Simla Agreement 1972), (2) GOOD OFFICES - neutral third party merely brings hostile sides to the negotiating table without participating in talks, (3) MEDIATION - active third party participates in talks and proposes compromise terms (e.g., Soviet Tashkent mediation 1966; World Bank Indus Waters Treaty 1960), (4) ENQUIRY / FACT-FINDING - impartial commission investigates disputed facts (e.g., Dogger Bank Incident 1904), and (5) CONCILIATION - formal commission examines BOTH facts and law and issues non-binding settlement proposals.",
+          "Legal / Adjudicatory Means (Legally Binding - Art. 33): (1) INTERNATIONAL ARBITRATION - settlement by arbitrators chosen by the parties themselves under agreed terms/Permanent Court of Arbitration (PCA, The Hague - e.g., Rann of Kutch Arbitration 1968; Enrica Lexie 2020), and (2) JUDICIAL SETTLEMENT - adjudication by permanent standing courts (ICJ, ITLOS, WTO Appellate Body) applying international law.",
+          "Coercive / Compulsive Means Short of War (Now Strictly Restricted by Art. 2(4)): (1) RETORSION - unfriendly but strictly LAWFUL retaliatory measure (expelling diplomats, cutting aid/tariffs - remains lawful today), (2) REPRISALS / COUNTERMEASURES - normally unlawful act justified ONLY as proportional, non-forcible response to a prior illegal act (Naulilaa Case; ARMED reprisals are STRICTLY ILLEGAL under Art. 2(4) UN Charter!), (3) EMBARGO / ECONOMIC SANCTIONS (lawful non-forcible trade ban), and (4) PACIFIC BLOCKADE / INTERVENTION (armed blockades without UNSC authorization violate Art. 2(4))."
+        ],
+        "caseLaws": [
+          {
+            "name": "Naulilaa Incident Arbitration (Portugal v. Germany)",
+            "citation": "1928 2 RIAA 1011",
+            "principle": "Laid down three classic conditions for lawful Reprisals/Countermeasures: (1) prior wrongful act by target State, (2) unsatisfied prior demand for redress, and (3) strict proportionality (today strictly confined to non-forcible countermeasures)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Good Offices and Mediation, and distinguish between Retorsion and Reprisals (Countermeasures).",
+            "a": "In Good Offices the third party only brings disputing States together without joining talks, whereas in Mediation the third party actively participates and suggests compromise solutions. Retorsion is an unfriendly yet strictly lawful act, whereas Reprisals/Countermeasures are normally unlawful non-forcible acts justified as a proportionate response to a prior breach."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u5-t4": {
+      "id": "pil-u5-t4",
+      "subtitle": "Public International Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 2(4) of the UN Charter outlaws the threat or use of force against any State's territorial integrity or political independence, permitting ONLY TWO lawful exceptions: (1) Individual or Collective Self-Defence against an 'armed attack' (Art. 51 - governed by Necessity & Proportionality per Caroline & Nicaragua Cases), and (2) UN Security Council Collective Security Enforcement under Chapter VII (Arts. 39-42). Once armed conflict erupts, International Humanitarian Law (Four Geneva Conventions, 1949 & Additional Protocols) protects civilians, POWs, and the wounded, enforced by the International Criminal Court (ICC).",
+        "legalProvision": "Articles 2(4), 39-42 (Chapter VII), & 51, UN Charter; Four Geneva Conventions (1949) & Protocols I-II (1977); Rome Statute of ICC (1998)",
+        "meaning": "International law separates 'Jus ad Bellum' (strict prohibition on starting war under UN Charter) from 'Jus in Bello' (humanitarian limits protecting victims during war regardless of who started it).",
+        "keyPoints": [
+          "Prohibition of Force (Art. 2(4)) & Right of Self-Defence (Art. 51): Art. 2(4) is a Jus Cogens norm banning armed aggression. Under Art. 51, inherent individual or collective self-defence is permitted IF AN ARMED ATTACK OCCURS (until UNSC takes necessary measures; immediately reported to UNSC). Customary limits (Caroline Incident, 1837 & Nicaragua Case, 1986): force must satisfy strict NECESSITY (instant, overwhelming, leaving no choice of means) and PROPORTIONALITY (note debate over 'anticipatory' vs unlawful 'pre-emptive' self-defence).",
+          "UNSC Collective Security Mechanism (Chapter VII - Arts. 39-42): UNSC determines existence of a 'threat to peace, breach of peace, or act of aggression' (Art. 39) -> provisional measures (Art. 40) -> non-forcible economic/diplomatic/travel sanctions (Art. 41) -> authorization of military air/sea/land enforcement action if Art. 41 proves inadequate (Art. 42 - e.g., 1990-91 Gulf War liberating Kuwait).",
+          "International Humanitarian Law / IHL (Four Geneva Conventions, 1949 & 1977 Protocols): Protects persons NOT or no longer taking part in hostilities -> (I) Wounded & sick soldiers in field, (II) Wounded, sick & shipwrecked at sea, (III) Prisoners of War / POWs (humane treatment, no torture, repatriation), and (IV) Civilians in time of war (Common Article 3 sets minimum humane standards even in non-international civil wars!). Core IHL principles: Distinction (civilians vs combatants), Proportionality, Humanity, and Ban on unnecessary suffering.",
+          "War Crimes, Neutrality & International Criminal Court (Rome Statute, 1998): Neutral States owe duties of abstention and impartiality during war. The permanent International Criminal Court / ICC (The Hague, 2002 - India has not ratified Rome Statute) prosecutes individuals on 'Complementarity' basis for FOUR core international crimes: Genocide, Crimes Against Humanity, War Crimes, and the Crime of Aggression."
+        ],
+        "caseLaws": [
+          {
+            "name": "Military and Paramilitary Activities in and against Nicaragua (Nicaragua v. USA)",
+            "citation": "1986 ICJ Rep 14",
+            "principle": "Held that Article 2(4) and Article 51 reflect customary international law: lawful self-defence requires a grave 'armed attack' (not mere minor frontier skirmish or funding rebels) and strict Necessity and Proportionality."
+          },
+          {
+            "name": "The Caroline Incident (UK v. USA)",
+            "citation": "1837 29 BFSP 1137",
+            "principle": "US Secretary of State Daniel Webster's timeless formula for Self-Defence: necessity must be 'instant, overwhelming, leaving no choice of means, and no moment for deliberation', and action must be strictly proportionate."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the ONLY two lawful exceptions to the ban on use of force under Article 2(4) UN Charter, name the four groups protected by the 1949 Geneva Conventions, and list the four crimes under ICC jurisdiction.",
+            "a": "Exceptions: (1) Individual/collective self-defence under Art. 51, and (2) UNSC Chapter VII military enforcement (Art. 42). Geneva Conventions protect: (I) wounded/sick on land, (II) wounded/shipwrecked at sea, (III) POWs, and (IV) civilians. ICC crimes: Genocide, Crimes Against Humanity, War Crimes, and Aggression."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

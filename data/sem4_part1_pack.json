@@ -1,0 +1,270 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-ii",
+      "title": "Labour Law - II",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Payment of Bonus Act, 1965 & Allocable Surplus",
+          "topics": [
+            {"id": "labour-law-ii-u3-t1", "title": "1. Payment of Bonus Act, 1965 - Minimum/Maximum Bonus & Set-On / Set-Off (Sections 10, 11 & 15)"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "EPF, Maternity Benefit & Payment of Gratuity",
+          "topics": [
+            {"id": "labour-law-ii-u4-t1", "title": "1. Maternity Benefit Act, 1961 (26 Weeks & Sec. 12) & Payment of Gratuity Act, 1972 (5-Year Rule)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Child Labour Prohibition & Equal Remuneration",
+          "topics": [
+            {"id": "labour-law-ii-u5-t1", "title": "1. Child & Adolescent Labour (Prohibition & Regulation) Act, 1986 & Equal Remuneration Act, 1976"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "public-international-law",
+      "title": "Public International Law",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "State Succession, Acquisition of Territory & Extradition",
+          "topics": [
+            {"id": "public-international-law-u3-t1", "title": "1. State Succession, Modes of Acquiring Territory & Extradition (Double Criminality & Speciality)"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Law of Treaties & Diplomatic Immunities",
+          "topics": [
+            {"id": "public-international-law-u4-t1", "title": "1. Vienna Convention on Law of Treaties (1969) & Diplomatic Privileges and Immunities (1961)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Law of the Sea, Airspace, UN Organs & ICJ",
+          "topics": [
+            {"id": "public-international-law-u5-t1", "title": "1. UNCLOS (1982) - Territorial Sea, Continental Shelf & High Seas, Five Freedoms of Air, UN Organs & ICJ"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "labour-law-ii-u3-t1": {
+      "id": "labour-law-ii-u3-t1",
+      "subtitle": "Labour Law - II - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under the Payment of Bonus Act, 1965, bonus is a statutory right sharing industrial prosperity—not an ex-gratia gift. Employers must pay a minimum bonus of 8.33% even without surplus (Section 10) up to a maximum of 20% (Section 11), balanced across four accounting years via Set-On and Set-Off (Section 15).",
+        "legalProvision": "Sections 2(4), 4, 8, 9, 10, 11, and 15, Payment of Bonus Act, 1965 (now consolidated in Code on Wages, 2019)",
+        "meaning": "Bonus bridges the gap between actual wages and a living wage while promoting industrial harmony. Eligibility requires working at least 30 days in an accounting year, while dismissal for fraud, riotous behaviour, or theft disqualifies an employee (Section 9).",
+        "keyPoints": [
+          "Allocable Surplus (Section 2(4)): 67% of available surplus for domestic companies that have not arranged dividend declarations in India under Section 194 of the Income Tax Act, and 60% in all other cases.",
+          "Minimum Bonus (Section 10): Mandatory 8.33% of annual salary/wages (or Rs. 100, whichever is higher) payable even if the employer has no allocable surplus or incurs a loss.",
+          "Maximum Bonus (Section 11): When allocable surplus exceeds the minimum bonus, bonus is payable proportionately up to a statutory ceiling of 20% of salary/wages.",
+          "Set-On (Section 15(1)): Excess allocable surplus remaining after paying the 20% maximum bonus is carried forward (up to 20% of total wages) for up to 4 succeeding accounting years to fund future bonuses.",
+          "Set-Off (Section 15(2)): When there is no available surplus or a shortfall below the 8.33% minimum bonus, the deficiency is carried forward and adjusted against future surpluses for up to 4 succeeding accounting years."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jalan Trading Co. (P) Ltd. v. Mill Mazdoor Sabha",
+            "citation": "AIR 1967 SC 691",
+            "principle": "Upheld the constitutional validity of mandatory minimum bonus (Section 10) under the Payment of Bonus Act, 1965 as a reasonable restriction in the interest of industrial peace."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain Set-On and Set-Off of allocable surplus under Section 15 of the Payment of Bonus Act, 1965.",
+            "a": "Set-On carries forward excess surplus above the 20% maximum bonus for up to 4 years, while Set-Off carries forward deficits below the 8.33% minimum bonus to adjust against future surpluses for up to 4 years."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "labour-law-ii-u4-t1": {
+      "id": "labour-law-ii-u4-t1",
+      "subtitle": "Labour Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Maternity Benefit Act, 1961 (2017 Amendment) grants 26 weeks of paid leave and bars dismissal during pregnancy (Section 12). The Payment of Gratuity Act, 1972 grants terminal gratuity (15 days' wages per completed year) after 5 years' continuous service—waived in cases of death or disablement.",
+        "legalProvision": "Maternity Benefit Act, 1961 (Sections 5, 11A, & 12); Payment of Gratuity Act, 1972 (Sections 4 & 6); EPF & MP Act, 1952 (Social Security Code, 2020)",
+        "meaning": "Together with the Employees' Provident Fund Act, 1952 (applicable to establishments with 20+ workers), Maternity Benefit and Gratuity statutes protect women's motherhood dignity and reward long-term employee loyalty upon retirement, resignation, death, or disablement.",
+        "keyPoints": [
+          "Maternity Benefit Eligibility & Duration: Applies to establishments with 10+ employees where the woman worked at least 80 days in the past 12 months; provides 26 weeks' paid leave for up to 2 children (12 weeks for 3rd+ child, adopting mother of child under 3 months, or commissioning mother).",
+          "Job Security & Workplace Support: Section 12 prohibits dismissing a woman or varying her service conditions to her disadvantage during maternity absence; establishments with 50+ employees must provide creche facilities with 4 daily visits.",
+          "Payment of Gratuity Eligibility (Section 4): Applies to factories, mines, ports, railways, and shops/establishments with 10+ employees; payable upon superannuation, retirement, or resignation after 5 years' continuous service.",
+          "Exception to 5-Year Rule (Proviso to Section 4(1)): Completion of 5 years' continuous service is NOT required if termination is due to death or disablement from accident or disease.",
+          "Gratuity Calculation & Nomination: 15 days' last drawn wages for every completed year of service (or part exceeding 6 months); employees may nominate family members (Section 6), and disputes are decided by the Controlling Authority."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bakshish Singh v. Darshan Engineering Works",
+            "citation": "1994 1 SCC 9",
+            "principle": "Held that statutory gratuity under Section 4(1)(b) is a minimum service condition payable regardless of the employer's financial capacity and is a reasonable restriction under Article 19(6)."
+          },
+          {
+            "name": "Municipal Corporation of Delhi v. Female Workers (Muster Roll)",
+            "citation": "AIR 2000 SC 1274",
+            "principle": "Extended maternity benefits under the 1961 Act even to daily-wage muster-roll women workers under Article 42 and social justice principles."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can an employee who worked for 3 years claim gratuity upon resignation or upon death?",
+            "a": "Not upon resignation (requires 5 years' continuous service under Section 4), but his nominees CAN claim gratuity upon death or disablement because the 5-year requirement is waived."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "labour-law-ii-u5-t1": {
+      "id": "labour-law-ii-u5-t1",
+      "subtitle": "Labour Law - II - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 24 and the Child and Adolescent Labour (Prohibition and Regulation) Act, 1986 (amended in 2016) completely prohibit employing children below 14 years across all occupations (except non-hazardous family enterprises/artists after school hours) and ban adolescents (14-18) from hazardous industries.",
+        "legalProvision": "Articles 21A, 24, 39(d)-(f), Constitution of India; Child and Adolescent Labour (Prohibition and Regulation) Act, 1986 (Sections 3, 3A, 7, 8, & 14); Equal Remuneration Act, 1976",
+        "meaning": "Child labour deprives children aged 6-14 of compulsory education (Article 21A) and damages their physical and mental growth. Complementing child protection, the Equal Remuneration Act, 1976 enforces equal pay for men and women performing the same or similar work.",
+        "keyPoints": [
+          "Complete Prohibition Below 14 Years (Section 3, 2016 Amendment): Bans employment of children below 14 in all occupations and processes (narrow exception for helping family enterprises or audio-visual entertainment without affecting schooling); parental consent is no defence.",
+          "Adolescents (14 to 18 Years, Section 3A): Prohibited from working in any hazardous occupation or process (mines, inflammable substances, hazardous factory processes).",
+          "Regulated Conditions (Sections 7-8): Maximum 6 hours/day including 1-hour rest after 3 hours, strictly no work between 7 PM and 8 AM, no overtime, mandatory 1 whole-day weekly holiday, and maintenance of inspector registers.",
+          "Strict Penalties (Section 14): Employing a child in violation of Section 3 attracts imprisonment from 6 months to 2 years and/or fine of Rs. 20,000 to Rs. 50,000 (enhanced by the 2016 Amendment; repeat offences attract 1-3 years).",
+          "Equal Remuneration Act, 1976: Prohibits wage or recruitment discrimination on grounds of sex for the same work or work of a similar nature (now subsumed in Code on Wages, 2019)."
+        ],
+        "caseLaws": [
+          {
+            "name": "M.C. Mehta v. State of Tamil Nadu (Sivakasi Child Labour Case)",
+            "citation": "AIR 1997 SC 699",
+            "principle": "Issued binding Supreme Court directions banning child labour in hazardous industries (match/fireworks), imposing Rs. 20,000 employer compensation per child into a Child Labour Rehabilitation-cum-Welfare Fund."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Is an employer excused from employing a 12-year-old child in a workshop if the parents gave written consent?",
+            "a": "No. Employment of children below 14 years is strictly prohibited under Section 3 of the Act and Article 24; parental consent cannot legalize a statutory offence."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "public-international-law-u3-t1": {
+      "id": "public-international-law-u3-t1",
+      "subtitle": "Public International Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "State Succession occurs when one State replaces another in responsibility over a territory (Universal or Partial). Valid modern modes of acquiring territory are Occupation (terra nullius), Prescription, Cession, and Accretion—Conquest by force is illegal. Extradition surrenders fugitives by treaty under Double Criminality and the Rule of Speciality.",
+        "legalProvision": "UN Charter Article 2(4); Vienna Convention on Succession of States (1978); Indian Extradition Act, 1962",
+        "meaning": "International law regulates territorial sovereignty, continuity of debts/contracts after State succession, and cross-border criminal surrender while protecting political offenders from persecution.",
+        "keyPoints": [
+          "State Succession (Universal vs Partial): Universal succession occurs upon total merger or division (e.g., India/Pakistan in 1947); Partial succession occurs upon secession or cession (e.g., Bangladesh in 1971). Public property, local debts, and servitudes generally pass to the successor, while purely political/personal treaties expire and private property rights remain protected.",
+          "Valid Modes of Acquiring Territory: Occupation (effective control over terra nullius), Prescription (long, peaceful, public display of sovereignty), Cession (peaceful transfer by treaty), and Accretion/Avulsion (natural alluvial deposits vs sudden volcanic/river shifts).",
+          "Conquest Prohibited: Under Article 2(4) of the UN Charter and the 1970 Friendly Relations Declaration, territorial acquisition by threat or use of force is unlawful (e.g., UN rejection of Iraq's 1990 annexation of Kuwait).",
+          "Extradition Principles: No automatic duty without a bilateral extradition treaty; requires (1) Double Criminality (offence in both States—Eisler Case), (2) Rule of Speciality (tried only for the extradited offence—U.S. v. Rauscher), (3) Prima Facie evidence of guilt, and (4) Political Offence Exception (Castioni's Case)."
+        ],
+        "caseLaws": [
+          {
+            "name": "United States v. Rauscher",
+            "citation": "1886 119 US 407",
+            "principle": "Established the Rule of Speciality in extradition: a surrendered fugitive can be tried only for the specific offence mentioned in the extradition request."
+          },
+          {
+            "name": "In re Castioni",
+            "citation": "1891 1 QB 149",
+            "principle": "Refused extradition under the Political Offence Exception where the act was committed directly as part of an organized political uprising."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the Principle of Double Criminality and the Rule of Speciality in Extradition law.",
+            "a": "Double Criminality requires the alleged act to be a punishable crime in both the requesting and requested States; Rule of Speciality restricts prosecution strictly to the offence for which extradition was granted."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "public-international-law-u4-t1": {
+      "id": "public-international-law-u4-t1",
+      "subtitle": "Public International Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Vienna Convention on the Law of Treaties (1969) codifies written inter-State treaties under 'Pacta Sunt Servanda' (treaties bind in good faith), covering Ratification, Reservations, Jus Cogens, and Termination. The Vienna Convention on Diplomatic Relations (1961) grants diplomatic envoys personal inviolability and jurisdictional immunities.",
+        "legalProvision": "Vienna Convention on the Law of Treaties, 1969 (Articles 2, 14, 19, 26, 53, 61, 62, & 64); Vienna Convention on Diplomatic Relations, 1961 (Articles 20-36); UN Charter Article 102",
+        "meaning": "Treaties are the backbone of modern international law-making, while diplomatic immunities ensure envoys can represent their home States fearlessly without local harassment.",
+        "keyPoints": [
+          "Ratification (Article 14, VCLT 1969): Formal sovereign confirmation after signing allowing States time to review obligations and pass domestic legislation; no legal duty to ratify a signed treaty.",
+          "Reservations (Articles 2(1)(d) & 19, VCLT): Unilateral statement on a multilateral treaty modifying or excluding specific clauses; valid unless prohibited by the treaty or incompatible with its object and purpose.",
+          "Termination of Treaties (Articles 54-64): Occurs by expiry, mutual consent, denunciation, material breach (Article 60), supervening impossibility of performance (Article 61), fundamental change of circumstances—Rebus Sic Stantibus (Article 62), or emergence of a new peremptory norm—Jus Cogens (Article 64).",
+          "Diplomatic Immunities (Vienna Convention, 1961): Personal inviolability of envoy, inviolability of embassy premises and diplomatic bags, exemption from direct taxation, and absolute immunity from receiving State's criminal jurisdiction (can only be declared persona non grata).",
+          "Civil Immunity Exceptions (Article 31, 1961 Convention): Diplomats enjoy civil immunity except for (1) private immovable property actions, (2) private succession suits, and (3) private commercial/professional activities; diplomatic asylum in embassies is not generally recognized."
+        ],
+        "caseLaws": [
+          {
+            "name": "Reservations to the Genocide Convention (Advisory Opinion)",
+            "citation": "1951 ICJ Rep 15",
+            "principle": "Established the modern 'object and purpose' compatibility test for multilateral treaty reservations, later codified in Article 19 of the 1969 Vienna Convention."
+          },
+          {
+            "name": "United States Diplomatic and Consular Staff in Tehran (U.S. v. Iran)",
+            "citation": "1980 ICJ Rep 3",
+            "principle": "Affirmed that the inviolability of diplomatic envoys and embassy premises under the 1961 Vienna Convention is a fundamental, imperative obligation of international law."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three grounds for terminating a treaty under the 1969 Vienna Convention and the three exceptions to a diplomat's civil immunity.",
+            "a": "Treaty termination: material breach, supervening impossibility (Art. 61), fundamental change of circumstances—Rebus Sic Stantibus (Art. 62), or new Jus Cogens (Art. 64). Civil immunity exceptions: private immovable property, succession, and private commercial activity."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "public-international-law-u5-t1": {
+      "id": "public-international-law-u5-t1",
+      "subtitle": "Public International Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "UNCLOS (1982) divides the oceans into Territorial Sea (up to 12 nautical miles with innocent passage), Exclusive Economic Zone and Continental Shelf (200 NM, up to 350 NM max), and High Seas (open to all States under six freedoms). The UN Charter (1945) operates through six principal organs, with the 15-judge ICJ at The Hague adjudicating inter-State disputes.",
+        "legalProvision": "UN Convention on the Law of the Sea (UNCLOS, 1982 — Articles 3, 76, 86-87, 111); Chicago Convention (1944); UN Charter (1945) & ICJ Statute (Articles 36 & 96)",
+        "meaning": "International maritime, aviation, and institutional law prevents conflict over shared global commons (seas, seabed, airspace) and provides peaceful multilateral dispute settlement through the UN and International Court of Justice.",
+        "keyPoints": [
+          "Maritime Zones (UNCLOS, 1982): Territorial Sea extends up to 12 nautical miles from baselines (coastal sovereignty subject to foreign ships' right of innocent passage); Continental Shelf (Article 76) grants exclusive seabed/subsoil resource rights up to 200 NM (max 350 NM) without affecting superjacent High Seas.",
+          "High Seas & Right of Hot Pursuit (Articles 86-87 & 111): Open to all coastal and landlocked States for 6 freedoms (navigation, overflight, submarine cables/pipelines, fishing, artificial islands, scientific research); all States suppress piracy, and coastal warships enjoy Hot Pursuit ceasing upon entering another State's territorial sea.",
+          "Airspace & Five Freedoms of the Air (Chicago Convention, 1944): Recognizes complete State sovereignty over airspace above its territory, established ICAO, and framed the Five Freedoms of international civil aviation.",
+          "Six Principal Organs of the UN: General Assembly (all members, 1 vote each), Security Council (15 members: 5 permanent with veto—USA, UK, France, Russia, China + 10 elected for 2 years), ECOSOC (54 members elected for 3 years), Secretariat (Secretary-General), Trusteeship Council, and International Court of Justice.",
+          "International Court of Justice (ICJ, The Hague): 15 independent judges elected for 9-year terms; open ONLY to States (not private individuals); exercises Contentious Jurisdiction (Voluntary via special agreement under Art. 36(1) and Optional Compulsory Clause under Art. 36(2)) and Advisory Jurisdiction (Art. 96 on UNGA/UNSC requests)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Corfu Channel Case (U.K. v. Albania)",
+            "citation": "1949 ICJ Rep 4",
+            "principle": "Affirmed the right of innocent passage of warships through international straits in peacetime and held coastal States responsible for failing to warn of known mines in territorial waters."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the breadth limits of the Territorial Sea and Continental Shelf under UNCLOS (1982), and who can be a party before the ICJ?",
+            "a": "Territorial Sea: up to 12 nautical miles; Continental Shelf: 200 nautical miles (up to 350 NM max). Only sovereign States (not private individuals) can be parties in contentious cases before the ICJ."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

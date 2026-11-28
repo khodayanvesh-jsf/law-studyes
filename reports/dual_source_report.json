@@ -1,0 +1,13 @@
+{
+  "filesParsed": 0,
+  "conceptsExtracted": 0,
+  "topicsEnriched": 0,
+  "newTopicsCreated": 0,
+  "pointsAddedNonOverlap": 0,
+  "casesAddedNonOverlap": 0,
+  "overlapsBlocked": 0,
+  "grammarFixesApplied": 48,
+  "unmatchedSubjects": 0,
+  "enrichedTopicIds": [],
+  "createdTopicIds": []
+}

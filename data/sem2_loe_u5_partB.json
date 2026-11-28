@@ -1,0 +1,170 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-evidence",
+      "title": "Law of Evidence (IEA / BSA)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Witness Competency, Privileged Communications, Accomplice, Witness Examination, Hostile Witness, Refreshing Memory & Improper Evidence",
+          "topics": [
+            {"id": "loe-u5-t5", "title": "5. Lawful Questions in Cross-Examination, Compulsion to Answer & Protection of Witnesses (Secs. 132 & 146-153 IEA / Secs. 137 & 149-156 BSA)"},
+            {"id": "loe-u5-t6", "title": "6. Hostile Witness (Sec. 154 IEA / Sec. 157 BSA) & Impeaching Credit of Witness (Sec. 155 IEA / Sec. 158 BSA)"},
+            {"id": "loe-u5-t7", "title": "7. Refreshing Memory (Secs. 159-161 / Secs. 162-164 BSA), Corroboration (Secs. 156-157 / Secs. 159-160 BSA) & Judge's Power (Sec. 165 / Sec. 168 BSA)"},
+            {"id": "loe-u5-t8", "title": "8. Improper Admission and Rejection of Evidence (Sec. 167 IEA / Sec. 169 BSA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loe-u5-t5": {
+      "id": "loe-u5-t5",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "While cross-examination enjoys wide latitude under Section 146 IEA (Section 149 BSA) to test veracity, discover identity/status, and shake credit, courts actively shield witnesses from harassment under Sections 148-152 (Secs. 151-155 BSA) - barring indecent, scandalous, insulting, or baseless character questions and strictly forbidding past-sexual-character questions in rape trials. Under Section 132 (Sec. 137 BSA), a witness cannot refuse a relevant answer for fear of self-incrimination, but receives statutory immunity against prosecution based on his compelled answer.",
+        "legalProvision": "Sections 132 & 146-153, Indian Evidence Act, 1872 (Sections 137 & 149-156, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Cross-examination is a sword for truth, NOT a licence to humiliate witnesses. These provisions balance robust adversarial testing with witness dignity and fair trial protections.",
+        "keyPoints": [
+          "Lawful Questions in Cross-Examination (Sec. 146 IEA / Sec. 149 BSA): Cross-examiner may ask questions to (1) test veracity, (2) discover who the witness is and his position in life, or (3) shake his credit by injuring his character - EVEN IF answers tend directly or indirectly to criminate or expose him to penalty. MANDATORY PROVISO (2013 Amendment): In rape/sexual offence trials (Secs. 376-376E IPC / Secs. 64-71 BNS), asking questions about the survivor's general immoral character or previous sexual experience to prove consent is STRICTLY PROHIBITED.",
+          "Compulsion to Answer & Self-Incrimination Immunity (Sec. 132 & Sec. 147 IEA / Sec. 137 & Sec. 150 BSA): A witness is NOT excused from answering a question relevant to the matter in issue merely because the answer will incriminate him; however, the Proviso to Sec. 132 / Sec. 137 BSA grants protective immunity - no such compelled answer shall subject him to arrest or prosecution or be proved against him in any criminal proceeding (EXCEPT prosecution for giving false evidence/perjury - R. Dinesh Kumar v. State).",
+          "Court's Control Over Credit Questions (Secs. 148-152 / Secs. 151-155 BSA): Where a question affects ONLY credit (not the core issue), the judge decides whether to compel an answer (Sec. 148 / Sec. 151 BSA); advocates CANNOT ask character-injuring questions without reasonable grounds (Secs. 149-150 / Secs. 152-153 BSA - court may report offending advocate to High Court/Bar Council); courts MUST forbid indecent/scandalous questions (Sec. 151 / Sec. 154 BSA) and questions intended to insult or annoy (Sec. 152 / Sec. 155 BSA).",
+          "Exclusion of Collateral Contradiction (Sec. 153 / Sec. 156 BSA): When a witness answers a question relevant ONLY to shaking credit, NO external evidence may be led to contradict him (preventing endless side-trials), EXCEPT to prove (1) a denied previous conviction, or (2) bias/impartiality."
+        ],
+        "caseLaws": [
+          {
+            "name": "R. Dinesh Kumar alias Deena v. State",
+            "citation": "2015 7 SCC 497",
+            "principle": "Held that the Proviso to Section 132 IEA (Sec. 137 BSA) is a facet of Article 20(3) protection: a witness compelled by court summons to answer an incriminating question cannot later be prosecuted using that compelled statement."
+          },
+          {
+            "name": "State of Punjab v. Gurmit Singh",
+            "citation": "1996 2 SCC 384",
+            "principle": "Directed trial judges to actively exercise Sections 151-152 powers to shield rape survivors from humiliating, scandalous cross-examination and hold in-camera trials."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What statutory protection does the Proviso to Section 132 IEA (Section 137 BSA) give a witness compelled to give an incriminating answer, and what does the Proviso to Section 146 strictly bar?",
+            "a": "A compelled incriminating answer cannot be used to arrest or prosecute the witness in any criminal proceeding (except perjury). The Proviso to Section 146 / Sec. 149 BSA strictly bars cross-examining a sexual assault survivor on her general moral character or past sexual experience."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u5-t6": {
+      "id": "loe-u5-t6",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Hostile Witness (Sec. 154 IEA / Sec. 157 BSA, 2023) is a party's own witness who turns adverse or suppresses the truth, whom the calling party may cross-examine with the court's permission. Crucially, testimony of a hostile witness is NOT automatically effaced - the truthful, corroborated portion remains fully admissible (Sec. 154(2) / Sec. 157(2) BSA). Section 155 IEA (Section 158 BSA) lists three statutory modes of Impeaching the Credit of any witness.",
+        "legalProvision": "Sections 154 & 155, Indian Evidence Act, 1872 (Sections 157 & 158, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Witnesses in criminal trials often turn hostile due to intimidation or inducement. Rather than throwing out their entire testimony (which would reward witness tampering), Indian courts sift grain from chaff and use corroborating parts of a hostile witness's deposition.",
+        "keyPoints": [
+          "Hostile Witness & Court's Discretion (Sec. 154(1) IEA / Sec. 157(1) BSA): The statute avoids the label 'hostile' and empowers the court, in its discretion, to permit the person who calls a witness to put ANY questions to him that might be put in cross-examination by the adverse party (including leading questions and confronting prior Sec. 161/164 statements).",
+          "Evidentiary Value of Hostile Witness Testimony (Sec. 154(2) IEA / Sec. 157(2) BSA - inserted 2005): Expressly clarifies that declaring a witness hostile / cross-examining him does NOT disentitle the party from relying on ANY PART of his evidence found truthful and corroborated by independent evidence (Sat Paul v. Delhi Administration; Selvaraj v. State).",
+          "Three Modes of Impeaching Witness Credit (Sec. 155 IEA / Sec. 158 BSA): The credit of a witness may be impeached by the adverse party (or by the calling party with court consent) in ONLY three ways - (1) By evidence of persons testifying from personal knowledge that they believe the witness to be UNWORTHY OF CREDIT, (2) By proof that the witness has been BRIBED, accepted an offer of a bribe, or received any corrupt inducement, OR (3) By proof of FORMER STATEMENTS INCONSISTENT with any part of his evidence liable to be contradicted (note: old Clause (4) allowing proof of a rape prosecutrix's 'immoral character' was DELETED in 2003 and remains permanently abolished in BSA).",
+          "Distinction Between 'Unfavourable' and 'Hostile' Witness: An unfavourable witness merely fails to prove a fact as hoped (honest memory lapse), whereas a hostile witness exhibits an active adverse animus or unwillingness to tell the truth."
+        ],
+        "caseLaws": [
+          {
+            "name": "Sat Paul v. Delhi Administration",
+            "citation": "AIR 1976 SC 294",
+            "principle": "Landmark authority on Section 154 IEA: held that even when a witness is cross-examined by his own party, his entire evidence is NOT washed off the record - courts can accept whatever portion inspires confidence and aligns with other evidence."
+          },
+          {
+            "name": "Ramesh Harijan v. State of U.P.",
+            "citation": "2012 5 SCC 777",
+            "principle": "Reaffirmed that courts must separate the grain from the chaff in hostile witness depositions and that witness hostility does not automatically mandate acquittal."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Does cross-examining one's own Hostile Witness under Section 154 IEA (Section 157 BSA) wipe out his entire testimony, and what are the three ways to impeach witness credit under Section 155 (Section 158 BSA)?",
+            "a": "No - under Sec. 154(2) / Sec. 157(2) BSA and Sat Paul, truthful corroborated portions remain fully admissible. Credit is impeached under Sec. 155 / Sec. 158 BSA by proving (1) unworthiness of credit, (2) bribery/corrupt inducement, or (3) prior inconsistent statements."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u5-t7": {
+      "id": "loe-u5-t7",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Because trials occur years after events, Sections 159-161 IEA (Sections 162-164 BSA, 2023) allow witnesses (such as doctors, police officers, and experts) to Refresh Memory from contemporaneous writings, subject to the opponent's right of inspection and cross-examination. Sections 156-157 (Secs. 159-160 BSA) permit corroborating testimony through surrounding circumstances and prior consistent statements (e.g., FIR), while Section 165 (Sec. 168 BSA) grants the Judge wide active powers to question witnesses and order production of evidence.",
+        "legalProvision": "Sections 156-161 & 165, Indian Evidence Act, 1872 (Sections 159-164 & 168, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Refreshing memory ensures accuracy on technical dates, injuries, and numbers without letting witnesses read coached scripts, while Section 165 / Section 168 BSA ensures the presiding judge is never a mute spectator when discovering truth.",
+        "keyPoints": [
+          "Refreshing Memory - Present Recollection (Sec. 159 IEA / Sec. 162 BSA): A witness under examination may refresh memory by referring to (1) ANY writing made by himself at the time of the transaction or so soon afterwards that the court considers it likely to be fresh in his memory (e.g., doctor's post-mortem notes, police panchnama/case diary under Sec. 172 CrPC), (2) Any writing made by ANOTHER person and read/verified as correct by the witness at that time, (3) A copy of such writing with court permission if original is unavailable, or (4) Professional treatises for Experts.",
+          "Past Recollection Recorded (Sec. 160 / Sec. 163 BSA) & Adverse Party's Right (Sec. 161 / Sec. 164 BSA): Even if the witness has NO specific independent recollection left after reading the note, he may testify to the facts recorded if he is SURE they were accurately recorded at the time (Sec. 160). Crucially, under Section 161 / Section 164 BSA, ANY writing used to refresh memory MUST be produced and shown to the adverse party, who may inspect it and cross-examine the witness on it.",
+          "Questions of Corroboration (Secs. 156-157 / Secs. 159-160 BSA): To corroborate a witness's testimony, he may be questioned on any other surrounding circumstances observed at or near the time/place (Sec. 156); under Section 157 / Section 160 BSA, ANY former statement (e.g., prompt FIR, Sec. 164 statement, immediate complaint to relatives) made at or about the time of the event OR before any legally competent investigating authority is admissible to CORROBORATE his later court testimony (not substantive evidence by itself - State of Rajasthan v. Narayan).",
+          "Judge's Plenary Power to Question or Order Production (Sec. 165 IEA / Sec. 168 BSA): Judge may ask ANY question in ANY form (relevant or irrelevant) to ANY witness/party at ANY time and order production of ANY document/thing to discover truth - parties cannot object without court leave. Limits: Judgment MUST still be based strictly on legally relevant and proved facts, and the judge cannot override statutory Privileges (Secs. 121-131 / Secs. 127-136 BSA)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ram Chander v. State of Haryana",
+            "citation": "AIR 1981 SC 1036",
+            "principle": "Explained Section 165 IEA (Sec. 168 BSA): a criminal trial judge is not a mere referee or tape-recorder, but an active participant in discovering truth - while avoiding assuming the partisan role of prosecutor."
+          },
+          {
+            "name": "State of Karnataka v. Yarappa Reddy",
+            "citation": "1999 8 SCC 715",
+            "principle": "Affirmed that a promptly lodged FIR or contemporaneous statement made to an investigating authority is valuable corroborative evidence under Section 157 IEA (Sec. 160 BSA)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What right does Section 161 IEA (Section 164 BSA) give the adverse party when a witness uses a document to refresh memory, and what two restrictions limit a Judge's wide questioning power under Section 165 (Section 168 BSA)?",
+            "a": "The adverse party has an absolute right to require production of the writing, inspect it, and cross-examine the witness on it. Under Sec. 165 / Sec. 168 BSA, the judge (1) must base the final judgment strictly on legally relevant, proved facts, and (2) cannot compel answers protected by statutory Privilege (Secs. 121-131 IEA / Secs. 127-136 BSA)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u5-t8": {
+      "id": "loe-u5-t8",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 167 IEA (Section 169 BSA, 2023) is the final substantive safeguard of the Evidence Act: the improper admission OR improper rejection of evidence shall NOT by itself be a ground for a new trial or reversal of any civil or criminal decision if, independently of the wrongly admitted evidence (or even after adding the wrongly rejected evidence), sufficient evidence exists to justify the same verdict.",
+        "legalProvision": "Section 167, Indian Evidence Act, 1872 (Section 169, Bharatiya Sakshya Adhiniyam, 2023); Section 99 CPC; Section 465 CrPC / Section 511 BNSS",
+        "meaning": "Designed to prevent technical appellate windfalls and endless retrials, Section 167 / Section 169 BSA shifts the appellate court's focus from procedural perfection to 'failure of justice' - asking whether the evidentiary error actually altered the outcome.",
+        "keyPoints": [
+          "Two Branches of Section 167 IEA / Section 169 BSA: (1) Improper Admission of Evidence (e.g., trial court wrongly admitted hearsay or an uncertified document): Appellate court simply EXCLUDES the inadmissible piece and examines the remaining lawful record - if sufficient independent evidence still supports the decree/conviction, the verdict is UPHELD; (2) Improper Rejection of Evidence (e.g., trial court wrongly shut out a relevant defence document): Appellate court evaluates whether receiving that rejected evidence OUGHT TO HAVE VARIED the decision - if not, no retrial is ordered.",
+          "Applies to Both Civil & Criminal Appeals (Harmonized with Sec. 99 CPC & Sec. 465 CrPC / Sec. 511 BNSS): Technical errors in admitting or excluding evidence never overturn a sound judgment unless they caused a genuine miscarriage or failure of justice.",
+          "When Appellate Court WILL Reverse or Order Retrial: (1) If the wrongly admitted evidence formed the SOLE or decisive foundation of conviction/decree (leaving insufficient lawful proof once excised), OR (2) If the wrongly rejected evidence was vital and could reasonably have swung the verdict the other way (e.g., shutting out a crucial alibi or defence witness).",
+          "Timely Objection Rule (R.V.E. Venkatachala Gounder v. Arulmigu Viswesaraswami, 2003): Objections regarding mere 'mode of proof' (irregularity in proving a document) MUST be raised at trial when the document is tendered (waived if not objected then), whereas inherent inadmissibility (e.g., police confession under Sec. 25) can be raised even at the appellate stage."
+        ],
+        "caseLaws": [
+          {
+            "name": "Abdul Rahim v. King Emperor",
+            "citation": "AIR 1946 PC 82",
+            "principle": "Classic Privy Council authority on Section 167 IEA: where inadmissible evidence was wrongly admitted at trial, the High Court can independently appraise the remaining admissible evidence and sustain conviction if guilt is still proved beyond reasonable doubt."
+          },
+          {
+            "name": "Narayan Bhagwantrao Gosavi Balajiwale v. Gopal Vinayak Gosavi",
+            "citation": "AIR 1960 SC 100",
+            "principle": "Applied Section 167 in civil appeals: once both parties have led full evidence, an appeal will not succeed merely on technical evidentiary objections unless the error materially affected the merits of the decree."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the twin tests applied by an appellate court under Section 167 IEA (Section 169 BSA) for (a) improper admission and (b) improper rejection of evidence.",
+            "a": "(a) For improper admission: exclude the wrongly admitted evidence and uphold the verdict if the remaining lawful evidence still justifies it. (b) For improper rejection: uphold the verdict unless admitting the wrongly rejected evidence ought to have varied the decision."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "subjects": [
+    {
+      "id": "jurisprudence",
+      "title": "Jurisprudence",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper I",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Obligations (Sources & Kinds), Liability, Acts, Mens Rea, Motive, Negligence, Strict/Vicarious Liability & Measure of Liability",
+          "topics": [
+            {"id": "jur-u4-t1", "title": "1. Obligation - Nature, Kinds (Simple & Solidary) & Sources (Contract, Quasi-Contract, Trust, Delict & Breach)"},
+            {"id": "jur-u4-t2", "title": "2. Liability - Nature, Kinds (Civil vs Criminal, Remedial vs Penal) & Acts (Positive/Negative, Internal/External)"},
+            {"id": "jur-u4-t3", "title": "3. Mens Rea, Intention & Motive (Relevance of Motive) and Accident as a Defence"},
+            {"id": "jur-u4-t4", "title": "4. Negligence (Subjective vs Objective Theories), Strict Liability & Absolute Liability"},
+            {"id": "jur-u4-t5", "title": "5. Vicarious Liability (Civil & Criminal) & Measure of Civil and Criminal Liability"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "jur-u4-t1": {
+      "id": "jur-u4-t1",
+      "subtitle": "Jurisprudence - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "An Obligation (Latin 'Vinculum Juris' - bond of law) is a proprietary Right in Personam tying a definite debtor to a definite creditor for performance of an act or payment of money (chose in action). Salmond classifies obligations by source into four heads - Contractual, Delictal (Tortious), Quasi-Contractual, and Innominate (such as Trusts) - and by parties into Simple and Solidary Obligations.",
+        "legalProvision": "Salmond on Obligations; Indian Contract Act, 1872 (Secs. 43 & 68-72); Indian Trusts Act, 1882",
+        "meaning": "Viewed from the creditor's side an obligation is a proprietary right in personam; viewed from the debtor's side it is a proprietary duty. Unlike status duties (like marriage), obligations carry measurable pecuniary value.",
+        "keyPoints": [
+          "Nature of Obligation (Chose in Action): A legal tie ('Vinculum Juris') compelling a specific debtor to render money or service to a specific creditor, legally enforceable by suit.",
+          "Four Sources of Obligations (Salmond): (1) Contractual Obligations (arising from voluntary agreement/consensus ad idem - e.g., sale, loan, lease), (2) Delictal / Tortious Obligations (arising from breach of duty imposed by law independently of contract - e.g., paying damages for negligence or defamation), (3) Quasi-Contractual Obligations (imposed by law to prevent UNJUST ENRICHMENT even without agreement - Secs. 68-72 ICA: necessaries to minor, money paid by mistake, finder of lost goods), and (4) Innominate Obligations (residual category not fitting the first three - chiefly fiduciary obligations of a Trustee to Beneficiaries under the Indian Trusts Act, 1882 or a guardian to a ward).",
+          "Simple vs Solidary Obligations: A Simple Obligation involves one creditor and one debtor. A Solidary Obligation binds TWO OR MORE co-debtors to owe the SAME debt to a creditor, divided into three types: (a) Several Solidary (distinct causes of action for same debt, e.g., principal debtor and surety), (b) Joint Solidary (single undivided cause of action, e.g., partners in a firm), and (c) Joint and Several Solidary (creditor may sue any one or all co-debtors for the full sum - e.g., joint tortfeasors and co-promisors under Section 43 ICA).",
+          "Breach of Obligation & Remedies: Breach converts a primary obligation into a sanctioning/remedial obligation enforced via unliquidated damages, specific performance, restitution, or injunction."
+        ],
+        "caseLaws": [
+          {
+            "name": "Moses v. Macferlan",
+            "citation": "1760 2 Burr 1005",
+            "principle": "Lord Mansfield grounded Quasi-Contractual obligations in natural justice and equity ('ex aequo et bono'): no person should be allowed to enrich himself unjustly at another's expense."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name the four sources of Obligations classified by Salmond and distinguish between Several, Joint, and Joint-and-Several Solidary Obligations.",
+            "a": "Contractual, Delictal (Tortious), Quasi-Contractual, and Innominate (e.g., Trust). In Several Solidary obligations each debtor is bound by a separate cause of action (surety), in Joint Solidary there is one single cause of action, and in Joint-and-Several the creditor may recover the full amount from any one or all debtors (Sec. 43 ICA)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u4-t2": {
+      "id": "jur-u4-t2",
+      "subtitle": "Jurisprudence - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Liability is the legal bond of necessity ('Vinculum Juris') subjecting a wrongdoer to civil compensation or criminal punishment for breaching a legal duty. Salmond divides liability into Civil vs Criminal and Remedial (enforcing rights/compensation) vs Penal (punishing the offender), all triggered by a legally recognizable 'Act' (voluntary human conduct - positive or negative, internal or external).",
+        "legalProvision": "Salmond & Austin on Liability and Acts; Sections 32-33 IPC / Section 2(25) BNS, 2023",
+        "meaning": "Law cannot punish mere silent thoughts or involuntary reflexes (like sleepwalking or seizures); liability attaches only to a willed human Act (or illegal Omission) connected by causation to legally prohibited harm.",
+        "keyPoints": [
+          "Nature & Kinds of Liability: (1) Civil Liability (enforcing private rights via damages, specific performance, or injunction - party sues, preponderance of probabilities) vs Criminal Liability (punishing public wrongs via imprisonment, fine, or community service - State prosecutes, proof beyond reasonable doubt); (2) Remedial Liability (aims to compel performance or restore status quo; generally does NOT require Mens Rea - e.g., repaying a loan, except impossible/irrevocable acts) vs Penal Liability (aims to punish wrongdoing; generally REQUIRES Mens Rea under 'Actus non facit reum nisi mens sit rea').",
+          "Meaning & Three Components of a Legal 'Act' (Salmond): Any event subject to the control of human will - consisting of (1) Origin (bodily/mental activity), (2) Circumstances (surrounding facts, e.g., knowing the gun is loaded), and (3) Consequences (resulting death or injury).",
+          "Classification of Acts: (1) Positive Acts (commission - hitting, signing) vs Negative Acts / Omissions (failing to perform a LEGAL duty, e.g., parent starving a child - Sec. 32 IPC; mere moral failure to rescue a stranger is not an illegal omission); (2) Internal Acts (mental processes like intention/negligence) vs External Acts (overt physical conduct); (3) Intentional vs Unintentional Acts.",
+          "Damnum Sine Injuria vs Injuria Sine Damno: Legal liability attaches ONLY to 'Injuria' (violation of a legal right), NOT bare financial loss without legal wrong ('Damnum sine injuria' - Gloucester Grammar School Case); conversely, violating an absolute legal right triggers liability even without monetary loss ('Injuria sine damno' - Ashby v. White)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Gloucester Grammar School Case",
+            "citation": "1410 YB 11 Hen IV 47",
+            "principle": "Classic authority on 'Damnum Sine Injuria': opening a rival school that reduces a neighbour's fees causes actual financial loss (damnum) without violating any legal right (injuria), creating zero legal liability."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Remedial Liability and Penal Liability, and explain why a purely involuntary reflex movement is not a legal 'Act'.",
+            "a": "Remedial liability enforces a civil right/compensation without generally requiring guilty mind, whereas Penal liability imposes punishment and ordinarily requires Mens Rea. A legal 'Act' requires voluntary control of human will (willed conduct or illegal omission), excluding involuntary reflexes or convulsions."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u4-t3": {
+      "id": "jur-u4-t3",
+      "subtitle": "Jurisprudence - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Penal liability ordinarily requires Mens Rea (guilty mind) under 'Actus non facit reum nisi mens sit rea'. Intention is the immediate purpose directing an act (essential to guilt), whereas Motive is the ulterior reason behind it - ordinarily IRRELEVANT to liability, EXCEPT in criminal attempts, defamation/malicious prosecution, and evidentiary proof (Sec. 8 IEA / Sec. 6 BSA). Inevitable Accident (Sec. 80 IPC / Sec. 18 BNS) completely negates Mens Rea and excuses liability.",
+        "legalProvision": "Section 80 IPC / Section 18 BNS, 2023 (Accident); Section 8 IEA / Section 6 BSA (Relevancy of Motive)",
+        "meaning": "Good motive never justifies a crime (stealing to feed the poor is still theft), and bad motive never turns a wholly lawful act into a tort (Bradford Corporation v. Pickles) - yet understanding the exact narrow zones where motive matters is a classic Jurisprudence exam favourite.",
+        "keyPoints": [
+          "Mens Rea & Intention: Mens Rea encompasses Intention (foreseeing AND desiring a consequence), Knowledge (high awareness of probable outcome), Recklessness (conscious disregard of risk), and Criminal Negligence. Transferred Malice (Sec. 301 IPC / Sec. 102 BNS): intending to shoot A and accidentally killing B still makes the shooter guilty of murder.",
+          "Intention vs Motive: Intention is the immediate operational aim ('A steals bread intending to take it without consent'); Motive is the ulterior end ('to feed his hungry child'). General Rule: Motive is IRRELEVANT in determining both civil tort liability (Bradford Corporation v. Pickles) and criminal guilt (bad motive cannot make a lawful act unlawful, and noble motive cannot excuse a crime).",
+          "Five Exceptions Where Motive IS Legally Relevant: (1) Criminal Attempts (proving specific criminal intent behind ambiguous preparation), (2) Specific Malice Torts (Malicious Prosecution, Defamation destroying qualified privilege, Conspiracy to injure), (3) Evidentiary Proof in Circumstantial Cases (Sec. 8 IEA / Sec. 6 BSA - motive supplies a vital evidentiary link), (4) Sentencing / Quantum of Punishment (altruistic or provoked motive mitigates sentence, cruel mercenary motive aggravates it), and (5) Specific Statutory Crimes requiring ulterior purpose (e.g., burglary/trespass with intent to annoy).",
+          "Accident as a Defence (Sec. 80 IPC / Sec. 18 BNS & Tort Law): An unforeseen, unintended misfortune occurring while doing a LAWFUL act in a LAWFUL manner by LAWFUL means with proper care and caution (e.g., axe head flying off safely handled tool and killing a bystander; Stanley v. Powell) completely excuses both civil and criminal liability - EXCEPT where Strict/Absolute Liability applies."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mayor of Bradford v. Pickles",
+            "citation": "1895 AC 587 (HL)",
+            "principle": "Held that a landowner diverting percolating underground water on his own land to force the town to buy his property at a high price committed NO tort: an evil motive does not make a lawful act illegal."
+          },
+          {
+            "name": "Stanley v. Powell",
+            "citation": "1891 1 QB 86",
+            "principle": "Illustrates Inevitable Accident: a pheasant shooter whose pellet unexpectedly ricocheted off a tree bough and injured a beater without any negligence was held not liable."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Intention and Motive, and state four specific situations in which Motive becomes legally relevant.",
+            "a": "Intention is the immediate purpose of the act, whereas Motive is the ulterior reason behind it. Motive is relevant in (1) criminal attempts, (2) torts like malicious prosecution and defeating qualified privilege in defamation, (3) circumstantial evidence under Sec. 8 IEA / Sec. 6 BSA, and (4) determining quantum of punishment."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u4-t4": {
+      "id": "jur-u4-t4",
+      "subtitle": "Jurisprudence - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Negligence is culpable carelessness - breaching a legal duty to take reasonable care causing damage - debated between Salmond's Subjective Theory (mental state of indifference) and Pollock's Objective Theory (falling below the 'Reasonable Man' standard). Strict Liability (Rylands v. Fletcher) and India's even tougher Absolute Liability (M.C. Mehta) impose no-fault liability for hazardous activities regardless of care taken.",
+        "legalProvision": "Donoghue v. Stevenson (Duty of Care); Rylands v. Fletcher (Strict Liability); M.C. Mehta (Absolute Liability); Section 304A IPC / Section 106 BNS, 2023",
+        "meaning": "While ordinary tort and criminal liability require fault (intention or negligence), industrial hazards and dangerous substances shifted modern jurisprudence toward no-fault enterprise liability to protect innocent communities.",
+        "keyPoints": [
+          "Essentials of Negligence (Donoghue v. Stevenson, 1932): (1) Legal Duty of Care owed to the plaintiff ('Neighbour Principle'), (2) Breach of that duty (failing the standard of a reasonable prudent person), and (3) Resulting Damage (causation). Civil negligence requires ordinary lack of care, whereas Criminal Negligence (Sec. 304A IPC / Sec. 106 BNS) demands GROSS/wicked recklessness (Jacob Mathew v. State of Punjab for medical professionals).",
+          "Subjective vs Objective Theories of Negligence: Subjective Theory (Salmond, Austin) treats negligence as a culpable STATE OF MIND (indifference/inadvertence contrasted with wrongful intent); Objective Theory (Sir Frederick Pollock, Holmes) treats negligence as a TYPE OF CONDUCT falling below the external standard of an ordinary 'Reasonable Man' regardless of internal thoughts. Modern courts largely apply the Objective standard (measured via 'Res Ipsa Loquitur' - the thing speaks for itself).",
+          "Strict Liability (Rylands v. Fletcher, 1868): Whoever brings and accumulates a dangerous thing on his land (non-natural use) keeps it at his peril and is strictly liable WITHOUT FAULT if it escapes and causes damage - subject to 5 DEFENCES: (1) Act of God (Vis Major), (2) Plaintiff's own default, (3) Act of a third party/stranger, (4) Statutory authority, and (5) Common benefit / consent.",
+          "Absolute Liability in India (M.C. Mehta v. Union of India - Oleum Gas Leak Case, 1987): Chief Justice P.N. Bhagwati rejected the 19th-century Rylands exceptions for hazardous/inherently dangerous industries - an enterprise owes an ABSOLUTE, NON-DELEGABLE duty with ZERO exceptions, and damages scale with the enterprise's size and capacity to pay (deep-pocket deterrence)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rylands v. Fletcher",
+            "citation": "1868 LR 3 HL 330",
+            "principle": "Established Strict Liability: a person accumulating a dangerous substance through non-natural land use is liable without proof of negligence if it escapes and harms neighbours, subject to five narrow exceptions."
+          },
+          {
+            "name": "M.C. Mehta v. Union of India (Oleum Gas Leak Case)",
+            "citation": "AIR 1987 SC 1086",
+            "principle": "Evolved India's indigenous Rule of Absolute Liability: hazardous enterprises are strictly liable with NO Rylands exceptions, with compensation linked to the financial capacity of the enterprise."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Contrast Salmond's Subjective Theory with Pollock's Objective Theory of Negligence, and state two key differences between Strict Liability (Rylands) and Absolute Liability (M.C. Mehta).",
+            "a": "Salmond views negligence as a mental state of carelessness/indifference, whereas Pollock views it as external conduct below the Reasonable Man standard. Unlike Rylands Strict Liability, India's Absolute Liability requires no 'escape' from land, allows ZERO exceptions (no Act of God/third party defence), and ties compensation to enterprise size."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u4-t5": {
+      "id": "jur-u4-t5",
+      "subtitle": "Jurisprudence - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Vicarious Liability holds one person legally answerable for the wrong committed by another (e.g., Master for Servant's tort during employment under 'Qui facit per alium facit per se' and 'Respondeat Superior'). In Criminal Law, vicarious liability is rare EXCEPT statutory strict-liability/public-nuisance offences and corporate statutes. Finally, the Measure of Liability differs sharply: Civil liability measures exact loss/compensation, whereas Criminal liability weighs motive, magnitude of offence, and character of offender.",
+        "legalProvision": "Maxims 'Respondeat Superior' & 'Qui Facit Per Alium Facit Per Se'; Sections 154-156 IPC / Section 193 BNS (Landowner liability); Section 141 NI Act (Corporate Vicarious Liability)",
+        "meaning": "Civil vicarious liability rests on economic fairness (employers who profit from employees' work and hold deeper pockets must absorb operational risks), while criminal law restricts punishment strictly to personal culpability unless Parliament expressly mandates otherwise.",
+        "keyPoints": [
+          "Civil Vicarious Liability (Master-Servant, Principal-Agent & Partners): Grounded in two Latin maxims - 'Qui facit per alium facit per se' (he who acts through another acts himself) and 'Respondeat Superior' (let the superior answer). Master is liable for ANY tort (even fraud or forbidden acts - Lloyd v. Grace, Smith & Co.) committed by a servant 'in the course of employment' (distinguished from an Independent Contractor, where employer lacks control over the MANNER of work, except non-delegable/extra-hazardous duties). Includes State vicarious liability for non-sovereign torts (State of Rajasthan v. Vidhyawati).",
+          "Vicarious Liability in Criminal Law (General Rule vs Exceptions): General Rule -> NO vicarious criminal liability (each person answers strictly for his own Mens Rea). Narrow Statutory Exceptions: (1) Public nuisance/libel by servant/printer, (2) Licensing/food adulteration/essential commodities statutes holding shop owners liable for employee sales, (3) Landowner's failure to report/prevent unlawful assembly/riot on his land (Secs. 154-156 IPC / Sec. 193 BNS), and (4) Corporate officers 'in charge of and responsible for' company business (e.g., Sec. 141 Negotiable Instruments Act).",
+          "Measure of Civil Liability (Compensatory Principle): Measured strictly by the EXTENT OF LOSS OR INJURY suffered by the plaintiff ('Restitutio in integrum' - putting the injured party back in the same monetary position), largely IRRESPECTIVE of the defendant's motive, wealth, or moral blameworthiness (except rare Exemplary/Punitive damages for oppressive conduct).",
+          "Measure of Criminal Liability (Salmond's Three Factors): Criminal sentencing does NOT depend solely on financial harm; courts weigh three juristic factors - (1) Motive of the Offence (stronger/greedier temptation needs stronger deterrence; provocation/starvation mitigates), (2) Magnitude of the Offence (gravity of social harm caused - murder vs petty theft), and (3) Character of the Offender (first-time young offender gets probation/community service, whereas habitual hardened recidivist receives enhanced penalty)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Lloyd v. Grace, Smith & Co.",
+            "citation": "1912 AC 716 (HL)",
+            "principle": "Held a firm of solicitors vicariously liable for the fraud of its managing clerk who misappropriated a client's title deeds for his own personal benefit while acting within apparent scope of employment."
+          },
+          {
+            "name": "State of Rajasthan v. Vidhyawati",
+            "citation": "AIR 1962 SC 933",
+            "principle": "Held the State vicariously liable in tort for the fatal rash driving of a government jeep driver returning from a repair workshop, applying Respondeat Superior to non-sovereign State acts."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the two Latin maxims behind Civil Vicarious Liability, and contrast the three factors governing Measure of Criminal Liability with the Measure of Civil Liability.",
+            "a": "'Qui facit per alium facit per se' (acting through another is acting oneself) and 'Respondeat Superior' (let the superior answer). Civil liability is measured strictly by the plaintiff's monetary loss/injury, whereas Criminal liability weighs (1) Motive of the offence, (2) Magnitude/gravity of harm, and (3) Character/antecedents of the offender."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

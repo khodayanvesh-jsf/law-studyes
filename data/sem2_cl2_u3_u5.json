@@ -1,0 +1,491 @@
+{
+  "subjects": [
+    {
+      "id": "constitutional-law-ii",
+      "title": "Constitutional Law - II",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Centre-State Relations (Legislative, Administrative & Financial), Coordination & Judicial Doctrines",
+          "topics": [
+            {"id": "cl2-u3-t1", "title": "1. Legislative Relations & Seventh Schedule Distribution of Powers (Arts. 245-255)"},
+            {"id": "cl2-u3-t2", "title": "2. Judicial Doctrines of Federal Interpretation (Territorial Nexus, Pith & Substance, Colourable Legislation & Repugnancy)"},
+            {"id": "cl2-u3-t3", "title": "3. Administrative Relations & Centre-State Cooperation/Coordination (Arts. 256-263)"},
+            {"id": "cl2-u3-t4", "title": "4. Financial Relations, GST Council (Art. 279A), Finance Commission (Art. 280) & Grants-in-Aid"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "State Liability (Torts & Contracts), Inter-State Trade, Services, All-India Services & PSCs",
+          "topics": [
+            {"id": "cl2-u4-t1", "title": "1. Liability of State in Contracts (Art. 299) & Torts (Art. 300 - Sovereign vs Non-Sovereign Functions)"},
+            {"id": "cl2-u4-t2", "title": "2. Freedom of Inter-State Trade, Commerce and Intercourse (Articles 301-307)"},
+            {"id": "cl2-u4-t3", "title": "3. Services Under the Union & States - Doctrine of Pleasure (Art. 310) & Constitutional Safeguards (Art. 311)"},
+            {"id": "cl2-u4-t4", "title": "4. All-India Services (Art. 312) & Public Service Commissions - UPSC & SPSC (Arts. 315-323)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Emergency Provisions (National, State & Financial), Impact on Rights/Federalism & Constitutional Amendment",
+          "topics": [
+            {"id": "cl2-u5-t1", "title": "1. Emergency Powers - Need & National Emergency (Article 352 & 44th Amendment Safeguards)"},
+            {"id": "cl2-u5-t2", "title": "2. State Emergency / President's Rule (Article 356 & S.R. Bommai Guidelines)"},
+            {"id": "cl2-u5-t3", "title": "3. Financial Emergency (Article 360) - Grounds, Approval & Effects"},
+            {"id": "cl2-u5-t4", "title": "4. Impact of Emergency on Federalism and Fundamental Rights (Articles 358 & 359)"},
+            {"id": "cl2-u5-t5", "title": "5. Amendment of the Indian Constitution (Article 368) & Basic Structure Theory"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "cl2-u3-t1": {
+      "id": "cl2-u3-t1",
+      "subtitle": "Constitutional Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Articles 245-255 distribute legislative authority between Parliament and State Legislatures both territorially (Art. 245) and subject-wise across the Seventh Schedule's three lists (Art. 246 - Union, State, and Concurrent Lists), with residuary powers in Parliament (Art. 248) and five exceptional circumstances permitting Parliament to legislate on State List subjects.",
+        "legalProvision": "Articles 245-255 & Seventh Schedule (Lists I, II, III), Constitution of India",
+        "meaning": "India follows a cooperative federalism model with a strong Centre. While Parliament makes laws for all or any part of India (and extra-territorial laws under Art. 245(2)), State Legislatures make laws strictly for their State territory unless a sufficient territorial nexus exists.",
+        "keyPoints": [
+          "Three-Fold Subject Distribution (Art. 246 & Seventh Schedule): Union List (List I - defence, banking, railways, foreign affairs: exclusive to Parliament), State List (List II - police, public health, agriculture, land: exclusive to States in normal times), and Concurrent List (List III - criminal law, marriage, education, forests: both may legislate, Union prevails on conflict).",
+          "Residuary Power (Art. 248): Exclusive power to legislate on any subject not enumerated in List II or III (including new taxes like service/gift tax) vests in Parliament.",
+          "Five Exceptions Allowing Parliament to Legislate on State List: (1) Rajya Sabha resolution by 2/3rds present and voting in national interest (Art. 249, valid 1 year), (2) During National Emergency (Art. 250), (3) By consent of two or more States (Art. 252 - e.g., ULCRA 1976, Wildlife Protection Act), (4) Implementing international treaties/conventions (Art. 253), and (5) During President's Rule (Art. 356/357).",
+          "Concurrent GST Power (Art. 246A - 101st Amendment, 2016): Confers simultaneous power on Parliament and State Legislatures to levy GST, with exclusive Union power over inter-State supply (IGST)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Union of India v. H.S. Dhillon",
+            "citation": "AIR 1972 SC 1061",
+            "principle": "7-judge Bench held that to test Parliament's residuary competence under Article 248, courts need only ask whether the subject falls in State List (List II); if not, Parliament has full competence."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Under what five constitutional provisions can Parliament validly enact laws on subjects enumerated in the State List?",
+            "a": "Article 249 (Rajya Sabha 2/3rds resolution in national interest), Article 250 (National Emergency), Article 252 (consent of 2+ States), Article 253 (implementing international treaties), and Article 356/357 (President's Rule)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u3-t2": {
+      "id": "cl2-u3-t2",
+      "subtitle": "Constitutional Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To resolve overlapping Union and State legislative entries without invalidating statutes needlessly, the judiciary evolved five core federal doctrines: Territorial Nexus, Pith and Substance, Colourable Legislation, Repugnancy (Art. 254), and Harmonious Construction / Ancillary Powers.",
+        "legalProvision": "Articles 245, 246, & 254, Constitution of India",
+        "meaning": "Legislative entries in the Seventh Schedule are broad fields of legislation - not watertight compartments - so courts interpret them liberally while policing constitutional limits against disguised encroachments.",
+        "keyPoints": [
+          "Doctrine of Territorial Nexus (Art. 245): A State law having extra-territorial operation is valid if there is a real (not illusory) connection between the State and the object/person taxed or regulated, and the liability is pertinent to that connection (State of Bombay v. R.M.D.C.).",
+          "Doctrine of Pith and Substance: When a law appears to overlap two Lists, courts look at its true nature and character ('pith and substance'); if it substantially falls within the enacting legislature's List, incidental encroachment on another List does NOT invalidate it (Prafulla Kumar Mukherjee; State of Bombay v. F.N. Balsara).",
+          "Doctrine of Colourable Legislation: Based on 'what cannot be done directly cannot be done indirectly'; strikes down a statute where a legislature lacking competence disguises an ultra vires enactment under a legitimate entry (K.C. Gajapati Narayan Deo v. State of Orissa) - concerns legislative COMPETENCE, not legislative motive.",
+          "Doctrine of Repugnancy (Art. 254): Applies strictly to Concurrent List (List III) conflicts between Central and State laws; Union law prevails to the extent of inconsistency (direct conflict, occupied field, or identical subject - M. Karunanidhi), EXCEPT under Art. 254(2) where a State law reserved for and receiving Presidential assent prevails in that State (though Parliament may still override it later).",
+          "Ancillary / Incidental Powers & Harmonious Construction: Power to legislate on a subject includes all ancillary powers needed to make it effective; overlapping entries across Lists are reconciled harmoniously before invoking Union supremacy."
+        ],
+        "caseLaws": [
+          {
+            "name": "Prafulla Kumar Mukherjee v. Bank of Commerce, Khulna",
+            "citation": "AIR 1947 PC 60",
+            "principle": "Classic Privy Council authority on Pith and Substance: upheld the Bengal Money-Lenders Act (State List) even though it incidentally affected promissory notes (Union List)."
+          },
+          {
+            "name": "M. Karunanidhi v. Union of India",
+            "citation": "AIR 1979 SC 898",
+            "principle": "Laid down the definitive tests for Repugnancy under Article 254: direct and irreconcilable conflict where obeying one law necessarily disobeys the other, or Parliament intended to occupy the entire field."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between the Doctrine of Pith and Substance and the Doctrine of Colourable Legislation, and state the exception in Article 254(2).",
+            "a": "Pith and Substance saves a law that substantially belongs to the legislature's own List despite incidental overlap, whereas Colourable Legislation strikes down a law disguised to evade lack of competence. Under Art. 254(2), a repugnant State Concurrent List law prevails in that State if it receives Presidential assent."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u3-t3": {
+      "id": "cl2-u3-t3",
+      "subtitle": "Constitutional Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Articles 256-263 govern Union-State administrative relations and cooperative federalism. Executive power is co-extensive with legislative power, supplemented by Union binding directions (Arts. 256-257), mutual delegation (Arts. 258-258A), Full Faith and Credit (Art. 261), Inter-State River Water Tribunals (Art. 262), and the Inter-State Council (Art. 263).",
+        "legalProvision": "Articles 256-263 & 365, Constitution of India; Inter-State River Water Disputes Act, 1956",
+        "meaning": "Because Union laws are largely executed by State administrative machinery, Articles 256-263 prevent friction through constitutional coordination mechanisms while giving the Union coercive backup under Article 365 if a State defies lawful Union directions.",
+        "keyPoints": [
+          "Union Directions to States (Arts. 256, 257 & 365): States must ensure compliance with Parliamentary laws (Art. 256) and not impede Union executive power, national/military communications, or railway protection (Art. 257); failure to comply with Union directions triggers Article 365, enabling President's Rule under Article 356.",
+          "Mutual Delegation of Executive Functions (Arts. 258 & 258A): President may entrust Union functions to a State Government with its consent (or Parliament may confer duties by law), and under Art. 258A (7th Amendment) a Governor may entrust State functions to the Union with its consent.",
+          "Full Faith and Credit Clause (Art. 261): Public acts, records, and judicial proceedings of the Union and every State receive full recognition throughout India; civil court decrees from any State are executable nationwide.",
+          "Inter-State River Water Disputes (Art. 262): Empowers Parliament to provide for adjudicating inter-State river/valley water disputes (e.g., Cauvery, Krishna, Godavari Tribunals under the 1956 Act) and expressly BAR Supreme Court/other courts' jurisdiction over such water allocation disputes.",
+          "Inter-State Council (Art. 263) & Zonal Councils: President may establish an Inter-State Council (constituted in 1990 on Sarkaria Commission recommendation, chaired by PM with all CMs) to inquire into disputes and coordinate policy; complemented by statutory Zonal Councils (States Reorganisation Act, 1956) and NITI Aayog."
+        ],
+        "caseLaws": [
+          {
+            "name": "State of Karnataka v. State of Tamil Nadu (Cauvery Water Dispute)",
+            "citation": "2018 4 SCC 1",
+            "principle": "Held that while Article 262 bars original suits over water sharing, the Supreme Court retains appellate jurisdiction under Article 136 against final awards of Inter-State Water Disputes Tribunals, treating inter-State rivers as national assets."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the constitutional consequence under Article 365 if a State fails to comply with Union directions under Articles 256-257, and what is the function of Article 263?",
+            "a": "Under Article 365, the President may hold that a situation has arisen in which State government cannot be carried on per the Constitution, justifying Article 356 action. Article 263 provides for establishing an Inter-State Council to promote Centre-State coordination and resolve disputes."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u3-t4": {
+      "id": "cl2-u3-t4",
+      "subtitle": "Constitutional Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Part XII (Articles 264-293) establishes fiscal federalism based on 'no taxation without authority of law' (Art. 265), separate Union/State taxing domains, the cooperative GST Council (Art. 279A), quinquennial Finance Commission devolution (Art. 280), statutory/discretionary Grants-in-Aid (Arts. 275 & 282), and intergovernmental tax immunity (Arts. 285 & 289).",
+        "legalProvision": "Articles 265-293, 279A, & 280, Constitution of India (101st Constitutional Amendment Act, 2016)",
+        "meaning": "Because major elastic tax sources sit with the Union while costly welfare responsibilities (health, police, agriculture) sit with States, the Finance Commission and GST Council ensure equitable vertical and horizontal revenue sharing.",
+        "keyPoints": [
+          "Taxation Principle & Consolidated/Contingency Funds (Arts. 265-267): No tax can be levied or collected except by statutory authority (Art. 265); all revenues enter the Consolidated Fund of India/State (withdrawn only by Appropriation Act), while Contingency Fund meets unforeseen expenditure.",
+          "Distribution of Tax Revenues (Arts. 268-270): Covers stamp duties levied by Union but collected/retained by States (Art. 268), IGST levied and apportioned between Union and States on GST Council recommendations (Art. 269A), and the central divisible tax pool shared between Union and States per Finance Commission recommendations (Art. 270).",
+          "GST Council (Art. 279A - 101st Amendment, 2016): Federal body chaired by Union Finance Minister with State Finance Ministers; decides GST rates, exemptions, and thresholds by 3/4ths weighted majority (Union weight = 1/3rd, States collectively = 2/3rds); recommendations are persuasive/cooperative, not binding legislative dictates (Union of India v. Mohit Minerals, 2022).",
+          "Finance Commission (Art. 280) & Grants-in-Aid (Arts. 275 & 282): Constituted by the President every 5 years (Chairman + 4 members) to recommend tax devolution shares and statutory Grants-in-Aid (Art. 275); Art. 282 permits discretionary public-purpose grants; Arts. 292-293 govern Union and State borrowing limits.",
+          "Intergovernmental Tax Immunity (Arts. 285 & 289): Union property is completely exempt from State taxation (Art. 285); State property and income are exempt from Union taxation (Art. 289), EXCEPT commercial trade/business carried on by a State if Parliament so provides (In re Sea Customs Act)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Union of India v. Mohit Minerals Pvt. Ltd.",
+            "citation": "2022 10 SCC 700",
+            "principle": "Held that GST Council recommendations under Article 279A are not binding on Parliament or State Legislatures, affirming cooperative fiscal federalism where both levels hold simultaneous legislative power under Article 246A."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the voting weightage of the Union and States in the GST Council under Article 279A, and what is the primary duty of the Finance Commission under Article 280?",
+            "a": "GST Council decisions require a 3/4ths weighted majority (Union holds 1/3rd weightage, States together hold 2/3rds). The Finance Commission recommends every 5 years the distribution of net tax proceeds between the Union and States and principles for Art. 275 Grants-in-Aid."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u4-t1": {
+      "id": "cl2-u4-t1",
+      "subtitle": "Constitutional Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Article 300, the Union of India and State Governments are juristic persons that can sue and be sued. Article 299 lays down three mandatory formal conditions for valid Government contracts (protecting public funds against unauthorized deals), while State tort liability evolved from the archaic sovereign/non-sovereign split (P&O Steam Navigation; Kasturi Lal) toward broad vicarious and constitutional compensation (Vidyawati; Nilabati Behera).",
+        "legalProvision": "Articles 299 & 300, Constitution of India; Section 70, Indian Contract Act, 1872",
+        "meaning": "Unlike the ancient British maxim 'The King can do no wrong', constitutional India holds the State accountable in both contract and tort, restricting sovereign immunity strictly to core inalienable acts of State like war and defence.",
+        "keyPoints": [
+          "Government Contracts - Three Mandatory Requirements (Art. 299(1)): Every contract made in exercise of Union/State executive power MUST be (1) expressed to be made by the President or Governor, (2) executed in writing (no implied/oral contract), and (3) executed by an officer duly authorized by the President/Governor. Non-compliance renders the contract VOID (K.P. Chowdhry; Bhikraj Jaipuria) and cannot be ratified - though restitution is still allowed under Section 70 ICA (State of West Bengal v. B.K. Mondal).",
+          "No Personal Liability (Art. 299(2)): Neither the President/Governor nor the authorized executing officer is personally liable on a validly executed Government contract.",
+          "State Tort Liability - Sovereign vs Non-Sovereign Test (Art. 300): Originated in P&O Steam Navigation Co. (1861); in State of Rajasthan v. Vidhyawati (1962), the State was held vicariously liable for a government jeep driver's fatal negligence (non-sovereign); in Kasturi Lal v. State of U.P. (1965), the Court controversially granted sovereign immunity for gold stolen from police malkhana custody.",
+          "Modern Erosion of Sovereign Immunity (Constitutional Tort): Later Supreme Court rulings (N. Nagendra Rao, 1994; Rudul Sah, 1983; Nilabati Behera, 1993) virtually buried Kasturi Lal, holding that sovereign immunity NEVER applies to violations of Article 21 (custodial death, illegal detention, negligence) and is confined strictly to war, defence, foreign affairs, and legislation."
+        ],
+        "caseLaws": [
+          {
+            "name": "State of West Bengal v. B.K. Mondal & Sons",
+            "citation": "AIR 1962 SC 779",
+            "principle": "Held that even where a Government contract is void for failing Article 299(1) formalities, the State must compensate the contractor under Section 70 of the Indian Contract Act if it voluntarily accepted and enjoyed the benefit of non-gratuitous work."
+          },
+          {
+            "name": "N. Nagendra Rao & Co. v. State of Andhra Pradesh",
+            "citation": "1994 6 SCC 205",
+            "principle": "Held the State vicariously liable for negligent spoilage of seized essential commodities, declaring that in a modern welfare State, sovereign immunity survives only for core acts like defence, war, and foreign relations."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three mandatory conditions of a valid Government contract under Article 299(1) and explain what remedy remains if those formalities were skipped after work was completed.",
+            "a": "Must be (1) in writing, (2) expressed in the name of the President/Governor, and (3) executed by a duly authorized officer. Even if void under Art. 299, the contractor can claim restitution under Section 70 of the Contract Act (B.K. Mondal)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u4-t2": {
+      "id": "cl2-u4-t2",
+      "subtitle": "Constitutional Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Part XIII (Articles 301-307) guarantees that trade, commerce, and intercourse throughout the territory of India shall be free (Article 301) so India operates as a single economic market without internal tariff walls. This freedom is subject to public-interest Parliamentary restrictions (Art. 302), non-discriminatory State taxes and Presidentially sanctioned reasonable restrictions (Art. 304), and State monopolies (Art. 305).",
+        "legalProvision": "Articles 301 to 307, Constitution of India",
+        "meaning": "Unlike Article 19(1)(g) (an individual citizen's Fundamental Right to carry on trade), Article 301 is a broader constitutional guarantee protecting the FREE FLOW and movement of trade across and within States for all persons (including corporations).",
+        "keyPoints": [
+          "Scope of Article 301: Covers BOTH inter-State and intra-State trade, commerce, and intercourse (commercial and non-commercial movement); protects against direct and immediate restrictions on movement of goods - does NOT protect illegal/res extra commercium activities like gambling or liquor (Chamarbaugwalla).",
+          "Parliament's Powers & Limits (Arts. 302-303): Parliament may impose public-interest restrictions on trade (Art. 302), but neither Parliament nor States may prefer one State over another or discriminate between States (Art. 303(1)) EXCEPT Parliament dealing with scarcity of goods in any part of India (Art. 303(2)).",
+          "State Legislature's Twin Powers (Art. 304): Under Art. 304(a), a State may levy NON-DISCRIMINATORY taxes on goods imported from other States equivalent to taxes on locally manufactured goods; under Art. 304(b), a State may impose reasonable public-interest restrictions ONLY with prior sanction of the President (or subsequent Presidential assent under Art. 255).",
+          "Evolution of Tax Jurisprudence (Atiabari -> Automobile Transport -> Jindal Stainless): Atiabari (1961) struck down direct movement taxes; Automobile Transport (1962) carved out 'regulatory and compensatory taxes'; finally, the 9-judge Bench in Jindal Stainless (2017) OVERRULED the compensatory tax test and held that NON-DISCRIMINATORY entry/fiscal taxes do NOT violate Article 301 at all - only discriminatory taxes breaching Article 304(a) are invalid.",
+          "Saving of Existing Laws & State Monopolies (Art. 305) & Authority (Art. 307): Saves existing laws and nationalized State monopolies (e.g., RTC bus services); Parliament may appoint an authority under Art. 307 to enforce Part XIII."
+        ],
+        "caseLaws": [
+          {
+            "name": "Automobile Transport (Rajasthan) Ltd. v. State of Rajasthan",
+            "citation": "AIR 1962 SC 1406",
+            "principle": "7-judge Bench held that purely regulatory measures (traffic rules, licensing) facilitate rather than hinder free trade under Article 301 (though its compensatory-tax exception was later overruled in Jindal Stainless)."
+          },
+          {
+            "name": "Jindal Stainless Ltd. v. State of Haryana",
+            "citation": "2017 12 SCC 1",
+            "principle": "9-judge Constitution Bench ruled that States have sovereign taxing power and non-discriminatory taxes do not impede Article 301; only discriminatory taxes favouring local goods over imported goods violate Article 304(a)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Article 19(1)(g) and Article 301, and state what the 9-judge Bench held in Jindal Stainless (2017) regarding State entry taxes.",
+            "a": "Article 19(1)(g) is an individual citizen's Fundamental Right to practice any profession/business, whereas Article 301 protects the general free flow of trade throughout India (including for companies). Jindal Stainless held that non-discriminatory State taxes do NOT violate Article 301; only discriminatory taxes violating Art. 304(a) are invalid."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u4-t3": {
+      "id": "cl2-u4-t3",
+      "subtitle": "Constitutional Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Articles 308-311 regulate public services under the Union and States. Article 310 adopts the British 'Doctrine of Pleasure' (civil servants hold office during the pleasure of the President/Governor), strictly balanced by Article 311's two mandatory constitutional shields against arbitrary dismissal, removal, or reduction in rank.",
+        "legalProvision": "Articles 309, 310, & 311, Constitution of India (42nd Amendment, 1976)",
+        "meaning": "An impartial, permanent civil service cannot serve changing elected governments fearlessly unless protected from political victimization. Article 311 ensures civil servants cannot be fired by subordinates or without a fair departmental inquiry.",
+        "keyPoints": [
+          "Recruitment & Service Conditions (Art. 309): Regulated by Acts of Parliament/State Legislature, or by executive rules framed by the President/Governor until legislation is enacted.",
+          "Doctrine of Pleasure (Art. 310): Every member of defence, All-India, or civil services holds office during the pleasure of the President (Union) or Governor (State) - EXCLUDING constitutional offices with fixed tenure like SC/HC Judges, CAG, and CEC. Pleasure is exercised on ministerial advice, NOT arbitrarily (Union of India v. Tulsiram Patel).",
+          "Two Constitutional Safeguards for Civil Servants (Art. 311(1)-(2) - applies to civil servants, NOT defence personnel): (1) No civil servant shall be dismissed or removed by an authority SUBORDINATE to the appointing authority (Art. 311(1)), and (2) No dismissal, removal, or reduction in rank EXCEPT after an inquiry informing him of charges and giving a reasonable opportunity of being heard (Art. 311(2) - note: 42nd Amendment removed the second show-cause notice on penalty, though supplying the Inquiry Report remains mandatory per ECIL v. B. Karunakar).",
+          "Three Exceptions to Art. 311(2) Inquiry (Second Proviso to Art. 311(2)): Inquiry is dispensed with where (a) dismissal follows conviction on a criminal charge, (b) the authority records in writing that holding an inquiry is NOT reasonably practicable, or (c) President/Governor is satisfied that in the interest of Security of the State it is inexpedient to hold an inquiry (still subject to judicial review for mala fides - Tulsiram Patel).",
+          "Scope of 'Dismissal, Removal & Reduction in Rank' (Parshotam Lal Dhingra): Protects permanent civil servants (and temporary/probationer servants ONLY if termination is punitive/stigmatic rather than termination simpliciter); compulsory retirement in public interest is NOT punishment."
+        ],
+        "caseLaws": [
+          {
+            "name": "Parshotam Lal Dhingra v. Union of India",
+            "citation": "AIR 1958 SC 36",
+            "principle": "Laid down the classic test for Article 311(2): if termination of a temporary employee or probationer visits him with evil consequences or casts a stigma, it amounts to punishment triggering mandatory Article 311 inquiry."
+          },
+          {
+            "name": "Union of India v. Tulsiram Patel",
+            "citation": "AIR 1985 SC 1416",
+            "principle": "5-judge Bench upheld the three exceptions in the second proviso to Article 311(2) dispensing with departmental inquiry, while affirming that judicial review remains available if reasons are arbitrary or mala fide."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the two constitutional protections granted to civil servants under Article 311 and the three exceptions where a departmental inquiry can be dispensed with.",
+            "a": "Protections: (1) Cannot be dismissed/removed by an authority subordinate to the appointing authority; (2) No dismissal, removal, or reduction in rank without inquiry and fair hearing. Exceptions: criminal conviction, inquiry not reasonably practicable (reasons in writing), or security of the State."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u4-t4": {
+      "id": "cl2-u4-t4",
+      "subtitle": "Constitutional Law - II - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 312 empowers Parliament to create common All-India Services (IAS, IPS, IFoS, and All-India Judicial Service) recruited centrally to serve both Union and States, ensuring administrative unity across India. Articles 315-323 establish independent Public Service Commissions (UPSC, SPSCs, and Joint PSCs) as merit-based 'watchdogs of the merit system'.",
+        "legalProvision": "Articles 312 & 315-323, Constitution of India; All India Services Act, 1951",
+        "meaning": "All-India Services provide a unique federal administrative bridge, while constitutional insulation of UPSC and SPSC chairpersons/members prevents political patronage in government hiring and promotions.",
+        "keyPoints": [
+          "All-India Services (Article 312): Currently IAS, IPS, and Indian Forest Service (IFoS - created 1966). Parliament may create a new All-India Service (including an All-India Judicial Service, inserted by 42nd Amendment) ONLY if the Rajya Sabha passes a resolution in the national interest by at least 2/3rds of members present and voting. Recruited by Union, allotted to State cadres, and removable only by the President.",
+          "Composition & Tenure of UPSC & SPSC (Arts. 315-316): UPSC Chairman/Members are appointed by the President; SPSC Chairman/Members are appointed by the Governor (Joint PSC by President); at least half must have 10+ years of government service. Tenure: 6 years or age 65 (UPSC) / age 62 (SPSC), whichever is earlier.",
+          "Strict Removal & Independence Safeguards (Arts. 317-319 & 322): Both UPSC and SPSC members can be removed ONLY by the PRESIDENT (NOT Governor) - for 'misbehaviour' ONLY after a binding Supreme Court inquiry under Article 145 (also removable directly for insolvency, outside paid employment, or infirmity). Expenses are charged on the Consolidated Fund (Art. 322); Art. 319 strictly restricts post-retirement government employment to guarantee impartiality.",
+          "Functions & Advisory Role (Arts. 320-323): Conduct civil service exams and advise government on recruitment rules, promotions, transfers, and disciplinary action against civil servants. Consultation under Art. 320(3) is directory (not mandatory invalidating action - State of U.P. v. Manbodhan Lal Srivastava), but every rejection of Commission advice must be explained in an annual report laid before Parliament/Assembly (Art. 323)."
+        ],
+        "caseLaws": [
+          {
+            "name": "State of U.P. v. Manbodhan Lal Srivastava",
+            "citation": "AIR 1957 SC 912",
+            "principle": "5-judge Constitution Bench held that failure to consult the Public Service Commission under Article 320(3)(c) before imposing disciplinary punishment does not automatically invalidate the order, as the Commission's role is advisory."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Who has the constitutional authority to remove a State Public Service Commission (SPSC) member for misbehaviour under Article 317, and how is a new All-India Service created under Article 312?",
+            "a": "ONLY the President (NOT the Governor) can remove an SPSC member for misbehaviour, and strictly after a Supreme Court inquiry finds misbehaviour proved. A new All-India Service requires a Rajya Sabha resolution passed by 2/3rds of members present and voting followed by an Act of Parliament."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u5-t1": {
+      "id": "cl2-u5-t1",
+      "subtitle": "Constitutional Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Part XVIII (Articles 352-360) equips the Union with extraordinary Emergency powers to protect India's sovereignty, security, and constitutional stability during existential crises. Under Article 352, the President may proclaim a National Emergency on three grounds - War, External Aggression, or Armed Rebellion - subject to strict 44th Amendment safeguards against abuse.",
+        "legalProvision": "Article 352, Constitution of India (as amended by 44th Constitutional Amendment Act, 1978)",
+        "meaning": "India's framers included Emergency powers so the federal system could swiftly convert into a unitary command structure during war or subversion. After the 1975-77 Internal Emergency excesses, the 44th Amendment Act (1978) built powerful democratic brakes into Article 352.",
+        "keyPoints": [
+          "Three Grounds for National Emergency (Art. 352(1)): (1) War, (2) External Aggression, or (3) Armed Rebellion (the vague phrase 'Internal Disturbance' was replaced by 'Armed Rebellion' by the 44th Amendment, 1978). May be proclaimed for whole or part of India, even upon imminent danger.",
+          "Written Cabinet Recommendation (Art. 352(3) - 44th Amendment): President CANNOT proclaim a National Emergency unless the decision of the Union Cabinet (PM + Cabinet-rank Ministers) is communicated to him in WRITING (preventing unilateral Prime Ministerial proclamations).",
+          "Parliamentary Approval & Periodic Renewal (Art. 352(4)-(5)): Must be approved by BOTH Houses of Parliament within 1 MONTH (tightened from 2 months) by a SPECIAL MAJORITY (majority of total membership AND 2/3rds present and voting); once approved, lasts 6 MONTHS at a time and requires fresh Special Majority renewal every 6 months.",
+          "Revocation Safeguard (Art. 352(7)-(8)): President may revoke anytime, and MUST revoke if Lok Sabha passes a disapproval resolution by simple majority (1/10th of Lok Sabha MPs can compel a special sitting within 14 days to vote on revocation).",
+          "Historical Invocations & Judicial Review: Proclaimed 3 times - 1962 (China War), 1971 (Pakistan War), and 1975 (Internal Disturbance). In Minerva Mills (1980), the Supreme Court held that Presidential satisfaction under Article 352 is NOT immune from judicial review if shown to be wholly mala fide or based on extraneous/absurd grounds."
+        ],
+        "caseLaws": [
+          {
+            "name": "Minerva Mills Ltd. v. Union of India",
+            "citation": "AIR 1980 SC 1789",
+            "principle": "Held that judicial review extends to checking whether a Proclamation of Emergency under Article 352 was issued mala fide or on wholly extraneous and irrelevant considerations."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four major safeguards inserted into Article 352 by the 44th Constitutional Amendment Act, 1978 to prevent misuse of National Emergency.",
+            "a": "(1) Replaced 'internal disturbance' with 'armed rebellion'; (2) Mandated written Union Cabinet communication; (3) Required Special Majority approval within 1 month and renewal every 6 months; (4) Empowered Lok Sabha (simple majority) to force revocation."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u5-t2": {
+      "id": "cl2-u5-t2",
+      "subtitle": "Constitutional Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Article 356 (President's Rule / State Emergency), the President may assume State executive governance if satisfied (on Governor's report or otherwise) that State government cannot be carried on in accordance with the Constitution - fulfilling the Union's Article 355 duty. Following rampant political misuse, the 9-judge Bench in S.R. Bommai (1994) subjected Article 356 to strict judicial review and mandatory floor tests.",
+        "legalProvision": "Articles 355, 356, 357, & 365, Constitution of India; 44th Amendment Act, 1978",
+        "meaning": "Dr. B.R. Ambedkar hoped Article 356 would remain a 'dead letter' used only as a last resort, yet it was invoked over 120 times. S.R. Bommai transformed Article 356 by affirming federalism and secularism as Basic Structure features and empowering courts to revive an illegally dismissed State Assembly.",
+        "keyPoints": [
+          "Grounds & Union Duty (Arts. 355, 356 & 365): Union must protect every State against external aggression, internal disturbance, and constitutional breakdown (Art. 355); Article 356 applies when State governance fails constitutionally or defies Union directions under Article 365.",
+          "Parliamentary Approval & Strict Maximum Duration (Art. 356(3)-(5)): Must be approved by BOTH Houses by simple majority within 2 MONTHS; lasts 6 months at a time up to a normal ceiling of 1 YEAR (extendable up to max 3 YEARS ONLY if (a) a National Emergency is in force, AND (b) the Election Commission certifies elections cannot be held in the State - 44th Amendment).",
+          "Effects of President's Rule (Art. 356 & 357): President assumes State executive functions (run via Governor), State Assembly is suspended or dissolved (State legislative powers exercised by Parliament), while High Court powers CANNOT be suspended or altered.",
+          "Landmark S.R. Bommai Guidelines (1994): (1) Presidential Proclamation under Art. 356 is fully subject to judicial review for mala fides or absence of relevant material; (2) State Assembly CANNOT be dissolved until BOTH Houses of Parliament approve the Proclamation (only kept in suspended animation); (3) Majority of a Chief Minister must ALWAYS be tested on the floor of the House, NEVER in the Governor's Raj Bhavan; (4) Courts can strike down an unconstitutional proclamation and restore the dismissed government; (5) Anti-secular governance by a State justifies Art. 356."
+        ],
+        "caseLaws": [
+          {
+            "name": "S.R. Bommai v. Union of India",
+            "citation": "1994 3 SCC 1",
+            "principle": "9-judge Constitution Bench established strict constitutional limits on Article 356: judicial review over Presidential satisfaction, mandatory floor test in the Assembly, bar on dissolving Assembly before Parliamentary approval, and federalism/secularism as Basic Structure."
+          },
+          {
+            "name": "Rameshwar Prasad v. Union of India",
+            "citation": "2006 2 SCC 1",
+            "principle": "5-judge Bench invalidated the premature dissolution of the Bihar Assembly under Article 356 as unconstitutional because it rested on unverified, mala fide Governor's reports to prevent a rival coalition from staking a claim."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three binding constitutional safeguards laid down in S.R. Bommai (1994) against misuse of Article 356, and state the two conditions required to extend President's Rule beyond 1 year.",
+            "a": "Bommai safeguards: (1) Proclamation is judicially reviewable; (2) Assembly cannot be dissolved before Parliamentary approval; (3) Majority must be tested strictly on the floor of the House. Beyond 1 year (up to 3 years max) requires BOTH an active National Emergency AND an Election Commission certificate that elections cannot be held."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u5-t3": {
+      "id": "cl2-u5-t3",
+      "subtitle": "Constitutional Law - II - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Article 360, if the President is satisfied that a situation has arisen whereby the financial stability or credit of India or any part thereof is threatened, he may proclaim a Financial Emergency. Once approved by Parliament within 2 months, it empowers the Union to control State finances, reserve State Money Bills, and even reduce salaries of all public servants and Supreme Court/High Court judges. It has NEVER been invoked in India.",
+        "legalProvision": "Article 360, Constitution of India (44th Amendment Act, 1978 restored judicial review)",
+        "meaning": "Inspired by the US National Recovery Act during the Great Depression, Article 360 gives the Centre emergency fiscal authority to prevent national sovereign default or State financial collapse without suspending Fundamental Rights.",
+        "keyPoints": [
+          "Grounds & Judicial Review (Art. 360(1)): Triggered when the financial stability or credit of India (or any part of its territory) is threatened; the 44th Amendment (1978) omitted the 38th Amendment's immunity clause, restoring judicial review over Presidential satisfaction.",
+          "Parliamentary Approval & Duration (Art. 360(2)): Must be approved by BOTH Houses of Parliament by SIMPLE MAJORITY within 2 MONTHS. Unlike National Emergency (6 months) or President's Rule (max 3 years), a Financial Emergency - once approved - continues INDEFINITELY without needing repeated Parliamentary renewals until revoked by the President.",
+          "Four Sweeping Fiscal Consequences (Art. 360(3)-(4)): (1) Union may direct States to observe specified canons of financial propriety, (2) Union may require ALL Money Bills and Financial Bills passed by State Legislatures to be reserved for Presidential consideration, (3) President may direct reduction of salaries and allowances of ALL or any class of State government employees, and (4) President may direct reduction of salaries and allowances of Union officials INCLUDING Supreme Court and High Court Judges (the sole constitutional exception to charged judicial salary protection).",
+          "Practical Track Record: Article 360 has NEVER been proclaimed since 1950 (not even during the 1991 Balance of Payments crisis or the 2020 COVID-19 shock)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Minerva Mills Ltd. v. Union of India",
+            "citation": "AIR 1980 SC 1789",
+            "principle": "Affirmed the broader principle applicable across Part XVIII Emergency powers that executive satisfaction in issuing Emergency proclamations remains open to judicial review against mala fides or extraneous grounds."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How does the duration and approval of a Financial Emergency (Article 360) differ from a National Emergency (Article 352), and does Article 360 allow reducing judges' salaries?",
+            "a": "Article 360 requires simple majority approval within 2 months and continues indefinitely until revoked (unlike Art. 352's 1-month Special Majority approval and 6-month renewal). Yes - Art. 360(4)(b) expressly allows reducing salaries of Supreme Court and High Court judges."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u5-t4": {
+      "id": "cl2-u5-t4",
+      "subtitle": "Constitutional Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A National Emergency temporarily transforms India's federal structure into a unitary system (Arts. 353-354) and restricts Fundamental Rights via Articles 358 and 359. Following the infamous ADM Jabalpur ruling (1976), the 44th Amendment (1978) and K.S. Puttaswamy (2017) guaranteed that Articles 20 and 21 (Life and Personal Liberty) can NEVER be suspended even during the gravest Emergency.",
+        "legalProvision": "Articles 353, 354, 358, & 359, Constitution of India (44th Constitutional Amendment Act, 1978)",
+        "meaning": "Balancing national survival with individual liberty is the toughest test of constitutionalism. Today, Article 19 suspends automatically ONLY during external war/aggression (never armed rebellion), and Articles 20-21 remain permanently untouchable.",
+        "keyPoints": [
+          "Impact on Federalism (Arts. 353, 354 & 250): (1) Executive - Union can give binding directions to States on ANY matter (Art. 353(a)), (2) Legislative - Parliament acquires concurrent power to legislate on ANY State List subject (Art. 250, laws expire 6 months after Emergency ends), (3) Financial - President may modify Union-State revenue distribution under Arts. 268-279 (Art. 354), and (4) Tenure - Parliament may extend Lok Sabha and State Assembly terms by 1 year at a time (Arts. 83 & 172).",
+          "Article 358 (Automatic Suspension of Article 19): Automatically suspends the six freedoms under Article 19 throughout India ONLY when National Emergency is proclaimed on grounds of WAR or EXTERNAL AGGRESSION - NEVER on 'Armed Rebellion' (44th Amendment). Only laws/actions expressly citing the Emergency receive protection (Art. 358(2)).",
+          "Article 359 (Presidential Suspension of Enforcement of Other Fundamental Rights): Does NOT suspend the rights themselves, only suspends the right to move courts for enforcing specified Part III rights during ANY National Emergency - STRICTLY EXCLUDING Articles 20 and 21, which can NEVER be suspended (44th Amendment).",
+          "ADM Jabalpur (1976) Overruled by K.S. Puttaswamy (2017): In ADM Jabalpur v. Shivkant Shukla (1976), a 4:1 majority held detainees had no Habeas Corpus locus standi during Emergency, with Justice H.R. Khanna's immortal lone dissent asserting Article 21 is not the sole repository of the right to life; in 2017, a 9-judge Bench in Puttaswamy expressly OVERRULED ADM Jabalpur as seriously flawed and vindicated Justice Khanna."
+        ],
+        "caseLaws": [
+          {
+            "name": "ADM Jabalpur v. Shivkant Shukla (Habeas Corpus Case)",
+            "citation": "AIR 1976 SC 1207",
+            "principle": "Notorious 4:1 Emergency judgment denying Habeas Corpus during Art. 359 suspension (famous dissent by Justice H.R. Khanna) - later neutralized by the 44th Amendment (1978) and expressly OVERRULED by the 9-judge Bench in K.S. Puttaswamy (2017)."
+          },
+          {
+            "name": "Justice K.S. Puttaswamy (Retd.) v. Union of India",
+            "citation": "2017 10 SCC 1",
+            "principle": "9-judge Constitution Bench formally overruled ADM Jabalpur, holding that life and personal liberty (Article 21) are inalienable natural rights that exist independently of executive suspension."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Article 358 and Article 359, and name the two Fundamental Rights that can NEVER be suspended even during a National Emergency.",
+            "a": "Article 358 automatically suspends Article 19 ONLY during War/External Aggression (not Armed Rebellion), whereas Article 359 requires a specific Presidential order suspending court enforcement of named rights. Articles 20 and 21 can NEVER be suspended under any Emergency."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "cl2-u5-t5": {
+      "id": "cl2-u5-t5",
+      "subtitle": "Constitutional Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 368 prescribes a unique blend of flexibility and rigidity for amending India's Constitution through Special Parliamentary Majority (plus ratification by half the States for federal provisions). While Parliament may amend any article including Fundamental Rights, the 13-judge Bench in Kesavananda Bharati (1973) established the Basic Structure Doctrine: Parliament CANNOT alter or destroy the Constitution's foundational identity.",
+        "legalProvision": "Article 368 & Article 13(4), Constitution of India (24th Amendment, 1971 & 42nd Amendment, 1976)",
+        "meaning": "The historical tug-of-war between Parliamentary supremacy and Fundamental Rights moved through Shankari Prasad (1951), Sajjan Singh (1965), Golaknath (1967), Kesavananda Bharati (1973), Minerva Mills (1980), and I.R. Coelho (2007), settling permanently on constitutional supremacy guarded by the Basic Structure Doctrine.",
+        "keyPoints": [
+          "Three Modes of Constitutional Amendment: (1) Simple Majority outside Art. 368 (admitting/reorganizing States under Arts. 2-4, abolishing Legislative Councils under Art. 169), (2) Special Majority under Art. 368(2) (majority of TOTAL membership AND 2/3rds present and voting in EACH House separately - NO Joint Sitting allowed), and (3) Special Majority PLUS Ratification by at least HALF the State Legislatures for entrenched federal clauses (Arts. 54-55, 73, 162, 241, 279A, SC/HC, Seventh Schedule, State representation in Parliament, and Art. 368 itself). President MUST give assent (24th Amendment, 1971).",
+          "Evolution Toward Basic Structure: (1) Shankari Prasad (1951) & Sajjan Singh (1965) held Art. 368 amendments are not 'law' under Art. 13 and can amend Fundamental Rights; (2) Golaknath (1967, 11-judge Bench) reversed this, holding Parliament CANNOT abridge Part III Fundamental Rights (prospective overruling); (3) Parliament passed the 24th Amendment (1971) adding Art. 13(4) & Art. 368(3) affirming unlimited amending power; (4) Kesavananda Bharati (1973, 13-judge Bench, 7:6) overruled Golaknath, upheld the 24th Amendment, but created the implied limitation of 'Basic Structure'.",
+          "Key Elements of the Basic Structure: Supremacy of the Constitution, Sovereign Democratic Republic, Secularism, Federalism, Separation of Powers, Rule of Law, Judicial Review, Free and Fair Elections (Indira Nehru Gandhi v. Raj Narain, 1975), Harmony between Fundamental Rights & DPSP (Minerva Mills, 1980 - struck down Art. 368(4)-(5) inserted by 42nd Amendment), and Independence of Judiciary.",
+          "Ninth Schedule & Basic Structure (I.R. Coelho v. State of Tamil Nadu, 2007): 9-judge Bench unanimously held that ALL laws placed in the Ninth Schedule AFTER 24 April 1973 (date of Kesavananda Bharati) enjoy no blanket immunity and will be struck down if they violate the Basic Structure (including the Golden Triangle of Arts. 14, 19, and 21)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kesavananda Bharati v. State of Kerala",
+            "citation": "AIR 1973 SC 1461",
+            "principle": "13-judge Constitution Bench propounded the Basic Structure Doctrine: Parliament's constituent power under Article 368 extends to every provision including Fundamental Rights, but cannot destroy or damage the Constitution's basic structure."
+          },
+          {
+            "name": "I.R. Coelho v. State of Tamil Nadu",
+            "citation": "2007 2 SCC 1",
+            "principle": "9-judge Bench ruled that laws inserted into the Ninth Schedule after 24 April 1973 are open to judicial review on the touchstone of the Basic Structure Doctrine."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Trace the four landmark Supreme Court cases leading to the Basic Structure Doctrine, and state the cutoff date applied to Ninth Schedule laws in I.R. Coelho (2007).",
+            "a": "Shankari Prasad (1951) -> Golaknath (1967) -> Kesavananda Bharati (1973) -> Minerva Mills (1980). In I.R. Coelho, the Supreme Court applied Basic Structure judicial review to all laws added to the Ninth Schedule after 24 April 1973."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

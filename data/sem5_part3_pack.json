@@ -1,0 +1,141 @@
+{
+  "subjects": [
+    {
+      "id": "professional-ethics",
+      "title": "Professional Ethics & Accounting",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Disciplinary Proceedings, Powers of Bar Councils & Appeals",
+          "topics": [
+            {"id": "professional-ethics-u3-t1", "title": "1. Disciplinary Proceedings (Secs. 35-42), Powers of Disciplinary Committee, Punishments & Appeals to BCI and Supreme Court"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Accountancy for Lawyers & Client Fund Management",
+          "topics": [
+            {"id": "professional-ethics-u4-t1", "title": "1. Accountancy for Lawyers - Nature, Branches, Double-Entry Bookkeeping, Client Accounts & BCI Accounting Rules"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Bar-Bench Relations, Contempt of Court & Modern Ethical Standards",
+          "topics": [
+            {"id": "professional-ethics-u5-t1", "title": "1. Bar-Bench Relations, Contempt of Courts Act, 1971, Legal Aid (Art. 39A) & Contemporary BCI Regulatory Updates"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "professional-ethics-u3-t1": {
+      "id": "professional-ethics-u3-t1",
+      "subtitle": "Professional Ethics & Accounting - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Sections 35-42 of the Advocates Act, 1961, State Bar Councils and the Bar Council of India (BCI) inquire into professional or other misconduct through 3-member Disciplinary Committees vested with civil court powers. Punishments range from reprimand to permanent removal from the State Roll, with statutory appeals to the BCI (Section 37) and Supreme Court (Section 38).",
+        "legalProvision": "Sections 9, 35, 36, 36B, 37, 38, 42, & 44, Advocates Act, 1961",
+        "meaning": "Disciplinary jurisdiction safeguards the nobility of the Bar and protects litigants from exploitation. Proceedings are quasi-judicial and must strictly follow natural justice (notice, opportunity of hearing, reasoned order), with complaints required to be disposed of within 1 year (Section 36B).",
+        "keyPoints": [
+          "Constitution of Disciplinary Committee (Section 9): Consists of 3 persons - 2 elected by the Bar Council from among its members and 1 co-opted advocate with at least 10 years' standing.",
+          "Punishments for Misconduct (Section 35(3)): After giving the advocate and Advocate-General a fair hearing, the Disciplinary Committee may (a) dismiss the complaint, (b) reprimand the advocate, (c) suspend the advocate from practice for a specified period, or (d) remove the advocate's name permanently from the State Roll.",
+          "Powers of Disciplinary Committee (Section 42): Enjoys the same powers as a civil court under CPC - summoning and examining witnesses on oath, requiring discovery/production of documents, receiving evidence on affidavits, and requisitioning public records.",
+          "Time Limit & Transfer to BCI (Section 36B): A State Bar Council Disciplinary Committee must dispose of a complaint within 1 year; otherwise the proceedings automatically stand transferred to the Bar Council of India.",
+          "Appeals & Review (Sections 37, 38 & 44): Any aggrieved person may appeal from a State Bar Council order to the BCI within 60 days (Section 37), and from a BCI order to the Supreme Court within 60 days (Section 38); a Disciplinary Committee may also review its own order within 60 days (Section 44)."
+        ],
+        "caseLaws": [
+          {
+            "name": "N.G. Dastane v. Shrikant S. Shivde",
+            "citation": "2001 6 SCC 135",
+            "principle": "Held that seeking repeated unnecessary adjournments to harass witnesses and delay trial amounts to 'professional misconduct' under Section 35 of the Advocates Act, 1961."
+          },
+          {
+            "name": "Shambhu Ram Yadav v. Hanuman Das Khatry",
+            "citation": "2001 6 SCC 1",
+            "principle": "Upheld permanent removal of an advocate from the Bar Roll for writing to his client asking for money to bribe a judge, holding that the legal profession cannot tolerate corruption."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the four orders a Disciplinary Committee can pass under Section 35(3) of the Advocates Act, 1961, and what is the limitation period for appealing to the BCI and Supreme Court?",
+            "a": "Dismissal, reprimand, suspension from practice, or removal from the State Roll. Appeals lie to the BCI (Sec. 37) and Supreme Court (Sec. 38) within 60 days."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "professional-ethics-u4-t1": {
+      "id": "professional-ethics-u4-t1",
+      "subtitle": "Professional Ethics & Accounting - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Accountancy for lawyers is the systematic recording, classifying, and summarizing of financial transactions to ensure transparency in legal fees and strict segregation of client funds. Under Bar Council of India Rules (Rules 25-32), advocates must maintain clear accounts of client money and never mix it with personal funds.",
+        "legalProvision": "Bar Council of India Rules (Part VI, Chapter II, Section II - Rules 25 to 32); Income Tax Act, 1961 (Section 44AA - Mandatory Maintenance of Books of Account for Legal Professionals)",
+        "meaning": "Because advocates frequently hold client money for court fees, stamp duty, or settlements in a fiduciary capacity, sound accounting prevents misappropriation, supports tax compliance, and protects professional reputation.",
+        "keyPoints": [
+          "Three Main Branches of Accounting: (1) Financial Accounting (recording transactions to prepare Profit & Loss Account and Balance Sheet), (2) Cost Accounting (ascertaining cost of services/operations), and (3) Management Accounting (analyzing financial data for decision-making).",
+          "Double-Entry Bookkeeping & Golden Rules: Every transaction has dual debit and credit aspects - Personal Account (Debit the receiver, Credit the giver), Real Account (Debit what comes in, Credit what goes out), and Nominal Account (Debit all expenses/losses, Credit all incomes/gains).",
+          "Core Books Maintained by Advocates: Cash Book (daily receipts and payments), Ledger (classified client and expense accounts), Fee Book, and Client's Account Register; mandatory under Section 44AA of the Income Tax Act for legal professionals.",
+          "BCI Rules on Client Money (Rules 25-32): An advocate must keep a separate account of client money, promptly intimate the client upon receiving funds, never lend or divert client money without written consent, never adjust fees from client funds without agreement, and furnish a copy of the client's account on demand.",
+          "Prohibition on Contingent Fees (Rule 20): An advocate cannot stipulate a fee contingent on the result of litigation or agree to share the proceeds of a lawsuit."
+        ],
+        "caseLaws": [
+          {
+            "name": "Harish Chandra Tiwari v. Baiju",
+            "citation": "2002 2 SCC 67",
+            "principle": "Held that misappropriating a poor client's land-acquisition compensation money is one of the gravest forms of professional misconduct, warranting permanent removal from the Bar Roll."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the three Golden Rules of Double-Entry Accounting, and what is the primary BCI rule regarding client money?",
+            "a": "Personal (Debit receiver, Credit giver), Real (Debit what comes in, Credit what goes out), Nominal (Debit expenses/losses, Credit incomes/gains). Under BCI Rules 25-32, client money must be strictly segregated from personal funds and never diverted without consent."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "professional-ethics-u5-t1": {
+      "id": "professional-ethics-u5-t1",
+      "subtitle": "Professional Ethics & Accounting - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Cordial Bar-Bench relations - mutual respect, courtesy, and independence between advocates and judges - are vital for the Rule of Law. The Contempt of Courts Act, 1971 punishes civil and criminal contempt, Article 39A mandates free legal aid to the poor, and recent BCI rules govern foreign lawyers and digital/social-media ethics.",
+        "legalProvision": "Articles 39A, 129, & 215, Constitution of India; Contempt of Courts Act, 1971 (Sections 2(b), 2(c), 12, & 13); BCI Rules on Professional Conduct & Legal Aid (Rule 46); BCI Foreign Lawyers Rules, 2022 (as amended May 2025)",
+        "meaning": "The Bar and the Bench are two wheels of the same chariot of justice. While advocates must fearlessly defend clients, they cannot scandalize courts, boycott proceedings, or violate courtroom decorum - nor may judges treat counsel disrespectfully.",
+        "keyPoints": [
+          "Bar-Bench Relations: Advocates owe respect, punctuality, and candour to the Bench (never citing overruled law or misleading the court), while judges owe patience, impartiality, and courteous hearing to the Bar.",
+          "Contempt of Courts Act, 1971: Divides contempt into Civil Contempt (Section 2(b) - wilful disobedience of court judgment, decree, or undertaking) and Criminal Contempt (Section 2(c) - scandalizing or lowering court authority, prejudicing judicial proceedings, or obstructing justice); punishable under Section 12 with up to 6 months' simple imprisonment and/or Rs. 2,000 fine (truth in public interest and bona fide apology are valid defences under Section 13).",
+          "Duty to Provide Free Legal Aid (Article 39A & BCI Rule 46): Every advocate has a moral and professional duty to render free legal assistance to indigent and marginalized litigants within the limits of their economic condition.",
+          "Ban on Strikes & Boycotts: Courts consistently hold that lawyers' strikes obstruct access to justice and violate litigants' Article 21 rights (Ex-Capt. Harish Uppal).",
+          "Modern Regulatory & Ethical Updates: In Gaurav Kumar v. Union of India (2024), the Supreme Court strictly capped Bar Council enrolment fees prospectively to Section 24(1)(f) limits (Rs. 750 General / Rs. 125 SC/ST); BCI Rules (2022, amended May 2025) regulate foreign lawyers and Indian-Foreign Law Firms in non-litigious foreign/international law practice on a reciprocity basis with strict Form-C Fly-In Fly-Out compliance."
+        ],
+        "caseLaws": [
+          {
+            "name": "R.K. Anand v. Registrar, Delhi High Court",
+            "citation": "2009 8 SCC 106",
+            "principle": "Held that a senior advocate's attempt to suborn a prosecution witness in a criminal trial constituted grave criminal contempt and professional misconduct, damaging the integrity of the justice system."
+          },
+          {
+            "name": "Gaurav Kumar v. Union of India",
+            "citation": "W.P. (C) No. 352 of 2023 (SC, 2024)",
+            "principle": "Held that State Bar Councils cannot charge enrolment fees exceeding the statutory cap under Section 24(1)(f) of the Advocates Act, 1961 (Rs. 750 for General and Rs. 125 for SC/ST candidates)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Civil Contempt and Criminal Contempt under Section 2 of the Contempt of Courts Act, 1971.",
+            "a": "Civil Contempt (Sec. 2(b)) is wilful disobedience of any court order, decree, or undertaking; Criminal Contempt (Sec. 2(c)) is any publication or act that scandalizes the court, prejudices a pending trial, or obstructs the administration of justice."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

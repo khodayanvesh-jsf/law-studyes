@@ -1,0 +1,17 @@
+android/
+desktop-console/
+node_modules/
+.git/
+.ls_backups/
+.env.local
+data/
+reports/
+scripts/
+LLB 3YDC Study Material/
+LLB-3YDC-Study-Material/
+law-studyes-offline-apk-kit
+*.exe
+*.apk
+*.aab
+*.ps1
+*.log

@@ -1,0 +1,267 @@
+{
+  "subjects": [
+    {
+      "id": "civil-procedure-code",
+      "title": "Civil Procedure Code & Limitation",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Ex-Parte Decree, Injunctions, Receivers, Commissions & Execution",
+          "topics": [
+            {"id": "civil-procedure-code-u3-t1", "title": "1. Ex-Parte Decree (Order IX Rule 13), Temporary Injunctions, Receiver, Commissions & Modes of Execution (Sec. 51)"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Suits in Particular Cases & Appeals, Reference, Review and Revision",
+          "topics": [
+            {"id": "civil-procedure-code-u4-t1", "title": "1. Suits by/against Government (Sec. 80), Interpleader Suits (Sec. 88), First/Second Appeals, Review (Sec. 114) & Revision (Sec. 115)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Law of Limitation (Limitation Act, 1963)",
+          "topics": [
+            {"id": "civil-procedure-code-u5-t1", "title": "1. Limitation Act, 1963 - Bar of Limitation (Sec. 3), Condonation of Delay (Sec. 5), Legal Disability (Secs. 6-8) & Acknowledgment (Sec. 18)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "criminal-procedure-code",
+      "title": "Criminal Procedure Code (CrPC / BNSS)",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "FIR vs Complaint, Bail, Charge & Sessions Trial",
+          "topics": [
+            {"id": "criminal-procedure-code-u3-t1", "title": "1. FIR (Sec. 154) vs Complaint, Bail & Anticipatory Bail (Secs. 436-439), Framing of Charge & Trial Before a Court of Session"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Plea Bargaining, Compounding, Judgment, Appeals & Revision",
+          "topics": [
+            {"id": "criminal-procedure-code-u4-t1", "title": "1. Plea Bargaining (Ch. XXI-A), Compounding of Offences (Sec. 320), Judgment, Victim Compensation & Appeals/Revision"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Probation of Offenders Act, 1958, Parole & Juvenile Justice Act, 2015",
+          "topics": [
+            {"id": "criminal-procedure-code-u5-t1", "title": "1. Probation vs Parole, Probation of Offenders Act, 1958 & Juvenile Justice (Care and Protection of Children) Act, 2015"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "civil-procedure-code-u3-t1": {
+      "id": "civil-procedure-code-u3-t1",
+      "subtitle": "Civil Procedure Code & Limitation - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "When a defendant fails to appear despite proper summons, the court may pass an Ex-Parte Decree (remediable under Order IX Rule 13). Pending trial, courts grant Temporary Injunctions (Order XXXIX), appoint Receivers (Order XL) or Commissions (Order XXVI), and enforce final decrees via Execution (Section 51, Order XXI).",
+        "legalProvision": "Sections 51, 55-60, 75, & 94; Orders IX (Rule 13), XXI, XXVI, XXXIX, & XL, Code of Civil Procedure, 1908",
+        "meaning": "Interim remedies preserve the subject matter of a civil suit while trial is pending, and Execution translates a paper decree into actual relief through attachment and sale of property, delivery of possession, appointment of a receiver, or civil detention.",
+        "keyPoints": [
+          "Ex-Parte Decree & Setting Aside (Order IX Rule 13): Passed when the defendant absents himself after due service of summons; set aside if the defendant proves summons was not duly served or he was prevented by 'sufficient cause' from appearing.",
+          "Temporary Injunctions (Order XXXIX Rules 1-2): Granted to prevent waste, alienation, or injury to disputed property upon proving three tests—(1) Prima Facie Case, (2) Balance of Convenience, and (3) Irreparable Injury.",
+          "Receiver (Order XL) & Commissions (Section 75, Order XXVI): A Receiver is an impartial court officer appointed to preserve and manage disputed property when 'just and convenient'; Commissions are issued to examine witnesses, conduct local investigations, inspect accounts, or effect partition.",
+          "Modes of Execution (Section 51 & Order XXI): Courts execute decrees by (1) delivery of specific property, (2) attachment and sale (or sale without attachment) of property, (3) arrest and detention in civil prison (subject to Section 55-58 safeguards; women cannot be arrested for money decrees under Section 56), (4) appointing a receiver, or (5) other equitable relief.",
+          "Property Exempt from Attachment (Section 60): Necessary wearing apparel, cooking vessels, tools of artisans, agricultural implements/cattle, residential house of an agriculturist, and protected portions of salary/pensions cannot be attached."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jolly George Varghese v. Bank of Cochin",
+            "citation": "AIR 1980 SC 470",
+            "principle": "Held under Section 51 CPC and Article 21 that a judgment-debtor cannot be arrested and detained in civil prison merely for inability to pay a money decree unless bad faith or wilful refusal despite having means is proved."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the three essential tests for granting a Temporary Injunction under Order XXXIX, and what is the rule on arresting a judgment-debtor for a money decree?",
+            "a": "Prima facie case, balance of convenience, and irreparable injury. Under Section 51 and Jolly George Varghese, civil arrest requires wilful refusal despite having means to pay (and Section 56 bars arresting women for money decrees)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "civil-procedure-code-u4-t1": {
+      "id": "civil-procedure-code-u4-t1",
+      "subtitle": "Civil Procedure Code & Limitation - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Suits against the Government require a mandatory 2-month prior notice (Section 80), while Interpleader Suits (Section 88) let a neutral stakeholder compel rival claimants to litigate among themselves. CPC provides corrective remedies via First/Second Appeals (Sections 96 & 100), Reference (Section 113), Review (Section 114), and Revision (Section 115).",
+        "legalProvision": "Sections 79-80, 88, 96, 100, 100A, 102, 113, 114, & 115; Orders XXVII, XXXII, XXXIII, XXXV, & XLVII, Code of Civil Procedure, 1908",
+        "meaning": "Special procedural rules govern suits involving the State, minors/unsound-mind persons (Order XXXII via next friend/guardian ad litem), and indigent persons (Order XXXIII—exempted from upfront court fees). Appellate and supervisory provisions correct factual, legal, and jurisdictional errors.",
+        "keyPoints": [
+          "Suits by or Against Government (Sections 79-80): Filed in the name of the Union of India or the State; Section 80 mandates 2 months' written notice before suing the Government or a public officer for official acts (waivable by court leave in urgent relief under Section 80(2)).",
+          "Interpleader Suit (Section 88 & Order XXXV): Filed by a person holding money/property who claims NO personal interest (except charges/costs) when two or more rival claimants demand it from him; tenants/agents cannot file interpleader suits against their landlord/principal.",
+          "First Appeal (Section 96) vs Second Appeal (Section 100): First Appeal lies as a matter of right on both fact and law from original decrees; Second Appeal lies to the High Court ONLY on a 'substantial question of law' (and Section 102 bars second appeals in money recovery suits not exceeding Rs. 25,000).",
+          "Reference (Section 113) vs Review (Section 114, Order XLVII): Reference is made by a subordinate court to the High Court on the validity of a statute; Review is filed before the SAME court that passed the decree for discovery of new important evidence or error apparent on the face of the record.",
+          "Revision (Section 115): High Court's supervisory power over subordinate courts in non-appealable cases where the lower court exercised jurisdiction not vested in it, failed to exercise vested jurisdiction, or acted illegally/with material irregularity (does not automatically stay trial)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bihari Chowdhary v. State of Bihar",
+            "citation": "AIR 1984 SC 1043",
+            "principle": "Held that Section 80 notice is mandatory and enacted as a measure of public policy to give the Government an opportunity to settle genuine claims out of court and avoid unnecessary litigation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Review (Section 114) and Revision (Section 115) under the Code of Civil Procedure.",
+            "a": "Review is heard by the same court that passed the order for error apparent on the record or new evidence, whereas Revision is exercised by the High Court over a subordinate court to correct jurisdictional errors in non-appealable cases."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "civil-procedure-code-u5-t1": {
+      "id": "civil-procedure-code-u5-t1",
+      "subtitle": "Civil Procedure Code & Limitation - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Limitation Act, 1963 bars stale suits, appeals, and applications filed after the prescribed period (Section 3) based on 'Vigilantibus non dormientibus jura subveniunt' (law aids the vigilant). It bars the remedy, not the right—except adverse possession (Section 27)—and allows Condonation of Delay (Section 5), Legal Disability extension (Sections 6-8), and fresh limitation upon written Acknowledgment (Section 18).",
+        "legalProvision": "Sections 3, 5, 6-8, 9, 12, 14, 18, 19, & 27, Limitation Act, 1963",
+        "meaning": "Limitation ensures certainty of title and prevents endless harassment over ancient claims where evidence has faded. Under Section 9, once limitation begins to run, no subsequent disability stops it.",
+        "keyPoints": [
+          "Bar of Limitation (Section 3): Mandatory duty of the court to dismiss any suit, appeal, or application filed after the prescribed period, even if limitation is not set up as a defence.",
+          "Condonation of Delay (Section 5): Allows courts to admit an APPEAL or APPLICATION (NOT an original suit or Order XXI execution petition) after expiry of limitation if the party shows 'sufficient cause' for the delay.",
+          "Legal Disability (Sections 6, 7 & 8): Extends limitation for a person who is a minor, insane, or idiot at the time limitation starts; under Section 8, the maximum extended period after disability ceases cannot exceed 3 years.",
+          "Exclusion of Time (Sections 12 & 14): Excludes the day limitation starts, time spent obtaining certified copies of judgments (Section 12), and time spent bona fide prosecuting a proceeding in a court lacking jurisdiction (Section 14).",
+          "Acknowledgment (Section 18) & Part-Payment (Section 19): A written, signed acknowledgment of liability or part-payment of debt made BEFORE expiry of the limitation period starts a fresh period of limitation from that date.",
+          "Extinguishment of Right (Section 27): Exception to 'limitation bars remedy, not right'—after expiry of limitation for suing for possession of immovable property (12 years), the owner's title itself is extinguished (adverse possession)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Collector, Land Acquisition, Anantnag v. Mst. Katiji",
+            "citation": "AIR 1987 SC 1353",
+            "principle": "Held that 'sufficient cause' under Section 5 of the Limitation Act must be construed liberally to advance substantial justice rather than defeating genuine claims on technicalities."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Does Section 5 (Condonation of Delay) apply to original civil suits, and what is the effect of a written acknowledgment under Section 18?",
+            "a": "No—Section 5 applies only to appeals and applications (not original suits). Under Section 18, a written, signed acknowledgment made before limitation expires starts a fresh period of limitation."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "criminal-procedure-code-u3-t1": {
+      "id": "criminal-procedure-code-u3-t1",
+      "subtitle": "Criminal Procedure Code (CrPC / BNSS) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Criminal law is set in motion via an FIR to police for cognizable offences (Section 154 CrPC / Section 173 BNSS) or a Complaint to a Magistrate (Section 2(d)). Bail is a right in bailable offences (Section 436) and discretionary in non-bailable offences (Sections 437/439), with Anticipatory Bail (Section 438) preventing pre-arrest detention; Sessions Trials follow Sections 225-237 CrPC.",
+        "legalProvision": "Sections 154, 211-216, 225-237, 300, & 436-439 CrPC, 1973 (Sections 173, 234-239, 248-260, 337, & 478-483 BNSS, 2023)",
+        "meaning": "A fair criminal trial requires clear notice of accusations through a formal Charge (Sections 211-216), presumption of innocence, right to speedy trial under Article 21, and protection against double jeopardy (Autrefois Acquit / Autrefois Convict under Section 300 CrPC).",
+        "keyPoints": [
+          "FIR vs Complaint: An FIR (Section 154 CrPC / Section 173 BNSS—now including Zero FIR & e-FIR) is mandatory for cognizable offences (Lalita Kumari) and is NOT substantive evidence (used for corroboration/contradiction); a Complaint (Section 2(d)) is made to a Magistrate for cognizable or non-cognizable offences.",
+          "Bail & Anticipatory Bail (Sections 436-439 CrPC / Sections 478-483 BNSS): In bailable offences, bail is a matter of right (Section 436); in non-bailable offences, courts weigh gravity, flight risk, and tampering (Sections 437/439); Anticipatory Bail (Section 438 CrPC / Section 482 BNSS) is granted by Sessions Court or High Court in apprehension of arrest.",
+          "Charge (Sections 211-216): Formal written accusation specifying offence, law/section, time, place, and victim so the accused knows the exact case to meet; courts may alter a charge anytime before judgment (Section 216).",
+          "Sessions Trial Procedure (Sections 225-237 CrPC / Sections 248-260 BNSS): Conducted by Public Prosecutor -> Opening of prosecution case -> Discharge if no sufficient ground (Sec. 227) -> Framing of Charge & Plea of Guilty/Not Guilty (Secs. 228-229) -> Prosecution Evidence -> Examination of Accused (Sec. 313) -> Acquittal if no evidence (Sec. 232) or Defence Evidence -> Arguments -> Judgment & Hearing on Sentence (Sec. 235).",
+          "Autrefois Acquit & Autrefois Convict (Section 300 CrPC / Article 20(2)): A person once tried and acquitted or convicted by a competent court cannot be tried again for the same offence."
+        ],
+        "caseLaws": [
+          {
+            "name": "Lalita Kumari v. Government of U.P.",
+            "citation": "2014 2 SCC 1",
+            "principle": "Constitution Bench held that registration of an FIR under Section 154 CrPC is mandatory if the information discloses commission of a cognizable offence."
+          },
+          {
+            "name": "Gurbaksh Singh Sibbia v. State of Punjab",
+            "citation": "AIR 1980 SC 1632",
+            "principle": "Held that Anticipatory Bail under Section 438 CrPC is an essential safeguard of personal liberty under Article 21 and should not be restricted by rigid, narrow formulas."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Outline the key stages of a criminal trial before a Court of Session under Sections 225-235 CrPC.",
+            "a": "Opening by Public Prosecutor -> Discharge or Framing of Charge -> Accused's Plea -> Prosecution Evidence -> Sec. 313 Accused Examination -> Defence Evidence -> Final Arguments -> Judgment and Hearing on Sentence."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "criminal-procedure-code-u4-t1": {
+      "id": "criminal-procedure-code-u4-t1",
+      "subtitle": "Criminal Procedure Code (CrPC / BNSS) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To reduce criminal backlogs, CrPC/BNSS provides Compounding of Offences (Section 320 CrPC) and Plea Bargaining (Chapter XXI-A, Sections 265A-265L CrPC for offences punishable up to 7 years). Judgments must be reasoned and delivered in open court with free copies to the accused, alongside Victim Compensation (Section 357A) and Appellate/Revisional remedies.",
+        "legalProvision": "Sections 260-265, 265A-265L, 320, 353-357A, 372-386, & 397-401 CrPC, 1973 (BNSS, 2023 Chapters XXI-XXIII & XXXI-XXXII)",
+        "meaning": "Modern criminal procedure shifts from purely punitive trials to restorative justice—allowing voluntary settlement in minor offences, negotiated sentence reduction via Plea Bargaining, and statutory monetary compensation to crime victims.",
+        "keyPoints": [
+          "Plea Bargaining (Sections 265A-265L CrPC / Sections 289-300 BNSS): Voluntary pre-trial negotiation where an accused pleads guilty in exchange for a mutually satisfactory disposition (MSD) and reduced sentence; NOT available for offences punishable with death, life, or over 7 years, socio-economic offences, or offences against women or children below 14.",
+          "Compounding of Offences (Section 320 CrPC / Section 359 BNSS): Compromise by the victim ending prosecution with the effect of acquittal—Table 1 offences compoundable without court permission (e.g., hurt, defamation) and Table 2 with court permission (e.g., cheating, theft).",
+          "Summary Trial (Sections 260-265): Expedited trial by CJM/MM/empowered JMFC for petty offences punishable up to 2 years (3 years under BNSS), with maximum sentence of 3 months' imprisonment.",
+          "Judgment & Victim Compensation (Sections 353-357A): Must state points for determination, decision, and reasons; free copy must be supplied to the accused immediately (Section 363); Section 357A establishes State Victim Compensation Schemes.",
+          "Appeals (Sections 372-386) & Revision (Sections 397-401): Convicted accused and victims (Section 372 proviso) have a statutory right of appeal; High Courts and Sessions Judges exercise Revisional power (Sections 397-401) to check legality and propriety of lower court orders, though Revision cannot convert an acquittal into a conviction."
+        ],
+        "caseLaws": [
+          {
+            "name": "Gian Singh v. State of Punjab",
+            "citation": "2012 10 SCC 303",
+            "principle": "Held that while Section 320 limits compounding, High Courts under Section 482 CrPC (Section 528 BNSS) may quash non-compoundable private/matrimonial disputes upon genuine settlement, except heinous offences like murder or rape."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Which categories of offences are strictly excluded from Plea Bargaining under Section 265A CrPC / Section 289 BNSS?",
+            "a": "Offences punishable with death, life imprisonment, or imprisonment exceeding 7 years, offences affecting the socio-economic condition of the country, and offences committed against a woman or a child below 14 years."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "criminal-procedure-code-u5-t1": {
+      "id": "criminal-procedure-code-u5-t1",
+      "subtitle": "Criminal Procedure Code (CrPC / BNSS) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Reformative criminal justice relies on the Probation of Offenders Act, 1958 (releasing eligible first-time offenders on admonition or good-conduct bond instead of prison), Parole (temporary conditional release from prison), and the Juvenile Justice (Care and Protection of Children) Act, 2015 governing children in conflict with law.",
+        "legalProvision": "Probation of Offenders Act, 1958 (Sections 3, 4, 6, & 12); Section 360 CrPC / Section 401 BNSS; Juvenile Justice (Care and Protection of Children) Act, 2015 (Sections 2(12), 4, 15, & 18)",
+        "meaning": "Sending young or first-time non-violent offenders to prison exposes them to hardened criminals. Probation and Juvenile Justice laws prioritize rehabilitation, supervision, and social reintegration while removing the lifelong stigma of conviction.",
+        "keyPoints": [
+          "Probation vs Parole: Probation is a JUDICIAL order passed by the trial court in lieu of imprisonment (no prison term served); Parole is an EXECUTIVE/administrative temporary conditional release granted to a convict after serving part of his prison sentence.",
+          "Probation of Offenders Act, 1958: Empowers courts to release first-time offenders after Admonition for minor offences (Section 3) or on Bond of Good Conduct up to 3 years (Section 4—NOT available for offences punishable with death or life imprisonment, such as murder); Section 6 restricts imprisoning offenders under 21 years; Section 12 removes any disqualification attached to conviction.",
+          "Juvenile Justice (Care & Protection of Children) Act, 2015 (replacing 2000 Act): Defines a 'child' as any person below 18 years; distinguishes 'Child in Conflict with Law' (dealt with by Juvenile Justice Board—JJB) from 'Child in Need of Care and Protection' (dealt with by Child Welfare Committee—CWC).",
+          "Heinous Offences by 16-18 Age Group (Section 15, JJ Act, 2015): After the Nirbhaya case, if a child aged 16-18 commits a heinous offence (minimum 7+ years' punishment), the JJB conducts a preliminary mental/physical capacity assessment and may transfer the case to a Children's Court for trial as an adult (still prohibiting death penalty or life without release).",
+          "Rehabilitation Homes: Observation Homes (temporary stay during inquiry), Special Homes (rehabilitation after JJB order), and Place of Safety."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jugal Kishore Prasad v. State of Bihar",
+            "citation": "AIR 1972 SC 2522",
+            "principle": "Explained that the Probation of Offenders Act, 1958 is a milestone in reformative penology designed to prevent youthful first-time offenders from turning into hardened criminals in jail."
+          },
+          {
+            "name": "Pratap Singh v. State of Jharkhand",
+            "citation": "2005 3 SCC 551",
+            "principle": "Constitution Bench held that the reckoning date for determining juvenility is the date of commission of the offence, not the date of production before the court."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Probation and Parole, and explain when a 17-year-old can be tried as an adult under the Juvenile Justice Act, 2015.",
+            "a": "Probation is a judicial release on good conduct instead of prison, whereas Parole is an executive temporary release from prison. Under Section 15 of the JJ Act, 2015, a 16-18 year old accused of a heinous offence (7+ years' minimum punishment) may be transferred to a Children's Court after a JJB preliminary capacity assessment."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

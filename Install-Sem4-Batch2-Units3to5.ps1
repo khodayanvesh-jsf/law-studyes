@@ -1,0 +1,734 @@
+param(
+  [switch]$PushOta
+)
+
+$ErrorActionPreference = "Stop"
+$u = New-Object System.Text.UTF8Encoding $false
+$env:PYTHONIOENCODING = "utf-8"
+
+$root = "C:\Users\khoda\OneDrive\Desktop\law-studyes-offline-apk-kit"
+if (-not (Test-Path (Join-Path $root "www"))) { $root = (Get-Location).Path }
+Set-Location $root
+
+$dataDir = Join-Path $root "data"
+New-Item -ItemType Directory -Path $dataDir -Force | Out-Null
+
+$sem4B2Json = @'
+{
+  "subjects": [
+    {
+      "id": "labour-law-ii",
+      "title": "Labour Law - II",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Payment of Bonus Act, 1965 & Set-On / Set-Off",
+          "topics": [
+            {"id": "labour-law-ii-u3-t1", "title": "1. Payment of Bonus Act, 1965 - Available & Allocable Surplus, Minimum/Maximum Bonus & Set-On / Set-Off (Section 15)"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "EPF Act, 1952, Maternity Benefit Act, 1961 & Gratuity Act, 1972",
+          "topics": [
+            {"id": "labour-law-ii-u4-t1", "title": "1. EPF Act (1952), Maternity Benefit Act (1961 / 2017 Amend.) & Payment of Gratuity Act (1972)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Child Labour Prohibition, Women Night-Shift & Equal Remuneration",
+          "topics": [
+            {"id": "labour-law-ii-u5-t1", "title": "1. Child & Adolescent Labour Act (1986), Factories Act Night-Shift Rule (Sec. 66) & Equal Remuneration Act (1976)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "public-international-law",
+      "title": "Public International Law",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Nationality, Extradition, Asylum & Diplomatic Immunities",
+          "topics": [
+            {"id": "public-international-law-u3-t1", "title": "1. Nationality, Extradition, Asylum (Territorial vs Diplomatic) & Diplomatic Immunities"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Law of Treaties, Law of the Sea (UNCLOS) & Air/Space Law",
+          "topics": [
+            {"id": "public-international-law-u4-t1", "title": "1. Law of Treaties (Vienna Convention, 1969), Law of the Sea (UNCLOS, 1982) & Air/Outer Space Law"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "United Nations (UN) Organs, ICJ & Specialized Agencies",
+          "topics": [
+            {"id": "public-international-law-u5-t1", "title": "1. United Nations Organs, International Court of Justice (ICJ), Specialized Agencies & League of Nations"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interpretation-of-statutes",
+      "title": "Interpretation of Statutes",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Internal & External Aids to Statutory Interpretation",
+          "topics": [
+            {"id": "interpretation-of-statutes-u3-t1", "title": "1. Internal (Intrinsic) & External (Extrinsic) Aids to Interpretation of Statutes"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Subsidiary Maxims & Statutory Presumptions",
+          "topics": [
+            {"id": "interpretation-of-statutes-u4-t1", "title": "1. Subsidiary Rules (Ejusdem Generis, Noscitur a Sociis, Expressio Unius) & Statutory Presumptions"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Repeal, Amendment, General Clauses Act & Judicial Restraint",
+          "topics": [
+            {"id": "interpretation-of-statutes-u5-t1", "title": "1. Effects of Repeal & Amendment (General Clauses Act, 1897), Hierarchy of Laws & Judicial Restraint"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "land-laws",
+      "title": "Land Laws",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Land Acquisition Procedure, Public Purpose & Compensation",
+          "topics": [
+            {"id": "land-laws-u3-t1", "title": "1. Land Acquisition vs Requisition, Public Purpose, Acquisition Procedure & LARR Act, 2013 Compensation"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Agricultural & Urban Land Ceiling and Tenancy Protection",
+          "topics": [
+            {"id": "land-laws-u4-t1", "title": "1. Agricultural & Urban Land Ceiling Laws, Exemptions & Protected Tenancy Rights (1950 Act)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Scheduled Areas Land Transfer & Land Grabbing Prohibition",
+          "topics": [
+            {"id": "land-laws-u5-t1", "title": "1. Scheduled Areas Land Transfer Regulation (LTR 1 of 1970) & Land Grabbing (Prohibition) Act, 1982"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intellectual-property-law",
+      "title": "Intellectual Property Law",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Copyright Act, 1957, Infringement Remedies & Conventions",
+          "topics": [
+            {"id": "intellectual-property-law-u3-t1", "title": "1. Copyright Act, 1957 - Rights, Performers' Rights, Infringement Remedies, Berne & Universal Conventions"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Trade Marks Act, 1999 & Designs Act, 2000",
+          "topics": [
+            {"id": "intellectual-property-law-u4-t1", "title": "1. Trade Marks Act, 1999 (Registration & Passing Off) & Industrial Designs Act, 2000"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Patents Act, 1970 & Protection of Plant Varieties (PPVFR Act)",
+          "topics": [
+            {"id": "intellectual-property-law-u5-t1", "title": "1. Patents Act, 1970 (Process vs Product, Registration, Non-Patentable Inventions) & PPVFR Act, 2001"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "labour-law-ii-u3-t1": {
+      "id": "labour-law-ii-u3-t1",
+      "subtitle": "Labour Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under the Payment of Bonus Act, 1965 (now consolidated into the Code on Wages, 2019), bonus is a statutory right sharing business prosperity rather than an ex-gratia gift. Employers must pay a minimum bonus of 8.33% even during losses (Section 10) up to a maximum of 20% (Section 11), balanced across four years through Set-On and Set-Off (Section 15).",
+        "legalProvision": "Sections 2(4), 4, 8, 9, 10, 11, and 15 (Fourth Schedule), Payment of Bonus Act, 1965 (Code on Wages, 2019)",
+        "meaning": "Evolving from the Full Bench Formula and Bonus Commission recommendations, the Payment of Bonus Act applies to factories and establishments employing 20 or more persons. It replaces ad-hoc disputes with a clear mathematical formula: Gross Profit -> Available Surplus -> Allocable Surplus.",
+        "keyPoints": [
+          "Eligibility & Disqualification (Sections 8 & 9): Every employee working at least 30 working days in an accounting year (within statutory wage ceiling) is eligible; an employee dismissed for fraud, riotous/violent behaviour on premises, or theft/misappropriation of employer property is disqualified from receiving bonus.",
+          "Available Surplus & Allocable Surplus (Sections 2(4) & 5): Available Surplus is computed by deducting prior charges (depreciation, direct taxes, return on capital) from Gross Profit; Allocable Surplus is 67% of Available Surplus for companies not making prescribed dividend arrangements in India, and 60% in all other cases.",
+          "Minimum Bonus (Section 10): Mandatory 8.33% of annual salary/wage (or Rs. 100, whichever is higher; Rs. 60 for employees under 15) payable regardless of whether the employer has any allocable surplus.",
+          "Maximum Bonus (Section 11): Capped at 20% of annual salary/wage when allocable surplus exceeds the minimum bonus requirement.",
+          "Set-On & Set-Off (Section 15, Fourth Schedule): Excess allocable surplus above the 20% maximum (up to a 20% cap) is carried forward ('Set-On') for up to 4 succeeding accounting years; similarly, a shortfall below the 8.33% minimum bonus is carried forward ('Set-Off') for up to 4 succeeding years, applied on a first-in-first-out basis."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jalan Trading Co. (P) Ltd. v. Mill Mazdoor Sabha",
+            "citation": "AIR 1967 SC 691",
+            "principle": "Upheld the constitutional validity of Section 10 of the Payment of Bonus Act, holding that mandatory minimum bonus of 8.33% (earlier 4%) even in loss-making years is valid and implements Directive Principles."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the mechanism of Set-On and Set-Off of allocable surplus under Section 15 of the Payment of Bonus Act, 1965.",
+            "a": "Surplus exceeding the 20% maximum bonus is carried forward as 'Set-On' (capped at 20%), and any deficit below the 8.33% minimum bonus is carried forward as 'Set-Off', each for up to 4 succeeding accounting years."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "labour-law-ii-u4-t1": {
+      "id": "labour-law-ii-u4-t1",
+      "subtitle": "Labour Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Three pillars of employee social security protect retirement and motherhood: the EPF Act, 1952 (provident fund, pension, and deposit-linked insurance), the Maternity Benefit Act, 1961 (26 weeks' paid leave and protection against dismissal under Section 12), and the Payment of Gratuity Act, 1972 (15 days' wages per year after 5 years' continuous service).",
+        "legalProvision": "EPF & MP Act, 1952; Maternity Benefit Act, 1961 (2017 Amend., Sections 5 & 12); Payment of Gratuity Act, 1972 (Section 4) (Social Security Code, 2020)",
+        "meaning": "As traditional joint families declined with industrialization, statutory social security schemes filled the gap by guaranteeing income continuity during maternity, disability, old age, and death in service.",
+        "keyPoints": [
+          "EPF & Miscellaneous Provisions Act, 1952: Applies to factories and notified establishments employing 20 or more persons; establishes three contributory schemes—Employees' Provident Fund (EPF), Employees' Pension Scheme (EPS, 1995), and Employees' Deposit-Linked Insurance (EDLI).",
+          "Maternity Benefit Act, 1961 (Amended 2017): Applies to establishments with 10+ employees (eligibility: 80 working days in preceding 12 months); grants 26 weeks' paid leave for the first two children (up to 8 weeks pre-delivery) and 12 weeks for the third child, adopting mothers (child under 3 months), and commissioning mothers; establishments with 50+ employees must provide crèche facilities with 4 daily visits.",
+          "Bar on Dismissal During Pregnancy (Section 12, Maternity Benefit Act): Strictly prohibits an employer from dismissing, discharging, or varying service conditions to a woman's disadvantage during maternity absence.",
+          "Payment of Gratuity Act, 1972 (Section 4): Applies to establishments with 10+ employees; payable on superannuation, retirement, resignation, death, or disablement after 5 years' continuous service (5-year rule waived in cases of death or disablement) at 15 days' last-drawn wages per completed year (or part exceeding 6 months).",
+          "Gratuity Forfeiture, Nomination & Controlling Authority: Gratuity may be forfeited wholly or partly for riotous/violent conduct, moral turpitude offences in employment, or wilful damage to employer property; employees execute nominations, and disputes are adjudicated by the Controlling Authority."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bakshish Singh v. Darshan Engineering Works",
+            "citation": "AIR 1994 SC 251",
+            "principle": "Upheld Section 4(1)(b) of the Payment of Gratuity Act, holding that gratuity is a minimum statutory retirement benefit payable regardless of an employer's financial capacity."
+          },
+          {
+            "name": "Municipal Corporation of Delhi v. Female Workers (Muster Roll)",
+            "citation": "AIR 2000 SC 1274",
+            "principle": "Extended Maternity Benefit Act entitlements even to casual/muster-roll female workers, invoking Article 42 and social justice."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When is the 5-year continuous service requirement waived under Section 4 of the Payment of Gratuity Act, 1972?",
+            "a": "When termination of employment occurs due to the death or disablement (from accident or disease) of the employee."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "labour-law-ii-u5-t1": {
+      "id": "labour-law-ii-u5-t1",
+      "subtitle": "Labour Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 24 and the Child and Adolescent Labour (Prohibition and Regulation) Act, 1986 (amended 2016) ban employing children under 14 in all occupations (with narrow family-business/audio-visual exceptions) and adolescents (14-18) in hazardous work. Section 66(1)(b) of the Factories Act restricts night shifts for women, while the Equal Remuneration Act, 1976 mandates equal pay for equal work.",
+        "legalProvision": "Articles 24, 39(d), and 39(e)-(f), Constitution of India; Child & Adolescent Labour Act, 1986 (2016 Amend.); Section 66(1)(b), Factories Act, 1948; Equal Remuneration Act, 1976",
+        "meaning": "Constitutional and statutory labour protections shield children from exploitative work that robs them of schooling and health, while guaranteeing women workplace safety, non-discrimination, and pay parity.",
+        "keyPoints": [
+          "Child & Adolescent Labour Act, 1986 (as amended in 2016): Defines 'child' as under 14 years and 'adolescent' as 14-18 years; completely prohibits employing children under 14 in all occupations/processes (except helping non-hazardous family enterprises after school hours or as child artists without affecting education) and bars adolescents from hazardous occupations (mines, inflammables, hazardous processes).",
+          "Regulation of Permitted Work & Penalties (Sections 7, 8 & 14): Where permitted, working period cannot exceed 6 hours/day including a mandatory 1-hour rest after 3 hours, no work between 7 PM and 8 AM, no overtime, and one full weekly holiday; violation under Section 14 attracts 6 months to 2 years' imprisonment and/or Rs. 20,000-50,000 fine (enhanced in 2016).",
+          "Factories Act Night-Shift Rule (Section 66(1)(b)): Restricts employing women in factories between 7 PM and 6 AM; however, courts have struck down rigid blanket bans where safe transport and security are ensured, upholding gender equality (Triveni K.S. v. Union of India).",
+          "Equal Remuneration Act, 1976 (Section 4 & 5): Operationalizes Article 39(d)—mandates equal wages to men and women for the 'same work or work of a similar nature' and bars sex discrimination in recruitment, promotion, and training.",
+          "Minimum Wages in Kind (Section 11, Minimum Wages Act, 1948): Minimum wages must ordinarily be paid in cash; payment wholly or partly in kind is valid only where customary and expressly authorized by Official Gazette notification."
+        ],
+        "caseLaws": [
+          {
+            "name": "M.C. Mehta v. State of Tamil Nadu (Sivakasi Child Labour Case)",
+            "citation": "AIR 1997 SC 699",
+            "principle": "Directed strict enforcement of Article 24 and the Child Labour Act, imposing Rs. 20,000 compensation per child on offending employers to fund a Child Labour Rehabilitation-cum-Welfare Fund."
+          },
+          {
+            "name": "Triveni K.S. v. Union of India",
+            "citation": "2002 (5) ALT 223 (AP)",
+            "principle": "Struck down the rigid prohibition on women working night shifts under Section 66(1)(b) of the Factories Act as discriminatory under Articles 14, 15, and 19(1)(g), subject to employer safety safeguards."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What key change did the 2016 Amendment make to the Child Labour (Prohibition and Regulation) Act, 1986?",
+            "a": "It banned employing children below 14 in ALL occupations (except non-hazardous family business after school hours or artists), banned adolescents (14-18) from hazardous work, and enhanced criminal penalties."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "public-international-law-u3-t1": {
+      "id": "public-international-law-u3-t1",
+      "subtitle": "Public International Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Nationality is the legal bond linking an individual to a State in international law. Extradition is the formal surrender of an accused or convicted fugitive by one State to another, whereas Asylum grants sanctuary; Diplomatic Agents enjoy inviolability and jurisdictional immunities under the Vienna Convention on Diplomatic Relations, 1961.",
+        "legalProvision": "Vienna Convention on Diplomatic Relations, 1961; Extradition Act, 1962 (India); Article 14, UDHR (1948)",
+        "meaning": "Because sovereign States cannot send police across foreign borders, international law coordinates criminal justice and diplomatic representation through reciprocal rules on nationality, extradition treaties, asylum, and diplomatic privileges.",
+        "keyPoints": [
+          "Nationality — Acquisition & Loss: Acquired by Birth (Jus Soli), Descent/Parentage (Jus Sanguinis), Naturalization, Marriage, or Cession/Annexation of territory; lost by Renunciation, Deprivation (fraud/disloyalty), Substitution, Release, or Expiration (Nottebohm Case requires a 'genuine link').",
+          "Extradition Principles: Governed by bilateral treaties and domestic law (Extradition Act, 1962 in India); rests on Dual Criminality (act must be a crime in both States), Rule of Specialty (fugitive may be tried only for the offence extradited for), and Non-Extradition of Political Offenders (excluding terrorism/genocide).",
+          "Asylum — Territorial vs Extra-Territorial (Diplomatic): Territorial Asylum is granted within a State's own territory to political refugees (sovereign right of the State); Diplomatic Asylum is sanctuary granted inside a foreign embassy or warship, recognized only exceptionally on urgent humanitarian grounds or regional custom (Asylum Case).",
+          "Diplomatic Agents & Immunities (Vienna Convention, 1961): Envoys (Ambassadors, Ministers, Chargés d'Affaires) enjoy personal inviolability (exempt from arrest), inviolability of embassy premises and diplomatic bag, absolute immunity from local criminal jurisdiction, broad immunity from civil jurisdiction, and exemption from local taxes/customs.",
+          "Waiver & Persona Non Grata: Immunity belongs to the sending State (only the sending State can waive it); the receiving State may declare an offending diplomat 'Persona Non Grata' and require immediate recall."
+        ],
+        "caseLaws": [
+          {
+            "name": "Nottebohm Case (Liechtenstein v. Guatemala)",
+            "citation": "1955 ICJ Rep 4",
+            "principle": "Established the 'Genuine Link' principle: a State cannot espouse diplomatic protection for a naturalized national unless a genuine factual connection exists between the individual and the State."
+          },
+          {
+            "name": "Asylum Case (Colombia v. Peru)",
+            "citation": "1950 ICJ Rep 266",
+            "principle": "Held that diplomatic asylum derogates from territorial sovereignty and cannot be claimed unilaterally unless supported by an established treaty or proven regional custom."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the rules of Dual Criminality and Specialty in International Extradition Law?",
+            "a": "Dual Criminality requires the alleged act to be a punishable crime in both the requesting and requested States; the Rule of Specialty restricts the requesting State to prosecuting the extradited person solely for the specific offence(s) for which extradition was granted."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "public-international-law-u4-t1": {
+      "id": "public-international-law-u4-t1",
+      "subtitle": "Public International Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Treaties are binding written agreements between States governed by the Vienna Convention on the Law of Treaties, 1969 and Pacta Sunt Servanda. Maritime zones (12 NM Territorial Sea, 200 NM EEZ, Continental Shelf, High Seas) are governed by UNCLOS, 1982, while Airspace (Chicago Convention, 1944) and Outer Space (Outer Space Treaty, 1967) regulate sky and space.",
+        "legalProvision": "Vienna Convention on the Law of Treaties (VCLT), 1969; UNCLOS, 1982; Chicago Convention, 1944; Outer Space Treaty, 1967",
+        "meaning": "International law demarcates State sovereignty over land, adjacent waters, and national airspace, while declaring the High Seas, deep seabed ('Common Heritage of Mankind'), and Outer Space open to peaceful use by all nations.",
+        "keyPoints": [
+          "Law of Treaties (VCLT, 1969): Stages include Negotiation, Authentication/Signature, Ratification (expression of final consent), Reservations (unilateral modification unless incompatible with treaty object), and Registration with the UN; bound by Pacta Sunt Servanda (Article 26).",
+          "Termination & Invalidity of Treaties: Treaties may be invalidated for coercion, fraud, or conflict with a peremptory norm (Jus Cogens, Article 53), and terminated by mutual consent, material breach, supervening impossibility, outbreak of war, or fundamental change of circumstances (Rebus Sic Stantibus, Article 62).",
+          "Law of the Sea (UNCLOS, 1982): Territorial Sea (up to 12 nautical miles — coastal State sovereignty subject to foreign ships' right of innocent passage), Contiguous Zone (up to 24 NM — customs/fiscal/immigration control), Exclusive Economic Zone / EEZ (up to 200 NM — sovereign economic rights over fisheries and minerals), Continental Shelf (seabed/subsoil up to 200 NM or outer margin), and High Seas (freedom of navigation, overflight, fishing, and submarine cables).",
+          "Airspace Law (Chicago Convention, 1944): Every State has complete and exclusive sovereignty over the airspace above its territory; civil aircraft enjoy scheduled/non-scheduled traffic rights under the Five Freedoms of the Air, while military aircraft require prior permission.",
+          "Outer Space Law (Outer Space Treaty, 1967): Declares outer space and celestial bodies the 'province of all mankind,' prohibits national sovereignty claims or weapons of mass destruction in orbit, mandates rescue of astronauts (1968), and imposes absolute State liability for space-object damage on Earth (1972 Liability Convention)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Corfu Channel Case (UK v. Albania)",
+            "citation": "1949 ICJ Rep 4",
+            "principle": "Affirmed the right of innocent passage of foreign vessels through international straits in peacetime and held coastal States liable for failing to warn of known underwater mines."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the breadth of the Territorial Sea, Contiguous Zone, and Exclusive Economic Zone (EEZ) under UNCLOS, 1982.",
+            "a": "Territorial Sea: up to 12 nautical miles; Contiguous Zone: up to 24 nautical miles; Exclusive Economic Zone (EEZ): up to 200 nautical miles from the coastal baseline."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "public-international-law-u5-t1": {
+      "id": "public-international-law-u5-t1",
+      "subtitle": "Public International Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Established on 24 October 1945 (replacing the 1920 League of Nations), the United Nations maintains international peace, human rights, and development through six principal organs—General Assembly, Security Council, ECOSOC, Trusteeship Council, Secretariat, and the International Court of Justice (ICJ)—alongside specialized agencies like WHO, ILO, UNESCO, IMF, and WTO.",
+        "legalProvision": "Charter of the United Nations, 1945 (Articles 1, 2, 7, 23, 27, and 92-96); Statute of the ICJ; Rome Statute of the ICC (1998)",
+        "meaning": "Whereas the League of Nations failed to prevent World War II due to unanimity rules and lack of enforcement power, the UN Charter created a stronger collective-security system anchored by the Security Council and judicial dispute settlement at the ICJ.",
+        "keyPoints": [
+          "League of Nations (1920-1946) vs United Nations (1945): The League was the post-WWI precursor that failed due to US non-membership and weak sanctions; the UN was founded on 24 October 1945 on sovereign equality (Article 2(1)) and peaceful dispute settlement.",
+          "UN General Assembly (UNGA) & Security Council (UNSC): UNGA is the main deliberative body where every member State has 1 vote (max 5 delegates); UNSC bears primary responsibility for peace and security with 15 members—5 Permanent Members with veto power (USA, UK, France, Russia, China) and 10 Non-Permanent Members elected for 2-year terms.",
+          "ECOSOC, Trusteeship Council & Secretariat: ECOSOC (54 members, 3-year term) coordinates socio-economic and human rights work; Trusteeship Council supervised trust territories (suspended operations in 1994 after Palau's independence); Secretariat headed by the Secretary-General handles administration.",
+          "International Court of Justice (ICJ, The Hague): Principal judicial organ with 15 independent judges elected for 9-year terms; exercises Contentious Jurisdiction (binding judgments strictly between consenting States) and Advisory Jurisdiction (non-binding legal opinions requested by UNGA, UNSC, or authorized organs).",
+          "ICC & Specialized Agencies: International Criminal Court (ICC, Rome Statute) prosecutes individuals for genocide, war crimes, and crimes against humanity; Specialized Agencies include WHO (health), UNESCO (education/culture), ILO (labour standards), IMF (monetary stability), and WTO (multilateral trade & Dispute Settlement Body)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Nicaragua v. United States of America",
+            "citation": "1986 ICJ Rep 14",
+            "principle": "Landmark ICJ judgment enforcing the customary international law prohibition on the use of force and non-intervention in another State's internal affairs."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the composition of the UN Security Council and the International Court of Justice (ICJ)?",
+            "a": "The Security Council has 15 members (5 permanent P5 members with veto power and 10 non-permanent members elected for 2 years); the ICJ consists of 15 judges elected for 9-year terms sitting at The Hague."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "interpretation-of-statutes-u3-t1": {
+      "id": "interpretation-of-statutes-u3-t1",
+      "subtitle": "Interpretation of Statutes - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "When statutory language is ambiguous, courts rely on Internal (Intrinsic) Aids found within the statute itself—such as the Preamble, Title, Headings, Provisos, Explanations, Illustrations, and Schedules—and External (Extrinsic) Aids outside the Act, including Parliamentary History, Committee Reports, Dictionaries, and In Pari Materia statutes.",
+        "legalProvision": "Canons of Intrinsic and Extrinsic Construction applied by Indian Courts",
+        "meaning": "Internal aids are examined first because they are part of the legislature's own enactment. External aids are consulted only when internal aids leave real ambiguity, helping courts uncover the historical mischief and legislative policy behind the Act.",
+        "keyPoints": [
+          "Internal Aids — Title & Preamble: Long Title and Preamble state the Act's overarching scope and policy; they cannot override clear enacting language, but act as a key to open the minds of legislators when text is ambiguous (Kesavananda Bharati).",
+          "Internal Aids — Headings, Marginal Notes & Punctuation: Chapter headings and marginal notes summarize sections for reference (limited weight if clear text differs); punctuation is considered in modern statutes when carefully drafted.",
+          "Internal Aids — Definition Clauses, Provisos, Explanations, Illustrations & Schedules: 'Means' definitions are exhaustive while 'includes' definitions are expansive; a Proviso carves out an exception to the main section; an Explanation clarifies without expanding main scope; Illustrations (e.g., IPC/Contract Act) clarify practical application; Schedules form part of the statute.",
+          "External Aids — Parliamentary History & Reports: Statement of Objects and Reasons, Constituent Assembly Debates, Law Commission Reports, and Select Committee Reports help identify the mischief sought to be cured (not conclusive of exact word meaning).",
+          "External Aids — Dictionaries, Foreign Decisions & In Pari Materia: Standard/legal dictionaries clarify ordinary meaning; earlier/subsequent statutes on the same subject (In Pari Materia) are read together; foreign rulings carry persuasive value where statutory wording matches."
+        ],
+        "caseLaws": [
+          {
+            "name": "K.P. Varghese v. Income Tax Officer",
+            "citation": "AIR 1981 SC 1922",
+            "principle": "Held that the Finance Minister's speech moving a Bill and CBDT circulars may be used as external aids to ascertain the true legislative purpose and avoid absurd hardship."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Internal Aids and External Aids to statutory interpretation with three examples of each.",
+            "a": "Internal aids lie inside the statute itself (Preamble, Provisos, Illustrations, Schedules); External aids lie outside the statute (Parliamentary Debates, Law Commission Reports, Statement of Objects and Reasons, Dictionaries)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "interpretation-of-statutes-u4-t1": {
+      "id": "interpretation-of-statutes-u4-t1",
+      "subtitle": "Interpretation of Statutes - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Subsidiary maxims refine statutory meaning: Ejusdem Generis restricts general words to the same class as preceding specific words; Noscitur a Sociis interprets a doubtful word from its neighbours; Expressio Unius implies that expressly mentioning one excludes others. Courts also apply core statutory presumptions.",
+        "legalProvision": "Subsidiary Canons of Construction & Statutory Presumptions",
+        "meaning": "When primary rules still leave doubt about the scope of a list or phrase, courts apply Latin maxims of contextual construction and rebuttable presumptions protecting constitutional validity, vested rights, and judicial access.",
+        "keyPoints": [
+          "Ejusdem Generis ('of the same kind'): Where general words ('or other things') follow specific words forming a distinct genus/category (e.g., 'cars, buses, trucks, or other vehicles'), the general words are limited to that same class (land motor vehicles, not airplanes).",
+          "Noscitur a Sociis ('known by its associates'): The meaning of an ambiguous word is gauged by the surrounding associated words in the same sentence or clause.",
+          "Expressio Unius Est Exclusio Alterius: Express mention of one person or thing implies the exclusion of others not mentioned (applied cautiously where legislature clearly intended an exhaustive list).",
+          "Ut Res Magis Valeat Quam Pereat: A statute should be interpreted so as to make it effective and workable rather than rendering it meaningless or void.",
+          "Key Statutory Presumptions: (1) Presumption of Constitutionality (courts lean toward upholding a statute), (2) Presumption Against Retrospectivity (substantive/penal laws operate prospectively unless expressly retrospective), (3) Presumption Against Ousting Civil Court Jurisdiction (strictly construed), and (4) Presumption of Mens Rea in serious statutory offences."
+        ],
+        "caseLaws": [
+          {
+            "name": "Amar Chandra Chakraborty v. Collector of Excise",
+            "citation": "AIR 1972 SC 1863",
+            "principle": "Laid down the five strict conditions required to apply Ejusdem Generis, holding it does not apply unless the preceding specific words constitute a single distinct genus."
+          },
+          {
+            "name": "State of Bombay v. Hospital Mazdoor Sabha",
+            "citation": "AIR 1960 SC 610",
+            "principle": "Clarified that Noscitur a Sociis is merely a rule of construction and cannot be used to narrow wide statutory terms where legislative intent is clearly broad."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the difference between Ejusdem Generis and Noscitur a Sociis.",
+            "a": "Noscitur a Sociis is the broader rule that any word takes colour from its surrounding words; Ejusdem Generis is a specific application restricting general words following a list of specific words to the same genus/class."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "interpretation-of-statutes-u5-t1": {
+      "id": "interpretation-of-statutes-u5-t1",
+      "subtitle": "Interpretation of Statutes - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 6 of the General Clauses Act, 1897, repealing a statute does not erase accrued rights, liabilities, or pending proceedings unless expressly stated. Amendments to substantive law are presumed prospective, while procedural amendments apply retrospectively; judges exercise Judicial Review balanced by Judicial Restraint.",
+        "legalProvision": "Sections 6, 6A, 9, 10, and 24, General Clauses Act, 1897; Articles 13, 245, 254, and 367, Constitution of India",
+        "meaning": "The General Clauses Act, 1897 serves as a master dictionary and rulebook for all Central Acts, preventing drafting repetition and ensuring legal continuity whenever statutes are amended or repealed.",
+        "keyPoints": [
+          "General Clauses Act, 1897: Supplies standard definitions ('person', 'document', 'good faith', 'immovable property'), rules on computation of time (Sections 9-10), continuation of rules under repealed-and-reenacted statutes (Section 24), and effects of repeal (Section 6).",
+          "Effects of Repeal (Section 6): Express or implied repeal obliterates a statute for the future, but Section 6 saves prior legal operations, vested rights, incurred penalties/liabilities, and pending investigations or court trials under the repealed Act.",
+          "Substantive vs Procedural Amendments: Amendments affecting substantive rights or creating new offences apply prospectively only (Article 20(1) bars retrospective criminal punishment); amendments strictly to procedure (court rules, evidence) apply to pending proceedings as no one has a vested right in procedure.",
+          "Hierarchy of Legislation & Repugnancy: Supreme legislation prevails over subordinate/delegated legislation; in Concurrent List conflicts, Central legislation prevails over State legislation unless the State Act received Presidential assent (Article 254).",
+          "Judicial Review vs Judicial Restraint: Courts strike down unconstitutional or ultra vires laws (Judicial Review), yet observe Judicial Restraint—judges interpret existing law rather than legislating new policy or encroaching on legislative privileges."
+        ],
+        "caseLaws": [
+          {
+            "name": "State of Punjab v. Mohar Singh",
+            "citation": "AIR 1955 SC 84",
+            "principle": "Held that Section 6 of the General Clauses Act applies to all repeals (even when followed by fresh re-enactment) unless the new statute manifests a clear contrary intention."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What happens to pending legal proceedings and accrued rights when a Central statute is repealed?",
+            "a": "Under Section 6 of the General Clauses Act, 1897, accrued rights, incurred liabilities, and pending legal proceedings continue unaffected as if the repealed Act remained in force, unless the repealing Act expressly states otherwise."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "land-laws-u3-t1": {
+      "id": "land-laws-u3-t1",
+      "subtitle": "Land Laws - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Land Acquisition permanently transfers private land to the State for a Public Purpose upon paying fair compensation, whereas Requisition takes only temporary possession with rent. The LARR Act, 2013 replaced the colonial 1894 Act by mandating Social Impact Assessment, prior consent (70%/80% for PPP/private projects), higher compensation with 100% solatium, and Rehabilitation & Resettlement (R&R).",
+        "legalProvision": "Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement (LARR) Act, 2013 (Sections 4, 11, 15, 23, 26-30, and 64; replacing Land Acquisition Act, 1894)",
+        "meaning": "To balance infrastructure development (railways, dams, highways, hospitals, universities) with farmers' livelihoods, the 2013 LARR Act transformed compulsory acquisition into a transparent, participatory, and fair-compensation process.",
+        "keyPoints": [
+          "Acquisition vs Requisition: Acquisition permanently extinguishes the owner's title in exchange for compensation; Requisition takes temporary possession for urgent public/defence needs with periodic rent, returning the land afterward.",
+          "Public Purpose Scope (Section 2, LARR Act, 2013): Includes strategic defence, public infrastructure (railways, highways, ports, irrigation, universities, hospitals), affordable housing, and disaster relief; private/PPP acquisitions require 80%/70% affected-family consent.",
+          "Step-by-Step Procedure: (1) Social Impact Assessment (SIA, Section 4) and public hearing, (2) Preliminary Notification in Gazette & newspapers (Section 11), (3) Filing and hearing of objections before the Collector (Section 15), (4) Final Declaration (Section 19), and (5) Collector's Compensation & R&R Award (Section 23).",
+          "Fair Compensation & Solatium (Sections 26-30): Market value multiplied by factor 1 (urban) to 2 (rural), plus 100% Solatium (double total compensation) and mandatory Rehabilitation & Resettlement (housing, annuity/job) for displaced families; delayed payment attracts statutory interest (9% first year, 15% thereafter).",
+          "Reference to Authority / Court (Section 64): An aggrieved landowner who finds compensation inadequate may seek reference to the LARR Authority/Court, which may confirm or enhance—but never reduce—the Collector's award."
+        ],
+        "caseLaws": [
+          {
+            "name": "Indore Development Authority v. Manoharlal",
+            "citation": "2020 8 SCC 129",
+            "principle": "5-judge Constitution Bench interpreted Section 24(2) of the LARR Act, 2013, holding that prior 1894 Act acquisitions lapse only if BOTH physical possession was not taken AND compensation was not paid/tendered."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two major differences between Land Acquisition and Land Requisition, and two safeguards introduced by the LARR Act, 2013.",
+            "a": "Acquisition permanently transfers ownership for compensation, while Requisition takes temporary possession for rent. The 2013 Act introduced mandatory Social Impact Assessment (SIA), 70%/80% consent for PPP/private projects, 100% solatium, and R&R."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "land-laws-u4-t1": {
+      "id": "land-laws-u4-t1",
+      "subtitle": "Land Laws - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Agricultural Land Ceiling Acts cap maximum family land holdings by soil/irrigation class to redistribute surplus land to the landless, while Urban Land Ceiling (1976 Act, later repealed in 1999 in most States) capped vacant city land. Under the Telangana/A.P. Tenancy Act, 1950, Protected Tenants (6+ years' continuous cultivation) enjoy near-permanent tenure and preferential purchase rights.",
+        "legalProvision": "A.P./Telangana Land Reforms (Ceiling on Agricultural Holdings) Act, 1973; Urban Land (Ceiling and Regulation) Act, 1976 (Repeal Act, 1999); Telangana/A.P. (Telangana Area) Tenancy and Agricultural Lands Act, 1950",
+        "meaning": "Ceiling and tenancy statutes operationalize Articles 38 and 39(b)-(c) by breaking feudal land monopolies, fixing fair rent through revenue authorities, and protecting cultivating tenants from arbitrary eviction.",
+        "keyPoints": [
+          "Agricultural Land Ceiling & Standard Holding: Fixes ceiling limits (10 to 54 acres depending on double-crop wetland vs dryland classification) per family unit; surplus land is declared by Tribunal/Collector after notice and hearing, acquired with compensation, and assigned to landless agricultural poor.",
+          "Statutory Exemptions from Ceiling: Lands held by Central/State Governments, Universities/educational institutions, Wakfs/religious trusts, cooperative societies, local bodies (Gram Panchayats), defence forces, mortgaged bank lands, and tea/coffee plantations.",
+          "Urban Land Ceiling (ULCRA, 1976): Categorized cities into Classes A (500 sq. m., e.g., Delhi/Mumbai), B (1,000 sq. m.), C (1,500 sq. m., e.g., Hyderabad/Pune), and D (2,000 sq. m., e.g., Warangal/Vijayawada) to prevent urban speculation; repealed centrally by the 1999 Repeal Act.",
+          "Ordinary Tenant vs Protected Tenant (1950 Tenancy Act): An Ordinary Tenant holds less than 6 years' possession with limited tenure; a Protected Tenant (continuous personal cultivation for 6+ years) receives a statutory Protected Tenancy Certificate, heritable occupancy, protection from eviction, and first right of purchase if the landlord sells.",
+          "Fair Rent Control & Eviction: Revenue officers fix fair rent based on land quality and local rates; a Protected Tenant can be evicted only on strict statutory grounds (wilful non-cultivation/sub-letting, destructive use, or voluntary written surrender verified before the Tahsildar)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Sada v. Tahsildar, Utnoor",
+            "citation": "AIR 1988 AP 77 (FB)",
+            "principle": "Full Bench held that a Protected Tenant under the 1950 Tenancy Act enjoys a statutory right of ownership transfer (Section 38E) that cannot be defeated by unlawful dispossession."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between an Ordinary Tenant and a Protected Tenant under the Telangana/A.P. Tenancy and Agricultural Lands Act, 1950.",
+            "a": "An Ordinary Tenant has less than 6 years' continuous cultivation without a statutory certificate, whereas a Protected Tenant has 6+ years' continuous cultivation, holds a Protected Tenancy Certificate, enjoys heritable tenure, and has preferential right to purchase the land."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "land-laws-u5-t1": {
+      "id": "land-laws-u5-t1",
+      "subtitle": "Land Laws - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Article 244(1) and the Fifth Schedule, the A.P./Telangana Scheduled Areas Land Transfer Regulation (LTR 1 of 1959, amended by Regulation 1 of 1970) strictly voids any transfer of immovable property in Scheduled/Agency areas to non-tribals. The A.P. Land Grabbing (Prohibition) Act, 1982 establishes a dedicated 5-member Special Court to swiftly evict and punish land grabbers.",
+        "legalProvision": "Article 244(1) & Fifth Schedule, Constitution of India; Scheduled Areas Land Transfer Regulation (LTR 1 of 1959 & 1 of 1970); A.P. Land Grabbing (Prohibition) Act, 1982",
+        "meaning": "Scheduled Area laws protect tribal communities (in agency districts such as Adilabad, Khammam, Warangal, East Godavari, and Visakhapatnam) from land alienation and exploitation, while the Land Grabbing Act curbs organized urban and rural land encroachment.",
+        "keyPoints": [
+          "Scheduled Areas Land Transfer Regulation (LTR 1 of 1970): Enacted under the Fifth Schedule; declares any transfer (sale, gift, lease, mortgage, or court attachment) of immovable property situated in a Scheduled Area to a non-tribal person absolutely null and void.",
+          "Tribal-to-Tribal Rule & Statutory Presumption: Land in Scheduled Areas can only be transferred to another Scheduled Tribe member or a Tribal Cooperative Society; any immovable property held by a non-tribal is presumed acquired from a tribal unless proved otherwise.",
+          "Samatha Judgment Protection: Even the State Government cannot lease tribal or government lands in Scheduled Areas to private non-tribal mining companies.",
+          "Land Grabbing (Prohibition) Act, 1982 — Objects & Offence: Defines 'land grabbing' as unlawful taking of possession of government, local-authority, Wakf, charitable, or private land with intent to construct or sell; punishable with imprisonment (minimum 6 months up to 5 years) and fine.",
+          "Special Court Composition & Powers: A 5-member Special Court (Chairman: retired/sitting High Court Judge + 2 Judicial Members of District Judge rank + 2 Revenue Members of Collector/IAS rank) exercises both civil and criminal court powers to try grabbing cases, award compensation, evict grabbers, and restore possession swiftly."
+        ],
+        "caseLaws": [
+          {
+            "name": "Samatha v. State of Andhra Pradesh",
+            "citation": "AIR 1997 SC 3297",
+            "principle": "Held under the Fifth Schedule and LTR 1 of 1970 that 'person' includes the State Government, prohibiting the grant of mining leases in Scheduled Areas to private non-tribal companies."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the effect of transferring land in a Scheduled Area to a non-tribal under LTR 1 of 1970, and what did Samatha v. State of A.P. hold?",
+            "a": "Any transfer of immovable property in a Scheduled Area to a non-tribal is null and void. In Samatha (1997), the Supreme Court held that even the State Government cannot lease Scheduled Area land to private non-tribal mining companies."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "intellectual-property-law-u3-t1": {
+      "id": "intellectual-property-law-u3-t1",
+      "subtitle": "Intellectual Property Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Copyright Act, 1957 automatically protects original literary, dramatic, musical, artistic works, films, and sound recordings for the author's lifetime plus 60 years (registration is optional but useful as prima facie evidence). Infringement attracts civil, criminal, and administrative remedies, backed globally by the Berne Convention (1886) and Universal Copyright Convention (1952).",
+        "legalProvision": "Sections 13, 14, 22, 33, 38, 51, 55, 57, and 63, Copyright Act, 1957; Berne Convention (1886); Universal Copyright Convention (1952)",
+        "meaning": "Copyright protects the original expression of an idea (never the bare idea itself) and balances authors' economic and moral rights with public 'fair dealing' exceptions for private study, criticism, and news reporting (Section 52).",
+        "keyPoints": [
+          "Author's Rights (Sections 14 & 57) & Term (Section 22): Economic rights include reproduction, publication, translation, adaptation, public communication, and licensing/assignment for royalty; Moral Rights (Section 57) protect paternity (attribution) and integrity even after assignment. Term for literary/artistic works in India is Author's Lifetime + 60 years (60 years from publication for films/sound recordings).",
+          "Performers' Rights (Section 38): Actors, singers, musicians, and dancers enjoy exclusive rights for 50 years over recording, broadcasting, and communicating their live performances.",
+          "Authorities & Registration: Copyright exists automatically upon creation (registration at the Copyright Office is optional but provides prima facie proof of ownership); Copyright Societies (Section 33) administer collective licensing and royalties.",
+          "Remedies for Infringement: Civil Remedies (Section 55 — Injunction, Damages/Account of Profits, Anton Piller seizure/delivery of infringing copies), Criminal Remedies (Section 63 — imprisonment from 6 months to 3 years and fine Rs. 50,000 to Rs. 2 lakh), and Administrative Remedies (Customs border seizure of pirated imports under Section 53).",
+          "International Conventions: Berne Convention (1886 — automatic protection without formalities, National Treatment, minimum life + 50 years) and Universal Copyright Convention (UCC, 1952 — introduced the copyright notice symbol)."
+        ],
+        "caseLaws": [
+          {
+            "name": "R.G. Anand v. Delux Films",
+            "citation": "AIR 1978 SC 1613",
+            "principle": "Laid down the foundational Indian rule that there is no copyright in a mere idea, theme, or historical fact—copyright protects only the author's original form and manner of expression."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the statutory term of copyright for literary and artistic works in India, and is copyright registration mandatory?",
+            "a": "The term is the author's lifetime plus 60 years (Section 22). Registration is optional because copyright arises automatically upon creation, though registration serves as strong prima facie evidence in court."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "intellectual-property-law-u4-t1": {
+      "id": "intellectual-property-law-u4-t1",
+      "subtitle": "Intellectual Property Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Trade Marks Act, 1999 protects distinctive brand identifiers for goods and services for 10-year renewable terms—guarding registered marks via Infringement suits and unregistered marks via the common-law tort of Passing Off. The Designs Act, 2000 protects novel visual aesthetics (shape, pattern, ornamentation) of industrial articles for up to 15 years.",
+        "legalProvision": "Sections 2(zb), 9, 11, 18-23, 27, and 29, Trade Marks Act, 1999; Sections 2(d), 4, 11, 19, and 22, Designs Act, 2000",
+        "meaning": "Trademarks prevent consumer confusion about the commercial origin of goods or services, while Industrial Designs reward visual product appeal separately from functional inventions (Patents) or fine art (Copyright).",
+        "keyPoints": [
+          "Trademark vs Service Mark vs Property Mark: A Trademark identifies tangible goods; a Service Mark identifies intangible services (banking, telecom, insurance — covered under the 1999 Act); a Property Mark (Section 479 IPC / Section 345 BNS) denotes ownership of movable property.",
+          "Trademark Registration Procedure (Sections 18-23): Application to Registrar -> Examination (absolute grounds u/s 9 & relative similarity u/s 11) -> Publication in Trade Marks Journal -> 4-month Opposition window -> Registration Certificate valid for 10 years (renewable indefinitely).",
+          "Infringement vs Passing Off (Sections 27 & 29): Infringement is a statutory remedy strictly for registered trademarks; Passing Off is a common-law tort protecting unregistered marks based on the 'Classical Trinity'—Goodwill/Reputation, Misrepresentation causing confusion, and Likelihood of Damage (Rupa & Co. v. Dawn Mills).",
+          "Industrial Designs Act, 2000 (replacing 1911 Act): Protects new and original visual features (shape, configuration, pattern, ornament, colour composition) judged solely by the eye; excludes purely functional mechanical features and trademarks.",
+          "Design Registration, Term & Cancellation: Registration is mandatory for statutory protection; initial term is 10 years, extendable by 5 years (max 15 years); liable to cancellation under Section 19 if previously published, not new/original, or obtained fraudulently."
+        ],
+        "caseLaws": [
+          {
+            "name": "Cadila Health Care Ltd. v. Cadila Pharmaceuticals Ltd.",
+            "citation": "AIR 2001 SC 1952",
+            "principle": "Laid down the multi-factor test for deceptive similarity in passing-off actions, emphasizing stricter scrutiny for pharmaceutical trademarks to prevent fatal medical confusion."
+          },
+          {
+            "name": "Rupa & Co. Ltd. v. Dawn Mills Co. Ltd.",
+            "citation": "AIR 1998 Guj 247",
+            "principle": "Granted an injunction for passing off where the defendant adopted the deceptively similar brand name 'DON' against the plaintiff's well-established 'DAWN' hosiery mark."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the key difference between Trademark Infringement and Passing Off, and what is the maximum protection period for an Industrial Design?",
+            "a": "Infringement is a statutory action available only for registered trademarks, while Passing Off is a common-law tort protecting unregistered trademarks with goodwill. An Industrial Design is protected for up to 15 years (10 years + 5-year extension)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "intellectual-property-law-u5-t1": {
+      "id": "intellectual-property-law-u5-t1",
+      "subtitle": "Intellectual Property Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under the Patents Act, 1970, a 20-year exclusive monopoly is granted for new, non-obvious, industrially useful product or process inventions, excluding non-patentable items under Sections 3 and 4. Agricultural breeders and farmers are separately protected under India's unique Protection of Plant Varieties and Farmers' Rights (PPVFR) Act, 2001.",
+        "legalProvision": "Sections 2(1)(j), 3, 4, 6-11B, 25, 48, 53, and 84, Patents Act, 1970; Protection of Plant Varieties and Farmers' Rights (PPVFR) Act, 2001",
+        "meaning": "Patent law grants a temporary statutory bargain: in exchange for disclosing the full technical specification to the public, the inventor (patentee) receives 20 years of exclusive commercial rights before the invention enters the public domain.",
+        "keyPoints": [
+          "Three Criteria of Patentability (Section 2(1)(j)): (1) Novelty (worldwide newness), (2) Inventive Step (non-obvious technical advance), and (3) Industrial Application (capable of being made or used in industry); covers both Product Patents and Process Patents (20-year term under Section 53).",
+          "Patent Registration Procedure: Filing provisional/complete specification at Patent Office (Head Office: Kolkata; Branches: Mumbai, Chennai, Delhi) -> Publication after 18 months -> Request for Examination -> First Examination Report -> Pre-grant (Section 25(1)) and Post-grant (Section 25(2)) Opposition -> Grant of Patent.",
+          "Rights of Patentee (Section 48): Exclusive right to prevent third parties from making, using, offering for sale, selling, or importing the patented product or process; right to assign, license for royalty, surrender, or sue for infringement.",
+          "Non-Patentable Inventions (Sections 3 & 4): Mere discovery of living things or natural substances (Section 3(c)), evergreening of known drugs without enhanced efficacy (Section 3(d)), mere admixture (Section 3(e)), methods of agriculture/horticulture (Section 3(h)), medical/surgical treatment methods (Section 3(i)), plants/animals (Section 3(j)), software per se/business methods (Section 3(k)), traditional knowledge (Section 3(p)), and atomic energy inventions (Section 4).",
+          "PPVFR Act, 2001 (Sui Generis Plant Protection): Protects New, Extant, and Farmers' plant varieties satisfying NDUS criteria (Novelty, Distinctiveness, Uniformity, Stability), while uniquely safeguarding Indian farmers' right to save, use, sow, exchange, and sell farm-saved non-branded seed (Section 39)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bishwanath Prasad Radhey Shyam v. Hindustan Metal Industries",
+            "citation": "AIR 1982 SC 1444",
+            "principle": "Held that to be patentable, an invention must involve a genuine inventive step—not merely a workshop improvement obvious to a person skilled in the art."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three core criteria of patentability and four categories declared non-patentable under Sections 3 and 4 of the Patents Act, 1970.",
+            "a": "Criteria: Novelty, Inventive Step, and Industrial Application. Non-patentable examples: mere discovery of natural things (3(c)), evergreening without enhanced efficacy (3(d)), methods of agriculture (3(h)) or medical treatment (3(i)), and atomic energy (Section 4)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}
+'@
+
+$packPath = Join-Path $dataDir "sem4_batch2_units3to5_pack.json"
+[System.IO.File]::WriteAllText($packPath, $sem4B2Json, $u)
+
+Write-Host "`n=== 1. Merging Semester 4 Batch 2 (Units 3-5) into www/nyayasaral_db.json (Zero Overlap) ===" -ForegroundColor Cyan
+$pyMerge = @'
+import json, os, sys, time
+from pathlib import Path
+
+db_path = Path(sys.argv[1])
+pack_path = Path(sys.argv[2])
+
+db = json.loads(db_path.read_text(encoding="utf-8"))
+pack = json.loads(pack_path.read_text(encoding="utf-8"))
+
+subjects = db.setdefault("subjects", [])
+notes = db.setdefault("notes", {})
+subj_by_id = {s["id"]: s for s in subjects if isinstance(s, dict) and "id" in s}
+
+added_subjs, added_topics = 0, 0
+for s in pack["subjects"]:
+    if s["id"] not in subj_by_id:
+        subjects.append(s)
+        subj_by_id[s["id"]] = s
+        added_subjs += 1
+    else:
+        ex_s = subj_by_id[s["id"]]
+        ex_tids = {t["id"] for u in ex_s.get("units", []) for t in u.get("topics", [])}
+        for u in s.get("units", []):
+            new_ts = [t for t in u.get("topics", []) if t["id"] not in ex_tids]
+            if new_ts:
+                ex_s.setdefault("units", []).append({"unitNo": len(ex_s["units"]) + 1, "title": u["title"], "topics": new_ts})
+
+for tid, rec in pack["notes"].items():
+    if tid not in notes:
+        notes[tid] = rec
+        added_topics += 1
+
+out = json.dumps(db, ensure_ascii=False, separators=(",", ":"))
+tmp = db_path.with_name(f"{db_path.name}.{os.getpid()}.tmp")
+tmp.write_text(out, encoding="utf-8")
+json.loads(tmp.read_text(encoding="utf-8"))
+for i in range(10):
+    try:
+        os.replace(str(tmp), str(db_path))
+        break
+    except (PermissionError, OSError):
+        time.sleep(0.3 * (i + 1))
+
+print(f"[PASS] Merged Semester 4 Batch 2 (Units 3-5): +{added_subjs} subjects, +{added_topics} English topics (Total topics now: {len(notes)})")
+'@
+
+$tmpPy = Join-Path $env:TEMP "ls_merge_sem4_b2.py"
+[System.IO.File]::WriteAllText($tmpPy, $pyMerge, $u)
+python -u $tmpPy (Join-Path $root "www\nyayasaral_db.json") $packPath
+if ($LASTEXITCODE -ne 0) { throw "Merge failed!" }
+
+if ($PushOta) {
+  Write-Host "`n=== 2. Running Built-In EN -> TE/HI Auto-Converter & Deploying Live OTA ===" -ForegroundColor Cyan
+  & (Join-Path $root "Push-LawStudyes-OTA.ps1") -Message "Added Sem 4 Units 3-5 (15 Hand-Crafted Topics across Labour Law II, PIL, Interpretation, Land Laws, IPR) + Auto TE/HI"
+}

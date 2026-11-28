@@ -1,0 +1,159 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-i",
+      "title": "Labour Law - I",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Lay-Off, Retrenchment, Closure (Chapters VA & VB), Continuous Service, Transfer of Undertaking & Unfair Labour Practices",
+          "topics": [
+            {"id": "lab-u5-t1", "title": "1. Lay-Off - Definition (Sec. 2(kkk)), Conditions for Compensation (Sec. 25C), Disqualifications (Sec. 25E) & Lockout vs Lay-Off"},
+            {"id": "lab-u5-t2", "title": "2. Retrenchment - Definition (Sec. 2(oo)), Statutory Conditions Precedent (Sec. 25F), 'Last Come First Go' (Sec. 25G) & Re-employment (Sec. 25H)"},
+            {"id": "lab-u5-t3", "title": "3. Transfer of Undertaking (Sec. 25FF), Closure of Undertaking (Secs. 25FFA-25FFF) & Special Chapter VB Prior-Permission Rules (Secs. 25K-25S)"},
+            {"id": "lab-u5-t4", "title": "4. Continuous Service (Sec. 25B), Unfair Labour Practices (Secs. 25T-25U & Fifth Schedule) & Penalties (Secs. 26-31)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab-u5-t1": {
+      "id": "lab-u5-t1",
+      "subtitle": "Labour Law - I - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Lay-Off (Sec. 2(kkk) ID Act) is the temporary failure, refusal, or inability of an employer to give employment to a workman on the muster rolls due to shortage of coal, power, raw materials, accumulation of stocks, breakdown of machinery, or natural calamity. Under Section 25C, a laid-off workman with 1 year's continuous service receives 50% of basic wages + DA as Lay-Off Compensation (unless disqualified under Section 25E).",
+        "legalProvision": "Sections 2(kkk), 25A, 25C, 25D, & 25E, Industrial Disputes Act, 1947",
+        "meaning": "In a Lay-Off, the employer-employee relationship is NOT terminated - it is merely suspended due to bona fide business/operational contingencies beyond the employer's control.",
+        "keyPoints": [
+          "Essentials of Lay-Off (Sec. 2(kkk)): (1) Employer's failure/refusal/inability to provide work, (2) To a workman whose name is borne on muster rolls and who has NOT been retrenched, (3) Caused by shortage of coal/power/raw materials, stock accumulation, machinery breakdown, or natural calamity/connected reason (deemed laid off if not given work within 2 hours of reporting). Note: Chapter VA lay-off compensation does NOT apply to establishments with < 50 workmen or seasonal establishments (Sec. 25A).",
+          "Right to Lay-Off Compensation (Sec. 25C): Workman (not badli/casual) completing 1 year of continuous service gets 50% OF TOTAL BASIC WAGES AND DEARNESS ALLOWANCE for all lay-off days (except weekly holidays); if laid off beyond 45 days in 12 months, employer may either continue paying 50% or retrench and set off post-45-day lay-off compensation against retrenchment compensation.",
+          "Three Disqualifications Under Section 25E (No Compensation Payable): (1) Workman refuses to accept alternative employment in same/nearby establishment within 5 miles carrying same wages without special skill, (2) Workman fails to present himself for work at the appointed time at least once a day, OR (3) Lay-off is due to a strike or slowing-down of production by workmen in ANOTHER part of the establishment.",
+          "Lay-Off vs Lockout: Lay-Off is caused by economic/trade reasons (power/raw material shortage), whereas Lockout is a weapon of industrial warfare against workers; in Lay-Off 50% compensation is payable, whereas Lockout pays zero wages if legal/justified (and full wages if illegal)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Workmen of Dewan Tea Estate v. Management",
+            "citation": "AIR 1964 SC 1458",
+            "principle": "Held that an employer has NO inherent common-law right to lay off workmen without pay - lay-off is lawful ONLY on the specific grounds enumerated in Section 2(kkk) or Standing Orders, requiring statutory Section 25C compensation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the rate of Lay-Off Compensation under Section 25C ID Act, and list the three grounds disentitling a workman to compensation under Section 25E.",
+            "a": "50% of basic wages plus Dearness Allowance. Disqualifications under Sec. 25E: (1) refusing suitable alternative employment within 5 miles, (2) failing to report at appointed time once a day, or (3) lay-off caused by a strike/go-slow in another part of the establishment."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u5-t2": {
+      "id": "lab-u5-t2",
+      "subtitle": "Labour Law - I - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Retrenchment (Sec. 2(oo) ID Act) means termination of service of a workman by the employer FOR ANY REASON WHATSOEVER otherwise than as a punishment inflicted by disciplinary action (excluding voluntary retirement, superannuation, non-renewal of fixed-term contract under Sec. 2(oo)(bb), or continued ill-health). Valid retrenchment requires three MANDATORY conditions precedent under Section 25F (1 month's notice/pay, 15 days' average pay per completed year, and Government notice) plus the 'Last Come, First Go' rule (Sec. 25G).",
+        "legalProvision": "Sections 2(oo), 25F, 25G, & 25H, Industrial Disputes Act, 1947",
+        "meaning": "Initially thought to apply only to surplus staff reduction (Barsi Light Railway), the Supreme Court in State Bank of India v. N. Sundara Money broadened 'for any reason whatsoever' to cover EVERY non-disciplinary termination (even striking off names for unauthorized absence!).",
+        "keyPoints": [
+          "Wide Meaning & Four Exclusions (Sec. 2(oo) & Sundara Money): Covers EVERY termination except (a) voluntary retirement, (b) retirement on reaching superannuation age, (bb) termination on non-renewal/expiry of a bona fide fixed-term contract, and (c) termination on ground of continued ill-health (plus disciplinary dismissal).",
+          "Three Mandatory Conditions Precedent (Sec. 25F - Non-compliance renders retrenchment VOID AB INITIO with reinstatement): For any workman in continuous service >= 1 year: (1) ONE MONTH'S WRITTEN NOTICE indicating reasons OR 1 month's wages in lieu of notice, (2) RETRENCHMENT COMPENSATION equal to 15 DAYS' AVERAGE PAY for every completed year of continuous service (or part > 6 months) paid AT THE TIME OF RETRENCHMENT, AND (3) Notice served on appropriate Government in prescribed manner.",
+          "Procedure for Retrenchment - 'Last Come, First Go' (Sec. 25G): Employer must ordinarily retrench the workman who was the LAST PERSON TO BE EMPLOYED in that category (junior-most goes first), unless reasons are recorded in writing for departing from seniority.",
+          "Re-employment of Retrenched Workmen (Sec. 25H): If employer subsequently proposes to hire fresh hands, he MUST first give an opportunity to retrenched Indian-citizen workmen to offer themselves for re-employment, giving them statutory preference."
+        ],
+        "caseLaws": [
+          {
+            "name": "State Bank of India v. N. Sundara Money",
+            "citation": "AIR 1976 SC 1111",
+            "principle": "Held that 'for any reason whatsoever' in Section 2(oo) is comprehensive - any termination outside the four statutory exclusions is 'retrenchment', and failure to pay Section 25F compensation simultaneously renders the termination void ab initio."
+          },
+          {
+            "name": "Hariprasad Shivshankar Shukla v. A.D. Divikar (Barsi Light Railway Case)",
+            "citation": "AIR 1957 SC 121",
+            "principle": "Held that bona fide closure of an entire business did not fall under Section 2(oo) retrenchment, prompting Parliament to insert Sections 25FF and 25FFF for transfer and closure compensation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three mandatory conditions precedent for valid Retrenchment under Section 25F ID Act, and explain the rule in Section 25G.",
+            "a": "(1) 1 month's written notice or wages in lieu, (2) simultaneous payment of retrenchment compensation @ 15 days' average pay per completed year of service, and (3) notice to appropriate Government. Sec. 25G mandates the 'Last Come, First Go' seniority rule unless written reasons justify departure."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u5-t3": {
+      "id": "lab-u5-t3",
+      "subtitle": "Labour Law - I - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 25FF and 25FFF protect workmen when ownership of an undertaking transfers or a business permanently closes down (Sec. 2(cc)), granting notice and retrenchment-style compensation (capped at 3 months' average pay if closure is due to unavoidable circumstances beyond employer's control). For larger establishments employing 100 or more workmen (300 under IR Code, 2020), Chapter VB (Secs. 25K-25S) requires PRIOR GOVERNMENT PERMISSION before any lay-off, retrenchment, or closure.",
+        "legalProvision": "Sections 2(cc), 25FF, 25FFA, 25FFF, & Chapter VB (Secs. 25K-25S), Industrial Disputes Act, 1947; Sections 77-80, Industrial Relations Code, 2020",
+        "meaning": "Chapter VB imposes strict State social control on large industrial employers so mass job losses cannot be sprung overnight without administrative scrutiny and social-security safeguards.",
+        "keyPoints": [
+          "Compensation on Transfer of Undertaking (Sec. 25FF): Every workman with 1 year's continuous service receives Sec. 25F notice and compensation UNLESS (a) service is uninterrupted by the transfer, (b) new terms are no less favourable, AND (c) new employer is legally bound to pay continuous-service retrenchment compensation on future termination.",
+          "Closure of Undertaking (Secs. 2(cc), 25FFA & 25FFF): Permanent closing down of a place of employment or part thereof. Under Sec. 25FFA, 60 days' prior Government notice is required for 50+ worker establishments. Under Sec. 25FFF, workmen with 1 year's continuous service get Sec. 25F notice + compensation - EXCEPT where closure is due to UNAVOIDABLE CIRCUMSTANCES BEYOND EMPLOYER'S CONTROL (Proviso: compensation is capped at maximum 3 MONTHS' AVERAGE PAY; mere financial difficulty, accumulated losses, or expiry of lease do NOT count as unavoidable circumstances!).",
+          "Special Chapter VB Rules for Large Establishments (Secs. 25K-25S - 100+ Workmen; 300+ under IR Code, 2020): Applies to factories, mines, and plantations employing 100 OR MORE workmen (Sec. 25K): (1) Lay-off requires prior Government permission (Sec. 25M), (2) Retrenchment requires 3 MONTHS' notice + prior Government permission + higher compensation (Sec. 25N), and (3) Closure requires 90 DAYS' advance application + prior Government permission (Sec. 25O - deemed granted if Government fails to communicate order within 60 days; constitutional validity upheld in Orissa Textile & Steel Ltd. v. State of Orissa, 2002)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Orissa Textile & Steel Ltd. v. State of Orissa",
+            "citation": "2002 2 SCC 578",
+            "principle": "5-judge Constitution Bench upheld amended Section 25O (prior Government permission for closure in Chapter VB establishments) as a reasonable restriction under Article 19(6) given the 60-day deemed-approval and review safeguards."
+          },
+          {
+            "name": "Excel Wear v. Union of India",
+            "citation": "AIR 1979 SC 25",
+            "principle": "Held that the right to close down a business is an integral part of the Fundamental Right to carry on business under Article 19(1)(g), subject only to reasonable public-interest restrictions under Article 19(6)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the maximum closure compensation payable under the Proviso to Section 25FFF(1) when closure is due to unavoidable circumstances beyond the employer's control, and what is the Chapter VB workman threshold?",
+            "a": "Capped at maximum 3 months' average pay (and mere financial loss does not qualify as unavoidable circumstances). Chapter VB requires prior Government permission for establishments employing 100 or more workmen (raised to 300 under the Industrial Relations Code, 2020)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u5-t4": {
+      "id": "lab-u5-t4",
+      "subtitle": "Labour Law - I - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To qualify for Lay-Off, Retrenchment, or Closure compensation under Chapter VA/VB, a workman must complete 1 year of 'Continuous Service' under Section 25B ID Act - satisfied even if service is interrupted by sickness, authorized leave, accident, or legal strike, OR by actually working 240 DAYS (190 days underground in mines) during the preceding 12 calendar months. Chapter VC (Secs. 25T-25U & Fifth Schedule) prohibits and punishes Unfair Labour Practices by both employers and trade unions.",
+        "legalProvision": "Sections 25B, 25T, 25U, 26-31, & Fifth Schedule, Industrial Disputes Act, 1947",
+        "meaning": "Section 25B prevents employers from breaking continuity through artificial 1-day breaks, while the Fifth Schedule (Unfair Labour Practices) polices union-busting victimization on one hand and violent union coercion on the other.",
+        "keyPoints": [
+          "Definition of 'Continuous Service' (Sec. 25B): (1) Uninterrupted service including service interrupted by sickness, authorized leave, accident, legal strike, lockout, or cessation of work not due to workman's fault (Sec. 25B(1)), OR (2) Deeming Fiction (Sec. 25B(2)): Even if not in uninterrupted service, a workman is deemed in 1 year's continuous service if he ACTUALLY WORKED for at least 190 DAYS (below-ground mine) or 240 DAYS (any other case) during the preceding 12 calendar months (includes paid lay-off days, earned leave with full wages, and maternity leave up to 26 weeks; burden of proving 240 days lies initially on the workman - Range Forest Officer v. S.T. Hadimani).",
+          "Prohibition & Penalty for Unfair Labour Practices (Secs. 25T-25U & Fifth Schedule): No employer, workman, or trade union shall commit any Unfair Labour Practice listed in the Fifth Schedule; punishable with imprisonment up to 6 months and/or fine up to Rs. 1,000 (Sec. 25U).",
+          "Examples of Unfair Labour Practices (Fifth Schedule): Part I (By Employers/Associations) -> Threatening workers with discharge for joining a union, sponsoring a company-dominated 'pocket union', discharging/dismissing workers by way of victimization/false charges, employing 'badlis'/temporaries for years to deprive permanent status, or refusing to bargain collectively in good faith. Part II (By Workmen/Trade Unions) -> Advising/supporting an illegal strike, coercing workers to join/not join a union, gherao/intimidation of managers, or damaging employer property.",
+          "Other Statutory Penalties (Secs. 26-31): Illegal strike -> 1 month / Rs. 50 fine (Sec. 26); illegal lockout -> 1 month / Rs. 1,000 fine; instigating/financing illegal strike/lockout -> 6 months / Rs. 1,000 fine (Secs. 27-28); breach of binding Settlement/Award -> 6 months + daily fine (Sec. 29); closure without Sec. 25FFA notice -> 6 months / Rs. 5,000 fine (Sec. 30A)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Workmen of American Express International Banking Corp. v. Management",
+            "citation": "AIR 1986 SC 458",
+            "principle": "Held that Sundays and other paid holidays for which a workman actually received wages MUST be counted when computing 240 days of actual work under Section 25B(2) ID Act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How many actual working days during the preceding 12 months establish 1 year of 'Continuous Service' under Section 25B(2) ID Act, and give two examples each of Unfair Labour Practices by Employers vs Trade Unions?",
+            "a": "240 days in general establishments (190 days for below-ground mine workers). By Employers: victimizing union members or keeping casuals temporary for years to deny permanency. By Unions: instigating illegal strikes or staging violent gherao/intimidation."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

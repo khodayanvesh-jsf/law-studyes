@@ -1,0 +1,429 @@
+{
+  "subjects": [
+    {
+      "id": "family-law-ii",
+      "title": "Family Law - II (Muslim Law)",
+      "semester": "Semester 2",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Guardianship (Hizanat), Parentage, Acknowledgement & Maintenance",
+          "topics": [
+            {"id": "family-law-ii-u4-t1", "title": "1. Guardianship (Person & Property), Parentage, Acknowledgement of Legitimacy, Iddat & Maintenance (1986 Act & Sec. 125 CrPC / Sec. 144 BNSS)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Succession, Sources & Schools of Muslim Law & Special Marriage Act, 1954",
+          "topics": [
+            {"id": "family-law-ii-u5-t1", "title": "1. Muslim Law of Succession, Disqualifications, Sources & Schools (Sunni vs Shia), Special Marriage Act, 1954 & Domicile"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "law-of-crimes",
+      "title": "Law of Crimes (IPC / BNS)",
+      "semester": "Semester 2",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "General Exceptions & Right of Private Defence (IPC Secs. 76-106 / BNS Secs. 14-44)",
+          "topics": [
+            {"id": "law-of-crimes-u3-t1", "title": "1. General Exceptions (Infancy, Insanity, Intoxication, Accident, Good Faith) & Right of Private Defence of Body and Property"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Offences Against the Human Body (IPC Secs. 299-374 / BNS Ch. VI)",
+          "topics": [
+            {"id": "law-of-crimes-u4-t1", "title": "1. Culpable Homicide vs Murder, Simple & Grievous Hurt, Wrongful Restraint vs Confinement, Assault & Kidnapping vs Abduction"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Offences Against Property, Public Tranquillity, State, Marriage, Forgery & Defamation",
+          "topics": [
+            {"id": "law-of-crimes-u5-t1", "title": "1. Theft, Extortion, Robbery, Dacoity, Cheating, Criminal Trespass, Unlawful Assembly/Rioting, Forgery, Bigamy & Defamation"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "law-of-evidence",
+      "title": "Law of Evidence (IEA / BSA)",
+      "semester": "Semester 2",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Admissions, Expert Opinion & Burden of Proof / Presumptions",
+          "topics": [
+            {"id": "law-of-evidence-u4-t1", "title": "1. Admissions vs Confessions (Secs. 17-23), Expert Opinion (Secs. 45-51) & Burden of Proof and Presumptions (Secs. 101-114A)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Competency of Witnesses, Privileged Communications & Examination of Witnesses",
+          "topics": [
+            {"id": "law-of-evidence-u5-t1", "title": "1. Witness Competency, Privileged Communications (Secs. 122-129) & Examination (Chief, Cross, Re-Examination & Leading Questions)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "constitutional-law-ii",
+      "title": "Constitutional Law - II",
+      "semester": "Semester 2",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Supreme Court & High Courts, Union-State Relations & Freedom of Trade",
+          "topics": [
+            {"id": "constitutional-law-ii-u4-t1", "title": "1. Supreme Court & High Courts (Jurisdiction & Writs), Union-State Relations (Arts. 245-293) & Freedom of Trade and Commerce (Arts. 301-307)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Constitutional Amendment (Art. 368), Parliament, Money Bills & Constitutional Bodies",
+          "topics": [
+            {"id": "constitutional-law-ii-u5-t1", "title": "1. Amendment Procedure (Art. 368 & Basic Structure), Parliament & Money Bills, Privileges, UPSC/SPSC, Election Commission & Attorney General"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "family-law-ii-u4-t1": {
+      "id": "family-law-ii-u4-t1",
+      "subtitle": "Family Law - II (Muslim Law) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Muslim law distinguishes Guardianship of Person (Hizanat - custody initially with the mother), Guardianship of Property (father, executor, paternal grandfather, or court-appointed guardian), and Guardianship in Marriage. Parentage may be established via Acknowledgement of Legitimacy (Iqrar), while divorced Muslim women enjoy maintenance rights under both the 1986 Act and Section 125 CrPC / Section 144 BNSS.",
+        "legalProvision": "Guardians and Wards Act, 1890; Muslim Women (Protection of Rights on Divorce) Act, 1986; Section 125 CrPC / Section 144 BNSS, 2023",
+        "meaning": "Guardianship protects a minor's physical welfare and estate, subject to court removal for unsoundness of mind, neglect, or misappropriation. Under Iddat rules, a divorced wife observes 3 menstrual courses (or 3 lunar months) and a widow observes 4 months and 10 days (or until delivery if pregnant).",
+        "keyPoints": [
+          "Kinds of Guardianship: (1) Natural Guardian (father is primary legal guardian of property; mother has preferential custody/Hizanat of a boy up to 7 years and girl up to puberty under Sunni law, or boy up to 2 and girl up to 7 under Shia law), (2) Testamentary Guardian (appointed by father's Will), (3) Court-Appointed Guardian (under Guardians and Wards Act, 1890), and (4) De Facto Guardian (cannot alienate a minor's immovable property - Imambandi v. Mutsaddi).",
+          "Rights, Duties & Removal of Guardian: Must maintain accounts, pay lawful taxes, educate/maintain the minor, and defend suits; removable by court for abuse of trust, unsoundness of mind, insolvency, or failure to provide necessaries.",
+          "Parentage & Acknowledgement of Legitimacy (Iqrar): Maternity is established by birth; paternity flows from valid marriage (presumed if born within 280 days of dissolution under Sec. 112 IEA / Sec. 116 BSA). Where marriage is uncertain (not disproved), a father's express or implied Acknowledgement confers legitimacy and inheritance rights - Muslim law does not recognize adoption.",
+          "Iddat Period: Period of abstinence during which remarriage is barred to ascertain pregnancy - 3 lunar months/courses after consummated divorce, 4 months and 10 days after husband's death, or until delivery if pregnant.",
+          "Maintenance (Nafaqah): Husband must maintain wife during marriage, minor/unmarried children, and needy parents. After divorce, the Supreme Court held in Danial Latifi (2001) and Mohd. Abdul Samad (2024) that a divorced Muslim woman can claim a 'reasonable and fair provision' for life within Iddat under Section 3 of the 1986 Act AND retains a concurrent secular right to maintenance under Section 125 CrPC / Section 144 BNSS."
+        ],
+        "caseLaws": [
+          {
+            "name": "Danial Latifi v. Union of India",
+            "citation": "2001 7 SCC 740",
+            "principle": "Upheld the Muslim Women (Protection of Rights on Divorce) Act, 1986 by construing 'reasonable and fair provision and maintenance' to extend beyond the Iddat period until remarriage."
+          },
+          {
+            "name": "Mohd. Abdul Samad v. State of Telangana",
+            "citation": "2024 INSC 506 (SC)",
+            "principle": "Reaffirmed that a divorced Muslim woman has a concurrent, enforceable right to seek maintenance under Section 125 CrPC (now Section 144 BNSS) in addition to remedies under the 1986 Act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can a de facto guardian validly sell a Muslim minor's immovable property, and what is the duration of Iddat on divorce versus death?",
+            "a": "No - a de facto guardian has no power to alienate a minor's immovable property (Imambandi v. Mutsaddi). Iddat lasts 3 lunar months/courses on divorce and 4 months and 10 days on husband's death (or until delivery if pregnant)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "family-law-ii-u5-t1": {
+      "id": "family-law-ii-u5-t1",
+      "subtitle": "Family Law - II (Muslim Law) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Muslim law originates from four Primary Sources (Quran, Sunnah, Ijma, Qiyas) and four Secondary Sources (Custom, Judicial Decisions, Legislation, Equity), divided into Sunni and Shia schools. Inheritance opens strictly upon death (no birthright) after deducting funeral expenses, debts, unpaid Mahr, and valid Wills (up to 1/3rd), with daughters inheriting half a son's share. Secular inter-faith marriages are governed by the Special Marriage Act, 1954.",
+        "legalProvision": "Muslim Personal Law (Shariat) Application Act, 1937; Caste Disabilities Removal Act, 1850; Special Marriage Act, 1954; Indian Divorce Act, 1869",
+        "meaning": "Unlike Hindu coparcenary law, Muslim inheritance recognizes no joint family birthright and allows both unmarried and married daughters to inherit fixed shares. The Special Marriage Act, 1954 provides a secular civil registration mechanism across all castes and religions.",
+        "keyPoints": [
+          "Sources & Schools of Muslim Law: Primary sources are Quran (word of Allah), Sunnah/Hadith (Prophet's traditions), Ijma (consensus of jurists), and Qiyas (analogical deduction); Secondary sources are Custom (Urf), Justice/Equity/Good Conscience, Judicial Decisions, and Legislation (Shariat Act, 1937). Major schools are Sunni (Hanafi, Maliki, Shafi'i, Hanbali) and Shia (Ithna Ashari, Ismaili, Zaidi) - differing on Muta marriage, minimum Mahr, Wills to heirs, and inheritance.",
+          "Classes of Heirs (Sunni vs Shia): Under Sunni (Hanafi) law, property passes first to Sharers (Quranic heirs with fixed fractions, including widow, parents, and daughters - married daughters ARE entitled to inherit, with male-to-female ratio of 2:1), then Residuaries (Agnates), then Distant Kindred (Cognates), and finally to the State by Escheat. Shia law divides heirs into Heirs by Consanguinity (Classes I-III) and Heirs by Marriage.",
+          "Disqualifications from Inheritance: Homicide (a murderer cannot inherit from the victim - under Sunni law even accidental killing bars inheritance; Shia law requires intentional killing), Difference of Religion (apostate's own inheritance rights are saved in India by the Caste Disabilities Removal Act, 1850), and Illegitimacy (cannot inherit from father under Sunni law). Unsoundness of mind is NOT a disqualification.",
+          "Special Marriage Act, 1954: Secular civil marriage for any two Indian citizens irrespective of caste or religion (bride 18+, groom 21+, sound mind, monogamous, outside prohibited degrees); requires 30 days' prior notice to Marriage Officer, disposal of objections, solemnization with oath before 3 witnesses, and Marriage Certificate.",
+          "Domicile & Indian Divorce Act, 1869: Domicile denotes permanent home acquired by Origin (birth/parents), Choice (residence + animus manendi), or Operation of Law; the Indian Divorce Act, 1869 (amended 2001) governs Christian matrimonial dissolution on grounds including adultery, cruelty, desertion (2+ years), conversion, and mutual consent."
+        ],
+        "caseLaws": [
+          {
+            "name": "Lata Singh v. State of U.P.",
+            "citation": "AIR 2006 SC 2522",
+            "principle": "Upheld the fundamental right of consenting adults to contract inter-caste or inter-religious marriages under the Special Marriage Act, 1954 free from family harassment or threats."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the four primary sources of Muslim law, and does a married daughter lose her right to inherit from her parents under Muslim law?",
+            "a": "The four primary sources are Quran, Sunnah (Hadith), Ijma, and Qiyas. No - under Muslim law, a married daughter retains her full Quranic right to inherit (typically half the share of a son)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-crimes-u3-t1": {
+      "id": "law-of-crimes-u3-t1",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter IV IPC (Sections 76-106) / Chapter III BNS, 2023 (Sections 14-44) codifies General Exceptions that excuse or justify otherwise criminal acts due to absence of Mens Rea or lawful necessity - including Infancy, Insanity (M'Naghten Rule), Involuntary Intoxication, Accident, Good Faith, and the Right of Private Defence of Body and Property.",
+        "legalProvision": "Sections 76-106, Indian Penal Code, 1860 (Corresponding to Sections 14-44, Bharatiya Nyaya Sanhita, 2023); Section 105 IEA / Section 108 BSA",
+        "meaning": "Under Section 105 IEA (Section 108 BSA), the burden of proving a General Exception rests on the accused (on preponderance of probabilities). These defences recognize that criminal punishment should not fall on those acting without guilty mind or lawfully defending life and property.",
+        "keyPoints": [
+          "Mistake of Fact, Judicial/Executive Acts & Accident (Secs. 76-81 IPC / Secs. 14-19 BNS): Mistake of fact in good faith excuses ('Ignorantia facti excusat'), whereas Mistake of Law is no excuse; judicial acts, lawful execution of court orders, inevitable accidents during lawful acts without negligence (Sec. 80), and necessity to prevent greater harm (Sec. 81) are protected.",
+          "Infancy / Doli Incapax (Secs. 82-83 IPC / Secs. 20-21 BNS): Absolute immunity for a child under 7 years (Sec. 82); qualified immunity for a child aged 7 to 12 years who has not attained sufficient maturity of understanding (Sec. 83).",
+          "Unsoundness of Mind (Sec. 84 IPC / Sec. 22 BNS) & Intoxication (Secs. 85-86): Based on the M'Naghten Rule - requires legal insanity (incapacity to know the nature of the act or that it is wrong/contrary to law at the time of the act); ONLY involuntary intoxication administered without knowledge/consent excuses crime (Sec. 85).",
+          "Consent & Good Faith (Secs. 52, 87-92 IPC / Secs. 2(11), 25-30 BNS): Good faith requires 'due care and attention'; protects surgeons performing careful operations with consent or in emergencies to save life.",
+          "Right of Private Defence (Secs. 96-106 IPC / Secs. 34-44 BNS): Preventive, not punitive; force must be proportionate and exercised only during immediate danger (no right if time exists to seek public authorities). Extends to causing death in defence of Body against fear of death, grievous hurt, rape, unnatural lust, kidnapping, or acid attack (Sec. 100 IPC / Sec. 38 BNS), and in defence of Property against robbery, house-breaking at night, or arson to dwelling (Sec. 103 IPC / Sec. 41 BNS)."
+        ],
+        "caseLaws": [
+          {
+            "name": "R. v. M'Naghten",
+            "citation": "1843 8 ER 718",
+            "principle": "Established the foundational insanity defence (embodied in Section 84 IPC / Section 22 BNS): the accused must prove a defect of reason preventing him from knowing the nature or wrongfulness of his act."
+          },
+          {
+            "name": "Darshan Singh v. State of Punjab",
+            "citation": "2010 2 SCC 333",
+            "principle": "Laid down 10 golden principles on Right of Private Defence: a defender facing imminent peril is not expected to weigh his defensive force in 'golden scales'."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Sections 82 and 83 IPC (Sections 20-21 BNS) on child immunity, and state when private defence of the body extends to causing death.",
+            "a": "Children under 7 have absolute immunity (Sec. 82), while children aged 7-12 have qualified immunity depending on maturity (Sec. 83). Private defence extends to causing death under Sec. 100 IPC / Sec. 38 BNS when facing reasonable apprehension of death, grievous hurt, rape, kidnapping, or acid attack."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-crimes-u4-t1": {
+      "id": "law-of-crimes-u4-t1",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Offences against the human body are graded by degree of intent and harm: Culpable Homicide (Sec. 299 IPC / Sec. 100 BNS) is the genus and Murder (Sec. 300 / Sec. 101 BNS) its aggravated species (with 5 mitigating exceptions). Other core bodily offences include Simple vs Grievous Hurt, Wrongful Restraint vs Confinement, Assault vs Criminal Force, and Kidnapping vs Abduction.",
+        "legalProvision": "Sections 299-304, 319-326, 339-354, & 359-366 IPC, 1860 (Corresponding to Sections 100-105, 114-120, 126-131, & 137-142 BNS, 2023)",
+        "meaning": "All murder is culpable homicide, but not all culpable homicide is murder (R. v. Govinda). The distinction turns on the degree of probability of death intended or known by the offender, plus five statutory exceptions that reduce murder to culpable homicide not amounting to murder.",
+        "keyPoints": [
+          "Culpable Homicide vs Murder (Secs. 299-300 IPC / Secs. 100-101 BNS): Murder requires higher degree of intention/probability of death (punishable with death or life imprisonment - Sec. 302 IPC / Sec. 103 BNS). Five Exceptions reducing Murder to Culpable Homicide (Sec. 300): (1) Grave and sudden provocation (K.M. Nanavati), (2) Exceeding private defence in good faith, (3) Public servant exceeding lawful power, (4) Sudden fight without premeditation, and (5) Consent of adult victim above 18.",
+          "Simple Hurt vs Grievous Hurt (Secs. 319-325 IPC / Secs. 114-117 BNS): Simple hurt causes bodily pain, disease, or infirmity (up to 1 year); Grievous Hurt (Sec. 320 IPC / Sec. 116 BNS) lists 8 specific severe injuries - emasculation, permanent loss of sight/hearing/member/joint, permanent disfiguration of head/face, bone/tooth fracture or dislocation, or endangering life / severe bodily pain disabling ordinary pursuits for 20 days (reduced to 15 days under BNS) - punishable up to 7 years.",
+          "Wrongful Restraint vs Wrongful Confinement (Secs. 339-342 IPC / Secs. 126-127 BNS): Wrongful restraint blocks movement in ONE direction where a person has a right to proceed (1 month / Rs. 500 fine); Wrongful confinement restricts movement in ALL directions within circumscribing limits (1 year; 2 years for 3+ days; 3 years for 10+ days).",
+          "Assault vs Criminal Force (Secs. 350-354 IPC / Secs. 129-131 BNS): Criminal force involves intentional physical contact/motion without consent; Assault is a gesture or preparation causing immediate apprehension of criminal force without actual contact.",
+          "Kidnapping vs Abduction (Secs. 359-363 IPC / Secs. 137-138 BNS): Kidnapping from lawful guardianship protects minors (under 16 for boys and under 18 for girls under IPC; unified to under 18 for ALL children under BNS Sec. 137), where minor's consent and offender's intent are immaterial (7 years' imprisonment); Abduction applies to any age via force or deceitful inducement, is a continuing offence, and requires criminal intent."
+        ],
+        "caseLaws": [
+          {
+            "name": "Virsa Singh v. State of Punjab",
+            "citation": "AIR 1958 SC 465",
+            "principle": "Laid down the classic 4-step test for Clause Thirdly of Section 300 IPC (Murder): once the prosecution proves the accused intentionally inflicted a specific bodily injury that was objectively sufficient in the ordinary course of nature to cause death, it is murder."
+          },
+          {
+            "name": "K.M. Nanavati v. State of Maharashtra",
+            "citation": "AIR 1962 SC 605",
+            "principle": "Clarified Exception 1 (Grave and Sudden Provocation): the fatal blow must be struck while deprived of self-control, before a 'cooling-off period' allows passion to subside."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the five statutory exceptions under Section 300 IPC (Section 101 BNS) that reduce Murder to Culpable Homicide, and state one key change BNS, 2023 made to Kidnapping.",
+            "a": "Grave and sudden provocation, exceeding private defence, public servant exceeding power, sudden fight, and consent of victim above 18. BNS Section 137 unified the age threshold for kidnapping from lawful guardianship to under 18 years for both boys and girls."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-crimes-u5-t1": {
+      "id": "law-of-crimes-u5-t1",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Property offences progress from Theft (dishonest moving of movables without consent) and Extortion (obtaining property by threat) to Robbery (aggravated theft/extortion with violence) and Dacoity (robbery by 5+ persons), alongside Cheating and Criminal Trespass. Public order and reputation are protected via Unlawful Assembly/Rioting, Forgery, Mischief, Bigamy/Cruelty, and Defamation.",
+        "legalProvision": "Sections 120A-121, 141-160, 378-395, 415-420, 425, 441-462, 463, & 493-500 IPC (Corresponding to BNS, 2023 Sections 61, 147-152, 189-196, 303-310, 318-324, 329-336, & 356)",
+        "meaning": "Criminal law protects both tangible ownership/possession and public tranquillity. Statutory reforms under BNS, 2023 replaced colonial Sedition (Sec. 124A IPC) with Section 152 (acts endangering India's sovereignty, unity, and integrity) and added community service as a new punishment for petty offences.",
+        "keyPoints": [
+          "Theft, Extortion, Robbery & Dacoity: Theft (Sec. 378/303 BNS) involves dishonest moving of movable property out of possession without consent (3 years); Extortion (Sec. 383/308 BNS) puts a person in fear of injury to deliver movable/immovable property (3 years); Robbery (Sec. 390/309 BNS) adds imminent violence/fear to theft or extortion (10 years RI; 14 years on highway at night); Dacoity (Sec. 391/310 BNS) is robbery committed conjointly by 5 or more persons (10 years to life; preparation itself is punishable).",
+          "Cheating (Secs. 415-420 / Secs. 318-319 BNS) & Criminal Trespass (Secs. 441-462 / Secs. 329-333 BNS): Cheating requires fraudulent/dishonest deception inducing delivery of property or harmful act (up to 7 years under Sec. 420 / Sec. 318(4) BNS; includes cheating by personation); Criminal Trespass escalates to House-Trespass, Lurking House-Trespass (concealing presence), and House-Breaking (breaking locks/walls/windows).",
+          "Offences Against Public Tranquillity & State: Unlawful Assembly requires 5+ persons with a common illegal object (Sec. 141/189 BNS); Rioting adds force or violence by an unlawful assembly (Sec. 146/191 BNS); Affray is fighting by 2+ persons in a public place disturbing public peace (Sec. 159/194 BNS). Waging War against India (Sec. 121/147 BNS) carries death/life; Sedition (Sec. 124A IPC) is replaced in BNS by Sec. 152.",
+          "Criminal Conspiracy, Forgery, Mischief & Marriage Offences: Conspiracy (Sec. 120A-B/61 BNS) punishes agreement by 2+ persons to commit an illegal act; Forgery (Sec. 463/336 BNS) creates false documents with intent to defraud; Mischief (Sec. 425/324 BNS) intentionally destroys/damages property; Marriage offences cover Mock Marriage (Sec. 493), Bigamy (Sec. 494), and Cruelty by husband/in-laws (Sec. 498A IPC / Sec. 85 BNS).",
+          "Defamation (Secs. 499-500 IPC / Sec. 356 BNS): Making or publishing any false imputation intending to harm reputation (punishable up to 2 years, fine, or community service under BNS), subject to 10 statutory exceptions including truth for public good, fair comment on public conduct, and parliamentary/judicial privilege."
+        ],
+        "caseLaws": [
+          {
+            "name": "Pyare Lal Bhargava v. State of Rajasthan",
+            "citation": "AIR 1963 SC 1094",
+            "principle": "Held that even a temporary dishonest removal of a government file from official custody without consent constitutes 'Theft' under Section 378 IPC."
+          },
+          {
+            "name": "Subramanian Swamy v. Union of India",
+            "citation": "2016 7 SCC 221",
+            "principle": "Upheld the constitutional validity of criminal defamation (Sections 499-500 IPC), holding that right to reputation is an integral part of Article 21 balancing Article 19(1)(a) free speech."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Theft, Extortion, Robbery, and Dacoity under IPC / BNS.",
+            "a": "Theft moves movables dishonestly without consent; Extortion obtains movable/immovable property through threat; Robbery is theft/extortion aggravated by imminent violence; Dacoity is robbery committed jointly by 5 or more persons."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-evidence-u4-t1": {
+      "id": "law-of-evidence-u4-t1",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Admissions (Secs. 17-23 IEA) are voluntary acknowledgments of relevant facts (usable in civil and criminal cases; 'all confessions are admissions, but not all admissions are confessions'). Expert Opinion (Secs. 45-51) assists courts on science, medicine, handwriting, and digital forensics as advisory evidence, while Sections 101-114A allocate Burden of Proof and statutory Presumptions.",
+        "legalProvision": "Sections 17-23, 45-51, 58, 90, & 101-114A, Indian Evidence Act, 1872 (Corresponding to Sections 15-21, 39-45, 53, 92, & 104-120, BSA, 2023)",
+        "meaning": "Admissions dispense with formal proof (Section 58) and operate as estoppel unless shown to be mistaken or coerced. Burden of Proof stays fixed on the party who would fail if no evidence were given (Section 101), whereas the tactical Onus of Proof shifts during trial - especially when statutory presumptions apply.",
+        "keyPoints": [
+          "Admissions vs Confessions (Secs. 17-31 IEA / Secs. 15-25 BSA): Admissions apply in both civil and criminal cases, can be made by parties, agents, or legal representatives, and bind as estoppel (not conclusive proof - Sec. 31); Confessions apply exclusively in criminal cases, must be made personally by the accused, and can form the sole basis of conviction if voluntary and truthful.",
+          "Expert Opinion (Secs. 45-51 IEA / Secs. 39-45 BSA): Court may seek opinion of specially skilled persons on foreign law, science, art, handwriting, finger impressions, medical cause of death, chemical analysis, ballistics, and Examiner of Electronic Evidence (Sec. 45A IEA / Sec. 39(2) BSA). Expert testimony is advisory/corroborative, NOT binding on the judge, and the expert must face cross-examination.",
+          "Proving Handwriting (Secs. 45, 47 & 73): May be proved by testimony of writer/eyewitness, person acquainted with the handwriting (Sec. 47), direct comparison by the Court (Sec. 73), or a handwriting expert (Sec. 45).",
+          "Burden of Proof (Secs. 101-106 IEA / Secs. 104-109 BSA): Whoever asserts a legal right, liability, or criminal charge must prove it (Sec. 101); accused bears the burden of proving General Exceptions (Sec. 105); a person with special personal knowledge (e.g., holding a railway ticket) must prove that fact (Sec. 106).",
+          "Key Statutory Presumptions: 30-year-old Ancient Documents from proper custody presumed genuine (Sec. 90); Person unheard of for 7 years presumed dead (Sec. 108); Conclusive proof of Legitimacy if child is born during a valid marriage or within 280 days after its dissolution with mother unmarried, unless non-access is proved (Sec. 112); Presumptions of abetment of suicide/dowry death within 7 years of marriage (Secs. 113A-113B) and absence of consent in aggravated rape (Sec. 114A)."
+        ],
+        "caseLaws": [
+          {
+            "name": "State of H.P. v. Jai Lal",
+            "citation": "1999 7 SCC 280",
+            "principle": "Held that an expert's duty is to furnish the judge with necessary scientific criteria to form an independent judgment; expert opinion is advisory and weak unless backed by convincing reasons."
+          },
+          {
+            "name": "Nandlal Wasudeo Badwaik v. Lata Nandlal Badwaik",
+            "citation": "2014 2 SCC 576",
+            "principle": "Held that while Section 112 creates a strong presumption of legitimacy based on access, scientifically conclusive DNA proof establishing non-paternity prevails over a legal fiction when ordered by a court."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Is an Expert's Opinion under Section 45 IEA (Section 39 BSA) binding on the court, and what is the rule on Legitimacy under Section 112?",
+            "a": "No - expert opinion is advisory and corroborative, and the judge forms an independent conclusion. Under Section 112, a child born during a valid marriage or within 280 days after its dissolution (mother remaining unmarried) is conclusively presumed legitimate unless non-access is proved."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-evidence-u5-t1": {
+      "id": "law-of-evidence-u5-t1",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 118 IEA (Section 124 BSA), every person is a competent witness if capable of understanding questions and giving rational answers - including child witnesses (after Voir Dire testing), lunatics during lucid intervals, and speech/hearing-impaired witnesses via writing or signs (Section 119). Sections 122-129 protect Privileged Communications, while Sections 135-166 govern Examination-in-Chief, Cross-Examination, Re-Examination, Leading Questions, and Refreshing Memory.",
+        "legalProvision": "Sections 118-134, 135-143, 154-155, & 159-161, Indian Evidence Act, 1872 (Corresponding to Sections 124-139, 140-146, 157-158, & 162-164, BSA, 2023)",
+        "meaning": "The law separates competency (who MAY testify) from compellability and privilege (what a competent witness CANNOT be forced to disclose). Structured three-stage witness examination enforces natural justice by testing truth, exposing bias, and resolving contradictions.",
+        "keyPoints": [
+          "Competency of Witnesses (Secs. 118-121): All persons are competent unless tender age, extreme old age, or mental disease prevents rational answers. Child witnesses are tested by the judge ('Voir Dire'); lunatics are competent during lucid intervals; speech-impaired witnesses ARE fully competent under Section 119 via writing or intelligible signs/interpreters (deemed oral evidence); a presiding judge cannot testify as a witness in the same case he is trying.",
+          "Privileged Communications (Secs. 122-129): (1) Matrimonial Communication (Sec. 122 - spouse cannot be compelled or permitted without consent to disclose confidential marital communications except in suits/crimes between spouses), (2) Official / Affairs of State (Secs. 123-124 - unpublished State records and confidential official communications), and (3) Professional Communication (Sec. 126 - advocate cannot disclose client confidences without express consent, except communications made in furtherance of an illegal purpose or crime observed after employment).",
+          "Three Stages of Examination (Secs. 137-138): (1) Examination-in-Chief by the party calling the witness (establishes material facts), (2) Cross-Examination by the adverse party (tests veracity, exposes contradictions, shakes credit), and (3) Re-Examination by the calling party (confined strictly to explaining ambiguities raised in cross-examination).",
+          "Leading Questions (Secs. 141-143): Questions suggesting the desired answer ('Did you see A stab B at 4 PM?') are PROHIBITED in Chief and Re-Examination (except introductory/undisputed facts with court permission) but freely ALLOWED in Cross-Examination.",
+          "Hostile Witness, Impeaching Credit & Refreshing Memory: Under Section 154, a party may cross-examine its own hostile witness with court leave; Section 155 allows impeaching a witness's credibility via proof of unworthiness, bribery, or prior inconsistent statements (prohibiting past-sexual-character questions in rape trials under Sec. 146 proviso); Sections 159-161 allow witnesses (e.g., doctors/police) to refresh memory from contemporaneous notes."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rameshwar v. State of Rajasthan",
+            "citation": "AIR 1952 SC 54",
+            "principle": "Held that a child of tender years is a competent witness under Section 118 if capable of understanding questions and giving rational answers, even without administering formal oath if she does not grasp its nature."
+          },
+          {
+            "name": "State of Rajasthan v. Darshan Singh",
+            "citation": "2012 5 SCC 789",
+            "principle": "Affirmed under Section 119 that a deaf-and-dumb witness is a fully competent witness whose evidence given via writing or a certified sign-language interpreter is reliable and admissible."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "In which examination stage are Leading Questions prohibited versus permitted, and when does Advocate-Client Privilege (Section 126) NOT apply?",
+            "a": "Leading questions are prohibited in Examination-in-Chief and Re-Examination (except introductory/undisputed facts) but permitted in Cross-Examination. Section 126 privilege does NOT protect communications made in furtherance of an illegal purpose or any crime/fraud observed after engagement."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "constitutional-law-ii-u4-t1": {
+      "id": "constitutional-law-ii-u4-t1",
+      "subtitle": "Constitutional Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "India's unified judiciary is headed by the Supreme Court (Articles 124-147) and State High Courts (Articles 214-231) wielding Original, Appellate, Advisory, and Writ jurisdictions. Part XI (Articles 245-263) and Part XII distribute Legislative, Administrative, and Financial powers between Union and States, while Part XIII (Articles 301-307) guarantees Freedom of Trade, Commerce, and Intercourse throughout India.",
+        "legalProvision": "Articles 32, 124-147, 214-231, 245-293, & 301-307, Constitution of India",
+        "meaning": "An independent judiciary polices federal boundaries and Fundamental Rights. Federalism balances Union supremacy in national matters with State autonomy, while Article 301 builds a single national common market free from discriminatory inter-State trade barriers.",
+        "keyPoints": [
+          "Supreme Court (Arts. 124-147): Appointed by the President via Collegium consultation (citizen, 5 years as HC judge OR 10 years as HC advocate OR distinguished jurist; retires at 65; no post-retirement court practice). Exercises Original Federal Jurisdiction (Art. 131), Writ Jurisdiction (Art. 32), Constitutional/Civil/Criminal Appellate Jurisdiction (Arts. 132-134), Special Leave Petition (Art. 136), Advisory Jurisdiction (Art. 143), and binding precedent (Art. 141).",
+          "High Courts (Arts. 214-231): Citizen with 10 years' judicial office OR 10 years as HC advocate; retires at 62 (may practice in SC and other HCs). Exercises wider Writ Jurisdiction under Article 226 (Fundamental Rights AND 'any other legal right'), Superintendence over subordinate courts/tribunals (Art. 227), and Appellate jurisdiction.",
+          "Union-State Legislative & Administrative Relations (Arts. 245-263): Seventh Schedule divides subjects into Union List (List I), State List (List II), and Concurrent List (List III), with residuary powers in Parliament (Art. 248) and Repugnancy rule (Art. 254). Administratively, Union issues binding directions (Arts. 256-257), All-India Services (IAS/IPS - Art. 312) bridge both levels, and Inter-State Water Disputes (Art. 262) & Inter-State Council (Art. 263) resolve friction.",
+          "Financial Relations (Arts. 264-293): Taxes are constitutionally allocated (Art. 265), GST Council (Art. 279A) coordinates indirect taxes, Finance Commission (Art. 280) recommends vertical/horizontal tax devolution every 5 years, and Union provides Grants-in-Aid (Arts. 275 & 282) for State welfare and disaster relief.",
+          "Freedom of Trade, Commerce & Intercourse (Arts. 301-307): Article 301 declares trade free throughout India, subject to reasonable Parliamentary public-interest restrictions (Art. 302), non-discriminatory State taxes and reasonable restrictions with prior Presidential sanction (Art. 304). Non-discriminatory taxes do not violate Article 301 (Jindal Stainless)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Atiabari Tea Co. Ltd. v. State of Assam",
+            "citation": "AIR 1961 SC 232",
+            "principle": "Held that Article 301 covers both inter-State and intra-State trade, and any tax that directly and immediately restricts the free flow/movement of trade violates Article 301 unless saved by Article 304."
+          },
+          {
+            "name": "Jindal Stainless Ltd. v. State of Haryana",
+            "citation": "2017 12 SCC 1",
+            "principle": "9-judge Constitution Bench overruled the 'compensatory tax' test and held that non-discriminatory State entry taxes do not violate Article 301; only discriminatory taxes violating Article 304(a) are invalid."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why is High Court writ jurisdiction under Article 226 wider than Supreme Court writ jurisdiction under Article 32, and what does Article 301 guarantee?",
+            "a": "Article 32 enforces ONLY Fundamental Rights, whereas Article 226 enforces both Fundamental Rights and any other legal rights. Article 301 guarantees freedom of trade, commerce, and intercourse throughout India subject to Articles 302-305."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "constitutional-law-ii-u5-t1": {
+      "id": "constitutional-law-ii-u5-t1",
+      "subtitle": "Constitutional Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Article 368 balances constitutional flexibility and rigidity through special parliamentary majorities (and State ratification for federal clauses), bounded by the Basic Structure Doctrine (Kesavananda Bharati). Parliamentary democracy is anchored by Money Bills (Art. 110), Parliamentary Privileges (Art. 105), and independent constitutional authorities - Election Commission (Art. 324), UPSC/SPSC (Arts. 315-323), and Attorney/Advocate General.",
+        "legalProvision": "Articles 76, 79-122, 165, 315-323, 324, & 368, Constitution of India",
+        "meaning": "The Constitution guards against both stagnation and majoritarian destruction by allowing amendments under Article 368 while shielding core constitutional identity (Basic Structure) and insulating elections and civil-service recruitment from executive interference.",
+        "keyPoints": [
+          "Constitutional Amendment Procedure (Article 368): Three routes - (1) Simple majority outside Art. 368 (new States, citizenship), (2) Special Majority in EACH House separately (majority of total membership AND 2/3rds of members present and voting; NO joint sitting allowed), and (3) Special Majority PLUS ratification by at least half the State Legislatures for federal clauses (Presidential election, SC/HC, Seventh Schedule, Art. 368 itself); President MUST give assent (24th Amendment, 1971).",
+          "Basic Structure Doctrine (Kesavananda Bharati, 1973): Parliament can amend any part of the Constitution including Fundamental Rights, but CANNOT alter or destroy its 'Basic Structure' (supremacy of Constitution, democracy, secularism, federalism, judicial review, separation of powers).",
+          "Parliament, Speaker, Money Bills & Privileges: Parliament comprises the President, Lok Sabha, and Rajya Sabha (permanent House, 1/3rd retiring every 2 years). Money Bills (Art. 110 - taxes, Consolidated Fund) can be introduced ONLY in Lok Sabha with Presidential recommendation; the Speaker's certification is final, and Rajya Sabha can only recommend changes within 14 days. Article 105 grants freedom of speech in Parliament and privilege against court proceedings for legislative votes/speeches (bribery for voting is NOT protected - Sita Soren, 2024).",
+          "Election Commission (Art. 324) & Public Service Commissions (Arts. 315-323): Election Commission (CEC + Election Commissioners) enjoys independent superintendence over Parliamentary, State, Presidential, and Vice-Presidential elections; UPSC (appointed by President) and State PSCs (appointed by Governor, removable only by President after SC inquiry) conduct impartial merit-based civil service recruitment.",
+          "Attorney General of India (Art. 76) & Advocate General of a State (Art. 165): Highest law officers of the Union and States (qualified to be SC / HC judges respectively); advise the Government on legal matters and enjoy right of audience in all courts and right to speak (without voting) in Parliament/State Legislatures."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kesavananda Bharati v. State of Kerala",
+            "citation": "AIR 1973 SC 1461",
+            "principle": "13-judge Constitution Bench propounded the Basic Structure Doctrine: Parliament's amending power under Article 368 is wide, but cannot destroy the Constitution's basic framework."
+          },
+          {
+            "name": "Sita Soren v. Union of India",
+            "citation": "2024 5 SCC 629",
+            "principle": "7-judge Constitution Bench overruled P.V. Narasimha Rao (1998), holding that Parliamentary Privilege under Articles 105(2) and 194(2) does NOT shield legislators from prosecution for taking bribes to vote or speak in the House."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What parliamentary majority is required for a Constitutional Amendment under Article 368, and what is Rajya Sabha's maximum time limit on a Money Bill?",
+            "a": "Each House separately must pass the Bill by a majority of its total membership AND at least two-thirds of members present and voting (plus ratification by half the States for federal provisions). Rajya Sabha must return a Money Bill within 14 days."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

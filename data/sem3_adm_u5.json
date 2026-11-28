@@ -1,0 +1,127 @@
+{
+  "subjects": [
+    {
+      "id": "administrative-law",
+      "title": "Administrative Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Remedies (Writs, Lokpal/Lokayukta), State Liability, Promissory Estoppel, Tribunals, Commissions of Inquiry & Public Corporations",
+          "topics": [
+            {"id": "adm-u5-t1", "title": "1. Constitutional Writs (Arts. 32 & 226 - Habeas Corpus, Mandamus, Prohibition, Certiorari & Quo Warranto) & Lokpal / Lokayukta"},
+            {"id": "adm-u5-t2", "title": "2. State Liability in Torts & Contracts (Arts. 299-300), Doctrine of Promissory Estoppel & Right to Information (RTI)"},
+            {"id": "adm-u5-t3", "title": "3. Administrative Tribunals (Arts. 323A-323B & L. Chandra Kumar), Commissions of Inquiry Act, 1952 & Public Corporations"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "adm-u5-t1": {
+      "id": "adm-u5-t1",
+      "subtitle": "Administrative Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Articles 32 (Supreme Court) and 226 (High Courts) empower constitutional courts to issue five prerogative writs against unlawful State/administrative action: Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo Warranto - with Article 226 extending even to statutory/ordinary legal rights. Alongside courts, Lokpal and State Lokayuktas provide ombudsman-style investigation into public corruption.",
+        "legalProvision": "Articles 32, 136, 226, & 227, Constitution of India; Lokpal and Lokayuktas Act, 2013; Telangana Lokayukta Act, 1983",
+        "meaning": "Writ remedies offer swift, flexible public-law relief against illegal detention, duty refusal, jurisdictional excess, or usurpation of public office, while Lokpal/Lokayukta probes high-level maladministration and corruption.",
+        "keyPoints": [
+          "Five Constitutional Writs (Arts. 32 & 226): (1) HABEAS CORPUS ('have the body' - challenges unlawful detention; liberal locus standi by friend/relative; res judicata does NOT strictly bar successive habeas corpus petitions on fresh grounds), (2) MANDAMUS ('we command' - compels public authority to perform a mandatory public duty; does NOT lie against President/Governor, private bodies without public duty, or discretionary choices), (3) PROHIBITION (issued by superior court to stop an inferior court/tribunal from EXCEEDING jurisdiction while proceedings are pending), (4) CERTIORARI ('to be certified' - quashes an order of a quasi-judicial/judicial body passed WITHOUT/IN EXCESS of jurisdiction, error of law on face of record, or breach of Natural Justice - A.K. Kraipak), and (5) QUO WARRANTO ('by what authority' - challenges unlawful usurpation of a substantive public office of permanent character; ANY citizen/relator has locus standi even without personal injury).",
+          "Article 32 vs Article 226: Art. 32 is itself a Fundamental Right (cannot be refused when Part III right is breached; restricted to Part III), whereas Art. 226 is discretionary, covers BOTH Fundamental Rights AND 'any other purpose' (ordinary rights), and operates wherever cause of action wholly or partly arises (Art. 226(2)).",
+          "Lokpal & Lokayuktas (Act of 2013 & State Acts): Lokpal (Chairperson + up to 8 members; 50% judicial, 50% SC/ST/OBC/women/minorities) investigates corruption allegations under the Prevention of Corruption Act against Prime Minister (with safeguards), Union Ministers, MPs, and Group A-D Union officials through an independent Prosecution Wing.",
+          "State Lokayuktas (e.g., Telangana Lokayukta): Independent statutory ombudsman probing allegations of corruption/improper conduct against State public servants and ministers as defined by State legislation."
+        ],
+        "caseLaws": [
+          {
+            "name": "T.C. Basappa v. T. Nagappa",
+            "citation": "AIR 1954 SC 440",
+            "principle": "Clarified that Indian writ jurisdiction under Articles 32/226 follows broad constitutional principles rather than narrow technicalities of English prerogative writs, especially for Certiorari."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Writ of Prohibition and Writ of Certiorari, and state who has locus standi to apply for Quo Warranto.",
+            "a": "Prohibition is preventive (issued BEFORE final order to stop exceeding jurisdiction), whereas Certiorari is largely curative/quashing (quashes an unlawful/excessive quasi-judicial order already passed). Any public-spirited citizen/relator can seek Quo Warranto to challenge unlawful occupation of a public office."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u5-t2": {
+      "id": "adm-u5-t2",
+      "subtitle": "Administrative Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Articles 299-300 govern State liability in Contracts (requiring written form, President/Governor's name, and authorized execution) and Torts (shifting from sovereign/non-sovereign immunity toward modern constitutional compensation for rights violations). Promissory Estoppel holds the State to clear representations acted upon by citizens (absent overriding public interest), while the RTI Act, 2005 enforces administrative transparency.",
+        "legalProvision": "Articles 299 & 300, Constitution of India; Right to Information Act, 2005; Doctrine of Promissory Estoppel",
+        "meaning": "Accountability in administrative law means the State cannot hide behind feudal immunity or break solemn assurances to citizens without compelling public justification.",
+        "keyPoints": [
+          "State Liability in Torts & Contracts (Arts. 299-300): Non-compliance with Art. 299(1) makes a Government contract void (cannot be ratified, though restitution lies under Sec. 70 ICA - B.K. Mondal). In Torts, sovereign immunity survives only for narrow inalienable functions (defence, war, foreign affairs); for non-sovereign negligence (Vidhyawati; N. Nagendra Rao) or custodial/Art. 21 violations (Nilabati Behera v. State of Orissa), the State is directly liable in public/private law.",
+          "Doctrine of Promissory Estoppel (Motilal Padampat Sugar Mills): When the Government makes a clear, unambiguous promise intending citizens to act on it, and a citizen alters his position in reliance, the Government is estopped from backing out - EXCEPT where (1) overriding public interest demands otherwise, (2) it would violate a statute or direct executive/legislative discretion, or (3) no detriment was suffered.",
+          "Right to Information (RTI) Act, 2005: Empowers every citizen to request information from any 'Public Authority' (within 30 days; 48 hours if life/liberty is at stake), subject to Section 8 exemptions (national security, cabinet papers, trade secrets, personal privacy unless larger public interest justifies disclosure) and multi-tier First Appellate Authority + Information Commissions."
+        ],
+        "caseLaws": [
+          {
+            "name": "Nilabati Behera v. State of Orissa",
+            "citation": "1993 2 SCC 746",
+            "principle": "Held that sovereign immunity is inapplicable to violations of Fundamental Rights under Article 21; constitutional courts can award public-law monetary compensation for custodial death."
+          },
+          {
+            "name": "Motilal Padampat Sugar Mills Co. Ltd. v. State of U.P.",
+            "citation": "AIR 1979 SC 621",
+            "principle": "Established Promissory Estoppel against the State, holding that executive authorities must honour clear representations acted upon unless overriding public interest requires departure."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can Promissory Estoppel compel the Government to act contrary to a statute or override genuine public interest, and what is the standard RTI response time?",
+            "a": "No - Promissory Estoppel never overrides a statute or genuine public interest. Under the RTI Act, 2005, the standard reply window is 30 days (48 hours where life or liberty is concerned)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "adm-u5-t3": {
+      "id": "adm-u5-t3",
+      "subtitle": "Administrative Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Articles 323A and 323B (42nd Amendment, 1976) enable creation of specialized Administrative Tribunals (like CAT, NGT, NCLT) to provide speedy, expert adjudication - subject to High Court judicial review under L. Chandra Kumar (1997). Alongside Tribunals, the Commissions of Inquiry Act, 1952 enables fact-finding inquiries into definite public matters, while Public Corporations blend State ownership with corporate operational autonomy.",
+        "legalProvision": "Articles 323A & 323B, Constitution of India; Administrative Tribunals Act, 1985; Commissions of Inquiry Act, 1952",
+        "meaning": "Tribunals reduce court backlogs through specialized expertise, Commissions of Inquiry inform public policy without passing binding judgments, and Statutory/Public Corporations run commercial or public utilities without red-tape paralysis.",
+        "keyPoints": [
+          "Administrative Tribunals (Arts. 323A & 323B & L. Chandra Kumar): Art. 323A covers civil service disputes (Administrative Tribunals Act, 1985 - CAT/SAT); Art. 323B covers tax, land, labour, industrial, food, and election disputes. In L. Chandra Kumar v. Union of India (1997), a 7-judge Bench struck down clauses excluding High Court jurisdiction and held that Tribunals are subject to High Court writ review under Articles 226/227 (first approaching the Tribunal as court of first instance).",
+          "Tribunal vs Court: Tribunals are specialized statutory adjudicatory bodies bound by statutory procedure/Natural Justice (not strictly bound by CPC or Evidence Act), whereas Courts are constitutional/civil organs exercising plenary judicial power.",
+          "Commissions of Inquiry Act, 1952: Empowers appropriate Government (or Legislature resolution) to appoint a Commission of Inquiry into any definite matter of public importance; equipped with civil-court summoning/evidence powers, but its report is purely ADVISORY/recommendatory (not a binding judgment or criminal conviction - State of Karnataka v. Union of India).",
+          "Public Corporations (Statutory Corporations & Govt Companies): Created by special statute (e.g., LIC, RBI, ONGC, State RTCs) or Companies Act (51%+ govt shareholding) to combine public accountability with commercial flexibility; treated as 'State' under Article 12 when under deep and pervasive State control (Ajay Hasia; R.D. Shetty)."
+        ],
+        "caseLaws": [
+          {
+            "name": "L. Chandra Kumar v. Union of India",
+            "citation": "AIR 1997 SC 1125",
+            "principle": "7-judge Constitution Bench held that power of judicial review of High Courts under Articles 226/227 over all Tribunals is part of the Basic Structure and cannot be excluded even under Articles 323A or 323B."
+          },
+          {
+            "name": "Ramana Dayaram Shetty v. International Airport Authority of India",
+            "citation": "AIR 1979 SC 1628",
+            "principle": "Held that public corporations/instrumentalities of the State are bound by Article 14 non-arbitrariness in distributing largesse, contracts, and licences."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What did L. Chandra Kumar (1997) hold regarding High Court judicial review over Administrative Tribunals, and is a report under the Commissions of Inquiry Act, 1952 a binding judgment?",
+            "a": "L. Chandra Kumar held that High Courts' powers under Articles 226/227 over Tribunals are Basic Structure and cannot be ousted. No - a Commission of Inquiry report is recommendatory/fact-finding, not a binding judicial decree."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

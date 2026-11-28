@@ -1,0 +1,500 @@
+param(
+  [switch]$PushOta
+)
+
+$ErrorActionPreference = "Stop"
+$u = New-Object System.Text.UTF8Encoding $false
+$env:PYTHONIOENCODING = "utf-8"
+
+$root = "C:\Users\khoda\OneDrive\Desktop\law-studyes-offline-apk-kit"
+if (-not (Test-Path (Join-Path $root "www"))) { $root = (Get-Location).Path }
+Set-Location $root
+
+$dataDir = Join-Path $root "data"
+New-Item -ItemType Directory -Path $dataDir -Force | Out-Null
+
+$sem3Json = @'
+{
+  "subjects": [
+    {
+      "id": "jurisprudence",
+      "title": "Jurisprudence",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Nature, Scope & Schools of Jurisprudence",
+          "topics": [
+            {"id": "jurisprudence-u1-t1", "title": "1. Jurisprudence - Definition, Nature, Scope & Importance"},
+            {"id": "jurisprudence-u1-t2", "title": "2. Schools of Jurisprudence - Analytical, Historical, Sociological & Natural Law"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "law-of-property",
+      "title": "Law of Property (TPA)",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Transfer of Property, Non-Transferable Rights & Perpetuity",
+          "topics": [
+            {"id": "law-of-property-u1-t1", "title": "1. Transfer of Property (Section 5) - Essentials & Non-Transferable Properties (Section 6)"},
+            {"id": "law-of-property-u1-t2", "title": "2. Transfer to Unborn Person (Section 13) & Rule Against Perpetuity (Section 14)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "administrative-law",
+      "title": "Administrative Law",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Nature, Scope, Rule of Law & Separation of Powers",
+          "topics": [
+            {"id": "administrative-law-u1-t1", "title": "1. Administrative Law - Meaning, Nature, Scope & Relation to Constitutional Law"},
+            {"id": "administrative-law-u1-t2", "title": "2. Rule of Law & Doctrine of Separation of Powers"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "company-law",
+      "title": "Company Law",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Nature of Company, Kinds & Corporate Veil",
+          "topics": [
+            {"id": "company-law-u1-t1", "title": "1. Company - Characteristics, Kinds & Lifting the Corporate Veil"},
+            {"id": "company-law-u1-t2", "title": "2. Memorandum of Association (MOA), Articles of Association (AOA) & Doctrines"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "labour-law-i",
+      "title": "Labour Law - I",
+      "semester": "Semester 3",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Trade Unions, Collective Bargaining & Industrial Disputes",
+          "topics": [
+            {"id": "labour-law-i-u1-t1", "title": "1. Trade Unions Act, 1926 - Registration, Rights, Liabilities & Immunities"},
+            {"id": "labour-law-i-u1-t2", "title": "2. Industrial Disputes Act, 1947 - Strike, Lockout, Lay-Off & Retrenchment"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "jurisprudence-u1-t1": {
+      "id": "jurisprudence-u1-t1",
+      "subtitle": "Jurisprudence - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Jurisprudence (from Latin 'Juris' meaning law and 'Prudentia' meaning knowledge or skill) is the systematic science and philosophy of law. It examines the fundamental principles, sources, and legal concepts that form the foundation of every legal system.",
+        "legalProvision": "Uncodified Legal Theory (Classical and Modern Juristic Foundations)",
+        "meaning": "Jurisprudence is not a codified statute enacted by a legislature; rather, it is the foundational legal theory that studies the nature of law, its sources, rights, duties, ownership, possession, and liability. Jurists describe it as the 'eye of law' because it equips lawyers and judges to interpret statutes accurately.",
+        "keyPoints": [
+          "Salmond's Definition: 'The science of the first principles of the civil law'—a systematic study of law just as natural sciences study nature.",
+          "Austin's Definition: 'The philosophy of positive law'—the study of law as it is laid down by a political superior.",
+          "Gray's Definition: The science of law dealing with the systematic arrangement of rules followed by courts across legal systems.",
+          "Ulpian's Definition: The knowledge of things divine and human, and the science of the just and the unjust.",
+          "Interdisciplinary Scope: Closely linked with Economics (regulating wealth and commercial offences), Political Science (law-making by legislatures), Sociology (law serving evolving society), and Ethics (morality as a moral foundation of law).",
+          "Practical Importance: Clarifies core legal terminology, sharpens statutory interpretation, and guides law reform."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kesavananda Bharati v. State of Kerala",
+            "citation": "AIR 1973 SC 1461",
+            "principle": "Illustrated how constitutional jurisprudence and foundational legal theory guide courts in identifying the 'basic structure' beyond literal statutory text."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How did John Austin and Sir John Salmond define Jurisprudence?",
+            "a": "Austin defined Jurisprudence as the philosophy of positive law, while Salmond defined it as the science of the first principles of the civil law."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jurisprudence-u1-t2": {
+      "id": "jurisprudence-u1-t2",
+      "subtitle": "Jurisprudence - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Schools of Jurisprudence represent different juristic approaches to the origin and purpose of law. The five major schools are Analytical (Austin's Command Theory), Historical (Savigny's Volksgeist), Sociological (Roscoe Pound's Social Engineering), Philosophical/Natural Law, and Realist.",
+        "legalProvision": "Comparative Legal Theory (Analytical, Historical, Sociological, Natural Law & Realist Schools)",
+        "meaning": "Each school of jurisprudence explains what law is from a distinct perspective—whether as a sovereign command, a product of custom and history, an instrument of social welfare, a reflection of universal morality, or what courts actually decide in practice.",
+        "keyPoints": [
+          "Analytical (Imperative) School: Propounded by John Austin—law is the 'command of the sovereign' (political superior to political inferior) backed by sanction; criticized for ignoring customary law, international law, and enabling laws like Contract Law.",
+          "Historical School: Led by Savigny—law is not artificially made by legislatures but grows organically from the 'Volksgeist' (spirit and customs of the people).",
+          "Sociological School: Led by Roscoe Pound—views law as 'social engineering' designed to balance competing individual, public, and social interests with minimum friction.",
+          "Natural Law (Philosophical) School: Holds that law must conform to universal reason, justice, and morality; forms the basis of human rights and Fundamental Rights.",
+          "Realist School: Led by Oliver Wendell Holmes and Jerome Frank—emphasizes that law is what the courts actually do and decide in practice, not merely rules printed in books."
+        ],
+        "caseLaws": [
+          {
+            "name": "Maneka Gandhi v. Union of India",
+            "citation": "AIR 1978 SC 597",
+            "principle": "Reflected Natural Law and Sociological jurisprudence by holding that 'procedure established by law' under Article 21 must be just, fair, and reasonable."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the main criticism of Austin's Analytical (Command) Theory of Law?",
+            "a": "It cannot explain customary law, constitutional conventions, international law, or enabling statutes (such as Contract Act or Wills) that confer powers rather than issuing commands backed by punishment."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-property-u1-t1": {
+      "id": "law-of-property-u1-t1",
+      "subtitle": "Law of Property (TPA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 5 of the Transfer of Property Act, 1882, 'transfer of property' means an act by which a living person conveys property in present or future to one or more other living persons. Section 6 lists specific properties and rights—such as Spes Successionis, mere right to sue, and future maintenance—that cannot be transferred.",
+        "legalProvision": "Sections 5, 6, 7, and 8, Transfer of Property Act, 1882; Section 17, Registration Act, 1908",
+        "meaning": "The Transfer of Property Act governs inter vivos (between living persons) transfers such as sale, mortgage, lease, exchange, gift, and actionable claims. Under Section 8 ('accessory follows the principal'), transferring property automatically passes all legal incidents attached to it.",
+        "keyPoints": [
+          "Essentials of Valid Transfer (Sections 5 & 7): Must be between living persons (inter vivos, including companies), the transferor must be competent to contract and have title/authority, the property must be transferable, and formalities (writing, stamp duty, attestation, and registration for immovable property valued at Rs. 100 or more) must be satisfied.",
+          "Spes Successionis (Section 6(a)): The bare chance of an heir-apparent succeeding to an estate cannot be transferred.",
+          "Mere Right of Re-entry (Section 6(b)): A landlord's right to re-enter for breach of a condition cannot be transferred apart from the property itself.",
+          "Easement Apart from Dominant Heritage (Section 6(c)): An easement (e.g., right of way) cannot be transferred independently of the dominant land.",
+          "Right to Future Maintenance (Section 6(dd)) & Mere Right to Sue (Section 6(e)): Personal rights to future maintenance or to file a suit for unliquidated damages cannot be transferred.",
+          "Public Office & Stipends (Section 6(f)-(g)): A public office, its salary, or military/political pensions cannot be transferred."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jumma Masjid, Mercara v. Kodimaniandra Deviah",
+            "citation": "AIR 1962 SC 847",
+            "principle": "Harmonized Section 6(a) (Spes Successionis) with Section 43 (feeding the grant by estoppel) when a transferor fraudulently represents ownership and later acquires title."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why is Spes Successionis non-transferable under Section 6(a) of the Transfer of Property Act?",
+            "a": "Because it is merely a speculative future hope of inheriting property, not a present vested proprietary interest."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-property-u1-t2": {
+      "id": "law-of-property-u1-t2",
+      "subtitle": "Law of Property (TPA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 13 TPA, property cannot be transferred directly to an unborn person—a prior life interest must be created for a living person, and the absolute interest must vest in the unborn child upon birth. Section 14 (Rule Against Perpetuity) prohibits tying up property beyond the lifetime of living persons plus the minority (18 years) of the ultimate beneficiary.",
+        "legalProvision": "Sections 13, 14, 15, 16, and 18, Transfer of Property Act, 1882",
+        "meaning": "Public policy favours the free circulation of property in commerce. Sections 13 and 14 prevent property owners from locking up estates indefinitely across unborn generations, while Section 18 exempts transfers made for the benefit of the public (charity, education, religion).",
+        "keyPoints": [
+          "No Direct Transfer to Unborn Person (Section 13): Because Section 5 requires living parties, a transfer for an unborn person requires (1) a prior life interest in favour of one or more living persons, and (2) the entire remaining (absolute) interest given to the unborn person.",
+          "No Life Estate to Unborn Person: You cannot give a mere life interest to an unborn person; the unborn child must receive the whole remaining estate.",
+          "Rule Against Perpetuity (Section 14): Vesting of property cannot be postponed beyond the lifetime of one or more living persons at the date of transfer plus the minority (18 years, plus gestation period if in womb) of the unborn beneficiary.",
+          "Maximum Perpetuity Period: Life(s) in being + 18 years (age of majority in India).",
+          "Exceptions (Section 18): The Rule Against Perpetuity does not apply to transfers for the benefit of the public (advancement of religion, knowledge, commerce, health, or safety), personal covenants, or mortgages/leases with renewal clauses."
+        ],
+        "caseLaws": [
+          {
+            "name": "Girjesh Dutt v. Data Din",
+            "citation": "AIR 1934 Oudh 35",
+            "principle": "Held that a gift of a limited life interest to an unborn daughter violated Section 13, rendering both that gift and the subsequent gift over void under Section 16."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the maximum perpetuity period permitted under Section 14 of the Transfer of Property Act?",
+            "a": "The lifetime of one or more persons living at the date of transfer plus the period of minority (18 years) of the ultimate unborn beneficiary."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "administrative-law-u1-t1": {
+      "id": "administrative-law-u1-t1",
+      "subtitle": "Administrative Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Administrative Law is the branch of public law governing the organization, powers, duties, rule-making, and adjudication of executive authorities, and the judicial control over their actions. Its rapid growth stems from the shift from a laissez-faire state to a modern welfare state.",
+        "legalProvision": "Articles 32, 226, 227, 299, 300, and 323A-323B, Constitution of India",
+        "meaning": "Administrative law encompasses both 'law relating to administration' and 'law made by administration' (delegated legislation and quasi-judicial adjudication). While Constitutional Law defines the macro-structure of the State and Fundamental Rights, Administrative Law regulates the day-to-day exercise of executive power to prevent arbitrariness.",
+        "keyPoints": [
+          "Definitions: Ivor Jennings defines it as the law relating to the organization, powers, and duties of administrative authorities; H.W.R. Wade defines it as the law relating to the control of governmental power; M.P. Jain highlights structure, powers, procedures, and remedies.",
+          "Reasons for Growth: Abandonment of laissez-faire, rise of the welfare state, technical complexity of modern governance, legislative time constraints, and need for speedy administrative adjudication.",
+          "Three Core Functions of Administration: (1) Legislative/Rule-making (subordinate legislation), (2) Quasi-judicial Adjudication (tribunals, licensing, penalties), and (3) Purely Executive/Ministerial functions.",
+          "Control Mechanisms: Administrative power is checked by Legislative control, Higher Executive supervision, and Judicial Review (writs under Articles 32 and 226).",
+          "Administrative Law vs Constitutional Law: Constitutional Law is the supreme codified law dealing with state organs at rest; Administrative Law is largely uncodified, subordinate to the Constitution, and deals with state organs in motion."
+        ],
+        "caseLaws": [
+          {
+            "name": "A.K. Kraipak v. Union of India",
+            "citation": "AIR 1970 SC 150",
+            "principle": "Held that the dividing line between administrative and quasi-judicial powers is thin, and principles of natural justice apply even to administrative actions with civil consequences."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two key distinctions between Constitutional Law and Administrative Law.",
+            "a": "Constitutional Law is supreme and codified, defining the structure of the State; Administrative Law is largely uncodified and subordinate, regulating the day-to-day powers and judicial control of executive agencies."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "administrative-law-u1-t2": {
+      "id": "administrative-law-u1-t2",
+      "subtitle": "Administrative Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A.V. Dicey's Rule of Law stands on three pillars: Supremacy of Law (absence of arbitrary power), Equality Before Law, and Predominance of Legal Spirit. Montesquieu's Doctrine of Separation of Powers divides state authority among the Legislature, Executive, and Judiciary to prevent tyranny.",
+        "legalProvision": "Articles 14, 50, 53, 73, 122, and 245, Constitution of India",
+        "meaning": "Rule of Law ensures that the Government itself is subject to law and not above it. India does not follow a rigid US-style separation of powers; instead, it follows functional separation with checks and balances, where Article 50 specifically directs the separation of the Judiciary from the Executive.",
+        "keyPoints": [
+          "Dicey's Three Principles of Rule of Law: (1) Supremacy of Law—no person can be punished except for a distinct breach of law established in ordinary courts, (2) Equality Before Law—all persons, including officials, are subject to ordinary law, and (3) Predominance of Legal Spirit—rights flow from judicial decisions (in India, enshrined in the Constitution).",
+          "Rule of Law in India: Reflected in the Preamble, Article 14 (equality), Article 21 (fair procedure), and Judicial Review; recognized as part of the Basic Structure.",
+          "Montesquieu's Separation of Powers: Concentrating legislative, executive, and judicial powers in the same hands destroys liberty; hence each organ should perform its own function without encroaching on others.",
+          "Indian Position: Broad functional separation (Ram Jawaya Kapur), not watertight compartments—the Executive is drawn from the Legislature, the President exercises ordinance power (Article 123), and courts exercise judicial review.",
+          "Checks and Balances: Essential legislative functions cannot be abdicated, and the Judiciary cannot be stripped of its core adjudicatory powers."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ram Jawaya Kapur v. State of Punjab",
+            "citation": "AIR 1955 SC 549",
+            "principle": "Held that the Indian Constitution has not recognized the doctrine of separation of powers in its absolute rigidity, though the functions of different branches are sufficiently differentiated."
+          },
+          {
+            "name": "Indira Nehru Gandhi v. Raj Narain",
+            "citation": "AIR 1975 SC 2299",
+            "principle": "Held that Rule of Law and broad Separation of Powers are part of the Basic Structure of the Indian Constitution."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are A.V. Dicey's three pillars of the Rule of Law?",
+            "a": "Supremacy of law (absence of arbitrary power), equality before law, and predominance of legal spirit."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "company-law-u1-t1": {
+      "id": "company-law-u1-t1",
+      "subtitle": "Company Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Upon incorporation, a company becomes a separate legal entity distinct from its members (Salomon v. Salomon), enjoying perpetual succession and limited liability. However, courts and statutes may 'lift the corporate veil' to hold directors or members personally liable in cases of fraud, tax evasion, or statutory breach.",
+        "legalProvision": "Sections 2(20), 2(68), 2(71), 3, 7, 9, and 339, Companies Act, 2013 (earlier Companies Act, 1956)",
+        "meaning": "A company is an incorporated artificial legal person capable of owning property, contracting, suing, and being sued in its own name. The 'veil of incorporation' shields members from personal liability, except when abused as a cloak for fraud or improper conduct.",
+        "keyPoints": [
+          "Core Characteristics: Separate legal entity, limited liability, perpetual succession (members may come and go, the company continues), transferable shares, separate property, and capacity to sue and be sued.",
+          "Kinds of Companies (Companies Act, 2013): Private Company (minimum 2, maximum 200 members; earlier 50 under 1956 Act), Public Company (minimum 7 members, no maximum limit), One Person Company (OPC), Government Company (at least 51% paid-up share capital held by Government), Holding/Subsidiary, and Foreign Company.",
+          "Statutory Lifting of Corporate Veil: Reduction of membership below statutory minimum for over 6 months (Section 3A, 2013 Act), misstatement in prospectus (Sections 34-35), failure to refund application money, and fraudulent conduct of business during winding up (Section 339).",
+          "Judicial Lifting of Corporate Veil: Courts pierce the veil to prevent fraud or improper conduct (Gilford Motor Co. v. Horne), stop tax evasion (Dinshaw Maneckjee Petit), determine enemy character during war (Daimler Co.), or expose sham/agency companies."
+        ],
+        "caseLaws": [
+          {
+            "name": "Salomon v. Salomon & Co. Ltd.",
+            "citation": "1897 AC 22",
+            "principle": "Established the foundational principle of corporate personality: a duly incorporated company is a distinct legal person independent of its shareholders and promoters."
+          },
+          {
+            "name": "Gilford Motor Co. Ltd. v. Horne",
+            "citation": "1933 Ch 935",
+            "principle": "Pierced the corporate veil where a former employee formed a company purely as a sham to evade a non-compete covenant."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When will a court lift the corporate veil despite the rule in Salomon v. Salomon?",
+            "a": "When the corporate form is misused for fraud, tax evasion, evading legal obligations, determining enemy character, or under express statutory provisions of the Companies Act, 2013."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "company-law-u1-t2": {
+      "id": "company-law-u1-t2",
+      "subtitle": "Company Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Memorandum of Association (MOA) is the charter defining a company's external scope and objects; acts beyond it are void under the Doctrine of Ultra Vires. The Articles of Association (AOA) govern internal management, and the Doctrine of Indoor Management (Turquand's Rule) protects outsiders from internal irregularities.",
+        "legalProvision": "Sections 4, 5, 10, 13, and 14, Companies Act, 2013",
+        "meaning": "MOA sets the boundaries of a company's relationship with the outside world (Name, Registered Office, Object, Liability, Capital, and Subscription clauses), whereas AOA contains internal bye-laws subordinate to the MOA and the Companies Act.",
+        "keyPoints": [
+          "MOA vs AOA: MOA is the supreme charter defining external objects and is harder to alter (Section 13); AOA regulates internal management, is subordinate to MOA, and can be altered by Special Resolution (Section 14).",
+          "Doctrine of Ultra Vires: Any contract beyond the Object Clause of the MOA is void ab initio and cannot be ratified even by unanimous consent of all shareholders (Ashbury Railway Carriage).",
+          "Doctrine of Constructive Notice: Because MOA and AOA are public documents filed with the Registrar, every outsider dealing with the company is presumed to have read and understood them.",
+          "Doctrine of Indoor Management (Turquand's Rule): An exception to Constructive Notice—outsiders dealing in good faith are entitled to assume that internal company procedures and resolutions have been duly complied with.",
+          "Exceptions to Indoor Management: Does not protect an outsider who had actual knowledge of the irregularity, suspicion of irregularity, or where the document is a forgery (Ruben v. Great Fingall Consolidated)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ashbury Railway Carriage & Iron Co. v. Riche",
+            "citation": "1875 LR 7 HL 653",
+            "principle": "Established the Doctrine of Ultra Vires: a contract outside the company's MOA objects is completely void and incapable of ratification."
+          },
+          {
+            "name": "Royal British Bank v. Turquand",
+            "citation": "1856 6 E&B 327",
+            "principle": "Established the Doctrine of Indoor Management: outsiders are not bound to inquire into the regularity of a company's internal proceedings."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How does the Doctrine of Indoor Management protect outsiders dealing with a company?",
+            "a": "It allows outsiders acting in good faith to presume that all internal procedural requirements (such as board or shareholder resolutions) have been properly fulfilled."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "labour-law-i-u1-t1": {
+      "id": "labour-law-i-u1-t1",
+      "subtitle": "Labour Law - I - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under the Trade Unions Act, 1926, a Trade Union is a combination formed primarily to regulate relations between workmen and employers. Registration grants corporate status and vital immunities from criminal conspiracy (Section 17) and civil tort suits (Section 18) for legitimate trade-dispute activities.",
+        "legalProvision": "Sections 2(h), 4, 8, 13, 15, 17, and 18, Trade Unions Act, 1926 (now consolidated in the Industrial Relations Code, 2020)",
+        "meaning": "Registration of a Trade Union is optional, but highly advantageous because an unregistered union does not enjoy statutory legal personality or civil/criminal immunities during industrial action.",
+        "keyPoints": [
+          "Definition (Section 2(h)): Any temporary or permanent combination formed primarily to regulate relations between workmen and employers, workmen and workmen, or employers and employers.",
+          "Registration Requirements (Section 4): At least 7 members may apply to the Registrar of Trade Unions; for workmen's unions, at least 10% or 100 workmen (whichever is less, minimum 7) must be members.",
+          "Legal Status (Section 13): Upon registration, the union becomes a body corporate with perpetual succession, a common seal, and power to hold property and sue or be sued.",
+          "Immunity from Criminal Conspiracy (Section 17): Office-bearers and members are immune from prosecution under Section 120B IPC for agreements made to further legitimate trade union objects (unless an agreement to commit an offence).",
+          "Immunity from Civil Suits (Section 18): Protects registered unions and members from civil tort suits for inducing breach of employment contract or interfering with trade in contemplation or furtherance of a trade dispute, provided no violence or unlawful means are used."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rohtas Industries Staff Union v. State of Bihar",
+            "citation": "AIR 1963 Pat 170",
+            "principle": "Held that employers have no right to claim civil damages from workmen for losses caused by a strike, even an illegal strike, as remedies are strictly governed by the Industrial Disputes Act and Section 18 immunity."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the two major legal immunities granted to a registered Trade Union under Sections 17 and 18?",
+            "a": "Immunity from criminal conspiracy under Section 17 and immunity from civil tort suits for inducing breach of contract or trade interference under Section 18, when acting peacefully in furtherance of a trade dispute."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "labour-law-i-u1-t2": {
+      "id": "labour-law-i-u1-t2",
+      "subtitle": "Labour Law - I - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Industrial Disputes Act, 1947 promotes industrial peace by regulating Strikes (weapon of workmen), Lockouts (weapon of employers), Lay-Off (temporary inability to give work), and Retrenchment (termination of surplus labour), while encouraging Collective Bargaining and conciliation.",
+        "legalProvision": "Sections 2(k), 2(kkk), 2(l), 2(oo), 2(q), 22, 23, and 25F, Industrial Disputes Act, 1947",
+        "meaning": "Industrial relations law balances workers' right to collective bargaining with uninterrupted production. It distinguishes temporary suspension of work (lay-off) from permanent surplus termination (retrenchment) and requires statutory notice and compensation.",
+        "keyPoints": [
+          "Strike (Section 2(q)): Cessation of work or concerted refusal by a body of workmen to continue working; illegal if begun without mandatory notice in public utility services (Section 22) or during pending conciliation/tribunal proceedings (Section 23).",
+          "Lockout (Section 2(l)): Temporary closing of a place of employment or refusal by an employer to continue employing workmen to press demands—the employer's counterpart to a strike.",
+          "Lay-Off (Section 2(kkk)): Failure, refusal, or inability of an employer—due to shortage of coal, power, raw materials, breakdown of machinery, or natural calamity—to give employment to a workman on the muster rolls; entitles eligible workmen to 50% wage compensation.",
+          "Retrenchment (Section 2(oo) & 25F): Termination of a workman's service for any reason other than disciplinary punishment, voluntary retirement, superannuation, or continued ill-health; requires 1 month's notice (or pay in lieu) and retrenchment compensation of 15 days' average pay per completed year of service.",
+          "Collective Bargaining: Voluntary negotiation between employer and trade union representatives to settle wages, hours, and working conditions peacefully without strikes or litigation."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bangalore Water Supply & Sewerage Board v. A. Rajappa",
+            "citation": "AIR 1978 SC 548",
+            "principle": "Laid down the 'Triple Test' defining 'Industry' under Section 2(j): systematic activity, employer-employee cooperation, and production/distribution of goods or services to satisfy human wants."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Lay-Off and Retrenchment under the Industrial Disputes Act, 1947.",
+            "a": "Lay-off is a temporary inability to provide work due to external factors (power/raw-material shortage) where the employer-employee relationship continues; Retrenchment is a permanent termination of surplus staff requiring notice and 15 days' pay per year of service under Section 25F."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}
+'@
+
+$packPath = Join-Path $dataDir "sem3_handcrafted_pack.json"
+[System.IO.File]::WriteAllText($packPath, $sem3Json, $u)
+
+Write-Host "`n=== 1. Merging Hand-Crafted Semester 3 Pack into www/nyayasaral_db.json (Zero Overlap) ===" -ForegroundColor Cyan
+$pyMerge = @'
+import json, os, sys, time
+from pathlib import Path
+
+db_path = Path(sys.argv[1])
+pack_path = Path(sys.argv[2])
+
+db = json.loads(db_path.read_text(encoding="utf-8"))
+pack = json.loads(pack_path.read_text(encoding="utf-8"))
+
+subjects = db.setdefault("subjects", [])
+notes = db.setdefault("notes", {})
+subj_by_id = {s["id"]: s for s in subjects if isinstance(s, dict) and "id" in s}
+
+added_subjs, added_topics = 0, 0
+for s in pack["subjects"]:
+    if s["id"] not in subj_by_id:
+        subjects.append(s)
+        subj_by_id[s["id"]] = s
+        added_subjs += 1
+    else:
+        ex_s = subj_by_id[s["id"]]
+        ex_tids = {t["id"] for u in ex_s.get("units", []) for t in u.get("topics", [])}
+        for u in s.get("units", []):
+            new_ts = [t for t in u.get("topics", []) if t["id"] not in ex_tids]
+            if new_ts:
+                ex_s.setdefault("units", []).append({"unitNo": len(ex_s["units"]) + 1, "title": u["title"], "topics": new_ts})
+
+for tid, rec in pack["notes"].items():
+    if tid not in notes:
+        notes[tid] = rec
+        added_topics += 1
+
+out = json.dumps(db, ensure_ascii=False, separators=(",", ":"))
+tmp = db_path.with_name(f"{db_path.name}.{os.getpid()}.tmp")
+tmp.write_text(out, encoding="utf-8")
+json.loads(tmp.read_text(encoding="utf-8"))
+for i in range(10):
+    try:
+        os.replace(str(tmp), str(db_path))
+        break
+    except (PermissionError, OSError):
+        time.sleep(0.3 * (i + 1))
+
+print(f"[PASS] Merged Semester 3 Hand-Crafted Notes: +{added_subjs} subjects, +{added_topics} English topics (Total topics now: {len(notes)})")
+'@
+
+$tmpPy = Join-Path $env:TEMP "ls_merge_sem3.py"
+[System.IO.File]::WriteAllText($tmpPy, $pyMerge, $u)
+python -u $tmpPy (Join-Path $root "www\nyayasaral_db.json") $packPath
+if ($LASTEXITCODE -ne 0) { throw "Merge failed!" }
+
+if ($PushOta) {
+  Write-Host "`n=== 2. Running Built-In EN -> TE/HI Auto-Converter & Deploying Live OTA ===" -ForegroundColor Cyan
+  & (Join-Path $root "Push-LawStudyes-OTA.ps1") -Message "Added Hand-Crafted Semester 3 Subjects (Jurisprudence, Property, Admin Law, Company Law, Labour Law I) + Auto TE/HI"
+}

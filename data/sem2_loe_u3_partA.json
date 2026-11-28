@@ -1,0 +1,129 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-evidence",
+      "title": "Law of Evidence (IEA / BSA)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Relevancy of Judgments, Expert & Relationship Opinion, Facts Not Needing Proof, Oral & Documentary/Electronic Evidence & Parol Evidence Rule",
+          "topics": [
+            {"id": "loe-u3-t1", "title": "1. Relevancy of Judgments of Courts of Justice (Secs. 40-44 IEA / Secs. 34-38 BSA)"},
+            {"id": "loe-u3-t2", "title": "2. Opinion of Third Persons - Expert's Opinion (Secs. 45-45A, 47 & 51 / Secs. 39, 41 & 45 BSA) & Opinion on Relationship / Marriage (Sec. 50 / Sec. 44 BSA)"},
+            {"id": "loe-u3-t3", "title": "3. Facts Which Need Not Be Proved (Secs. 56-58 / Secs. 51-53 BSA) & General Principles of Oral Evidence (Secs. 59-60 / Secs. 54-55 BSA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loe-u3-t1": {
+      "id": "loe-u3-t1",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Ordinarily, a judgment in one case is NOT binding in another ('Res inter alios acta'). Sections 40-44 IEA (Sections 34-38 BSA, 2023) carve out four strict exceptions: judgments operating as Res Judicata / Autrefois Acquit (Sec. 40 / Sec. 34 BSA), conclusive Judgments in Rem in probate/matrimonial/admiralty/insolvency matters (Sec. 41 / Sec. 35 BSA), judgments on matters of public nature (Sec. 42 / Sec. 36 BSA), and judgments forming a fact in issue (Sec. 43 / Sec. 37 BSA) - always impeachable for fraud, collusion, or lack of jurisdiction (Sec. 44 / Sec. 38 BSA).",
+        "legalProvision": "Sections 40-44, Indian Evidence Act, 1872 (Sections 34-38, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Judgments are classified as Judgments in Personam (binding only the parties and privies) and Judgments in Rem (binding against the whole world on legal status). Criminal court judgments generally do not bind civil courts (and vice versa), except to prove the bare fact of conviction/acquittal where relevant.",
+        "keyPoints": [
+          "Previous Judgments Barring a Second Suit or Trial (Sec. 40 IEA / Sec. 34 BSA): Relevant whenever any law (e.g., Sec. 11 CPC Res Judicata or Sec. 300 CrPC / Sec. 337 BNSS Double Jeopardy) bars a court from taking cognizance of a suit or holding a second trial.",
+          "Judgments in Rem - Conclusive Proof (Sec. 41 IEA / Sec. 35 BSA): Final judgments of competent courts exercising ONLY FOUR enumerated jurisdictions - (1) Probate, (2) Matrimonial (divorce/nullity), (3) Admiralty, and (4) Insolvency - conferring, declaring, or taking away legal character or absolute title against the whole world are CONCLUSIVE PROOF.",
+          "Judgments on Matters of Public Nature (Sec. 42 IEA / Sec. 36 BSA): Relevant when relating to public rights (e.g., public highway, village custom, easement), but are NOT conclusive proof (rebuttable).",
+          "Other Judgments Ordinarily Irrelevant (Sec. 43 IEA / Sec. 37 BSA): All other judgments (including civil findings in criminal trials and criminal verdicts in civil tort suits) are irrelevant UNLESS the existence of the judgment itself is a fact in issue or relevant under another section (e.g., motive for murder after losing a prior civil suit, or proving malicious prosecution).",
+          "Impeachment for Fraud, Collusion or Incompetency (Sec. 44 IEA / Sec. 38 BSA): Any party may show that a judgment relevant under Sections 40-42 (Secs. 34-36 BSA) was delivered by a court lacking jurisdiction OR obtained by fraud or collusion - overriding even Res Judicata and Conclusive Proof."
+        ],
+        "caseLaws": [
+          {
+            "name": "M.S. Sheriff v. State of Madras",
+            "citation": "AIR 1954 SC 397",
+            "principle": "5-judge Constitution Bench held that decisions of civil courts are not binding on criminal courts and vice versa under Sections 40-43 IEA, and criminal proceedings normally take precedence over parallel civil suits to avoid embarrassment."
+          },
+          {
+            "name": "K.G. Premshanker v. Inspector of Police",
+            "citation": "2002 8 SCC 87",
+            "principle": "3-judge Bench clarified Sections 40-43 IEA: unless a judgment falls squarely within Sections 40, 41, or 42, a prior civil decree is NOT conclusive or binding in a criminal prosecution on the same facts."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name the four exclusive jurisdictions whose final judgments operate as Conclusive Proof (Judgments in Rem) under Section 41 IEA / Section 35 BSA, and state the three grounds to impeach a judgment under Section 44 / Section 38 BSA.",
+            "a": "Probate, Matrimonial, Admiralty, and Insolvency jurisdictions. Under Section 44 IEA / Section 38 BSA, any judgment may be challenged for (1) incompetency/lack of jurisdiction of the court, (2) fraud, or (3) collusion."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u3-t2": {
+      "id": "loe-u3-t2",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Ordinarily, witnesses must testify strictly to FACTS they perceived, NOT personal opinions. Sections 45-51 IEA (Sections 39-45 BSA, 2023) carve out exceptions admitting Expert Opinion (foreign law, science, art, handwriting, fingerprints, digital forensics - broadened by BSA Sec. 39(1) to 'any other field') as advisory corroborative evidence, and Opinion on Relationship by conduct (Sec. 50 / Sec. 44 BSA) - subject to the strict Proviso barring mere opinion to prove marriage in divorce or bigamy trials.",
+        "legalProvision": "Sections 45-51, Indian Evidence Act, 1872 (Sections 39-45, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "An expert's role is to supply the judge with scientific criteria and reasoning so the court can reach its own independent conclusion (State of H.P. v. Jai Lal). Because opinions can be fallible, courts always require corroboration and subject experts to cross-examination.",
+        "keyPoints": [
+          "Opinion of Experts (Sec. 45 & Sec. 45A IEA / Sec. 39(1)-(2) BSA): Admits opinions of specially skilled persons on foreign law, science, art, identity of handwriting or finger impressions (BSA Sec. 39(1) expands this to 'any other field'), plus Examiner of Electronic Evidence notified under Sec. 79A IT Act (Sec. 45A IEA / Sec. 39(2) BSA). Grounds/tests supporting the opinion are also relevant (Sec. 51 / Sec. 45 BSA).",
+          "Evidentiary Value of Expert Evidence: Strictly ADVISORY and corroborative, NEVER conclusive or binding on the court; where direct eyewitness testimony conflicts with medical opinion, credible ocular evidence prevails unless medical evidence completely rules out the prosecution version (Solanki Chimanbhai Ukabhai); handwriting opinion is considered the weakest expert evidence requiring caution (Murari Lal v. State of M.P.).",
+          "Non-Expert Opinions on Handwriting, Digital Signature & Customs (Secs. 47-49 / Secs. 41-43 BSA): Persons acquainted with handwriting (having seen the person write or corresponded regularly - Sec. 47 / Sec. 41(1) BSA), Certifying Authority on electronic signature (Sec. 47A / Sec. 41(2) BSA), and knowledgeable persons on general customs/usages (Secs. 48-49 / Secs. 42-43 BSA).",
+          "Opinion on Relationship & Proof of Marriage (Sec. 50 IEA / Sec. 44 BSA): Opinion expressed BY CONDUCT of any family member or person having special means of knowledge is relevant to prove relationship (e.g., treating a couple as husband and wife in society - Dolgobinda Paricha). CRUCIAL PROVISO: Such opinion alone is NOT SUFFICIENT to prove marriage in proceedings under the Divorce Act, 1869 OR criminal prosecutions for Bigamy/Enticing a married woman (Secs. 494, 495, 497, 498 IPC -> updated to Secs. 82 & 84 BNS in BSA Sec. 44 Proviso), where strict proof of actual marriage ceremonies is mandatory."
+        ],
+        "caseLaws": [
+          {
+            "name": "State of Himachal Pradesh v. Jai Lal",
+            "citation": "1999 7 SCC 280",
+            "principle": "Held that an expert is not a witness of fact; his evidence is advisory in character, and the court must evaluate his scientific reasons independently rather than surrendering judgment to the expert."
+          },
+          {
+            "name": "Dolgobinda Paricha v. Nimai Charan Misra",
+            "citation": "AIR 1959 SC 914",
+            "principle": "Clarified Section 50: the conduct of family members or outsiders having special means of knowledge is admissible as proof of relationship, though never sufficient by itself to prove marriage in bigamy or divorce cases."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "In which specific proceedings does the Proviso to Section 50 IEA (Section 44 BSA) declare opinion on relationship insufficient to prove marriage?",
+            "a": "Proceedings under the Divorce Act, 1869 and criminal prosecutions for Bigamy or enticing a married woman (Secs. 494, 495, 498 IPC / Secs. 82 & 84 BNS), where strict proof of actual valid marriage ceremonies is required."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u3-t3": {
+      "id": "loe-u3-t3",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Part II (Secs. 56-58 IEA / Secs. 51-53 BSA) dispenses with formal proof for two categories: facts of which courts take Judicial Notice (Indian laws, geographical boundaries, official seals, dates) and facts formally Admitted by parties in pleadings. Where oral proof is given, Sections 59-60 IEA (Sections 54-55 BSA) lay down two bedrock rules: ALL facts EXCEPT contents of documents/electronic records may be proved by oral evidence, and Oral Evidence MUST IN ALL CASES BE DIRECT (excluding Hearsay).",
+        "legalProvision": "Sections 56-60, Indian Evidence Act, 1872 (Sections 51-55, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Judicial notice and formal admissions save court time by removing undisputed background facts from proof, while the Direct Oral Evidence rule (Sec. 60 / Sec. 55 BSA) filters out unreliable second-hand rumours ('Hearsay') that cannot be tested by cross-examination.",
+        "keyPoints": [
+          "Facts Judicially Noticeable (Secs. 56-57 IEA / Secs. 51-52 BSA): Under Sec. 56 / Sec. 51 BSA, no fact of which the court will take judicial notice need be proved. Sec. 57 / Sec. 52 BSA lists facts courts MUST judicially notice - all Indian laws in force (BSA modernized this by dropping colonial UK Parliament Acts and adding extraterritorial/international treaties), Parliamentary/Assembly proceedings, national flags/seals, geographic divisions, public festivals, and rules of the road; court may consult authoritative reference books.",
+          "Facts Admitted Need Not Be Proved (Sec. 58 IEA / Sec. 53 BSA): Facts admitted by parties or agents at hearing, in writing before hearing, or in civil pleadings require no further proof (Proviso: court still retains discretion to require proof independently, especially in criminal cases or collusion).",
+          "Proof by Oral Evidence (Sec. 59 IEA / Sec. 54 BSA): All facts EXCEPT the contents of documents (and electronic records) may be proved by oral evidence (document contents must follow primary/secondary documentary rules).",
+          "Oral Evidence Must Be Direct - Rule Against Hearsay (Sec. 60 IEA / Sec. 55 BSA): If a fact could be SEEN -> witness who saw it; HEARD -> witness who heard it; PERCEIVED by any other sense -> witness who perceived it; OPINION -> person who holds that opinion. Hearsay (second-hand reporting of what someone else saw/heard) is strictly INADMISSIBLE because the original observer is not on oath or open to cross-examination - EXCEPT statutory exceptions (Res Gestae Sec. 6, Admissions/Confessions Secs. 17-30, Dying Declaration & Unavailable Persons Sec. 32, Prior Proceedings Sec. 33, Public Records Sec. 35, and Expert Treatises under Sec. 60 Proviso 1)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kalyan Kumar Gogoi v. Ashutosh Agnihotri",
+            "citation": "2011 2 SCC 532",
+            "principle": "Explained why Hearsay evidence is excluded under Section 60: lack of oath, absence of cross-examination, risk of distortion in repetition, and dilution of responsibility of the original maker."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the two categories of facts that need not be proved under Sections 56-58 IEA (Sections 51-53 BSA), and list four major exceptions to the Rule Against Hearsay?",
+            "a": "Facts of which the court takes Judicial Notice (Secs. 56-57 / Secs. 51-52 BSA) and formally Admitted Facts (Sec. 58 / Sec. 53 BSA). Major hearsay exceptions: Res Gestae (Sec. 6), Admissions/Confessions (Secs. 17-30), Dying Declarations & Sec. 32 statements, Previous Judicial Proceedings (Sec. 33), and published expert treatises (Sec. 60 Proviso)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

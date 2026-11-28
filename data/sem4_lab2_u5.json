@@ -1,0 +1,158 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-ii",
+      "title": "Labour Law - II",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper I",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Payment of Bonus Act, 1965 & Payment of Gratuity Act, 1972 (Consolidated in Wage & Social Security Codes)",
+          "topics": [
+            {"id": "lab2-u5-t1", "title": "1. Payment of Bonus Act, 1965 - Applicability, Eligibility, Disqualification (Sec. 9), Available & Allocable Surplus (Secs. 4-6)"},
+            {"id": "lab2-u5-t2", "title": "2. Minimum & Maximum Bonus (Secs. 10-11), Calculation Ceiling (Sec. 12), Set-On & Set-Off (Sec. 15), Time Limit & Customary Bonus"},
+            {"id": "lab2-u5-t3", "title": "3. Payment of Gratuity Act, 1972 - Applicability, Qualifying Service (5 Years), Calculation Formula & Ceiling (Sec. 4)"},
+            {"id": "lab2-u5-t4", "title": "4. Forfeiture of Gratuity (Sec. 4(6)), Nomination (Sec. 6), Determination/Controlling Authority (Sec. 7) & Protection Against Attachment (Sec. 13)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab2-u5-t1": {
+      "id": "lab2-u5-t1",
+      "subtitle": "Labour Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Payment of Bonus Act, 1965 (merged into the Code on Wages, 2019) converts profit-sharing bonus into an enforceable statutory right for employees earning up to Rs. 21,000/month who have worked at least 30 days in an accounting year in factories or establishments employing 20 or more persons (10+ in several States). Gross profits are adjusted via statutory 'Prior Charges' (Sec. 6) to arrive at Available Surplus and Allocable Surplus (67% for domestic companies; 60% for others).",
+        "legalProvision": "Sections 1, 2(4), 2(13), 4-6, 8, & 9, Payment of Bonus Act, 1965 (as amended in 2015); Code on Wages, 2019",
+        "meaning": "Grounded in the Full Bench Formula (Muir Mills), bonus bridges the gap between actual wages and a living wage by giving workers a statutory share in enterprise prosperity.",
+        "keyPoints": [
+          "Applicability & Eligibility (Secs. 1, 2(13) & 8): Applies to every factory and every other establishment employing 20 OR MORE persons on any day during an accounting year (once covered, continues even if headcount later falls below 20 - Sec. 1(5)). Eligible employee: salary/wage <= Rs. 21,000/month (raised from Rs. 10,000 by 2015 Amendment) AND worked at least 30 WORKING DAYS in that accounting year (Sec. 8). New establishments enjoy a 5-year infancy holiday until profit is earned or 6th accounting year begins (Sec. 16).",
+          "Disqualification for Bonus (Sec. 9): An employee is disqualified from receiving bonus if DISMISSED from service for (a) FRAUD, (b) RIOTOUS OR VIOLENT BEHAVIOUR while on premises of the establishment, or (c) THEFT, MISAPPROPRIATION, OR SABOTAGE of any property of the establishment.",
+          "Computation of Gross Profits, Available Surplus & Allocable Surplus (Secs. 4-6): Gross Profits (Schedules I/II) MINUS 'Prior Charges' under Sec. 6 (depreciation admissible under Income Tax Act, development rebate/investment allowance, direct taxes payable for the year, and return on paid-up capital/reserves per Third Schedule) = AVAILABLE SURPLUS (Sec. 5). ALLOCABLE SURPLUS (Sec. 2(4)) = 67% of Available Surplus in the case of a company (other than a banking company) which has not made prescribed dividend arrangements in India, and 60% in ANY OTHER CASE."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jalan Trading Co. Pvt. Ltd. v. Mill Mazdoor Sabha",
+            "citation": "AIR 1967 SC 691",
+            "principle": "5-judge Constitution Bench upheld the constitutional validity of the Payment of Bonus Act, 1965 (including mandatory minimum bonus under Section 10), striking down only the excessive Henry VIII clause in Section 37."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the monthly salary ceiling and minimum working days required for Bonus eligibility (Secs. 2(13) & 8), and list the three grounds of disqualification under Section 9.",
+            "a": "Salary up to Rs. 21,000/month and at least 30 working days in the accounting year. Disqualified under Sec. 9 if dismissed for (1) fraud, (2) riotous/violent behaviour on premises, or (3) theft, misappropriation, or sabotage of establishment property."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u5-t2": {
+      "id": "lab2-u5-t2",
+      "subtitle": "Labour Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 10 mandates a MINIMUM BONUS of 8.33% of annual salary/wage (or Rs. 100, whichever is higher) EVERY accounting year EVEN IF THE EMPLOYER SUFFERS LOSSES, capped at a MAXIMUM BONUS of 20% under Section 11 - calculated on a notional wage ceiling of Rs. 7,000/month (or minimum wage, whichever is higher - Sec. 12). Excess or shortfall in Allocable Surplus is smoothed over 4 years via Set-On and Set-Off (Sec. 15), and bonus must be paid in cash within 8 months (Sec. 19).",
+        "legalProvision": "Sections 10, 11, 12, 15, 17, 19, & 31A, Payment of Bonus Act, 1965 (as amended in 2015)",
+        "meaning": "Set-On and Set-Off stabilize industrial relations across boom-and-bust cycles: bumper profits build a 4-year reserve to pay bonus in lean years, while loss years are carried forward against future surpluses.",
+        "keyPoints": [
+          "Minimum Bonus (Sec. 10) & Maximum Bonus (Sec. 11): Minimum Bonus = 8.33% of salary/wage earned during the accounting year (or Rs. 100; Rs. 60 if under 15 years), payable WHETHER OR NOT the employer has any allocable surplus (even in loss years!). Maximum Bonus = 20% of salary/wage when allocable surplus exceeds the minimum bonus requirement.",
+          "Calculation Ceiling (Sec. 12 - 2015 Amendment): Where an eligible employee's actual salary/wage (up to Rs. 21,000) exceeds Rs. 7,000 per month, his bonus is calculated AS IF his salary were Rs. 7,000 per month OR the statutory minimum wage for that scheduled employment, WHICHEVER IS HIGHER.",
+          "Set-On and Set-Off of Allocable Surplus (Sec. 15 & Fourth Schedule): If Allocable Surplus exceeds the 20% maximum bonus payout, the excess (up to a further 20% of total salary/wage) is carried forward as 'SET-ON' for the succeeding 4 ACCOUNTING YEARS to pay bonus in lean years; conversely, if there is no/insufficient allocable surplus to pay the 8.33% minimum bonus, the deficiency is carried forward as 'SET-OFF' to be adjusted against future surpluses over the next 4 ACCOUNTING YEARS.",
+          "Time Limit, Puja/Customary Bonus & Productivity Bonus (Secs. 17, 19 & 31A): Must be paid in CASH within 8 MONTHS from close of accounting year (extendable up to 2 years by Govt - Sec. 19); Puja/customary bonus paid during the year may be adjusted against statutory bonus (Sec. 17 - Mumbai Kamgar Sabha); Sec. 31A permits productivity-linked bonus by agreement (capped at 20%)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mumbai Kamgar Sabha v. Abdulbhai Faizullabhai",
+            "citation": "AIR 1976 SC 1455",
+            "principle": "Justice V.R. Krishna Iyer held that the Payment of Bonus Act, 1965 deals with profit-based bonus and does NOT abolish independent traditional/customary Puja bonus established by long uniform usage."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the minimum and maximum statutory bonus percentages (Secs. 10-11), the notional wage calculation ceiling (Sec. 12), and the carry-forward period for Set-On and Set-Off (Sec. 15).",
+            "a": "Minimum bonus is 8.33% (payable even in loss years) and maximum is 20%. Under Sec. 12, bonus is calculated on Rs. 7,000/month or statutory minimum wage (whichever is higher). Set-On and Set-Off carry forward for 4 succeeding accounting years."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u5-t3": {
+      "id": "lab2-u5-t3",
+      "subtitle": "Labour Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Payment of Gratuity Act, 1972 (merged into the Code on Social Security, 2020) rewards long, faithful service in factories, mines, ports, railways, shops, and establishments employing 10 or more persons with a lump-sum retirement/termination benefit after 5 YEARS of continuous service (waived upon death or disablement!). Gratuity is calculated at 15 DAYS' LAST DRAWN WAGES per completed year of service (Formula: Last Drawn Basic + DA x 15 / 26 x Completed Years), subject to a statutory ceiling of Rs. 20 Lakhs.",
+        "legalProvision": "Sections 1, 2(e), 2A, & 4(1)-(5), Payment of Gratuity Act, 1972 (as amended in 2018); Code on Social Security, 2020",
+        "meaning": "Unlike Provident Fund (contributory by both sides), Gratuity is funded 100% by the employer as a statutory social-security reward (NO salary ceiling for eligibility since 1994!).",
+        "keyPoints": [
+          "Applicability & Qualifying Service (Secs. 1, 2A & 4(1)): Applies to factories, mines, oilfields, plantations, ports, railways, and shops/establishments employing 10 OR MORE persons on any day of preceding 12 months (includes teachers in educational institutions - Birla Institute of Technology v. State of Jharkhand, 2019). Payable after 5 YEARS' CONTINUOUS SERVICE (Sec. 2A: 240 days in a year, or 190 days in underground mines / 6-day week vs 5-day week) upon superannuation, retirement, resignation, death, or disablement. EXCEPTION: 5-year condition does NOT apply if termination is due to DEATH or DISABLEMENT!",
+          "Calculation Formula & Daily Wage Rule (Sec. 4(2) & Digvijay Woollen Mills): For every completed year of service (or part thereof IN EXCESS OF 6 MONTHS, rounded up to next full year), employer pays 15 DAYS' WAGES based on last drawn wages -> Formula: (Last Drawn Basic + DA) x (15 / 26) x Number of Completed Years (for seasonal establishments: 7 days' wages per season; for piece-rated: 3-month average).",
+          "Statutory Ceiling & Better Terms Protection (Sec. 4(3) & 4(5)): Statutory maximum ceiling is Rs. 20,00,000 (notified under 2018 Amendment), UNLESS a better gratuity scheme, contract, or award grants higher terms (expressly saved by Section 4(5))."
+        ],
+        "caseLaws": [
+          {
+            "name": "Birla Institute of Technology v. State of Jharkhand",
+            "citation": "2019 4 SCC 513",
+            "principle": "Held that after the 2009 retrospective amendment to Section 2(e), teachers in schools, colleges, and universities are squarely entitled to gratuity under the Payment of Gratuity Act, 1972."
+          },
+          {
+            "name": "Digvijay Woollen Mills Ltd. v. Mahendra Prataprai Buch",
+            "citation": "AIR 1980 SC 1944",
+            "principle": "Affirmed dividing monthly wages by 26 working days (not 30) to compute 15 days' daily wage rate for gratuity calculation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Write the standard statutory formula for calculating Gratuity under Section 4(2) of the Payment of Gratuity Act, 1972, and state when the 5-year continuous service condition is waived.",
+            "a": "Gratuity = (Last Drawn Basic + DA) x (15 / 26) x Completed Years of Service (part > 6 months counts as 1 full year), up to Rs. 20 lakhs ceiling. The 5-year requirement is waived when termination is due to death or disablement."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u5-t4": {
+      "id": "lab2-u5-t4",
+      "subtitle": "Labour Law - II - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 4(6) of the Payment of Gratuity Act, 1972, an employer may forfeit gratuity PARTIALLY (to the extent of actual financial damage/loss caused by wilful omission/negligence) OR WHOLLY (only if terminated for riotous/violent conduct or an offence involving moral turpitude committed in the course of employment - Union Bank of India v. C.G. Ajay Babu). Employees completing 1 year must nominate family members (Sec. 6), payment is due within 30 days with interest on delay (Sec. 7), and gratuity is strictly immune from court attachment (Sec. 13).",
+        "legalProvision": "Sections 4(6), 6, 7, 8, & 13, Payment of Gratuity Act, 1972",
+        "meaning": "Because gratuity is earned property of a retiring employee (not a bounty), courts strictly prohibit wholesale forfeiture unless the exact statutory preconditions of Section 4(6) and Natural Justice are satisfied.",
+        "keyPoints": [
+          "Forfeiture of Gratuity (Sec. 4(6) - Partial vs Wholly): (a) PARTIAL FORFEITURE (Sec. 4(6)(a)) - where service is terminated for any act, wilful omission, or negligence causing damage/loss/destruction of employer's property, gratuity is forfeited ONLY TO THE EXTENT OF DAMAGE OR LOSS SO CAUSED (exact loss must be quantified after notice); (b) FULL / PARTIAL FORFEITURE (Sec. 4(6)(b)) - permitted ONLY if service is terminated for (i) riotous or disorderly conduct or any other act of violence, OR (ii) any act constituting an OFFENCE INVOLVING MORAL TURPITUDE committed in the course of employment (Union Bank of India v. C.G. Ajay Babu - moral turpitude forfeiture requires proof/conviction by a competent court, not mere departmental suspicion).",
+          "Nomination Rules (Sec. 6): Every employee completing 1 YEAR of service must file a written Nomination; if the employee has a 'Family' (spouse, children, dependent parents, widow/children of predeceased son), nomination MUST be made strictly in favour of one or more FAMILY members (nomination in favour of an outsider when family exists is VOID - Sec. 6(3); if family is acquired later, prior outsider nomination becomes invalid - Sec. 6(4)).",
+          "Determination, 30-Day Payment & Appeal (Secs. 7-8): Employer must determine and pay gratuity within 30 DAYS from the date it becomes payable (delay attracts simple interest notified by Central Govt - Sec. 7(3A)); disputes go to the Controlling Authority (Assistant Labour Commissioner), with 60-day appeal to Appellate Authority (requires pre-deposit of admitted/determined gratuity); unpaid gratuity is recovered as arrears of land revenue with 15% compound interest (Sec. 8).",
+          "Protection of Gratuity Against Attachment (Sec. 13): No gratuity payable under the Act (or in an exempted establishment) shall be liable to attachment in execution of ANY decree or order of any civil, revenue, or criminal court."
+        ],
+        "caseLaws": [
+          {
+            "name": "Union Bank of India v. C.G. Ajay Babu",
+            "citation": "2018 9 SCC 529",
+            "principle": "Held that forfeiture of gratuity under Section 4(6)(b)(ii) for an 'offence involving moral turpitude' is permissible ONLY if the misconduct actually constitutes a criminal offence proved/convicted by a court of law."
+          },
+          {
+            "name": "Jaswant Singh Gill v. Bharat Coking Coal Ltd.",
+            "citation": "2007 1 SCC 663",
+            "principle": "Held that statutory gratuity rights under Section 4(6) prevail over internal service conduct rules - an employer cannot withhold or forfeit gratuity outside the strict boundaries of Section 4(6)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between partial forfeiture under Section 4(6)(a) and full forfeiture under Section 4(6)(b) of the Payment of Gratuity Act, 1972, and state who can be nominated under Section 6 when the employee has a family.",
+            "a": "Sec. 4(6)(a) forfeits gratuity only to the extent of quantified financial loss caused by wilful negligence, whereas Sec. 4(6)(b) permits full forfeiture ONLY upon termination for violence/riotous conduct or a court-proved offence involving moral turpitude in the course of employment. Under Sec. 6, an employee with a family can nominate ONLY family members."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

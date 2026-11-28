@@ -1,0 +1,151 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-ii",
+      "title": "Labour Law - II",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper I",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Payment of Wages Act, 1936 & Minimum Wages Act, 1948 (Consolidated in Code on Wages, 2019)",
+          "topics": [
+            {"id": "lab2-u4-t1", "title": "1. Payment of Wages Act, 1936 - Object, Wage Ceiling, Responsibility & Time of Payment (Secs. 1-6)"},
+            {"id": "lab2-u4-t2", "title": "2. Permissible Deductions, Fines, Maximum Deduction Cap (Secs. 7-13) & Claims Authority / Appeal (Secs. 15-17)"},
+            {"id": "lab2-u4-t3", "title": "3. Minimum Wages Act, 1948 - Concept of Minimum, Fair & Living Wage, Fixation & Revision Procedure (Secs. 3-5)"},
+            {"id": "lab2-u4-t4", "title": "4. Advisory Boards (Secs. 7-9), Payment in Kind (Sec. 11), Overtime (Sec. 14) & Claims / Offences (Secs. 20-22)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab2-u4-t1": {
+      "id": "lab2-u4-t1",
+      "subtitle": "Labour Law - II - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Payment of Wages Act, 1936 (merged into the Code on Wages, 2019) ensures timely payment of earned wages without arbitrary cuts to employed persons earning up to Rs. 24,000/month (Code on Wages, 2019 removes the wage ceiling completely!). Wage periods cannot exceed 1 month (Sec. 4), and wages must be paid before the 7th day (< 1,000 workers) or 10th day (1,000+ workers) of the following month (Sec. 5).",
+        "legalProvision": "Sections 1-6, Payment of Wages Act, 1936; Sections 15-17, Code on Wages, 2019",
+        "meaning": "Timely, full wage payment in legal currency (or bank transfer/cheque) prevents employers from starving workers through delayed salaries or predatory truck-system vouchers.",
+        "keyPoints": [
+          "Scope & Wage Ceiling (Sec. 1): Applies to factories, railways, and notified industrial/other establishments for employees drawing up to Rs. 24,000/month (notified ceiling; Code on Wages, 2019 covers ALL employees irrespective of salary ceiling).",
+          "Responsibility & Wage Period (Secs. 3-4): Manager in factories, designated officer in railways, contractor/employer in other establishments; Wage Period CANNOT exceed 1 MONTH (Sec. 4).",
+          "Time & Mode of Payment (Secs. 5-6): Establishments with < 1,000 persons -> pay before expiry of 7TH DAY after wage period; 1,000+ persons -> pay before expiry of 10TH DAY; terminated/dismissed employee -> pay before expiry of 2ND WORKING DAY from termination (Sec. 5(2)). Paid in current coin/currency notes, cheque, or direct bank credit (Sec. 6)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Divisional Engineer, G.I.P. Railway v. Mahadeo Raghoo",
+            "citation": "AIR 1955 SC 295",
+            "principle": "Interpreted 'wages' under Section 2(vi) of the Payment of Wages Act: a conditional house rent allowance payable only when quarters are not allotted does not become an unconditional part of 'wages' once quarters are provided."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the maximum permissible wage period (Sec. 4) and the statutory deadlines for paying monthly wages and termination wages under Section 5 of the Payment of Wages Act, 1936.",
+            "a": "Max wage period is 1 month. Monthly wages must be paid by the 7th day (< 1,000 workers) or 10th day (1,000+ workers); terminated employees must be paid before the expiry of the 2nd working day."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u4-t2": {
+      "id": "lab2-u4-t2",
+      "subtitle": "Labour Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 7(1) prohibits ANY deduction from wages except those expressly authorized under Section 7(2) - including Fines (capped at 3% of wages, never on workers under 15, imposed only after show-cause notice and recovered within 90 days - Sec. 8), Absence from Duty (Sec. 9), Damage/Loss due to neglect (Sec. 10), Housing/Amenities (Sec. 11), Advances/Loans (Sec. 12), and Income Tax/PF/ESI. Total deductions in any wage period CANNOT exceed 75% (co-operative society payments) or 50% in any other case (Sec. 7(3)).",
+        "legalProvision": "Sections 7-13 & 15-17, Payment of Wages Act, 1936; Sections 18-24, Code on Wages, 2019",
+        "meaning": "Even if an employee signs a contract consenting to an unauthorized deduction, that contract is VOID under Section 23 of the Act.",
+        "keyPoints": [
+          "Authorized Deductions & Overall Ceiling (Sec. 7): (1) Fines (Sec. 8), (2) Absence from duty (Sec. 9 - proportionate to absence; Note: if 10+ employees act in concert without notice, up to 8 days' wages may be deducted per Sec. 9(2) Proviso), (3) Damage to or loss of goods expressly entrusted to employee or money accountable by him caused by neglect/default (Sec. 10 - only after show-cause opportunity), (4) House accommodation & State-approved amenities (Sec. 11), (5) Recovery of advances/overpayments/loans (Secs. 12-12A), and (6) Income tax, court attachment, PF, ESI, LIC, and Trade Union subscription with written authorization. Overall Cap (Sec. 7(3)): Max 75% of wages (where deductions include co-operative society payments) or 50% in all other cases.",
+          "Strict Rules on Fines (Sec. 8): Imposed ONLY for acts/omissions listed in an approved notice exhibited at workplace; NEVER on employees under 15 years; total fine in one wage period CANNOT exceed 3% of wages; NEVER recovered by instalments or after 90 DAYS from the offence; ALL fines must be credited to a separate welfare fund spent solely for employees' benefit.",
+          "Claims Authority & Appeal (Secs. 15-17): Employee, legal practitioner, union official, or Inspector may apply within 12 MONTHS to the Payment of Wages Authority (Labour Court / Presiding Officer), which may order refund of wrongful deduction + compensation up to 10 TIMES the deducted amount (or up to Rs. 3,000 for delayed wages). Appeal lies within 30 DAYS to District Court (by employer only if total directed sum >= Rs. 300 and certificate of deposit filed)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Payment of Wages Inspector v. Surajmal Mehta",
+            "citation": "AIR 1969 SC 590",
+            "principle": "Held that the Payment of Wages Authority under Section 15 has summary jurisdiction over wrongful deductions/delayed wages, whereas complex disputed entitlement to retrenchment/transfer compensation under Section 25FF ID Act lies outside Section 15."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the maximum fine limit, age exemption, and recovery time-limit under Section 8, and state the overall monthly wage deduction caps under Section 7(3).",
+            "a": "Fines cannot exceed 3% of wages, cannot be imposed on workers under 15, and cannot be recovered after 90 days. Total monthly deductions cannot exceed 75% (when co-operative society dues are included) or 50% in any other case."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u4-t3": {
+      "id": "lab2-u4-t3",
+      "subtitle": "Labour Law - II - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Enacted to prevent 'sweated labour', the Minimum Wages Act, 1948 (merged into the Code on Wages, 2019) compels the appropriate Government to fix and revise minimum rates of wages for Scheduled Employments (Part I industrial & Part II agricultural) within intervals not exceeding 5 years (Sec. 3), following either the Committee Method or Notification Method (Sec. 5) - regardless of the employer's financial capacity to pay (Unichoyi v. State of Kerala).",
+        "legalProvision": "Sections 3, 4, & 5, Minimum Wages Act, 1948; Sections 5-9, Code on Wages, 2019",
+        "meaning": "An employer who cannot pay even bare minimum subsistence wages has no right to carry on business (Crown Aluminium Works; Unichoyi) - Minimum Wage is an absolute floor, unlike Fair Wage and Living Wage which depend on industry capacity.",
+        "keyPoints": [
+          "Three-Tier Wage Concept (Fair Wages Committee Report, 1948 & Express Newspapers): (1) MINIMUM WAGE - bare subsistence plus efficiency preservation (food, shelter, clothing, basic education, medical & amenities; employer's financial inability is NO excuse!), (2) FAIR WAGE - sits above Minimum Wage and below Living Wage, determined by industry's capacity to pay, productivity, and prevailing regional wages, and (3) LIVING WAGE - highest constitutional goal (Art. 43) enabling frugal comfort, social insurance, and cultural/educational needs.",
+          "Fixation & Revision of Minimum Wages (Secs. 3-4): Appropriate Government fixes minimum time-rate, piece-rate, guaranteed time-rate, or overtime rate for Schedule employments (where 1,000+ employees work in the State) and MUST review/revise at intervals NOT EXCEEDING 5 YEARS (Sec. 3(1)(b)). Under Sec. 4, minimum wage consists of Basic Rate + Cost of Living / Variable Dearness Allowance (VDA) OR an all-inclusive rate.",
+          "Two Statutory Procedures for Fixation/Revision (Sec. 5): (1) COMMITTEE METHOD (Sec. 5(1)(a) - Government appoints tripartite Committees/Sub-committees to inquire and advise before fixing wages), OR (2) NOTIFICATION METHOD (Sec. 5(1)(b) - Government publishes draft proposals in Official Gazette giving at least 2 MONTHS for public representations, consults Advisory Board, and notifies final minimum wages taking effect 3 months after publication)."
+        ],
+        "caseLaws": [
+          {
+            "name": "U. Unichoyi v. State of Kerala",
+            "citation": "AIR 1962 SC 12",
+            "principle": "5-judge Constitution Bench upheld the Minimum Wages Act, holding that an employer's financial capacity to pay is completely irrelevant when fixing statutory Minimum Wages."
+          },
+          {
+            "name": "Express Newspaper (P) Ltd. v. Union of India",
+            "citation": "AIR 1958 SC 578",
+            "principle": "Authoritatively defined and distinguished Minimum Wage, Fair Wage, and Living Wage, holding that capacity to pay is essential for Fair/Living Wages but irrelevant for Minimum Wages."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Minimum Wage, Fair Wage, and Living Wage regarding the employer's 'capacity to pay', and state the two procedures for fixing minimum wages under Section 5.",
+            "a": "Minimum Wage is an absolute floor payable regardless of employer's financial capacity, whereas Fair Wage and Living Wage depend on industry's capacity to pay. Section 5 provides (1) the Committee Method and (2) the Notification Method (2-month Gazette consultation)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u4-t4": {
+      "id": "lab2-u4-t4",
+      "subtitle": "Labour Law - II - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 7-9 of the Minimum Wages Act, 1948 establish tripartite Advisory Boards and a Central Advisory Board (equal employer/employee representatives + max 1/3rd independent members) to coordinate wage fixation. Wages must be paid in CASH unless customary kind payment is authorized (Sec. 11), overtime carries double wages (Sec. 14), contracting out is void (Sec. 25), and Claims Authorities award up to 10x compensation on underpayment (Sec. 20).",
+        "legalProvision": "Sections 7-9, 11-14, 20, 22, & 25, Minimum Wages Act, 1948",
+        "meaning": "Even if desperate workers sign an agreement accepting less than notified minimum wages, Section 25 declares the contract void ab initio and Section 20 empowers recovery of the full shortfall plus statutory compensation.",
+        "keyPoints": [
+          "Advisory Boards & Composition (Secs. 7-9): Appropriate Government appoints an Advisory Board (Sec. 7) to coordinate committees and advise on fixing/revising minimum wages; Central Government appoints a Central Advisory Board (Sec. 8). Under Sec. 9, every Committee/Board consists of equal representatives of employers and employees in scheduled employments + independent persons NOT EXCEEDING ONE-THIRD (1/3rd) of total members (one independent member acts as Chairman).",
+          "Payment in Kind (Sec. 11), Normal Working Day (Sec. 13) & Overtime (Sec. 14): Minimum wages must be paid in CASH, except where custom of paying wholly/partly in kind (e.g., food grains in agriculture) is authorized by appropriate Government notification (Sec. 11). Normal adult working day is 9 hours with weekly rest day (Sec. 13); work beyond normal hours carries OVERTIME at 2x ordinary rate (Sec. 14). Full day's wage payable even if worked less than normal day due to employer's inability to supply work (Sec. 15).",
+          "Claims Authority (Sec. 20), Penalties (Sec. 22) & Bar on Contracting Out (Sec. 25): Application within 6 MONTHS to Claims Authority (Labour Commissioner / Labour Court) -> orders payment of wage difference + compensation up to 10 TIMES the shortfall (Rs. 10 max if other non-compliance). Paying less than minimum wage carries imprisonment up to 6 MONTHS and/or Rs. 500 fine (Sec. 22). Any contract relinquishing minimum wage rights is VOID (Sec. 25)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Sanjit Roy v. State of Rajasthan",
+            "citation": "AIR 1983 SC 328",
+            "principle": "Struck down a Rajasthan Famine Relief exemption paying workers below statutory minimum wages as violative of Article 23 (forced labour) and Minimum Wages principles."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the maximum proportion of independent members on an Advisory Board under Section 9 of the Minimum Wages Act, and what is the maximum compensation a Claims Authority can award for underpayment under Section 20?",
+            "a": "Independent members cannot exceed 1/3rd of total Board members. Under Section 20(3), the Claims Authority can award up to 10 times the unpaid minimum wage difference as compensation."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "subjects": [
+    {
+      "id": "family-law-ii",
+      "title": "Family Law - II (Muslim Law & Other Personal Laws)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Origin, Sources, Schools, Application, Conversion, Marriage & Dower (Mahr)",
+          "topics": [
+            {"id": "fl2-u1-t1", "title": "1. Origin and Development of Muslim Law"},
+            {"id": "fl2-u1-t2", "title": "2. Sources of Muslim Law (Primary & Secondary Sources)"},
+            {"id": "fl2-u1-t3", "title": "3. Schools of Muslim Law - Sunni, Sub-Schools & Shia Differences"},
+            {"id": "fl2-u1-t4", "title": "4. Operation and Application of Muslim Law (Shariat Act, 1937)"},
+            {"id": "fl2-u1-t5", "title": "5. Conversion to Islam and Legal Effects of Conversion"},
+            {"id": "fl2-u1-t6", "title": "6. Muslim Marriage (Nikah) - Nature & Essential Requirements"},
+            {"id": "fl2-u1-t7", "title": "7. Kinds of Marriages - Valid (Sahih), Irregular (Fasid), Void (Batil) & Muta Marriage"},
+            {"id": "fl2-u1-t8", "title": "8. Dower (Mahr) - Origin, Nature, Object, Classification & Widow's Right of Retention"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "fl2-u1-t1": {
+      "id": "fl2-u1-t1",
+      "subtitle": "Family Law - II - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Muslim Law (Shariat) originated in 7th-century Arabia through divine revelations to Prophet Muhammad (PBUH), reforming pre-Islamic tribal customs (Jahiliyyah) by elevating the status of women, restricting unlimited polygamy, recognizing female inheritance, and establishing contractual marriage.",
+        "legalProvision": "Islamic Jurisprudence (Fiqh & Shariat); Muslim Personal Law (Shariat) Application Act, 1937",
+        "meaning": "The word 'Islam' means submission to the will of God, and 'Shariat' means the right path. Historically, Muslim Law evolved across five distinct periods: the Prophet's lifetime (610-632 CE), the Rightly Guided Caliphs, the era of the four great Sunni Imams, judicial development in British India (Anglo-Muhammadan Law), and modern Indian statutory reforms.",
+        "keyPoints": [
+          "Pre-Islamic Reforms (Ayyam-e-Jahiliyyah): Abolished female infanticide, capped unrestricted polygamy at four wives subject to equal treatment, gave women independent property and dower rights, and recognized daughters as Quranic heirs.",
+          "Period of Revelation (610-632 CE): Foundational period when the Quran was revealed and the Prophet's sayings/practices (Sunnah) established core legal principles.",
+          "Period of Juristic Compilation (7th-9th Century CE): Systematic compilation of Hadith and emergence of the four Sunni schools (Hanafi, Maliki, Shafi'i, Hanbali) and Shia schools through Ijtihad (independent reasoning).",
+          "Anglo-Muhammadan Law in India: British courts (Privy Council and High Courts) applied Muslim personal law in family matters alongside justice, equity, and good conscience, later codified selectively via the Shariat Act (1937), Dissolution of Muslim Marriages Act (1939), and Waqf Act."
+        ],
+        "caseLaws": [
+          {
+            "name": "Abdul Kadir v. Salima",
+            "citation": "1886 ILR 8 All 149",
+            "principle": "Justice Mahmood explained the historical and juristic foundation of Muslim personal law in India, establishing that Muslim marriage is a civil contract with fixed legal incidents."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How did early Islamic law reform the pre-Islamic Arabian social order regarding women?",
+            "a": "It abolished female infanticide, restricted unlimited polygamy, granted women independent property and Mahr (dower) rights, and made daughters fixed Quranic heirs."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u1-t2": {
+      "id": "fl2-u1-t2",
+      "subtitle": "Family Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Muslim Law rests on four Primary (Formal) Sources - Quran, Sunnah (Hadith), Ijma (consensus of jurists), and Qiyas (analogical deduction) - supplemented in modern India by four Secondary Sources: Custom (Urf), Judicial Decisions, Legislation, and Justice, Equity and Good Conscience.",
+        "legalProvision": "Classical Usul al-Fiqh; Section 2, Muslim Personal Law (Shariat) Application Act, 1937",
+        "meaning": "Primary sources are authoritative religious foundations arranged in strict hierarchy: courts first look to the Quran, then Sunnah, then Ijma, and finally Qiyas. Secondary sources adapt and apply these rules within India's constitutional and statutory framework.",
+        "keyPoints": [
+          "The Quran (Primary Source #1): Supreme, unalterable word of Allah revealed to the Prophet; contains about 200 legal verses governing marriage, dower, divorce, and inheritance.",
+          "Sunnah / Hadith (Primary Source #2): Traditions of the Prophet comprising Sunnat-ul-Qaul (sayings), Sunnat-ul-Fail (actions), and Sunnat-ul-Taqrir (tacit approvals).",
+          "Ijma (Primary Source #3): Unanimous consensus of qualified Muslim jurists (Mujtahids) on a point of law after the Prophet's death; fills gaps where Quran and Sunnah are silent.",
+          "Qiyas (Primary Source #4): Analogical deduction extending a known rule from Quran/Sunnah/Ijma to a new situation sharing the same effective cause (Illat); accepted by Sunnis, rejected by Ithna Ashari Shias (who rely on Aql/reason).",
+          "Secondary Sources in India: Legislation (Shariat Act 1937, DMMA 1939, 1986 Act, 2019 Act), Judicial Precedents (Article 141 Supreme Court rulings), Custom (Urf - restricted after 1937 Act), and Equity (Istihsan / Istislah)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Aga Mahomed Jaffer Bindanim v. Koolsom Bee Bee",
+            "citation": "1897 ILR 25 Cal 9 (PC)",
+            "principle": "Held that courts must not put their own construction on the Quran in opposition to the express rulings of authoritative classical commentators."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name the four primary sources of Muslim Law in order of authority and identify which one is rejected by Shia jurists.",
+            "a": "Quran, Sunnah (Hadith), Ijma, and Qiyas. Shia jurists reject Qiyas (analogical deduction) and instead rely on Aql (reason) and teachings of their Imams."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u1-t3": {
+      "id": "fl2-u1-t3",
+      "subtitle": "Family Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Following the Prophet's death, Muslim Law split over succession to leadership into two main schools - Sunni (majority, four sub-schools: Hanafi, Maliki, Shafi'i, Hanbali) and Shia (Imamate lineage: Ithna Ashari, Ismaili, Zaidi). In India, most Muslims follow the Hanafi school, and courts presume a Muslim is Sunni unless proved Shia.",
+        "legalProvision": "Personal Law Schools applied under Shariat Act, 1937",
+        "meaning": "While both Sunni and Shia schools share the Quran and fundamental Islamic tenets, they diverge on juristic methodology and practical family-law rules including Muta marriage, oral Talaq witnesses, minimum Mahr, Wills to heirs, and inheritance.",
+        "keyPoints": [
+          "Four Sunni Sub-Schools: (1) Hanafi (founded by Imam Abu Hanifa - most widespread in India, emphasizes Qiyas & Istihsan), (2) Maliki (Imam Malik - emphasizes Medina traditions & public interest/Istislah), (3) Shafi'i (Imam Shafi'i - balances Hadith & Ijma; prevalent in Kerala/coastal South India), and (4) Hanbali (Imam Ahmad bin Hanbal - strict adherence to Hadith).",
+          "Three Shia Sub-Schools: (1) Ithna Ashari / Twelvers (largest Shia group in India, recognizes Muta marriage), (2) Ismaili (Khojas and Bohras), and (3) Zaidi (closest to Sunni jurisprudence).",
+          "Key Sunni vs Shia Differences (Marriage & Divorce): Shias (Ithna Ashari) recognize temporary Muta marriage and require 2 witnesses for Talaq (never permitting Talaq under compulsion/intoxication), whereas Sunnis reject Muta marriage, require 2 witnesses for Nikah (not Talaq), and distinguish Valid, Irregular (Fasid), and Void marriages.",
+          "Key Sunni vs Shia Differences (Guardianship, Wills & Inheritance): Mother's Hizanat lasts up to age 7 (boy) and puberty (girl) in Hanafi law vs age 2 (boy) and 7 (girl) in Shia law; Sunni law forbids a Will to an heir without co-heirs' consent, whereas Shia law allows up to 1/3rd even to an heir; Sunni law favours agnatic residuaries, whereas Shia law treats cognate and agnate heirs equally in Class I."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bafatun v. Bilaiti Khanum",
+            "citation": "1903 ILR 30 Cal 683",
+            "principle": "Held that in India there is a rebuttable presumption that a Muslim belongs to the Sunni (Hanafi) school unless proved to be a Shia; an adult Muslim may also change schools."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three practical legal differences between Sunni (Hanafi) and Shia (Ithna Ashari) law.",
+            "a": "(1) Shia law recognizes temporary Muta marriage while Sunni law does not; (2) Shia law requires 2 witnesses for Talaq while Sunni law requires 2 witnesses for Nikah; (3) Shia law permits bequeathing up to 1/3rd by Will to an heir without co-heirs' consent, unlike Sunni law."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u1-t4": {
+      "id": "fl2-u1-t4",
+      "subtitle": "Family Law - II - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Muslim Personal Law (Shariat) Application Act, 1937 mandates that wherever both parties are Muslims, Muslim Personal Law (Shariat) - NOT local custom - shall govern marriage, dissolution, maintenance, dower, guardianship, gifts, trusts, Waqf, and intestate succession (excluding agricultural land).",
+        "legalProvision": "Sections 2, 3, & 4, Muslim Personal Law (Shariat) Application Act, 1937",
+        "meaning": "Before 1937, communities such as Khojas, Cutchi Memons, and Punjabi Muslims followed customary rules that often deprived women of inheritance. The 1937 Act restored uniform Quranic rights across India while preserving secular statutory laws like the Special Marriage Act and IPC/BNS.",
+        "keyPoints": [
+          "Who is a Muslim?: Any person who professes Islam - either by birth (if both or either parent is Muslim and child is raised Muslim) or by bona fide conversion professing belief in one God (Allah) and Prophet Muhammad as His messenger.",
+          "Mandatory Scope (Section 2, 1937 Act): Applies Muslim Personal Law compulsorily to intestate succession (except agricultural land), special property of females, marriage, all forms of divorce, maintenance, dower, guardianship, gifts, trusts, and Waqf - overriding contrary customs.",
+          "Optional Declaration (Section 3, 1937 Act): A resident Indian Muslim may file a formal declaration before a prescribed authority to be governed by Shariat even in Adoption, Wills, and Legacies.",
+          "Exclusions from Muslim Personal Law: Criminal law (IPC/BNS), Contract Act, Transfer of Property Act (except gifts/Section 129), Evidence Act, and agricultural land succession (unless amended by State law, as in Tamil Nadu, Kerala, and Andhra Pradesh)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Narantakath Avullah v. Parakkal Mammu",
+            "citation": "AIR 1923 Mad 171",
+            "principle": "Held that belief in the unity of God and the prophetic mission of Muhammad is the essential legal test for determining who is a Muslim, regardless of sectarian differences."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What subjects are mandatorily governed by Section 2 of the Shariat Act, 1937, and what three matters require an optional declaration under Section 3?",
+            "a": "Section 2 mandates Shariat for marriage, divorce, maintenance, dower, guardianship, gifts, Waqf, and intestate succession (excluding agricultural land). Section 3 covers optional adoption, wills, and legacies."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u1-t5": {
+      "id": "fl2-u1-t5",
+      "subtitle": "Family Law - II - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Conversion to Islam must be bona fide and genuine; colourable conversion solely to contract a second marriage is void and punishable as bigamy (Sarla Mudgal). Under Section 4 of the Dissolution of Muslim Marriages Act, 1939, a Muslim wife's apostasy does NOT automatically dissolve her marriage (unlike a Muslim husband's apostasy).",
+        "legalProvision": "Section 4, Dissolution of Muslim Marriages Act, 1939; Caste Disabilities Removal Act, 1850; Section 494 IPC / Section 82 BNS, 2023",
+        "meaning": "Religious conversion affects personal law applicability, matrimonial status, and inheritance rights. Indian law protects genuine freedom of conscience under Article 25 while preventing fraudulent abuse of conversion to evade monogamy or maintenance.",
+        "keyPoints": [
+          "Modes of Conversion to Islam: Either by formal public declaration of the Kalima (faith in one God and Prophet Muhammad) or by a ceremony at a mosque before an Imam; the conversion must be bona fide, not a sham.",
+          "Conversion of Non-Muslim Husband to Islam: Does NOT automatically dissolve a prior Hindu/Christian marriage; contracting a second marriage without legally divorcing the first wife is void and constitutes Bigamy under Section 494 IPC / Section 82 BNS (Sarla Mudgal; Lily Thomas).",
+          "Apostasy (Renunciation of Islam) by Muslim Husband: Immediately dissolves the marriage ipso facto under classical Muslim law; wife is entitled to unpaid Mahr and maintenance during Iddat.",
+          "Apostasy by Muslim Wife (Section 4, DMMA 1939): Does NOT automatically dissolve a Muslim marriage (unless she was a convert to Islam re-embracing her former faith), though she may still sue for divorce on statutory Section 2 grounds.",
+          "Effect on Inheritance (Caste Disabilities Removal Act, 1850): Protects the convert/apostate himself from forfeiting existing property or inheritance rights from non-Muslim relatives, though his descendants are governed by the new personal law."
+        ],
+        "caseLaws": [
+          {
+            "name": "Lily Thomas v. Union of India",
+            "citation": "AIR 2000 SC 1650",
+            "principle": "Reaffirmed Sarla Mudgal, holding that a Hindu husband's conversion to Islam does not dissolve his first marriage and a second marriage during its subsistence is void and punishable for bigamy."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How does apostasy by a Muslim husband differ in legal effect from apostasy by a Muslim wife under Section 4 of the DMMA, 1939?",
+            "a": "Apostasy by a Muslim husband immediately dissolves the marriage, whereas apostasy by a Muslim wife does NOT automatically dissolve the marriage under Section 4 of the 1939 Act (unless she was a convert returning to her original religion)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u1-t6": {
+      "id": "fl2-u1-t6",
+      "subtitle": "Family Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Muslim marriage (Nikah) is legally a civil contract (with religious sanctity) whose objects are legalization of sexual relations and procreation/legitimization of children. A valid Nikah requires Proposal (Ijab), Acceptance (Qubul) in the same sitting, free consent of competent parties, witnesses (under Sunni law), and absence of prohibited relationships.",
+        "legalProvision": "Classical Muslim Law of Nikah; Prohibition of Child Marriage Act, 2006",
+        "meaning": "Unlike Hindu marriage (traditionally a sacrament), Nikah requires no priest or elaborate religious rites; it is concluded by clear offer and acceptance, commonly recorded in a written Nikahnama, and governed by contractual principles plus Quranic status rights.",
+        "keyPoints": [
+          "Nature of Nikah: Justice Mahmood (Abdul Kadir v. Salima) defined it as a civil contract (enforceable offer, acceptance, consideration/Mahr, and conditional terms), though Sir Shah Sulaiman (Anis Begum) noted it is also a sacred religious covenant (Ibadat).",
+          "Proposal (Ijab) & Acceptance (Qubul): Must be expressed clearly in the same meeting (Majlis) by the parties or their authorized agents (Wakils), with free consent free from coercion or fraud.",
+          "Competency of Parties: Must be of sound mind and have attained puberty (presumed at 15 under classical Muslim law; note that the Prohibition of Child Marriage Act, 2006 applies secularly across India prescribing 18 for females and 21 for males); a minor married by a guardian has the 'Option of Puberty' (Khyar-ul-Bulugh) to repudiate the marriage.",
+          "Witnesses: Sunni law requires 2 adult Muslim male witnesses (or 1 male + 2 female witnesses) present at Nikah (absence makes marriage irregular/Fasid, not void); Shia law requires NO witnesses for Nikah.",
+          "Absolute Prohibitions (Haram): Bars marriage based on Consanguinity (blood relations like mother, sister, niece), Affinity (in-laws like mother-in-law, daughter-in-law), and Fosterage (Raza'a - milk relationship)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Anis Begum v. Muhammad Istafa Wali Khan",
+            "citation": "AIR 1933 All 634",
+            "principle": "Chief Justice Sulaiman observed that Muslim marriage is not purely a civil contract but also has aspects of a religious sacrament and social institution."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the three permanent prohibitions (Haram) in a Muslim marriage, and how do Sunni and Shia laws differ on witnesses at Nikah?",
+            "a": "Consanguinity (blood), Affinity (marriage relations), and Fosterage (milk kinship). Sunni law requires 2 male (or 1 male + 2 female) witnesses at Nikah, whereas Shia law requires no witnesses at Nikah."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u1-t7": {
+      "id": "fl2-u1-t7",
+      "subtitle": "Family Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sunni law classifies marriages into Valid (Sahih), Irregular (Fasid - curable temporary impediments), and Void (Batil - permanent illegal prohibitions), whereas Shia law recognizes ONLY Valid and Void marriages (plus temporary Muta marriage for a fixed term and fixed dower).",
+        "legalProvision": "Sunni Threefold Classification & Shia Law of Nikah / Muta",
+        "meaning": "Distinguishing Fasid from Batil marriages is crucial in exams because children born of an Irregular (Fasid) marriage are legitimate and the irregularity can be cured, whereas a Void (Batil) marriage creates no legal rights or status from inception.",
+        "keyPoints": [
+          "Valid Marriage (Sahih): Complies with all legal conditions; confers mutual conjugal rights, legitimacy of children, right to Mahr and maintenance, mutual inheritance, and obligation of Iddat on dissolution.",
+          "Irregular Marriage (Fasid - Sunni Law Only): Suffers from a temporary, curable defect - (1) without witnesses, (2) 5th wife during subsistence of 4 wives, (3) during woman's Iddat, (4) unlawful conjunction (marrying two sisters simultaneously), or (5) Sunni male marrying an idolatress/fire-worshipper (Kitabia - Christian/Jew - is valid). Before consummation it has no effect; after consummation children are LEGITIMATE and wife gets specified/proper dower and observes Iddat, though NO mutual inheritance arises.",
+          "Void Marriage (Batil): Violates permanent absolute prohibitions (Consanguinity, Affinity, Fosterage, or marrying another man's wife); completely null ab initio, children are illegitimate (under classical law), and no rights or duties arise.",
+          "Shia Rule: Rejects the 'Irregular' category - every marriage that is Fasid under Sunni law (except lack of witnesses, which is valid in Shia law) is Void (Batil) under Shia law.",
+          "Muta Marriage (Ithna Ashari Shia Law): Temporary marriage for a strictly fixed period (day, month, year) and fixed dower; ends automatically on expiry without Talaq; children are legitimate and inherit from both parents, though spouses have no mutual inheritance unless stipulated."
+        ],
+        "caseLaws": [
+          {
+            "name": "Chand Patel v. Bismillah Begum",
+            "citation": "2008 4 SCC 774",
+            "principle": "Held that under Hanafi law, marrying a wife's sister during subsistence of the first marriage (unlawful conjunction) is Irregular (Fasid), not Void (Batil), so the wife and child remain entitled to maintenance under Section 125 CrPC."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List four examples of an Irregular (Fasid) marriage under Sunni law and state whether children born of a Fasid marriage are legitimate.",
+            "a": "Marriage without witnesses, a 5th wife, marriage during Iddat, unlawful conjunction (two sisters), or marrying a fire-worshipper/idolatress. Yes - children born of a consummated Fasid marriage are legitimate."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "fl2-u1-t8": {
+      "id": "fl2-u1-t8",
+      "subtitle": "Family Law - II - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Dower (Mahr) is a mandatory sum of money or property that a Muslim husband owes his wife as a mark of respect and financial security upon marriage - NOT a bride-price. It is classified into Specified (Prompt & Deferred) and Proper (Customary) Dower, backed by the Widow's Right of Retention over her deceased husband's property.",
+        "legalProvision": "Classical Muslim Law of Mahr; Section 5, Oudh Laws Act; Section 3, Muslim Women (Protection of Rights on Divorce) Act, 1986",
+        "meaning": "Mahr serves two core purposes: imposing a financial obligation on the husband as a mark of honour to the wife, and acting as a deterrent against arbitrary divorce while giving the wife independent economic support.",
+        "keyPoints": [
+          "Nature & Object of Mahr: An indispensable legal incident of every Muslim marriage (payable even if not mentioned in the Nikahnama); it is an unsecured debt recoverable from the husband or his estate (not 'consideration' in the commercial sale sense).",
+          "Specified Dower (Mahr-ul-Musamma): Fixed by mutual agreement before, at, or after marriage (Hanafi minimum is 10 dirhams; Maliki minimum is 3 dirhams; Shia law has no fixed minimum and no upper maximum).",
+          "Prompt (Mu'ajjal) vs Deferred (Mu'wajjal) Dower: Prompt dower is payable immediately on demand (wife may refuse cohabitation until paid if marriage is unconsummated); Deferred dower is payable on dissolution by death or divorce. If the Nikahnama is silent, Shia law presumes the entire dower is Prompt, whereas Sunni law treats a reasonable portion as Prompt and the rest as Deferred.",
+          "Proper / Customary Dower (Mahr-ul-Misl): Fixed by the court when no dower was agreed, based on the wife's personal qualifications and the dower customarily paid to female members of her paternal family.",
+          "Widow's Right of Retention: If a widow lawfully and peacefully obtains possession of her deceased husband's property in lieu of unpaid Mahr (without force or fraud), she may retain possession until her Mahr debt is paid (Maina Bibi v. Chaudhri Vakil Ahmad); she cannot alienate the property, and the right is heritable."
+        ],
+        "caseLaws": [
+          {
+            "name": "Maina Bibi v. Chaudhri Vakil Ahmad",
+            "citation": "1925 52 IA 145 (PC)",
+            "principle": "Defined the Widow's Right of Retention for unpaid dower: it is a peaceful possessory right (not ownership or mortgage), so the widow cannot gift or sell the property, though she may hold it until paid."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Prompt Dower and Deferred Dower, and state the key legal condition for a Muslim widow's Right of Retention.",
+            "a": "Prompt dower is payable immediately upon demand, whereas Deferred dower is payable upon death or divorce. A widow can exercise the Right of Retention only if she obtained possession of her deceased husband's property lawfully and peacefully without force or fraud."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

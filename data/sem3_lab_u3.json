@@ -1,0 +1,126 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-i",
+      "title": "Labour Law - I",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Industrial Disputes Act, 1947 - Industry (Bangalore Water Supply), Workman & Industrial Dispute (Sec. 2A)",
+          "topics": [
+            {"id": "lab-u3-t1", "title": "1. Object, Scope & Definition of 'Industry' (Sec. 2(j) ID Act - Triple Test in Bangalore Water Supply & IR Code, 2020)"},
+            {"id": "lab-u3-t2", "title": "2. Definition of 'Workman' (Sec. 2(s) ID Act - Included Categories & Four Statutory Exclusions)"},
+            {"id": "lab-u3-t3", "title": "3. Definition of 'Industrial Dispute' (Sec. 2(k)), Individual Dispute vs Industrial Dispute & Section 2A"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab-u3-t1": {
+      "id": "lab-u3-t1",
+      "subtitle": "Labour Law - I - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Enacted to investigate and settle industrial disputes and maintain industrial peace, the Industrial Disputes Act, 1947 defines 'Industry' in Section 2(j). In Bangalore Water Supply & Sewerage Board v. A. Rajappa (1978), a 7-judge Constitution Bench laid down the landmark 'Triple Test' bringing systematic activities organized by employer-employee cooperation for producing/distributing goods or services (including hospitals, universities, clubs, and municipalities, excluding sovereign functions) inside 'Industry'.",
+        "legalProvision": "Section 2(j), Industrial Disputes Act, 1947; Section 2(p), Industrial Relations Code, 2020",
+        "meaning": "Whether an establishment is an 'Industry' is the jurisdictional gateway to the entire ID Act: profit motive is completely irrelevant, and sovereign State functions alone stand excluded.",
+        "keyPoints": [
+          "Triple Test in Bangalore Water Supply (1978, 7-Judge Bench): Any activity is an 'Industry' under Sec. 2(j) where there is (1) SYSTEMATIC ACTIVITY, (2) organized by CO-OPERATION between employer and employee (direct and substantial element is commercial/service), and (3) for PRODUCTION AND/OR DISTRIBUTION OF GOODS AND SERVICES calculated to satisfy human wants and wishes (not merely spiritual/religious).",
+          "Dominant Nature Test & Inclusions: Profit motive or capital investment is IRRELEVANT (public-sector and charitable entities are covered if they pass the Triple Test). Covers hospitals (overruling Safdarjung Hospital), educational institutions/universities (overruling Delhi University - non-teaching staff covered), municipalities (D.N. Banerji), clubs, and research institutes.",
+          "Exclusions from 'Industry': (1) Purely SOVEREIGN FUNCTIONS of the State (defence, foreign affairs, justice, police, legislation - excluding welfare/commercial State departments), (2) Casual/domestic work, (3) Small/individual professional chambers without substantial organized staff, and (4) Purely spiritual/religious institutions (though charitable temples running commercial guesthouses/hospitals are covered).",
+          "Industrial Relations Code, 2020 (Sec. 2(p)): Codified the Bangalore Water Supply Triple Test directly into statutory text while expressly excluding charitable/philanthropic institutions, sovereign functions, and domestic services."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bangalore Water Supply & Sewerage Board v. A. Rajappa",
+            "citation": "AIR 1978 SC 548",
+            "principle": "7-judge Constitution Bench propounded the Triple Test and Dominant Nature Test for 'Industry' under Section 2(j), holding absence of profit motive irrelevant and excluding only sovereign functions."
+          },
+          {
+            "name": "State of Bombay v. Hospital Mazdoor Sabha",
+            "citation": "AIR 1960 SC 610",
+            "principle": "Held that government-run hospitals providing systematic medical services through employer-employee cooperation constitute an 'Industry' under Section 2(j) ID Act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three prongs of the 'Triple Test' laid down in Bangalore Water Supply (1978) to define 'Industry' under Section 2(j) ID Act, and state whether profit motive is necessary.",
+            "a": "(1) Systematic activity, (2) organized by cooperation between employer and employee, (3) for production/distribution of goods or services satisfying human wants. No - profit motive is completely irrelevant."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u3-t2": {
+      "id": "lab-u3-t2",
+      "subtitle": "Labour Law - I - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 2(s) of the Industrial Disputes Act, 1947 defines 'Workman' as any person (including an apprentice) employed in any industry to do manual, unskilled, skilled, technical, operational, clerical, or supervisory work for hire or reward - determined by DOMINANT SUBSTANTIAL NATURE OF DUTIES, not job designation (H.R. Adyanthaya) - subject to four express exclusions including managerial/administrative staff and supervisors earning above Rs. 10,000/month.",
+        "legalProvision": "Section 2(s), Industrial Disputes Act, 1947; Section 2(zr), Industrial Relations Code, 2020 (Rs. 18,000 supervisory ceiling)",
+        "meaning": "An employer cannot strip a clerk or technician of labour-court protection simply by giving him a fancy title like 'Assistant Manager' if his actual daily duties remain clerical or technical.",
+        "keyPoints": [
+          "Positive Coverage & Dominant Duties Test (Sec. 2(s) & H.R. Adyanthaya): Covers any person employed in an industry (under master-servant control/supervision - Dharangadhara Chemical Works) performing manual, unskilled, skilled, technical, operational, clerical, or supervisory work (including dismissed/discharged/retrenched workmen in connection with a dispute). Courts examine dominant primary duties, NOT title.",
+          "Four Express Statutory Exclusions (Sec. 2(s)(i)-(iv)): (1) Armed Forces / Police / Prison Service personnel (Air Force, Army, Navy Acts), (2) Employees employed mainly in a MANAGERIAL OR ADMINISTRATIVE capacity (power to bind company, sanction leave, discipline staff), (3) Employees employed in a SUPERVISORY capacity drawing wages EXCEEDING Rs. 10,000 per month under ID Act (raised to Rs. 18,000/month under IR Code, 2020), and (4) Teachers (A. Sundarambal v. Govt. of Goa - teaching is a noble mission, not skilled/technical/clerical work under Sec. 2(s)) and Medical/Sales Representatives (H.R. Adyanthaya - governed separately by Sales Promotion Employees Act, 1976).",
+          "Contract Labour & Control Test (Dharangadhara Chemical Works v. State of Saurashtra): Test distinguishing a 'workman' (contract of service) from an independent contractor (contract for services) is the employer's right of control and supervision over not just WHAT work is done, but HOW it is done."
+        ],
+        "caseLaws": [
+          {
+            "name": "H.R. Adyanthaya v. Sandoz (India) Ltd.",
+            "citation": "1994 5 SCC 737",
+            "principle": "5-judge Constitution Bench held that to qualify as a 'workman' under Section 2(s), a person must fall within one of the enumerated categories (manual, unskilled, skilled, technical, operational, clerical, or supervisory) - mere non-exclusion is insufficient."
+          },
+          {
+            "name": "A. Sundarambal v. Government of Goa, Daman & Diu",
+            "citation": "AIR 1988 SC 1700",
+            "principle": "Held that while a school/university is an 'industry', a school teacher is NOT a 'workman' under Section 2(s) ID Act because imparting education is neither manual, clerical, technical, nor skilled industrial work."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List the four categories excluded from 'Workman' under Section 2(s) ID Act, and explain why a school teacher is not a 'workman' even though a school is an 'industry'.",
+            "a": "Excluded: (1) Armed forces/police/prison staff, (2) Managerial/administrative staff, (3) Supervisors earning > Rs. 10,000/month (Rs. 18,000 under IR Code), and (4) Teachers/sales promotion reps outside enumerated categories. Per A. Sundarambal, teaching is a noble profession not fitting manual/clerical/technical/skilled work."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u3-t3": {
+      "id": "lab-u3-t3",
+      "subtitle": "Labour Law - I - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 2(k) ID Act defines an 'Industrial Dispute' as any dispute or difference between employers and employers, employers and workmen, or workmen and workmen connected with employment, non-employment, terms of employment, or conditions of labour. Originally, an individual worker's dispute became an industrial dispute ONLY if espoused by a Trade Union or substantial body of workmen (Workmen of Dimakuchi Tea Estate) - until Section 2A (1965 & 2010 Amendments) deemed individual dismissal/retrenchment/termination an industrial dispute automatically with direct Labour Court access.",
+        "legalProvision": "Sections 2(k) & 2A (Sub-sections 1-3), Industrial Disputes Act, 1947; Section 2(q), Industrial Relations Code, 2020",
+        "meaning": "Section 2A rescued dismissed workers who lacked union backing: any individual worker discharged, dismissed, retrenched, or otherwise terminated can approach the Labour Court directly after 45 days of conciliation.",
+        "keyPoints": [
+          "Three Ingredients of 'Industrial Dispute' (Sec. 2(k)): (1) Factum of a real and substantial dispute/difference (demand made on employer and rejected), (2) Parties - Employer vs Employer, Employer vs Workmen, or Workmen vs Workmen, and (3) Subject-Matter - connected with employment, non-employment, terms of employment, or conditions of labour of ANY person (Workmen of Dimakuchi Tea Estate - workmen must have a direct/substantial community of interest in the person on whose behalf they raise the dispute).",
+          "Individual Dispute vs Industrial Dispute (Pre-1965 Rule): Under Sec. 2(k) alone, an individual worker's grievance (e.g., transfer, promotion, increment) becomes a collective 'industrial dispute' ONLY if sponsored/espoused by a Trade Union or an appreciable number of fellow workmen (Central Provinces Transport Services; Bombay Union of Journalists).",
+          "Section 2A Exception (Individual Dismissal/Termination Deemed Industrial Dispute): Inserted in 1965; any dispute between an individual workman and his employer connected with DISCHARGE, DISMISSAL, RETRENCHMENT, or OTHER TERMINATION of service is DEEMED to be an industrial dispute even if NO union or fellow workman sponsors it. Under Section 2A(2)-(3) (inserted 2010), the workman may apply DIRECTLY to the Labour Court/Tribunal after 45 DAYS of applying to the Conciliation Officer, within 3 YEARS from the date of termination."
+        ],
+        "caseLaws": [
+          {
+            "name": "Workmen of Dimakuchi Tea Estate v. Management of Dimakuchi Tea Estate",
+            "citation": "AIR 1958 SC 353",
+            "principle": "Interpreted 'any person' in Section 2(k) ID Act: workmen can raise an industrial dispute regarding a non-workman (e.g., medical doctor) ONLY if they have a direct and substantial community of interest in his service conditions."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When does an individual worker's dispute qualify as an 'Industrial Dispute' without union support under Section 2A ID Act, and what is the limitation period to approach the Labour Court directly?",
+            "a": "Whenever the dispute relates to the individual workman's discharge, dismissal, retrenchment, or termination of service. Under Sec. 2A(2)-(3), the workman may apply directly to the Labour Court after 45 days of conciliation filing and within 3 years of termination."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-property",
+      "title": "Law of Property (TPA)",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Sale (Essentials, Mode & Rights/Liabilities), Mortgage (Kinds, Redemption, Foreclosure), Marshalling, Contribution & Charges",
+          "topics": [
+            {"id": "lop-u3-t1", "title": "1. Sale of Immovable Property - Definition, Essentials, Mode of Sale & Contract for Sale (Sec. 54 TPA)"},
+            {"id": "lop-u3-t2", "title": "2. Rights and Liabilities of Seller and Buyer Before and After Sale (Sec. 55 TPA)"},
+            {"id": "lop-u3-t3", "title": "3. Mortgage - Definition, Essentials, Registration & Six Kinds of Mortgages (Secs. 58-59 TPA)"},
+            {"id": "lop-u3-t4", "title": "4. Rights and Liabilities of Mortgagor - Right of Redemption & Clog on Redemption (Secs. 60-66 TPA)"},
+            {"id": "lop-u3-t5", "title": "5. Rights and Liabilities of Mortgagee - Foreclosure, Sale, Possession & Subrogation (Secs. 67-77 & 92 TPA)"},
+            {"id": "lop-u3-t6", "title": "6. Marshalling (Secs. 56 & 81), Contribution (Sec. 82) & Charges vs Mortgage (Sec. 100 TPA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lop-u3-t1": {
+      "id": "lop-u3-t1",
+      "subtitle": "Law of Property (TPA) - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 54 TPA defines 'Sale' as a transfer of ABSOLUTE OWNERSHIP in exchange for a price (money consideration) paid, promised, or part-paid and part-promised. For tangible immovable property worth Rs. 100 or more (and ALL intangible immovable property of any value), sale MUST be effected by a REGISTERED instrument; a mere 'Contract for Sale' creates NO title or charge on the property (Suraj Lamp & Industries).",
+        "legalProvision": "Section 54, Transfer of Property Act, 1882; Section 17, Registration Act, 1908",
+        "meaning": "Sale conveys the complete bundle of ownership permanently, distinguishing it from Exchange (goods/land for land), Gift (no consideration), Lease (transfer of enjoyment only), and Mortgage (transfer of security interest only).",
+        "keyPoints": [
+          "Four Essential Features of Sale (Sec. 54): (1) Competent Seller (owner/authorized) and Buyer (even a minor can buy), (2) Immovable Property in existence, (3) Transfer of ABSOLUTE OWNERSHIP (not limited right), and (4) PRICE in MONEY (paid immediately, promised in future, or partly paid/promised - non-monetary property makes it Exchange; zero consideration makes it Gift).",
+          "Mode of Making a Sale (Sec. 54): (a) Tangible immovable property of value Rs. 100 AND UPWARDS -> ONLY by a REGISTERED instrument; (b) Tangible immovable property of value LESS THAN Rs. 100 -> EITHER by registered instrument OR by simple delivery of possession; (c) Reversion or Intangible immovable property of ANY value -> ONLY by a REGISTERED instrument.",
+          "Sale vs Contract for Sale (Agreement to Sell): Sale immediately transfers ownership/right in rem and requires registration (>= Rs. 100); Contract for Sale is merely a promise to sell on agreed terms in future - creates ONLY a personal right in personam (specific performance) and creates NO interest or charge on the land itself.",
+          "Invalidity of GPA / SA / Will Sales (Suraj Lamp & Industries v. State of Haryana, 2011): Supreme Court declared that transferring immovable property via unregistered General Power of Attorney (GPA), Agreement to Sell (SA), and Will does NOT convey legal title - ONLY a registered Sale Deed transfers ownership under Section 54."
+        ],
+        "caseLaws": [
+          {
+            "name": "Suraj Lamp & Industries Pvt. Ltd. v. State of Haryana",
+            "citation": "2012 1 SCC 656",
+            "principle": "Held that immovable property can be legally and lawfully transferred ONLY by a registered deed of conveyance under Section 54 TPA; 'GPA sales' or Agreements to Sell confer zero ownership title."
+          },
+          {
+            "name": "Vidhyadhar v. Manikrao",
+            "citation": "1999 3 SCC 573",
+            "principle": "Held that actual payment of the entire price at registration is NOT a sine qua non for a completed sale - if parties intend ownership to pass upon registration, unpaid balance gives the seller a statutory charge (Sec. 55(4)(b)), not cancellation of sale."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Does a Contract for Sale create any ownership interest or charge on immovable property under Section 54 TPA, and when is registration compulsory for a sale?",
+            "a": "No - Section 54 expressly declares a Contract for Sale creates no interest or charge on the property. Registration is compulsory for tangible immovable property worth Rs. 100 or more, and for all intangible immovable property of any value."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u3-t2": {
+      "id": "lop-u3-t2",
+      "subtitle": "Law of Property (TPA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 55 TPA lays down an exhaustive statutory code of implied Rights and Liabilities of the Seller and Buyer (operating automatically unless excluded by express contract), neatly split into duties BEFORE completion of sale (disclosure, title inspection, care of property) and AFTER completion (possession, covenants for title, unpaid seller's charge, and buyer's charge for prepaid price).",
+        "legalProvision": "Section 55 (Sub-sections 1 to 6), Transfer of Property Act, 1882",
+        "meaning": "Section 55 balances Caveat Emptor ('buyer beware') with mandatory seller transparency on hidden (latent) defects, ensuring neither party suffers unfair ambush before or after registration.",
+        "keyPoints": [
+          "Seller's Liabilities BEFORE Sale (Sec. 55(1)(a)-(e)): (a) Disclose any MATERIAL LATENT DEFECT in property or title known to seller which buyer could not discover with ordinary care (non-disclosure is statutory fraud!), (b) Produce all title deeds for buyer's inspection, (c) Answer all relevant title questions truthfully, (d) Execute proper conveyance on tender of price, and (e) Take care of property/documents like an ordinary prudent owner and pay all public charges/rent/interest accrued up to sale date (Sec. 55(1)(g)).",
+          "Seller's Liabilities AFTER Sale (Sec. 55(1)(f) & Sec. 55(2)-(3)): Give possession to buyer (Sec. 55(1)(f)), statutory IMPLIED COVENANT FOR TITLE guaranteeing valid subsisting ownership/power to transfer (runs with the land - Sec. 55(2)), and deliver all title deeds once full price is paid (Sec. 55(3)).",
+          "Seller's Rights (Sec. 55(4)): Before sale -> entitled to all rents and profits of the property (Sec. 55(4)(a)); After sale -> UNPAID SELLER'S CHARGE on the property for any unpaid purchase-money + interest against the buyer and transferees with notice (Sec. 55(4)(b)).",
+          "Buyer's Liabilities (Sec. 55(5)): Before sale -> disclose any material fact known to buyer (not seller) that MATERIALLY INCREASES the value of the property (e.g., hidden gold mine - Sec. 55(5)(a)), and pay/tender price at completion (Sec. 55(5)(b)); After sale -> bear loss from accidental destruction/value drop (risk follows ownership - Sec. 55(5)(c)) and pay all subsequent public taxes/incumbrances (Sec. 55(5)(d)).",
+          "Buyer's Rights (Sec. 55(6)): After sale -> entitled to all improvements, value appreciation, and rents/profits (Sec. 55(6)(a)); Before sale -> BUYER'S STATUTORY CHARGE on the property for prepaid purchase-money/earnest money + interest if sale fails without buyer's default (Sec. 55(6)(b) - Videocon Properties)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Videocon Properties Ltd. v. Dr. Bhalchandra Laboratories",
+            "citation": "2004 3 SCC 711",
+            "principle": "Held that under Section 55(6)(b), a buyer who pays advance purchase money acquires an immediate statutory charge over the seller's interest in the property enforceable even against subsequent purchasers if the buyer did not improperly decline delivery."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Contrast the Seller's statutory charge under Section 55(4)(b) with the Buyer's statutory charge under Section 55(6)(b), and state what defect a seller must disclose under Section 55(1)(a).",
+            "a": "Sec. 55(4)(b) gives an unpaid seller a charge over sold property for unpaid price after title passes, whereas Sec. 55(6)(b) gives a buyer a charge for prepaid purchase money if the sale falls through without buyer's fault. Under Sec. 55(1)(a), a seller must disclose material LATENT defects (not obvious patent defects)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u3-t3": {
+      "id": "lop-u3-t3",
+      "subtitle": "Law of Property (TPA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 58(a) TPA defines a Mortgage as the transfer of an INTEREST in specific immovable property for the purpose of securing payment of money advanced/to be advanced, an existing/future debt, or performance of a pecuniary engagement. Section 58 classifies six statutory kinds of mortgages - Simple, Conditional Sale, Usufructuary, English, Equitable (Deposit of Title Deeds), and Anomalous - requiring registration if principal >= Rs. 100 (except Equitable Mortgage under Sec. 59).",
+        "legalProvision": "Sections 58 & 59, Transfer of Property Act, 1882",
+        "meaning": "Unlike Sale (which transfers ALL ownership permanently), Mortgage transfers only a limited security interest so the borrower retains ownership and recovers the property free upon repayment.",
+        "keyPoints": [
+          "Six Kinds of Mortgages (Sec. 58(b)-(g) TPA): (1) SIMPLE MORTGAGE (Sec. 58(b)): No delivery of possession; mortgagor binds himself PERSONALLY to pay and agrees mortgagee may get property sold via court decree (no foreclosure); (2) MORTGAGE BY CONDITIONAL SALE (Sec. 58(c)): Ostensible sale on condition that sale becomes absolute on default, or void/re-transferred on payment - CRUCIAL PROVISO: condition MUST be embodied in the SAME document (Chunchun Jha v. Ebadat Ali); remedy is Foreclosure.",
+          "(3) USUFRUCTUARY MORTGAGE (Sec. 58(d)): Possession IS delivered to mortgagee, who collects rents/profits in lieu of interest/principal until paid; NO personal liability of mortgagor; NO foreclosure or sale right; (4) ENGLISH MORTGAGE (Sec. 58(e)): Fixed repayment date, personal liability to pay, ABSOLUTE transfer of property to mortgagee subject to re-transfer upon repayment; remedy is Sale (including private sale under Sec. 69 in notified areas).",
+          "(5) MORTGAGE BY DEPOSIT OF TITLE DEEDS / EQUITABLE MORTGAGE (Sec. 58(f)): Borrower delivers original title deeds to creditor/bank in notified towns (Calcutta, Madras, Bombay, Hyderabad & notified cities) with intent to create security - NO written deed, stamp duty, or registration required (fast commercial bank loans!); (6) ANOMALOUS MORTGAGE (Sec. 58(g)): Any hybrid/customary mortgage not fitting the first five (e.g., Simple + Usufructuary); governed by deed terms.",
+          "Formalities & Registration (Sec. 59 TPA): Except Mortgage by Deposit of Title Deeds (Sec. 58(f)), any mortgage securing Rs. 100 or more MUST be effected by a REGISTERED instrument signed by the mortgagor and attested by at least TWO witnesses."
+        ],
+        "caseLaws": [
+          {
+            "name": "Chunchun Jha v. Ebadat Ali",
+            "citation": "AIR 1954 SC 345",
+            "principle": "Laid down the test distinguishing Mortgage by Conditional Sale from Sale with Condition of Repurchase: if the repurchase condition is in a separate deed it can NEVER be a mortgage under Section 58(c) Proviso; if in the same deed, courts look to debt relationship and price inadequacy."
+          },
+          {
+            "name": "United Bank of India Ltd. v. Lekharam Sonaram & Co.",
+            "citation": "AIR 1965 SC 1591",
+            "principle": "Clarified Equitable Mortgage (Sec. 58(f)): requires a debt, deposit of title deeds in a notified town, and intent to create security; a memorandum merely recording a past deposit requires no registration."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name all six kinds of Mortgages under Section 58 TPA, and state which single mortgage does NOT require registration even when principal exceeds Rs. 100.",
+            "a": "Simple, Conditional Sale, Usufructuary, English, Deposit of Title Deeds (Equitable), and Anomalous mortgages. Mortgage by Deposit of Title Deeds (Sec. 58(f)) is exempted from registration under Section 59 TPA."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u3-t4": {
+      "id": "lop-u3-t4",
+      "subtitle": "Law of Property (TPA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 60 TPA guarantees the mortgagor's most sacred statutory right - the Right of Redemption (recovering mortgaged property free of encumbrance upon paying/tendering the debt after it falls due). Under the equitable maxim 'Once a mortgage, always a mortgage', ANY condition obstructing or postponing redemption unfairly is void as a 'Clog on Redemption', alongside statutory rights of inspection, accession, and leasing (Secs. 60A-66).",
+        "legalProvision": "Sections 60 to 66, Transfer of Property Act, 1882; Article 61, Limitation Act, 1963 (30 years for redemption)",
+        "meaning": "Because borrowers in financial distress often sign harsh loan clauses under pressure, courts zealously strike down unconscionable 'clogs' that try to turn a security mortgage into permanent ownership for the lender.",
+        "keyPoints": [
+          "Right of Redemption (Sec. 60 TPA): After principal becomes due, mortgagor has the absolute statutory right upon payment/tender to demand (a) return of mortgage deed & title deeds, (b) delivery of possession, and (c) written/registered acknowledgment/re-transfer. Extinguished ONLY by act of parties (separate subsequent sale) or final court decree of foreclosure/sale. Note: Partial redemption is barred unless mortgagee acquires part-share of mortgagor's interest.",
+          "Doctrine of Clog on Redemption ('Once a Mortgage, Always a Mortgage'): Any clause inside the mortgage deed destroying or unfairly fettering redemption is VOID - e.g., 'if unpaid on due date, mortgage automatically becomes permanent sale', permanent collateral advantage surviving redemption (Noakes v. Rice), or oppressive long-term postponement (note: long term like 85-99 years is NOT automatically a clog unless paired with unconscionable/unfair advantage - Ganga Dhar v. Shankar Lal & Seth Ganga Dhar).",
+          "Other Rights of Mortgagor (Secs. 60A-65A): Transfer mortgage to a third party instead of re-transfer (Sec. 60A), inspect/copy title deeds held by mortgagee (Sec. 60B), redeem one mortgage separately without being forced to redeem others (Sec. 61 - abolishes consolidation), Usufructuary mortgagor's right to recover possession (Sec. 62; 30-year limitation runs only AFTER payment or expiry of fixed term - Singh Ram v. Sheo Ram, 2014), Accession/improvements rules (Secs. 63-64), and Mortgagor's power to grant ordinary leases while in possession (Sec. 65A).",
+          "Implied Contracts & Liabilities of Mortgagor (Secs. 65-66): Covenant for title, duty to defend title, pay public charges/taxes while in possession, pay prior lease rent/prior mortgage interest, and duty NOT to commit destructive 'Waste' impairing security value below 1/3rd margin (1/2 for buildings - Sec. 66)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ganga Dhar v. Shankar Lal",
+            "citation": "AIR 1958 SC 770",
+            "principle": "Held that Section 60 codifies 'once a mortgage, always a mortgage'; a clause making a mortgage irredeemable or converting it into sale on default is void as a clog, though a long 85-year term alone is not a clog absent oppressive/unfair bargaining."
+          },
+          {
+            "name": "Singh Ram v. Sheo Ram",
+            "citation": "2014 9 SCC 185",
+            "principle": "3-judge Bench overruled prior conflicting rulings and held that in a Usufructuary Mortgage with no fixed period, there is NO limitation bar until the mortgage money is paid - reinforcing 'once a mortgage, always a mortgage'."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the maxim 'Once a mortgage, always a mortgage' and give two examples of a void 'Clog on Redemption' under Section 60 TPA.",
+            "a": "It means a mortgage must remain redeemable as security and cannot be converted into an irredeemable transfer by terms in the mortgage deed. Examples of clogs: a clause turning mortgage into absolute sale on default, or a harsh collateral trade tie continuing even after repayment."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u3-t5": {
+      "id": "lop-u3-t5",
+      "subtitle": "Law of Property (TPA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Corresponding to the mortgagor's right to redeem, Sections 67-77 TPA grant the mortgagee statutory remedies to recover the debt - Foreclosure (Conditional Sale & specific Anomalous mortgages), Judicial Sale (Simple, English, Equitable mortgages), Private Sale Without Court Intervention (Sec. 69), Suit for Mortgage Money (Sec. 68), Accession/Renewal Rights (Secs. 70-72), and Subrogation (Sec. 92) - balanced by strict accounting duties when in possession (Sec. 76).",
+        "legalProvision": "Sections 67-77 & 92, Transfer of Property Act, 1882; SARFAESI Act, 2002 (Sec. 13 Bank Enforcement)",
+        "meaning": "Because 'Redeem up, Foreclose down' governs mortgage remedies, Section 67 tailors the exact enforcement weapon (Foreclosure vs Sale) to the specific class of mortgage, while Section 76 holds a mortgagee-in-possession to strict fiduciary stewardship.",
+        "keyPoints": [
+          "Right to Foreclosure or Sale (Sec. 67 TPA): Available once mortgage money becomes due and before redemption decree. Foreclosure (permanently extinguishing mortgagor's right to redeem and making mortgagee absolute owner) applies ONLY to Mortgage by Conditional Sale and Anomalous Mortgages expressly providing it; Sale through court applies to Simple, English, and Equitable mortgages; Usufructuary mortgagee has NEITHER foreclosure nor sale right (recovers strictly from rents/profits).",
+          "Right to Sue Personally for Mortgage Money (Sec. 68): Allowed ONLY in 4 specific contingencies - (a) mortgagor personally bound himself to repay, (b) property wholly/partly destroyed without mortgagee's fault and mortgagor fails to give further security, (c) mortgagee deprived of security by mortgagor's wrongful act/default, or (d) mortgagor fails to deliver promised possession.",
+          "Power of Private Sale Without Court Intervention (Sec. 69 & SARFAESI Act): Narrowly allowed under TPA ONLY for (a) English mortgage between non-Hindus/Muslims/Buddhists, (b) Government mortgagee with express power, or (c) property in Calcutta, Madras, Bombay, or notified towns with express power - after 3 months' written notice or Rs. 500 interest arrears. (For Banks/NBFCs today, Section 13 of the SARFAESI Act, 2002 grants sweeping statutory out-of-court enforcement power).",
+          "Accessions, Preservation & Substituted Security (Secs. 70-73): Mortgagee gets benefit of natural/acquired accessions (Sec. 70), renewed lease (Sec. 71), reimbursement for necessary preservation/insurance expenses (Sec. 72), and claim over surplus proceeds/land acquisition compensation (Sec. 73). Under Section 92 (Doctrine of Subrogation), a co-mortgagor, surety, or subsequent mortgagee paying off a prior mortgage steps into the prior mortgagee's shoes.",
+          "Liabilities of Mortgagee in Possession (Sec. 76): Must manage property as a prudent owner, use best endeavours to collect full rents/profits, pay government revenue/taxes out of income, make necessary repairs, commit NO destructive waste, keep clear accurate accounts, and apply surplus receipts toward interest and principal (unless exempted by Sec. 77 fixed-appropriation contract)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mardia Chemicals Ltd. v. Union of India",
+            "citation": "2004 4 SCC 311",
+            "principle": "Upheld the constitutional validity of banks' out-of-court security enforcement under Section 13 of the SARFAESI Act, 2002 (expanding private sale remedies beyond Section 69 TPA) while striking down onerous 75% pre-deposit hurdles."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Which types of mortgagees can sue for Foreclosure vs Sale under Section 67 TPA, and what are the four grounds to sue personally for mortgage money under Section 68?",
+            "a": "Foreclosure applies ONLY to Conditional Sale and express Anomalous mortgages; Judicial Sale applies to Simple, English, and Equitable mortgages; Usufructuary mortgagee has neither. Sec. 68 personal suit lies on (1) personal covenant, (2) accidental destruction without fresh security, (3) wrongful deprivation by mortgagor, or (4) failure to deliver possession."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u3-t6": {
+      "id": "lop-u3-t6",
+      "subtitle": "Law of Property (TPA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Marshalling (Secs. 56 & 81 TPA) and Contribution (Sec. 82 TPA) are equitable rules adjusting competing securities when multiple properties secure one common debt - Marshalling protects a subsequent buyer/mortgagee by requiring the prior mortgagee to satisfy his debt first from unencumbered properties, while Contribution ensures multiple mortgaged properties bear the common debt proportionately to their values. Section 100 defines a 'Charge' - security over land WITHOUT transferring any proprietary interest.",
+        "legalProvision": "Sections 56, 81, 82, & 100, Transfer of Property Act, 1882",
+        "meaning": "Marshalling prevents a senior creditor from whimsically destroying a junior creditor's sole security when another asset is available, Contribution prevents unfair burden-shifting among co-mortgagors, and Charge gives courts/parties a lightweight security mechanism distinct from a formal Mortgage.",
+        "keyPoints": [
+          "Doctrine of Marshalling (Sec. 56 for Buyer & Sec. 81 for Subsequent Mortgagee): Where owner mortgages properties X and Y to A (prior mortgagee), and then sells (Sec. 56) or mortgages (Sec. 81) ONLY property Y to B, B can compel A to satisfy his debt FIRST out of property X so far as X extends - PROVIDED this does NOT prejudice A's rights or any third party who acquired an interest in X for consideration (and subject to no contract to the contrary).",
+          "Doctrine of Contribution (Sec. 82 TPA): Where multiple properties (belonging to separate owners OR a single owner later transferring them separately) are mortgaged to secure ONE common debt, each property must contribute RATEABLY (in proportion to its value at the date of mortgage, after deducting any prior encumbrances) toward discharging the debt. If one owner pays the entire debt to save his land, he can recover proportionate contribution from the other properties. Crucial Rule: Marshalling PREVAILS over Contribution whenever both conflict (Sec. 82 Proviso).",
+          "Charge (Sec. 100 TPA): Where immovable property is made security for payment of money to another (by ACT OF PARTIES or by OPERATION OF LAW - e.g., widow's maintenance decree, unpaid seller's charge Sec. 55(4)(b), buyer's charge Sec. 55(6)(b)) and the transaction does NOT amount to a mortgage, the holder has a 'Charge' enforced by court sale like a Simple Mortgage. Exception: A Charge CANNOT be enforced against a bona fide transferee for consideration WITHOUT NOTICE.",
+          "Mortgage vs Charge (Four Key Exam Distinctions): (1) Interest Transfer - Mortgage transfers a specific proprietary INTEREST in immovable property (Right in Rem), whereas Charge transfers NO interest (merely creates a security right to payment out of property); (2) Creation - Mortgage arises ONLY by act of parties, whereas Charge arises by act of parties OR operation of law; (3) Bona Fide Purchaser - Mortgage binds subsequent buyers even without notice, whereas Charge does NOT bind a bona fide buyer for value without notice (Sec. 100 Proviso); (4) Term & Formalities - Mortgage may be for a fixed term and needs 2 attesting witnesses, whereas Charge may be perpetual and needs no attestation (unless created by written deed >= Rs. 100 requiring registration)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Dattatreya Shanker Mote v. Anand Chintaman Datar",
+            "citation": "1974 2 SCC 799",
+            "principle": "3-judge Supreme Court Bench clarified Section 100 TPA: a Charge created by act of parties or operation of law creates a security right enforceable like a simple mortgage, but unlike a mortgage cannot bind a bona fide transferee for value without notice."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between a Mortgage and a Charge (Sec. 100 TPA) on three grounds, and state which doctrine prevails if Marshalling (Sec. 81) conflicts with Contribution (Sec. 82).",
+            "a": "(1) Mortgage transfers an interest in property, Charge transfers no interest; (2) Mortgage arises only by act of parties, Charge arises by act of parties OR operation of law; (3) Mortgage binds subsequent buyers without notice, whereas Charge does not bind a bona fide buyer for value without notice. Marshalling prevails over Contribution (Sec. 82)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

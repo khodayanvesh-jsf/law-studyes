@@ -1,0 +1,149 @@
+{
+  "subjects": [
+    {
+      "id": "intellectual-property-law",
+      "title": "Intellectual Property Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Meaning, Nature, Theories & Classification of IPR & International Conventions (Paris, Berne, WIPO & TRIPS Agreement)",
+          "topics": [
+            {"id": "ipr-u1-t1", "title": "1. Meaning, Concept, Nature & Scope of Intellectual Property Rights (IPR) & Classification of IPR"},
+            {"id": "ipr-u1-t2", "title": "2. Juristic Theories & Rationale of IPR (Locke's Labour, Hegel's Personality, Utilitarian/Incentive & Social Planning Theories)"},
+            {"id": "ipr-u1-t3", "title": "3. International IPR Conventions - Paris Convention (1883), Berne Convention (1886), Madrid, PCT & WIPO (1967)"},
+            {"id": "ipr-u1-t4", "title": "4. WTO & TRIPS Agreement (1994) - Core Principles (National Treatment, MFN), Minimum Standards, Doha Declaration & Impact on India"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "ipr-u1-t1": {
+      "id": "ipr-u1-t1",
+      "subtitle": "Intellectual Property Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Intellectual Property Rights (IPR) are statutorily granted, intangible, incorporeal proprietary rights ('Jura in Re Propria') over creations of the human mind - inventions, literary/artistic works, brand symbols, industrial designs, geographical indications, plant varieties, and trade secrets. Unlike perpetual tangible property, IPR balances private time-bound exclusivity (negative right to exclude free-riders) with ultimate public-domain access.",
+        "legalProvision": "Article 2(viii), WIPO Convention (1967); TRIPS Agreement (1994); Indian IPR Statutes (Copyright 1957, Patents 1970, Trademarks 1999, Designs 2000, GI 1999)",
+        "meaning": "IPR turns non-rivalrous ideas into legally enforceable commercial assets: while anyone can simultaneously read a poem or use an algorithm, IPR grants the creator a temporary legal monopoly to prevent unauthorized commercial copying.",
+        "keyPoints": [
+          "Nature & Key Characteristics of IPR: (1) INTANGIBLE / INCORPOREAL PROPERTY (independent of the physical book/CD/machine embodying it), (2) TERRITORIAL IN NATURE (Indian patent/trademark protects strictly within India unless filed abroad), (3) NEGATIVE / EXCLUSIONARY RIGHT (empowers owner to stop unauthorized copying/use, subject to public-interest limits), (4) TIME-BOUND STATUTORY MONOPOLY (e.g., 20 years for Patents, Life + 60 years for Copyright, 10+5 years for Designs; Trademarks & GIs are perpetually renewable), (5) ASSIGNABLE & LICENSABLE (commercializable via royalties/franchising), and (6) CO-EXISTENCE OF MULTIPLE IPRs (a smartphone carries Patents for chips, Copyright for OS code, Trademarks for logo, and Design for outer shape).",
+          "Two Traditional Branches of IPR: (1) COPYRIGHT & RELATED / NEIGHBOURING RIGHTS - protects original creative expression in literary, dramatic, musical, artistic, software, cinema, and sound-recording works plus performers'/broadcasters' rights; (2) INDUSTRIAL PROPERTY - protects Patents (inventions), Trademarks (brand identity), Industrial Designs (aesthetic appearance), Geographical Indications (origin-linked goods like Pochampally Ikat / Hyderabad Haleem), Layout-Designs of Integrated Circuits (SICLD Act, 2000), Plant Varieties (PPVFR Act, 2001), and Undisclosed Information / Trade Secrets.",
+          "IPR vs Tangible Property: Tangible land/chattels are rivalrous (one user excludes another), perpetual, and protected against physical theft; IP is non-rivalrous, generally time-limited, and passes freely into the PUBLIC DOMAIN upon expiry."
+        ],
+        "caseLaws": [
+          {
+            "name": "Entertainment Network (India) Ltd. v. Super Cassette Industries Ltd.",
+            "citation": "2008 13 SCC 30",
+            "principle": "Explained the nature of IPR in India as statutory rights striking a delicate balance between rewarding creators' private economic monopoly and safeguarding broader public access and cultural diffusion."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four defining characteristics of Intellectual Property Rights (IPR) and distinguish between Copyright and Industrial Property with three examples of each.",
+            "a": "Intangible/incorporeal, territorial, exclusionary/negative right, and generally time-bound (entering public domain on expiry). Copyright covers literary, artistic, musical/software works; Industrial Property covers Patents, Trademarks, Industrial Designs, and Geographical Indications."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u1-t2": {
+      "id": "ipr-u1-t2",
+      "subtitle": "Intellectual Property Law - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Why should law grant temporary monopolies over ideas? Four classic juristic theories justify IPR: (1) Locke's Labour / Natural Rights Theory (creators deserve fruits of their mental labour), (2) Hegel & Kant's Personality Theory (creative works embody the author's self-expression - basis of Moral Rights), (3) Bentham's Utilitarian / Economic Incentive Theory (dominant modern view: exclusivity incentivizes costly R&D and disclosure), and (4) Social Planning / Cultural Theory (fostering a vibrant democratic culture).",
+        "legalProvision": "John Locke ('Two Treatises of Government', 1689); G.W.F. Hegel; Jeremy Bentham; Article 27(2), UDHR (1948)",
+        "meaning": "Different branches of Indian IPR draw directly from different theories: Patents rest chiefly on Utilitarian incentive & disclosure, Copyright Moral Rights (Sec. 57) flow from Personality Theory, and Fair Dealing/Compulsory Licensing reflect Social Planning.",
+        "keyPoints": [
+          "1. Natural Rights / Labour Theory (John Locke - 'Mixing Labour' & 'Lockean Proviso'): Every person owns his own body and labour; when he mixes mental labour with common ideas to create an invention or novel, he acquires a natural property right in the result - PROVIDED 'enough and as good' is left in the intellectual commons for others (justifies the Idea-Expression Dichotomy and Public Domain!).",
+          "2. Personality / Personhood Theory (Immanuel Kant & G.W.F. Hegel): Creative works are extensions of the creator's unique personality and human will; protecting them safeguards human dignity and autonomy - directly underpinning INALIENABLE MORAL RIGHTS (right of paternity/attribution and integrity against distortion under Section 57 Copyright Act & Art. 6bis Berne Convention).",
+          "3. Utilitarian / Economic Incentive / Reward Theory (Jeremy Bentham & Law-and-Economics): Dominant justification in modern patent and commercial IP law - without temporary legal exclusivity, free-riders would copy costly drugs/software at near-zero cost, destroying incentive to invest in R&D. IPR creates a 'Quid Pro Quo' social bargain: the inventor discloses the invention publicly in exchange for a 20-year monopoly.",
+          "4. Social Planning / Distributive Justice Theory (William Fisher & Amartya Sen): Shapes IP rules to promote a just, flourishing culture and human welfare - justifying exceptions like educational fair dealing (DU Photocopy Case), compulsory licensing for affordable life-saving medicines (Bayer v. Natco), and traditional-knowledge protection."
+        ],
+        "caseLaws": [
+          {
+            "name": "Novartis AG v. Union of India",
+            "citation": "2013 6 SCC 1",
+            "principle": "Balanced Utilitarian R&D incentives with public-health social justice under Section 3(d) of the Patents Act, holding that Indian patent law rejects 'evergreening' of known drugs without enhanced therapeutic efficacy."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Contrast Locke's Labour Theory, Hegel's Personality Theory, and the Utilitarian Theory of IPR, and identify which theory best explains Moral Rights under Section 57 of the Copyright Act.",
+            "a": "Locke bases IPR on mixing mental labour with the commons; Hegel bases it on protecting the creator's self-expression/dignity; Utilitarian theory bases it on economic incentive to innovate and disclose. Hegel's Personality Theory directly underpins Moral Rights (Sec. 57)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u1-t3": {
+      "id": "ipr-u1-t3",
+      "subtitle": "Intellectual Property Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Because IPR is strictly territorial, global commerce required international treaties to protect creators across borders - anchored by the Paris Convention (1883 - Industrial Property: National Treatment & 12/6-month Right of Priority) and Berne Convention (1886 - Copyright: Automatic Protection without registration, National Treatment & Moral Rights), both administered by WIPO (Geneva, 1967) alongside filing treaties like the PCT (1970) and Madrid System.",
+        "legalProvision": "Paris Convention (1883); Berne Convention (1886); WIPO Convention (1967); Patent Cooperation Treaty / PCT (1970); Madrid Protocol (1989)",
+        "meaning": "International conventions do not create a single 'World Patent' or 'World Trademark', but they make cross-border filing seamless and forbid member countries from discriminating against foreign creators.",
+        "keyPoints": [
+          "1. Paris Convention for the Protection of Industrial Property (1883 - India acceded 1998): Covers Patents, Trademarks, Designs, Utility Models, Trade Names, and Unfair Competition. Three Pillar Rules: (a) NATIONAL TREATMENT (Art. 2 - foreign nationals get same IP protection as domestic citizens), (b) RIGHT OF PRIORITY (Art. 4 - filing in one member State gives 12 MONTHS for Patents and 6 MONTHS for Trademarks/Designs to file in other member States retaining the original first filing date!), and (c) INDEPENDENCE OF PATENTS & TRADEMARKS (refusal/invalidation in one country does not automatically invalidate in another) + Well-Known Marks protection (Art. 6bis).",
+          "2. Berne Convention for the Protection of Literary and Artistic Works (1886 - India original member): Rests on THREE Core Principles -> (a) NATIONAL TREATMENT, (b) AUTOMATIC PROTECTION (Art. 5(2) - copyright arises the moment a work is created, strictly NO mandatory registration or copyright-symbol formality!), and (c) INDEPENDENCE OF PROTECTION (plus minimum term Life + 50 years, Moral Rights under Art. 6bis, and Three-Step Test for exceptions under Art. 9(2)).",
+          "3. WIPO (World Intellectual Property Organization - Stockholm Convention, 1967; UN Specialized Agency 1974, HQ Geneva): Administers 26+ IP treaties, runs global filing systems, and provides WIPO Arbitration & Mediation (UDRP domain-name disputes).",
+          "4. Key Global Filing & Digital Treaties: PCT / Patent Cooperation Treaty (1970 - single international patent application giving 30/31 months to enter national phases); Madrid Agreement (1891) & Madrid Protocol (1989 - India joined 2013: single international trademark application via WIPO); Rome Convention (1961 - Neighbouring Rights); WIPO Internet Treaties - WCT & WPPT (1996 - digital DRM/online rights, India acceded 2018); Marrakesh Treaty (2013 - accessible books for visually impaired, India was the FIRST country to ratify!)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Gramophone Co. of India Ltd. v. Birendra Bahadur Pandey",
+            "citation": "AIR 1984 SC 667",
+            "principle": "Interpreted Indian Copyright import bars harmoniously with India's international Berne Convention obligations to curb cross-border piracy."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the 'Right of Priority' timelines under Article 4 of the Paris Convention (1883) and the three core principles of the Berne Convention (1886).",
+            "a": "Paris Right of Priority: 12 months for Patents and 6 months for Trademarks/Industrial Designs from the first convention filing date. Berne's three principles: National Treatment, Automatic Protection (no formalities/registration required), and Independence of Protection."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u1-t4": {
+      "id": "ipr-u1-t4",
+      "subtitle": "Intellectual Property Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Signed as Annex 1C of the Marrakesh Agreement establishing the WTO (1994, effective 1 Jan 1995), the TRIPS Agreement (Trade-Related Aspects of Intellectual Property Rights) is the most comprehensive, legally enforceable global IP treaty ever enacted - introducing Most-Favoured-Nation (MFN) treatment, uniform minimum standards across all 7 IP categories, mandatory 20-year product patents (forcing India's 1999, 2002 & 2005 Patent Amendments), and binding WTO Dispute Settlement sanctions, balanced by the 2001 Doha Declaration on Public Health.",
+        "legalProvision": "Articles 1, 3, 4, 7, 8, 27, 31, & 64, TRIPS Agreement (1994); Doha Declaration on TRIPS & Public Health (2001)",
+        "meaning": "Before TRIPS, WIPO treaties lacked binding trade sanctions; TRIPS linked IP compliance directly to WTO trade retaliation while compelling developing countries like India to overhaul every major IP statute.",
+        "keyPoints": [
+          "Core Principles of TRIPS: (1) NATIONAL TREATMENT (Art. 3 - no discrimination against foreign nationals), (2) MOST-FAVOURED-NATION / MFN (Art. 4 - ANY IP advantage granted to one WTO member must be extended unconditionally to ALL WTO members - brand new to global IP!), (3) EXHAUSTION FLEXIBILITY (Art. 6 - allows countries like India to permit parallel imports), and (4) PUBLIC INTEREST OBJECTIVES (Arts. 7 & 8 - transfer of technology, social/economic welfare & public health protection).",
+          "Minimum Standards Across 7 IP Categories (Part II): Copyright (Berne-plus + computer programs as literary works + rental rights), Trademarks (service marks + well-known marks + min 7-year renewable term), Geographical Indications (higher protection for wines/spirits), Industrial Designs (min 10 years), Patents (Art. 27 - product & process patents in ALL fields of technology including pharma/food/chemicals for min 20 YEARS, subject to Art. 31 Compulsory Licensing), Layout-Designs (10 years), and Undisclosed Information / Trade Secrets (Art. 39).",
+          "Enforcement & WTO Dispute Settlement (Parts III & V): Mandates civil injunctions, damages, border/customs seizure, and criminal penalties for wilful trademark counterfeiting/copyright piracy; non-compliance invites binding WTO Dispute Settlement Body (DSB) panels & cross-retaliation (e.g., US-India Mailbox Dispute, 1997).",
+          "Doha Declaration on TRIPS & Public Health (2001) & Impact on India: Affirmed TRIPS MUST be interpreted to support WTO members' right to protect public health and access to medicines for all (creating Art. 31bis export compulsory licences -> Sec. 92A Indian Patents Act). Impact on India: India enacted Trademarks Act 1999, GI Act 1999, Designs Act 2000, SICLD Act 2000, PPVFR Act 2001, and amended Patents Act in 1999 (Mailbox/EMR), 2002 (20-year term), and 2005 (Product Patents in Pharma + anti-evergreening Sec. 3(d) & Compulsory Licensing Sec. 84)."
+        ],
+        "caseLaws": [
+          {
+            "name": "India - Patent Protection for Pharmaceutical and Agricultural Chemical Products (US v. India)",
+            "citation": "1997 WTO Appellate Body WT/DS50/AB/R",
+            "principle": "First major TRIPS WTO dispute: Appellate Body ruled that India's administrative 'mailbox' instructions failed to create a legally secure filing mechanism under TRIPS Article 70.8, leading directly to India's Patents (Amendment) Act, 1999."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What new non-discrimination principle did TRIPS introduce under Article 4 beyond National Treatment, and how did the 2001 Doha Declaration safeguard public health?",
+            "a": "Article 4 introduced the Most-Favoured-Nation (MFN) principle requiring any IP privilege given to one WTO member to be extended immediately to all members. The 2001 Doha Declaration affirmed every country's sovereign right to grant Compulsory Licences and prioritize public health and affordable medicines over patent monopolies."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

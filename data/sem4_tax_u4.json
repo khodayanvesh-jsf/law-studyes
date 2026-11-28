@@ -1,0 +1,159 @@
+{
+  "subjects": [
+    {
+      "id": "principles-of-taxation-law",
+      "title": "Principles of Taxation Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Clubbing, Set-Off/Carry Forward, Chapter VI-A Deductions, IT Authorities, Assessment, Appeals/Revision, Penalties & TDS",
+          "topics": [
+            {"id": "tax-u4-t1", "title": "1. Clubbing of Income (Secs. 60-65), Set-Off & Carry Forward of Losses (Secs. 70-80) & Chapter VI-A Deductions (Secs. 80C-80U)"},
+            {"id": "tax-u4-t2", "title": "2. Income Tax Authorities (Secs. 116-138) - Hierarchy, CBDT & Powers of Survey, Search and Seizure (Secs. 131-133A)"},
+            {"id": "tax-u4-t3", "title": "3. Filing of Return (Sec. 139), Types of Assessment (Secs. 143-147 - Summary, Scrutiny, Best Judgment & Reassessment) & Faceless Assessment"},
+            {"id": "tax-u4-t4", "title": "4. Appeals & Revision (CIT(A), ITAT, High Court, SC & Secs. 263-264), Penalties/Prosecution & Collection via TDS / Advance Tax"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "tax-u4-t1": {
+      "id": "tax-u4-t1",
+      "subtitle": "Principles of Taxation Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "After computing the Five Heads of Income, three aggregation rules yield Net Taxable Income: (1) Clubbing of Income (Secs. 60-65) prevents tax-splitting by adding spouse/minor-child/revocable-transfer income back to the transferor, (2) Set-Off & Carry Forward of Losses (Secs. 70-80) lets taxpayers offset genuine losses across sources/years (requiring timely ITR under Sec. 80), and (3) Chapter VI-A Deductions (Secs. 80C-80U) reward savings, health insurance, and charity (Old Regime; limited deductions in New Default Regime Sec. 115BAC).",
+        "legalProvision": "Sections 60-65 (Clubbing), 70-80 (Losses), & 80C-80U (Chapter VI-A), Income-tax Act, 1961",
+        "meaning": "Clubbing stops high-slab taxpayers from diverting passive income to low-slab relatives, while Set-Off ensures tax falls strictly on real net multi-year economic capacity.",
+        "keyPoints": [
+          "Clubbing of Income (Secs. 60-64): (1) Transfer of income WITHOUT transferring asset (Sec. 60), (2) Revocable transfer of asset (Sec. 61), (3) Spouse's remuneration from concern where individual has substantial interest >= 20% UNLESS spouse holds technical/professional qualification (Sec. 64(1)(ii)), (4) Asset transferred to spouse or son's wife without adequate consideration (Sec. 64(1)(iv) & (vi) - note: 'income on clubbed income' is NOT clubbed!), and (5) MINOR CHILD'S INCOME (Sec. 64(1A) - clubbed with parent having higher income after Rs. 1,500 exemption per child under Sec. 10(32); EXCEPT minor's manual work, special skill/talent/art, or child with Sec. 80U disability).",
+          "Set-Off & Carry Forward of Losses (Secs. 70-80): INTRA-HEAD SET-OFF (Sec. 70 - same head) & INTER-HEAD SET-OFF (Sec. 71 - across heads) subject to strict blocks: House Property loss inter-head set-off capped at Rs. 2,00,000 (Old Regime); Business loss CANNOT set off against Salary; Capital Loss (STCL against STCG/LTCG; LTCL ONLY against LTCG) CANNOT set off against other heads; Speculation loss ONLY against speculation profit; Casual/lottery loss NEVER set off. CARRY FORWARD: House Property, Non-Speculative Business & Capital Losses -> 8 YEARS (Speculation & Horse-race loss -> 4 YEARS; Unabsorbed Depreciation -> INDEFINITE years without timely ITR; all other carry-forwards MANDATE filing ITR before due date under Sec. 80!).",
+          "Key Chapter VI-A Deductions (Secs. 80C-80U - Primarily Old Regime): Sec. 80C (PF, PPF, ELSS, LIC, tuition, home loan principal up to Rs. 1,50,000), Sec. 80CCD(1B) (NPS extra Rs. 50,000; employer NPS Sec. 80CCD(2) allowed EVEN in New Regime up to 14%/10%!), Sec. 80D (Health insurance Rs. 25,000 + Rs. 25,000/Rs. 50,000 senior parents), Sec. 80E (Education loan interest for 8 yrs), Sec. 80G (Charitable donations 50%/100%), Sec. 80TTA/80TTB (Savings/Senior FD interest Rs. 10,000 / Rs. 50,000), and Sec. 80U (Disability Rs. 75,000 / Rs. 1.25L)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Philip John Plasket Thomas v. CIT",
+            "citation": "AIR 1964 SC 587",
+            "principle": "Held that Section 64(1)(iv) clubbing applies ONLY if the spousal relationship existed BOTH at the time of asset transfer AND when income accrued - a pre-nuptial gift to a fiancee before marriage does NOT attract clubbing."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two exceptions where a minor child's income is NOT clubbed with parents under Section 64(1A), and state the carry-forward time limit for Capital Loss vs Speculation Loss.",
+            "a": "Minor's income from manual work, special skill/talent/experience, or of a minor with Sec. 80U disability is NOT clubbed. Capital Loss and ordinary Business Loss carry forward for 8 assessment years, whereas Speculation Loss carries forward for 4 assessment years."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u4-t2": {
+      "id": "tax-u4-t2",
+      "subtitle": "Principles of Taxation Law - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter XIII (Secs. 116-138) establishes the administrative hierarchy of Income Tax Authorities headed by the Central Board of Direct Taxes (CBDT) down to Assessing Officers (AO) and Inspectors. To uncover hidden wealth and tax evasion, Sections 131-133A clothe authorities with civil-court discovery powers, intrusive Search and Seizure ('Income Tax Raid' - Sec. 132 requiring 'reason to believe'), Requisition of assets (Sec. 132A), and business-hours Survey (Sec. 133A).",
+        "legalProvision": "Sections 116, 119, 131, 132, 132A, 133, & 133A, Income-tax Act, 1961",
+        "meaning": "Because Search and Seizure directly invades privacy and property, courts police Section 132 strictly to ensure raids rest on objective recorded 'reason to believe', never fishing expeditions or personal vendetta.",
+        "keyPoints": [
+          "Hierarchy of Income Tax Authorities (Sec. 116) & CBDT Powers (Sec. 119): Apex body = CBDT (Central Board of Direct Taxes under Central Board of Revenue Act, 1963) -> Principal CCIT / CCIT / DGIT -> Principal CIT / CIT / DIT -> Addl./Joint CIT -> Deputy/Assistant CIT -> Income Tax Officer (ITO) -> Tax Recovery Officer (TRO) -> Inspector. Under Sec. 119, CBDT issues binding benevolent circulars to subordinate officers (never binding on taxpayers or courts against statute - UCO Bank v. CIT).",
+          "Discovery & Summons Power (Sec. 131): Assessing Officer, CIT(A), and higher authorities possess Civil Court powers under CPC for discovery/inspection, enforcing witness attendance on oath, compelling production of books/accounts, and issuing commissions.",
+          "Search & Seizure / IT Raid (Sec. 132): Authorized by Principal DGIT/DGIT/Principal CIT/CIT ONLY upon recording objective 'REASON TO BELIEVE' that (a) summons/notice was disobeyed, (b) person would fail to produce books if summoned, OR (c) person possesses undisclosed money, bullion, jewellery, or valuables. Authorized Officer may enter/break open locks, search persons/premises, seize undisclosed assets/digital devices (NEVER stock-in-trade - Sec. 132(1) Proviso!), and examine on oath (Sec. 132(4)).",
+          "Power of Survey (Sec. 133A) vs Search (Sec. 132): Survey can be conducted ONLY at a place of business/profession during business hours (never private residence unless business books are kept there); officer can verify cash/stock/books and impound books with recorded reasons, but CANNOT seize cash/jewellery or conduct personal body searches (unlike Sec. 132 Search)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Pooran Mal v. Director of Inspection (Investigation)",
+            "citation": "AIR 1974 SC 348",
+            "principle": "5-judge Constitution Bench upheld Section 132 Search & Seizure as reasonable under Article 19(1)(f)/(g) given the 'reason to believe' safeguard, and held relevant evidence obtained even in a defective search remains admissible."
+          },
+          {
+            "name": "ITO v. Seth Brothers",
+            "citation": "1969 74 ITR 836 (SC)",
+            "principle": "Held that Section 132 search is a serious invasion of privacy requiring strict statutory compliance and bona fide recorded satisfaction - mala fide or indiscriminate seizure of irrelevant papers is liable to be quashed."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three key differences between Search & Seizure (Sec. 132) and Survey (Sec. 133A) under the Income-tax Act, 1961, and state what asset CANNOT be seized during a Section 132 raid.",
+            "a": "Search (Sec. 132) covers any building/residence at any time, allows breaking locks, body search, and seizing undisclosed cash/jewellery based on 'reason to believe'; Survey (Sec. 133A) is limited to business premises during business hours and prohibits seizing cash/jewellery or body searches. Stock-in-trade cannot be seized under Sec. 132(1) Proviso."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u4-t3": {
+      "id": "tax-u4-t3",
+      "subtitle": "Principles of Taxation Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Every person whose gross total income exceeds the basic exemption limit (and every company/firm) must file an Income Tax Return (ITR) under Section 139 (Original, Belated, Revised, or Updated Return ITR-U under Sec. 139(8A)). The Department verifies returns through FOUR statutory Assessment procedures - Summary Processing (Sec. 143(1)), Regular Scrutiny Assessment (Sec. 143(3)), Best Judgment Assessment (Sec. 144), and Income Escaping Reassessment (Sec. 147/148A) - now conducted electronically under Faceless Assessment (Sec. 144B).",
+        "legalProvision": "Sections 139, 140A, 142, 143, 144, 144B, & 147-151, Income-tax Act, 1961",
+        "meaning": "Faceless Assessment (Sec. 144B) eliminates physical human interface between taxpayer and local Assessing Officer using randomized automated allocation, curbing corruption and harassment.",
+        "keyPoints": [
+          "Return of Income (Sec. 139): Mandatory original return (Sec. 139(1): due 31 July non-audit / 31 October audit / 30 November transfer pricing); Loss Return (Sec. 139(3) - must file on time to carry forward losses); Belated Return (Sec. 139(4) - up to 31 December of AY with late fee under Sec. 234F); Revised Return (Sec. 139(5) - up to 31 December of AY to fix errors); Updated Return / ITR-U (Sec. 139(8A) - voluntary upward tax disclosure within 24/48 months paying additional tax); Self-Assessment Tax paid before filing (Sec. 140A).",
+          "1. Summary Processing (Sec. 143(1)) & 2. Scrutiny Assessment (Sec. 143(3)): Under Sec. 143(1), CPC Bengaluru electronically verifies arithmetical accuracy, incorrect claims, and tax/refund matching (intimation within 9 months from FY end). Under Sec. 143(3), AO serves notice under Sec. 143(2) within 3 months from FY end, examines books/evidence, hears assessee, and passes a reasoned assessment order.",
+          "3. Best Judgment Assessment (Sec. 144): Triggered when assessee FAILS to file ITR (Sec. 139), fails to comply with inquiry/audit notice (Sec. 142(1)/(2A)), or fails to comply with scrutiny notice (Sec. 143(2)). AO estimates income fairly based on available material after giving a mandatory show-cause notice (cannot be whimsical or vindictive - State of Kerala v. C. Velukutty).",
+          "4. Income Escaping Reassessment (Secs. 147-149) & Faceless Assessment (Sec. 144B): Where income escaped assessment, AO conducts preliminary inquiry and gives assessee an opportunity to respond under Section 148A BEFORE issuing Sec. 148 reassessment notice (reformed in 2021 & 2024: normal time limit 3 years + 3 months; extended up to 5 years + 3 months ONLY if escaped income >= Rs. 50 lakhs!). Section 144B mandates team-based, jurisdiction-free Faceless Assessment via National Faceless Assessment Centre (NaFAC)."
+        ],
+        "caseLaws": [
+          {
+            "name": "GKN Driveshafts (India) Ltd. v. Income Tax Officer",
+            "citation": "2003 1 SCC 72",
+            "principle": "Laid down mandatory Natural Justice procedure for reassessment notices (now statutorily codified into Section 148A): assessee must receive reasons/information and a speaking disposal of objections before reopening assessment."
+          },
+          {
+            "name": "State of Kerala v. C. Velukutty",
+            "citation": "1966 60 ITR 239 (SC)",
+            "principle": "Held that even a Best Judgment Assessment (Sec. 144) must be an honest, rational estimate having nexus with available material, never an arbitrary guess or punitive whim."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Regular Scrutiny Assessment (Sec. 143(3)) and Best Judgment Assessment (Sec. 144), and explain the safeguard built into Section 148A before Reassessment.",
+            "a": "Sec. 143(3) examines books/evidence after Sec. 143(2) notice on a filed return, whereas Sec. 144 estimates income rationally when the assessee defaults in filing ITR or complying with notices. Sec. 148A requires providing adverse information and hearing the assessee's reply via a speaking order before issuing a Sec. 148 reassessment notice."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u4-t4": {
+      "id": "tax-u4-t4",
+      "subtitle": "Principles of Taxation Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Taxpayers aggrieved by an Assessment Order have a four-tier Appellate Hierarchy: First Appeal to JCIT(A)/CIT(A) (Sec. 246A - within 30 days), Second Appeal to the independent Income Tax Appellate Tribunal / ITAT (Sec. 253 - within 60 days, final fact-finding body), High Court (Sec. 260A - within 120 days strictly on a Substantial Question of Law), and Supreme Court (Sec. 261) - plus Revision by Commissioner (Secs. 263-264). Revenue collection operates proactively via 'Pay as You Earn' TDS (Secs. 192-206) and Advance Tax (Secs. 207-219).",
+        "legalProvision": "Sections 192-219 (TDS & Advance Tax), 246A-264 (Appeals & Revision), & 270A-280 (Penalties & Prosecution), Income-tax Act, 1961",
+        "meaning": "Separating fact-finding appeals (ending at ITAT) from pure law appeals (High Court/SC) keeps tax litigation focused, while TDS and Advance Tax guarantee steady year-round government cash flow.",
+        "keyPoints": [
+          "Four-Tier Appellate Hierarchy: (1) FIRST APPEAL -> JCIT(A) / CIT(A) (Faceless) within 30 DAYS of Assessment Order (Sec. 246A - assessee ONLY can appeal, not Department); (2) SECOND APPEAL -> ITAT (Income Tax Appellate Tribunal - Judicial + Accountant Member under Ministry of Law) within 60 DAYS by EITHER assessee or Department (Sec. 253 - FINAL AUTHORITY ON FACTS); (3) THIRD APPEAL -> HIGH COURT within 120 DAYS strictly on a 'Substantial Question of Law' (Sec. 260A); (4) FOURTH APPEAL -> SUPREME COURT on HC certificate (Sec. 261) or Special Leave Petition (Art. 136).",
+          "Revision by Principal CIT / CIT (Secs. 263 & 264): Sec. 263 (Revision prejudicial to Revenue - Commissioner may revise an AO order within 2 years if it is BOTH 'erroneous' AND 'prejudicial to the interests of revenue' - Malabar Industrial Co.); Sec. 264 (Revision in favour of Assessee - within 1 year on assessee's application where no appeal is pending; cannot pass an order prejudicial to assessee).",
+          "Penalties & Prosecution (Secs. 270A & 276C): Sec. 270A imposes penalty @ 50% of tax for 'under-reporting' of income and @ 200% for 'misreporting' (suppression/fake invoices); Sec. 271AAC (10% on Sec. 115BBE unexplained cash/investments); wilful attempt to evade tax carries rigorous imprisonment up to 7 years under Sec. 276C.",
+          "TDS & Advance Tax ('Pay as You Earn' - Secs. 192-219): TAX DEDUCTED AT SOURCE (TDS) mandates payers to deduct tax before paying salaries (Sec. 192), bank interest (194A), contractors (194C), rent (194I), professional fees (194J), or property > Rs. 50L (194IA). ADVANCE TAX (Sec. 208) is compulsory if net tax liability >= Rs. 10,000/year (exempt for resident senior citizens aged 60+ with no business income!), paid in 4 instalments: 15% (15 June), 45% (15 Sept), 75% (15 Dec), and 100% (15 March) - default attracts 1% monthly interest under Secs. 234B & 234C."
+        ],
+        "caseLaws": [
+          {
+            "name": "Malabar Industrial Co. Ltd. v. CIT",
+            "citation": "2000 2 SCC 718",
+            "principle": "Held that Section 263 revision requires TWO cumulative conditions - the AO's order must be BOTH 'erroneous' AND 'prejudicial to the interests of revenue'; where two lawful views are possible and AO adopts one, Sec. 263 cannot be invoked."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the four-tier Income Tax appellate hierarchy with limitation periods, distinguish Revision under Section 263 vs Section 264, and state the four Advance Tax due dates.",
+            "a": "CIT(A) 30 days -> ITAT 60 days (final on facts) -> High Court 120 days (substantial question of law) -> Supreme Court. Sec. 263 revises AO orders erroneous & prejudicial to Revenue (2 yrs), whereas Sec. 264 grants relief to assessees (1 yr). Advance Tax: 15% (15 Jun), 45% (15 Sep), 75% (15 Dec), 100% (15 Mar)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

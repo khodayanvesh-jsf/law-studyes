@@ -1,0 +1,196 @@
+{
+  "subjects": [
+    {
+      "id": "company-law",
+      "title": "Company Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Promoters, Memorandum & Articles of Association, Ultra Vires, Constructive Notice, Indoor Management & Prospectus",
+          "topics": [
+            {"id": "com-u2-t1", "title": "1. Promoters - Definition, Legal Position, Fiduciary Duties & Pre-Incorporation Contracts (Secs. 2(69) & Specific Relief Act)"},
+            {"id": "com-u2-t2", "title": "2. Memorandum of Association (MOA) - Meaning, Purpose, Six Clauses & Alteration Procedure (Secs. 4 & 13)"},
+            {"id": "com-u2-t3", "title": "3. Articles of Association (AOA) - Contents, Alteration (Sec. 14), Binding Force & MOA vs AOA"},
+            {"id": "com-u2-t4", "title": "4. Doctrine of Ultra Vires (Ashbury Railway Carriage), Constructive Notice & Indoor Management (Turquand's Rule)"},
+            {"id": "com-u2-t5", "title": "5. Prospectus - Kinds (Shelf, Red Herring, Abridged), Golden Rule & Civil/Criminal Liability for Misstatements (Secs. 23-38)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "com-u2-t1": {
+      "id": "com-u2-t1",
+      "subtitle": "Company Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 2(69) of the Companies Act, 2013, a Promoter is any person named as such in a prospectus/annual return, having control over company affairs, or on whose advice/directions the Board acts. Standing in a strict fiduciary relationship with the unborn company (Erlanger v. New Sombrero Phosphate Co.), a promoter cannot make secret profits and remains personally liable on pre-incorporation contracts unless novated or adopted under Sections 15(h) and 19(e) of the Specific Relief Act, 1963.",
+        "legalProvision": "Section 2(69), Companies Act, 2013; Sections 15(h) & 19(e), Specific Relief Act, 1963",
+        "meaning": "Because a company does not exist before registration, a promoter is neither its agent nor its trustee under strict law, yet equity imposes heavy fiduciary duties of full disclosure to an independent Board or all shareholders.",
+        "keyPoints": [
+          "Statutory Definition of Promoter (Sec. 2(69)): Covers (a) person named as promoter in prospectus or identified in annual return (Sec. 92), (b) person having control over company affairs directly or indirectly as shareholder/director, or (c) person in accordance with whose advice, directions, or instructions the Board of Directors is accustomed to act (excludes professionals like lawyers/CAs acting purely in professional capacity).",
+          "Fiduciary Position & Secret Profits (Erlanger v. New Sombrero; Gluckstein v. Barnes): Promoter owes utmost good faith, must NOT make secret profits at the company's expense, and must disclose all personal interest in property sold to the company to an independent Board or entire body of shareholders - else company may rescind the contract or recover secret profits.",
+          "Pre-Incorporation / Preliminary Contracts: At common law, a company CANNOT ratify a contract made before its birth because it lacked contractual capacity at execution (Kelner v. Baxter), leaving the promoter personally liable.",
+          "Indian Statutory Solution (Secs. 15(h) & 19(e), Specific Relief Act, 1963): Specific performance may be enforced BY or AGAINST the newly incorporated company if (1) promoters entered the contract for the purposes of the company, (2) the contract is warranted by the terms of incorporation (MOA/AOA), AND (3) the company has ACCEPTED the contract and communicated such acceptance to the other party."
+        ],
+        "caseLaws": [
+          {
+            "name": "Erlanger v. New Sombrero Phosphate Co.",
+            "citation": "1878 3 App Cas 1218 (HL)",
+            "principle": "Established that promoters stand in a fiduciary position toward the company they float and cannot sell their own property to the company at an inflated price without full disclosure to an independent Board."
+          },
+          {
+            "name": "Kelner v. Baxter",
+            "citation": "1866 LR 2 CP 174",
+            "principle": "Held that a pre-incorporation contract cannot be ratified by the company after incorporation; the promoter who signed on behalf of the non-existent company remains personally liable unless novated."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can a newly incorporated company ratify a pre-incorporation contract, and under what three conditions does the Specific Relief Act, 1963 allow enforcement against the company?",
+            "a": "No - common law bars ratification because the company did not exist when the contract was made (Kelner v. Baxter). Under Secs. 15(h) & 19(e) SRA, the company is bound if the contract was for company purposes, warranted by terms of incorporation, and accepted/communicated by the company."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u2-t2": {
+      "id": "com-u2-t2",
+      "subtitle": "Company Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Memorandum of Association (MOA - Sec. 2(56) & Sec. 4, Companies Act, 2013) is the supreme constitutional charter of a company defining its external scope of powers and relationship with the outside world ('Ashbury Railway Carriage'). It must contain six mandatory clauses - Name, Registered Office, Objects, Liability, Capital, and Subscription/Nomination - alterable only through strict Section 13 procedures.",
+        "legalProvision": "Sections 2(56), 4, 12, 13, & 16, Companies Act, 2013; Schedule I (Tables A to E)",
+        "meaning": "While Articles regulate internal management, the MOA sets the unalterable outer boundaries of corporate existence: any act beyond the Objects Clause is void ab initio as ultra vires.",
+        "keyPoints": [
+          "Six Mandatory Clauses of MOA (Sec. 4(1)): (1) NAME CLAUSE (ends with 'Limited' for public, 'Private Limited' for private, 'OPC' for One Person Company; must not be identical/undesirable under Sec. 4(2)), (2) REGISTERED OFFICE / SITUATION CLAUSE (names the State where registered office is situated - determines domicile and court jurisdiction), (3) OBJECTS CLAUSE (states main objects for which company is proposed to be incorporated + matters considered necessary in furtherance thereof), (4) LIABILITY CLAUSE (limited by shares, limited by guarantee, or unlimited), (5) CAPITAL CLAUSE (authorized/nominal share capital divided into fixed-value shares - omitted in unlimited companies without share capital), and (6) SUBSCRIPTION / ASSOCIATION CLAUSE (7+ subscribers for public, 2+ for private, taking at least 1 share each; OPC names 1 nominee).",
+          "Alteration of Name & Registered Office (Secs. 13(2), 13(4) & 16): Name change requires Special Resolution + Central Govt (ROC) approval (or rectification direction within 3 years under Sec. 16 if identical to registered trademark); shifting Registered Office from one State to another requires Special Resolution + Central Govt (Regional Director) approval protecting creditors and employees.",
+          "Alteration of Objects & Capital Clauses (Secs. 13(8), 61 & 66): Altering Objects requires Special Resolution (if unutilized IPO money remains, dissenting shareholders MUST be given an exit opportunity under Sec. 13(8)); Capital clause alteration follows Ordinary Resolution (Sec. 61) or Special Resolution + NCLT confirmation for reduction (Sec. 66)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ewing v. Buttercup Margarine Co. Ltd.",
+            "citation": "1917 2 Ch 1",
+            "principle": "Restrained a new company from adopting a deceptively similar name that would mislead the public into confusing it with an existing business under the Name Clause."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List the six mandatory clauses of a Memorandum of Association under Section 4(1) of the Companies Act, 2013, and state what extra safeguard applies when altering Objects if unutilized public-issue money remains.",
+            "a": "Name, Registered Office (State), Objects, Liability, Capital, and Subscription/Nomination clauses. Under Sec. 13(8), a company with unutilized IPO funds cannot change its objects without passing a Special Resolution AND giving dissenting shareholders an exit opportunity."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u2-t3": {
+      "id": "com-u2-t3",
+      "subtitle": "Company Law - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Articles of Association (AOA - Sec. 2(5) & Sec. 5, Companies Act, 2013) are the internal bye-laws governing day-to-day corporate management, share transfers, board meetings, dividends, and borrowing powers - subordinate to the Companies Act and the MOA. Alterable by Special Resolution under Section 14 (including entrenchment provisions under Sec. 5(3)), AOA creates a statutory contract binding the company and its members (Sec. 10).",
+        "legalProvision": "Sections 2(5), 5, 6, 10, & 14, Companies Act, 2013; Schedule I (Tables F to J)",
+        "meaning": "MOA defines WHAT the company can do; AOA defines HOW the company does it internally. Any Article conflicting with the MOA or Companies Act is void under Section 6.",
+        "keyPoints": [
+          "Contents & Entrenchment Provisions (Sec. 5): Regulates share calls, forfeiture, lien, transfer/transmission, general meetings, voting, directors' appointment/powers, accounts, and winding up (may adopt Model Articles in Tables F-J). Section 5(3)-(4) newly permits 'Entrenchment Provisions' requiring stricter-than-Special-Resolution approval to alter specified Articles (agreed by ALL members in private company, or Special Resolution in public company).",
+          "Alteration of AOA & Limitations (Sec. 14): Freely alterable by SPECIAL RESOLUTION (converting public company into private requires Central Govt / RD approval), subject to five strict limits - alteration must NOT (1) violate Companies Act or any statute, (2) conflict with MOA, (3) commit fraud on minority shareholders (Allen v. Gold Reefs of West Africa - must be bona fide for company's benefit as a whole), (4) compel an existing member to take more shares or increase liability without written consent (Sec. 38 / Sec. 10), or (5) breach a valid contract (though company cannot be injuncted from altering Articles, it may pay damages for breach - Southern Foundries).",
+          "Binding Effect of MOA & AOA (Sec. 10): Binds company to members, members to company, and members inter se (through the company), but does NOT create a contract between the company and OUTSIDERS (Eley v. Positive Government Security Life Assurance Co. - solicitor named in AOA could not sue on AOA alone).",
+          "MOA vs AOA: (1) Charter of external powers vs Bye-laws of internal management; (2) Supreme over AOA vs Subordinate to MOA & Act; (3) Alteration requires govt/NCLT approval in several clauses vs Special Resolution alone; (4) Acts ultra vires MOA are void ab initio and unratifiable vs Acts ultra vires AOA (but intra vires MOA) can be ratified by Special Resolution."
+        ],
+        "caseLaws": [
+          {
+            "name": "Eley v. Positive Government Security Life Assurance Co.",
+            "citation": "1876 1 Ex D 88",
+            "principle": "Held that Articles of Association constitute a statutory contract solely between the company and its members in their capacity as members - an outsider cannot enforce a clause appointing him company solicitor."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can shareholders ratify an act that is ultra vires the Articles of Association (AOA) versus an act ultra vires the Memorandum of Association (MOA)?",
+            "a": "An act ultra vires the AOA (but within the MOA) CAN be ratified by shareholders via Special Resolution, whereas an act ultra vires the MOA is wholly void ab initio and CANNOT be ratified even by 100% unanimous shareholder consent."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u2-t4": {
+      "id": "com-u2-t4",
+      "subtitle": "Company Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Three foundational doctrines govern corporate transactions with outsiders: (1) Ultra Vires (Ashbury Railway Carriage - any act beyond the MOA Objects Clause is void ab initio and unratifiable), (2) Constructive Notice (Sec. 399 - outsiders dealing with a company are deemed to have read its public MOA and AOA), and (3) Indoor Management / Turquand's Rule (an exception to Constructive Notice protecting honest outsiders who may presume internal board/meeting approvals were properly complied with).",
+        "legalProvision": "Sections 4(1)(c), 179, & 399, Companies Act, 2013; Ashbury Railway Carriage (1875); Royal British Bank v. Turquand (1856)",
+        "meaning": "Constructive Notice protects the company against outsiders ignoring public charter limits, while Turquand's Indoor Management Rule protects commercial convenience so outsiders need not interrogate a company's internal minute books.",
+        "keyPoints": [
+          "Doctrine of Ultra Vires (Ashbury Railway Carriage & Iron Co. v. Riche, 1875): 'Ultra' (beyond) + 'Vires' (powers). Any transaction outside the MOA Objects Clause (or not reasonably incidental thereto - Attorney General v. Great Eastern Railway) is VOID AB INITIO, creates no legal rights/liabilities, CANNOT be ratified even by unanimous shareholders, and directors become personally liable for breach of warranty of authority (restitution/injunction available if property is traceable).",
+          "Doctrine of Constructive Notice (Sec. 399): MOA and AOA become public documents upon registration with ROC; every person dealing with the company is presumed to have read and understood them (Kotla Venkataswamy v. Chinta Ramamurthy - mortgage signed by Secretary & Working Director when AOA required MD signature too was held invalid).",
+          "Doctrine of Indoor Management (Royal British Bank v. Turquand, 1856): While outsiders must know external powers from public MOA/AOA, they are NOT bound to inquire into internal regularity (e.g., whether a required board/general resolution was actually passed) - they may assume internal procedures were duly followed.",
+          "Five Exceptions to Indoor Management (Where Outsider Is NOT Protected): (1) KNOWLEDGE OF IRREGULARITY (Howard v. Patent Ivory Mfg. Co. - directors lending to company knowing borrowing limit lacked resolution), (2) SUSPICION OF IRREGULARITY / NEGLIGENCE (Anand Bihari Lal v. Dinshaw & Co. - accepting transfer of company property from an accountant without POA), (3) FORGERY (Ruben v. Great Fingall Consolidated - forged share certificate is a nullity ab initio; Turquand never cures forgery), (4) ACTS OUTSIDE APPARENT AUTHORITY, and (5) NO KNOWLEDGE OF ARTICLES (Rama Corporation - outsider never read AOA so could not rely on delegation clause)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ashbury Railway Carriage & Iron Co. Ltd. v. Riche",
+            "citation": "1875 LR 7 HL 653",
+            "principle": "Established the Doctrine of Ultra Vires: a contract to finance railway construction in Belgium was beyond the company's mechanical-engineering MOA objects and therefore void ab initio and incapable of unanimous ratification."
+          },
+          {
+            "name": "Royal British Bank v. Turquand",
+            "citation": "1856 6 E & B 327",
+            "principle": "Propounded the Doctrine of Indoor Management: a bank lending on a company bond signed by two directors under seal was not required to verify whether an internal shareholder resolution authorizing the borrowing had been passed."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain how the Doctrine of Indoor Management (Turquand's Rule) acts as an exception to Constructive Notice, and list three exceptions where Indoor Management does NOT protect an outsider.",
+            "a": "Constructive Notice deems outsiders aware of public MOA/AOA limits, whereas Indoor Management allows them to presume internal corporate resolutions were validly passed. Exceptions: (1) actual knowledge of irregularity, (2) suspicion/gross negligence putting outsider on inquiry, and (3) forgery (Ruben v. Great Fingall)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u2-t5": {
+      "id": "com-u2-t5",
+      "subtitle": "Company Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 2(70) of the Companies Act, 2013, a Prospectus is any document (including Red Herring Prospectus, Shelf Prospectus, or notice/circular) inviting offers from the PUBLIC for subscription or purchase of securities of a body corporate. Governed by the 'Golden Rule' of full and honest disclosure (New Brunswick Co. v. Muggeridge), misstatements or material omissions trigger heavy Civil Liability (Sec. 35) and Criminal Liability (Secs. 34 & 447).",
+        "legalProvision": "Sections 2(70), 23-38, & 447, Companies Act, 2013",
+        "meaning": "Because retail investors rely entirely on promoter representations when subscribing to IPOs, strict statutory disclosures and harsh fraud penalties protect capital-market integrity.",
+        "keyPoints": [
+          "Definition & Kinds of Prospectus (Secs. 2(70), 25, 31, 32 & 33): Must invite the PUBLIC (private placement to <= 200 identified persons under Sec. 42 is NOT a public prospectus). Specialized types: (1) DEEMED PROSPECTUS (Sec. 25 - Offer for Sale through an issuing house), (2) SHELF PROSPECTUS (Sec. 31 - valid up to 1 year for multiple debt/security tranches by notified banks/FIs with Information Memorandum updates), (3) RED HERRING PROSPECTUS (Sec. 32 - book-building IPO prospectus omitting exact quantum or price band prior to issue closure), and (4) ABRIDGED PROSPECTUS (Sec. 2(1) & Sec. 33 - salient features accompanying every application form).",
+          "Golden Rule of Framing a Prospectus (New Brunswick & Canada Railway v. Muggeridge): Everything must be stated with strict and scrupulous accuracy - no material fact should be omitted whose omission makes what is stated misleading (Peek v. Gurney - prospectus liability runs ONLY to original allottees, NOT secondary stock-market buyers, unless fraudulent market manipulation is proved).",
+          "Civil Liability for Misstatement (Sec. 35): Company AND every director, promoter, authorized person, and expert is liable to pay COMPENSATION to every subscriber who suffered loss relying on an untrue statement or misleading inclusion/omission (plus right to rescind allotment against company). Defences: withdrew consent before issue, issued without knowledge/consent + immediate public notice, or reasonable belief in truth/competent expert statement.",
+          "Criminal Liability for Misstatement (Secs. 34, 36 & 447): Every person authorizing a misleading prospectus is punishable for Fraud under Section 447 (6 months to 10 years' imprisonment + fine up to 3x fraud amount; minimum 3 years if public interest involved), unless he proves the misstatement was immaterial or he had reasonable grounds to believe it true."
+        ],
+        "caseLaws": [
+          {
+            "name": "Derry v. Peek",
+            "citation": "1889 14 App Cas 337 (HL)",
+            "principle": "Defined fraudulent misrepresentation in a prospectus as a false statement made knowingly, without belief in its truth, or recklessly careless whether it be true or false (later supplemented by strict statutory compensation under Sec. 35)."
+          },
+          {
+            "name": "Peek v. Gurney",
+            "citation": "1873 LR 6 HL 377",
+            "principle": "Held that the office of a prospectus is exhausted upon original allotment of shares; a subsequent purchaser buying shares on the open secondary market cannot sue directors on prospectus misstatements."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between a Shelf Prospectus (Sec. 31) and a Red Herring Prospectus (Sec. 32), and state who can claim civil compensation under Section 35.",
+            "a": "A Shelf Prospectus allows notified institutions to make multiple security issues over up to 1 year without a fresh full prospectus each time, whereas a Red Herring Prospectus is used in book-building IPOs omitting exact issue price or quantum before bidding closes. Under Sec. 35, original subscribers who invested relying on the misstatement and suffered loss can claim compensation."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

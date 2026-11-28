@@ -1,0 +1,158 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-ii",
+      "title": "Labour Law - II",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper I",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Employees' Compensation Act, 1923 - Employer's Liability, Arising Out of & In Course of Employment, Notional Extension & Compensation",
+          "topics": [
+            {"id": "lab2-u2-t1", "title": "1. Object, Scope & Definitions (Employee, Dependant, Partial & Total Disablement - Sec. 2) & Employer's Liability (Sec. 3)"},
+            {"id": "lab2-u2-t2", "title": "2. 'Arising Out of and in the Course of Employment' (Causal Nexus Test) & Doctrine of Notional Extension"},
+            {"id": "lab2-u2-t3", "title": "3. Statutory Defences / Exceptions to Liability (Sec. 3 Proviso), Contractors (Sec. 12) & Commissioner (Secs. 19-30A)"},
+            {"id": "lab2-u2-t4", "title": "4. Calculation & Amount of Compensation (Death, Permanent Total/Partial Disablement, Temporary Disablement & Schedule I-IV)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab2-u2-t1": {
+      "id": "lab2-u2-t1",
+      "subtitle": "Labour Law - II - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Renamed from Workmen's Compensation Act in 2009, the Employees' Compensation Act, 1923 provides speedy, fixed-scale social-security compensation to employees (or their dependants) for personal injury caused by accident arising out of and in the course of employment, or listed occupational diseases (Schedule III). Under Section 3, employer liability is STRICT / NO-FAULT once the causal link with employment is established.",
+        "legalProvision": "Sections 2(d), 2(dd), 2(g), 2(k), 2(l), 3, & Schedules I-IV, Employees' Compensation Act, 1923; Code on Social Security, 2020",
+        "meaning": "Unlike tort law (where the claimant must prove employer negligence and faces contributory negligence or volenti non fit injuria defences), Section 3 imposes strict statutory liability on the employer for workplace accidents.",
+        "keyPoints": [
+          "Key Definitions (Sec. 2): 'Employee' (Sec. 2(dd) - replaced 'workman' in 2009; covers persons in Schedule II employments - factories, mines, construction, railways, motor transport, etc. - excluding casual employees not employed for trade/business); 'Dependant' (Sec. 2(d) - spouse, minor legitimate/adopted son, unmarried legitimate/adopted daughter, widowed mother, plus wholly/partly dependent parents or minor/widowed/infirm relatives); 'Total Disablement' (Sec. 2(l) - incapacitates employee for ALL work he was capable of performing at the time of accident, not merely his current job); 'Partial Disablement' (Sec. 2(g) - temporary reduces earning capacity in ANY employment, or permanent reduces earning capacity in EVERY employment he was capable of undertaking).",
+          "Employer's Strict Liability for Accident (Sec. 3(1)): Employer is liable to pay compensation in accordance with Chapter II if personal injury is caused to an employee by ACCIDENT 'arising out of and in the course of his employment' (includes heart attack/strain aggravated by work stress - Mackinnon Mackenzie & Co. v. Ibrahim Mahmomed Issak).",
+          "Occupational Diseases (Sec. 3(2)-(2A) & Schedule III): Contracting any disease specified in Part A, B, or C of Schedule III (e.g., silicosis, asbestosis, lead/mercury poisoning, hearing loss) is DEEMED to be an injury by accident arising out of and in the course of employment (6 months' continuous service in Part B triggers presumption)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mackinnon Mackenzie & Co. Pvt. Ltd. v. Ibrahim Mahmomed Issak",
+            "citation": "1969 2 SCC 607",
+            "principle": "Explained 'arising out of and in the course of employment' under Section 3: there must be a causal connection between the employment and the injury, though direct proof may be inferred from surrounding circumstances."
+          },
+          {
+            "name": "Pratap Narain Singh Deo v. Srinivas Sabata",
+            "citation": "1976 1 SCC 289",
+            "principle": "Held that where a carpenter lost his left hand above the elbow rendering him permanently unfit to perform carpenter's work, it amounted to 100% 'Total Disablement' under Section 2(l) even if he could do some other light work."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'Total Disablement' (Sec. 2(l)) and 'Permanent Partial Disablement' (Sec. 2(g)), and state who qualifies as a 'Dependant' under Section 2(d).",
+            "a": "Total disablement incapacitates the employee for ALL work he was capable of performing at the time of the accident (Pratap Narain Singh Deo), whereas Permanent Partial Disablement reduces earning capacity in every employment he was capable of undertaking. Dependants include spouse, minor son, unmarried daughter, widowed mother, and dependent parents/specified relatives."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u2-t2": {
+      "id": "lab2-u2-t2",
+      "subtitle": "Labour Law - II - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 3(1) requires TWO cumulative elements: 'in the course of employment' (time and place/duty nexus while doing work or something incidental thereto) AND 'arising out of employment' (causal connection showing the risk was inherent in or increased by the employment). Through the 'Doctrine of Notional Extension', courts extend 'in the course of employment' to journeys/spaces reasonably connected with work.",
+        "legalProvision": "Section 3(1), Employees' Compensation Act, 1923; Doctrine of Notional Extension",
+        "meaning": "An accident need not occur strictly inside the factory gate during exact clock-in hours: if a worker is commuting on a company bus, crossing a designated factory approach, or facing a special locality hazard because of his job, courts hold the accident arose out of and in the course of employment.",
+        "keyPoints": [
+          "'In the Course of Employment' (Temporal & Spatial Nexus): Means during the currency of the employment relationship while the employee is doing what he is employed to do OR doing something reasonably incidental/ancillary thereto (e.g., taking necessary rest, toilet/water break, or obeying employer's lawful instruction).",
+          "'Arising Out of Employment' (Causal Nexus): Requires proving that the employment was a CONTRIBUTING CAUSE of the injury - either the nature of the job itself carried the risk (e.g., electrician electrocuted, driver in road accident, watchman assaulted on duty) OR the job placed the worker in a danger zone ('locality risk' - e.g., communal riot/bombing at workplace).",
+          "Doctrine of Notional Extension (Saurashtra Salt Mfg. Co. v. Bai Valu Raja; General Manager, BEST Undertaking v. Mrs. Agnes): As a general rule, employment begins when the employee reaches the workplace and ends upon leaving it - EXCEPT where Notional Extension applies: (a) commuting in employer-provided transport or on a specific route/time tied to duty (Agnes), (b) traversing a single access bridge/path leading exclusively to the factory, or (c) duty requiring travel/stay away from home.",
+          "Added Peril / Frolic Exception: If an employee voluntarily undertakes an unnecessary, unauthorized 'added peril' (e.g., climbing onto a moving crane or riding on a forklift footboard for fun when prohibited), the injury falls OUTSIDE employment and is NOT compensable."
+        ],
+        "caseLaws": [
+          {
+            "name": "General Manager, B.E.S.T. Undertaking, Bombay v. Mrs. Agnes",
+            "citation": "AIR 1964 SC 193",
+            "principle": "Applied Notional Extension: a bus driver returning home after duty on a BEST bus availed of under service facilities met with a fatal accident - held 'in the course of employment' due to reasonable commuting nexus."
+          },
+          {
+            "name": "Saurashtra Salt Manufacturing Co. v. Bai Valu Raja",
+            "citation": "AIR 1958 SC 881",
+            "principle": "Held that employment does not necessarily begin/end at the factory gate; on the facts, salt workers crossing a creek by a public ferry boat after work were outside notional extension where no special employment nexus existed."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'in the course of employment' and 'arising out of employment', and explain the Doctrine of Notional Extension with one Supreme Court example.",
+            "a": "'In the course of employment' refers to time/place/activity within the employment period, whereas 'arising out of employment' requires a causal link between the employment and the risk/injury. Under Notional Extension (BEST v. Agnes), a bus driver fatally injured while commuting home on the employer's bus was held in the course of employment."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u2-t3": {
+      "id": "lab2-u2-t3",
+      "subtitle": "Labour Law - II - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Even when an injury arises out of and in the course of employment, the Proviso to Section 3(1) exempts the employer from liability for NON-FATAL injuries in three specific misconduct/intoxication cases (NEVER exempts death or permanent total disablement!). Section 12 holds the principal employer liable for contractor employees (with right of indemnity), and Sections 19-30A establish the Commissioner as sole adjudicator with 30-day appeal to the High Court.",
+        "legalProvision": "Sections 3(1) Proviso, 12, 19-25, & 30-30A, Employees' Compensation Act, 1923",
+        "meaning": "The Act keeps non-fatal fault exceptions narrow so workers are not denied support over minor lapses, while routing all compensation deposits through the Commissioner so vulnerable families are never cheated out of lump-sum payouts.",
+        "keyPoints": [
+          "Three Non-Fatal Exceptions Under Section 3(1) Proviso: Employer is NOT liable for an injury NOT resulting in death or permanent total disablement if caused by (a) employee being at the time under the influence of DRINK OR DRUGS, (b) WILFUL DISOBEDIENCE by employee of an order expressly given or rule expressly framed to secure safety, or (c) WILFUL REMOVAL OR DISREGARD by employee of any safety guard/device known to have been provided for safety. (Crucial: If injury results in DEATH or permanent total disablement, employer CANNOT escape even if employee was drunk or disobeyed a safety rule!)",
+          "Liability of Principal Employer for Contractors (Sec. 12): Where a principal employer contracts with a contractor for work ordinarily part of the principal's trade/business, principal employer is liable to pay compensation as if the employee were directly employed by him (calculated on contractor's wages), with statutory right to be indemnified by the contractor.",
+          "Commissioner & Dispute Resolution (Secs. 19-25 & 30): Commissioner decides liability, quantum, and dependant distribution (barring civil court suits - Sec. 19(2)); fatal/woman/disabled compensation MUST be deposited directly with the Commissioner (Sec. 8). Appeal lies to High Court within 60 DAYS (note: Sec. 30 previously had 60 days; check amended Act: 60 days from order, requiring substantial question of law + employer's certificate of deposit of compensation amount)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jaya Biswal v. Branch Manager, IFFCO Tokio General Insurance Co. Ltd.",
+            "citation": "2016 11 SCC 201",
+            "principle": "Emphasized the beneficial social-welfare character of the 1923 Act and enforced statutory penalty and interest against employer/insurer delay in paying compensation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Does intoxication or wilful disobedience of a safety rule under the Section 3(1) Proviso excuse an employer if the workplace accident results in DEATH of the employee?",
+            "a": "No - the Section 3(1) Proviso exceptions apply ONLY to injuries NOT resulting in death or permanent total disablement; where death occurs, the employer remains liable."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u2-t4": {
+      "id": "lab2-u2-t4",
+      "subtitle": "Labour Law - II - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 4 (read with Schedule IV age-based 'Relevant Factors' and Schedule I injury percentages) prescribes a clear statutory formula for calculating compensation across Death, Permanent Total Disablement, Permanent Partial Disablement, and Temporary Disablement, with a 1-month due date (Sec. 4A) triggering 12% simple interest and up to 50% penalty on default.",
+        "legalProvision": "Sections 4, 4A, & Schedules I & IV, Employees' Compensation Act, 1923 (as amended by Act 45 of 2009)",
+        "meaning": "Statutory caps and age-indexed multipliers provide predictable, prompt relief without protracted litigation over life expectancy or earning capacity.",
+        "keyPoints": [
+          "1. Death Compensation (Sec. 4(1)(a)): Amount equal to FIFTY PERCENT (50%) of the deceased employee's monthly wages multiplied by the age-specific 'Relevant Factor' in Schedule IV, OR Rs. 1,20,000 (minimum statutory floor fixed by 2009 Amendment, subject to Central Govt notifications), WHICHEVER IS MORE (plus minimum Rs. 5,000 funeral expense under Sec. 4(4)).",
+          "2. Permanent Total Disablement (Sec. 4(1)(b)): Amount equal to SIXTY PERCENT (60%) of the employee's monthly wages multiplied by the Schedule IV 'Relevant Factor', OR Rs. 1,40,000 (minimum floor under 2009 Amendment), WHICHEVER IS MORE (enhanced up to 100% / higher where permanent constant help of another person is required).",
+          "3. Permanent Partial Disablement (Sec. 4(1)(c)): For injuries listed in Schedule I (Part II), percentage of compensation payable in case of permanent total disablement proportionate to the loss of earning capacity specified in Schedule I (e.g., amputation at shoulder = 90%, thumb = 30%, index finger = 14%); for unlisted injuries, proportionate to loss of earning capacity assessed by a qualified medical practitioner.",
+          "4. Temporary Disablement & Penalty for Default (Secs. 4(1)(d) & 4A): Temporary total/partial disablement -> half-monthly payment of 25% of monthly wages (after initial 3-day waiting period unless disablement lasts >= 28 days). Under Sec. 4A, compensation falls due as soon as injury occurs; delay beyond 1 MONTH attracts 12% p.a. simple interest (or higher notified rate) + up to 50% penalty if no justification exists."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ved Prakash Garg v. Premi Devi",
+            "citation": "1997 8 SCC 1",
+            "principle": "Held that the insurer is liable for principal compensation plus statutory interest under Section 4A(3)(a), whereas penalty under Section 4A(3)(b) is payable by the employer for his own default unless insurance contract covers it."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the basic formula for Death compensation vs Permanent Total Disablement compensation under Section 4(1)(a)-(b), and state the interest rate and maximum penalty for delayed payment under Section 4A(3).",
+            "a": "Death: 50% of monthly wages x Schedule IV factor (or statutory minimum); Permanent Total Disablement: 60% of monthly wages x Schedule IV factor (or statutory minimum). Under Sec. 4A(3), delayed payment beyond 1 month carries 12% p.a. simple interest and up to 50% penalty."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

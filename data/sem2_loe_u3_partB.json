@@ -1,0 +1,133 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-evidence",
+      "title": "Law of Evidence (IEA / BSA)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Relevancy of Judgments, Expert & Relationship Opinion, Facts Not Needing Proof, Oral & Documentary/Electronic Evidence & Parol Evidence Rule",
+          "topics": [
+            {"id": "loe-u3-t4", "title": "4. Documentary Evidence - Primary, Secondary & Electronic/Digital Evidence (Secs. 61-65B IEA / Secs. 56-63 BSA)"},
+            {"id": "loe-u3-t5", "title": "5. Modes of Proof of Execution of Documents, Public vs Private Documents & Presumptions as to Documents (Secs. 67-90A IEA / Secs. 65-93 BSA)"},
+            {"id": "loe-u3-t6", "title": "6. Exclusion of Oral by Documentary Evidence - Parol Evidence Rule, Exceptions & Patent vs Latent Ambiguities (Secs. 91-100 IEA / Secs. 94-103 BSA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loe-u3-t4": {
+      "id": "loe-u3-t4",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Sections 61-65 IEA (Sections 56-60 BSA, 2023), documentary contents must be proved by Primary Evidence (the original document itself - the 'Best Evidence Rule'), while Secondary Evidence (certified copies, photocopies, oral accounts) is permitted ONLY in seven strict statutory contingencies (loss, destruction, adversary's custody, public document). BSA, 2023 revolutionized digital proof by classifying multi-file/stored electronic records as Primary Evidence (Sec. 57) and upgrading electronic certification under Section 63 BSA (replacing Sec. 65B IEA).",
+        "legalProvision": "Sections 61-65B, Indian Evidence Act, 1872 (Sections 56-63, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Because human memory fades and copies can be altered, the law insists on producing the original document before court. Where producing an original is impossible or involves electronic data generated across servers and devices, statutory authentication rules safeguard reliability.",
+        "keyPoints": [
+          "Primary Evidence (Sec. 62 IEA / Sec. 57 BSA): Means the ORIGINAL document produced for court inspection (includes each counterpart executed in several parts and uniform printed/photographed copies). MAJOR BSA, 2023 EXPANSION (Explanations 4-7 to Sec. 57 BSA): Expressly treats electronic/digital records created or stored simultaneously/sequentially in multiple files, produced from proper custody, video recordings stored and transmitted/broadcast, and automated multi-storage digital files as PRIMARY EVIDENCE.",
+          "Secondary Evidence (Sec. 63 IEA / Sec. 58 BSA): Includes certified copies, mechanical copies ensuring accuracy (photocopies compared with original), counterparts against non-executing parties, and oral accounts by someone who actually saw the original. BSA Sec. 58 expands this to include oral admissions, written admissions, and evidence of a skilled person who examined voluminous/immovable documents.",
+          "Seven Cases Permitting Secondary Evidence (Sec. 65 IEA / Sec. 60 BSA): Allowed ONLY when (a) original is with adverse party/beyond court reach despite notice to produce (Sec. 66 / Sec. 64 BSA), (b) existence/contents admitted in writing, (c) original destroyed or lost without default, (d) original not easily movable (e.g., tombstone/wall inscription), (e) original is a Public Document (ONLY certified copy admissible), (f) statute permits certified copy, or (g) voluminous accounts examined by a skilled person.",
+          "Electronic / Digital Record Admissibility (Sec. 65B IEA -> Secs. 61-63 BSA, 2023): BSA Sec. 61 grants electronic records full legal parity with paper documents. For secondary electronic outputs (printouts, USB copies, cloud downloads), Section 65B(4) IEA / Section 63(4) BSA requires a MANDATORY statutory Certificate (Arjun Panditrao Khotkar, 2020) - BSA Sec. 63(4) & Schedule now require certification signed by BOTH the person in charge of the device/system AND an expert (with hash value verification)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Arjun Panditrao Khotkar v. Kailash Kushanrao Gorantyal",
+            "citation": "2020 7 SCC 1",
+            "principle": "3-judge Supreme Court Bench overruled Shafhi Mohammad and held that a certificate under Section 65B(4) IEA (now Sec. 63(4) BSA) is a mandatory condition precedent for admitting secondary electronic evidence, though unnecessary when the original device itself is produced."
+          },
+          {
+            "name": "J. Yashoda v. K. Shobha Rani",
+            "citation": "2007 5 SCC 730",
+            "principle": "Held that mere photocopies cannot be admitted as Secondary Evidence under Section 65 unless the party first lays a strict factual foundation proving loss, destruction, or non-availability of the original."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four contingencies under Section 65 IEA (Section 60 BSA) when Secondary Evidence is admissible, and explain one key upgrade introduced by BSA Section 57 / Section 63 for electronic records.",
+            "a": "Secondary evidence is permitted when the original is with the adversary despite notice, destroyed/lost, not easily movable, or is a public document (certified copy). BSA Sec. 57 (Explanations 4-7) elevates properly stored electronic/video files to Primary Evidence, and Sec. 63(4) requires a Schedule certificate signed by both the device custodian and an expert."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u3-t5": {
+      "id": "loe-u3-t5",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Merely filing a document does not prove it - execution (signature/handwriting) must be proved under Sections 67-73 IEA (Sections 65-73 BSA), with attested documents like Wills/Gifts/Mortgages requiring at least ONE attesting witness (Sec. 68 / Sec. 67 BSA). Sections 74-78 IEA (Secs. 74-77 BSA) separate Public Documents (proved via Certified Copies) from Private Documents, while Sections 79-90A (Secs. 78-93 BSA) establish statutory Presumptions as to genuineness of documents including 30-year-old Ancient Documents.",
+        "legalProvision": "Sections 67-90A, Indian Evidence Act, 1872 (Sections 65-93, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Proof of execution guarantees authenticity before a court relies on any written instrument. Public documents kept by government officials enjoy streamlined proof by certified copies and mandatory presumptions of genuineness so public registers need not be hauled into courts daily.",
+        "keyPoints": [
+          "Modes of Proving Execution & Handwriting (Secs. 67, 45, 47 & 73 IEA / Secs. 65, 39, 41 & 72 BSA): Proved by calling the executant/eyewitness, person acquainted with handwriting (Sec. 47 / Sec. 41 BSA), handwriting expert (Sec. 45 / Sec. 39 BSA), admission of executant, or direct court comparison of signatures (Sec. 73 / Sec. 72 BSA).",
+          "Proof of Attested Documents (Secs. 68-71 IEA / Secs. 67-70 BSA): A document legally required to be attested (Will, Gift, Mortgage) CANNOT be used in evidence until at least ONE attesting witness (if alive and traceable) is called to prove execution. CRUCIAL PROVISO: For registered documents OTHER THAN A WILL (e.g., registered gift/mortgage), calling an attesting witness is unnecessary unless execution is SPECIFICALLY DENIED by the executant - for a WILL, calling an attesting witness is ALWAYS MANDATORY even if registered (H. Venkatachala Iyengar). If attesting witness denies/forgets execution, other evidence may prove it (Sec. 71 / Sec. 70 BSA).",
+          "Public Documents vs Private Documents (Secs. 74-78 IEA / Secs. 74-77 BSA - merged into Sec. 74 BSA): Public Documents (Sec. 74(1)) are acts/records of sovereign authority, official bodies, tribunals, public officers (legislative, judicial, executive - e.g., judgments, FIR, electoral rolls, post-mortem reports), and public records kept of private documents (e.g., Sub-Registrar's register of Sale Deeds). All other documents are Private Documents (Sec. 74(2)). Public documents are proved via Certified Copies (Secs. 76-77 IEA / Secs. 75-76 BSA).",
+          "Presumptions as to Documents - Shall vs May Presume (Secs. 79-90A IEA / Secs. 78-93 BSA): SHALL PRESUME (Mandatory until rebutted) -> Certified copies of public documents (Sec. 79 / Sec. 78 BSA), Judicial deposition records (Sec. 80 / Sec. 79 BSA), Official Gazettes & electronic Gazettes (Secs. 81-81A / Secs. 80-81 BSA), Registered Powers of Attorney (Sec. 85 / Sec. 84 BSA), and Electronic Agreements / Secure Electronic Signatures (Secs. 85A-85C / Secs. 85-87 BSA). MAY PRESUME (Discretionary) -> 30-Year-Old Ancient Documents from proper custody (Sec. 90 / Sec. 92 BSA) and 5-Year-Old Electronic Records from proper custody (Sec. 90A / Sec. 93 BSA)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Janki Narayan Bhoir v. Narayan Namdeo Kadam",
+            "citation": "2003 2 SCC 91",
+            "principle": "Held that Section 68 IEA (now Sec. 67 BSA) mandates examining at least one attesting witness (if alive) to prove a Will; merely proving the scribe's signature or registration does not satisfy Section 68."
+          },
+          {
+            "name": "Lakhi Baruah v. Padma Kanta Kalita",
+            "citation": "1996 8 SCC 357",
+            "principle": "Held that the 30-year presumption of genuineness under Section 90 IEA (Sec. 92 BSA) applies ONLY to ORIGINAL ancient documents produced from proper custody, NEVER to certified copies."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why must at least one attesting witness ALWAYS be examined to prove a registered Will under Section 68 IEA (Section 67 BSA), and what is the age threshold for Ancient Paper Documents vs Electronic Records?",
+            "a": "The Proviso to Section 68 IEA / Section 67 BSA explicitly carves out 'not being a Will' from the registration exemption, so a Will always needs an attesting witness. Ancient paper documents require 30 years from proper custody (Sec. 90 / Sec. 92 BSA), while electronic records require 5 years (Sec. 90A / Sec. 93 BSA)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u3-t6": {
+      "id": "loe-u3-t6",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter VI (Sections 91-100 IEA / Sections 94-103 BSA, 2023) embodies the 'Best Evidence' and 'Parol Evidence' Rules: when terms of a contract, grant, or disposition of property are reduced to a document (or required by law to be in writing), ONLY the document itself proves those terms (Sec. 91 / Sec. 94 BSA), and NO oral evidence may contradict, vary, add to, or subtract from them between the parties (Sec. 92 / Sec. 95 BSA) - subject to 6 statutory Provisos and the Patent vs Latent Ambiguity rules (Secs. 93-98 / Secs. 96-101 BSA).",
+        "legalProvision": "Sections 91-100, Indian Evidence Act, 1872 (Sections 94-103, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Sections 91 and 92 (Secs. 94-95 BSA) are complementary pillars safeguarding commercial certainty: Section 91 excludes oral proof of written terms universally, while Section 92 bars parties from contradicting an already-proved written contract with oral side-claims.",
+        "keyPoints": [
+          "Section 91 IEA / Section 94 BSA (Document Proves Its Own Terms): Applies to (1) contracts, grants, or dispositions of property reduced to writing, and (2) matters required by law to be in writing (e.g., Sale/Mortgage >= Rs. 100, Lease > 1 year, Gift of immovable property, Court Decrees). Two Exceptions: written appointment of a public officer acting as such, and Wills proved via Probate. Explanation 3: Payment of money MAY still be proved orally even if a written receipt exists (a receipt is not a contract/grant).",
+          "Section 92 IEA / Section 95 BSA (Exclusion of Contradictory Oral Agreement) & Its Six Provisos: Applies ONLY between the parties to the instrument (strangers/third parties CAN lead oral evidence under Sec. 99 / Sec. 102 BSA). SIX PROVISOS allowing oral evidence: (1) Facts invalidating the document (fraud, intimidation, illegality, want of capacity, failure of consideration, mistake - Gangabai v. Chhabubai), (2) Separate oral agreement on a matter on which the document is SILENT and NOT inconsistent with its terms, (3) Separate oral agreement constituting a CONDITION PRECEDENT to any obligation attaching, (4) Distinct subsequent oral agreement to rescind or modify (EXCEPT where law requires writing OR the contract is registered), (5) Local/trade usage or custom not repugnant to express terms, and (6) Extrinsic facts showing how document language relates to existing facts.",
+          "Patent Ambiguity (Secs. 93-94 IEA / Secs. 96-97 BSA - CANNOT Be Cured): Defect apparent ON THE FACE of the document (e.g., 'sell my horse for Rs. 1,000 or Rs. 1,500' or leaving the price blank) - NO oral evidence is admissible to supply the missing meaning; similarly, plain unambiguous language matching existing facts cannot be contradicted (Sec. 94 / Sec. 97 BSA).",
+          "Latent Ambiguity (Secs. 95-97 IEA / Secs. 98-100 BSA - CAN Be Cured): Language is clear on its face, but becomes ambiguous ONLY when applied to external facts (e.g., selling 'my white horse' when seller owns two white horses, or 'my house in Calcutta' when seller owns one in Howrah) - extrinsic oral evidence IS admissible to clarify true intent; Sec. 98 / Sec. 101 BSA allows explaining illegible characters, foreign/technical/local terms; Sec. 100 / Sec. 103 BSA saves Indian Succession Act rules on Wills."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bai Hira Devi v. Official Assignee of Bombay",
+            "citation": "AIR 1958 SC 448",
+            "principle": "Explained the interplay of Sections 91, 92, and 99 IEA: Section 92 bars oral variation ONLY between parties to the deed; a stranger/third party (like an Official Assignee) can lead oral evidence under Section 99 to show the true nature of a transaction."
+          },
+          {
+            "name": "Roop Kumar v. Mohan Thedani",
+            "citation": "2003 6 SCC 595",
+            "principle": "Clarified that Sections 91 and 92 are based on the Best Evidence Rule; Proviso 1 permits oral evidence to show that an apparent sale/agency deed was a sham never intended to be acted upon."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Patent Ambiguity (Sec. 93 / Sec. 96 BSA) and Latent Ambiguity (Secs. 95-97 / Secs. 98-100 BSA), and state whether oral evidence can prove payment when a written receipt exists.",
+            "a": "Patent ambiguity is obvious on the face of the document (e.g., blank price) and CANNOT be cured by oral evidence; Latent ambiguity arises only when applying plain words to external facts (e.g., two white horses) and CAN be cured by oral evidence. Yes - under Explanation 3 to Sec. 91 / Sec. 94 BSA, payment of money can be proved orally even if a written receipt exists."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

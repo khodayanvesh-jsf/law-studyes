@@ -1,0 +1,194 @@
+{
+  "subjects": [
+    {
+      "id": "jurisprudence",
+      "title": "Jurisprudence",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper I",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Persons, Legal Status of Animals/Dead/Unborn, Corporate Personality, Legal Rights & Duties & Hohfeld's Cognate Concepts",
+          "topics": [
+            {"id": "jur-u3-t1", "title": "1. Persons & Nature of Legal Personality - Natural Persons & Legal Status of Lower Animals, Dead Persons & Unborn Persons"},
+            {"id": "jur-u3-t2", "title": "2. Legal Persons - Corporations (Aggregate & Sole), Purpose of Incorporation, Nature & Theories of Corporate Personality"},
+            {"id": "jur-u3-t3", "title": "3. Legal Rights & Duties - Definition, Essentials (Salmond) & Theories of Legal Rights (Will vs Interest Theory)"},
+            {"id": "jur-u3-t4", "title": "4. Classification of Legal Rights & Duties - Absolute vs Relative Duties, Perfect/Imperfect, Right in Rem/Personam & Proprietary/Personal"},
+            {"id": "jur-u3-t5", "title": "5. Rights in a Wider Sense - Hohfeld's Analysis of Cognate Concepts (Right, Liberty/Privilege, Power & Immunity)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "jur-u3-t1": {
+      "id": "jur-u3-t1",
+      "subtitle": "Jurisprudence - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "In law, a 'Person' (Latin 'persona' - mask) is any being or entity capable of bearing legal rights and duties, classified into Natural Persons (human beings) and Legal/Juristic Persons (corporations, idols, State). Lower animals and dead persons are NOT legal persons (though protected indirectly via public duties), whereas an Unborn Child enjoys conditional legal personality contingent upon being born alive.",
+        "legalProvision": "Salmond's Theory of Personality; Sections 13 & 20 TPA, 1882; Section 20 Hindu Succession Act, 1956; Sections 312-316 & 499 Expl. 1 IPC / Sections 88-92 & 356 BNS, 2023",
+        "meaning": "Legal personality is a legal creation, not a biological fact: historically Roman slaves were humans without legal personality, while modern law grants juristic personality to companies, Hindu idols (Pramatha Nath Mullick), and Guru Granth Sahib (Shiromani Gurdwara Prabandhak Committee).",
+        "keyPoints": [
+          "Nature of Legal Personality: Any subject matter to which the law attributes capacity to hold rights and bear duties; requires legal recognition (status) rather than human consciousness alone.",
+          "Legal Status of Lower Animals: Animals are objects of rights, NOT legal persons (cannot own property or sue in their own name, though trusts for animal welfare are valid charitable trusts). Modern Indian law imposes strict statutory duties on humans against cruelty (Prevention of Cruelty to Animals Act, 1960; Wildlife Protection Act, 1972; Animal Welfare Board v. A. Nagaraja recognizing animals' intrinsic worth under Art. 51A(g)).",
+          "Legal Status of Dead Persons: Personality ends at death ('Actio personalis moritur cum persona' - personal tort actions generally die with the person). Law protects three surviving interests of the dead - (1) Decent burial/cremation & protection of corpse/grave against trespass (Sec. 297 IPC / Sec. 301 BNS), (2) Reputation (defamation of deceased hurting living relatives - Sec. 499 Expl. 1 IPC / Sec. 356 BNS), and (3) Estate/Testamentary wishes (enforcing valid Wills).",
+          "Legal Status of Unborn Persons (Child en ventre sa mere): Treated by legal fiction as already born for its benefit, subject to the condition precedent of live birth - can inherit intestate (Sec. 20 Hindu Succession Act), receive property via prior life interest (Sec. 13 TPA), take partition share in Hindu coparcenary, claim damages for prenatal injury, and receives criminal protection against unlawful miscarriage/infanticide (Secs. 312-316 IPC / Secs. 88-92 BNS; postponement of death sentence on pregnant woman under Sec. 416 CrPC / Sec. 456 BNSS)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Animal Welfare Board of India v. A. Nagaraja",
+            "citation": "2014 7 SCC 547",
+            "principle": "Expanded statutory protection of animals in India by reading five internationally recognized animal freedoms into the Prevention of Cruelty to Animals Act, 1960 and Article 51A(g)."
+          },
+          {
+            "name": "Pramatha Nath Mullick v. Pradyumna Kumar Mullick",
+            "citation": "AIR 1925 PC 139",
+            "principle": "Held that a consecrated Hindu idol is a recognized juristic person capable of holding property and suing/being sued through its Shebait (manager)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why is an unborn child's legal personality called 'contingent', and what three interests of a dead person does Indian law still protect?",
+            "a": "An unborn child's rights (inheritance, Sec. 13 TPA gift, partition share) vest only if it is subsequently born alive. For dead persons, law protects (1) decent burial/grave sanctity, (2) reputation affecting living family (Sec. 499 Expl. 1 IPC / Sec. 356 BNS), and (3) testamentary estate distribution."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u3-t2": {
+      "id": "jur-u3-t2",
+      "subtitle": "Jurisprudence - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Legal (Artificial/Juristic) Person is an entity other than a human being clothed by law with separate personality - chiefly Corporations Aggregate (companies, universities) and Corporations Sole (President, Comptroller & Auditor General). Incorporation provides separate legal entity (Salomon v. Salomon), perpetual succession, and limited liability, explained by five juristic theories (Fiction, Realist, Concession, Bracket, and Purpose).",
+        "legalProvision": "Section 9, Companies Act, 2013; Section 11 IPC / Section 2(26) BNS, 2023 (Company as 'Person'); Doctrine of Lifting the Corporate Veil",
+        "meaning": "Corporate personality enables large-scale commerce and public governance to outlive individual human founders. Although a company acts through human directors, it owns property, contracts, and incurs civil and criminal liability in its own name - unless courts lift the corporate veil to expose fraud.",
+        "keyPoints": [
+          "Kinds of Corporations: (1) Corporation Aggregate (association of co-existing persons united for a common purpose - e.g., registered companies, municipal corporations, State Bar Councils) and (2) Corporation Sole (incorporated series of single successive officeholders holding perpetual office - e.g., President of India, Post Master General, Attorney General).",
+          "Purpose & Advantages of Incorporation (Salomon v. Salomon, 1897): (1) Separate Legal Entity distinct from shareholders, (2) Perpetual Succession (members may come and go, company continues forever), (3) Limited Liability shielding shareholders' personal assets, (4) Separate Property & Transferable Shares, and (5) Capacity to Sue and Be Sued in corporate name.",
+          "Five Theories of Corporate Personality: (1) Fiction Theory (Savigny, Salmond - corporation is a fictitious person created purely by law), (2) Concession Theory (corporate status exists ONLY by sovereign State grant/concession), (3) Realist / Organic Theory (Gierke, Maitland - corporation is a real social organism with collective will, merely recognized by the State), (4) Bracket / Symbolist Theory (Ihering - legal personality is merely a bracket/shorthand for the real human members behind it), and (5) Purpose Theory (Brinz - property dedicated to a specific charitable/commercial purpose).",
+          "Lifting the Corporate Veil & Criminal Liability: Courts pierce the corporate veil to prevent tax evasion, fraud, enemy-character trading (Daimler Co. v. Continental Tyre), or sham agencies (LIC v. Escorts). Under Indian law (Standard Chartered Bank v. Directorate of Enforcement, 2005), a corporation is criminally liable even for offences carrying mandatory imprisonment (punished by fine) and is NOT a 'citizen' under Article 19 (STC v. CTO)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Salomon v. A. Salomon & Co. Ltd.",
+            "citation": "1897 AC 22 (HL)",
+            "principle": "Foundational authority establishing that once duly incorporated, a company is an independent legal person entirely distinct from its founder, shareholders, and creditors."
+          },
+          {
+            "name": "Standard Chartered Bank v. Directorate of Enforcement",
+            "citation": "2005 4 SCC 530",
+            "principle": "5-judge Constitution Bench held that corporations enjoy no blanket immunity from criminal prosecution; where a statute prescribes mandatory imprisonment and fine, courts may impose a fine on the company."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between a Corporation Aggregate and a Corporation Sole, and contrast Savigny's Fiction Theory with Gierke's Realist Theory of corporate personality.",
+            "a": "A Corporation Aggregate consists of multiple simultaneous members (e.g., a company), whereas a Corporation Sole consists of one single officeholder at a time in perpetual succession (e.g., CAG). Fiction Theory treats the corporation as a purely artificial legal creation, whereas Realist Theory views it as a real social organism with collective will."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u3-t3": {
+      "id": "jur-u3-t3",
+      "subtitle": "Jurisprudence - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Legal Right is an interest recognized and protected by a rule of law (Salmond), carrying a corresponding legal duty. Two classic theories debate its core nature - the Will Theory (Holland, Austin, Kant: right as legally respected human willpower) and the Interest Theory (Ihering, Salmond: right as legally protected interest) - while Salmond identified five structural elements present in every legal right.",
+        "legalProvision": "Salmond's Five Elements of a Legal Right; Will Theory vs Interest Theory; Ubi Jus Ibi Remedium",
+        "meaning": "Legal rights differ from mere moral rights because State courts enforce them with coercive remedies ('Ubi jus ibi remedium' - where there is a right, there is a remedy). Understanding both the Will and Interest theories explains how even infants and insane persons (who lack mature 'will') still hold full legal rights.",
+        "keyPoints": [
+          "Classic Definitions of Legal Right: Salmond ('an interest recognized and protected by a rule of right'); Holland ('capacity residing in one man of controlling, with the assent and assistance of the State, the actions of others'); Gray ('power which a man has to make a person or persons do or refrain from doing a certain act'); Allen ('legally guaranteed power to realize an interest').",
+          "Will Theory vs Interest Theory: Will Theory (Austin, Holland, Pollock) defines a right as an expression of free human will backed by law - criticized because infants, unborn babies, and corporations lack conscious personal will yet hold legal rights. Interest Theory (Rudolf von Ihering, Salmond) defines a right as a legally protected interest - criticized by Allen for omitting the element of choice/power; modern synthesis combines legally protected interest with enforceable choice.",
+          "Salmond's Five Essential Elements of Every Legal Right: (1) Person of Inherence (Subject / owner of the right), (2) Person of Incidence (person bound by the correlative duty), (3) Content of the Right (act or forbearance owed by the duty-bearer), (4) Subject Matter / Object of the Right (the thing - e.g., house, car, reputation - to which the act relates), and (5) Title (the vestitive fact/event - e.g., sale deed, birth, contract - by which the right vested in the owner).",
+          "Nature of Legal Duty: A mandatory act or forbearance whose breach constitutes a legal wrong attracting sanction; Salmond held that every right implies a correlative duty (and vice versa), whereas Austin argued some duties are 'absolute' without a correlative private right."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ashby v. White",
+            "citation": "1703 92 ER 126",
+            "principle": "Established 'Ubi jus ibi remedium' (where there is a legal right, there is a legal remedy): a qualified voter wrongfully denied his vote won tort damages even though his preferred candidate still won."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List Salmond's five essential elements of a Legal Right using the example of buying a house, and state one key criticism of the Will Theory.",
+            "a": "(1) Person of Inherence: Buyer, (2) Person of Incidence: World at large (duty not to trespass), (3) Content: Non-interference, (4) Subject Matter: The house, (5) Title: Registered sale deed. The Will Theory fails to explain how infants, lunatics, and unborn children hold legal rights despite lacking mature willpower."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u3-t4": {
+      "id": "jur-u3-t4",
+      "subtitle": "Jurisprudence - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Jurists classify Legal Rights across ten standard pairs (Perfect/Imperfect, Positive/Negative, Right in Rem/Right in Personam, Proprietary/Personal, Vested/Contingent, Legal/Equitable, Antecedent/Remedial, Principal/Accessory, Primary/Sanctioning, Public/Private). Duties are famously divided by Austin into Relative Duties (having a correlative right in another) and Absolute Duties (owed to the State/self/society with no individual right-holder).",
+        "legalProvision": "Salmond's Classification of Rights; Austin's Classification of Absolute vs Relative Duties; Limitation Act, 1963",
+        "meaning": "Mastering these classifications allows instant legal analysis of any claim - for example, knowing whether a debt barred by the Limitation Act is an 'Imperfect Right' (exists without court suit) or whether land ownership is a 'Proprietary Right in Rem'.",
+        "keyPoints": [
+          "Perfect vs Imperfect Rights: A Perfect Right is both recognized AND directly enforceable by legal action (e.g., valid loan repayment); an Imperfect Right is recognized by law for limited purposes (e.g., retention/set-off/acknowledgment) but CANNOT be sued upon directly (e.g., a time-barred debt under the Limitation Act, 1963).",
+          "Right in Rem vs Right in Personam: Right in Rem avails against the ENTIRE WORLD at large (e.g., ownership of land, right to bodily safety & reputation - mostly negative duties of non-interference); Right in Personam avails against a SPECIFIC determinate person (e.g., buyer's contractual right against seller - mostly positive duties).",
+          "Proprietary vs Personal, Vested vs Contingent & Legal vs Equitable: Proprietary rights have monetary/estate value (land, shares, patents), while Personal rights relate to status/dignity without market price (liberty, reputation, marital status). Vested rights have all investitive facts complete, whereas Contingent rights depend on an uncertain future event (Secs. 19 & 21 TPA). Legal rights originated in common law courts vs Equitable rights in Chancery (e.g., beneficiary's interest under Indian Trusts Act).",
+          "Positive vs Negative & Primary (Antecedent) vs Sanctioning (Remedial): Positive right demands an affirmative act (repaying Rs. 1 lakh); Negative right demands forbearance (not trespassing). Primary/Antecedent rights exist independently of any wrong (right to reputation), whereas Sanctioning/Remedial rights arise AFTER breach of a primary right (right to damages for defamation).",
+          "Absolute vs Relative Duties (Austin vs Salmond): Relative Duty ALWAYS corresponds to a definite right in another person (e.g., debtor's duty to pay creditor). Austin identified four Absolute Duties having NO correlative private right: (1) Duties to oneself (e.g., not committing suicide), (2) Duties to indeterminate persons / community (not committing public nuisance), (3) Duties to non-humans (animals/God), and (4) Duties owed strictly to the Sovereign/State (paying taxes, not committing treason). Salmond disputed this, arguing duties to the State correspond to rights vested in the State."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bombay Dyeing & Manufacturing Co. Ltd. v. State of Bombay",
+            "citation": "AIR 1958 SC 328",
+            "principle": "Distinguished Perfect vs Imperfect Rights under Indian Limitation law: expiry of the limitation period bars only the judicial remedy (turning the debt into an imperfect right), without extinguishing the underlying debt itself."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between a Right in Rem and a Right in Personam, and list the four categories of Absolute Duties identified by Austin.",
+            "a": "A Right in Rem binds the entire world (e.g., property ownership), whereas a Right in Personam binds only specific individuals (e.g., contract debt). Austin's four Absolute Duties: duties to oneself, duties to the indeterminate public, duties toward animals/God, and duties owed solely to the Sovereign."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "jur-u3-t5": {
+      "id": "jur-u3-t5",
+      "subtitle": "Jurisprudence - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Wesley Newcomb Hohfeld exposed the ambiguity of using the single word 'right' for four totally different legal advantages, organizing all legal relations into four precise Jural Correlatives (Right-Duty, Privilege/Liberty-No-Right, Power-Liability, Immunity-Disability) and four Jural Opposites (Right-No-Right, Privilege-Duty, Power-Disability, Immunity-Liability).",
+        "legalProvision": "Hohfeld's Fundamental Legal Conceptions (1913); Salmond's Rights in the Wider Sense",
+        "meaning": "In everyday speech we say 'I have a right to walk on my lawn' (Liberty), 'I have a right to collect my rent' (Claim-Right), 'I have a right to make a Will' (Power), and 'I have a right not to be detained arbitrarily' (Immunity). Hohfeld's matrix eliminates logical confusion in judicial reasoning.",
+        "keyPoints": [
+          "Pair 1 - Claim-Right (Stricto Sensu) <-> Duty (Opposite: No-Right): A's affirmative claim that B MUST do or refrain from doing an act (e.g., A lends Rs. 10,000 to B -> A has a Claim-Right; B has a correlative Duty to repay).",
+          "Pair 2 - Privilege / Liberty <-> No-Right (Opposite: Duty): Freedom from any duty to do or abstain from doing something (e.g., A's liberty to open a competing shop next to B -> B has a correlative 'No-Right' to stop A, even if B loses business - Mogul Steamship Co. v. McGregor Gow & Co.).",
+          "Pair 3 - Power <-> Liability (Opposite: Disability): Legal ability to voluntarily alter existing legal relations of oneself or others (e.g., making a Will, transferring land, judge passing a decree, police arresting -> the affected person is under a correlative 'Liability' to have his legal position altered, which can even be beneficial like receiving a gift!).",
+          "Pair 4 - Immunity <-> Disability (Opposite: Liability): Freedom from having one's existing legal relations altered by another's act (e.g., diplomatic immunity from arrest, Fundamental Rights shielding citizens from unconstitutional laws -> Parliament/police suffer a correlative 'Disability' or lack of power).",
+          "Quick Memory Matrix: Vertical Jural Correlatives (between TWO parties: Right-Duty | Privilege-No-Right | Power-Liability | Immunity-Disability); Diagonal Jural Opposites (contradictories in the SAME person: Right vs No-Right | Privilege vs Duty | Power vs Disability | Immunity vs Liability)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mogul Steamship Co. v. McGregor, Gow & Co.",
+            "citation": "1892 AC 25 (HL)",
+            "principle": "Classic illustration of Hohfeld's Privilege/Liberty vs No-Right: lawful trade competition exercised as a Liberty inflicts 'damnum sine injuria' because rivals hold a correlative 'No-Right' to stop fair competition."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State all four pairs of Hohfeld's Jural Correlatives and give one concrete Indian legal example of Power-Liability and Immunity-Disability.",
+            "a": "Correlatives: Right-Duty, Privilege/Liberty-No-Right, Power-Liability, Immunity-Disability. Example of Power-Liability: an owner's power to sell or gift land creates a buyer/donee's liability to receive title. Example of Immunity-Disability: Article 13 shields citizens' Fundamental Rights (Immunity), imposing a constitutional Disability on legislatures."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

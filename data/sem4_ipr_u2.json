@@ -1,0 +1,195 @@
+{
+  "subjects": [
+    {
+      "id": "intellectual-property-law",
+      "title": "Intellectual Property Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Copyright Act, 1957 - Subject Matter, Originality, Ownership, Term, Moral & Neighbouring Rights, Fair Dealing, Infringement & Remedies",
+          "topics": [
+            {"id": "ipr-u2-t1", "title": "1. Copyright Act, 1957 - Idea-Expression Dichotomy (R.G. Anand), Originality Test (Eastern Book Co.) & Subject Matter (Sec. 13)"},
+            {"id": "ipr-u2-t2", "title": "2. Authorship, First Ownership (Sec. 17), Term of Copyright (Secs. 22-29), Assignment (Secs. 18-19) & Licensing (Secs. 30-32B)"},
+            {"id": "ipr-u2-t3", "title": "3. Economic Rights (Sec. 14), Moral Rights (Sec. 57 - Amar Nath Sehgal) & Neighbouring Rights (Performers & Broadcasters - Secs. 37-39A)"},
+            {"id": "ipr-u2-t4", "title": "4. Infringement of Copyright (Sec. 51) & Statutory Exceptions - Fair Dealing Doctrine (Sec. 52 - DU Photocopy Case)"},
+            {"id": "ipr-u2-t5", "title": "5. Remedies Against Infringement (Civil - Anton Piller/John Doe, Criminal & Administrative), Registration & Copyright Societies (Secs. 33 & 44-70)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "ipr-u2-t1": {
+      "id": "ipr-u2-t1",
+      "subtitle": "Intellectual Property Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Copyright under the Copyright Act, 1957 (amended majorly in 2012) protects ORIGINAL EXPRESSION of ideas - NEVER bare ideas, themes, historical facts, or plots ('Idea-Expression Dichotomy' - R.G. Anand v. Delux Films). Section 13 grants copyright across six statutory classes: Original Literary (including computer programs/databases), Dramatic, Musical, and Artistic works, plus Cinematograph Films and Sound Recordings - judged in India by the 'Modicum of Creativity' standard (Eastern Book Co. v. D.B. Modak).",
+        "legalProvision": "Sections 2, 13, 15, & 16, Copyright Act, 1957 (as amended by Act 27 of 2012)",
+        "meaning": "Section 16 declares that NO copyright exists outside the Act (strictly statutory, no common-law copyright), and registration is OPTIONAL (copyright vests automatically upon creation and fixation).",
+        "keyPoints": [
+          "Idea-Expression Dichotomy (R.G. Anand v. Delux Films, 1978): There is NO copyright in an idea, subject-matter, theme, plot, or historical/legendary fact; infringement occurs ONLY when the defendant copies the author's specific FORM, MANNER, ARRANGEMENT, AND EXPRESSION (tested by the unmistakable impression of an ordinary viewer/reader). Closely tied to 'Merger Doctrine' (if an idea can be expressed in only one way, expression merges with idea and gets no copyright) and 'Scenes a Faire' (stock scenes standard to a genre).",
+          "Standard of 'Originality' (Eastern Book Co. v. D.B. Modak, 2008): Rejected both the low UK 'Sweat of the Brow' test (mere labour/capital) and overly harsh US creativity tests - adopting Canada's balanced 'SKILL AND JUDGMENT WITH A MODICUM OF CREATIVITY' test (holding SCC headnotes/paragraph-numbering/cross-references in Supreme Court judgments enjoy copyright, whereas raw court judgments are public domain!).",
+          "Six Classes of Works Under Section 13(1): (1) ORIGINAL LITERARY WORKS (books, articles, tables, compilations, AND Computer Programs/Software under Sec. 2(o)), (2) ORIGINAL DRAMATIC WORKS (plays, scripts, choreography), (3) ORIGINAL MUSICAL WORKS (melody/notation - distinct from lyrics which are literary!), (4) ORIGINAL ARTISTIC WORKS (paintings, sculptures, drawings, photographs, architecture), (5) CINEMATOGRAPH FILMS (visual + sound recordings), and (6) SOUND RECORDINGS (master audio tracks; underlying lyrics/music enjoy independent copyrights!). Note Section 15: Copyright in an industrial artistic design ceases once reproduced > 50 times industrially without Designs Act registration."
+        ],
+        "caseLaws": [
+          {
+            "name": "R.G. Anand v. Delux Films",
+            "citation": "AIR 1978 SC 1613",
+            "principle": "Laid down the 7 classic propositions on Idea-Expression Dichotomy in India: no copyright exists in a general theme (provincialism/marriage), and similarities flowing naturally from a common theme do not prove infringement."
+          },
+          {
+            "name": "Eastern Book Company v. D.B. Modak",
+            "citation": "2008 1 SCC 1",
+            "principle": "Adopted the 'Modicum of Creativity' (skill and judgment, not mere mechanical labour) test of originality under Section 13, protecting derivative editorial value additions like SCC headnotes while keeping bare judicial opinions free."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the 'Idea-Expression Dichotomy' (R.G. Anand) and state the standard of Originality laid down by the Supreme Court in Eastern Book Co. v. D.B. Modak (2008).",
+            "a": "Copyright protects only the specific expression/arrangement of a work, never bare ideas, facts, or themes. Eastern Book Co. rejected pure 'sweat of the brow' and adopted the 'skill and judgment with a minimal/modicum of creativity' standard."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u2-t2": {
+      "id": "ipr-u2-t2",
+      "subtitle": "Intellectual Property Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 17, the AUTHOR is generally the First Owner of copyright - subject to key statutory exceptions for employer-commissioned works ('Contract of Service'), newspaper journalists, commissioned photographs/films, and Government works. Copyright lasts LIFE OF AUTHOR + 60 YEARS for literary/dramatic/musical/artistic works (60 years from publication for films, sound recordings & Government works - Secs. 22-29), and may be transferred via written Assignment (Secs. 18-19) or Voluntary/Compulsory/Statutory Licensing (Secs. 30-32B).",
+        "legalProvision": "Sections 2(d), 17, 18-19A, 22-29, & 30-32B, Copyright Act, 1957 (2012 Royalty Safeguards)",
+        "meaning": "The 2012 Amendment revolutionized Indian film/music authorship by guaranteeing lyricists and music composers an INALIENABLE right to share equal royalties whenever their songs are exploited outside cinema halls!",
+        "keyPoints": [
+          "First Ownership & Key Exceptions (Sec. 17): General Rule -> Author (Sec. 2(d)) is First Owner. Exceptions (absent contract to contrary): (a) Journalist writing for newspaper/periodical under contract of service -> Proprietor owns publication copyright, author keeps other rights; (b) Commissioned photograph, painting, portrait, engraving, or cinematograph film for valuable consideration -> Person commissioning is First Owner (note 2012 Proviso protects lyricists'/composers' underlying rights in films!); (c) Work made in course of employment under 'CONTRACT OF SERVICE' -> EMPLOYER is First Owner (contrast 'Contract FOR Services' / freelance consultant -> Author stays First Owner!); (d) Public speech/address -> Speaker remains First Owner; (e) Government / Public Undertaking / International Organization work -> Govt/Org is First Owner.",
+          "Term of Copyright (Secs. 22-29): (1) Published Literary, Dramatic, Musical & Artistic works -> LIFETIME OF AUTHOR + 60 YEARS (from calendar year next following death - Sec. 22); (2) Anonymous/pseudonymous works, Posthumous works, Cinematograph Films, Sound Recordings, Government works & International Organization works -> 60 YEARS from beginning of calendar year next following publication (Secs. 23-29).",
+          "Assignment (Secs. 18-19) & 2012 Royalty Protection: Assignment MUST be IN WRITING signed by assignor specifying work, rights, duration (default 5 YEARS if silent!), and territory (default INDIA if silent!) - lapses automatically if assignee fails to exercise rights within 1 YEAR (Sec. 19(4)). Crucially, 2012 Amendment inserted Provisos to Secs. 18 & 19 making an author's right to receive EQUAL ROYALTIES in film/sound-recording songs NON-ASSIGNABLE (except to legal heirs or Copyright Society) and voiding assignments covering future unknown media/technologies!",
+          "Licences (Secs. 30-32B): Voluntary Licence in writing (Sec. 30); Compulsory Licences for works withheld from public (Sec. 31), orphan works (Sec. 31A), and accessible formats for disabled persons (Sec. 31B); Statutory Licences for cover versions (Sec. 31C) and radio/TV broadcasting of published literary/musical works & sound recordings paying fixed royalty (Sec. 31D)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Indian Performing Right Society Ltd. (IPRS) v. Eastern Indian Motion Pictures Association",
+            "citation": "AIR 1977 SC 1443",
+            "principle": "Held under the pre-2012 Section 17(b) that a film producer commissioning music/lyrics became first owner of the film's music - directly prompting Parliament's landmark 2012 Amendment securing inalienable non-theatrical royalties for lyricists and composers."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the statutory term of copyright for Literary works vs Cinematograph Films (Secs. 22 & 26), and state the default duration and territory of a Copyright Assignment under Section 19 if the deed is silent.",
+            "a": "Literary/dramatic/musical/artistic works: Life of author + 60 years; Cinematograph films & sound recordings: 60 years from publication. If an assignment deed is silent, Sec. 19 defaults duration to 5 years and territory to India."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u2-t3": {
+      "id": "ipr-u2-t3",
+      "subtitle": "Intellectual Property Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 14 grants copyright owners an exclusive bundle of Economic Rights tailored to each class (reproduction, adaptation, translation, public communication, commercial rental). Independently of economic ownership, Section 57 protects an author's inalienable Moral Rights (Paternity & Integrity - Amar Nath Sehgal v. Union of India), while Chapter VIII (Secs. 37-39A) protects 'Neighbouring / Related Rights' of Broadcasting Organizations (25 years) and Performers (50 years).",
+        "legalProvision": "Sections 14, 37, 38, 38A, 38B, 39, 39A, & 57, Copyright Act, 1957 (2012 Amendments)",
+        "meaning": "Even after an artist or sculptor sells his artwork and assigns 100% of his economic copyright, Section 57 Moral Rights still empower him to stop mutilation or distortion that harms his artistic honour and reputation.",
+        "keyPoints": [
+          "Bundle of Economic Rights (Sec. 14): (a) Literary/Dramatic/Musical -> reproduce (including digital storage), issue copies, perform/communicate to public, make film/sound recording, translate, or adapt; (b) Computer Program -> all literary rights PLUS sell/commercial rental (Sec. 14(b)); (c) Artistic -> reproduce in 2D/3D (depicting 2D blueprint in 3D!), issue copies, communicate to public, include in film; (d) Cinematograph Film & Sound Recording -> make copies/stills, commercial rental, and communicate to public.",
+          "Author's Special / Moral Rights (Sec. 57 - Art. 6bis Berne Convention): Survive EVEN AFTER full assignment of copyright (exercisable by legal representatives too!): (1) RIGHT OF PATERNITY / ATTRIBUTION (Sec. 57(1)(a) - right to claim authorship of the work), and (2) RIGHT OF INTEGRITY (Sec. 57(1)(b) - right to restrain or claim damages for any distortion, mutilation, modification, or other act prejudicial to author's HONOUR OR REPUTATION, e.g., Amar Nath Sehgal v. Union of India). Note: Mere failure to display a work does NOT violate Sec. 57 (Explanation).",
+          "Neighbouring / Related Rights - Broadcast Reproduction Right (Sec. 37): Every Broadcasting Organization enjoys a special exclusive right over its broadcasts for 25 YEARS from broadcast year - barring unauthorized re-broadcast, public paid viewing, or recording/reproduction.",
+          "Performers' Rights & Performers' Moral Rights (Secs. 38, 38A & 38B - 2012 Amendment): Performers (actors, singers, musicians, dancers, acrobats - excluding mere film 'extras') enjoy exclusive economic rights over their live/recorded performances (making audio/visual recordings, reproducing, communicating to public, commercial rental + inalienable royalty right) for 50 YEARS (Sec. 38A), PLUS independent Performers' Moral Rights to be identified and restrain prejudicial distortion (Sec. 38B)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Amar Nath Sehgal v. Union of India",
+            "citation": "2005 30 PTC 253 (Del HC)",
+            "principle": "Landmark Indian Moral Rights judgment under Section 57: awarded Rs. 5 lakhs damages and return of a mutilated bronze mural created for Vigyan Bhawan, holding that destruction/mutilation of cultural artwork violates the author's Right of Integrity even after full sale to Government."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name the two Moral Rights protected under Section 57 of the Copyright Act, 1957, and state the statutory duration of Broadcast Reproduction Rights (Sec. 37) vs Performers' Rights (Sec. 38).",
+            "a": "Right of Paternity (claiming authorship) and Right of Integrity (restraining distortion/mutilation harming honour/reputation). Broadcast Reproduction Right lasts 25 years; Performers' Rights last 50 years."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u2-t4": {
+      "id": "ipr-u2-t4",
+      "subtitle": "Intellectual Property Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 51 defines Copyright Infringement as doing WITHOUT a licence any exclusive Section 14 act (Primary Infringement) OR commercially dealing in, exhibiting, or importing infringing copies (Secondary Infringement). Balancing monopoly with education, free speech, and research, Section 52 carves out exhaustive 'Fair Dealing' exceptions - famously upheld in the Delhi University Photocopy Case (2016) permitting educational course-packs under Section 52(1)(i).",
+        "legalProvision": "Sections 51 & 52 (Clauses (a) to (zc)), Copyright Act, 1957",
+        "meaning": "Unlike the broad open-ended US 'Fair Use' doctrine, Indian Section 52 lists specific enumerated 'Fair Dealing' acts - yet Indian courts construe educational and research exceptions liberally to promote knowledge access.",
+        "keyPoints": [
+          "Primary vs Secondary Infringement (Sec. 51): PRIMARY INFRINGEMENT (Sec. 51(a)) -> Exercising any exclusive Sec. 14 right without owner's licence (or permitting a place to be used for profit for public performance of an infringing work, unless unaware with no reasonable grounds to suspect). SECONDARY INFRINGEMENT (Sec. 51(b)) -> Making for sale/hire, selling, distributing to prejudice of owner, publicly exhibiting by way of trade, or IMPORTING infringing copies into India (except 1 copy for private domestic use). Infringement requires copying a 'SUBSTANTIAL PART' (qualitative, not merely word-count!).",
+          "Fair Dealing & Key Statutory Exceptions (Sec. 52(1)): Acts declared NOT to constitute infringement -> (a) FAIR DEALING with any work (other than computer program) for (i) PRIVATE OR PERSONAL USE INCLUDING RESEARCH, (ii) CRITICISM OR REVIEW, or (iii) REPORTING CURRENT EVENTS/AFFAIRS including public lectures; (aa)-(ad) Lawful backup copies & interoperability reverse-engineering of computer programs; (b)-(c) Transient/incidental electronic caching & ISP safe harbour (subject to takedown); (d)-(g) Judicial proceedings, Parliamentary/Legislature reproduction, certified legal copies; (h)-(j) EDUCATIONAL EXCEPTIONS - reproduction by teacher/pupil 'in the course of instruction' (Sec. 52(1)(i) - DU Photocopy Case!) or exam questions/answers, and school performances; (k)-(l) Free non-commercial club/amateur performances; (q) Bare Acts, Gazette notifications & Court judgments; (za) Bona fide religious ceremonies and MARRIAGE PROCESSIONS/WEDDINGS (wedding DJ music exempt!); (zb) Accessible-format conversion for persons with disabilities.",
+          "Four-Factor Fairness Assessment (Civic Chandran v. Ammini Amma): When testing Sec. 52(1)(a) Fair Dealing, courts evaluate (1) Quantum/value taken, (2) Purpose (transformative critique/parody vs rival market substitute), and (3) Likelihood of commercial competition with the original work."
+        ],
+        "caseLaws": [
+          {
+            "name": "Chancellor, Masters & Scholars of the University of Oxford v. Rameshwari Photocopy Services (DU Photocopy Case)",
+            "citation": "2016 235 DLT 409 (Del HC DB)",
+            "principle": "Held that compiling and photocopying prescribed portions of academic textbooks into student course-packs by a university/campus shop is completely lawful under Section 52(1)(i) ('reproduction in the course of instruction'), as copyright is not a divine right obstructing education."
+          },
+          {
+            "name": "Civic Chandran v. Ammini Amma",
+            "citation": "1996 PTC 670 (Ker HC)",
+            "principle": "Upheld a counter-drama parodying a famous play as protected Fair Dealing for 'criticism or review' under Section 52(1)(a)(ii) because it did not compete commercially as a substitute."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish Primary from Secondary Copyright Infringement under Section 51, and explain what the Delhi High Court held in the DU Photocopy Case (2016) under Section 52(1)(i).",
+            "a": "Primary infringement is unauthorized exercise of exclusive Sec. 14 rights (copying/performing), whereas Secondary infringement is commercial dealing, sale, exhibition, or import of pirated copies. In the DU Photocopy Case, the Court held that photocopying textbook extracts into academic course-packs falls squarely within Sec. 52(1)(i) ('in the course of instruction') and is NOT infringement."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u2-t5": {
+      "id": "ipr-u2-t5",
+      "subtitle": "Intellectual Property Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Copyright Act, 1957 equips owners with a triple-tier enforcement shield: Civil Remedies (Sec. 55 - temporary/permanent injunctions, Anton Piller search orders, John Doe / Ashok Kumar anti-piracy orders, damages, accounts of profit, delivery-up - filed in District Court / Commercial Court), Criminal Remedies (Sec. 63 - 6 months to 3 years' jail + Rs. 50,000 to Rs. 2 lakhs fine, cognizable/non-bailable per Knit Pro International, 2022), and Administrative Customs Border Seizure (Sec. 53) - supported by Copyright Societies (Sec. 33) and High Court IP Divisions (post-2021 Tribunal Reforms).",
+        "legalProvision": "Sections 33-36, 44-48, 53, 55-62, & 63-70, Copyright Act, 1957; Tribunals Reforms Act, 2021",
+        "meaning": "Registration of copyright (Secs. 44-48) is NOT compulsory to sue for infringement (Sanjay Soya v. Narayani Trading), yet the Register of Copyrights acts as valuable prima facie evidence in court.",
+        "keyPoints": [
+          "Civil Remedies & Special Injunctions (Secs. 55-62): Suit filed in District Court / Commercial Court (plaintiff may sue even where PLAINTIFF carries on business - Sec. 62(2), exception to Sec. 20 CPC!). Remedies: (1) Interlocutory & Permanent Injunctions, (2) ANTON PILLER ORDER (ex-parte court-commissioner surprise inspection/seizure of pirated evidence before defendant destroys it), (3) JOHN DOE / ASHOK KUMAR ORDER (dynamic blocking injunction against unknown anonymous pirate websites/cable operators - Taj Television; UTV Software), (4) Damages OR Account of Profits (mutually exclusive) + Delivery-up of infringing copies/plates (Sec. 58). Note: Under Sec. 60, victims of groundless legal threats of infringement may sue for declaration & injunction!",
+          "Criminal Remedies (Secs. 63-66): Knowingly infringing or abetting infringement (Sec. 63) -> MANDATORY MINIMUM 6 MONTHS to 3 YEARS' imprisonment + Rs. 50,000 to Rs. 2 LAKHS fine (enhanced for 2nd offence under Sec. 63A: 1-3 yrs + Rs. 1-2L; knowing use of pirated computer program carries 7 days to 3 yrs under Sec. 63B). Police Sub-Inspector+ may seize pirated copies WITHOUT WARRANT (Sec. 64). In Knit Pro International v. State of NCT of Delhi (2022), the Supreme Court definitively ruled Sec. 63 is a COGNIZABLE AND NON-BAILABLE offence!",
+          "Administrative Remedy (Sec. 53) & Anti-Circumvention (Secs. 65A-65B): Commissioner of Customs may detain/confiscate imported infringing goods on owner's written notice (Sec. 53); circumventing Digital Rights Management (DRM) technological locks carries up to 2 years' jail (Sec. 65A).",
+          "Copyright Societies (Secs. 33-36) & Post-2021 Institutional Shift: Registered Copyright Societies (e.g., IPRS for lyrics/music, RMPL for sound recordings) collectively license works and distribute royalties transparently (author-controlled governance post-2012). Following the Tribunals Reforms Act, 2021, the erstwhile Copyright Board / IPAB was ABOLISHED and its statutory licensing, rectification, and appellate powers now vest directly in COMMERCIAL COURTS AND HIGH COURTS (specialized IP Divisions like Delhi & Madras HC IPDs)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Knit Pro International v. State of NCT of Delhi",
+            "citation": "2022 10 SCC 221",
+            "principle": "Supreme Court resolved conflicting High Court views and held that copyright infringement punishable up to 3 years under Section 63 of the Copyright Act, 1957 is a COGNIZABLE and NON-BAILABLE offence under CrPC/BNSS."
+          },
+          {
+            "name": "Sanjay Soya Pvt. Ltd. v. Narayani Trading Company",
+            "citation": "2021 SCC OnLine Bom 407",
+            "principle": "Reaffirmed that registration of copyright under Sections 44-45 is strictly optional and NOT a mandatory precondition for suing or claiming injunction against copyright infringement."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain 'Anton Piller' and 'John Doe (Ashok Kumar)' orders in copyright enforcement, and state what the Supreme Court held in Knit Pro International (2022) regarding Section 63.",
+            "a": "Anton Piller order permits surprise ex-parte inspection/seizure of pirated material before destruction; John Doe order grants anti-piracy injunctions against unknown/anonymous online or cable infringers. Knit Pro International held Section 63 copyright infringement is a cognizable and non-bailable offence."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

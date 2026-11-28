@@ -1,0 +1,260 @@
+{
+  "subjects": [
+    {
+      "id": "banking-law",
+      "title": "Banking Law & Negotiable Instruments",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Dishonour of Cheques (Section 138 NI Act) & Holder in Due Course",
+          "topics": [
+            {"id": "banking-law-u3-t1", "title": "1. Dishonour of Cheques (Section 138 NI Act), Statutory Notice, Presumptions & Holder in Due Course (Section 9)"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Bank Guarantees, Letters of Credit & Advances/Securities",
+          "topics": [
+            {"id": "banking-law-u4-t1", "title": "1. Bank Guarantees, Letters of Credit (Kinds & Autonomy Principle) & Secured Bank Advances"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Recovery of Bank Loans - SARFAESI Act, 2002 & Debt Recovery Tribunals (DRT)",
+          "topics": [
+            {"id": "banking-law-u5-t1", "title": "1. SARFAESI Act, 2002 (Section 13 Enforcement & NPA) & Debt Recovery Tribunals (RDB Act, 1993)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alternate-dispute-resolution",
+      "title": "Alternate Dispute Resolution (ADR)",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Arbitral Tribunal - Appointment, Jurisdiction, Interim Measures & Procedure",
+          "topics": [
+            {"id": "alternate-dispute-resolution-u3-t1", "title": "1. Arbitral Tribunal (Sections 10-17) - Appointment, Independence, Kompetenz-Kompetenz & Interim Relief (Secs. 9 & 17)"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Setting Aside Arbitral Awards (Sec. 34), Enforcement & International Commercial Arbitration",
+          "topics": [
+            {"id": "alternate-dispute-resolution-u4-t1", "title": "1. Setting Aside Arbitral Awards (Sec. 34), Appeals (Sec. 37) & Enforcement of Foreign Awards (New York Convention)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Mediation Act, 2023, Permanent Lok Adalats & Online Dispute Resolution (ODR)",
+          "topics": [
+            {"id": "alternate-dispute-resolution-u5-t1", "title": "1. Mediation Act, 2023, Permanent Lok Adalats (Public Utility Services), Family Courts & ODR"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "banking-law-u3-t1": {
+      "id": "banking-law-u3-t1",
+      "subtitle": "Banking Law & Negotiable Instruments - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 138 of the Negotiable Instruments Act, 1881 criminalizes dishonour of a cheque issued for a legally enforceable debt due to insufficient funds or exceeding arrangement, punishable with up to 2 years' imprisonment and/or twice the cheque amount. Section 9 defines a Holder in Due Course who acquires a clean title free from prior defects.",
+        "legalProvision": "Sections 9, 118, 138, 139, 141, 142, & 143A, Negotiable Instruments Act, 1881",
+        "meaning": "Section 138 instils credibility in commercial cheque transactions by combining strict statutory timelines with a rebuttable presumption of lawful debt (Section 139). A Holder in Due Course (Section 9) enjoys special protection—even if a prior party obtained the instrument by fraud, he gets a valid title if he took it for consideration, before maturity, and in good faith (though a forged signature conveys no title).",
+        "keyPoints": [
+          "Essential Ingredients of Section 138 Offence: (1) Cheque drawn for discharge of a legally enforceable debt or liability (gifts/time-barred debts excluded), (2) Presented within 3 months' validity, (3) Returned unpaid for insufficient funds/account closed/stop payment, (4) Written demand notice sent within 30 days of receiving bank return memo, and (5) Drawer fails to pay within 15 days of receiving notice.",
+          "Limitation & Jurisdiction (Section 142): Complaint must be filed before a Judicial Magistrate (JMFC/MM) within 1 month from expiry of the 15-day grace period, at the place where the payee's bank branch is situated (2015 Amendment).",
+          "Presumptions & Interim Compensation (Sections 139 & 143A): Court presumes the cheque was issued for a legally enforceable debt (Section 139); under Section 143A, courts may order interim compensation up to 20% of the cheque amount during trial.",
+          "Corporate Liability (Section 141): When a company's cheque bounces, both the company and every person in charge of and responsible for its business conduct are vicariously liable.",
+          "Holder in Due Course (Section 9): Must possess the instrument (1) for lawful consideration (a donee of a gift cheque is NOT a holder in due course), (2) before maturity, and (3) in good faith without notice of any defect in title."
+        ],
+        "caseLaws": [
+          {
+            "name": "Modi Cements Ltd. v. Kuchil Kumar Nandi",
+            "citation": "AIR 1998 SC 1057",
+            "principle": "Held that issuing 'stop payment' instructions to the bank after drawing a cheque still attracts criminal liability under Section 138 NI Act."
+          },
+          {
+            "name": "Rangappa v. Sri Mohan",
+            "citation": "2010 11 SCC 441",
+            "principle": "Clarified that the statutory presumption under Section 139 includes the existence of a legally enforceable debt or liability, shifting the burden onto the accused to raise a probable defence."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the statutory timelines for cheque validity, demand notice, payment grace period, and filing a complaint under Sections 138 and 142 of the NI Act.",
+            "a": "Presentation within 3 months; written demand notice within 30 days of return memo; 15 days' grace period for drawer to pay; complaint filed within 1 month thereafter."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "banking-law-u4-t1": {
+      "id": "banking-law-u4-t1",
+      "subtitle": "Banking Law & Negotiable Instruments - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Bank Guarantee is an independent contract of guarantee (Section 126 ICA) by which a bank undertakes to pay a beneficiary upon the customer's default, while a Letter of Credit (LC) is the lifeblood of international trade assuring payment against compliant shipping documents. Both operate independently of underlying commercial disputes.",
+        "legalProvision": "Sections 126, 171, & 172, Indian Contract Act, 1872; UCP 600 (ICC Uniform Customs and Practice for Documentary Credits); Transfer of Property Act, 1882",
+        "meaning": "Banks facilitate domestic infrastructure and global trade by substituting their own creditworthiness for that of their customers. For lending safety, banks secure advances via Pledge (movable goods), Hypothecation (movable goods remaining in borrower's possession), Mortgage (immovable property), or Assignment (life policies/book debts).",
+        "keyPoints": [
+          "Bank Guarantee & Autonomy Principle: An independent tripartite arrangement (Applicant/Customer, Issuing Bank, Beneficiary); courts will NOT grant an injunction restraining encashment of an unconditional bank guarantee except in cases of (1) egregious fraud of which the bank has notice, or (2) irretrievable injustice.",
+          "Letter of Credit (LC): A written undertaking by an Issuing Bank (at the buyer's request) to pay the seller (beneficiary) upon presentation of stipulated shipping documents (bill of lading, invoice, insurance) strictly conforming to LC terms.",
+          "Kinds of Letters of Credit: Revocable vs Irrevocable (standard under UCP 600), Confirmed vs Unconfirmed (added undertaking by seller's local bank), Sight vs Usance (deferred payment), Transferable, Revolving, and Back-to-Back LCs.",
+          "Modes of Creating Security for Bank Advances: Pledge (actual/constructive delivery of goods or documents of title like railway receipts/bills of lading), Hypothecation (equitable charge on stock/vehicles while borrower retains possession), Mortgage (immovable land/buildings), and Assignment (life insurance policies or shares)."
+        ],
+        "caseLaws": [
+          {
+            "name": "U.P. Cooperative Federation Ltd. v. Singh Consultants & Engineers (P) Ltd.",
+            "citation": "1988 1 SCC 174",
+            "principle": "Held that an unconditional Bank Guarantee is an independent contract that must be honoured on demand; courts cannot restrain its encashment unless established fraud or irretrievable injustice is shown."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "On what two narrow grounds can a civil court grant an injunction stopping a bank from honouring an unconditional Bank Guarantee?",
+            "a": "Established egregious fraud of which the bank has notice, or special equities involving irretrievable injustice."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "banking-law-u5-t1": {
+      "id": "banking-law-u5-t1",
+      "subtitle": "Banking Law & Negotiable Instruments - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To tackle rising Non-Performing Assets (NPAs), Parliament enacted the RDB Act, 1993 (establishing Debt Recovery Tribunals—DRTs for bank claims of Rs. 20 lakh and above) and the SARFAESI Act, 2002 (empowering secured creditors to take possession and auction secured assets under Section 13 without prior civil court intervention).",
+        "legalProvision": "SARFAESI Act, 2002 (Sections 2(1)(o), 13(2), 13(4), 14, 17, 18, & 34); Recovery of Debts and Bankruptcy (RDB) Act, 1993 (Sections 17-20)",
+        "meaning": "Traditional civil recovery suits took decades, locking up public bank capital. DRTs provide specialized, speedy adjudication, while SARFAESI equips secured banks and Asset Reconstruction Companies (ARCs) with direct enforcement powers over defaulted collateral.",
+        "keyPoints": [
+          "Non-Performing Asset (NPA): A loan account where interest or principal remains overdue for more than 90 days (per RBI norms), triggering SARFAESI enforcement.",
+          "SARFAESI Enforcement Procedure (Section 13): Secured creditor issues a 60-day written Demand Notice (Section 13(2)); borrower may submit objections which the bank must consider with reasons (Section 13(3A)); upon continued default, bank may take possession, take over management, or auction the secured asset (Section 13(4)), assisted by CMM/DM under Section 14.",
+          "Borrower's Remedy & Civil Court Bar (Sections 17, 18 & 34): Any aggrieved borrower/person may challenge Section 13(4) measures before the DRT within 45 days (Section 17), with appeal to DRAT (Section 18, requiring pre-deposit of 50%, reducible to 25%); Section 34 bars civil court jurisdiction.",
+          "Exemptions (Section 31, SARFAESI): Does NOT apply to agricultural land, liens/pledges of movables, or debts where the remaining due amount is less than 20% of principal and interest.",
+          "Debt Recovery Tribunals (DRT & DRAT, RDB Act, 1993): Exclusive tribunals adjudicating bank/financial institution recovery claims of Rs. 20 lakh or more, guided by principles of natural justice rather than rigid CPC rules."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mardia Chemicals Ltd. v. Union of India",
+            "citation": "2004 4 SCC 311",
+            "principle": "Upheld the constitutional validity of the SARFAESI Act, 2002 while striking down the onerous 75% pre-deposit condition under Section 17 and directing banks to consider borrowers' objections with reasons (leading to Section 13(3A))."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the 60-day notice and 45-day appeal timeline under Sections 13 and 17 of the SARFAESI Act, 2002?",
+            "a": "A secured creditor must give a 60-day written demand notice under Section 13(2) before taking possession under Section 13(4); the aggrieved borrower has 45 days to challenge Section 13(4) measures before the DRT under Section 17."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "alternate-dispute-resolution-u3-t1": {
+      "id": "alternate-dispute-resolution-u3-t1",
+      "subtitle": "Alternate Dispute Resolution (ADR) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under the Arbitration and Conciliation Act, 1996, parties freely determine an odd number of arbitrators (Section 10) and appointment procedure (Section 11), with mandatory impartiality disclosures (Section 12 & Fifth/Seventh Schedules). Section 16 codifies Kompetenz-Kompetenz (tribunal rules on its own jurisdiction), while Sections 9 and 17 provide interim protective measures.",
+        "legalProvision": "Sections 9, 10, 11, 12, 16, 17, 19, 20, & 29A, Arbitration and Conciliation Act, 1996 (as amended in 2015 & 2019)",
+        "meaning": "Party autonomy and minimal judicial interference (Section 5) are the twin pillars of modern Indian arbitration. Statutory amendments introduced strict neutrality schedules and a 12-month timeline (Section 29A) to keep arbitral proceedings fast and unbiased.",
+        "keyPoints": [
+          "Composition & Appointment (Sections 10-11): Parties may choose any odd number of arbitrators (default: sole arbitrator); if parties fail to appoint, the High Court (domestic) or Supreme Court (international commercial arbitration) appoints under Section 11.",
+          "Independence & Impartiality (Section 12 & Schedules V & VII): Prospective arbitrators must disclose any conflict of interest in writing; persons falling under the Seventh Schedule (e.g., employee, lawyer, or relative of a party) are statutorily ineligible to act as arbitrator (Perkins Eastman).",
+          "Kompetenz-Kompetenz (Section 16): The Arbitral Tribunal has full authority to rule on its own jurisdiction, including objections regarding the existence or validity of the arbitration agreement (separability doctrine).",
+          "Interim Measures (Sections 9 & 17): Courts may grant interim protection (preserving assets, injunctions) before or after arbitral proceedings (Section 9), while the Arbitral Tribunal exercises equal interim powers during proceedings (Section 17), enforceable like a civil court order.",
+          "Procedure & Time Limit (Sections 19, 20 & 29A): Tribunal is NOT bound by CPC or Evidence Act; parties choose the seat/venue (Section 20); domestic awards must be completed within 12 months from completion of pleadings (extendable by 6 months by consent under Section 29A)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Perkins Eastman Architects DPC v. HSCC (India) Ltd.",
+            "citation": "2020 20 SCC 760",
+            "principle": "Held that a party with an interest in the outcome of the dispute cannot unilaterally appoint a sole arbitrator, reinforcing absolute neutrality under Section 12(5)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the Doctrine of Kompetenz-Kompetenz under Section 16 of the Arbitration and Conciliation Act, 1996?",
+            "a": "It empowers an Arbitral Tribunal to decide objections to its own jurisdiction, including the existence or validity of the arbitration clause, treating it as independent of the main contract."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "alternate-dispute-resolution-u4-t1": {
+      "id": "alternate-dispute-resolution-u4-t1",
+      "subtitle": "Alternate Dispute Resolution (ADR) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "An Arbitral Award is final and binding (Section 35) and can be set aside under Section 34 within 3 months (+30 days max) only on narrow statutory grounds such as incapacity, denial of natural justice, or conflict with Public Policy / Patent Illegality. Foreign awards from reciprocating countries are enforced under Part II (New York Convention, Sections 44-52).",
+        "legalProvision": "Sections 34, 35, 36, 37, & 44-52, Arbitration and Conciliation Act, 1996; New York Convention (1958)",
+        "meaning": "Section 34 is NOT a regular appeal on merits—courts cannot re-appreciate evidence like an appellate court. Under Section 36 (2015 Amendment), merely filing a Section 34 challenge does not automatically stay enforcement of the award unless the court grants a specific stay order.",
+        "keyPoints": [
+          "Grounds for Setting Aside Award (Section 34(2)): (1) Incapacity of a party, (2) Invalid arbitration agreement, (3) Lack of proper notice / inability to present case (natural justice), (4) Award beyond scope of submission, (5) Improper tribunal composition, (6) Subject-matter non-arbitrable, or (7) Conflict with Public Policy of India (fraud, corruption, or fundamental policy of Indian law).",
+          "Patent Illegality (Section 34(2A)): Domestic awards (not international commercial awards) may also be set aside if vitiated by 'patent illegality' appearing on the face of the award—mere erroneous application of law or re-appreciation of evidence is barred.",
+          "Strict Limitation (Section 34(3)): Application must be filed within 3 months of receiving the award (extendable by at most 30 days for sufficient cause; Section 5 of the Limitation Act does NOT apply).",
+          "Appeals (Section 37): Strictly limited to specific orders (granting/refusing Section 9 interim relief, refusing Section 8 reference, or setting aside/refusing to set aside an award under Section 34); no second appeal lies (except SLP to Supreme Court under Article 136).",
+          "Foreign Awards (Part II — New York Convention, Sections 44-49): Enforced directly by Indian High Courts as a decree unless the resisting party proves narrow Section 48 defences (mirroring Article V of the 1958 New York Convention)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ssangyong Engineering & Construction Co. Ltd. v. NHAI",
+            "citation": "2019 15 SCC 131",
+            "principle": "Clarified the narrowed post-2015 scope of 'Public Policy of India' and 'Patent Illegality' under Section 34, forbidding courts from re-appreciating evidence or substituting their view for the arbitrator's."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the strict limitation period for challenging an Arbitral Award under Section 34(3), and does filing a challenge automatically stay enforcement?",
+            "a": "3 months from receipt of the award (extendable by a maximum of 30 days—Section 5 Limitation Act does not apply). Under Section 36, filing a Section 34 petition does NOT automatically stay enforcement."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "alternate-dispute-resolution-u5-t1": {
+      "id": "alternate-dispute-resolution-u5-t1",
+      "subtitle": "Alternate Dispute Resolution (ADR) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "India's modern ADR ecosystem extends beyond arbitration to the Mediation Act, 2023 (giving statutory enforceability to mediated settlement agreements and online mediation), Permanent Lok Adalats for Public Utility Services (Sections 22A-22E, LSA Act, 1987), Family Courts (1984 Act), and Online Dispute Resolution (ODR).",
+        "legalProvision": "Mediation Act, 2023; Legal Services Authorities Act, 1987 (Sections 22A-22E); Family Courts Act, 1984 (Section 9); Consumer Protection Act, 2019",
+        "meaning": "Non-adversarial forums make justice accessible to ordinary citizens for utility bills, insurance, matrimonial, and e-commerce disputes—cutting travel, legal fees, and multi-year litigation delays.",
+        "keyPoints": [
+          "Mediation Act, 2023: Establishes the Mediation Council of India, promotes voluntary pre-litigation mediation, mandates completion within 120 days (+60 days extension), guarantees strict confidentiality, and makes Mediated Settlement Agreements (MSAs) final and enforceable like a civil court decree.",
+          "Permanent Lok Adalats (Sections 22A-22E, Legal Services Authorities Act, 1987): Pre-litigation statutory bodies for Public Utility Services (transport, postal/telegraph, power, water, sanitation, hospital, insurance, banking) up to Rs. 1 crore; uniquely empowered to adjudicate on merits if conciliation fails, with final non-appealable awards.",
+          "Family Courts Act, 1984 (Section 9): Mandates Family Courts to first attempt reconciliation and settlement in matrimonial, custody, and maintenance disputes with the help of trained counsellors before formal adjudication.",
+          "Online Dispute Resolution (ODR) & Virtual Courts: Uses digital platforms, video-conferencing, and AI-assisted case management (recognized under the Mediation Act, 2023) to resolve high-volume e-commerce, banking, and consumer disputes remotely.",
+          "Gram Nyayalayas & Panchayat ADR: Grassroots village-level forums delivering inexpensive, doorstep dispute settlement in rural India."
+        ],
+        "caseLaws": [
+          {
+            "name": "Canara Bank v. G.S. Jayarama",
+            "citation": "2022 7 SCC 776",
+            "principle": "Held that Permanent Lok Adalats under Section 22C of the Legal Services Authorities Act have genuine adjudicatory power on merits if mandatory conciliation fails, and their awards are final and binding."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How does a Permanent Lok Adalat (Section 22C) differ from an ordinary Lok Adalat (Section 19)?",
+            "a": "An ordinary Lok Adalat can only pass an award if both parties voluntarily compromise; a Permanent Lok Adalat deals with Public Utility Services and can decide the dispute on merits if conciliation fails."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

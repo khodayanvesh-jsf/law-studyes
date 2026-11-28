@@ -1,0 +1,188 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-property",
+      "title": "Law of Property (TPA)",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Easements (Dominant & Servient Tenements, Lease vs License) & Testamentary Succession (Wills, Codicil, Capacity, Bequests, Executors & Legatees)",
+          "topics": [
+            {"id": "lop-u5-t1", "title": "1. Easements - Definition, Essential Characteristics, Dominant & Servient Tenements, Kinds & Acquisition/Extinction (Indian Easements Act, 1882)"},
+            {"id": "lop-u5-t2", "title": "2. License (Secs. 52-64 Easements Act) & Distinction Between Lease, License and Easement"},
+            {"id": "lop-u5-t3", "title": "3. Testamentary Succession - Will & Codicil, Essentials, Execution/Attestation & Privileged vs Unprivileged Wills (ISA, 1925)"},
+            {"id": "lop-u5-t4", "title": "4. Capacity to Execute a Will (Sec. 59), Revocation (Secs. 69-70) & Nature/Kinds of Bequests (Void, Specific, Demonstrative & General Legacies)"},
+            {"id": "lop-u5-t5", "title": "5. Executors of Will (Appointment, Probate, Powers & Duties) & Rights and Obligations of Legatees (ISA, 1925)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lop-u5-t1": {
+      "id": "lop-u5-t1",
+      "subtitle": "Law of Property (TPA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 4 of the Indian Easements Act, 1882 defines an Easement as a right which the owner or occupier of certain land (Dominant Heritage/Tenement) possesses, as such, for the beneficial enjoyment of that land, to do something or prevent something from being done upon another person's land (Servient Heritage/Tenement) - such as right of way, light, air, or water drainage. Easements are acquired by Grant, Necessity, Prescription (20 years; 30 against Government), or Custom.",
+        "legalProvision": "Sections 4-7, 13, 15, 18, & 37-47, Indian Easements Act, 1882",
+        "meaning": "An easement is an incorporeal right in rem attached permanently to the LAND itself (runs with both tenements - cannot be sold separately under Sec. 6(c) TPA), never conferring ownership or exclusive possession over the neighbour's soil.",
+        "keyPoints": [
+          "Six Essential Characteristics (Sec. 4): (1) TWO DISTINCT TENEMENTS - Dominant Heritage (land enjoying the benefit; owner = Dominant Owner) and Servient Heritage (land bearing the burden; owner = Servient Owner), (2) Owned by DIFFERENT persons (you cannot have an easement over your own land), (3) Must be FOR BENEFICIAL ENJOYMENT of the dominant land (not merely personal pleasure unrelated to land), (4) Positive (right to walk across/drain water) OR Negative (right to prevent neighbour blocking light/air), (5) Restricts servient owner's natural rights without giving profit-a-prendre of soil (except Indian inclusion of certain profits), and (6) Inseparable from dominant heritage (Sec. 6(c) TPA).",
+          "Kinds of Easements (Sec. 5): Continuous (enjoyed without continuous human act - e.g., light/air/water pipe) vs Discontinuous (requires human act each time - e.g., right of way); Apparent (visible permanent sign like a window/drain) vs Non-Apparent (no visible sign, e.g., covenant not to build above 2 floors).",
+          "Four Modes of Acquisition of Easements: (1) Express or Implied Grant (Secs. 8-12), (2) Easement of Necessity & Quasi-Easement (Sec. 13 - when land is severed/partitioned leaving a landlocked plot with zero other access; ends when necessity ceases - Sec. 41), (3) Prescription (Sec. 15 - peaceable, open, uninterrupted enjoyment as of right for 20 YEARS against private land, or 30 YEARS against Government land, ending within 2 years before suit), and (4) Customary Easement (Sec. 18 - e.g., village grazing/privacy right).",
+          "Extinction of Easements (Secs. 37-47): Dissolution of servient owner's right, express/implied release by dominant owner, revocation, expiry of limited period, permanent destruction of either heritage, Unity of Ownership (dominant and servient tenements merge in one owner - Sec. 46), or Non-Enjoyment for 20 continuous years (Sec. 47)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Hero Vinoth v. Seshammal",
+            "citation": "2006 5 SCC 545",
+            "principle": "Distinguished Easement of Necessity (Sec. 13 - requires absolute necessity with no alternative passage, extinguishes once an alternative road opens) from Easement by Grant (survives even after alternative access arises)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Define Dominant Tenement and Servient Tenement under Section 4 of the Indian Easements Act, 1882, and state the statutory period to acquire a prescriptive easement against private vs Government land.",
+            "a": "Dominant Tenement is the land for whose beneficial enjoyment the easement exists; Servient Tenement is the neighbour's land upon which the liability/burden is imposed. Prescriptive period under Sec. 15 is 20 years for private land and 30 years for Government land."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u5-t2": {
+      "id": "lop-u5-t2",
+      "subtitle": "Law of Property (TPA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 52 of the Indian Easements Act, 1882 defines a License as a personal right granted by one person to another to do or continue to do in/upon the grantor's immovable property something that would otherwise be unlawful - WITHOUT transferring any interest in property or creating an easement. Unlike a Lease (exclusive possession, transferable, heritable, requires notice), a License is personal, non-transferable, and revocable EXCEPT in two irrevocable situations under Section 60.",
+        "legalProvision": "Sections 52 to 64, Indian Easements Act, 1882; Section 105, Transfer of Property Act, 1882",
+        "meaning": "Landlords frequently disguise Leases as 'Leave and License' agreements to bypass Rent Control eviction protections. Courts ignore the label and look to the substance and intention of the parties (Associated Hotels v. R.N. Kapoor; C.M. Beena).",
+        "keyPoints": [
+          "Nature of License (Secs. 52-56): Purely a personal permission (e.g., movie ticket, hotel guest room, paying guest, parking permit) making lawful what would otherwise be trespass; creates NO proprietary interest in land (Right in Personam), is NOT transferable/heritable unless coupled with grant or cinema/public-place ticket (Sec. 56), and does NOT bind a subsequent purchaser of the land (Sec. 59).",
+          "Revocation & Two Irrevocable Licenses (Sec. 60 Easements Act): Generally revocable anytime at grantor's will (Sec. 60), EXCEPT a license CANNOT be revoked when: (a) It is COUPLED WITH A TRANSFER OF PROPERTY and such transfer is in force (e.g., license to enter land to cut and remove purchased timber), OR (b) The licensee, ACTING UPON THE LICENSE, has executed a WORK OF A PERMANENT CHARACTER and incurred expenses in the execution (e.g., building a permanent pucca house/college on the land - Ram Sarup Gupta).",
+          "Lease vs License (Five Classic Exam Distinctions - Associated Hotels v. R.N. Kapoor): (1) Interest: Lease transfers an interest in immovable property (Right in Rem), License grants NO interest (personal permission / Right in Personam); (2) Possession: Lease confers EXCLUSIVE POSSESSION (lessee can exclude even landlord), License leaves legal possession/control with grantor; (3) Transferability: Lease is transferable & heritable, License is personal & non-transferable; (4) Revocation: Lease cannot be revoked arbitrarily (needs Sec. 106/111 determination), License is revocable at will (except Sec. 60); (5) Subsequent Buyer: Lease binds transferee of lessor (Sec. 109 TPA), License does NOT bind buyer (Sec. 59 Easements Act).",
+          "License vs Easement: Easement is a permanent right in rem attached to TWO tenements (runs with land, enforceable against the world, can be negative like light/air), whereas License is a temporary personal right in personam requiring NO dominant tenement and is always positive."
+        ],
+        "caseLaws": [
+          {
+            "name": "Associated Hotels of India Ltd. v. R.N. Kapoor",
+            "citation": "AIR 1959 SC 1262",
+            "principle": "Held that the real test separating Lease from License is the substance and intention of the parties: whether exclusive possession and an interest in premises were created (Lease) or mere permissive occupation under owner's control (License)."
+          },
+          {
+            "name": "Ram Sarup Gupta v. Bishun Narain Inter College",
+            "citation": "AIR 1987 SC 1242",
+            "principle": "Applied Section 60(b) of the Indian Easements Act: once a licensee constructs permanent school buildings acting upon an implied/express license, the grantor is estopped from revoking the license."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four differences between a Lease and a License, and name the two statutory situations in which a License becomes irrevocable under Section 60 of the Indian Easements Act.",
+            "a": "Lease transfers an interest in property with exclusive possession, is transferable/heritable, and binds buyers; License is personal permission without interest or exclusive possession, non-transferable, and revocable. Under Sec. 60, a license is irrevocable if (a) coupled with a transfer of property, or (b) licensee builds a permanent work incurring expenses."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u5-t3": {
+      "id": "lop-u5-t3",
+      "subtitle": "Law of Property (TPA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Testamentary Succession transmits property after death via a Will (Sec. 2(h), Indian Succession Act, 1925) - the legal declaration of a testator's intention respecting his property desired to be carried into effect AFTER his death - or a Codicil (Sec. 2(b) - supplemental instrument explaining, altering, or adding to a Will). Unprivileged Wills require signing and attestation by TWO witnesses (Sec. 63; registration optional), while soldiers on expedition and mariners at sea may make informal Privileged Wills (Secs. 65-66).",
+        "legalProvision": "Sections 2(b), 2(h), 57-58, 63, 65, & 66, Indian Succession Act, 1925; Section 68 IEA / Section 67 BSA",
+        "meaning": "Unlike inter vivos transfers under TPA (taking effect immediately), a Will is ambulatory - it speaks strictly from the moment of death and remains freely revocable throughout the testator's lifetime. Part VI ISA applies to Hindus (via Sec. 57/Schedule III), Christians, Parsis, and SMA couples (NOT Muslims, whose Wasiyat follows Muslim personal law under Sec. 58).",
+        "keyPoints": [
+          "Will (Sec. 2(h)) & Codicil (Sec. 2(b)): Essential characteristics of a Will -> (1) Legal declaration of intention, (2) Respecting testator's property, (3) Takes effect ONLY AFTER death, and (4) Freely revocable during life. A Codicil is an ancillary instrument made in relation to a Will explaining, modifying, or adding dispositions - legally forms part of the Will and MUST be executed and attested with the same Section 63 formalities.",
+          "Execution & Attestation of Unprivileged Will (Sec. 63 ISA, 1925): Three mandatory statutory steps - (a) Testator signs or affixes mark (or directs another in his presence) showing intent to give effect to the Will, (b) Signature is placed so it appears intended to authenticate the Will, and (c) ATTESTED BY TWO OR MORE WITNESSES, each of whom saw the testator sign (or received personal acknowledgment of signature) AND signed in the presence of the testator (both witnesses need NOT be present simultaneously). Registration and stamp paper are strictly OPTIONAL.",
+          "Privileged Wills (Secs. 65-66 ISA): Available EXCLUSIVELY to soldiers, airmen engaged in actual warfare/expedition, and mariners at sea (aged 18+); may be executed informally in writing without witnesses (even wholly handwritten/holograph without signature) OR even ORALLY before two witnesses present together (valid for 1 month after testator ceases to be eligible).",
+          "Proof of Will & Suspicious Circumstances (H. Venkatachala Iyengar v. B.N. Thimmajamma, 1959): Propounder must examine at least ONE attesting witness (Sec. 68 IEA / Sec. 67 BSA) and clear ALL 'suspicious circumstances' (shaky signature, feeble mind, unnatural exclusion of close heirs, or active participation of chief beneficiary in drafting)."
+        ],
+        "caseLaws": [
+          {
+            "name": "H. Venkatachala Iyengar v. B.N. Thimmajamma",
+            "citation": "AIR 1959 SC 443",
+            "principle": "Foundational Supreme Court judgment on proving a Will under Section 63 ISA: in addition to due execution and attestation, the propounder bears the heavy onus of dispelling every suspicious circumstance to satisfy the court's conscience."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is a Codicil under Section 2(b) of the Indian Succession Act, 1925, and what are the three mandatory execution formalities for an Unprivileged Will under Section 63?",
+            "a": "A Codicil is a supplemental instrument explaining, altering, or adding to an existing Will and forms part of it. Under Sec. 63, an Unprivileged Will must be (1) signed/marked by testator (or at his direction), (2) placed to give effect to the writing, and (3) attested by at least two witnesses who saw the signing/acknowledgment and signed in testator's presence."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u5-t4": {
+      "id": "lop-u5-t4",
+      "subtitle": "Law of Property (TPA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 59 of the Indian Succession Act, 1925, EVERY person of sound mind and NOT a minor (18+) may dispose of property by Will - including married women, deaf/dumb/blind persons who know what they are doing, and persons of unsound mind during lucid intervals (invalid if induced by fraud, coercion, or importunity under Sec. 61). Bequests are classified into Specific, Demonstrative, General, and Residuary Legacies, subject to strict void-bequest rules (Secs. 112-118).",
+        "legalProvision": "Sections 59, 61, 69-70, 112-118, & 142-151, Indian Succession Act, 1925",
+        "meaning": "Testamentary capacity tests 'sound disposing mind' at the exact moment of signing - not mere physical health - while classifying legacies determines which beneficiary gets paid first if the estate is insufficient (Abatement) or if an asset is sold before death (Ademption).",
+        "keyPoints": [
+          "Capacity to Execute a Will (Sec. 59 & Sec. 61 ISA): Must be (1) Major (18+ under Indian Majority Act; a minor CANNOT make a Will), (2) Of SOUND DISPOSING MIND (understands nature of act, extent of property, and moral claims of family; Explanations expressly permit married women, deaf/dumb/blind persons, and persons ordinarily insane during LUCID INTERVALS; barred if intoxicated/ill so as not to know what he is doing), and (3) Acting with FREE CONSENT (Will procured by fraud, coercion, or importunity taking away free agency is VOID under Sec. 61).",
+          "Revocation of Will (Secs. 69-70 ISA): Revoked by (a) Marriage of testator (Sec. 69 - applies to Christians/Parsis, NOT Hindus/Muslims/Buddhists/Sikhs/Jains), (b) Subsequent Will or Codicil, (c) Written revocation executed with Sec. 63 formalities, or (d) Intentional burning, tearing, or destroying by testator (or in his presence/direction).",
+          "Nature & Four Main Kinds of Bequests / Legacies: (1) SPECIFIC LEGACY (Sec. 142 - a specifically identified part of testator's property, e.g., 'my diamond ring' or 'Plot No. 12'; subject to ADEMPTION under Sec. 152 if sold/destroyed before death), (2) DEMONSTRATIVE LEGACY (Sec. 150 - fixed money/quantity directed to be paid primarily out of a specified fund, e.g., 'Rs. 50,000 out of my SBI FD'; does NOT adeem if the fund runs dry - paid out of general estate!), (3) GENERAL LEGACY (Sec. 148 - payable out of general assets without specifying a particular item, e.g., 'Rs. 1 lakh to X'; abates first if estate is short), and (4) RESIDUARY BEQUEST (whatever remains after debts and specific/general legacies).",
+          "Void Bequests (Secs. 112-118 ISA): Bequest to a person NOT in existence at testator's death (Sec. 112), bequest to unborn person violating prior-interest + absolute-remainder rule (Sec. 113 - mirrors Sec. 13 TPA), bequest violating Rule Against Perpetuity (Sec. 114 - mirrors Sec. 14 TPA), impossible/illegal/immoral conditions (Secs. 126-127). Note: Section 118 (restricting Christian charitable bequests) was STRUCK DOWN as unconstitutional under Art. 14 in John Vallamattom v. Union of India (2003)."
+        ],
+        "caseLaws": [
+          {
+            "name": "John Vallamattom v. Union of India",
+            "citation": "2003 6 SCC 611",
+            "principle": "3-judge Bench struck down Section 118 of the Indian Succession Act, 1925 as arbitrary and violative of Article 14 for unfairly restricting Christians from making religious/charitable bequests by Will."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between a Specific Legacy (Sec. 142) and a Demonstrative Legacy (Sec. 150) when the designated asset/fund ceases to exist before the testator's death.",
+            "a": "A Specific Legacy fails completely ('adeems' under Sec. 152) if the specific item no longer exists in the testator's estate at death, whereas a Demonstrative Legacy does NOT adeem - if the named fund is exhausted, it is paid out of the general estate."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lop-u5-t5": {
+      "id": "lop-u5-t5",
+      "subtitle": "Law of Property (TPA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "An Executor (Sec. 2(c), ISA 1925) is the person appointed by the testator in the Will to execute its terms and administer the deceased's estate, deriving formal court authority via Probate (Sec. 2(f) & Sec. 213). As legal representative (Sec. 211), the executor collects assets, pays funeral expenses and debts in statutory priority, and distributes legacies to Legatees - who hold enforceable rights to assent, interest, and legacy payment alongside obligations to bear burdens/abatement.",
+        "legalProvision": "Sections 2(c), 2(f), 211, 213, 222, 305-336, & 349-356, Indian Succession Act, 1925",
+        "meaning": "Executors serve as fiduciary bridges between the deceased testator and the beneficiaries (legatees), preventing chaotic asset grabs and ensuring creditors are paid before legacies are distributed.",
+        "keyPoints": [
+          "Appointment & Qualification of Executor (Secs. 2(c), 222-223): Appointed expressly or by necessary implication ('Executor according to the tenor') in the Will; Probate CANNOT be granted to a minor or person of unsound mind (Sec. 223 - court grants Letters of Administration with Will annexed instead). Where no executor is named or executor refuses/dies, court appoints an Administrator.",
+          "Probate & Vesting of Estate (Secs. 2(f), 211 & 213): Probate is a copy of the Will certified under the court's seal granting administration to the executor (conclusive proof of genuineness in rem under Sec. 41 IEA / Sec. 35 BSA). Under Sec. 211, the entire estate vests in the executor as legal representative from death. Note: Under Sec. 213 read with Sec. 57, Probate is compulsory for Christian Wills and for Hindu Wills executed in or covering immovable property in Presidency towns (Bombay, Calcutta, Madras - NOT compulsory for Hindu Wills in Telangana/Hyderabad unless contested!).",
+          "Powers & Statutory Duties of Executor (Secs. 305-336): Powers -> Sue/defend estate actions (Sec. 305), dispose of property as needed for administration (Sec. 307 - immovable sale needs court permission if restricted by Will). Duties -> (1) Perform decent funeral (Sec. 316), (2) File Inventory within 6 months and Accounts within 1 year (Sec. 317), (3) Collect all assets/debts diligently (Sec. 319), (4) Pay debts in strict statutory priority (Secs. 320-325: funeral -> death-bed medical -> Probate costs -> 3 months' domestic wages -> all other debts rateably -> BEFORE any legacy!), and (5) Distribute legacies upon Executor's Assent (Secs. 332-336; liable for 'Devastavit' / waste under Sec. 368).",
+          "Rights of Legatees (Beneficiaries Under Will): (1) Right to receive legacy once executor gives Assent (Secs. 332-336), (2) Right to income/produce of Specific Legacy from testator's death (Sec. 349) and interest on unpaid General Legacy after 1 year from death (Secs. 351-353), (3) Right to compel executor to render accounts/administer estate in court, and (4) Doctrine of Acceleration/Substitution where applicable.",
+          "Obligations & Limitations of Legatees: (1) Debts ALWAYS prevail over legacies (legatees take nothing until creditors are paid), (2) Subject to ABATEMENT (Secs. 327-330 - if estate falls short, General Legacies abate rateably FIRST, Specific Legacies abate only after General Legacies are exhausted), (3) Subject to REFUNDING (Secs. 356-361 - unpaid creditors or underpaid legatees may compel a paid legatee to refund proportionate amounts), and (4) Election & Onerous Bequest rules (cannot accept beneficial legacy while rejecting attached burden in a single bequest - Sec. 122 ISA)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Clarence Pais v. Union of India",
+            "citation": "2001 4 SCC 325",
+            "principle": "Upheld Section 213 of the Indian Succession Act, clarifying the territorial and community scope of mandatory Probate for establishing an executor's or legatee's title in court."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the statutory priority order of payments by an Executor under Sections 320-325 ISA, and explain the rule of 'Abatement of Legacies' between General and Specific Legatees.",
+            "a": "Order: (1) Funeral expenses, (2) Death-bed medical/board expenses, (3) Probate/administration costs, (4) 3 months' domestic wages, (5) Other debts rateably, and ONLY thereafter (6) Legacies. Under Abatement (Secs. 327-330), if assets are insufficient, General Legacies abate proportionately first before Specific Legacies are touched."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

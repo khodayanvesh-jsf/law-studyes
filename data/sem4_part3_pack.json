@@ -1,0 +1,146 @@
+{
+  "subjects": [
+    {
+      "id": "intellectual-property-law",
+      "title": "Intellectual Property Law",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Copyright Law, Performers' Rights & Copyright Societies",
+          "topics": [
+            {"id": "intellectual-property-law-u3-t1", "title": "1. Copyright Act, 1957 - Meaning (Sec. 14), Moral & Performers' Rights, Copyright Societies, Infringement & Fair Dealing (Sec. 52)"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Trade Marks, Passing Off, Industrial Designs & Geographical Indications",
+          "topics": [
+            {"id": "intellectual-property-law-u4-t1", "title": "1. Trade Marks Act, 1999 (Infringement vs Passing Off), Designs Act, 2000 & Geographical Indications Act, 1999"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Patents Law, Compulsory Licensing, Biotech & Plant Varieties",
+          "topics": [
+            {"id": "intellectual-property-law-u5-t1", "title": "1. Patents Act, 1970 - Patentability, Sec. 3 Exclusions, Rights, Compulsory Licensing (Sec. 84), Revocation & Colourable Imitation"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "intellectual-property-law-u3-t1": {
+      "id": "intellectual-property-law-u3-t1",
+      "subtitle": "Intellectual Property Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 14 of the Copyright Act, 1957, copyright grants exclusive economic rights over original literary (including computer programs), dramatic, musical, artistic works, films, and sound recordings—protecting expression, not mere ideas. Registration is optional, the term is generally author's lifetime plus 60 years, and Section 52 shields fair dealing for study, research, and review.",
+        "legalProvision": "Copyright Act, 1957 (Sections 13, 14, 22, 33-36, 37-38, 51, 52, 55, 57, & 63); Berne Convention (1886); WIPO Copyright Treaty (1996); Tribunals Reforms Act, 2021",
+        "meaning": "Copyright arises automatically upon creation of an original work in tangible form (registration provides prima facie evidence). Alongside economic rights (reproduction, adaptation, translation, assignment, licensing), Section 57 preserves an author's Moral Rights (paternity and integrity) even after assignment. Following the Tribunals Reforms Act, 2021, appellate/board jurisdiction now vests in Commercial Courts and High Courts.",
+        "keyPoints": [
+          "Works Protected & Term: Original literary (including computer programs), dramatic, musical, and artistic works (author's lifetime + 60 years); cinematograph films and sound recordings (60 years from publication).",
+          "Author's Special / Moral Rights (Section 57): Right to claim authorship (paternity) and right to restrain or claim damages for distortion or mutilation prejudicial to reputation (integrity), surviving even after copyright assignment.",
+          "Neighbouring Rights (Sections 37-38): Broadcast Reproduction Right (25 years) for broadcasters and Performer's Right (extended to 50 years by the 2012 Amendment) protecting actors, singers, and dancers against unauthorized recording or broadcast.",
+          "Copyright Societies (Sections 33-36): Registered collective bodies of authors/owners authorized to issue licenses, collect royalties, and distribute fees transparently without discriminating against foreign works.",
+          "Infringement (Section 51) & Remedies: Unauthorized reproduction, public performance, commercial sale, or importation of substantial expression (idea-expression dichotomy, R.G. Anand); remedies include Civil (injunction, Anton Piller search/seizure orders, damages, account of profits) and Criminal (imprisonment and fine under Section 63).",
+          "Fair Dealing Exceptions (Section 52): Private/personal research and study, criticism or review, reporting current events, judicial/legislative reproduction, bona fide educational instruction by teachers/students, and lawful backup copies of computer software."
+        ],
+        "caseLaws": [
+          {
+            "name": "R.G. Anand v. Delux Films",
+            "citation": "AIR 1978 SC 1613",
+            "principle": "Laid down the classic idea-expression dichotomy and 'lay observer test': there is no copyright in a mere idea or theme—only in its concrete expression and form."
+          },
+          {
+            "name": "Eastern Book Company v. D.B. Modak",
+            "citation": "2008 1 SCC 1",
+            "principle": "Adopted the 'modicum of creativity' standard for originality in India (rejecting pure 'sweat of the brow'), holding that headnotes and editorial inputs in law reports enjoy copyright."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the difference between an Author's Economic Rights (Section 14) and Moral Rights (Section 57), and what is the term of Performer's Rights in India?",
+            "a": "Economic rights allow commercial exploitation (reproduction, licensing, assignment), whereas Moral Rights protect authorship credit and integrity even after assignment. Performer's Rights subsist for 50 years (2012 Amendment)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "intellectual-property-law-u4-t1": {
+      "id": "intellectual-property-law-u4-t1",
+      "subtitle": "Intellectual Property Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Trade Marks Act, 1999 protects distinctive brand identifiers for goods and services (10-year renewable terms), distinguishing statutory Infringement (registered marks) from common-law Passing Off (unregistered goodwill). The Designs Act, 2000 protects eye-appealing industrial shapes/patterns for up to 15 years, and the GI Act, 1999 protects region-linked goods.",
+        "legalProvision": "Trade Marks Act, 1999 (Sections 9, 11, 27, 29, & 135); Designs Act, 2000 (Sections 2(d), 4, 11, & 22); Geographical Indications of Goods (Registration & Protection) Act, 1999 (Sections 2(1)(e), 8, & 9)",
+        "meaning": "Trademarks identify trade origin and guarantee quality (with international filing facilitated via the Madrid Protocol). While industrial designs protect visual aesthetics (not purely functional mechanical devices), Geographical Indications collectively protect regional heritage products whose quality or reputation stems from their geographic origin.",
+        "keyPoints": [
+          "Trademark Registration & Refusal Grounds (Sections 9 & 11): Must be graphically representable and distinctive (for goods or services); refused on Absolute Grounds (Section 9—devoid of distinctiveness, purely descriptive of kind/quality/origin, customary in trade, deceptive, or obscene) or Relative Grounds (Section 11—confusing similarity with an earlier or well-known mark); valid for 10 years, renewable indefinitely.",
+          "Infringement vs Passing Off: Infringement is a statutory remedy (Section 29) strictly for REGISTERED trademarks (goods or services) where identical/deceptively similar use suffices without proving actual damage; Passing Off is a common-law tort (Section 27(2)) protecting UNREGISTERED goodwill against misrepresentation causing confusion and likely damage (applies to goods, services, trade dress, and oral misrepresentation).",
+          "Industrial Designs (Designs Act, 2000): Protects new or original features of shape, configuration, pattern, or ornament judged solely by the eye (excludes functional/mechanical principles, trademarks, and artistic copyrights); initial term is 10 years, extendable by 5 years (total 15 years); piracy (Section 22) attracts injunction and damages.",
+          "Geographical Indications (GI Act, 1999): Identifies agricultural, natural, or manufactured goods originating in a specific territory where quality/reputation is essentially attributable to that origin (e.g., Darjeeling Tea, Pochampally Ikat, Kanchipuram Silk, Kashmir Pashmina, Tirupati Laddu); Section 9 bars generic names (like 'Basmati' if genericized abroad), deceptive, or scandalous indications; valid for 10 years, renewable."
+        ],
+        "caseLaws": [
+          {
+            "name": "Cadila Health Care Ltd. v. Cadila Pharmaceuticals Ltd.",
+            "citation": "AIR 2001 SC 1952",
+            "principle": "Laid down comprehensive factors for deceptive similarity in passing off (phonetic, visual, structural similarity, class of buyers) and demanded stricter scrutiny for medicinal trademarks to prevent public health harm."
+          },
+          {
+            "name": "Satyam Infoway Ltd. v. Siffynet Solutions Pvt. Ltd.",
+            "citation": "2004 6 SCC 145",
+            "principle": "Held that internet domain names function as business identifiers akin to trademarks and are fully protected against passing off."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three key differences between Trademark Infringement and Passing Off, and state the statutory protection term for Industrial Designs under the Designs Act, 2000.",
+            "a": "Infringement is a statutory action requiring registration where deceptive similarity suffices; Passing Off is a common-law tort for unregistered marks requiring proof of goodwill, misrepresentation, and likely damage. Designs are protected for 10 years plus a 5-year renewal (15 years total)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "intellectual-property-law-u5-t1": {
+      "id": "intellectual-property-law-u5-t1",
+      "subtitle": "Intellectual Property Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under the Patents Act, 1970 (as amended in 2005), both product and process patents are granted for 20 years from filing if the invention has Novelty, Inventive Step (non-obviousness), and Industrial Application, and is not excluded under Sections 3-4. Public interest is safeguarded via Compulsory Licensing (Section 84), Revocation (Section 64), and PPVFR Act, 2001.",
+        "legalProvision": "Patents Act, 1970 (Sections 2(1)(j), 3, 4, 48, 53, 64, 84, & 104); Protection of Plant Varieties and Farmers' Rights (PPVFR) Act, 2001; Budapest Treaty (1977); Patents (Amendment) Rules, 2024-2025",
+        "meaning": "A patent is a statutory bargain: in exchange for full public disclosure of an invention in a Complete Specification, the patentee receives a 20-year monopoly to make, use, sell, license, or sue for infringement (including colourable/immaterial variations). Section 5 (which earlier barred pharma/food product patents) was omitted in 2005 to comply with TRIPS while inserting strict Section 3(d) safeguards.",
+        "keyPoints": [
+          "Three Pillars of Patentability (Section 2(1)(j)): (1) Novelty (new worldwide prior art), (2) Inventive Step (technical advance / non-obvious to a person skilled in the art), and (3) Capability of Industrial Application (utility). Uniform term is 20 years from filing date (Section 53).",
+          "Key Non-Patentable Inventions (Sections 3 & 4): Frivolous/contrary to natural laws (3(a)), contrary to public order/morality (3(b)), abstract scientific theory (3(c)), mere new form/use of known substance without enhanced efficacy—anti-evergreening (3(d)), mere admixture (3(e)), agricultural/horticultural methods (3(h)), medical/surgical treatment methods (3(i)), plants/animals EXCEPT engineered micro-organisms (3(j)), mathematical/business methods or software per se (3(k)), traditional knowledge (3(p)), and atomic energy inventions (Section 4, subject to recent legislative reforms).",
+          "Biotech, Micro-Organisms & Plant Varieties: Genetically engineered micro-organisms are patentable (Diamond v. Chakrabarty; Dimminaco AG) with biological deposit recognized under the Budapest Treaty (1977); new plant varieties and farmers' rights are protected separately under the PPVFR Act, 2001.",
+          "Rights, Compulsory Licensing & Revocation: Patentee enjoys exclusive exploitation, assignment, licensing, surrender, and infringement suits (Section 48), balanced by Government use (Section 100), Compulsory Licence after 3 years from grant if public needs are unmet, prices are unaffordable, or the patent is unworked in India (Section 84), and Revocation by High Court/counter-claim (Section 64).",
+          "Infringement & Doctrine of Colourable Imitation (Pith and Marrow): Infringement occurs when a defendant takes all essential integers of a patent claim—making slight, immaterial, or colourable variations to achieve the same result still constitutes infringement. Procedural reforms (Patents Rules 2024-2025 & Jan Vishwas amendments) streamlined timelines and shifted minor procedural non-compliance from criminal prosecution to civil penalty adjudication."
+        ],
+        "caseLaws": [
+          {
+            "name": "Diamond v. Chakrabarty",
+            "citation": "1980 447 US 303",
+            "principle": "Landmark US Supreme Court ruling holding that a live, genetically engineered oil-eating bacterium created by Dr. Ananda Chakrabarty was a patentable manufacture, shaping global biotech patent law."
+          },
+          {
+            "name": "Dimminaco AG v. Controller of Patents & Designs",
+            "citation": "2002 IPLR 255 (Cal)",
+            "principle": "Calcutta High Court held that a process yielding a living end-product (a vaccine containing live attenuated virus) is patentable in India if it satisfies novelty, inventive step, and industrial utility."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the three grounds for granting a Compulsory Licence under Section 84 of the Patents Act, 1970, and what is the Doctrine of Colourable Imitation?",
+            "a": "After 3 years from grant, a Compulsory Licence may be granted if (1) reasonable public requirements are unmet, (2) the patented invention is not available at a reasonably affordable price, or (3) it is not worked in India. Colourable imitation holds that making slight immaterial variations while copying all essential integers of a patented claim still amounts to infringement."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

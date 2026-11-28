@@ -1,0 +1,521 @@
+param(
+  [switch]$PushOta
+)
+
+$ErrorActionPreference = "Stop"
+$u = New-Object System.Text.UTF8Encoding $false
+$env:PYTHONIOENCODING = "utf-8"
+
+$root = "C:\Users\khoda\OneDrive\Desktop\law-studyes-offline-apk-kit"
+if (-not (Test-Path (Join-Path $root "www"))) { $root = (Get-Location).Path }
+Set-Location $root
+
+$dataDir = Join-Path $root "data"
+New-Item -ItemType Directory -Path $dataDir -Force | Out-Null
+
+$sem5Json = @'
+{
+  "subjects": [
+    {
+      "id": "civil-procedure-code",
+      "title": "Civil Procedure Code & Limitation",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Jurisdiction, Place of Suing, Res Judicata & Decree",
+          "topics": [
+            {"id": "civil-procedure-code-u1-t1", "title": "1. Jurisdiction of Civil Courts, Place of Suing, Res Sub Judice (Sec. 10) & Res Judicata (Sec. 11)"}
+          ]
+        },
+        {
+          "unitNo": 2,
+          "title": "Parties, Pleadings, Decree, Set-Off & Section 89 ADR",
+          "topics": [
+            {"id": "civil-procedure-code-u2-t1", "title": "1. Parties to Suit, Institution of Suit, Decree, Set-Off, Counter-Claim & Section 89 ADR"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "criminal-procedure-code",
+      "title": "Criminal Procedure Code (CrPC / BNSS)",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Hierarchy & Sentencing Powers of Criminal Courts",
+          "topics": [
+            {"id": "criminal-procedure-code-u1-t1", "title": "1. Constitution, Hierarchy & Sentencing Powers of Criminal Courts (Sections 6-29 CrPC / BNSS)"}
+          ]
+        },
+        {
+          "unitNo": 2,
+          "title": "Arrest, Rights of Arrested Persons, Bail & Fair Trial",
+          "topics": [
+            {"id": "criminal-procedure-code-u2-t1", "title": "1. Arrest With and Without Warrant, Rights of Arrested Person & Constitutional Safeguards"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "banking-law",
+      "title": "Banking Law & Negotiable Instruments",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Banking Regulation Act, 1949 & Banker-Customer Relationship",
+          "topics": [
+            {"id": "banking-law-u1-t1", "title": "1. Banking Regulation Act, 1949 - Objectives, Salient Features & Banker-Customer Relationship"}
+          ]
+        },
+        {
+          "unitNo": 2,
+          "title": "Negotiable Instruments, Cheques, Paying & Collecting Banker",
+          "topics": [
+            {"id": "banking-law-u2-t1", "title": "1. Negotiable Instruments (Cheques, Bills & Pronotes), Statutory Protection & Banker's Lien"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alternate-dispute-resolution",
+      "title": "Alternate Dispute Resolution (ADR)",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Judicial Dispute Resolution vs ADR Modes",
+          "topics": [
+            {"id": "alternate-dispute-resolution-u1-t1", "title": "1. Judicial Dispute Resolution vs ADR - Arbitration, Conciliation, Mediation & Negotiation"}
+          ]
+        },
+        {
+          "unitNo": 2,
+          "title": "Arbitration & Conciliation Act, 1996, Lok Adalats & Section 89 CPC",
+          "topics": [
+            {"id": "alternate-dispute-resolution-u2-t1", "title": "1. Arbitral Award, Conciliation Procedure, Lok Adalats & Section 89 CPC"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "professional-ethics",
+      "title": "Professional Ethics & Accounting",
+      "semester": "Semester 5",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Development of Legal Profession, Advocates Act & Enrolment",
+          "topics": [
+            {"id": "professional-ethics-u1-t1", "title": "1. Development of Legal Profession in India, Right to Practice & Enrolment of Advocates"}
+          ]
+        },
+        {
+          "unitNo": 2,
+          "title": "Seven Lamps of Advocacy, Duties & Professional Misconduct",
+          "topics": [
+            {"id": "professional-ethics-u2-t1", "title": "1. Seven Lamps of Advocacy, Duties of Advocates, Disciplinary Committee & Bar-Bench Relations"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "civil-procedure-code-u1-t1": {
+      "id": "civil-procedure-code-u1-t1",
+      "subtitle": "Civil Procedure Code & Limitation - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Code of Civil Procedure, 1908 (158 Sections and 51 Orders) governs civil litigation based on the maxim 'Ubi Jus Ibi Remedium.' Sections 15-20 determine the place of suing, while Section 10 (Res Sub Judice) stays parallel suits and Section 11 (Res Judicata) bars re-litigating finally decided issues.",
+        "legalProvision": "Sections 9, 10, 11, and 15-20, Code of Civil Procedure, 1908",
+        "meaning": "Civil courts have inherent jurisdiction under Section 9 to try all suits of a civil nature unless expressly or impliedly barred. To prevent conflicting verdicts and endless litigation, CPC enforces strict rules on pecuniary, territorial, and subject-matter jurisdiction alongside Res Sub Judice and Res Judicata.",
+        "keyPoints": [
+          "Types of Jurisdiction: Subject-matter jurisdiction, Pecuniary jurisdiction (Section 15 requires filing in the lowest competent court), Territorial jurisdiction (Sections 16-20), and Original vs Appellate jurisdiction.",
+          "Place of Suing (Sections 16-20): Suits for immovable property must be filed where the property is situated (Section 16); suits for movable property or wrongs where the wrong occurred or defendant resides (Section 19); other suits where the defendant resides/works or where the cause of action wholly or partly arises (Section 20).",
+          "Res Sub Judice (Section 10): Prohibits a court from proceeding with the trial of any suit in which the matter in issue is directly and substantially in issue in a previously instituted pending suit between the same parties.",
+          "Res Judicata (Section 11): Bars any court from trying a suit or issue already directly and substantially decided on merits in a former suit between the same parties by a competent court; includes Constructive Res Judicata (Explanation IV).",
+          "Key Difference: Section 10 (Res Sub Judice) stays a parallel pending suit, whereas Section 11 (Res Judicata) permanently bars a subsequent suit after final adjudication."
+        ],
+        "caseLaws": [
+          {
+            "name": "Daryao v. State of U.P.",
+            "citation": "AIR 1961 SC 1457",
+            "principle": "Held that the doctrine of Res Judicata is based on public policy and finality of litigation, applying even to writ petitions under Article 32 after dismissal on merits under Article 226."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Res Sub Judice (Section 10) and Res Judicata (Section 11) under CPC.",
+            "a": "Res Sub Judice stays the trial of a subsequently filed suit while an earlier suit on the same matter is still pending; Res Judicata permanently bars re-litigating a matter already finally decided on merits."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "civil-procedure-code-u2-t1": {
+      "id": "civil-procedure-code-u2-t1",
+      "subtitle": "Civil Procedure Code & Limitation - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A civil suit is instituted by presenting a plaint supported by an affidavit (Section 26, Order IV) with proper joinder of parties (Order I). A Decree (Section 2(2)) conclusively determines parties' rights, Order VIII allows Set-Off and Counter-Claim, and Section 89 empowers courts to refer disputes to ADR.",
+        "legalProvision": "Sections 2(2), 26, 27, 89, and Orders I, II, IV, VII, VIII, Code of Civil Procedure, 1908 (as amended in 1999 & 2002)",
+        "meaning": "CPC structures every stage of a civil suit from framing and institution to pleadings, summons within 30 days (Section 27), decree, and execution. The 1999 and 2002 Amendments (based on Malimath Committee recommendations) streamlined trials by requiring plaint affidavits and introducing court-annexed ADR under Section 89.",
+        "keyPoints": [
+          "Parties to Suit (Order I): Requires a plaintiff and defendant; allows joinder of proper parties, deletion of misjoined parties, and addition of necessary parties (non-joinder of a necessary party can defeat the suit).",
+          "Institution & Summons (Sections 26-27, Order IV): Suit begins with a numbered plaint verified by affidavit; summons must be issued to the defendant within 30 days of institution.",
+          "Decree vs Order (Section 2(2) & 2(14)): A Decree is the formal expression of a conclusive adjudication of rights in a suit (preliminary, final, or partly preliminary); every decree is appealable, whereas only specified orders are appealable.",
+          "Set-Off & Counter-Claim (Order VIII, Rules 6 & 6A): Set-off adjusts an ascertained reciprocal money claim of the defendant against the plaintiff's claim; a Counter-Claim is an independent cross-suit filed by the defendant in the written statement.",
+          "Section 89 CPC (Settlement Outside Court): Empowers civil courts to refer disputes with elements of settlement to Arbitration, Conciliation, Judicial Settlement (including Lok Adalat), or Mediation."
+        ],
+        "caseLaws": [
+          {
+            "name": "Salem Advocate Bar Association v. Union of India",
+            "citation": "AIR 2005 SC 3353",
+            "principle": "Upheld the 1999 and 2002 CPC Amendments and directed High Courts to frame rules for effective implementation of Section 89 ADR."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the key difference between Set-Off and Counter-Claim under Order VIII of CPC?",
+            "a": "Set-off is a defence adjusting a mutually ascertained money debt up to the plaintiff's claim, whereas a Counter-Claim is an independent cross-action that can exceed the plaintiff's claim and survive even if the plaintiff's suit is dismissed."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "criminal-procedure-code-u1-t1": {
+      "id": "criminal-procedure-code-u1-t1",
+      "subtitle": "Criminal Procedure Code (CrPC / BNSS) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Besides the Supreme Court and High Courts, Section 6 CrPC (Section 6 BNSS, 2023) establishes four classes of criminal courts: Courts of Session, Judicial Magistrates of the First Class (or Metropolitan Magistrates), Judicial Magistrates of the Second Class, and Executive Magistrates, each with graded sentencing powers.",
+        "legalProvision": "Sections 6, 9, 11, 28, and 29, Code of Criminal Procedure, 1973 (Sections 6, 8, 9, 22, and 23, Bharatiya Nagarik Suraksha Sanhita, 2023)",
+        "meaning": "Criminal procedure separates judicial adjudication from executive law-and-order administration. Lower criminal courts try less serious offences, while grave offences are committed to the Sessions Court, ensuring proportional sentencing authority and appellate oversight.",
+        "keyPoints": [
+          "Supreme Court & High Courts: Empowered to pass any sentence authorized by law; High Court confirmation is mandatory before executing any death sentence passed by a Sessions Court (Section 366 CrPC).",
+          "Court of Session (Sessions Judge & Additional Sessions Judge): May pass any sentence authorized by law, including death penalty (subject to High Court confirmation); Assistant Sessions Judge may pass imprisonment up to 10 years.",
+          "Chief Judicial Magistrate (CJM) / Chief Metropolitan Magistrate (CMM): May pass any sentence authorized by law except death, life imprisonment, or imprisonment exceeding 7 years.",
+          "Judicial Magistrate of the First Class (JMFC) / Metropolitan Magistrate: May pass imprisonment up to 3 years and fine up to Rs. 10,000 under CrPC (enhanced to Rs. 50,000 and community service under BNSS, 2023).",
+          "Judicial Magistrate of the Second Class (JMSC): May pass imprisonment up to 1 year and fine up to Rs. 5,000 under CrPC (Rs. 10,000 under BNSS).",
+          "Executive Magistrates (District Magistrate, SDM): Handle preventive law-and-order proceedings (such as Section 144 CrPC / Section 163 BNSS and security bonds for keeping peace)."
+        ],
+        "caseLaws": [
+          {
+            "name": "A.R. Antulay v. R.S. Nayak",
+            "citation": "AIR 1988 SC 1531",
+            "principle": "Held that jurisdiction of criminal courts is strictly conferred by statute, and no court can transfer a trial to a forum lacking statutory jurisdiction."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the maximum sentence a Chief Judicial Magistrate (CJM) and a Sessions Judge can impose?",
+            "a": "A CJM can impose imprisonment up to 7 years (no death or life sentence), whereas a Sessions Judge can pass any sentence authorized by law, with death sentences requiring High Court confirmation."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "criminal-procedure-code-u2-t1": {
+      "id": "criminal-procedure-code-u2-t1",
+      "subtitle": "Criminal Procedure Code (CrPC / BNSS) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Police may arrest without a warrant in cognizable offences under Section 41 CrPC (Section 35 BNSS), subject to mandatory notice of appearance under Section 41A for offences punishable up to 7 years. Arrested persons enjoy strict constitutional and statutory rights under Article 22 and D.K. Basu guidelines.",
+        "legalProvision": "Articles 20, 21, and 22, Constitution of India; Sections 41, 41A, 46, 50, 54, and 57 CrPC, 1973 (Sections 35, 43, 47, 53, and 58 BNSS, 2023)",
+        "meaning": "Arrest deprives a citizen of personal liberty, so criminal procedure balances effective police investigation with rigorous safeguards against arbitrary detention, custodial violence, and unnecessary handcuffing.",
+        "keyPoints": [
+          "Cognizable vs Non-Cognizable Offences: In cognizable offences (serious crimes like murder, theft), police can register an FIR and arrest without a warrant; in non-cognizable offences, a Magistrate's warrant or order is required.",
+          "Arrest Without Warrant & Section 41A Notice: Under Section 41, police may arrest without warrant for cognizable offences, stolen property, or proclaimed offenders; however, for offences punishable up to 7 years, police must issue a Section 41A notice of appearance instead of automatic arrest (Arnesh Kumar).",
+          "Arrest by Private Person (Section 43) & Magistrate (Section 44): A private citizen may arrest anyone committing a non-bailable cognizable offence in his presence and hand him over to police immediately.",
+          "Rights of Arrested Person: Right to know grounds of arrest and bail eligibility (Section 50), right to consult a legal practitioner of choice (Article 22(1)), right to be produced before a Magistrate within 24 hours (Article 22(2) & Section 57), right to medical examination (Section 54), and protection against routine handcuffing.",
+          "Special Safeguard for Women (Section 46(4)): Women must be arrested by a female police officer and generally cannot be arrested after sunset and before sunrise without prior Magistrate permission."
+        ],
+        "caseLaws": [
+          {
+            "name": "D.K. Basu v. State of West Bengal",
+            "citation": "AIR 1997 SC 610",
+            "principle": "Laid down 11 mandatory arrest and detention guidelines (arrest memo attested by witness/family, informing relative, medical inspection, police name tags) to prevent custodial torture."
+          },
+          {
+            "name": "Arnesh Kumar v. State of Bihar",
+            "citation": "2014 8 SCC 273",
+            "principle": "Directed police not to make mechanical arrests in offences punishable up to 7 years without satisfying Section 41 conditions and issuing a Section 41A notice."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four fundamental rights of an arrested person under Article 22 and the CrPC/BNSS.",
+            "a": "Right to be informed of grounds of arrest, right to consult a lawyer, right to be produced before a Magistrate within 24 hours, and right to medical examination."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "banking-law-u1-t1": {
+      "id": "banking-law-u1-t1",
+      "subtitle": "Banking Law & Negotiable Instruments - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 5(b) of the Banking Regulation Act, 1949, banking means accepting deposits of money from the public, repayable on demand, for lending or investment. The primary banker-customer relationship is Debtor and Creditor, supplemented by Principal-Agent, Bailor-Bailee, and Trustee roles.",
+        "legalProvision": "Sections 5(b), 6, 22, 24, and 35, Banking Regulation Act, 1949; Reserve Bank of India Act, 1934",
+        "meaning": "Banks act as the backbone of India's economy by mobilizing savings and channelling credit under the supervision of the Reserve Bank of India (RBI). The 1949 Act safeguards depositors through licensing, statutory reserves, branch control, and annual audits, while banking nationalizations (14 banks in 1969; 6 more in 1980) expanded public credit access.",
+        "keyPoints": [
+          "Salient Features of Banking Regulation Act, 1949: Mandatory RBI license to start a bank or open branches (Sections 22-23), maintenance of Cash Reserve Ratio (CRR) and Statutory Liquidity Ratio (SLR), RBI inspection powers (Section 35), and mandatory statutory audit.",
+          "Primary Relationship (Debtor and Creditor): When a customer deposits money, the bank becomes the debtor and the customer the creditor (reversed when the customer takes a loan); the bank is not a trustee of ordinary deposits.",
+          "Special Relationships: Principal and Agent (collecting cheques, paying bills), Bailor and Bailee (safe-deposit lockers/valuables), Trustee and Beneficiary (holding funds for a specific trust purpose), and Pledger-Pledgee.",
+          "Duty of Secrecy (Not Absolute): A banker must keep customer account details confidential, except under legal compulsion (Income Tax notice, court order), public duty, bank's own interest, or customer's consent (Tournier v. National Provincial Bank).",
+          "Modern Banking & IT Impact: Core Banking Solutions (CBS), NEFT/RTGS, UPI, mobile banking, and DICGC deposit insurance (up to Rs. 5 lakh per depositor)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Tournier v. National Provincial and Union Bank of England",
+            "citation": "1924 1 KB 461",
+            "principle": "Established that a banker's duty of secrecy is a legal obligation, subject to four exceptions: compulsion of law, duty to the public, interest of the bank, and express or implied consent of the customer."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When can a banker legally disclose a customer's account details to an Income Tax Officer?",
+            "a": "Under the 'compulsion of law' exception recognized in Tournier's case, a banker is legally bound to disclose account details when served a valid statutory notice by Income Tax authorities or a court."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "banking-law-u2-t1": {
+      "id": "banking-law-u2-t1",
+      "subtitle": "Banking Law & Negotiable Instruments - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 13 of the Negotiable Instruments Act, 1881, a negotiable instrument is a Promissory Note, Bill of Exchange, or Cheque payable to order or bearer. Paying and Collecting Bankers receive statutory protection (Sections 85 & 131) when acting in good faith without negligence, and banks enjoy General Lien (Section 171 ICA) and Right of Set-Off.",
+        "legalProvision": "Sections 4, 5, 6, 9, 13, 85, 123-131, and 138, Negotiable Instruments Act, 1881; Section 171, Indian Contract Act, 1872",
+        "meaning": "Negotiable instruments enable smooth commercial credit through free transferability and the doctrine of 'Holder in Due Course' (Section 9), who takes a good title free from prior defects if he acquires the instrument for consideration, before maturity, and in good faith.",
+        "keyPoints": [
+          "Three Negotiable Instruments: Promissory Note (Section 4—unconditional written undertaking to pay), Bill of Exchange (Section 5—unconditional written order to pay), and Cheque (Section 6—bill of exchange drawn on a specified banker payable on demand).",
+          "Crossed Cheques (Sections 123-130): Two parallel transverse lines across the face of a cheque direct payment only through a banker; 'Account Payee' crossing restricts collection strictly to the named payee's bank account.",
+          "Statutory Protection to Paying Banker (Section 85): Protected when paying an order or bearer cheque in due course, even if an endorsement is forged, provided the drawer's signature is genuine.",
+          "Statutory Protection to Collecting Banker (Section 131): Protected from liability for conversion when collecting a crossed cheque for a customer in good faith and without negligence.",
+          "Banker's Lien & Right of Set-Off: General Lien (Section 171 ICA) lets a banker retain securities deposited in ordinary course of business for general balance due; Set-Off lets a bank combine two accounts of the same customer in the same right to adjust a debit balance."
+        ],
+        "caseLaws": [
+          {
+            "name": "Canara Bank v. Canara Sales Corporation",
+            "citation": "AIR 1987 SC 1603",
+            "principle": "Held that a paying banker has no statutory protection under Section 85 if it honours a cheque bearing a forged signature of the customer (drawer), as such a cheque is a nullity."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What conditions must a Collecting Banker satisfy to claim statutory protection under Section 131 of the NI Act?",
+            "a": "The cheque must be crossed, collected on behalf of a customer, and the banker must have acted in good faith and without negligence."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "alternate-dispute-resolution-u1-t1": {
+      "id": "alternate-dispute-resolution-u1-t1",
+      "subtitle": "Alternate Dispute Resolution (ADR) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Alternative Dispute Resolution (ADR) resolves civil and commercial disputes outside formal court litigation—faster, cheaper, and more flexibly. Its four core modes are Arbitration (binding adjudication by a chosen tribunal), Conciliation (active settlement proposals), Mediation (facilitated negotiation), and Negotiation (direct party settlement).",
+        "legalProvision": "Article 39A, Constitution of India; Arbitration and Conciliation Act, 1996; Section 89, Code of Civil Procedure, 1908",
+        "meaning": "Traditional Judicial Dispute Resolution (JDR) offers binding precedents and constitutional review, but suffers from heavy delays, high costs, and rigid procedure. ADR relieves court congestion and preserves business and family relationships through party-controlled, confidential processes.",
+        "keyPoints": [
+          "Judicial Dispute Resolution (JDR): Formal court adjudication producing a binding win-lose verdict; strengths include reasoned speaking orders, judicial review, and appeals; weaknesses include delay, expense, and procedural rigidity.",
+          "Arbitration: Private adjudication where parties submit their dispute to a neutral Arbitral Tribunal under an arbitration agreement; results in a binding, enforceable Arbitral Award without strict CPC/Evidence Act rules.",
+          "Conciliation (Part III, 1996 Act): A neutral Conciliator actively assists parties and draws up settlement terms; once signed by the parties, the settlement agreement has the same legal force as an arbitral award.",
+          "Mediation: A neutral Mediator facilitates structured communication so parties reach their own voluntary win-win solution without imposing a decision.",
+          "Negotiation: Direct, informal dialogue between disputing parties without any third-party neutral.",
+          "Non-Arbitrable Matters: Criminal offences, insolvency, probate/testamentary disputes, guardianship, and matrimonial status decrees cannot be referred to private arbitration."
+        ],
+        "caseLaws": [
+          {
+            "name": "Booz Allen and Hamilton Inc. v. SBI Home Finance Ltd.",
+            "citation": "2011 5 SCC 532",
+            "principle": "Distinguished arbitrable 'rights in personam' (commercial/contractual disputes) from non-arbitrable 'rights in rem' (criminal, insolvency, probate, matrimonial status)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How does Arbitration differ from Mediation and Conciliation?",
+            "a": "Arbitration is an adjudicatory process ending in a binding Arbitral Award imposed by the tribunal, whereas Mediation and Conciliation are consensual processes where settlement depends entirely on party agreement."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "alternate-dispute-resolution-u2-t1": {
+      "id": "alternate-dispute-resolution-u2-t1",
+      "subtitle": "Alternate Dispute Resolution (ADR) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under the Arbitration and Conciliation Act, 1996, a valid arbitration agreement bars direct court suits (Section 8) and an Arbitral Award is final and binding, challengeable only on narrow grounds under Section 34. Lok Adalats (Legal Services Authorities Act, 1987) deliver speedy, zero-fee justice with final non-appealable awards.",
+        "legalProvision": "Sections 7, 8, 10-11, 31, 34, 37, and 61-74, Arbitration and Conciliation Act, 1996; Legal Services Authorities Act, 1987 (Sections 19-22); Section 89 CPC",
+        "meaning": "India's statutory ADR architecture combines commercial arbitration (based on the UNCITRAL Model Law) with accessible public forums like Lok Adalats, Family Courts (1984 Act), and court-annexed mediation under Section 89 CPC.",
+        "keyPoints": [
+          "Arbitration Agreement & Tribunal (Sections 7-16): Must be in writing; parties are free to choose an odd number of arbitrators (Section 10), and the tribunal can rule on its own jurisdiction (Kompetenz-Kompetenz, Section 16).",
+          "Arbitral Award & Challenge (Sections 31, 34 & 36): Must be reasoned and signed; enforceable like a civil court decree (Section 36) and can be set aside under Section 34 only on limited grounds (incapacity, invalid agreement, denial of natural justice, or conflict with public policy of India).",
+          "Conciliation Stages (Sections 61-74): Appointment of conciliator(s), submission of brief written statements, confidential discussions, and signing of a binding Settlement Agreement (Section 73).",
+          "Lok Adalats (Legal Services Authorities Act, 1987): Statutory People's Courts (first organized in Gujarat in 1982) settling pending and pre-litigation disputes amicably; no court fee (refunded if already paid), and every award is final, binding as a civil decree, and non-appealable.",
+          "Section 89 CPC & Order X Rules 1A-1C: Empowers civil courts to refer suitable cases to Arbitration, Conciliation, Mediation, or Lok Adalat."
+        ],
+        "caseLaws": [
+          {
+            "name": "Afcons Infrastructure Ltd. v. Cherian Varkey Construction Co.",
+            "citation": "2010 8 SCC 24",
+            "principle": "Clarified the exact procedure for civil courts to refer disputes to ADR modes under Section 89 CPC and identified categories of cases suitable and unsuitable for ADR."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why is a Lok Adalat award considered uniquely effective for speedy justice?",
+            "a": "It involves zero court fee (with refund of paid court fees), resolves disputes amicably by consent, has the force of a civil court decree, and no appeal lies against it."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "professional-ethics-u1-t1": {
+      "id": "professional-ethics-u1-t1",
+      "subtitle": "Professional Ethics & Accounting - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Indian legal profession evolved from the Regulating Act, 1773 and Indian Bar Councils Act, 1926 into a unified Bar under the Advocates Act, 1961. The right to practice law is a statutory right regulated under Article 19(1)(g) and Section 30, requiring enrolment with a State Bar Council.",
+        "legalProvision": "Article 19(1)(g), Constitution of India; Sections 16, 24, 24A, and 30, Advocates Act, 1961",
+        "meaning": "Advocacy is a noble profession dedicated to the administration of justice rather than a commercial business; hence advocates are prohibited from advertising or soliciting work. The Advocates Act, 1961 (based on the 1951 All India Bar Committee chaired by Justice S.R. Das) established the Bar Council of India (BCI) and State Bar Councils.",
+        "keyPoints": [
+          "Historical Milestones: Regulating Act, 1773 (Supreme Court at Calcutta), Indian High Courts Act, 1861, Legal Practitioners Act, 1879, Indian Bar Councils Act, 1926, and the unified Advocates Act, 1961.",
+          "Right to Practice — Right or Privilege?: Under Article 19(1)(g) and Section 30, practicing law is a regulated statutory right subject to reasonable restrictions (degree, enrolment, AIBE, full-time practice, and ethical conduct).",
+          "Qualifications for Enrolment (Section 24): Citizen of India, at least 21 years of age, LL.B. degree from a BCI-recognized university, payment of prescribed fee, and passing the All India Bar Examination (AIBE).",
+          "Disqualifications (Section 24A): Conviction for an offence involving moral turpitude or under the Untouchability/Protection of Civil Rights Act (disqualification ceases 2 years after release), or dismissal from government service for moral turpitude.",
+          "Classes of Advocates (Section 16): Senior Advocates (designated by Supreme Court or High Courts for standing and expertise; cannot file a Vakalatnama directly) and Other Advocates."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ex-Capt. Harish Uppal v. Union of India",
+            "citation": "AIR 2003 SC 739",
+            "principle": "Held that lawyers have no right to go on strike or boycott courts, as the right to practice is coupled with a paramount duty to the court and litigants."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the statutory qualifications and disqualifications for enrolment as an advocate under Sections 24 and 24A of the Advocates Act, 1961?",
+            "a": "Qualifications: Indian citizen, 21+ years, recognized LL.B. degree, and enrolment fee. Disqualifications: Conviction for moral turpitude or untouchability offences (until 2 years after release) or dismissal from government service for moral turpitude."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "professional-ethics-u2-t1": {
+      "id": "professional-ethics-u2-t1",
+      "subtitle": "Professional Ethics & Accounting - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Judge Edward Abbott Parry's 'Seven Lamps of Advocacy'—Honesty, Courage, Industry, Wit, Eloquence, Judgment, and Fellowship (plus Justice K.V. Krishnaswamy Aiyar's 8th lamp: Tact)—define ideal legal conduct. Under Section 35 of the Advocates Act, 1961, Bar Council Disciplinary Committees punish professional misconduct.",
+        "legalProvision": "Sections 35, 36, 37, and 49(1)(c), Advocates Act, 1961; Bar Council of India Rules (Part VI, Chapter II)",
+        "meaning": "Professional ethics governs an advocate's duties toward the Court, Client, Opponent, Colleagues, and Public, alongside transparent maintenance of client accounts. Cordial Bar-Bench relations are essential because judges and advocates are equal partners in delivering justice.",
+        "keyPoints": [
+          "Seven Lamps of Advocacy (Edward Abbott Parry) + 8th Lamp: (1) Honesty, (2) Courage, (3) Industry (hard work), (4) Wit, (5) Eloquence, (6) Judgment, (7) Fellowship, and (8) Tact (added by Justice K.V. Krishnaswamy Aiyar).",
+          "Duties of an Advocate (BCI Rules): To the Court (respect, honesty, no misleading citations, proper dress code), to the Client (fearless defence, confidentiality, accounting for client money, no contingent fees), to Opponents (fairness), and to the Public (free legal aid to the poor).",
+          "Professional Misconduct & Disciplinary Committee (Section 35): Includes misappropriation of client funds, soliciting/advertising, appearing for both sides, or contempt; the Disciplinary Committee (3 members) may reprimand, suspend from practice, or remove the advocate's name from the State Roll.",
+          "Accountancy for Lawyers: Advocates must maintain separate client and personal accounts (cash book, ledger, fee book) so client money is never mixed with personal funds.",
+          "Bar-Bench Relations: Mutual respect, courtesy, and independence between the Bar (advocates) and Bench (judges) uphold public confidence in the judiciary."
+        ],
+        "caseLaws": [
+          {
+            "name": "Noratanmal Chouraria v. M.R. Murli",
+            "citation": "2004 5 SCC 689",
+            "principle": "Explained that 'misconduct' under Section 35 of the Advocates Act is a wide term encompassing any disgraceful, dishonourable, or unethical conduct unbecoming of an advocate."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name the Seven Lamps of Advocacy and the Eighth Lamp added in India.",
+            "a": "Honesty, Courage, Industry, Wit, Eloquence, Judgment, and Fellowship (Judge Edward Abbott Parry), plus Tact (Justice K.V. Krishnaswamy Aiyar)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}
+'@
+
+$packPath = Join-Path $dataDir "sem5_handcrafted_pack.json"
+[System.IO.File]::WriteAllText($packPath, $sem5Json, $u)
+
+Write-Host "`n=== 1. Merging Hand-Crafted Semester 5 Pack into www/nyayasaral_db.json (Zero Overlap) ===" -ForegroundColor Cyan
+$pyMerge = @'
+import json, os, sys, time
+from pathlib import Path
+
+db_path = Path(sys.argv[1])
+pack_path = Path(sys.argv[2])
+
+db = json.loads(db_path.read_text(encoding="utf-8"))
+pack = json.loads(pack_path.read_text(encoding="utf-8"))
+
+subjects = db.setdefault("subjects", [])
+notes = db.setdefault("notes", {})
+subj_by_id = {s["id"]: s for s in subjects if isinstance(s, dict) and "id" in s}
+
+added_subjs, added_topics = 0, 0
+for s in pack["subjects"]:
+    if s["id"] not in subj_by_id:
+        subjects.append(s)
+        subj_by_id[s["id"]] = s
+        added_subjs += 1
+    else:
+        ex_s = subj_by_id[s["id"]]
+        ex_tids = {t["id"] for u in ex_s.get("units", []) for t in u.get("topics", [])}
+        for u in s.get("units", []):
+            new_ts = [t for t in u.get("topics", []) if t["id"] not in ex_tids]
+            if new_ts:
+                ex_s.setdefault("units", []).append({"unitNo": len(ex_s["units"]) + 1, "title": u["title"], "topics": new_ts})
+
+for tid, rec in pack["notes"].items():
+    if tid not in notes:
+        notes[tid] = rec
+        added_topics += 1
+
+out = json.dumps(db, ensure_ascii=False, separators=(",", ":"))
+tmp = db_path.with_name(f"{db_path.name}.{os.getpid()}.tmp")
+tmp.write_text(out, encoding="utf-8")
+json.loads(tmp.read_text(encoding="utf-8"))
+for i in range(10):
+    try:
+        os.replace(str(tmp), str(db_path))
+        break
+    except (PermissionError, OSError):
+        time.sleep(0.3 * (i + 1))
+
+print(f"[PASS] Merged Semester 5 Hand-Crafted Notes: +{added_subjs} subjects, +{added_topics} English topics (Total topics now: {len(notes)})")
+'@
+
+$tmpPy = Join-Path $env:TEMP "ls_merge_sem5.py"
+[System.IO.File]::WriteAllText($tmpPy, $pyMerge, $u)
+python -u $tmpPy (Join-Path $root "www\nyayasaral_db.json") $packPath
+if ($LASTEXITCODE -ne 0) { throw "Merge failed!" }
+
+if ($PushOta) {
+  Write-Host "`n=== 2. Running Built-In EN -> TE/HI Auto-Converter & Deploying Live OTA ===" -ForegroundColor Cyan
+  & (Join-Path $root "Push-LawStudyes-OTA.ps1") -Message "Added Hand-Crafted Semester 5 Subjects (CPC, CrPC/BNSS, Banking Law, ADR, Professional Ethics) + Auto TE/HI"
+}

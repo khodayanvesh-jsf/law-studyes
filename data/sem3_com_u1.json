@@ -1,0 +1,188 @@
+{
+  "subjects": [
+    {
+      "id": "company-law",
+      "title": "Company Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Definition & Attributes of Company, Lifting of Veil, Partnership vs Company, Kinds of Companies, Incorporation & Non-Compliance",
+          "topics": [
+            {"id": "com-u1-t1", "title": "1. Meaning, Definition & Essential Attributes of a Company (Companies Act, 2013)"},
+            {"id": "com-u1-t2", "title": "2. Doctrine of Corporate Veil & Lifting / Piercing the Veil (Statutory & Judicial Grounds)"},
+            {"id": "com-u1-t3", "title": "3. Distinction Between Company and Partnership Firm & Hindu Undivided Family (HUF)"},
+            {"id": "com-u1-t4", "title": "4. Classification & Kinds of Companies (Private, Public, OPC, Small, Section 8, Holding/Subsidiary & Foreign)"},
+            {"id": "com-u1-t5", "title": "5. Incorporation of a Company (Sec. 7), Effects of Registration (Sec. 9) & Non-Compliance / Illegal Associations (Sec. 464)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "com-u1-t1": {
+      "id": "com-u1-t1",
+      "subtitle": "Company Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 2(20) of the Companies Act, 2013, a 'Company' means a company incorporated under the Companies Act, 2013 or under any previous company law. Incorporation creates an artificial juristic person distinct from its members (Salomon v. Salomon), endowed with separate legal entity, perpetual succession, limited liability, separate property, transferable shares, and capacity to sue and be sued.",
+        "legalProvision": "Section 2(20) & Section 9, Companies Act, 2013",
+        "meaning": "A company is a voluntary association of persons formed for a lawful business or charitable purpose, separating capital ownership from active management and insulating investors' personal wealth from business failures.",
+        "keyPoints": [
+          "Statutory Definition (Sec. 2(20), Companies Act, 2013): Any company incorporated under the 2013 Act or any prior company law (e.g., Companies Act, 1956); Lord Justice Lindley defined a company as an association of many persons contributing money or money's worth to a common stock and employing it for a common purpose.",
+          "Core Attributes of a Company: (1) SEPARATE LEGAL ENTITY (Salomon v. Salomon - company can contract with, lend to, or be employed by its own promoter/shareholder, e.g., Lee v. Lee's Air Farming), (2) PERPETUAL SUCCESSION ('members may come and go, but the company goes on forever' - unaffected by death, insolvency, or change of members), (3) LIMITED LIABILITY (liability of members limited to unpaid share capital or guarantee amount under Sec. 2(22)), (4) SEPARATE PROPERTY (shareholders have NO direct proprietary right in company assets during its existence - Macaura v. Northern Assurance), (5) TRANSFERABLE SHARES (especially in public companies - Sec. 44), and (6) CAPACITY TO SUE & BE SUED in its own name.",
+          "Common Seal Update (Companies Amendment Act, 2015): Removed mandatory requirement of a 'common seal' for every company; documents may now be authenticated by two directors or one director + Company Secretary where a seal is not adopted.",
+          "Public Accountability & Corporate Governance: Unlike informal partnerships, companies operate under statutory disclosure, audit, board fiduciary duties (Sec. 166), and shareholder democracy."
+        ],
+        "caseLaws": [
+          {
+            "name": "Salomon v. A. Salomon & Co. Ltd.",
+            "citation": "1897 AC 22 (HL)",
+            "principle": "Established the cardinal rule of company law: a duly incorporated company is an independent legal entity distinct from its members, even where one person holds virtually all shares."
+          },
+          {
+            "name": "Macaura v. Northern Assurance Co. Ltd.",
+            "citation": "1925 AC 619 (HL)",
+            "principle": "Held that a sole shareholder had no insurable proprietary interest in timber owned by the company itself because a company's property belongs to the company, not to its shareholders."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four essential characteristics of a registered company under the Companies Act, 2013, and explain the rule in Macaura v. Northern Assurance.",
+            "a": "Separate legal entity, perpetual succession, limited liability, and separate corporate property. In Macaura, the court held a shareholder has no direct proprietary/insurable interest in the company's own assets because the company owns its property separately."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u1-t2": {
+      "id": "com-u1-t2",
+      "subtitle": "Company Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Incorporation draws a legal curtain - the 'Corporate Veil' - between the company and its members/directors. However, when the corporate form is abused as a cloak for fraud, tax evasion, enemy trading, or statutory evasion, courts and statutes 'lift or pierce the corporate veil' to hold the real persons behind the curtain personally liable.",
+        "legalProvision": "Sections 3A, 7(7), 251, 339, & 346, Companies Act, 2013; Judicial Doctrine of Lifting the Corporate Veil",
+        "meaning": "Lifting the corporate veil is an exceptional anti-abuse remedy, never a routine disregard of corporate personality: courts pierce the veil strictly where justice or statute demands exposing improper use of the corporate facade.",
+        "keyPoints": [
+          "Judicial Grounds for Lifting the Veil: (1) PROTECTION OF REVENUE / TAX EVASION (Dinshaw Maneckjee Petit; CIT v. Sri Meenakshi Mills - splitting income/assets across sham companies to dodge tax), (2) PREVENTION OF FRAUD OR IMPROPER CONDUCT (Gilford Motor Co. v. Horne; Jones v. Lipman - using a sham company to evade a non-compete covenant or specific performance), (3) DETERMINATION OF ENEMY CHARACTER (Daimler Co. v. Continental Tyre & Rubber Co. - checking whether persons in de facto control are alien enemies during wartime), (4) AGENCY OR SHAM / ALTER EGO (Smith, Stone & Knight; LIC v. Escorts), and (5) PUBLIC INTEREST / WELFARE PROTECTION (Workmen v. Associated Rubber Industries).",
+          "Statutory Grounds Under Companies Act, 2013: (1) Reduction of members below statutory minimum (7 public / 2 private) carrying on business for > 6 months (Sec. 3A - remaining members become severally liable for debts contracted after 6 months), (2) Fraudulent conduct of business during winding up/insolvency (Sec. 339), (3) Incorporation by false/incorrect information (Sec. 7(7) - Tribunal may impose personal liability), and (4) Misdescription of company name on negotiable instruments/bills (Sec. 12(4) / Sec. 346)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Gilford Motor Co. Ltd. v. Horne",
+            "citation": "1933 Ch 935",
+            "principle": "Lifted the corporate veil where a former managing director bound by a non-solicitation covenant formed a company in his wife/friend's name to solicit the former employer's customers ('a mere cloak or sham')."
+          },
+          {
+            "name": "Life Insurance Corporation of India v. Escorts Ltd.",
+            "citation": "1986 1 SCC 264",
+            "principle": "Clarified that courts lift the corporate veil only in exceptional circumstances where statute permits or where the corporate form is used to evade legal obligations, commit fraud, or act against public interest."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three judicial grounds and two statutory grounds under the Companies Act, 2013 for lifting the corporate veil.",
+            "a": "Judicial grounds: fraud/evasion of legal obligation (Gilford Motor), tax evasion, or enemy character (Daimler). Statutory grounds: Sec. 3A (continuing business below statutory minimum members for > 6 months) and Sec. 339 (fraudulent conduct of business)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u1-t3": {
+      "id": "com-u1-t3",
+      "subtitle": "Company Law - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Company (Companies Act, 2013) is a distinct juristic person with limited liability, perpetual succession, and mandatory statutory filings, whereas a Partnership Firm (Indian Partnership Act, 1932) is a mere collective name for partners with UNLIMITED joint/several liability and no separate entity from its partners, and a Hindu Undivided Family (HUF) arises by status/birth under Hindu law led by a Karta.",
+        "legalProvision": "Companies Act, 2013; Indian Partnership Act, 1932 (Sec. 4); Mitakshara / Dayabhaga HUF Law",
+        "meaning": "Choosing between a Company, Partnership (or LLP), and HUF turns on liability exposure, capital raising needs, compliance costs, and whether membership rests on contract, status, or incorporation.",
+        "keyPoints": [
+          "Company vs Partnership Firm: (1) Legal Personality - Company is a separate juristic person; Partnership firm has no distinct legal entity from partners; (2) Liability - Company members' liability is generally limited to share capital/guarantee; partners have UNLIMITED joint and several personal liability; (3) Succession - Company enjoys perpetual succession; partnership dissolves on death/insolvency of a partner unless agreed otherwise; (4) Agency & Transfer - Every partner is an implied agent of the firm and cannot transfer share without consent; company shareholders are NOT agents and public shares are freely transferable; (5) Membership & Regulation - Public company min 7 (no cap), Private min 2 max 200; partnership min 2, max 100 (Sec. 464 Companies Act & Rule 10).",
+          "Company vs Hindu Undivided Family (HUF): (1) Creation - Company arises by statutory registration; HUF arises automatically by operation of Hindu law (birth/marriage); (2) Membership - Any person can join a company; HUF consists strictly of family members (coparceners + female members); (3) Management - Directors/Board manage a company; Karta (senior-most coparcener) manages HUF with wide powers for legal necessity; (4) Liability - Company members have limited liability; Karta has unlimited liability for HUF debts (coparceners liable up to joint family share)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Dulichand Laxminarayan v. Commissioner of Income Tax",
+            "citation": "AIR 1956 SC 354",
+            "principle": "Held that a partnership firm is not a distinct juristic person under general law and therefore cannot enter into partnership as a firm with another firm or individual."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four core differences between a Company and a Partnership Firm, and two differences between a Company and a Hindu Undivided Family (HUF).",
+            "a": "Company vs Partnership: separate legal entity vs collective name, limited vs unlimited partner liability, perpetual succession vs dissolution on partner change, and statutory registration vs contractual agreement. Company vs HUF: statutory creation vs birth/status under Hindu law, and Board/directors vs Karta management."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u1-t4": {
+      "id": "com-u1-t4",
+      "subtitle": "Company Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Companies Act, 2013 classifies companies by liability (Limited by Shares, Limited by Guarantee, Unlimited), by public access (Private, Public, One Person Company - OPC, Small Company), by non-profit object (Section 8 Company), and by corporate control/origin (Holding, Subsidiary, Associate, Government, and Foreign Companies).",
+        "legalProvision": "Sections 2(42), 2(45), 2(46), 2(62), 2(68), 2(71), 2(85), 2(87), 2(92), & 8, Companies Act, 2013",
+        "meaning": "Each corporate category carries tailored governance, capital, audit, and disclosure rules - from lightweight compliance for Small/One Person Companies to stringent public-investor and CSR mandates for large Public/Government companies.",
+        "keyPoints": [
+          "Private Company (Sec. 2(68)) vs Public Company (Sec. 2(71)): Private company (min 2 members; min 2 directors) by its Articles restricts share transfer, caps members at 200 (excluding current/former employees), and prohibits public invitation to subscribe to securities. Public company (min 7 members; min 3 directors) is any company not a private company (and a private company that is a subsidiary of a public company is deemed a public company under Sec. 2(71) Proviso).",
+          "One Person Company / OPC (Sec. 2(62)) & Small Company (Sec. 2(85)): OPC has ONLY 1 member (natural Indian citizen/resident) and 1 nominee (min 1 director; no AGM needed; converts to private/public if paid-up capital or turnover crosses thresholds); Small Company is a non-public company with paid-up capital <= Rs. 4 crore (or higher prescribed) and turnover <= Rs. 40 crore (or higher prescribed, up to Rs. 100 crore per rules), enjoying lighter compliance.",
+          "Section 8 Company (Non-Profit Company): Formed to promote commerce, art, science, sports, education, research, social welfare, religion, charity, or environment protection, applying profits strictly toward promoting those objects and PROHIBITING payment of any dividend to members (obtains Central Govt / ROC license; exempt from 'Ltd.'/'Pvt. Ltd.' suffix).",
+          "Holding, Subsidiary, Associate, Government & Foreign Companies: Subsidiary (Sec. 2(87)) exists where Holding Company controls > 50% of total voting power OR controls composition of Board of Directors (includes step-down subsidiaries); Associate Company (Sec. 2(6)) has >= 20% voting power/control (not subsidiary); Government Company (Sec. 2(45)) has >= 51% paid-up share capital held by Central/State Government(s); Foreign Company (Sec. 2(42)) is incorporated outside India having a place of business in India (physical or electronic mode)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Vodafone International Holdings B.V. v. Union of India",
+            "citation": "2012 6 SCC 613",
+            "principle": "Explained corporate group structures, holding-subsidiary legal separateness, and the legitimate commercial use of subsidiaries in cross-border investments absent tax-avoidance sham."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three defining features of a Private Company under Section 2(68) and explain how a Section 8 Company differs from an ordinary commercial company.",
+            "a": "Private company restricts share transfer, caps members at 200 (excluding employees), and bars public security offers. A Section 8 Company promotes charitable/social/educational/environmental objects and is strictly barred from distributing dividends to members."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u1-t5": {
+      "id": "com-u1-t5",
+      "subtitle": "Company Law - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Incorporation under Section 7 of the Companies Act, 2013 (via SPICe+ filing with the Registrar of Companies) brings a company into existence upon issuance of the Certificate of Incorporation (Sec. 7(2)), vesting corporate personality, perpetual succession, and property-holding capacity under Section 9. Operating an unregistered association exceeding statutory member limits violates Section 464 (Illegal Association).",
+        "legalProvision": "Sections 7, 9, 10, & 464, Companies Act, 2013; Companies (Miscellaneous) Rules, 2014 (Rule 10)",
+        "meaning": "Registration is the birth certificate of a company: once the Certificate of Incorporation is issued, the corporate entity cannot be wiped out on technicalities, though promoters/officers face strict civil and criminal liability for incorporation fraud or illegal unincorporated associations.",
+        "keyPoints": [
+          "Incorporation Procedure (Sec. 7): Promoters file prescribed documents/declarations electronically (SPICe+) with the ROC -> (a) MOA and AOA signed by subscribers, (b) declaration of compliance by an advocate/CS/CA/cost accountant + declaration by each director/subscriber of no fraud/convictions, (c) address for correspondence until registered office established (within 30 days under Sec. 12), (d) ID/address & DIN particulars of first directors/subscribers, and (e) subscriber interest particulars.",
+          "Effect of Registration (Sec. 9 & Conclusiveness): From the date mentioned in the Certificate of Incorporation, subscribers + future members become a body corporate under the registered name, with perpetual succession, power to acquire/hold/dispose of property, contract, and sue/be sued. Under Sec. 7(7), if obtained via false/incorrect information, NCLT may pass remedial orders including unlimited personal liability or winding up.",
+          "Effect of MOA & AOA (Sec. 10): Once registered, MOA and AOA bind the company and its members to the same extent as if signed and covenanted by each member to observe all provisions.",
+          "Illegal Association & Non-Compliance (Sec. 464): No association or partnership of MORE THAN THE PRESCRIBED NUMBER OF PERSONS (statutory cap 100 under Sec. 464; Rule 10 prescribes 50) can be formed for carrying on business for profit without registration under the Companies Act or other Indian law. Every member of an illegal association is PERSONALLY liable for all liabilities incurred, punishable with fine up to Rs. 1,00,000 (and ineligible to sue/be sued as an association)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Jubilee Cotton Mills Ltd. v. Lewis",
+            "citation": "1924 AC 958 (HL)",
+            "principle": "Established that the date stated on the Certificate of Incorporation is conclusive as to when the company came into legal existence, even if entered on a date earlier than actual ministerial signing."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What four core legal effects flow from incorporation under Section 9 of the Companies Act, 2013, and what happens to members of an 'Illegal Association' under Section 464?",
+            "a": "Sec. 9 confers body-corporate status under the registered name, perpetual succession, power to hold/dispose of property & contract, and power to sue/be sued. Under Sec. 464, members of an unregistered profit-business association exceeding the statutory cap face personal liability for liabilities and fine up to Rs. 1 lakh."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

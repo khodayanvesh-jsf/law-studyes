@@ -1,0 +1,180 @@
+{
+  "subjects": [
+    {
+      "id": "company-law",
+      "title": "Company Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Share Capital, Kinds of Shares, Share Certificates/Warrants, Alteration of Capital & Debentures",
+          "topics": [
+            {"id": "com-u3-t1", "title": "1. Share & Share Capital - Definition, Nature, Classification of Capital & Kinds of Shares (Equity vs Preference - Sec. 43)"},
+            {"id": "com-u3-t2", "title": "2. Allotment of Shares (Secs. 39-40), Calls, Forfeiture, Surrender, Lien & Transfer vs Transmission of Shares (Sec. 56)"},
+            {"id": "com-u3-t3", "title": "3. Share Certificates (Sec. 46), Dematerialisation (Demat - Sec. 29) & Share Warrants (Abolished Under 2013 Act)"},
+            {"id": "com-u3-t4", "title": "4. Alteration of Share Capital (Sec. 61), Further Issue / Rights & Bonus Shares (Secs. 62-63), Buy-Back (Sec. 68) & Reduction of Capital (Sec. 66)"},
+            {"id": "com-u3-t5", "title": "5. Debentures & Borrowing Powers - Kinds of Debentures, Debenture Trust Deed, Floating vs Fixed Charge & Remedies (Secs. 71 & 77)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "com-u3-t1": {
+      "id": "com-u3-t1",
+      "subtitle": "Company Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 2(84) of the Companies Act, 2013, a 'Share' means a share in the share capital of a company (including stock) - classified as movable property transferable per Articles (Sec. 44) and carrying voting, dividend, and surplus rights. Section 43 restricts share capital of a company limited by shares to TWO kinds: Equity Share Capital (ordinary or differential voting/dividend rights) and Preference Share Capital (preferential dividend & repayment on winding up).",
+        "legalProvision": "Sections 2(84), 43, 44, 47, & 55, Companies Act, 2013",
+        "meaning": "A share is not a mere sum of money - it is a measured bundle of contractual and statutory rights and liabilities linking a member to the company (Borland's Trustee v. Steel Brothers).",
+        "keyPoints": [
+          "Classification of Share Capital: (1) Authorized / Nominal Capital (maximum capital stated in MOA Capital Clause), (2) Issued Capital (part offered for subscription), (3) Subscribed Capital (part taken up by investors), (4) Called-Up Capital (part demanded by company), (5) Paid-Up Capital (amount actually paid/credited), and (6) Reserve Capital (Sec. 65 - uncalled capital reserved by Special Resolution to be called ONLY upon winding up).",
+          "Two Statutory Kinds of Shares (Sec. 43): (1) PREFERENCE SHARE CAPITAL - enjoys TWO statutory preferences: (a) preferential right to fixed dividend (cumulative unless expressly non-cumulative), and (b) preferential right to repayment of capital on winding up (must be REDEEMABLE within max 20 years under Sec. 55 - irredeemable preference shares are BANNED; infrastructure projects up to 30 years); (2) EQUITY SHARE CAPITAL - all share capital NOT preference share capital: either (i) with uniform voting rights, or (ii) with Differential Rights as to dividend, voting, or otherwise (DVR shares - Rule 4).",
+          "Voting Rights (Sec. 47): Equity shareholders vote on EVERY resolution placed before the company (voting right in proportion to paid-up equity capital on a poll); Preference shareholders vote ONLY on resolutions directly affecting their rights, winding up, or capital reduction - EXCEPT if preference dividend remains unpaid for 2 YEARS OR MORE, whereupon preference shareholders gain full voting rights on ALL resolutions!"
+        ],
+        "caseLaws": [
+          {
+            "name": "Borland's Trustee v. Steel Brothers & Co. Ltd.",
+            "citation": "1901 1 Ch 279",
+            "principle": "Classic definition of a 'Share': the interest of a shareholder in the company measured by a sum of money for the purpose of liability and dividend, consisting of a series of mutual covenants."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can an Indian company issue irredeemable preference shares under Section 55 of the Companies Act, 2013, and when do preference shareholders acquire voting rights on all company resolutions under Section 47?",
+            "a": "No - irredeemable preference shares are prohibited; preference shares must be redeemed within 20 years (30 years for specified infrastructure projects). Under Sec. 47(2), preference shareholders gain full voting rights on all resolutions if their dividend remains unpaid for 2 years or more."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u3-t2": {
+      "id": "com-u3-t2",
+      "subtitle": "Company Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Allotment is the appropriation of unissued shares to applicants upon acceptance of their subscription offer - subject to Minimum Subscription (90% under SEBI/Sec. 39) and Stock Exchange listing permission (Sec. 40). Once allotted, shares may be forfeited for non-payment of calls if authorized by AOA, transferred voluntarily by executed instrument (Sec. 56), or transmitted automatically by operation of law upon death or insolvency.",
+        "legalProvision": "Sections 39, 40, 49-51, 56, & 58, Companies Act, 2013; Table F Regulations 28-34",
+        "meaning": "Strict rules on allotment protect public subscribers from under-capitalized ventures, while forfeiture and transfer/transmission rules balance capital enforcement with investor liquidity.",
+        "keyPoints": [
+          "Statutory Conditions for Valid Allotment (Secs. 39-40): (1) Prospectus filed with ROC before issue, (2) MINIMUM SUBSCRIPTION stated in prospectus subscribed within 30 days (90% per SEBI ICDR; else refund entire money within 15 days), (3) Application money >= 5% of nominal value (25% per SEBI), and (4) Mandatory Stock Exchange Listing Permission obtained BEFORE allotment in any public issue (Sec. 40 - allotment void if listing refused).",
+          "Calls & Forfeiture of Shares (Secs. 49-51 & Table F): Calls must be made bona fide, uniformly on the same class (Sec. 49), and per AOA. If a member defaults on a valid call, Board may FORFEIT shares ONLY if (a) expressly authorized by AOA, (b) valid 14-day clear notice served with forfeiture warning, (c) proper Board resolution passed, and (d) exercised bona fide for company's benefit (Re Esparto Trading Co. - forfeiture to relieve a friend from liability is invalid!). Surrender is voluntary return of shares (valid only where forfeiture would be justified).",
+          "Transfer vs Transmission of Shares (Sec. 56): TRANSFER is a voluntary act of parties requiring a duly stamped, signed Transfer Deed (Form SH-4) delivered within 60 days; TRANSMISSION is automatic devolution by operation of law upon death (legal representative), insolvency (Official Assignee), or lunacy - requires NO transfer deed or stamp duty, only succession proof. Private companies may refuse transfer per AOA (Sec. 58(1)), whereas public company shares are freely transferable unless 'sufficient cause' exists (Sec. 58(2))."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bajaj Auto Ltd. v. N.K. Firodia",
+            "citation": "AIR 1971 SC 321",
+            "principle": "Held that directors' discretionary power under Articles to refuse registration of share transfer must be exercised bona fide in the paramount interest of the company, never arbitrarily or for collateral motives."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three key differences between Transfer of Shares and Transmission of Shares under Section 56 of the Companies Act, 2013, and list two mandatory conditions for valid Forfeiture of shares.",
+            "a": "Transfer is a voluntary act requiring a stamped SH-4 transfer deed and consideration (usually), whereas Transmission occurs automatically by operation of law on death/insolvency without a transfer deed or stamp duty. Forfeiture requires express authority in AOA and a valid 14-day clear default notice followed by a bona fide Board resolution."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u3-t3": {
+      "id": "com-u3-t3",
+      "subtitle": "Company Law - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Share Certificate (Section 46, Companies Act, 2013) is a formal document issued under common seal (or signed by two directors / director + CS) specifying shares held by a registered member - serving as PRIMA FACIE EVIDENCE of title and creating dual Estoppel against the company (estoppel as to title and payment). Unlike the 1956 Act, the Companies Act, 2013 ABOLISHED bearer Share Warrants, and Section 29 mandates Dematerialised (Demat) holding for public and prescribed unlisted companies.",
+        "legalProvision": "Sections 29 & 46, Companies Act, 2013; Depositories Act, 1996",
+        "meaning": "Share certificates protect buyers from forged/double share issues via Estoppel, while modern Demat regulations eliminate paper theft, forgery, and settlement delays.",
+        "keyPoints": [
+          "Share Certificate & Statutory Timeline (Sec. 46 & Sec. 56(4)): Prima facie evidence of the member's title to the shares specified; must be delivered within 2 months of incorporation, 2 months of allotment, 1 month of transfer/transmission receipt, and 6 months for debentures. Duplicate certificate issued only on proof of loss/destruction or surrender of mutilated certificate (fraudulent duplicate issue carries severe penalties under Sec. 46(5)).",
+          "Dual Estoppel Created by Share Certificate (Bloomenthal v. Ford; Balkis Consolidated): Once a company issues a valid (non-forged) share certificate, it is estopped against a bona fide purchaser for value from denying (1) ESTOPPEL AS TO TITLE (that the named person is the true owner), and (2) ESTOPPEL AS TO PAYMENT (that the shares are fully paid up as stated on the certificate). Note: Forged certificate under forged seal creates NO estoppel (Ruben v. Great Fingall).",
+          "Dematerialisation / Demat Shares (Sec. 29 & Depositories Act, 1996): Every listed public company (and unlisted public companies per Rule 9A) MUST issue and transfer securities strictly in dematerialised electronic form through NSDL/CDSL depositories.",
+          "Share Certificate vs Share Warrant (Abolished Under 2013 Act): Historically under the 1956 Act, a public company could issue bearer 'Share Warrants' transferable by mere delivery without register entry; the Companies Act, 2013 ABOLISHED Share Warrants completely to curb black money and benami ownership (existing warrants under 1956 Act were converted into registered shares)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bloomenthal v. Ford",
+            "citation": "1897 AC 156 (HL)",
+            "principle": "Held that a company issuing a share certificate stating shares are 'fully paid up' is estopped from later demanding unpaid calls from an innocent lender/transferee who relied on the certificate."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the two kinds of Estoppel created by a Share Certificate under Section 46, and state the current legal status of bearer 'Share Warrants' under the Companies Act, 2013.",
+            "a": "A share certificate creates Estoppel as to Title and Estoppel as to Payment in favour of an innocent purchaser for value. Bearer Share Warrants were completely ABOLISHED by the Companies Act, 2013."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u3-t4": {
+      "id": "com-u3-t4",
+      "subtitle": "Company Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A limited company may adjust its capital structure through four distinct statutory mechanisms: (1) Alteration of Share Capital (Sec. 61 - increase, consolidation, sub-division, stock conversion, or cancellation of unissued shares by Ordinary Resolution), (2) Rights & Bonus Issues (Secs. 62-63), (3) Buy-Back of Own Shares (Sec. 68 - capped at 25% of paid-up capital + free reserves), and (4) Reduction of Share Capital (Sec. 66 - requires Special Resolution AND NCLT confirmation to protect creditors).",
+        "legalProvision": "Sections 61, 62, 63, 66, 67, & 68, Companies Act, 2013",
+        "meaning": "Capital maintenance is a core creditor-protection principle: increasing or sub-dividing authorized capital needs only an Ordinary Resolution, whereas returning capital to shareholders (Reduction under Sec. 66) demands strict NCLT scrutiny.",
+        "keyPoints": [
+          "Alteration of Share Capital (Sec. 61): If authorized by AOA, a company may by ORDINARY RESOLUTION in general meeting (a) increase authorized capital, (b) consolidate/divide into larger shares, (c) convert fully paid shares into stock (or reconvert), (d) sub-divide shares into smaller denominations (stock split), or (e) cancel unissued shares (diminution of capital - does NOT count as reduction under Sec. 66). Notice to ROC within 30 days (Sec. 64).",
+          "Further Issue / Rights Shares, ESOP & Preferential Allotment (Sec. 62) & Bonus Shares (Sec. 63): Under Sec. 62, further shares must FIRST be offered to existing equity shareholders proportionately (Pre-emptive Rights Issue - 15 to 30 days open, with right of renunciation), OR to employees under ESOP (Special Resolution), OR to outsiders via Preferential Allotment on registered valuer pricing. Under Sec. 63, fully paid Bonus Shares may be issued out of free reserves, securities premium account, or CRR (NEVER from revaluation reserves).",
+          "Reduction of Share Capital (Sec. 66): Extinguishing unpaid liability, cancelling lost capital, or paying off excess paid-up capital requires (1) AOA authorization, (2) SPECIAL RESOLUTION, and (3) CONFIRMATION BY NCLT after notifying ROC, SEBI (if listed), and giving creditors an opportunity to object/be secured.",
+          "Buy-Back of Own Shares (Secs. 67-68): Sec. 67 bars a company from buying its own shares or lending money to buy them, EXCEPT statutory Buy-Back under Sec. 68 out of free reserves, securities premium, or fresh different-class proceeds - requires AOA authority, Special Resolution (Board resolution suffices up to 10%), max 25% of total paid-up capital + free reserves in a financial year, post-buyback debt-equity ratio <= 2:1, and physical destruction of bought-back shares within 7 days."
+        ],
+        "caseLaws": [
+          {
+            "name": "Trevor v. Whitworth",
+            "citation": "1887 12 App Cas 409 (HL)",
+            "principle": "Established the Doctrine of Capital Maintenance: a company cannot traffic in or purchase its own shares to reduce capital secretly to the prejudice of creditors, except strictly as permitted by statute (now Secs. 66 & 68)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'Diminution of Capital' (Sec. 61(1)(e)) and 'Reduction of Share Capital' (Sec. 66) regarding resolution type and NCLT approval.",
+            "a": "Diminution cancels unissued shares and requires only an Ordinary Resolution without NCLT confirmation, whereas Reduction of Share Capital reduces issued/paid-up capital and requires BOTH a Special Resolution AND confirmation by the NCLT after creditor notice."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u3-t5": {
+      "id": "com-u3-t5",
+      "subtitle": "Company Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 2(30) & Section 71 of the Companies Act, 2013, a Debenture includes debenture stock, bonds, or any other instrument evidencing a debt (whether constituting a charge on company assets or not). Unlike shareholders (owners taking dividends), debenture-holders are CREDITORS receiving fixed interest regardless of profit, carrying NO voting rights (Sec. 71(2)), protected by a Debenture Trustee and Fixed or Floating Charges registered under Section 77.",
+        "legalProvision": "Sections 2(30), 71, 77-87, & 180(1)(c), Companies Act, 2013",
+        "meaning": "Debentures let companies raise long-term debt capital without diluting equity control, while Floating Charges allow companies to pledge shifting inventory/receivables while continuing normal daily business.",
+        "keyPoints": [
+          "Borrowing Powers & Ultra Vires Borrowing (Sec. 180(1)(c)): Trading companies have implied power to borrow; if Board borrows beyond paid-up capital + free reserves without Special Resolution, it is ultra vires the directors (ratifiable by shareholders), whereas borrowing beyond MOA limits is ultra vires the company (void ab initio, though lender has equitable subrogation/tracing rights - Sinclair v. Brougham).",
+          "Kinds of Debentures (Sec. 71): (1) Registered vs Bearer Debentures, (2) Secured (backed by charge on assets, max 10 years redemption / 30 years for infrastructure) vs Unsecured/Naked Debentures, (3) Redeemable vs Perpetual (Note: Sec. 71 requires redemption terms; irredeemable debentures are generally disallowed), and (4) Convertible (fully or partly convertible into equity shares via Special Resolution under Sec. 71(1)) vs Non-Convertible Debentures (NCDs).",
+          "Debenture Trustee & Redemption Reserve (Sec. 71(4)-(5)): Mandatory appointment of a SEBI-registered Debenture Trustee before issuing prospectus/offer to > 500 persons; company must create a Debenture Redemption Reserve (DRR) out of profits.",
+          "Fixed Charge vs Floating Charge & Crystallization (Sec. 77): A FIXED CHARGE attaches immediately to specific identifiable property (e.g., factory land - company cannot sell without lender's consent). A FLOATING CHARGE hovers equitably over a shifting class of present/future assets (stock-in-trade, book debts), allowing the company to sell/use stock in the ordinary course of business until CRYSTALLIZATION (triggered when company ceases business, enters winding up, or debenture-holders enforce security/appoint receiver - Government Stock v. Manila Railway). Every charge MUST be registered with ROC within 30 days under Section 77 (else void against liquidator/creditors)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Illingworth v. Houldsworth",
+            "citation": "1904 AC 355 (HL)",
+            "principle": "Lord Macnaghten's classic distinction: a Specific (Fixed) Charge fastens on ascertained property, whereas a Floating Charge is ambulatory and shifting, hovering over property until some event causes it to settle and crystallize."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four differences between a Shareholder and a Debenture-holder, and explain when a 'Floating Charge' crystallizes into a Fixed Charge.",
+            "a": "Shareholder is an owner receiving profit-dependent dividend with voting rights and lower winding-up priority; Debenture-holder is a creditor receiving fixed interest regardless of profit with NO voting rights (Sec. 71(2)) and priority repayment. A Floating Charge crystallizes when the company goes into winding up, ceases business, or security is enforced."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

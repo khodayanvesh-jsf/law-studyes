@@ -1,0 +1,163 @@
+{
+  "subjects": [
+    {
+      "id": "principles-of-taxation-law",
+      "title": "Principles of Taxation Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 2,
+          "title": "Income Tax Act, 1961 - Basic Concepts, Previous & Assessment Year, Residential Status (Sec. 6), Agricultural Income & Exempt Incomes (Sec. 10)",
+          "topics": [
+            {"id": "tax-u2-t1", "title": "1. Income Tax Act, 1961 - Basic Concepts: Assessee (Sec. 2(7)), Person (Sec. 2(31)), Income (Sec. 2(24)), Capital vs Revenue Receipt & Tax Evasion vs Avoidance"},
+            {"id": "tax-u2-t2", "title": "2. Assessment Year (Sec. 2(9)), Previous Year (Sec. 3) & Five Statutory Exceptions (Secs. 172-176) + Tax Year Reform Note"},
+            {"id": "tax-u2-t3", "title": "3. Residential Status (Sec. 6 - Individual, HUF, Firm & Company POEM) & Scope of Total Income / Incidence of Tax (Secs. 5 & 9)"},
+            {"id": "tax-u2-t4", "title": "4. Agricultural Income (Sec. 2(1A) - Tests & Partial Integration) & Incomes Exempt from Tax (Sec. 10)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "tax-u2-t1": {
+      "id": "tax-u2-t1",
+      "subtitle": "Principles of Taxation Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 4 of the Income-tax Act, 1961 charges income tax on the total income of every 'Person' (7 categories under Sec. 2(31)), making an 'Assessee' (Sec. 2(7)) liable to pay tax on inclusive 'Income' (Sec. 2(24) - covering legal and illegal income alike, revenue receipts, and specific capital gains). Tax jurisprudence sharply separates lawful Tax Planning, grey-zone Tax Avoidance (McDowell vs Azadi Bachao Andolan & GAAR), and illegal criminal Tax Evasion.",
+        "legalProvision": "Sections 2(7), 2(24), 2(31), 4, & Chapter XA (GAAR Secs. 95-102), Income-tax Act, 1961",
+        "meaning": "Revenue receipts (fruits of the tree) are taxable as income unless expressly exempted, whereas Capital receipts (sale/sterilization of the tree itself) are NOT taxable unless specifically taxed as Capital Gains under Section 45.",
+        "keyPoints": [
+          "Person (Sec. 2(31) - 7 Categories) & Assessee (Sec. 2(7)): 'Person' includes (1) Individual, (2) Hindu Undivided Family / HUF, (3) Company, (4) Partnership Firm / LLP, (5) Association of Persons (AOP) or Body of Individuals (BOI), (6) Local Authority (municipality/panchayat), and (7) Every Artificial Juridical Person (university, deity/idol - Jogendra Nath Naskar). 'Assessee' means any person liable to pay tax or any sum under the Act - covers Normal Assessee, Representative/Deemed Assessee (legal heir/guardian/agent), and Assessee-in-Default (e.g., failing to deduct/deposit TDS).",
+          "Definition of 'Income' (Sec. 2(24) - Inclusive) & Key Principles: Includes profits/gains, dividends, voluntary contributions to trusts, perquisites, capital gains, lottery/crossword/betting winnings, and gifts > Rs. 50,000 from non-relatives (Sec. 56(2)(x)). Principles: (1) Must come from outside (no man can make profit by trading with himself - Mutuality Principle), (2) Tainted / ILLEGAL income (smuggling/bribes) IS taxable (CIT v. Piara Singh), (3) Diversion of Income by Overriding Title is NOT taxable, whereas Application of Income after earning IS taxable (CIT v. Sitaldas Tirathdas).",
+          "Capital Receipt vs Revenue Receipt (Tree vs Fruit Test): Circulating capital / recurring business return / compensation for loss of trading profit = REVENUE RECEIPT (taxable); Fixed capital / compensation for permanent loss or sterilization of the profit-making apparatus (e.g., cancelling sole agency destroying entire business - CIT v. Vazir Sultan) = CAPITAL RECEIPT (non-taxable unless taxed under Sec. 45).",
+          "Tax Planning vs Tax Avoidance vs Tax Evasion: TAX PLANNING = 100% lawful optimization using statutory deductions/exemptions (Sec. 80C, NPS, HRA); TAX AVOIDANCE = exploiting legal loopholes/colourable devices without breaking the literal letter of law (condemned in McDowell & Co. v. CTO, softened for genuine commercial structures in Azadi Bachao Andolan & Vodafone, now policed by statutory GAAR under Secs. 95-102); TAX EVASION = illegal concealment of income, fake invoices, or false returns attracting heavy penalties and prosecution."
+        ],
+        "caseLaws": [
+          {
+            "name": "McDowell & Co. Ltd. v. Commercial Tax Officer",
+            "citation": "AIR 1986 SC 649",
+            "principle": "5-judge Constitution Bench held that colourable devices cannot be part of legitimate tax planning; courts must look through sham tax-avoidance schemes (later harmonized with lawful commercial planning in Azadi Bachao Andolan, 2003 and Vodafone, 2012)."
+          },
+          {
+            "name": "CIT v. Sitaldas Tirathdas",
+            "citation": "AIR 1961 SC 728",
+            "principle": "Laid down the classic test distinguishing Diversion of Income by Overriding Title (excluded before reaching assessee) from mere Application of Income (taxable even if paid to dependants)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List the seven categories of 'Person' under Section 2(31), and distinguish between Tax Planning, Tax Avoidance, and Tax Evasion.",
+            "a": "Individual, HUF, Company, Firm/LLP, AOP/BOI, Local Authority, and Artificial Juridical Person. Tax Planning uses lawful statutory incentives; Tax Avoidance exploits legal loopholes/devices (policed by GAAR); Tax Evasion is illegal concealment/fraudulent misreporting."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u2-t2": {
+      "id": "tax-u2-t2",
+      "subtitle": "Principles of Taxation Law - Unit 2",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under the Income-tax Act, 1961, income earned during the 12-month 'Previous Year' (1 April to 31 March - Sec. 3) is assessed and taxed in the immediately succeeding 'Assessment Year' (Sec. 2(9)) - EXCEPT FIVE urgent statutory situations (Secs. 172, 174, 174A, 175, & 176) where income is taxed in the VERY SAME YEAR to stop tax flight. (Modern Update: Parliament's new Income-tax Act, 2025 simplifies this dual terminology into a single unified 'Tax Year' from FY 2026-27 onwards!)",
+        "legalProvision": "Sections 2(9), 3, 4, 172, 174, 174A, 175, & 176, Income-tax Act, 1961 (Unified 'Tax Year' under Income-tax Act, 2025)",
+        "meaning": "The general rule under the 1961 Act is 'Earn in Previous Year, Assess in Assessment Year' - e.g., income earned in PY 2025-26 is assessed in AY 2026-27 - with five anti-evasion exceptions for fleeing taxpayers or closing businesses.",
+        "keyPoints": [
+          "Assessment Year (Sec. 2(9)) & Previous Year (Sec. 3): ASSESSMENT YEAR = fixed 12-month period starting 1st April and ending 31st March next following the Previous Year. PREVIOUS YEAR = the financial year immediately preceding the Assessment Year (for a newly set-up business/source, PY runs from the date of setting up/coming into existence until the following 31st March - so the first PY can be LESS than 12 months, never more!).",
+          "Five Statutory Exceptions (Accelerated Assessment - Income Taxed in the SAME Previous Year): (1) SHIPPING BUSINESS OF NON-RESIDENTS (Sec. 172 - foreign tramp ship leaving an Indian port pays tax on 7.5% deemed freight BEFORE port clearance!), (2) PERSONS LEAVING INDIA PERMANENTLY (Sec. 174 - person leaving with no present intention of returning), (3) AOP / BOI / ARTIFICIAL JURIDICAL PERSON FORMED FOR A SHORT EVENT/PURPOSE (Sec. 174A - likely to dissolve in the same year), (4) PERSONS LIKELY TO TRANSFER PROPERTY TO AVOID TAX (Sec. 175 - asset-stripping to evade revenue), and (5) DISCONTINUED BUSINESS OR PROFESSION (Sec. 176 - discretionary power of Assessing Officer to tax immediately upon closure).",
+          "Important Modern Legislative Update (Income-tax Act, 2025): Effective 1 April 2026, the new Income-tax Act, 2025 replaces the confusing 'Previous Year / Assessment Year' pair with a single unified concept called 'Tax Year' (12-month financial year starting 1 April), while exams on the 1961 Act syllabus continue testing Sections 2(9), 3, and 172-176."
+        ],
+        "caseLaws": [
+          {
+            "name": "Karimtharuvi Tea Estate Ltd. v. State of Kerala",
+            "citation": "AIR 1966 SC 1385",
+            "principle": "Constitution Bench established the cardinal rule of income-tax assessment: the substantive tax rate and law in force on the FIRST DAY OF THE ASSESSMENT YEAR (1st April) govern the assessment of the previous year's income, unless Parliament provides retrospective effect."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List the five statutory exceptions (Secs. 172-176) under the Income-tax Act, 1961 where income of a Previous Year is assessed and taxed in the VERY SAME year.",
+            "a": "(1) Non-resident shipping business (Sec. 172), (2) Persons leaving India permanently (Sec. 174), (3) Short-duration AOP/BOI likely to dissolve (Sec. 174A), (4) Persons transferring assets to avoid tax (Sec. 175), and (5) Discontinued business/profession (Sec. 176)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u2-t3": {
+      "id": "tax-u2-t3",
+      "subtitle": "Principles of Taxation Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Incidence of Indian Income Tax depends strictly on RESIDENTIAL STATUS during each Previous Year (Section 6) - NEVER on citizenship or domicile! Individuals are classified into Resident & Ordinarily Resident (ROR - taxed on GLOBAL income), Resident but Not Ordinarily Resident (RNOR - taxed on Indian income + India-controlled foreign business), and Non-Resident (NR - taxed strictly on Indian income under Sections 5 & 9). Companies are Resident if Indian OR if their Place of Effective Management (POEM) is in India.",
+        "legalProvision": "Sections 5, 6, 7, & 9, Income-tax Act, 1961",
+        "meaning": "An American citizen staying 200 days in Hyderabad can be an Indian tax Resident, while an Indian citizen working all year in Dubai can be a Non-Resident (NR) - residential status is recalculated fresh every single financial year.",
+        "keyPoints": [
+          "Individual - Basic Conditions for 'Resident' (Sec. 6(1)): Resident if he satisfies ANY ONE of two conditions in the Previous Year -> (a) Physically in India for >= 182 DAYS in the PY, OR (b) In India for >= 60 DAYS in the PY AND >= 365 DAYS during the 4 preceding PYs. EXCEPTIONS (Only 182-day test applies - 60-day test relaxed): Indian citizen leaving for employment abroad/crew of Indian ship, OR Indian citizen/PIO visiting India (note: 120-day threshold applies if total Indian income > Rs. 15 lakhs -> becomes RNOR; Sec. 6(1A) Deemed Resident for stateless Indian citizen earning > Rs. 15 lakhs in India without tax liability in any other country).",
+          "ROR vs RNOR - Additional Conditions (Sec. 6(6)): A Resident Individual is 'Resident & Ordinarily Resident' (ROR) ONLY if he satisfies BOTH additional tests -> (1) Resident in India in at least 2 OUT OF 10 preceding PYs, AND (2) Physically in India for >= 730 DAYS during the 7 preceding PYs. Failing either makes him 'Resident but Not Ordinarily Resident' (RNOR).",
+          "HUF, Firm & Company Residential Status (Sec. 6(2)-(4)): HUF/Firm/AOP -> Resident if control and management of affairs is situated WHOLLY OR PARTLY in India (even 1% control in India makes a firm/HUF Resident; HUF is ROR if Karta satisfies both Sec. 6(6) tests). COMPANY (Sec. 6(3)) -> Resident if (i) it is an INDIAN COMPANY, OR (ii) its PLACE OF EFFECTIVE MANAGEMENT (POEM - where key commercial/management decisions are in substance made) in that year is IN INDIA (Companies & Firms can NEVER be RNOR - only Resident or NR!).",
+          "Scope of Total Income / Incidence of Tax Matrix (Secs. 5 & 9): (1) Income RECEIVED or deemed received in India -> Taxable for ALL (ROR, RNOR, NR); (2) Income ACCRUING/ARISING or deemed to accrue/arise in India (Sec. 9: business connection, Indian property/asset, salary earned in India, interest/royalty/FTS) -> Taxable for ALL (ROR, RNOR, NR); (3) Foreign income from business controlled from or profession set up in India -> Taxable for ROR & RNOR (EXEMPT for NR); (4) Any other pure Foreign income -> Taxable ONLY for ROR (EXEMPT for RNOR & NR!)."
+        ],
+        "caseLaws": [
+          {
+            "name": "V.V.R.N.M. Subbayya Chettiar v. CIT",
+            "citation": "AIR 1951 SC 101",
+            "principle": "Explained 'control and management' of an HUF under Section 6(2): means de facto 'head and brain' directing policy decisions, not mere casual visits or day-to-day clerical operations."
+          },
+          {
+            "name": "Vodafone International Holdings B.V. v. Union of India",
+            "citation": "2012 6 SCC 613",
+            "principle": "Examined Section 9(1)(i) deemed accrual of capital gains on offshore share transfers (later amended by Parliament via Explanation 5 to Section 9 taxing indirect transfers of substantial Indian assets)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the two basic conditions (Sec. 6(1)) and two additional conditions (Sec. 6(6)) for an Individual to be 'Resident and Ordinarily Resident (ROR)', and state when a Foreign Company becomes Resident in India.",
+            "a": "Basic (any one): >= 182 days in PY, OR >= 60 days in PY + >= 365 days in 4 preceding PYs. Additional (both): Resident in >= 2 of 10 preceding PYs AND >= 730 days in 7 preceding PYs. A Foreign Company is Resident in India if its Place of Effective Management (POEM) is in India (Sec. 6(3))."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u2-t4": {
+      "id": "tax-u2-t4",
+      "subtitle": "Principles of Taxation Law - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 10(1) read with Entry 82 List I, 'Agricultural Income' (Sec. 2(1A)) is COMPLETELY EXEMPT from Central Income Tax (taxable only by States under Entry 46 List II) - provided it stems from land situated IN INDIA used for basic agricultural cultivation operations (CIT v. Raja Benoy Kumar Sahas Roy), though it triggers 'Partial Integration' (rate-slab impact) when combined with taxable non-agricultural income. Section 10 further lists key Exempt Incomes including HUF receipts, partner's profit share, gratuity, and HRA.",
+        "legalProvision": "Sections 2(1A) & 10 (Clauses 1, 2, 2A, 10, 10AA, 10C, 10D, 13A, 16, & 23C), Income-tax Act, 1961; Rule 7-8, Income-tax Rules",
+        "meaning": "Not every income connected with land is agricultural: spontaneous wild forest growth, dairy/poultry farming, or dividend from a tea company is NON-agricultural, while mixed agro-industrial incomes (tea, rubber, coffee) follow fixed Rule 7A-8 split percentages.",
+        "keyPoints": [
+          "Three Essential Tests of Agricultural Income (Sec. 2(1A) & Raja Benoy Kumar Sahas Roy, 1957): (1) Rent/revenue derived from LAND SITUATED IN INDIA (foreign farmland income is TAXABLE!), (2) Land MUST be used for AGRICULTURAL PURPOSES - requiring BOTH 'Basic Operations' (human skill/labour on soil: tilling, ploughing, sowing, planting) AND 'Subsequent Operations' (weeding, watering, harvesting) (spontaneous forest trees, grazing, fisheries, poultry, salt panning, brick-making, or interest on rent arrears are NOT agricultural!), and (3) Covers income from cultivation, ordinary processing to make produce marketable, sale of produce, nursery saplings/seedlings (Expl. 3), and farm buildings used for agriculture.",
+          "Partly Agricultural / Partly Business Income Rules (Rules 7A, 7B & 8) & Partial Integration: Tea grown & manufactured in India (Rule 8) = 60% Agricultural / 40% Business; Rubber (Rule 7A) = 65% Agri / 35% Business; Coffee cured (Rule 7B) = 75% Agri / 25% Business (roasted/ground = 60% / 40%). PARTIAL INTEGRATION: Though exempt, Net Agricultural Income > Rs. 5,000 is aggregated with Non-Agricultural Income exceeding the basic exemption limit (for Individual/HUF/AOP) strictly to push non-agricultural income into a HIGHER TAX SLAB.",
+          "Key Exempt Incomes Under Section 10 (Must-Know Exam List): (1) Sec. 10(1) - Agricultural Income, (2) Sec. 10(2) - Sum received by a member from HUF income, (3) Sec. 10(2A) - Partner's share of profit from a Partnership Firm/LLP (already taxed in firm's hands), (4) Sec. 10(10) - Gratuity (fully exempt for Govt employees; up to Rs. 20 lakhs for others), (5) Sec. 10(10AA) - Leave Encashment on retirement (Rs. 25 lakhs cap for non-Govt), (6) Sec. 10(10C) - Voluntary Retirement / VRS compensation up to Rs. 5 lakhs, (7) Sec. 10(10D) - Life Insurance maturity proceeds (subject to premium-to-sum-assured caps), (8) Sec. 10(13A) - House Rent Allowance / HRA (old regime), (9) Sec. 10(16) - Educational Scholarships, and (10) Sec. 10(17A) - Approved Government/Public Awards."
+        ],
+        "caseLaws": [
+          {
+            "name": "CIT v. Raja Benoy Kumar Sahas Roy",
+            "citation": "AIR 1957 SC 768",
+            "principle": "Landmark Supreme Court ruling defining 'Agriculture' under Section 2(1A): requires human skill and labour applied directly to the land in 'Basic Operations' (tilling, sowing, planting); mere spontaneous forest growth or subsequent cutting alone is NOT agricultural income."
+          },
+          {
+            "name": "Bacha F. Guzdar v. CIT",
+            "citation": "AIR 1955 SC 74",
+            "principle": "Held that dividend received by a shareholder from a tea company is NOT agricultural income under Section 2(1A) because the immediate effective source is shareholding in the company, not agricultural land."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the 'Basic Operations' test laid down in Raja Benoy Kumar Sahas Roy (1957) for Agricultural Income, give the Tea income split under Rule 8, and name four exempt incomes under Section 10.",
+            "a": "Basic Operations require human labour and skill directly on the soil (tilling, ploughing, sowing, planting) - not spontaneous wild growth. Under Rule 8, Tea income is 60% agricultural (exempt) and 40% business (taxable). Four Sec. 10 exemptions: Agricultural income (10(1)), HUF share (10(2)), Partner's profit share (10(2A)), and Scholarships (10(16))."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

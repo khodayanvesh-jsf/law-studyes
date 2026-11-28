@@ -1,0 +1,340 @@
+{
+  "subjects": [
+    {
+      "id": "family-law-ii",
+      "title": "Family Law - II (Muslim Law)",
+      "semester": "Semester 2",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Gift (Hiba), Wills (Wasiyat) & Wakf",
+          "topics": [
+            {"id": "family-law-ii-u3-t1", "title": "1. Hiba (Gift) - Essentials, Kinds & Revocation"},
+            {"id": "family-law-ii-u3-t2", "title": "2. Wakf - Essentials, Wakf Board & Mutawalli (Rights, Duties & Removal)"},
+            {"id": "family-law-ii-u3-t3", "title": "3. Will (Wasiyat) - Essentials, One-Third Rule & Revocation"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "law-of-evidence",
+      "title": "Law of Evidence (IEA / BSA)",
+      "semester": "Semester 2",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Dying Declaration & Doctrine of Estoppel",
+          "topics": [
+            {"id": "law-of-evidence-u3-t1", "title": "1. Dying Declaration (Section 32(1) IEA / Section 26(a) BSA) - Admissibility & Evidentiary Value"},
+            {"id": "law-of-evidence-u3-t2", "title": "2. Doctrine of Estoppel (Sections 115-117 IEA / Sections 121-123 BSA) - Kinds & Distinctions"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "constitutional-law-ii",
+      "title": "Constitutional Law - II",
+      "semester": "Semester 2",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "President, Governor & Emergency Provisions",
+          "topics": [
+            {"id": "constitutional-law-ii-u3-t1", "title": "1. President of India - Election, Powers, Functions & Impeachment"},
+            {"id": "constitutional-law-ii-u3-t2", "title": "2. Governor of a State - Appointment, Powers & Constitutional Position"},
+            {"id": "constitutional-law-ii-u3-t3", "title": "3. Emergency Provisions (Articles 352, 356 & 360) - Kinds & Effects"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "family-law-ii-u3-t1": {
+      "id": "family-law-ii-u3-t1",
+      "subtitle": "Family Law - II (Muslim Law) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Hiba is an immediate, unconditional transfer of movable or immovable property made without consideration by a Muslim donor to a donee. It requires three essentials: declaration (Ijab), acceptance (Qubool), and delivery of possession (Qabza).",
+        "legalProvision": "Section 129, Transfer of Property Act, 1882 (exempting Muslim gifts from Chapter VII); Classical Muslim Personal Law",
+        "meaning": "Unlike a Will (which is restricted to one-third of the estate), a Muslim may gift his entire property during his lifetime through Hiba. A gift of an undivided share in property capable of division is termed Mushaa. Oral Hiba is valid if the three essentials are satisfied.",
+        "keyPoints": [
+          "Three Essentials of Valid Hiba: (1) Declaration of gift by a competent donor, (2) Acceptance by or on behalf of the donee, and (3) Delivery of possession (actual or constructive).",
+          "Sadaqah: A gift made for religious or charitable purposes (such as mosques, hospitals, or educational institutions) to earn spiritual merit; irrevocable once possession is delivered.",
+          "Hiba-bil-Iwaz: A gift for an exchange or consideration (e.g., property gifted along with an existing debt or reciprocal return); treated like a sale and requires registration if immovable.",
+          "Hiba-ba-Shart-ul-Iwaz: A gift made with an express stipulation for a future return or lawful condition; revocable until the stipulated return is paid.",
+          "Areeat: A temporary, revocable grant of the right to use or enjoy property (usufruct) for a specific purpose or period without transferring ownership.",
+          "Revocation of Hiba: A donor may revoke a gift freely before delivery of possession, or if obtained by coercion/fraud; after delivery, revocation requires a court decree or mutual consent and is barred in cases such as gifts between spouses or close blood relatives."
+        ],
+        "caseLaws": [
+          {
+            "name": "Hafeeza Bibi v. Shaikh Farid",
+            "citation": "2011 5 SCC 654",
+            "principle": "Held that a Muslim gift (Hiba) does not require compulsory registration under Section 17 of the Registration Act if declaration, acceptance, and delivery of possession are duly proved."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the three mandatory essentials of a valid Hiba under Muslim law?",
+            "a": "Declaration of gift by the donor, acceptance by the donee, and delivery of possession."
+          },
+          {
+            "q": "How does Hiba-bil-Iwaz differ from Areeat?",
+            "a": "Hiba-bil-Iwaz transfers ownership for a consideration, whereas Areeat grants only a temporary, revocable right to use the property without transferring ownership."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "family-law-ii-u3-t2": {
+      "id": "family-law-ii-u3-t2",
+      "subtitle": "Family Law - II (Muslim Law) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Wakf is the permanent dedication of movable or immovable property by a Muslim (Wakif) for religious, pious, or charitable purposes. Wakf property is managed by a Mutawalli under the supervision of State Wakf Boards and the Central Wakf Council.",
+        "legalProvision": "Waqf Act, 1995 (Sections 3, 32, 63, and 64); Mussalman Wakf Validating Act, 1913",
+        "meaning": "Once a valid Wakf is created (orally or via a Wakf Deed), ownership of the dedicated property vests permanently in God (Allah) and becomes inalienable, irrevocable, and perpetual. The Mutawalli acts strictly as a manager or superintendent, not as the owner.",
+        "keyPoints": [
+          "Essentials of Wakf: Permanent and irrevocable dedication by a competent Muslim (Wakif) of his own property for a recognized religious, pious, or charitable object.",
+          "Statutory Supervision: State Wakf Boards maintain records and oversee administration of all Wakf properties within each State, coordinated at the national level by the Central Wakf Council.",
+          "Rights and Powers of Mutawalli: Collects income from Wakf property, institutes suits to protect Wakf assets, appoints necessary staff, enters into routine maintenance contracts, and receives fixed remuneration.",
+          "Duties of Mutawalli: Carry out the Wakif's lawful directions and court orders, maintain and repair the property, defend suits against the Wakf, attend Wakf Board meetings, and submit annual audited accounts.",
+          "Grounds for Removal of Mutawalli (Section 64, Waqf Act, 1995): Unsoundness of mind, insolvency, conviction for moral turpitude, misappropriation of Wakf funds, disobedience of Wakf Board or court orders, or diverting Wakf benefits to unauthorized purposes."
+        ],
+        "caseLaws": [
+          {
+            "name": "Vidya Varuthi Thirtha v. Balusami Ayyar",
+            "citation": "AIR 1922 PC 123",
+            "principle": "Clarified that a Mutawalli is merely a manager or superintendent of Wakf property and not a trustee in whom ownership vests."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List four grounds on which a Mutawalli can be removed under the Waqf Act, 1995.",
+            "a": "Unsoundness of mind, misappropriation of Wakf income, wilful disobedience of court or Wakf Board orders, and using Wakf property contrary to the Wakif's declared object."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "family-law-ii-u3-t3": {
+      "id": "family-law-ii-u3-t3",
+      "subtitle": "Family Law - II (Muslim Law) - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Will (Wasiyat) is a legal declaration by a competent testator distributing his property after death. Under Muslim law, a testator cannot bequeath more than one-third of his net estate after debts and funeral expenses unless the heirs consent after his death.",
+        "legalProvision": "Classical Muslim Law of Wasiyat; Indian Succession Act, 1925 (general principles of Wills)",
+        "meaning": "A Will (Wasiyat) takes effect only upon the death of the testator and may be revoked or altered at any time during the testator's lifetime. It prevents post-death property disputes while protecting the statutory shares of Quranic heirs through the one-third limit.",
+        "keyPoints": [
+          "Competence of Testator: Must be an adult of sound mind acting with free consent; a Will made under coercion, fraud, or undue influence is void.",
+          "Formalities: May be oral or written on plain paper (stamp paper and registration are optional), with clear, definite language and signature or thumb impression if written.",
+          "One-Third Limit (Bequeathable Third): A Muslim can bequeath only up to 1/3rd of his net estate (after funeral expenses and debts) to non-heirs; any excess requires the consent of legal heirs after the testator's death.",
+          "Bequest to an Heir: Under Sunni law, a bequest to a legal heir is invalid unless other heirs consent after the testator's death; under Shia law, a bequest up to 1/3rd to an heir is valid without consent.",
+          "Revocation of Will: A testator can revoke a Will at any time before death either expressly (orally or in writing) or impliedly (by destroying the Will, executing a later inconsistent Will, or transferring the bequeathed property)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mazhar Husen v. Bodha Bibi",
+            "citation": "1898 ILR 21 All 91",
+            "principle": "Held that a Muslim Will requires no specific form or registration so long as the testator's clear intention to dispose of property after death is established."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the one-third rule in Muslim testamentary succession?",
+            "a": "A Muslim testator cannot bequeath more than one-third of his net estate after debts and funeral expenses without the consent of his legal heirs after his death."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-evidence-u3-t1": {
+      "id": "law-of-evidence-u3-t1",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A Dying Declaration under Section 32(1) IEA (Section 26(a) BSA) is a statement made by a person as to the cause of his death or the circumstances of the transaction resulting in his death. It is admissible as an exception to the hearsay rule on the maxim 'Nemo moriturus praesumitur mentire' (truth sits on the lips of a dying person).",
+        "legalProvision": "Section 32(1), Indian Evidence Act, 1872 (Section 26(a), Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Because the declarant has died and cannot be cross-examined in court, the law admits a dying declaration out of necessity and presumed truthfulness. Unlike English law, Indian law does not require the declarant to be under immediate expectation of death, and admits it in both civil and criminal proceedings where cause of death is in issue.",
+        "keyPoints": [
+          "Rationale: Based on 'Nemo moriturus praesumitur mentire'â€”a person facing death is unlikely to lie, and the victim possesses first-hand knowledge of the incident.",
+          "Who May Record It: Preferably a Magistrate (highest evidentiary value), though a doctor, police officer, or any independent person may also record it.",
+          "Form and Mode: May be oral, written, in question-and-answer form, or even by gestures and signs (Queen-Empress v. Abdullah) if the victim cannot speak; a translator may be used if needed.",
+          "Mental Fitness: A doctor's certificate of fit state of mind is desirable, though the court's satisfaction that the declarant was conscious and coherent is decisive.",
+          "Evidentiary Value: A truthful, voluntary, and reliable dying declaration can form the sole basis of conviction without corroboration.",
+          "If the Declarant Survives: The statement ceases to be admissible as a dying declaration under Section 32(1), but may still be used to corroborate (Section 157) or contradict (Section 145) his testimony in court."
+        ],
+        "caseLaws": [
+          {
+            "name": "Pakala Narayana Swami v. Emperor",
+            "citation": "AIR 1939 PC 47",
+            "principle": "Held that 'circumstances of the transaction' under Section 32(1) includes statements made before the fatal attack that have a proximate nexus to the cause of death."
+          },
+          {
+            "name": "Khushal Rao v. State of Bombay",
+            "citation": "AIR 1958 SC 22",
+            "principle": "Laid down that a dying declaration stands on the same footing as any other piece of evidence and can be the sole basis of conviction if found wholly reliable."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can a conviction be based solely on a dying declaration without corroboration?",
+            "a": "Yes. As held in Khushal Rao v. State of Bombay (1958), if the court is satisfied that the dying declaration is voluntary, truthful, and reliable, it can form the sole basis of conviction."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-evidence-u3-t2": {
+      "id": "law-of-evidence-u3-t2",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Estoppel (Section 115 IEA / Section 121 BSA) is a rule of equity and evidence preventing a person from denying the truth of a fact that he intentionally caused another person to believe and act upon. One cannot 'blow hot and cold' or approbate and reprobate.",
+        "legalProvision": "Sections 115, 116, and 117, Indian Evidence Act, 1872 (Sections 121-123, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Estoppel stops a party from retracting an earlier representation (by declaration, act, or omission) once the opposite party has relied on it and altered his position. It applies primarily in civil proceedings and does not operate against a statute or a minor.",
+        "keyPoints": [
+          "Three Essentials (Section 115): (1) A representation by declaration, act, or omission, (2) Intentional inducement of another person to believe it to be true, and (3) The other person acts upon that belief to his detriment.",
+          "Kinds of Estoppel: Estoppel by Record (judgments/public records), Estoppel by Deed (binding recitals in executed documents), Estoppel by Conduct/In Pais (acts, silence, or negligence), Promissory Estoppel, and Estoppel by Waiver.",
+          "Specific Statutory Estoppels: Estoppel of a tenant or licensee from denying the landlord's title (Section 116) and estoppel of an acceptor of a bill of exchange, bailee, or licensee (Section 117).",
+          "Exceptions: No estoppel against a statute (law cannot be defeated by representation), no estoppel against a minor, and no estoppel where both parties knew the true facts.",
+          "Estoppel vs Res Judicata: Estoppel is a rule of evidence binding the parties at any stage of proceedings; Res Judicata (Section 11 CPC) bars the court's jurisdiction from re-trying an already adjudicated suit.",
+          "Estoppel vs Presumption: Estoppel prevents a party from denying an admitted/represented fact; a presumption is an inference drawn by the court that shifts the burden of proof."
+        ],
+        "caseLaws": [
+          {
+            "name": "Pickard v. Sears",
+            "citation": "1837 6 Ad & E 469",
+            "principle": "Laid down the foundational rule of estoppel by conduct: where one wilfully causes another to believe a state of things and act on it, he is precluded from averring a different state of things."
+          },
+          {
+            "name": "Motilal Padampat Sugar Mills v. State of U.P.",
+            "citation": "AIR 1979 SC 621",
+            "principle": "Established that Promissory Estoppel binds even the Government when a citizen acts to his detriment upon a clear governmental promise."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Estoppel and Res Judicata.",
+            "a": "Estoppel is a rule of evidence preventing a party from contradicting an earlier representation, whereas Res Judicata is a rule of procedure barring the court from re-trying an issue already finally decided."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "constitutional-law-ii-u3-t1": {
+      "id": "constitutional-law-ii-u3-t1",
+      "subtitle": "Constitutional Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The President of India (Article 52) is the Constitutional Head of State, elected indirectly for a 5-year term by an Electoral College of elected MPs and MLAs. He exercises executive, legislative, ordinance-making, judicial/pardoning, military, financial, and emergency powers on the aid and advice of the Council of Ministers.",
+        "legalProvision": "Articles 52-62, 72, 74, 111, 123, and 352-360, Constitution of India",
+        "meaning": "As the first citizen and constitutional head of the Union, all executive actions of the Government of India are taken in the President's name. Under Article 74, he acts in accordance with the aid and advice of the Council of Ministers headed by the Prime Minister.",
+        "keyPoints": [
+          "Qualifications & Election (Articles 54 & 58): Citizen of India, at least 35 years old, qualified for Lok Sabha election, and holding no office of profit; elected by proportional representation via single transferable vote.",
+          "Executive & Military Powers: Appoints the Prime Minister, Union Ministers, Governors, Chief Justice and Judges of SC/HCs, CAG, UPSC members, and Election Commissioners; serves as Supreme Commander of the Defence Forces.",
+          "Legislative & Ordinance Powers: Summons/prorogues Parliament, assents to or exercises veto over Bills (Article 111), and promulgates Ordinances when Parliament is not in session (Article 123, valid up to 6 weeks from reassembly).",
+          "Financial Powers: Prior recommendation is required for Money Bills and demands for grants; controls the Contingency Fund of India and constitutes the Finance Commission.",
+          "Judicial / Pardoning Power (Article 72): May grant pardon, reprieve, respite, remission, or commutation of sentences, including death sentences and court-martial punishments.",
+          "Impeachment (Article 61): Removable only for 'violation of the Constitution' by a resolution initiated in either House with 14 days' notice and passed by a two-thirds majority of the total membership of both Houses."
+        ],
+        "caseLaws": [
+          {
+            "name": "Shamsher Singh v. State of Punjab",
+            "citation": "AIR 1974 SC 2192",
+            "principle": "Held that the President and Governors are constitutional heads who must generally exercise their formal powers on the aid and advice of their Council of Ministers."
+          },
+          {
+            "name": "Maru Ram v. Union of India",
+            "citation": "AIR 1980 SC 2147",
+            "principle": "Held that the President's pardoning power under Article 72 must be exercised on ministerial advice and is subject to limited judicial review against arbitrariness."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the sole constitutional ground and required majority for impeaching the President of India under Article 61?",
+            "a": "Violation of the Constitution, requiring a two-thirds majority of the total membership of each House of Parliament."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "constitutional-law-ii-u3-t2": {
+      "id": "constitutional-law-ii-u3-t2",
+      "subtitle": "Constitutional Law - II - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Governor (Article 153) is the constitutional head of a State and a vital link between the Union and State Governments. Appointed by the President for a 5-year term (holding office during the President's pleasure), the Governor exercises executive, legislative, ordinance, and pardoning powers.",
+        "legalProvision": "Articles 153-163, 200, 201, and 213, Constitution of India",
+        "meaning": "The Governor heads the State Executive and generally acts on the aid and advice of the State Council of Ministers headed by the Chief Minister (Article 163), except in matters where the Constitution expressly requires him to act in his discretion.",
+        "keyPoints": [
+          "Appointment & Tenure (Articles 155-156): Appointed by the President for 5 years and holds office during the pleasure of the President (cannot be removed arbitrarily without valid reasons, per B.P. Singhal).",
+          "Executive Powers: Appoints the Chief Minister, State Ministers, Advocate General, State Public Service Commission members, and serves as Chancellor of State Universities.",
+          "Legislative & Ordinance Powers: Summons/prorogues the State Legislature, gives assent to State Bills, reserves certain Bills for Presidential consideration (Articles 200-201), and promulgates State Ordinances (Article 213).",
+          "Judicial / Pardoning Powers (Article 161): Administers oath to High Court judges (or delegates) and can grant pardon, reprieve, or remission for offences against State laws (excluding death sentences).",
+          "Discretionary Powers: Reporting breakdown of constitutional machinery in the State under Article 356, reserving Bills for the President, and inviting a leader to form government in a hung Assembly."
+        ],
+        "caseLaws": [
+          {
+            "name": "B.P. Singhal v. Union of India",
+            "citation": "2010 6 SCC 331",
+            "principle": "Held that while a Governor holds office during the pleasure of the President, removal cannot be arbitrary, capricious, or merely because of a change in the Union Government."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two key differences between the pardoning powers of the President (Article 72) and a Governor (Article 161).",
+            "a": "The President can pardon death sentences and court-martial punishments, whereas a Governor cannot pardon a death sentence or court-martial sentence."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "constitutional-law-ii-u3-t3": {
+      "id": "constitutional-law-ii-u3-t3",
+      "subtitle": "Constitutional Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Part XVIII of the Constitution empowers the President to proclaim three types of Emergencies: National Emergency (Article 352), President's Rule / State Emergency (Article 356), and Financial Emergency (Article 360). During an emergency, the federal structure shifts toward a unitary system.",
+        "legalProvision": "Articles 352, 356, 358, 359, and 360, Constitution of India (as amended by the 44th Constitutional Amendment Act, 1978)",
+        "meaning": "Emergency provisions equip the Union Government to handle extraordinary threats to India's sovereignty, constitutional breakdown in States, or severe financial instability. The 44th Amendment (1978) introduced strict parliamentary and fundamental-rights safeguards against misuse.",
+        "keyPoints": [
+          "National Emergency (Article 352): Proclaimed on grounds of War, External Aggression, or Armed Rebellion (replaced 'internal disturbance' via 44th Amendment) upon written Cabinet recommendation; requires parliamentary approval within 1 month (invoked in 1962, 1971, and 1975).",
+          "President's Rule / State Emergency (Article 356): Imposed when a State Government cannot be carried on in accordance with the Constitution; requires parliamentary approval within 2 months and is subject to judicial review.",
+          "Financial Emergency (Article 360): Proclaimed when India's financial stability or credit is threatened; allows reduction of salaries including judges, and has never been declared in India.",
+          "Effect on Federalism: Parliament gains power to legislate on State List subjects, and the Union can issue binding executive directions to States.",
+          "Effect on Fundamental Rights (Articles 358-359): Article 19 is suspended only during war or external aggression; after the 44th Amendment, Articles 20 and 21 (Right to Life and Personal Liberty) can NEVER be suspended even during an Emergency."
+        ],
+        "caseLaws": [
+          {
+            "name": "S.R. Bommai v. Union of India",
+            "citation": "AIR 1994 SC 1918",
+            "principle": "Held that the President's proclamation under Article 356 is subject to judicial review and that floor-test in the Assembly is the proper test of majority."
+          },
+          {
+            "name": "Minerva Mills v. Union of India",
+            "citation": "AIR 1980 SC 1789",
+            "principle": "Affirmed that even emergency proclamations are not immune from judicial scrutiny if made on mala fide or extraneous grounds."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Which two Fundamental Rights can never be suspended even during a National Emergency?",
+            "a": "Article 20 (protection in respect of conviction for offences) and Article 21 (protection of life and personal liberty), safeguarded by the 44th Constitutional Amendment Act, 1978."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

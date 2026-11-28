@@ -1,0 +1,261 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-taxation",
+      "title": "Law of Taxation (Income Tax & GST)",
+      "semester": "Semester 6",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Income Tax Procedure - PAN, Returns, Advance Tax, TDS, Assessment & Income-tax Act, 2025",
+          "topics": [
+            {"id": "law-of-taxation-u3-t1", "title": "1. PAN, ITR Filing, Advance Tax (Secs. 234B/234C), TDS, Clubbing, Double Tax Relief & Income-tax Act, 2025 Transition"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "GST Registration, Returns, Tax Payment & TDS/TCS",
+          "topics": [
+            {"id": "law-of-taxation-u4-t1", "title": "1. GST Registration (Secs. 22-25), Outward/Inward Returns (GSTR-1/3B), Payment of Tax, Interest & GST TDS/TCS"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "GST Demand, Recovery, Advance Ruling, Appeals, GSTAT & Penalties",
+          "topics": [
+            {"id": "law-of-taxation-u5-t1", "title": "1. GST Demand & Recovery (Secs. 73-74), Advance Ruling (AAR/AAAR), Appeals, GSTAT Operational Framework & Penalties"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "information-technology-law",
+      "title": "Information Technology & Cyber Law",
+      "semester": "Semester 6",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "E-Commerce Contracts, Escrow Agreements, E-Banking & Certifying Authorities",
+          "topics": [
+            {"id": "information-technology-law-u3-t1", "title": "1. E-Commerce Contracts (Click-Wrap, Shrink-Wrap, NDA & Source Code Escrow), E-Banking, Certifying Authorities & TDSAT"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Cyber Law & IPRs - Software Copyright/Patents, Domain Name Disputes & Databases",
+          "topics": [
+            {"id": "information-technology-law-u4-t1", "title": "1. Software Copyright vs Patents, Software Piracy, Domain Name Disputes (WIPO UDRP & .IN INDRP) & Database Protection"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Electronic Evidence, Cyber Crime Investigation, International Conventions & DPDP Regime",
+          "topics": [
+            {"id": "information-technology-law-u5-t1", "title": "1. Admissibility of Electronic Evidence (Sec. 65B IEA / Sec. 63 BSA), Police Powers, Budapest Convention & DPDP Rules (2025-2026)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "law-of-taxation-u3-t1": {
+      "id": "law-of-taxation-u3-t1",
+      "subtitle": "Law of Taxation (Income Tax & GST) - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Direct tax administration relies on PAN (10-digit unique identifier), Return of Income filing, Advance Tax instalments (default attracts interest under Sections 234B/234C), Tax Deducted at Source (TDS), Clubbing of Income, and Double Tax Relief (DTAA). Note for exams: the Income-tax Act, 2025 came into force on 1 April 2026, replacing the 1961 Act and unifying Previous/Assessment Year into a single 'Tax Year'.",
+        "legalProvision": "Income-tax Act, 1961 (Sections 60-65, 90-91, 139, 139A, 143, 192-195, 208-211, & 234B-234C); Income-tax Act, 2025 (effective 1 April 2026) & Income-tax Rules, 2026",
+        "meaning": "Tax procedure ensures steady revenue collection throughout the year ('pay as you earn') via TDS and Advance Tax, prevents tax avoidance through clubbing provisions, and protects taxpayers via statutory assessment and appellate tiers (CIT(A), ITAT, High Court, Supreme Court).",
+        "keyPoints": [
+          "PAN & Filing of Returns (Sections 139 & 139A, 1961 Act): Permanent Account Number (PAN) is mandatory for opening bank accounts, high-value financial transactions, and filing ITRs; returns may be Original, Belated, Revised, or Updated.",
+          "Advance Tax & Interest (Sections 208-211, 234B & 234C): Mandatory where estimated annual tax liability is Rs. 10,000 or more (payable in four quarterly instalments: 15% by June 15, 45% by Sept 15, 75% by Dec 15, 100% by March 15); non-payment or short-payment attracts mandatory interest under Section 234B and deferment interest under Section 234C.",
+          "TDS, Clubbing & Double Tax Relief: TDS deducts tax at source on salaries, interest, and professional fees; Clubbing (Sections 60-65) taxes transferred income or minor child's income in the transferor/parent's hands to curb avoidance; Double Taxation Relief is granted bilaterally via DTAA (Section 90) or unilaterally (Section 91).",
+          "Assessment & Appellate Hierarchy: Self-Assessment (Sec. 140A), Summary Processing (Sec. 143(1)), Scrutiny Assessment (Sec. 143(3)), and Best Judgment Assessment (Sec. 144); appeals lie from Assessing Officer -> CIT(Appeals) -> ITAT (final fact-finding body) -> High Court (substantial question of law) -> Supreme Court.",
+          "2026 Statutory Milestone (Income-tax Act, 2025): Effective 1 April 2026 alongside Income-tax Rules, 2026; replaces the dual Previous Year / Assessment Year concept with a single 'Tax Year' (April 1 to March 31) while AY 2026-27 (FY 2025-26 income) concludes under the 1961 Act."
+        ],
+        "caseLaws": [
+          {
+            "name": "Union of India v. Azadi Bachao Andolan",
+            "citation": "2004 10 SCC 1",
+            "principle": "Upheld the validity of Double Taxation Avoidance Agreements (DTAA) under Section 90 of the Income-tax Act, holding that treaty provisions override domestic tax provisions to the extent they are more beneficial to the assessee."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the four due dates for Advance Tax instalments, and how does the Income-tax Act, 2025 simplify the Assessment Year concept?",
+            "a": "15 June (15%), 15 September (45%), 15 December (75%), and 15 March (100%). The Income-tax Act, 2025 (effective 1 April 2026) replaces both Previous Year and Assessment Year with a single 'Tax Year'."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-taxation-u4-t1": {
+      "id": "law-of-taxation-u4-t1",
+      "subtitle": "Law of Taxation (Income Tax & GST) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Sections 22-25 of the CGST Act, 2017, GST registration is mandatory once aggregate turnover crosses the statutory threshold (Rs. 40 lakh for exclusive goods suppliers in most States; Rs. 20 lakh for services) or for specified categories like inter-State suppliers. Registered taxpayers file periodic outward/summary returns (GSTR-1 and GSTR-3B) and remit tax via electronic ledgers.",
+        "legalProvision": "Sections 22, 23, 24, 25, 37, 38, 39, 49, 50, 51, & 52, Central Goods and Services Tax (CGST) Act, 2017",
+        "meaning": "GST compliance operates through an end-to-end digital portal (GSTN) where PAN-based 15-digit GSTINs track every invoice from supplier to recipient, preventing tax evasion through automated invoice matching, GST TDS by government agencies, and GST TCS by e-commerce operators.",
+        "keyPoints": [
+          "Persons Liable vs Exempt from Registration (Sections 22-23): Threshold is Rs. 20 lakh (Rs. 10 lakh in special category States) and enhanced to Rs. 40 lakh for exclusive intra-State suppliers of goods; agriculturists supplying produce from cultivation and exclusive suppliers of exempt/non-taxable goods are exempt (Section 23).",
+          "Compulsory Registration Regardless of Turnover (Section 24): Applies to inter-State taxable suppliers (goods), casual taxable persons, persons paying tax under Reverse Charge Mechanism (RCM), e-commerce operators, and non-resident taxable persons.",
+          "Procedure for Registration (Section 25): Apply online within 30 days of becoming liable using PAN and Aadhaar authentication; separate registration is required in each State/UT of business, yielding a 15-digit GSTIN.",
+          "Returns & Payment Ledgers (Sections 37-39 & 49-50): Registered persons furnish outward supplies in GSTR-1 (auto-populating recipient's GSTR-2B for ITC) and pay tax via GSTR-3B using Electronic Credit Ledger (ITC) and Electronic Cash Ledger; delayed tax payment attracts interest under Section 50 (up to 18% p.a.).",
+          "GST TDS (Section 51) & TCS (Section 52): Government departments/PSUs deduct 2% TDS (1% CGST + 1% SGST) on taxable contracts exceeding Rs. 2.5 lakh; e-commerce operators collect TCS on net taxable supplies made through their platforms."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bharti Airtel Ltd. v. Union of India",
+            "citation": "2022 2 SCC 1",
+            "principle": "Held that taxpayers are legally obligated to self-assess output tax and ITC accurately from their own books of account under Sections 37-39 rather than relying solely on auto-populated portal figures."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between persons exempted under Section 23 and persons subject to compulsory GST registration under Section 24.",
+            "a": "Section 23 exempts agriculturists and exclusive suppliers of exempt goods/services, whereas Section 24 mandates registration regardless of turnover for inter-State goods suppliers, RCM taxpayers, casual/non-resident taxable persons, and e-commerce operators."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "law-of-taxation-u5-t1": {
+      "id": "law-of-taxation-u5-t1",
+      "subtitle": "Law of Taxation (Income Tax & GST) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The CGST Act, 2017 ensures certainty and enforcement through Advance Rulings (AAR/AAAR, Sections 95-106), Demand and Recovery proceedings (Sections 73-74 and unified Section 74A), statutory Appeals up to the now-operational GST Appellate Tribunal (GSTAT under Section 112), and strict Offences and Penalties (Sections 122-132).",
+        "legalProvision": "Sections 73, 74, 74A, 79, 95-106, 107-118, & 122-132, Central Goods and Services Tax (CGST) Act, 2017; GSTAT Procedure Rules, 2025",
+        "meaning": "Advance Rulings let businesses clarify GST classification, valuation, or ITC eligibility before undertaking transactions. When tax is short-paid or ITC is wrongly availed, officers issue show-cause notices with graded penalties, balanced by multi-tier appellate review.",
+        "keyPoints": [
+          "Demand & Recovery (Sections 73, 74, 74A & 79): Historically separated non-fraud cases (Sec. 73, 3-year limit) from fraud/suppression cases (Sec. 74, 5-year limit), now consolidated into unified Section 74A (42-month uniform limitation from FY 2024-25 onward); confirmed arrears are recovered via attachment/sale of property or bank garnishee orders (Section 79).",
+          "Advance Ruling (Sections 95-106): Written binding determination by the State Authority for Advance Ruling (AAR) on classification, applicability of notifications, time/value of supply, ITC admissibility, or registration liability; appeal lies to the Appellate Authority for Advance Ruling (AAAR) within 30 days; binds only the applicant and concerned officer.",
+          "Appellate & Revisional Hierarchy (Sections 107-118): First appeal to Appellate Authority within 3 months (Sec. 107, 10% disputed tax pre-deposit); Revisional Authority may revise orders prejudicial to revenue (Sec. 108); Second appeal lies to GSTAT within 3 months (Sec. 112), then High Court on substantial question of law (Sec. 117), and Supreme Court (Sec. 118).",
+          "GST Appellate Tribunal (GSTAT - Operationalized 2025-2026): Unified second appellate forum consisting of the Principal Bench (New Delhi, handling place-of-supply and anti-profiteering matters) and 31 State Benches across 45 locations, functioning digitally under the GSTAT Procedure Rules, 2025.",
+          "Offences & Penalties (Sections 122 & 132): Covers issuing fake invoices without supply, collecting GST without depositing it, and fraudulent ITC claims; serious tax evasion exceeding statutory monetary thresholds attracts criminal prosecution and imprisonment up to 5 years (Section 132)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Radhika Agarwal v. Union of India",
+            "citation": "2025 INSC 272 (SC)",
+            "principle": "Upheld the constitutional validity of arrest powers under Section 69 of the CGST Act while mandating strict procedural safeguards, recorded reasons to believe, and availability of anticipatory bail."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Who is bound by a GST Advance Ruling under Section 103, and what is the appellate hierarchy under the CGST Act, 2017?",
+            "a": "An Advance Ruling binds ONLY the applicant and the concerned jurisdictional tax officer. Appellate hierarchy: Adjudicating Officer -> Appellate Authority (Sec. 107) -> GSTAT (Sec. 112) -> High Court (Sec. 117) -> Supreme Court (Sec. 118)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "information-technology-law-u3-t1": {
+      "id": "information-technology-law-u3-t1",
+      "subtitle": "Information Technology & Cyber Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "E-Commerce relies on legally binding digital contracts (Click-Wrap, Shrink-Wrap, Browse-Wrap, NDAs, and Source Code Escrow Agreements) validated under Section 10A of the IT Act, 2000 and the UNCITRAL Model Law. Digital Signatures are issued by licensed Certifying Authorities under the Controller (CCA), and cyber appeals lie before TDSAT.",
+        "legalProvision": "Sections 10A, 11-13, 17-42, & 48-62, Information Technology Act, 2000; Indian Contract Act, 1872; Finance Act, 2017 (merging Cyber Appellate Tribunal into TDSAT)",
+        "meaning": "Digital commerce eliminates paper borders by automating contract formation, online banking/UPI payments, and software licensing. Specialized technology contracts like Source Code Escrow protect enterprise licensees if a software vendor goes bankrupt or ceases support.",
+        "keyPoints": [
+          "Types of Online & IT Contracts: Click-Wrap (explicit 'I Agree' click - generally enforceable), Shrink-Wrap (license inside software packaging), Browse-Wrap (hyperlinked terms - enforceable only with conspicuous notice), Non-Disclosure Agreements (NDAs protecting trade secrets), and IT Employment/Contractor IP Assignment agreements.",
+          "Source Code Escrow Agreement: A tripartite contract among software Developer (Licensor), Customer (Licensee), and an independent Escrow Agent holding the software's source code; automatically released to the customer upon trigger events such as vendor bankruptcy, merger, or failure to maintain software.",
+          "E-Commerce Dispatch & Receipt Rules (Sections 11-13, IT Act): Attribution confirms who sent an electronic record; dispatch occurs when the record enters a computer resource outside the originator's control, and receipt occurs when it enters the addressee's designated resource (determining place and time of contract conclusion).",
+          "Certifying Authorities & Subscriber Duties (Sections 17-42): Controller of Certifying Authorities (CCA) licenses and supervises CAs that issue Digital Signature Certificates (DSCs); subscribers must exercise reasonable care to safeguard their private key and notify the CA immediately upon compromise.",
+          "Adjudicating Officer & TDSAT (Sections 46 & 48-62): IT Secretaries act as Adjudicating Officers for civil cyber compensation claims up to Rs. 5 crore; appeals from Adjudicating Officers and CCA orders lie to TDSAT (which replaced the former Cyber Appellate Tribunal in 2017) within 45 days."
+        ],
+        "caseLaws": [
+          {
+            "name": "Trimex International FZE Ltd. v. Vedanta Aluminium Ltd.",
+            "citation": "2010 3 SCC 1",
+            "principle": "Held that an exchange of emails containing clear offer and unconditional acceptance creates a valid, binding contract under Indian law even without a formally signed paper agreement."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is a Source Code Escrow Agreement, and which tribunal now exercises the appellate jurisdiction of the former Cyber Appellate Tribunal?",
+            "a": "A Source Code Escrow Agreement deposits software source code with a neutral third-party agent to release to the client if the vendor becomes insolvent or abandons support. Appeals now lie before TDSAT (Telecom Disputes Settlement and Appellate Tribunal)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "information-technology-law-u4-t1": {
+      "id": "information-technology-law-u4-t1",
+      "subtitle": "Information Technology & Cyber Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "In cyberspace, computer software is protected primarily as a 'literary work' under Copyright Law (while Section 3(k) of the Patents Act excludes 'computer programmes per se' unless showing technical effect). Internet Domain Name disputes (cybersquatting) are resolved via WIPO's UDRP and India's INDRP, while databases are protected as literary compilations.",
+        "legalProvision": "Sections 2(ffc), 2(o), 14(b), & 63B, Copyright Act, 1957; Section 3(k), Patents Act, 1970; WIPO UDRP (1999) & NIXI .IN Dispute Resolution Policy (INDRP)",
+        "meaning": "Digital technology makes copying software, streaming content, and registering famous brands as domain names instantaneous. Cyber IPR balances protection against software piracy and cybersquatting with open innovation and interoperability.",
+        "keyPoints": [
+          "Software Copyright vs Patents Debate: Under Section 2(o) of the Copyright Act, 1957, computer source/object code is protected as a literary work (protecting code expression against piracy, with knowing use of pirated software punishable under Section 63B); Patents protect functional inventions, whereas Section 3(k) of India's Patents Act bars 'computer programmes per se' unless tied to hardware or demonstrating a tangible 'technical effect' (Ferid Allani).",
+          "Comparative Computer Patent Positions: USA allows software patents only if they pass the 2-step Alice Corp. test (not an abstract idea); EU (EPC Article 52) requires a 'technical contribution' solving a technical problem; India follows a technical-effect standard under CRI Guidelines.",
+          "Trademarks & Domain Name Disputes (Cybersquatting): Domain names act as online business addresses and trademarks; bad-faith registration of famous marks ('cybersquatting') is actionable via court passing-off suits (Satyam Infoway) or rapid online arbitration under WIPO's Uniform Domain-Name Dispute-Resolution Policy (UDRP) for .com/.org and NIXI's INDRP for .in domains.",
+          "Three Elements for UDRP/INDRP Relief: Complainant must prove (1) domain name is identical/confusingly similar to its trademark, (2) registrant has no legitimate rights/interests, and (3) domain was registered and used in bad faith.",
+          "Database Protection (USA, EU & India): USA protects only creative selection/arrangement (Feist Publications - rejects pure sweat of the brow); EU grants both copyright and a special 15-year Sui Generis Database Right; India protects original databases as literary compilations under Section 2(o) of the Copyright Act."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ferid Allani v. Union of India",
+            "citation": "2019 SCC OnLine Del 11867",
+            "principle": "Delhi High Court clarified that Section 3(k) bars only 'computer programmes per se' - a computer-related invention demonstrating a 'technical effect' or 'technical contribution' is patentable in India."
+          },
+          {
+            "name": "Yahoo! Inc. v. Akash Arora",
+            "citation": "1999 (19) PTC 201 (Del)",
+            "principle": "First landmark Indian cybersquatting decision granting injunction against 'yahooindia.com', holding that domain names serve the same function as trademarks and deserve full protection against passing off."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the three elements required to succeed in a WIPO UDRP domain name dispute, and when is a computer-related invention patentable in India?",
+            "a": "UDRP requires confusing similarity to a trademark, no legitimate interest by the registrant, and bad-faith registration/use. In India, software is excluded 'per se' under Section 3(k) but patentable if it produces a demonstrable technical effect (Ferid Allani)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "information-technology-law-u5-t1": {
+      "id": "information-technology-law-u5-t1",
+      "subtitle": "Information Technology & Cyber Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Electronic evidence (emails, CCTV, server logs, WhatsApp chats) is admissible in court only upon fulfilling the mandatory statutory certificate requirement under Section 65B(4) IEA / Section 63(4) BSA, 2023 (Arjun Panditrao Khotkar). Cyber crime investigation is led by Inspector-rank officers (Section 78 IT Act), while personal data privacy is now governed by the operational DPDP Act, 2023 and DPDP Rules, 2025.",
+        "legalProvision": "Section 65B, IEA / Section 63, Bharatiya Sakshya Adhiniyam (BSA), 2023; Sections 69, 78, & 80, IT Act, 2000; Digital Personal Data Protection Act, 2023 & DPDP Rules, 2025; Budapest Convention on Cybercrime (2001)",
+        "meaning": "Because digital evidence is volatile and easily altered, courts enforce strict authentication rules alongside specialized cyber-forensic investigation. Internationally, the Budapest Convention (2001) harmonizes cross-border cybercrime cooperation, while India's DPDP regime establishes a citizen-centric data protection architecture.",
+        "keyPoints": [
+          "Admissibility of Electronic Evidence (Sec. 65B IEA / Sec. 63 BSA, 2023): Secondary electronic records (printouts, USB copies, cloud downloads) strictly require a statutory Section 65B(4) / Section 63(4) certificate signed by a responsible person (and an expert under BSA) verifying device integrity; original electronic devices produced directly are primary evidence.",
+          "Police Powers & Cyber Investigation (Sections 69, 78 & 80, IT Act): Only a police officer not below the rank of Inspector can investigate IT Act offences (Section 78); Section 80 authorizes search and arrest without warrant in public places; Section 69 empowers Government interception/decryption subject to strict proportionality safeguards.",
+          "Cross-Border Cybercrime & Budapest Convention (2001): The Council of Europe's Convention on Cybercrime is the primary international treaty coordinating electronic evidence preservation and extradition across borders (complemented by the 2024 UN Cybercrime Convention).",
+          "DPDP Act, 2023 & DPDP Rules, 2025 (Notified 14 November 2025): Operationalizes India's data privacy law around seven principles (consent, purpose limitation, data minimisation, accuracy, storage limitation, security, accountability); establishes the Data Protection Board of India (appeals to TDSAT) and penalties up to Rs. 250 crore for security breaches.",
+          "2026 Consent Manager Rollout: On 13 November 2026, MeitY operationalized the online Consent Manager registration portal (dpbi.gov.in), allowing Data Principals to grant, manage, review, and withdraw digital consent transparently through interoperable platforms."
+        ],
+        "caseLaws": [
+          {
+            "name": "Arjun Panditrao Khotkar v. Kailash Kushanrao Gorantyal",
+            "citation": "2020 7 SCC 1",
+            "principle": "3-judge Supreme Court Bench held that a certificate under Section 65B(4) of the Evidence Act is a mandatory condition precedent for admitting secondary electronic evidence, though unnecessary if the original device itself is produced."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When is a Section 65B(4) IEA / Section 63(4) BSA certificate mandatory, and what key bodies operate under India's DPDP Act, 2023 and DPDP Rules, 2025?",
+            "a": "The certificate is mandatory whenever secondary electronic evidence (copies/printouts) is produced, but not when the original device is produced directly. The DPDP regime operates through the Data Protection Board of India (appeals to TDSAT) and registered Consent Managers."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

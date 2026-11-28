@@ -1,0 +1,165 @@
+{
+  "subjects": [
+    {
+      "id": "public-international-law",
+      "title": "Public International Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper II",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Law of Treaties (VCLT, 1969), Law of the Sea (UNCLOS, 1982), Air & Outer Space Law, and State Responsibility",
+          "topics": [
+            {"id": "pil-u4-t1", "title": "1. Law of Treaties (VCLT, 1969) - Definition, Formation, Reservations, Pacta Sunt Servanda, Invalidity (Jus Cogens) & Termination (Rebus Sic Stantibus)"},
+            {"id": "pil-u4-t2", "title": "2. Law of the Sea (UNCLOS, 1982) - Maritime Zones (Territorial Sea, Contiguous Zone, EEZ, Continental Shelf, High Seas & Deep Seabed / ITLOS)"},
+            {"id": "pil-u4-t3", "title": "3. International Air Law (Chicago, Tokyo, Hague & Montreal Conventions) & Outer Space Law (Outer Space Treaty, 1967)"},
+            {"id": "pil-u4-t4", "title": "4. Law of State Responsibility (ILC Articles, 2001) - Attribution, Defences, Reparation (Chorzow Factory) & Calvo Clause"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "pil-u4-t1": {
+      "id": "pil-u4-t1",
+      "subtitle": "Public International Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Codified in the Vienna Convention on the Law of Treaties (VCLT), 1969, a Treaty (Art. 2(1)(a)) is an international written agreement between States governed by international law. Anchored in 'Pacta Sunt Servanda' (Art. 26 - treaties must be performed in good faith) and 'Pacta Tertiis' (Art. 34 - does not bind third States without consent), VCLT governs reservations (Art. 19), interpretation (Arts. 31-32), invalidity including Jus Cogens (Arts. 46-53), and termination including Material Breach (Art. 60) and Fundamental Change of Circumstances ('Rebus Sic Stantibus' - Art. 62).",
+        "legalProvision": "Articles 2, 11-26, 31-34, 46-53, & 60-64, Vienna Convention on the Law of Treaties (VCLT), 1969; Article 102 UN Charter (Registration)",
+        "meaning": "Treaties are the primary legislative instruments of international society - balancing strict sanctity of promises (Pacta Sunt Servanda) with narrow safety valves for coercion, Jus Cogens, or radical unforeseen change.",
+        "keyPoints": [
+          "Formation & Reservations (Arts. 7-25 VCLT): Steps -> Accreditation/Full Powers (Art. 7; Heads of State/PM/Foreign Minister need none), Negotiation, Adoption & Authentication, Expression of Consent to be Bound (Signature, Exchange, RATIFICATION, or Accession - Arts. 11-15), Entry into Force, and UN Registration (Art. 102 UN Charter - unregistered treaty cannot be invoked before UN organs/ICJ). RESERVATIONS (Arts. 19-21 & Genocide Reservations Advisory Opinion): A State may unilaterally exclude/modify a treaty provision UNLESS prohibited by the treaty OR INCOMPATIBLE WITH ITS OBJECT AND PURPOSE.",
+          "Pacta Sunt Servanda (Art. 26), Domestic Law Bar (Art. 27) & Interpretation (Arts. 31-32): Every treaty in force binds parties in good faith (internal domestic law CANNOT excuse treaty breach - Art. 27); interpreted primarily by plain ordinary meaning in context and light of Object & Purpose (Art. 31), using travaux preparatoires (drafting history) only as supplementary means (Art. 32).",
+          "Grounds of Invalidity (Arts. 46-53): Manifest violation of fundamental internal competence, Error (Art. 48), Fraud (Art. 49), Corruption of representative (Art. 50), Coercion of representative or of State by threat/use of force (Arts. 51-52 - VOID ab initio), and Conflict with Existing JUS COGENS (Art. 53 - VOID ab initio; Art. 64 terminates treaties conflicting with emerging Jus Cogens).",
+          "Termination & Suspension (Arts. 54-64): Consent/withdrawal, Material Breach by other party (Art. 60), Supervening Impossibility of Performance (Art. 61), and REBUS SIC STANTIBUS / Fundamental Change of Circumstances (Art. 62 - narrowly allowed ONLY if unforeseen change radically transforms ongoing obligations; NEVER applies to Boundary Treaties or self-induced breaches - Fisheries Jurisdiction Case; Gabcikovo-Nagymaros)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Reservations to the Convention on the Prevention and Punishment of Genocide (Advisory Opinion)",
+            "citation": "1951 ICJ Rep 15",
+            "principle": "ICJ rejected the rigid unanimous-consent rule and established the modern 'Object and Purpose Compatibility Test' codified into Article 19(c) of the 1969 VCLT."
+          },
+          {
+            "name": "Fisheries Jurisdiction Case (UK v. Iceland)",
+            "citation": "1973 ICJ Rep 3",
+            "principle": "Held that Article 62 VCLT ('Rebus Sic Stantibus') codifies customary international law but applies strictly where a radical, unforeseen change transforms the very extent of remaining obligations."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain 'Pacta Sunt Servanda' (Art. 26) and 'Rebus Sic Stantibus' (Art. 62) under the 1969 VCLT, and state one class of treaties to which Rebus Sic Stantibus NEVER applies.",
+            "a": "Pacta Sunt Servanda mandates that every treaty in force binds parties and must be performed in good faith. Rebus Sic Stantibus permits termination upon a radical, unforeseen fundamental change of circumstances - NEVER applicable to Boundary Treaties (Art. 62(2)(a))."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u4-t2": {
+      "id": "pil-u4-t2",
+      "subtitle": "Public International Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The UN Convention on the Law of the Sea (UNCLOS), 1982 ('Constitution for the Oceans') divides maritime space measured seaward from the coastal Baseline into clearly defined legal zones: Internal Waters, Territorial Sea (12 nautical miles - full sovereignty subject to Innocent Passage), Contiguous Zone (24 NM - customs/fiscal/immigration/sanitary policing), Exclusive Economic Zone / EEZ (200 NM - sovereign resource rights), Continental Shelf (200 NM / up to 350 NM), High Seas (res communis - 6 freedoms), and 'The Area' (Deep Seabed as Common Heritage of Mankind).",
+        "legalProvision": "UN Convention on the Law of the Sea (UNCLOS), 1982 (Parts II, V, VI, VII, XI & XV); Indian Maritime Zones Act, 1976",
+        "meaning": "UNCLOS balances coastal States' security and economic sovereignty over nearby waters with every nation's global freedom of navigation, overflight, and submarine cables.",
+        "keyPoints": [
+          "1. Baseline, Internal Waters & Territorial Sea (Up to 12 NM - Arts. 2-32): Measured from normal low-water line or straight baselines across deeply indented coasts (Anglo-Norwegian Fisheries Case). Coastal State has FULL SOVEREIGNTY over Territorial Sea (water, seabed, airspace), subject strictly to foreign ships' RIGHT OF INNOCENT PASSAGE (continuous, expeditious, non-prejudicial to peace/good order; submarines MUST navigate on the surface showing flag - Art. 20; Corfu Channel Case upheld transit through international straits).",
+          "2. Contiguous Zone (Up to 24 NM - Art. 33): Buffer zone beyond territorial sea where coastal State may exercise control ONLY to prevent and punish infringement of four laws: Customs, Fiscal, Immigration, and Sanitary regulations (plus hot pursuit right under Art. 111).",
+          "3. Exclusive Economic Zone / EEZ (Up to 200 NM - Arts. 55-75): Coastal State has SOVEREIGN RIGHTS (not full territorial sovereignty!) to explore, exploit, conserve, and manage living (fisheries) and non-living (oil/gas/wind) resources + artificial islands/marine research; ALL other States retain freedoms of navigation, overflight, and laying submarine cables/pipelines.",
+          "4. Continental Shelf (200 NM, extendable up to 350 NM - Arts. 76-85): Natural prolongation of coastal landmass under the sea; coastal State holds exclusive inherent sovereign rights over seabed/subsoil mineral and sedentary resources (North Sea Continental Shelf Cases - equidistant vs equitable principles).",
+          "5. High Seas (Arts. 86-115), 'The Area' (Part XI) & ITLOS (Part XV): High Seas are open to ALL States (including landlocked States) with 6 freedoms (navigation, overflight, cables, artificial islands, fishing, research) under Flag-State exclusive jurisdiction (exceptions: piracy, slave trade, unauthorized broadcasting, stateless ships, Hot Pursuit). Deep Seabed beyond national jurisdiction ('The Area') is the COMMON HERITAGE OF MANKIND administered by the International Seabed Authority (ISA, Jamaica); disputes go to ITLOS (Hamburg - e.g., Enrica Lexie / Italian Marines arbitration)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Corfu Channel Case (UK v. Albania)",
+            "citation": "1949 ICJ Rep 4",
+            "principle": "Affirmed the customary right of Innocent Passage of warships through international straits used for international navigation during peacetime and held Albania liable for undisclosed sea mines."
+          },
+          {
+            "name": "Anglo-Norwegian Fisheries Case (UK v. Norway)",
+            "citation": "1951 ICJ Rep 116",
+            "principle": "Upheld Norway's Straight Baseline method across deeply indented fjords and coastal islands (skjaergaard), later codified into Article 7 of UNCLOS, 1982."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the maximum seaward breadth from the baseline of (a) Territorial Sea, (b) Contiguous Zone, and (c) Exclusive Economic Zone (EEZ) under UNCLOS, 1982, and state the coastal State's rights in each.",
+            "a": "(a) Territorial Sea: 12 NM (full sovereignty subject to innocent passage), (b) Contiguous Zone: 24 NM (control over customs, fiscal, immigration, and sanitary laws), and (c) EEZ: 200 NM (sovereign rights over living and non-living economic resources while preserving foreign navigation/overflight)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u4-t3": {
+      "id": "pil-u4-t3",
+      "subtitle": "Public International Law - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "International Air Law under the Chicago Convention on International Civil Aviation (1944) grants every State COMPLETE AND EXCLUSIVE SOVEREIGNTY over the airspace above its territory (creating ICAO and five Freedoms of the Air), reinforced against aircraft hijacking and sabotage by the Tokyo (1963), Hague (1970), and Montreal (1971) Conventions. In stark contrast, Outer Space under the Outer Space Treaty, 1967 is free for peaceful exploration by all nations and CANNOT be nationally appropriated.",
+        "legalProvision": "Chicago Convention (1944); Tokyo (1963), Hague (1970), & Montreal (1971) Conventions; Outer Space Treaty (1967); Liability Convention (1972)",
+        "meaning": "Airspace belongs exclusively to the underlying sovereign State (requiring permission for scheduled flights), whereas outer space and celestial bodies belong to all humanity ('Province of All Mankind').",
+        "keyPoints": [
+          "Chicago Convention on International Civil Aviation (1944): Article 1 affirms complete and exclusive sovereignty over national airspace; distinguishes Scheduled international flights (require prior permission/bilateral agreements) vs Non-scheduled flights; established ICAO (Montreal); codified the Five Freedoms of the Air (transit overflight, technical stop, disembark, embark, and third-country traffic).",
+          "Anti-Hijacking & Aviation Security Triad: (1) TOKYO CONVENTION (1963) - aircraft commander powers and State-of-registration jurisdiction over in-flight offences, (2) HAGUE CONVENTION (1970) - criminalizes unlawful seizure (hijacking) of aircraft with strict 'Aut Dedere Aut Judicare' (extradite or prosecute), and (3) MONTREAL CONVENTION (1971) - criminalizes sabotage/bombing of aircraft and airport facilities (Lockerbie Case; India enacted Anti-Hijacking Act, 2016).",
+          "Outer Space Law (Five UN Treaties Led by Outer Space Treaty, 1967): (1) Outer Space & celestial bodies are FREE for exploration/use by ALL States for peaceful purposes ('Province of All Mankind'), (2) STRICT BAN ON NATIONAL APPROPRIATION by claim of sovereignty or occupation (Art. II), (3) BAN ON NUCLEAR WEAPONS / WMDs in orbit or on the Moon/celestial bodies (Art. IV), (4) Astronauts are 'Envoys of Mankind' entitled to rescue & safe return (Rescue Agreement, 1968), and (5) Launching State bears ABSOLUTE LIABILITY for damage caused by space objects on Earth/aircraft in flight and fault liability in outer space (Liability Convention, 1972 - e.g., Cosmos 954 Soviet satellite crash in Canada, 1978; Registration Convention, 1975; Moon Agreement, 1979)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Aerial Incident / Lockerbie Case (Libya v. UK / USA)",
+            "citation": "1992 ICJ Rep 3",
+            "principle": "Highlighted the interplay between the 1971 Montreal Convention ('extradite or prosecute' for aircraft sabotage) and binding UN Security Council Chapter VII resolutions (Art. 103 UN Charter supremacy)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Contrast the legal regime of National Airspace (Chicago Convention, 1944) with Outer Space (Outer Space Treaty, 1967), and state the liability standard for space debris hitting Earth under the 1972 Liability Convention.",
+            "a": "National airspace is under complete and exclusive territorial sovereignty of the underlying State, whereas Outer Space is open to all nations and strictly barred from national appropriation or nuclear weapons. Under the 1972 Liability Convention, the launching State bears ABSOLUTE liability for damage caused on Earth's surface or to aircraft in flight."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "pil-u4-t4": {
+      "id": "pil-u4-t4",
+      "subtitle": "Public International Law - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Codified by the International Law Commission's Draft Articles on Responsibility of States for Internationally Wrongful Acts (2001), EVERY internationally wrongful act of a State entails international responsibility (Art. 1) when TWO elements concur (Art. 2): (1) Conduct (act/omission) is ATTRIBUTABLE to the State under international law, AND (2) constitutes a BREACH of an international obligation - obliging the State to cease the breach and make FULL REPARATION (Restitution, Compensation, Satisfaction - Chorzow Factory Case).",
+        "legalProvision": "ILC Draft Articles on State Responsibility (2001 - Arts. 1-39); Chorzow Factory Case (1928); Calvo Clause & Exhaustion of Local Remedies",
+        "meaning": "State Responsibility is the international equivalent of tort/contract breach liability: even if a State's official acts ultra vires domestic law, the State still answers internationally for breaches of treaty or custom.",
+        "keyPoints": [
+          "Attribution of Conduct to the State (Arts. 4-11 ILC): Attributable when committed by (a) ANY State organ - legislative, executive, judicial, or provincial (Art. 4), (b) Parastatal entities exercising governmental authority (Art. 5), (c) Ultra vires official acts done in apparent official capacity (Art. 7 - Youmans Claim), (d) Private persons acting under 'effective control' / instructions of the State (Art. 8 - Nicaragua Case vs ICTY Tadic 'overall control'), (e) Successful insurrectional movement becoming the new government (Art. 10), or (f) Private conduct subsequently acknowledged and adopted by the State as its own (Art. 11 - Tehran Hostages Case).",
+          "Six Circumstances Precluding Wrongfulness / Defences (Arts. 20-25): (1) Valid Consent, (2) Lawful Self-Defence (Art. 51 UN Charter), (3) Lawful Countermeasures, (4) Force Majeure (irresistible force/unforeseen event), (5) Distress (saving human life), and (6) Necessity (grave and imminent peril to essential State interest - Gabcikovo-Nagymaros). Crucial Limit (Art. 26): NO defence can ever justify breaching a JUS COGENS norm!",
+          "Forms of Full Reparation (Arts. 34-37 & Chorzow Factory Case): (1) RESTITUTION IN KIND (Restitutio in Integrum - restoring status quo ante, preferred primary remedy), (2) COMPENSATION (monetary damages for financially assessable loss including lost profits where restitution is impossible), and (3) SATISFACTION (formal apology, acknowledgment of breach, punishing offending officials for moral/non-material injury).",
+          "Treatment of Aliens, Exhaustion of Local Remedies & Calvo Clause: Before a home State can espouse an injured alien's claim diplomatically, the alien must first EXHAUST LOCAL REMEDIES inside the host State (Art. 44; Interhandel Case). Under the CALVO CLAUSE (Latin American investment contracts), foreign investors agree to submit disputes exclusively to local courts and waive diplomatic protection (partially upheld in North American Dredging Co. Case - binds the individual investor contractually, though cannot completely strip his home State's independent international right)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Factory at Chorzow Case (Germany v. Poland)",
+            "citation": "1928 PCIJ Series A No. 17",
+            "principle": "Foundational authority on Reparation: breach of an international engagement automatically involves an obligation to make full reparation wiping out all consequences of the illegal act via restitution or full monetary equivalent."
+          },
+          {
+            "name": "Military and Paramilitary Activities in and against Nicaragua (Nicaragua v. USA)",
+            "citation": "1986 ICJ Rep 14",
+            "principle": "Laid down the strict 'Effective Control' test for attributing acts of non-State armed rebels (Contras) to a foreign supporting State under Article 8 ILC."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the two essential elements of an Internationally Wrongful Act (Art. 2 ILC Articles), name the three forms of Reparation (Chorzow Factory), and explain the 'Calvo Clause'.",
+            "a": "Elements: (1) Conduct attributable to the State, and (2) Breach of an international obligation. Three forms of Reparation: Restitution, Compensation, and Satisfaction. The Calvo Clause is a contractual clause requiring foreign investors to rely solely on host-State local courts and waive diplomatic protection."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

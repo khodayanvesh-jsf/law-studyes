@@ -1,0 +1,157 @@
+{
+  "subjects": [
+    {
+      "id": "intellectual-property-law",
+      "title": "Intellectual Property Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Industrial Designs Act 2000, Geographical Indications Act 1999, Plant Varieties PPVFR Act 2001, SICLD Act 2000 & Trade Secrets",
+          "topics": [
+            {"id": "ipr-u5-t1", "title": "1. Designs Act, 2000 - Definition, Essentials, Term (10+5 Years), Copyright Overlap (Sec. 15) & Piracy of Registered Design (Sec. 22)"},
+            {"id": "ipr-u5-t2", "title": "2. Geographical Indications of Goods Act, 1999 - Concept, Registration, Authorized Users, Infringement & Telangana GIs"},
+            {"id": "ipr-u5-t3", "title": "3. Protection of Plant Varieties & Farmers' Rights (PPVFR) Act, 2001 - DUS/NDUS Criteria, Breeders' & Farmers' Rights (Sec. 39) & PepsiCo Case"},
+            {"id": "ipr-u5-t4", "title": "4. Semiconductor Integrated Circuits Layout-Design (SICLD) Act, 2000 & Protection of Trade Secrets / Undisclosed Information"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "ipr-u5-t1": {
+      "id": "ipr-u5-t1",
+      "subtitle": "Intellectual Property Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Designs Act, 2000 protects the purely VISUAL / AESTHETIC appearance of an industrially manufactured article - features of shape, configuration, pattern, ornament, or composition of lines/colours judged SOLELY BY THE EYE (Sec. 2(d)), strictly excluding functional mechanical principles, trademarks, and artistic works under Copyright. Registration lasts 10 YEARS, extendable once by 5 YEARS (max 15 years - Sec. 11), with civil piracy remedies under Section 22.",
+        "legalProvision": "Sections 2(d), 4, 5, 11, 19, & 22, Designs Act, 2000; Section 15, Copyright Act, 1957",
+        "meaning": "Patents protect how a product WORKS (function), Trademarks protect WHO made it (brand), and Industrial Designs protect how a product LOOKS (ornamental eye-appeal like a bottle shape, shoe pattern, or car body).",
+        "keyPoints": [
+          "Definition & Essential Requirements (Secs. 2(d) & 4): Must be applied to an industrial article (2D or 3D) by industrial process, judged SOLELY BY THE EYE; MUST be (1) NEW OR ORIGINAL (not previously published/disclosed anywhere in India or abroad - Bharat Glass Tube v. Gopal Glass Works), (2) Significantly distinguishable from known designs, (3) NOT purely functional/mode of construction (functional shapes belong to Patents, not Designs), and (4) NOT scandalous/obscene. Locarno Classification applies.",
+          "Term, Cancellation & Overlap with Copyright (Secs. 11, 19 & Sec. 15 Copyright Act): Initial copyright in registered design lasts 10 YEARS from registration date, renewable ONCE for 5 MORE YEARS (total max 15 YEARS - Sec. 11). Cancellation lies before Controller/High Court under Sec. 19. CRUCIAL OVERLAP RULE (Sec. 15, Copyright Act, 1957 & Microfibres v. Girdhar): (a) Once registered under Designs Act, NO Copyright subsists (Sec. 15(1)); (b) If an artistic work is capable of Design registration but left unregistered, its Copyright CEASES AUTOMATICALLY once the article is reproduced > 50 TIMES by an industrial process (Sec. 15(2))!",
+          "Piracy of Registered Design & Remedies (Sec. 22): Unauthorized application of design (or fraudulent/obvious imitation) to any article in the registered class for sale or import constitutes 'Piracy' - strictly a CIVIL wrong (NO criminal jail!) carrying statutory contract debt up to Rs. 25,000 per contravention (capped at Rs. 50,000 per design) OR suit for injunction and actual damages in District Court (transfers to High Court if Sec. 19 cancellation defence is raised!)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Bharat Glass Tube Ltd. v. Gopal Glass Works Ltd.",
+            "citation": "2008 10 SCC 657",
+            "principle": "Clarified novelty and prior-publication under Sections 4 and 19 of the Designs Act, 2000: mere possession of foreign embossing rollers without proving prior public display of the finished visual glass design did not destroy Indian novelty."
+          },
+          {
+            "name": "Microfibres Inc. v. Girdhar & Co.",
+            "citation": "2009 40 PTC 519 (Del HC DB)",
+            "principle": "Harmonized Section 2(d) Designs Act with Section 15(2) Copyright Act: upholstery fabric patterns created for industrial mass production (> 50 times) without Designs Act registration lose Copyright protection permanently."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the maximum duration of a registered Industrial Design (Sec. 11) and explain the '50-Times Rule' under Section 15(2) of the Copyright Act separating Copyright from Designs.",
+            "a": "10 years initial + 5 years single renewal = maximum 15 years. Under Sec. 15(2) Copyright Act, an unregistered design-registrable artistic work loses Copyright automatically once reproduced industrially more than 50 times."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u5-t2": {
+      "id": "ipr-u5-t2",
+      "subtitle": "Intellectual Property Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Enacted to implement TRIPS Articles 22-24, the Geographical Indications of Goods (Registration and Protection) Act, 1999 protects collective community rights in agricultural, natural, or manufactured goods originating in a specific geographical territory whose unique quality, reputation, or characteristics are essentially attributable to that origin (Sec. 2(1)(e)) - e.g., Darjeeling Tea, Basmati, and Telangana's own Pochampally Ikat, Hyderabad Haleem, and Pembarthi Metal Craft.",
+        "legalProvision": "Sections 2(1)(e), 9-11, 17, 18, 21-24, & 39, Geographical Indications of Goods Act, 1999 (Registry HQ: Chennai)",
+        "meaning": "Unlike a Trademark (owned privately by one company and freely assignable to anyone worldwide), a GI is a PUBLIC/COLLECTIVE COMMUNITY HERITAGE right that can NEVER be assigned, mortgaged, or licensed outside its region (Sec. 24)!",
+        "keyPoints": [
+          "Definition & Telangana / Indian GIs (Sec. 2(1)(e)): Covers agricultural, natural, or manufactured goods (handicrafts, textiles, foodstuffs - NOT services!) where given quality, reputation, or characteristics are essentially linked to geographical origin (soil, climate, traditional artisan skill). Famous Indian GIs: Darjeeling Tea (India's 1st GI, 2004), Basmati Rice, Kanchipuram Silk, Tirupati Laddu. Telangana GIs: Pochampally Ikat, Hyderabad Haleem, Pembarthi Metal Craft, Cheriyal Scroll Painting, Nirmal Toys & Paintings, Karimnagar Silver Filigree, Gadwal & Narayanpet Sarees, Tandur Redgram, and Hyderabad Lac Bangles.",
+          "Registered Proprietor vs Authorized Users & Homonymous GIs (Secs. 10, 11 & 17): Any association of producers/statutory body applies to GI Registry (Chennai) as 'Registered Proprietor' (Sec. 11), while individual local producers register as 'Authorized Users' (Sec. 17) entitled to affix the GI tag. Section 10 allows co-existing registration of 'Homonymous GIs' (identical place names in different regions) with clear differentiation to avoid consumer confusion. Prohibited GIs (Sec. 9): generic names (e.g., 'cheddar'), deceptive, or contrary to law/morality.",
+          "Term, Non-Assignability & Remedies (Secs. 18, 21-24 & 39): Valid for 10 YEARS, RENEWABLE PERPETUALLY every 10 years (Sec. 18). Under Section 24, a registered GI CANNOT be assigned, transmitted, licensed, pledged, or mortgaged (passes only to authorized user's legal heir on death). Infringement (Sec. 22) covers misleading geographical use AND unfair competition (plus higher 'additional protection' for notified wines/spirits/goods even when true origin is stated, e.g., 'Hyderabad-style Haleem'!); carries Civil injunctions/damages (Sec. 67) AND Criminal jail of 6 months to 3 years + Rs. 50,000 to Rs. 2 lakhs fine (Sec. 39). Passing off preserved under Sec. 20(2)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Tea Board of India v. ITC Limited",
+            "citation": "2019 SCC OnLine Cal 1020 (Cal HC)",
+            "principle": "Examined the statutory boundaries of GI infringement under Sections 21-22: held that GI protection under the 1999 Act attaches to GOODS (Darjeeling Tea) and did not automatically bar ITC's hospitality service name 'Darjeeling Lounge' absent deception as to goods."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three key differences between a Trade Mark and a Geographical Indication (GI), and name four registered Geographical Indications from Telangana.",
+            "a": "Trademark is owned by an individual/company, covers goods AND services, and is assignable/licensable; GI is a collective community right, covers ONLY goods, and CANNOT be assigned or licensed (Sec. 24). Telangana GIs: Pochampally Ikat, Hyderabad Haleem, Pembarthi Metal Craft, Cheriyal Scroll Painting, Tandur Redgram."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u5-t3": {
+      "id": "ipr-u5-t3",
+      "subtitle": "Intellectual Property Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Rather than granting rigid corporate patents on plants (excluded by Sec. 3(j) Patents Act), India fulfilled TRIPS Article 27.3(b) through a globally acclaimed 'Sui Generis' statute - the Protection of Plant Varieties and Farmers' Rights (PPVFR) Act, 2001. It balances Plant Breeders' exclusivity (registered on NDUS / DUS criteria for 15/18 years) with historic statutory Farmers' Rights under Section 39 (right to save, use, sow, resow, exchange, share, or sell farm produce including UNBRANDED seed - famously enforced in the PepsiCo FL-2027 Potato Case!).",
+        "legalProvision": "Sections 14-15, 24, 26, 28, 30, 39, 41, & 42, Protection of Plant Varieties and Farmers' Rights (PPVFR) Act, 2001",
+        "meaning": "The PPVFR Act is the world's only legislation treating farmers equally as 'cultivators, conservers, and breeders' alongside commercial seed multinationals.",
+        "keyPoints": [
+          "Registration Criteria - NDUS & DUS Tests (Sec. 15): Administered by PPVFR Authority (New Delhi). A 'New Variety' must satisfy FOUR criteria (NDUS): (1) NOVELTY (not sold in India > 1 yr or abroad > 4/6 yrs), (2) DISTINCTIVENESS (clearly distinguishable by at least one essential characteristic), (3) UNIFORMITY (sufficiently uniform in relevant characteristics), and (4) STABILITY (remains unchanged after repeated propagation). 'Extant Varieties' and 'Farmers' Varieties' need ONLY DUS (Novelty waived!). Terminators/GURT ('suicide seeds') are STRICTLY BANNED (Sec. 29(3)).",
+          "Duration & Breeders' / Researchers' Rights (Secs. 24, 28 & 30): Total max duration = 18 YEARS for trees and vines, and 15 YEARS for other crops (initial 9/6 yrs renewable). Breeder gets exclusive right to produce, sell, market, distribute, import, or export the registered variety (Sec. 28). RESEARCHERS' RIGHTS (Sec. 30): Any researcher may freely use a registered variety for experiment/research or as an initial source to create a new variety (authorization needed only for repeated commercial use).",
+          "Landmark Farmers' Rights (Secs. 39, 41 & 42): (1) RIGHT TO SEED (Sec. 39(1)(iv) - farmer is unconditionally entitled to SAVE, USE, SOW, RESOW, EXCHANGE, SHARE, OR SELL his farm produce INCLUDING SEED of a protected variety, PROVIDED he does NOT sell it as 'BRANDED SEED' in labelled commercial packets!), (2) Right to register traditional 'Farmers' Varieties' with ZERO fees, (3) Right to Benefit Sharing (Sec. 26) & National Gene Fund rewards (Sec. 45), (4) Compensation if commercial seed fails expected yield performance (Sec. 39(2)), and (5) Protection against Innocent Infringement (Sec. 42).",
+          "PepsiCo FL-2027 (Lay's Potato) Revocation Case (2021-2024): PepsiCo sued Gujarat farmers for growing its registered FL-2027 potato variety (withdrew suits after public outcry); PPVFR Authority revoked PepsiCo's registration in 2021 under Sec. 34 (public interest/defective filing - later contested in Delhi High Court DB, 2024), spotlighting Section 39 farmers' seed sovereignty."
+        ],
+        "caseLaws": [
+          {
+            "name": "PepsiCo India Holdings Pvt. Ltd. v. Kavitha Kuruganti (FL-2027 Potato Variety Case)",
+            "citation": "2024 SCC OnLine Del 47 (Del HC DB)",
+            "principle": "Highlighted the core statutory balance of the PPVFR Act, 2001 between Breeders' registration rights (Sec. 28), revocation grounds (Sec. 34), and Farmers' statutory seed rights under Section 39."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Expand the NDUS criteria under Section 15 of the PPVFR Act, 2001, state the duration of protection for crops vs trees/vines, and state the exact seed right granted to farmers under Section 39(1)(iv).",
+            "a": "NDUS = Novelty, Distinctiveness, Uniformity, and Stability. Duration: 15 years for field crops, 18 years for trees and vines. Sec. 39(1)(iv) entitles every farmer to save, use, sow, resow, exchange, share, or sell farm produce including seed of a protected variety, provided it is NOT sold as 'branded seed'."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "ipr-u5-t4": {
+      "id": "ipr-u5-t4",
+      "subtitle": "Intellectual Property Law - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Two specialized regimes complete India's TRIPS-aligned IP framework: (1) the Semiconductor Integrated Circuits Layout-Design (SICLD) Act, 2000 protecting original 3D microchip circuit topography (mask works) for a non-renewable 10-YEAR TERM (implementing Washington Treaty & TRIPS Arts. 35-38), and (2) Trade Secrets / Undisclosed Information (TRIPS Art. 39 - e.g., Coca-Cola recipe, customer lists, source algorithms), protected in India WITHOUT a standalone statute through Contract Law (Sec. 27 ICA), Equity/Breach of Confidence (Saltman Engineering), and Criminal/IT law.",
+        "legalProvision": "Semiconductor Integrated Circuits Layout-Design (SICLD) Act, 2000 (Secs. 2, 7, 15, 17-18, 56); TRIPS Article 39; Section 27, Indian Contract Act, 1872",
+        "meaning": "Microchip masks fit neither pure Copyright (too functional) nor Patents (incremental layout), requiring the sui generis SICLD Act; meanwhile, Trade Secrets offer potentially INFINITE duration so long as secrecy is maintained.",
+        "keyPoints": [
+          "Semiconductor Integrated Circuits Layout-Design (SICLD) Act, 2000: Protects a 'Layout-Design' (Sec. 2(h) - layout of transistors and circuitry elements on a semiconductor chip). Criteria for Registration (Sec. 7): Must be (1) ORIGINAL (result of creator's own intellectual effort, not commonplace), (2) NOT commercially exploited anywhere in India or convention country for > 2 YEARS prior to filing, (3) Inherently distinctive, and (4) Capable of being distinguishable from any other registered layout-design. Term (Sec. 15): 10 YEARS from filing date or first commercial exploitation (whichever is earlier) - NON-RENEWABLE. Infringement (Sec. 18): Unauthorized reproduction or commercial import/sale (reverse engineering for analysis/evaluation is EXPRESSLY EXEMPT under Sec. 18(2)!); Criminal penalty up to 3 years + Rs. 50,000-Rs. 10 lakhs fine (Sec. 56).",
+          "Trade Secrets / Undisclosed Information (TRIPS Art. 39): Three classic criteria -> Information must (1) Be SECRET (not generally known or readily accessible), (2) Have COMMERCIAL VALUE because it is secret, and (3) Be subject to REASONABLE STEPS by the owner to keep it secret (NDAs, encryption, restricted access). Examples: KFC/Coca-Cola recipes, Google search algorithms, client pricing lists, unpatented R&D.",
+          "Legal Protection of Trade Secrets in India (No Standalone Act): Enforced via THREE pillars -> (1) CONTRACT LAW (Non-Disclosure Agreements / confidentiality clauses - note Sec. 27 Indian Contract Act voids post-employment non-compete bars, YET upholds confidentiality/non-disclosure obligations! - Niranjan Shankar Golikari; Percept D'Mark), (2) EQUITABLE ACTION FOR BREACH OF CONFIDENCE (Saltman Engineering Co. v. Campbell Engineering; John Richard Brady v. Chemical Process Equipments - applies even WITHOUT a written contract when confidential blueprints are misused!), and (3) CRIMINAL / IT ACT REMEDIES (Sec. 72 & 72A IT Act, 2000; Sec. 316 BNS Criminal Breach of Trust; Law Commission 289th Report, 2024 recommended a dedicated Trade Secrets Act for India)."
+        ],
+        "caseLaws": [
+          {
+            "name": "John Richard Brady v. Chemical Process Equipments Pvt. Ltd.",
+            "citation": "AIR 1987 Del 372",
+            "principle": "Landmark Indian Trade Secret / Breach of Confidence judgment: restrained an Indian manufacturer from misusing confidential fodder-machine drawings shared during negotiations even in the absence of a formal executed contract."
+          },
+          {
+            "name": "Saltman Engineering Co. Ltd. v. Campbell Engineering Co. Ltd.",
+            "citation": "1948 65 RPC 203 (CA)",
+            "principle": "Established the classic equitable doctrine of Breach of Confidence protecting confidential technical know-how/trade secrets: a recipient cannot use confidential information as a 'springboard' to compete unfairly."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the statutory term of protection and reverse-engineering exception under the SICLD Act, 2000, and explain how Trade Secrets are protected in India despite having no standalone Trade Secrets Act.",
+            "a": "SICLD protects registered microchip layout-designs for 10 non-renewable years (Sec. 15), and Sec. 18(2) expressly permits reverse engineering for evaluation/analysis. In India, Trade Secrets are protected through NDAs/Contract Law, Equitable Breach of Confidence (John Richard Brady; Saltman Engineering), and IT Act/BNS criminal provisions."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

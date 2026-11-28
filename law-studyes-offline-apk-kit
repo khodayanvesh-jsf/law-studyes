@@ -1,0 +1,11 @@
+# 1. Permanently fix line 696 in Release-LawStudyes-AllPlatforms.ps1
+$p = ".\Release-LawStudyes-AllPlatforms.ps1"
+$u = New-Object System.Text.UTF8Encoding $false
+$txt = [System.IO.File]::ReadAllText($p, $u)
+$old = 'git add -A android/app/build.gradle desktop-console/package.json desktop-console/index.html desktop-console/main.js 2>$null'
+$new = 'if (Test-Path ".\www\LawStudyes-Offline.apk") { git add -f ".\www\LawStudyes-Offline.apk" }'
+[System.IO.File]::WriteAllText($p, $txt.Replace($old, $new), $u)
+
+# 2. Stage fresh v3.0.8 APK for the WhatsApp share link & push verified OTA to GitHub + Vercel
+git add -f ".\www\LawStudyes-Offline.apk"
+.\Push-LawStudyes-OTA.ps1 -Message "Unified v3.0.8 release (Audio Engine, Offline Diagrams, Mobile Alignment & WhatsApp APK sync)"

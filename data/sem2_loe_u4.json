@@ -1,0 +1,168 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-evidence",
+      "title": "Law of Evidence (IEA / BSA)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 4,
+          "title": "Burden of Proof, Presumptions (Including Dowry Death), Estoppel & Kinds vs Res Judicata/Waiver",
+          "topics": [
+            {"id": "loe-u4-t1", "title": "1. Rules Relating to Burden of Proof & Shifting Onus of Proof (Secs. 101-111 IEA / Secs. 104-114 BSA)"},
+            {"id": "loe-u4-t2", "title": "2. Statutory Presumptions - Legitimacy, Abetment of Suicide, Dowry Death (Sec. 113B / Sec. 118 BSA), Sec. 114 & Rape Consent"},
+            {"id": "loe-u4-t3", "title": "3. Doctrine of Estoppel - Meaning, Essentials & Kinds of Estoppel (Secs. 115-117 IEA / Secs. 121-123 BSA)"},
+            {"id": "loe-u4-t4", "title": "4. Distinction Between Estoppel, Res Judicata, Waiver & Presumption"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loe-u4-t1": {
+      "id": "loe-u4-t1",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter VII (Secs. 101-111 IEA / Secs. 104-114 BSA, 2023) allocates who must prove disputed facts. Legal 'Burden of Proof' (Sec. 101 / Sec. 104 BSA) remains permanently fixed on the party asserting an affirmative legal claim or criminal charge, whereas evidentiary 'Onus of Proof' (Sec. 102 / Sec. 105 BSA) shifts continuously during trial - with special burdens for General Exceptions (Sec. 105 / Sec. 108 BSA) and facts within special personal knowledge (Sec. 106 / Sec. 109 BSA).",
+        "legalProvision": "Sections 101-111, Indian Evidence Act, 1872 (Sections 104-114, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Based on the maxim 'Ei incumbit probatio qui dicit, non qui negat' (burden lies on him who affirms, not who denies), these rules ensure courts know which side loses if evidence is evenly balanced or absent.",
+        "keyPoints": [
+          "Burden of Proof (Sec. 101 / Sec. 104 BSA) vs Onus of Proof (Sec. 102 / Sec. 105 BSA): Legal Burden of Proof under Sec. 101 NEVER shifts (prosecution must prove guilt beyond reasonable doubt; civil plaintiff must prove his cause of action); Evidentiary Onus under Sec. 102 rests on whoever would fail if no further evidence were led and shifts back and forth as each side leads proof (Addagada Raghavamma v. Addagada Chenchamma).",
+          "Particular Fact & Admissibility Fact (Secs. 103-104 / Secs. 106-107 BSA): Whoever wants the court to believe a specific fact (e.g., Alibi) must prove it (Sec. 103); whoever relies on secondary evidence or a dying declaration must first prove loss of the original or death of the declarant (Sec. 104).",
+          "General Exceptions in Criminal Trials (Sec. 105 / Sec. 108 BSA): Burden of proving that an accused's act falls under any General Exception or Special Exception of IPC/BNS (e.g., private defence, insanity) rests on the accused - discharged on a lighter 'preponderance of probabilities', NOT beyond reasonable doubt (K.M. Nanavati; Dahyabhai Chhaganbhai Thakkar).",
+          "Fact Especially Within Knowledge (Sec. 106 / Sec. 109 BSA): When any fact is especially within a person's personal knowledge (e.g., holding a railway ticket, or explaining a homicide inside a locked bedroom occupied solely by husband and wife - Trimukh Maroti Kirkan), the burden shifts to him - though Sec. 106 NEVER relieves the prosecution of establishing a prima facie case (Shambu Nath Mehra).",
+          "Survivorship, Ownership & Good Faith (Secs. 107-111 / Secs. 110-114 BSA): Person shown alive within 30 years is presumed alive (Sec. 107), EXCEPT if unheard of for 7 years by those who would naturally hear from him (presumed dead, NO presumption as to exact date of death - Sec. 108 / Sec. 111 BSA); Possession is prima facie proof of ownership (Sec. 110 / Sec. 113 BSA); Party in 'active confidence' (advocate, trustee, doctor) must prove good faith (Sec. 111 / Sec. 114 BSA)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Shambu Nath Mehra v. State of Ajmer",
+            "citation": "AIR 1956 SC 404",
+            "principle": "Held that Section 106 IEA (Sec. 109 BSA) is an exception to Section 101 designed to meet extraordinary cases where facts are impossible for the prosecution to prove; it does not shift the general criminal burden onto the accused."
+          },
+          {
+            "name": "Trimukh Maroti Kirkan v. State of Maharashtra",
+            "citation": "2006 10 SCC 681",
+            "principle": "Applied Section 106 IEA to custodial/domestic murders committed in privacy inside a home: once prosecution proves the accused was last inside with the deceased, silence or false explanation supplies an additional link in the chain of guilt."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'Burden of Proof' (Sec. 101 / Sec. 104 BSA) and 'Onus of Proof' (Sec. 102 / Sec. 105 BSA), and state the standard of proof required for an accused pleading a General Exception under Section 105.",
+            "a": "Burden of Proof (Sec. 101) is fixed by pleadings/substantive law and never shifts, whereas Onus of Proof (Sec. 102) shifts continuously during trial as evidence is led. Under Sec. 105 / Sec. 108 BSA, the accused need only prove a General Exception on a preponderance of probabilities."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u4-t2": {
+      "id": "loe-u4-t2",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Statutory presumptions shift the evidentiary burden in crimes committed in secrecy or vital status questions: Conclusive Proof of Legitimacy (Sec. 112 / Sec. 116 BSA), Abetment of Wife's Suicide (Sec. 113A / Sec. 117 BSA), Mandatory Presumption of Dowry Death (Sec. 113B / Sec. 118 BSA), Natural Course Presumptions (Sec. 114 / Sec. 119 BSA), and Absence of Consent in Aggravated Rape (Sec. 114A / Sec. 120 BSA).",
+        "legalProvision": "Sections 111A, 112, 113A, 113B, 114, & 114A IEA, 1872 (Sections 115-120, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Because dowry deaths, domestic suicides, and custodial rapes rarely have independent eyewitnesses, Parliament inserted reverse-onus presumptions requiring the accused to rebut guilt once foundational facts are proved.",
+        "keyPoints": [
+          "Presumption as to Dowry Death (Sec. 113B IEA / Sec. 118 BSA - 'SHALL PRESUME'): Mandatory rebuttable presumption paired with Sec. 304B IPC / Sec. 80 BNS; once prosecution proves (1) unnatural death of a woman (burns/bodily injury) within 7 years of marriage, AND (2) 'soon before her death' she was subjected to cruelty or harassment by husband/relatives for or in connection with dowry, the court SHALL PRESUME they caused the dowry death. 'Soon before' means a live and proximate link, not an immediate countdown (Satbir Singh v. State of Haryana, 2021).",
+          "Presumption as to Abetment of Suicide by Married Woman (Sec. 113A IEA / Sec. 117 BSA - 'MAY PRESUME'): Discretionary presumption where a married woman commits suicide within 7 years of marriage and was subjected to cruelty (Sec. 498A IPC / Sec. 86 BNS) by husband/relatives - court MAY presume abetment having regard to all circumstances.",
+          "Birth During Marriage - Conclusive Proof of Legitimacy (Sec. 112 IEA / Sec. 116 BSA): Child (BSA replaced 'son' with gender-neutral 'child') born during a valid marriage OR within 280 days after its dissolution (mother remaining unmarried) is CONCLUSIVELY presumed legitimate unless NON-ACCESS between spouses is proved (note Nandlal Wasudeo Badwaik, 2014 on court-ordered DNA proof).",
+          "General Discretionary Presumptions (Sec. 114 IEA / Sec. 119 BSA - 'MAY PRESUME'): Court may presume natural course of events, human conduct, and public/private business - famous Illustrations: (a) possessor of recently stolen goods is thief/receiver, (b) accomplice is unworthy of credit unless corroborated, (e) official/judicial acts were regularly performed, and (g) withholding available evidence implies it would be unfavourable.",
+          "Presumption of Absence of Consent in Rape (Sec. 114A IEA / Sec. 120 BSA - 'SHALL PRESUME'): In prosecutions for aggravated/custodial/gang rape (Sec. 376(2) IPC / Sec. 64(2) BNS) where sexual intercourse by the accused is proved and the survivor states in evidence that she did NOT consent, the court SHALL PRESUME she did not consent."
+        ],
+        "caseLaws": [
+          {
+            "name": "Satbir Singh v. State of Haryana",
+            "citation": "2021 6 SCC 1",
+            "principle": "Clarified Section 113B IEA read with Section 304B IPC: 'soon before her death' does not mean 'immediately before' - prosecution must show a proximate and live link between dowry cruelty and unnatural death, whereupon the mandatory presumption shifts the onus onto the defence."
+          },
+          {
+            "name": "Kans Raj v. State of Punjab",
+            "citation": "2000 5 SCC 207",
+            "principle": "Held that the proximity test under Section 113B depends on facts of each case and warns against roping in distant in-laws without specific evidence of dowry harassment."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Compare the nature of the presumption under Section 113A (Abetment of Suicide) vs Section 113B (Dowry Death) IEA / Sections 117 vs 118 BSA, and explain 'soon before her death'.",
+            "a": "Section 113A / Sec. 117 BSA is discretionary ('may presume'), whereas Section 113B / Sec. 118 BSA is mandatory ('shall presume'). 'Soon before her death' means a proximate, live causal link between dowry cruelty and death (Satbir Singh), not necessarily the exact preceding hour or day."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u4-t3": {
+      "id": "loe-u4-t3",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Estoppel (Section 115 IEA / Section 121 BSA, 2023) is an equitable rule of evidence barring a person from denying the truth of a fact he previously led another person to believe and act upon ('Allegans contraria non est audiendus' - a person cannot blow hot and cold). Sections 116-117 (Secs. 122-123 BSA) codify specific estoppels of tenants, licensees, bailees, and bill-of-exchange acceptors.",
+        "legalProvision": "Sections 115, 116, & 117, Indian Evidence Act, 1872 (Sections 121, 122, & 123, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Derived from Pickard v. Sears (1837), Estoppel prevents unfair inconsistency and fraud. Importantly, Estoppel is a rule of evidence (generally a shield, though Promissory Estoppel against Government can found a cause of action in India per Motilal Padampat Sugar Mills) and NEVER operates against a statute or a minor.",
+        "keyPoints": [
+          "Three Essentials of Estoppel (Sec. 115 IEA / Sec. 121 BSA): (1) Intentional representation by declaration, act, or omission (even silence where duty to speak exists) of an existing fact, (2) Reliance - the other party genuinely believed the representation to be true, and (3) Action / Alteration of Position - the other party acted upon that belief to his detriment (e.g., university issuing an exam admit card and later cancelling the result - Sri Krishan v. Kurukshetra University).",
+          "Kinds of Estoppel: (1) Estoppel by Matter of Record (judgment/Res Judicata), (2) Estoppel by Deed (parties to a formal deed cannot deny its recitals), (3) Estoppel in Pais / by Conduct (Sec. 115 / Sec. 121 BSA - words, acts, or negligent silence), (4) Equitable / Promissory Estoppel (binds even the Government to clear future promises acted upon by citizens unless overriding public interest justifies withdrawal - Motilal Padampat), and (5) Issue Estoppel & Estoppel by Election.",
+          "Estoppel of Tenant & Licensee (Sec. 116 / Sec. 122 BSA): A tenant of immovable property (during continuance of tenancy) or licensee in possession CANNOT deny that his landlord/licensor had valid title AT THE BEGINNING of the tenancy/license (he may, however, show title expired subsequently).",
+          "Estoppel of Acceptor of Bill, Bailee & Licensee (Sec. 117 / Sec. 123 BSA): Acceptor of a bill of exchange cannot deny drawer's authority to draw/endorse it; bailee or licensee cannot deny bailor's/licensor's authority at the time of bailment/grant.",
+          "Exceptions Where Estoppel Does NOT Apply: (1) NO estoppel against a STATUTE or Constitution (cannot validate an illegal act), (2) NO estoppel against a MINOR's void contract (Mohori Bibee), (3) NO estoppel when BOTH parties knew the true facts, (4) NO estoppel on a pure point of law, and (5) NO estoppel against sovereign legislative functions."
+        ],
+        "caseLaws": [
+          {
+            "name": "Pickard v. Sears",
+            "citation": "1837 6 Ad & El 469",
+            "principle": "Foundational English authority codified into Section 115 IEA: where a person wilfully causes another to believe a state of things and induces him to act on it, he is estopped from asserting a contrary state of things."
+          },
+          {
+            "name": "Motilal Padampat Sugar Mills Co. Ltd. v. State of U.P.",
+            "citation": "AIR 1979 SC 621",
+            "principle": "Established Promissory Estoppel in India as a potent equitable sword: the Government is bound by its clear tax-exemption promise once a citizen alters position relying on it, absent overriding public interest."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three essentials of Estoppel under Section 115 IEA (Section 121 BSA), and list three situations where Estoppel does NOT operate.",
+            "a": "Essentials: (1) Representation by declaration/act/omission, (2) Belief/reliance by the other party, and (3) Acting upon that belief. Exceptions: No estoppel against a statute/Constitution, against a minor's void contract, or when both parties already knew the truth."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u4-t4": {
+      "id": "loe-u4-t4",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 4",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Although Estoppel, Res Judicata, Waiver, and Presumption all restrict what a party may argue or prove in court, they differ sharply in legal source and effect: Estoppel bars a party from contradicting his own prior conduct (Sec. 115 IEA / Sec. 121 BSA), Res Judicata bars re-litigating an already decided suit (Sec. 11 CPC), Waiver is an intentional relinquishment of a known legal right, and Presumption is a judicial inference drawn from proved facts.",
+        "legalProvision": "Section 115 IEA / Section 121 BSA (Estoppel); Section 11 CPC (Res Judicata); Section 63 ICA (Waiver); Sections 4 & 114 IEA / Sections 2 & 119 BSA (Presumptions)",
+        "meaning": "Exam questions in Unit 4 routinely ask candidates to distinguish Estoppel from Res Judicata, Waiver, and Presumptions because all four prevent reopening factual or legal contentions through different mechanisms.",
+        "keyPoints": [
+          "Estoppel vs Res Judicata: (1) Source - Estoppel flows from a PARTY's own representation/conduct (Sec. 115 IEA / Sec. 121 BSA), whereas Res Judicata flows from a COURT's final adjudication (Sec. 11 CPC); (2) Effect - Estoppel shuts the MOUTH of a party from pleading a contrary fact, whereas Res Judicata ousts the JURISDICTION of the court to re-try the issue; (3) Policy - Estoppel rests on equity and fairness between parties, whereas Res Judicata rests on public policy of finality of litigation ('Interest reipublicae ut sit finis litium').",
+          "Estoppel vs Waiver: (1) Nature - Waiver is contractual/voluntary intentional relinquishment of a KNOWN right (e.g., Sec. 63 Contract Act), whereas Estoppel is an equitable rule of evidence; (2) Detrimental Reliance - Waiver requires NO alteration of position or detriment to the other party, whereas Estoppel STRICTLY requires acting on the representation to one's prejudice; (3) Cause of Action - Waiver can directly alter substantive rights, whereas classic Estoppel is primarily a defensive rule of evidence (note: Fundamental Rights CANNOT be waived - Basheshar Nath v. CIT).",
+          "Estoppel vs Presumption: (1) Basis - Estoppel arises from a party's personal representation preventing contradiction, whereas Presumption is a logical/statutory inference drawn by the court (May/Shall Presume/Conclusive Proof); (2) Rebuttability - Rebuttable presumptions can be disproved by contrary evidence, whereas Estoppel completely prevents the estopped party from leading contrary evidence at all; (3) Scope - Presumptions apply in both civil and criminal trials, whereas Estoppel under Sec. 115 / Sec. 121 BSA applies primarily to civil proceedings (not criminal prosecutions except narrow Issue Estoppel).",
+          "Estoppel vs Admission: An Admission (Sec. 31 / Sec. 25 BSA) is NOT conclusive proof and can be explained away as mistaken, whereas Estoppel bars any contradiction once the other party acted upon it."
+        ],
+        "caseLaws": [
+          {
+            "name": "Basheshar Nath v. Commissioner of Income Tax",
+            "citation": "AIR 1959 SC 149",
+            "principle": "Constitution Bench held that a citizen CANNOT waive his Fundamental Rights (such as Article 14), distinguishing contractual Waiver from inalienable constitutional protections."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State two key differences each between (a) Estoppel and Res Judicata, and (b) Estoppel and Waiver.",
+            "a": "(a) Estoppel arises from a party's conduct and silences the party (rule of evidence), whereas Res Judicata arises from a court judgment and bars court jurisdiction (public policy of finality). (b) Waiver is voluntary relinquishment of a known right needing no detrimental reliance, whereas Estoppel requires the other party to rely and act upon a representation."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

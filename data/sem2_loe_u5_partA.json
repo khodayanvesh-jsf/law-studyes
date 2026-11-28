@@ -1,0 +1,173 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-evidence",
+      "title": "Law of Evidence (IEA / BSA)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Witness Competency, Privileged Communications, Accomplice, Witness Examination, Hostile Witness, Refreshing Memory & Improper Evidence",
+          "topics": [
+            {"id": "loe-u5-t1", "title": "1. Competency to Testify - Child, Unsound Mind, Speech-Impaired, Spouses & Number of Witnesses (Secs. 118-120 & 134 IEA / Secs. 124-126 & 139 BSA)"},
+            {"id": "loe-u5-t2", "title": "2. Privileged Communications - Judges, Marital, Affairs of State, Official & Professional Privilege (Secs. 121-131 IEA / Secs. 127-136 BSA)"},
+            {"id": "loe-u5-t3", "title": "3. Testimony of Accomplice (Sec. 133 read with Sec. 114 Illus. (b) IEA / Sec. 138 read with Sec. 119 BSA) & Rule of Corroboration"},
+            {"id": "loe-u5-t4", "title": "4. Examination of Witnesses - Chief, Cross, Re-Examination & Leading Questions (Secs. 135-145 IEA / Secs. 140-148 BSA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loe-u5-t1": {
+      "id": "loe-u5-t1",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Section 118 IEA (Section 124 BSA, 2023), EVERY person is a competent witness unless prevented by tender age, extreme old age, or physical/mental disease from understanding questions and giving rational answers. Speech-impaired witnesses testify via writing or signs (Sec. 119 / Sec. 125 BSA), spouses are competent for/against each other (Sec. 120 / Sec. 126 BSA), and under Section 134 (Sec. 139 BSA) evidence is WEIGHED, not counted - a single wholly reliable eyewitness suffices for conviction.",
+        "legalProvision": "Sections 118, 119, 120, & 134, Indian Evidence Act, 1872 (Sections 124, 125, 126, & 139, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Competency (mental capacity to testify) is distinct from Compellability (legal obligation to answer) and Credibility (weight attached to testimony). BSA Section 124 modernized terminology by replacing 'lunatic' with 'person of unsound mind'.",
+        "keyPoints": [
+          "Universal Competency Test (Sec. 118 IEA / Sec. 124 BSA): Sole criterion is intellectual capacity to understand questions and give rational answers - NO minimum or maximum age bar exists in India. A person of unsound mind (Explanation) is competent during LUCID INTERVALS when capable of rational answers.",
+          "Child Witness & Voir Dire Test: Before recording a child's testimony, the judge conducts a preliminary 'Voir Dire' examination (putting simple general questions) to verify maturity and freedom from tutoring; oath is dispensed with for children under 12 (Sec. 4, Oaths Act, 1969), and credible child testimony can sustain conviction (Rameshwar v. State of Rajasthan; Dattu Ramrao Sakhare).",
+          "Witness Unable to Communicate Verbally (Sec. 119 IEA / Sec. 125 BSA): A deaf, dumb, or speech-impaired witness may testify in writing or by intelligible signs in open court (assisted by a qualified interpreter and mandatory videography per the 2013 Amendment); such evidence is legally deemed ORAL EVIDENCE (State of Rajasthan v. Darshan Singh).",
+          "Competency of Husband & Wife (Sec. 120 IEA / Sec. 126 BSA): In ALL civil suits, parties and their spouses are competent witnesses; in criminal proceedings against any person, the husband or wife of such person is a competent witness (subject to marital privilege under Sec. 122 / Sec. 128 BSA).",
+          "Number of Witnesses - Quality Over Quantity (Sec. 134 IEA / Sec. 139 BSA): No particular number of witnesses is required to prove any fact; conviction can legally rest on the testimony of a SINGLE wholly reliable eyewitness (Vadivelu Thevar v. State of Madras classified witnesses as wholly reliable, wholly unreliable, and partly reliable)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Vadivelu Thevar v. State of Madras",
+            "citation": "AIR 1957 SC 614",
+            "principle": "Authoritative ruling on Section 134 IEA (Sec. 139 BSA): 'Evidence has to be weighed and not counted' - a court can convict on the testimony of a single wholly reliable witness without corroboration."
+          },
+          {
+            "name": "Rameshwar v. State of Rajasthan",
+            "citation": "AIR 1952 SC 54",
+            "principle": "Held that a child witness passing the competency test under Section 118 is a valid witness even without formal oath, though courts check carefully against tutoring."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the 'Voir Dire' test for child witnesses under Section 118 IEA (Section 124 BSA), and what three categories of witnesses did Vadivelu Thevar identify under Section 134?",
+            "a": "Voir Dire is a preliminary judicial inquiry of simple questions to verify a child understands questions and gives rational answers. Vadivelu Thevar classified witnesses into (1) wholly reliable (no corroboration needed), (2) wholly unreliable (reject), and (3) neither wholly reliable nor unreliable (corroboration required)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u5-t2": {
+      "id": "loe-u5-t2",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Even when a witness is competent, public policy shields certain confidential relationships from forced courtroom disclosure under Sections 121-131 IEA (Sections 127-136 BSA, 2023): Judicial Privilege, Communications During Marriage, Unpublished Affairs of State, Official Confidence, Police Informant Identity, and Advocate-Client Professional Communications (merged into Section 132 BSA).",
+        "legalProvision": "Sections 121-131, Indian Evidence Act, 1872 (Sections 127-136, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Privileged communications protect vital social institutions - domestic peace between spouses, fearless judicial independence, national security, and candid legal advice - even at the cost of withholding logically relevant facts.",
+        "keyPoints": [
+          "Judges & Magistrates (Sec. 121 / Sec. 127 BSA): No Judge or Magistrate can be compelled (except by special order of a superior court) to answer questions about his own judicial conduct or anything coming to his knowledge in court as judge, though he MAY be examined on collateral events witnessed in court (e.g., a murder occurring in the courtroom).",
+          "Communications During Marriage (Sec. 122 / Sec. 128 BSA): A spouse CANNOT be compelled OR EVEN PERMITTED (without the other spouse's consent) to disclose confidential communications made DURING marriage (continues even after divorce/death - Ram Bharosey; M.C. Verghese v. T.J. Ponnan). Exceptions: suits between married persons, OR prosecution of one spouse for a crime committed against the other. Note: Covers only COMMUNICATIONS, not observed acts/conduct.",
+          "Affairs of State & Official Communications (Secs. 123-125 / Secs. 129-131 BSA): Unpublished official records relating to Affairs of State cannot be produced without department head's permission (court may inspect the document to balance national security vs justice - State of U.P. v. Raj Narain & S.P. Gupta; Sec. 124 protects official confidence; Sec. 125 shields police/revenue informant identities).",
+          "Professional / Advocate-Client Privilege (Secs. 126-129 IEA -> Secs. 132-134 BSA): An advocate (plus clerks/interpreters/employees - merged into Sec. 132 BSA) CANNOT disclose any client communication, document contents, or legal advice without express client consent (privilege belongs to the CLIENT, survives termination of employment, and is NOT waived merely by client testifying - Sec. 128 / Sec. 133 BSA). TWO STRICT EXCEPTIONS where privilege FAILS: (1) Communication made in furtherance of an ILLEGAL PURPOSE, and (2) Any crime or fraud observed by the advocate committed AFTER commencement of employment.",
+          "Title-Deeds of Non-Party Witness (Secs. 130-131 / Secs. 135-136 BSA): A witness who is NOT a party to the suit cannot be compelled to produce his own title-deeds or incriminating documents."
+        ],
+        "caseLaws": [
+          {
+            "name": "M.C. Verghese v. T.J. Ponnan",
+            "citation": "AIR 1970 SC 1876",
+            "principle": "Held that defamatory letters written by a husband to his wife are privileged under Section 122 IEA (Sec. 128 BSA) and cannot be proved by the wife in a defamation case unless husband consents - though a third party who independently intercepts the letter may prove it."
+          },
+          {
+            "name": "State of Uttar Pradesh v. Raj Narain",
+            "citation": "AIR 1975 SC 865",
+            "principle": "Held that the executive's claim of 'Affairs of State' privilege under Section 123 is NOT final; courts retain power to scrutinize whether disclosure genuinely harms public interest versus the administration of justice."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the two exceptions where Advocate-Client Privilege (Sec. 126 IEA / Sec. 132 BSA) does NOT apply, and explain who owns the privilege under Section 122 (Marital Communication).",
+            "a": "Advocate privilege does NOT protect (1) communications in furtherance of an illegal purpose, or (2) any crime/fraud observed by the advocate committed after engagement. Under Sec. 122 / Sec. 128 BSA, the communicating spouse owns the privilege (the recipient spouse cannot even voluntarily disclose it without consent)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u5-t3": {
+      "id": "loe-u5-t3",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "An Accomplice (particeps criminis - a guilty associate or partner in crime who turns approver under Sec. 306 CrPC / Sec. 343 BNSS) is a COMPETENT witness against co-accused under Section 133 IEA (Section 138 BSA), and a conviction is NOT illegal merely because it rests on uncorroborated accomplice testimony. However, reading Section 133 harmoniously with Section 114 Illustration (b) (Sec. 119 BSA), courts enforce a virtually universal rule of prudence requiring independent material corroboration (Rameshwar; Dagdu).",
+        "legalProvision": "Section 133 read with Section 114 Illustration (b), IEA 1872 (Section 138 read with Section 119 BSA, 2023); Section 306 CrPC / Section 343 BNSS",
+        "meaning": "Accomplices are often the only insiders who know how secret conspiracies or gang crimes occurred, yet they carry strong motives to lie and shift blame onto co-accused in exchange for pardon. Indian law harmonizes the apparent tension between Sec. 133 (rule of law) and Sec. 114(b) (rule of prudence).",
+        "keyPoints": [
+          "Who Is (and Is Not) an Accomplice?: A conscious guilty participant in the crime (principal offender or abettor/conspirator). NOT accomplices: a mere reluctant eyewitness, a decoy/trap witness aiding police, or a prosecutrix/victim of rape or extortion (Rameshwar v. State of Rajasthan - a rape survivor is a victim, NEVER an accomplice!).",
+          "Reconciling Section 133 (Sec. 138 BSA) & Section 114 Illustration (b) (Sec. 119 BSA): Section 133 states a RULE OF LAW (accomplice is competent; uncorroborated conviction is not illegal); Section 114 Illustration (b) states a RULE OF PRUDENCE ('an accomplice is unworthy of credit unless corroborated in material particulars') that has hardened into a virtual rule of law.",
+          "Double Test for Approver / Accomplice Testimony (Sarwan Singh v. State of Punjab, 1957): Before acting on an approver's evidence, the court MUST apply a strict two-stage test - (1) FIRST, verify whether the accomplice is himself a RELIABLE witness (if wholly unreliable, reject outright), and (2) SECOND, verify independent corroboration on material particulars.",
+          "Four Rules on Nature & Extent of Corroboration (R. v. Baskerville & Rameshwar): (1) Need not corroborate every single detail (else accomplice testimony would be redundant), (2) Must corroborate BOTH the commission of the crime AND the identity/connection of EACH accused, (3) Corroboration must come from an INDEPENDENT source (one accomplice CANNOT corroborate another accomplice!), and (4) Corroboration may be circumstantial (e.g., Sec. 27 recovery)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Sarwan Singh v. State of Punjab",
+            "citation": "AIR 1957 SC 637",
+            "principle": "Established the mandatory 'Double Test' for evaluating an approver/accomplice's testimony: first test intrinsic reliability of the witness, and only if reliable, check for independent material corroboration."
+          },
+          {
+            "name": "Dagdu v. State of Maharashtra",
+            "citation": "1977 3 SCC 68",
+            "principle": "Harmonized Section 133 and Section 114 Illustration (b): while there is no legal bar to convicting on uncorroborated accomplice evidence, prudence virtually always demands corroboration in material particulars."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How do Indian courts harmonize Section 133 IEA (Section 138 BSA) with Section 114 Illustration (b) (Section 119 BSA), and can one accomplice corroborate another accomplice?",
+            "a": "Sec. 133 is the rule of law (competency/legality), while Sec. 114(b) is the hardened rule of prudence requiring independent corroboration (applied via Sarwan Singh's Double Test). No - corroboration must come from an independent source, never from another accomplice."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u5-t4": {
+      "id": "loe-u5-t4",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter X (Secs. 135-145 IEA / Secs. 140-148 BSA, 2023) prescribes the structured three-stage adversarial examination of every witness: (1) Examination-in-Chief by the calling party, (2) Cross-Examination by the adverse party (the greatest legal engine ever invented for discovering truth), and (3) Re-Examination to clarify ambiguities. Leading Questions (suggesting the desired answer) are prohibited in Chief and Re-Examination, but freely permitted in Cross-Examination (Secs. 141-143 IEA -> merged into Sec. 146 BSA).",
+        "legalProvision": "Sections 135-145, Indian Evidence Act, 1872 (Sections 140-148, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "The ordered sequence ensures fairness: each party first presents its witness's unprompted account, then faces rigorous testing by the opponent, and finally resolves any confusion created during cross-examination.",
+        "keyPoints": [
+          "Order of Production & Admissibility (Secs. 135-136 / Secs. 140-141 BSA): Regulated by CPC/CrPC (BNSS) or court discretion; under Sec. 136 / Sec. 141 BSA, the Judge decides admissibility of every piece of proposed evidence.",
+          "Three Stages of Witness Examination (Secs. 137-138 IEA / Secs. 142-143 BSA): (1) Examination-in-Chief (by party calling witness - must relate strictly to relevant facts), (2) Cross-Examination (by adverse party - NOT confined to facts stated in Chief; tests veracity, accuracy, and bias), and (3) Re-Examination (by calling party - strictly confined to explaining matters raised in Cross-Examination; if new matter is introduced with court leave, adverse party gets a fresh right to cross-examine).",
+          "Document Producer & Character Witnesses (Secs. 139-140 / Secs. 144-145 BSA): A person summoned solely to produce a document does NOT become a witness and cannot be cross-examined unless called as a witness (Sec. 139); witnesses to character may be cross-examined and re-examined (Sec. 140).",
+          "Leading Questions (Secs. 141-143 IEA -> consolidated into Sec. 146 BSA, 2023): Any question suggesting the answer which the questioner wishes/expects ('Did you see Ram stab Shyam on Monday at 8 PM?'). PROHIBITED in Examination-in-Chief and Re-Examination if objected to, EXCEPT on introductory, undisputed, or already sufficiently proved matters (with court permission); FREELY ALLOWED in Cross-Examination.",
+          "Contradicting Previous Written Statements (Sec. 145 IEA / Sec. 148 BSA): A witness may be cross-examined on prior written statements (e.g., Sec. 161 police statements, letters, FIR) without first showing the writing - BUT to legally CONTRADICT him by the writing, his attention MUST first be drawn specifically to those contradictory lines so he has a fair chance to explain (Tahsildar Singh v. State of U.P.)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Tahsildar Singh v. State of Uttar Pradesh",
+            "citation": "AIR 1959 SC 1012",
+            "principle": "6-judge Constitution Bench laid down the exact procedure under Section 145 IEA read with Section 162 CrPC for confronting and contradicting a witness with his prior police statement (material omissions amounting to contradictions)."
+          },
+          {
+            "name": "Varkey Joseph v. State of Kerala",
+            "citation": "1993 Supp (3) SCC 745",
+            "principle": "Held that prosecutors asking persistent leading questions on crucial disputed facts during Examination-in-Chief violates Section 142 IEA and compromises the accused's Article 21 right to a fair trial."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three stages of witness examination under Sections 137-138 IEA (Sections 142-143 BSA), and explain the exact rule governing Leading Questions under Section 146 BSA.",
+            "a": "Examination-in-Chief (calling party), Cross-Examination (adverse party - not limited to Chief), and Re-Examination (calling party - limited to explaining cross-examination ambiguities). Leading questions are prohibited in Chief and Re-Examination (except introductory/undisputed facts with court leave) but permitted freely in Cross-Examination."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

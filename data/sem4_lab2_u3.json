@@ -1,0 +1,115 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-ii",
+      "title": "Labour Law - II",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper I",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Employees' State Insurance Act, 1948 - Applicability, ESIC/Standing Committee/Medical Benefit Council, Contributions & Six Benefits",
+          "topics": [
+            {"id": "lab2-u3-t1", "title": "1. ESI Act, 1948 - Object, Applicability (Sec. 1), Definitions (Insured Person, Employment Injury, Wages - Sec. 2) & ESIC Corporation (Secs. 3-25)"},
+            {"id": "lab2-u3-t2", "title": "2. Contributions (Employer & Employee Shares - Secs. 38-45) & Six Social Security Benefits (Sec. 46)"},
+            {"id": "lab2-u3-t3", "title": "3. Adjudication of Disputes & Claims - Employees' Insurance Court (EI Court - Secs. 74-83) & Bar on Civil Suits / Double Benefit (Secs. 53 & 61)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab2-u3-t1": {
+      "id": "lab2-u3-t1",
+      "subtitle": "Labour Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Employees' State Insurance (ESI) Act, 1948 (consolidated into the Code on Social Security, 2020) is India's premier contributory social-insurance statute protecting employees drawing wages up to Rs. 21,000/month (Rs. 25,000 for persons with disability) in factories and notified establishments (10+ employees) across sickness, maternity, and employment injury, administered by the tripartite Employees' State Insurance Corporation (ESIC).",
+        "legalProvision": "Sections 1, 2(8), 2(9), 2(14), 2(22), & 3-25, Employees' State Insurance Act, 1948; Code on Social Security, 2020",
+        "meaning": "Unlike the 1923 Employees' Compensation Act (which places lump-sum liability solely on the individual employer), ESI pools employer, employee, and government contributions into a permanent insurance fund providing lifelong medical care and periodic cash benefits.",
+        "keyPoints": [
+          "Applicability & Wage Ceiling (Sec. 1 & Sec. 2(9)): Applies to all non-seasonal factories (10+ employees) and notified shops, hotels, cinemas, road transport, and private educational/medical institutions (10+ employees in most States); covers employees drawing monthly wages up to Rs. 21,000 (Rs. 25,000 for disabled employees; includes contract labour and casual employees - Royal Talkies v. ESIC).",
+          "Key Definitions (Sec. 2): 'Employment Injury' (Sec. 2(8) - personal injury caused by accident or occupational disease arising out of and in the course of insurable employment, whether inside or outside India, including commuting accidents under Sec. 51C); 'Insured Person' (Sec. 2(14) - person who is or was an employee in respect of whom contributions are or were payable).",
+          "Three Administrative Bodies (Secs. 3-25): (1) ESIC (Employees' State Insurance Corporation - apex tripartite body corporate chaired by Union Labour Minister), (2) Standing Committee (Sec. 8 - executive committee administering day-to-day ESIC affairs), and (3) Medical Benefit Council (Sec. 10 - expert body advising on medical treatment standards and certification)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Royal Talkies, Hyderabad v. Employees' State Insurance Corporation",
+            "citation": "AIR 1978 SC 1478",
+            "principle": "Held that canteen and cycle-stand workers employed through contractors inside a cinema theatre are covered as 'employees' under Section 2(9) ESI Act because their work is incidental to the cinema business."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the current monthly wage ceiling for ESI coverage and name the three statutory bodies administering the ESI Act, 1948.",
+            "a": "Rs. 21,000/month (Rs. 25,000/month for persons with disability). The three statutory bodies are (1) Employees' State Insurance Corporation (ESIC), (2) Standing Committee, and (3) Medical Benefit Council."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u3-t2": {
+      "id": "lab2-u3-t2",
+      "subtitle": "Labour Law - II - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Every covered employee must be insured (Sec. 38) through monthly Contributions paid into the ESI Fund (Employer share 3.25% + Employee share 0.75% = 4% of wages; low-wage workers up to Rs. 176/day are exempt from employee share). Section 46 guarantees SIX comprehensive social-security benefits: Sickness, Maternity, Disablement, Dependants', Medical, and Funeral Benefits.",
+        "legalProvision": "Sections 38-45 & 46-59, Employees' State Insurance Act, 1948",
+        "meaning": "ESI benefits are non-assignable and non-attachable (Sec. 60), protecting insured workers and their families during medical crises without exhausting family savings.",
+        "keyPoints": [
+          "Contributions & Collection (Secs. 38-45): Principal employer pays BOTH Employer's contribution (3.25% of wages) and Employee's contribution (0.75% of wages, deducted from wages - Sec. 40) within 15 days of month-end (exempt for employees earning <= Rs. 176/day); principal employer may recover contractor-employee contributions from the immediate employer/contractor (Sec. 41). Social Security Officers inspect records (Sec. 45).",
+          "Cash Benefits Under Section 46 (Sickness, Maternity, Disablement & Dependants'): (1) SICKNESS BENEFIT (Sec. 49 - 70% of standard benefit rate for up to 91 days; Extended Sickness Benefit @ 80% for up to 2 years for 34 chronic diseases), (2) MATERNITY BENEFIT (Sec. 50 - 100% average daily wages for 26 weeks up to 2 children, 12 weeks thereafter, 6 weeks for miscarriage, + Rs. 7,500 medical bonus), (3) DISABLEMENT BENEFIT (Sec. 51 - Temporary @ 90%; Permanent Total/Partial @ 90% lifelong proportionate to earning loss from Day 1), and (4) DEPENDANTS' BENEFIT (Sec. 52 - 90% monthly pension to widow/children/parents on employment-injury death).",
+          "Medical Benefit & Funeral Expenses (Secs. 46(1)(e)-(f) & 56-59): MEDICAL BENEFIT provides comprehensive outpatient, inpatient, specialist, and super-specialty treatment for the insured person AND family from Day 1 with zero financial cap; FUNERAL EXPENSES (Sec. 46(1)(f)) pays a lump sum up to Rs. 15,000 to the eldest surviving family member."
+        ],
+        "caseLaws": [
+          {
+            "name": "Regional Director, ESIC v. Francis De Costa",
+            "citation": "1996 6 SCC 1",
+            "principle": "3-judge Bench clarified Section 2(8) / Section 51C: an injury occurring on a public road 1 km away while bicycling to work without causal employment nexus is not an 'employment injury', later prompting Parliament to add Section 51E covering commuting accidents with nexus."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name all six social security benefits provided under Section 46 of the ESI Act, 1948, and state which benefit applies from Day 1 without a prior contribution period.",
+            "a": "Sickness, Maternity, Disablement, Dependants', Medical, and Funeral Benefits. Medical Benefit and Employment Injury Disablement/Dependants' Benefits apply from Day 1 without any qualifying contribution period."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab2-u3-t3": {
+      "id": "lab2-u3-t3",
+      "subtitle": "Labour Law - II - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "All disputes regarding ESI coverage, contributions, or benefit claims are adjudicated exclusively by the Employees' Insurance Court (EI Court - Secs. 74-75), barring Civil Court jurisdiction (Sec. 75(3)). Crucially, Section 53 bars an insured person/dependant from claiming parallel compensation or tort damages under the Employees' Compensation Act, 1923 or any other law for an employment injury.",
+        "legalProvision": "Sections 53, 61, 74, 75, 77, & 82, Employees' State Insurance Act, 1948",
+        "meaning": "Sections 53 and 61 prevent 'double recovery' for the exact same workplace injury once an establishment is covered under the ESI scheme.",
+        "keyPoints": [
+          "Employees' Insurance Court / EI Court (Secs. 74-77): Constituted by State Government (presided over by a Judicial Officer or 5-year legal practitioner); decides whether a person is an employee, rate of wages/contribution, right to any benefit, and recovery claims; application must be filed within 3 YEARS from date cause of action arose (Sec. 77(1A)).",
+          "Appeal to High Court (Sec. 82): No appeal lies from an EI Court order EXCEPT to the High Court within 60 DAYS if it involves a SUBSTANTIAL QUESTION OF LAW.",
+          "Bar Against Receiving Compensation Under Other Laws (Secs. 53 & 61): Under Sec. 53, an insured person or dependant CANNOT claim or receive any compensation/damages under the Employees' Compensation Act, 1923 or tort law in respect of an employment injury (A. Trehan v. Associated Electrical Agencies; Western India Plywood v. P. Ashokan); under Sec. 61, an employee receiving an ESI benefit cannot simultaneously claim a similar statutory benefit under another enactment."
+        ],
+        "caseLaws": [
+          {
+            "name": "A. Trehan v. Associated Electrical Agencies",
+            "citation": "1996 4 SCC 255",
+            "principle": "Held that Section 53 of the ESI Act creates an absolute statutory bar preventing an ESI-insured employee from claiming compensation under the Workmen's (Employees') Compensation Act, 1923 for an employment injury."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Can an ESI-insured worker who suffers an employment injury sue his employer under the Employees' Compensation Act, 1923 or tort law, and within what time does an appeal lie from the EI Court to the High Court?",
+            "a": "No - Section 53 ESI Act strictly bars claiming compensation under the 1923 Act or tort law for an employment injury (A. Trehan). Appeal from EI Court lies to the High Court within 60 days solely on a substantial question of law (Sec. 82)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

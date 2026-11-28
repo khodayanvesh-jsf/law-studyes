@@ -1,0 +1,129 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-crimes",
+      "title": "Law of Crimes (IPC / BNS)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Public Servants, False Evidence, Documents/Forgery, Marriage Offences, Cruelty & Defamation",
+          "topics": [
+            {"id": "loc-u5-t1", "title": "1. Offences By or Relating to Public Servants (Secs. 166-171 IPC / Secs. 198-205 BNS & PC Act, 1988)"},
+            {"id": "loc-u5-t2", "title": "2. False Evidence (Perjury) and Offences Against Public Justice (Secs. 191-229A IPC / Secs. 227-269 BNS)"},
+            {"id": "loc-u5-t3", "title": "3. Offences Relating to Documents - Forgery, Making a False Document & Counterfeiting (Secs. 463-489E IPC / Secs. 336-344 BNS)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loc-u5-t1": {
+      "id": "loc-u5-t1",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter IX IPC (Sections 166-171) / Chapter XII BNS (Sections 198-205) penalizes abuse of official authority by public servants - including disobeying law to cause injury, police failure to record rape/atrocity FIRs (Sec. 166A / Sec. 199 BNS), hospitals denying free treatment to rape/acid victims (Sec. 166B / Sec. 200 BNS), unlawful trade, and impersonating a public servant. Bribery and corruption (old Secs. 161-165A IPC) are now governed by the Prevention of Corruption Act, 1988 (amended 2018).",
+        "legalProvision": "Sections 166-171 IPC, 1860 (Sections 198-205 BNS, 2023); Prevention of Corruption Act, 1988 (Secs. 7-13, as amended in 2018)",
+        "meaning": "Public office is a public trust. Because citizens depend on honest policing, administration, and public health services, criminal law imposes special duties on public servants while protecting their uniforms and authority from impersonators.",
+        "keyPoints": [
+          "Public Servant Disobeying Law & Framing Incorrect Document (Secs. 166-167 IPC / Secs. 198 & 201 BNS): Knowingly disobeying a legal direction intending to injure any person (up to 1 year) or framing an incorrect official record/translation to cause injury (up to 3 years).",
+          "Mandatory FIR & Free Victim Treatment (Secs. 166A & 166B IPC / Secs. 199-200 BNS): Inserted in 2013; a public servant (police officer) who fails to record an FIR in cognizable offences against women/rape/trafficking/acid attacks faces 6 months to 2 years' RI (Sec. 166A / Sec. 199 BNS); any public or private hospital in-charge denying free first-aid/treatment to rape or acid attack survivors faces up to 1 year (Sec. 166B / Sec. 200 BNS).",
+          "Unlawful Trade, Bidding & Personating a Public Servant (Secs. 168-171 IPC / Secs. 202-205 BNS): Bars public servants from engaging in prohibited private trade or buying/bidding for property in official auctions; pretending to hold a public office or wearing police/official garb fraudulently carries up to 3 years (Sec. 170 / Sec. 204 BNS - raised from 2 years under IPC).",
+          "Bribery & Corruption (Prevention of Corruption Act, 1988 - Amended 2018): Old IPC Sections 161-165A were shifted into the PC Act, 1988; Section 7 punishes taking 'undue advantage' (3 to 7 years), Section 8 criminalizes bribe-giving (except coerced victims reporting within 7 days), and Section 13 punishes criminal misconduct / disproportionate assets (prior sanction required under Sec. 19 PC Act & Sec. 197 CrPC / Sec. 218 BNSS)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Lalita Kumari v. Government of Uttar Pradesh",
+            "citation": "2014 2 SCC 1",
+            "principle": "5-judge Constitution Bench held that registration of FIR is MANDATORY under Section 154 CrPC if information discloses a cognizable offence, reinforcing accountability of erring police officers under Section 166A IPC / Section 199 BNS."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What offences are punishable under Sections 166A and 166B IPC (Sections 199 and 200 BNS), and which statute now governs bribery by public servants?",
+            "a": "Sec. 166A / Sec. 199 BNS punishes police officers failing to record FIRs for specified offences against women (6 months to 2 years); Sec. 166B / Sec. 200 BNS punishes hospitals denying free treatment to rape/acid survivors. Bribery is governed by the Prevention of Corruption Act, 1988 (amended 2018)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u5-t2": {
+      "id": "loc-u5-t2",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter XI IPC (Sections 191-229A) / Chapter XIV BNS (Sections 227-269) safeguards the purity of courts by punishing Giving False Evidence / Perjury (Sec. 191 / Sec. 227 BNS), Fabricating False Evidence (Sec. 192 / Sec. 228 BNS), Causing Disappearance of Evidence (Sec. 201 / Sec. 238 BNS), Screening Offenders (Sec. 212 / Sec. 249 BNS), False Criminal Charges (Sec. 211 / Sec. 248 BNS), and Intentional Insult to a Sitting Judge (Sec. 228 / Sec. 267 BNS).",
+        "legalProvision": "Sections 191-195, 201, 211-212, & 228 IPC, 1860 (Sections 227-231, 238, 248-249, & 267 BNS, 2023); Section 340 CrPC / Section 379 BNSS",
+        "meaning": "Courts rely on truthful sworn testimony and genuine documents to dispense justice. Deliberate perjury, planted evidence, or tampering with crime scenes strikes directly at the administration of justice and carries severe prison terms - even death/life if perjury causes an innocent person's execution.",
+        "keyPoints": [
+          "Giving False Evidence / Perjury (Sec. 191 IPC / Sec. 227 BNS): Whoever, legally bound by oath or express law to state the truth (including signing a sworn Affidavit or Verification), makes a statement which is false and which he knows/believes to be false or does not believe to be true.",
+          "Fabricating False Evidence (Sec. 192 IPC / Sec. 228 BNS): Causing any false circumstance to exist, or making any false entry in a record/electronic record, intending it to appear in evidence and mislead a judge/arbitrator into forming an erroneous opinion (e.g., planting stolen jewels in an innocent rival's locked box).",
+          "Punishments for Perjury (Secs. 193-195 IPC / Secs. 229-231 BNS): False evidence in a judicial proceeding -> up to 7 years + fine (other cases -> 3 years); perjury intended to procure conviction of a CAPITAL offence -> life or 10 years (if an innocent person is actually executed -> DEATH or life, Sec. 194 / Sec. 230 BNS); for life/7+ year offence -> same punishment as that offence (Sec. 195 / Sec. 231 BNS).",
+          "Causing Disappearance of Evidence (Sec. 201 / Sec. 238 BNS) & False Charge (Sec. 211 / Sec. 248 BNS): Destroying evidence or giving false info to screen an offender (e.g., hiding a murder weapon/body) carries up to 7 years (for capital crime), 3 years (for life/10-year crime), or 1/4th term; maliciously instituting a false criminal case carries up to 5 years / 10 years for grave offences under BNS Sec. 248.",
+          "Procedural Safeguard (Sec. 195(1)(b) & Sec. 340 CrPC / Secs. 215 & 379 BNSS): Prosecution for perjury committed in court can ONLY be initiated upon a written complaint by the concerned Court itself after preliminary inquiry, preventing private harassment of witnesses."
+        ],
+        "caseLaws": [
+          {
+            "name": "Zahira Habibulla H. Sheikh v. State of Gujarat (Best Bakery Case)",
+            "citation": "2006 3 SCC 374",
+            "principle": "Convicted a key witness for contempt and highlighted the grave menace of perjury and hostile witnesses turning turtle, underscoring strict enforcement of Section 193 IPC and Section 340 CrPC."
+          },
+          {
+            "name": "Iqbal Singh Marwah v. Meenakshi Marwah",
+            "citation": "2005 4 SCC 370",
+            "principle": "5-judge Constitution Bench clarified that the bar under Section 195(1)(b)(ii) CrPC applies ONLY when forgery/fabrication is committed on a document AFTER it is produced in court custody, not before."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Giving False Evidence (Sec. 191 / Sec. 227 BNS) and Fabricating False Evidence (Sec. 192 / Sec. 228 BNS), and state who can initiate a court-perjury prosecution.",
+            "a": "Sec. 191 applies to making a false statement while legally bound by oath/law (e.g., lying in testimony/affidavit), whereas Sec. 192 applies to creating false circumstances or false documents/electronic records to mislead a court. Under Sec. 195/340 CrPC (Secs. 215/379 BNSS), only the concerned Court can file the perjury complaint."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u5-t3": {
+      "id": "loc-u5-t3",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Forgery (Sec. 463 IPC / Sec. 336(1) BNS) is making any false document or false electronic record (defined in Sec. 464 / Sec. 335 BNS) with intent to cause damage/injury, support a false claim, part with property, or commit fraud. Related aggravated offences cover Forgery of Valuable Security/Will (Sec. 467 / Sec. 338 BNS - up to life), Forgery for Cheating (Sec. 468), Using a Forged Document as Genuine (Sec. 471), and Counterfeiting Currency (Secs. 489A-489E / Secs. 178-182 BNS).",
+        "legalProvision": "Sections 463-477A & 489A-489E IPC, 1860 (Sections 178-182 & 335-344 BNS, 2023)",
+        "meaning": "Commerce, banking, land registries, and courts depend on authentic documents and digital signatures. Importantly, simply making a false statement inside one's OWN genuine document is NOT forgery - 'making a false document' under Section 464 / Section 335 BNS requires falsely attributing execution/authority to someone else or dishonestly altering a completed document (Mohammed Ibrahim v. State of Bihar).",
+        "keyPoints": [
+          "Essentials of Forgery (Sec. 463 IPC / Sec. 336(1) BNS): (1) Making a false document or false electronic record (in whole or in part), AND (2) Intent to cause damage/injury to public or any person, OR support any claim/title, OR cause any person to part with property or enter a contract, OR commit fraud. Simple forgery carries up to 2 years and/or fine (Sec. 465 / Sec. 336(2) BNS).",
+          "Three Modes of 'Making a False Document' (Sec. 464 IPC / Sec. 335 BNS): (1) Dishonestly/fraudulently signing, sealing, or affixing an electronic signature to make it appear executed by another person without authority (includes signing a fictitious or deceased person's name), (2) Dishonestly altering a material part of a completed document without lawful authority (e.g., changing Rs. 1,000 to Rs. 10,000 on a signed cheque), or (3) Dishonestly procuring a signature from someone who is insane, intoxicated, or deceived as to the document's contents.",
+          "Aggravated Forgery & Using Forged Documents: Forgery of court records/public registers (Sec. 466 / Sec. 337 BNS -> 7 years); Forgery of Valuable Security, Will, or Authority to Adopt (Sec. 467 / Sec. 338 BNS -> LIFE imprisonment or 10 years); Forgery for Cheating (Sec. 468 / Sec. 336(3) BNS -> 7 years); Forgery to harm reputation (Sec. 469 / Sec. 336(4) BNS -> 3 years); Knowingly using a forged document as genuine (Sec. 471 / Sec. 340(2) BNS -> same punishment as forgery); Falsification of corporate/employer accounts (Sec. 477A / Sec. 344 BNS -> 7 years).",
+          "Counterfeiting Currency Notes & Coins (Secs. 489A-489E IPC / Secs. 178-182 BNS): Counterfeiting, trafficking, or knowingly using/possessing forged Indian currency notes or bank notes carries up to LIFE imprisonment or 10 years."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mohammed Ibrahim v. State of Bihar",
+            "citation": "2009 8 SCC 751",
+            "principle": "Held that executing a sale deed in one's OWN name falsely claiming ownership of someone else's land may be cheating of the buyer, but is NOT 'making a false document' (Forgery) under Section 464 IPC unless the accused impersonated the true owner's signature."
+          },
+          {
+            "name": "Dr. S. Dutt v. State of U.P.",
+            "citation": "AIR 1966 SC 523",
+            "principle": "Explained 'intent to defraud' in Forgery: requires two elements - deceit AND injury (economic or non-economic advantage/detriment)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three ways of 'making a false document' under Section 464 IPC / Section 335 BNS, and explain why falsely claiming title in one's own signed sale deed is not Forgery (Mohammed Ibrahim).",
+            "a": "(1) Executing/signing to make it appear made by another without authority, (2) Materially altering a completed document without authority, or (3) Procuring signature via deceit/intoxication/unsoundness. Signing one's own name with a false claim of title is not Forgery because there is no false attribution of signature/execution."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

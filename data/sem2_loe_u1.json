@@ -1,0 +1,193 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-evidence",
+      "title": "Law of Evidence (IEA / BSA)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Salient Features (IEA/BSA), Interpretation Clause, Presumptions, Relevancy vs Admissibility, Res Gestae & Relevant Facts",
+          "topics": [
+            {"id": "loe-u1-t1", "title": "1. Salient Features of IEA 1872 & BSA 2023, Meaning & Kinds of Evidence (Sec. 3 IEA / Sec. 2 BSA)"},
+            {"id": "loe-u1-t2", "title": "2. Interpretation Clause - Fact, Fact in Issue, Relevant Fact, Proved/Disproved & May/Shall Presume / Conclusive Proof"},
+            {"id": "loe-u1-t3", "title": "3. Distinction Between Relevancy and Admissibility (Secs. 5 & 136 IEA / Secs. 3 & 141 BSA) & Doctrine of Res Gestae (Sec. 6 / Sec. 4 BSA)"},
+            {"id": "loe-u1-t4", "title": "4. Occasion/Cause, Motive, Preparation, Conduct, Identification Parade (Secs. 7-9 IEA / Secs. 5-7 BSA) & Conspiracy (Sec. 10 / Sec. 8 BSA)"},
+            {"id": "loe-u1-t5", "title": "5. Plea of Alibi (Sec. 11 / Sec. 9 BSA), Right & Custom (Sec. 13 / Sec. 11 BSA) and State of Mind / Accidental vs Intentional Acts (Secs. 14-15 / Secs. 12-13 BSA)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loe-u1-t1": {
+      "id": "loe-u1-t1",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Drafted by Sir James Fitzjames Stephen, the Indian Evidence Act, 1872 (replaced from 1 July 2024 by the Bharatiya Sakshya Adhiniyam, 2023) is a uniform procedural law ('Lex Fori') governing judicial proceedings. It rests on three cardinal rules - evidence must be confined to matters in issue, hearsay is generally excluded, and best evidence must always be produced.",
+        "legalProvision": "Sections 1 & 3, Indian Evidence Act, 1872 (Sections 1 & 2(1)(e), Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "The Law of Evidence is adjective (procedural) law determining what facts a court may hear, how they must be proved, and who bears the burden of proof. BSA, 2023 modernized the 1872 Act by placing electronic and digital records on par with primary documentary evidence.",
+        "keyPoints": [
+          "Salient Features & Applicability (Sec. 1 IEA / Sec. 1 BSA): Applies to ALL judicial proceedings before courts (including Courts-Martial, except certain military statutes), but does NOT apply to Affidavits or Arbitration proceedings; operates as 'Lex Fori' (law of the forum/court trying the case).",
+          "Definition of 'Evidence' (Sec. 3 IEA / Sec. 2(1)(e) BSA): Comprises (1) Oral Evidence (all statements including electronic statements permitted/required by court from witnesses) and (2) Documentary Evidence (all documents including electronic or digital records produced for court inspection).",
+          "Major Kinds of Evidence: Direct Evidence (eyewitness saw the act) vs Circumstantial Evidence (chain of indirect facts proved completely - Sharad Birdhichand Sarda five golden principles); Primary (original) vs Secondary (copies); Real/Material Evidence (weapon/CCTV) vs Hearsay Evidence (second-hand, generally inadmissible); Substantive vs Corroborative Evidence.",
+          "Key BSA, 2023 Modernization: Expanded 'documents' (Sec. 2(1)(d)) to include emails, server logs, smartphones, and location evidence; treated electronic records stored across multiple files/devices as Primary Evidence (Sec. 57 BSA)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Sharad Birdhichand Sarda v. State of Maharashtra",
+            "citation": "AIR 1984 SC 1622",
+            "principle": "Laid down the five golden principles ('Panchsheel') for conviction on Circumstantial Evidence: the chain of circumstances must be fully established, consistent ONLY with guilt, and exclude every hypothesis of innocence."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why is the Law of Evidence called 'Lex Fori', and to which two proceedings does Section 1 expressly NOT apply?",
+            "a": "Lex Fori means the law of the court/forum where the case is tried governs admissibility of evidence. Section 1 excludes Affidavits presented to courts/officers and proceedings before an Arbitrator."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u1-t2": {
+      "id": "loe-u1-t2",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 3-4 IEA (Section 2 BSA, 2023) define the foundational vocabulary of evidence law: Fact (physical and psychological), Fact in Issue (disputed facts determining legal liability), Relevant Fact (logically connected evidentiary facts), Standards of Proof (Proved, Disproved, Not Proved), and the three tiers of Presumptions - May Presume, Shall Presume, and Conclusive Proof.",
+        "legalProvision": "Sections 3 & 4, Indian Evidence Act, 1872 (Section 2(1)(f)-(l), Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Clear statutory definitions prevent confusion between what MUST be proved (Fact in Issue) and what HELPS prove it (Relevant Fact), while Presumptions let courts infer unknown facts from established basic facts.",
+        "keyPoints": [
+          "Fact, Fact in Issue & Relevant Fact: 'Fact' includes physical things/events AND mental states (intention, good faith, opinion). 'Fact in Issue' is any fact from which a disputed legal right, liability, or guilt directly follows (e.g., whether A murdered B with intent). 'Relevant Fact' is any fact connected to a fact in issue under Sections 6-55 IEA (Secs. 4-50 BSA).",
+          "Proved, Disproved & Not Proved: 'Proved' means the court believes a fact exists or considers its existence so probable that a prudent man would act on it (civil: preponderance of probabilities; criminal: beyond reasonable doubt); 'Disproved' means non-existence is believed; 'Not Proved' sits in between (neither proved nor disproved).",
+          "May Presume (Presumption of Fact / Discretionary & Rebuttable): Court MAY either presume the fact proved unless disproved OR call for proof (e.g., Sec. 90 ancient 30-year documents, Sec. 114 natural course of events).",
+          "Shall Presume (Rebuttable Presumption of Law / Mandatory): Court MUST presume the fact proved unless and until the opposite party disproves it (e.g., Sec. 113B dowry death, Sec. 114A absence of consent in aggravated rape, genuineness of certified public documents).",
+          "Conclusive Proof (Irrebuttable Presumption of Law): Once one fact is proved, the court MUST regard the other fact as proved and SHALL NOT allow any evidence to disprove it (only 3 sections in IEA/BSA: Sec. 41 judgments in rem, Sec. 112 legitimacy during valid marriage unless non-access proved, and Sec. 113 cession of territory)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Izhar Ahmad Khan v. Union of India",
+            "citation": "AIR 1962 SC 1052",
+            "principle": "Distinguished rebuttable presumptions ('may/shall presume') from 'conclusive proof' under Section 4, explaining that conclusive proof is a rule of substantive law barring contrary evidence."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'May Presume', 'Shall Presume', and 'Conclusive Proof' under Section 4 IEA / Section 2 BSA, and give one example of each.",
+            "a": "May Presume is discretionary and rebuttable (Sec. 90 ancient documents); Shall Presume is mandatory until rebutted (Sec. 113B dowry death); Conclusive Proof is mandatory and irrebuttable (Sec. 112 legitimacy during marriage)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u1-t3": {
+      "id": "loe-u1-t3",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Relevancy is based on logic and probability (whether a fact tends to prove a fact in issue), whereas Admissibility is a strict rule of law deciding whether a relevant fact is legally allowed into court ('all admissible evidence is relevant, but not all relevant evidence is admissible'). Section 6 IEA (Section 4 BSA) codifies the Doctrine of Res Gestae - admitting spontaneous acts and statements forming part of the 'same transaction' as an exception to the hearsay rule.",
+        "legalProvision": "Sections 5, 6, & 136, Indian Evidence Act, 1872 (Sections 3, 4, & 141, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "A confession to a police officer (Sec. 25) or a confidential marital communication (Sec. 122) may be highly relevant logically, yet strictly INADMISSIBLE by law. Conversely, Res Gestae admits spontaneous utterances made during or immediately after a crime because excitement leaves no time for fabrication.",
+        "keyPoints": [
+          "Relevancy vs Admissibility: (1) Relevancy rests on logic/human experience (Secs. 6-55 IEA / Secs. 4-50 BSA); Admissibility rests on strict legal policy (e.g., privilege, police confession bar, hearsay rule); (2) Relevancy is the means, Admissibility is the end; (3) Judge decides admissibility under Section 136 IEA / Section 141 BSA; (4) Illegally obtained relevant evidence is generally admissible in India (Pooran Mal v. Director of Inspection) unless barred by statute.",
+          "Doctrine of Res Gestae (Sec. 6 IEA / Sec. 4 BSA): Facts which, though not in issue, are so connected with a fact in issue as to form part of the SAME TRANSACTION are relevant, whether occurring at the same or different times and places.",
+          "Test of 'Same Transaction' & Spontaneity: Requires unity of time, place, continuity of action, and community of purpose; bystanders' or victims' spontaneous cries ('A is stabbing me!') during or immediately after the attack are admissible as Res Gestae (exception to hearsay).",
+          "Exclusion of Fabricated / Delayed Narrative (R. v. Bedingfield; Gentela Vijayavardhan Rao): If sufficient time passes between the crime and the statement allowing calm reflection or concoction, it ceases to be Res Gestae and becomes inadmissible hearsay."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rattan v. Queen",
+            "citation": "1971 3 All ER 801 (PC)",
+            "principle": "Held that a hysterical phone call by a murdered wife ('Get me the police please!') minutes before being shot was admissible as Res Gestae because extreme emotion ruled out concoction."
+          },
+          {
+            "name": "Gentela Vijayavardhan Rao v. State of Andhra Pradesh",
+            "citation": "1996 6 SCC 241",
+            "principle": "Held that statements recorded hours after a bus-burning incident lacked spontaneity and continuity of the same transaction, so they were NOT admissible under Section 6 (Res Gestae)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why is it said that 'all admissible facts are relevant, but not all relevant facts are admissible', and what is the core test for Res Gestae under Section 6 IEA / Section 4 BSA?",
+            "a": "Because a logically relevant fact may be excluded by legal policy (e.g., police confession under Sec. 25 or marital privilege under Sec. 122). Res Gestae requires spontaneity and continuity forming part of the 'same transaction' leaving no time for fabrication."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u1-t4": {
+      "id": "loe-u1-t4",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 7-10 IEA (Sections 5-8 BSA, 2023) admit crucial circumstantial links surrounding a crime: Occasion, Cause & Effect (Sec. 7), Motive, Preparation & Previous/Subsequent Conduct (Sec. 8), Explanatory/Introductory Facts & Test Identification Parades (Sec. 9), and Co-Conspirators' Statements/Acts in reference to Common Intention (Sec. 10).",
+        "legalProvision": "Sections 7, 8, 9, & 10, Indian Evidence Act, 1872 (Sections 5, 6, 7, & 8, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Because criminals rarely act in front of cameras, Sections 7-10 weave physical clues (footprints, bloodstains), psychological drivers (motive/buying poison/absconding), eyewitness identification (TIP), and secret conspiracy communications into an admissible evidentiary chain.",
+        "keyPoints": [
+          "Occasion, Cause, Effect & Opportunity (Sec. 7 IEA / Sec. 5 BSA): Admits marks of struggle, footprints, bloodstains, tape-recorded conversations (R.M. Malkani), or exclusive opportunity (e.g., last seen together).",
+          "Motive, Preparation & Conduct (Sec. 8 IEA / Sec. 6 BSA): Motive explains WHY an offence was committed (vital in circumstantial cases); Preparation covers buying poison/weapons; Previous or Subsequent Conduct (absconding, hiding bloodstained clothes, bribing witnesses, victim's immediate complaint - NOT bare statement without conduct) is relevant.",
+          "Test Identification Parade / TIP (Sec. 9 IEA / Sec. 7 BSA): Facts establishing identity of unknown accused or stolen articles are relevant. TIP conducted by a Magistrate during investigation is NOT substantive evidence - it is purely CORROBORATIVE of dock identification in court and must be held promptly before witnesses see the accused (Dana Yadav).",
+          "Things Said or Done by Conspirator (Sec. 10 IEA / Sec. 8 BSA - Agency Theory): Once reasonable ground exists to believe 2+ persons conspired to commit an offence/wrong, anything said, done, or written by ANY conspirator in reference to their common intention is relevant against ALL co-conspirators - STRICTLY while the conspiracy is ongoing (statements/confessions made AFTER arrest/end of conspiracy are INADMISSIBLE under Sec. 10 - Mirza Akbar)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mirza Akbar v. King Emperor",
+            "citation": "AIR 1940 PC 176",
+            "principle": "Held that Section 10 admits love letters exchanged WHILE a murder conspiracy was active, but excludes a co-conspirator's post-arrest confession to a Magistrate because the common intention had already ended."
+          },
+          {
+            "name": "Dana Yadav v. State of Bihar",
+            "citation": "2002 7 SCC 295",
+            "principle": "Clarified that a Test Identification Parade (TIP) under Section 9 is only corroborative evidence aiding investigation, while actual identification of the accused in court is the substantive evidence."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Is a Test Identification Parade (TIP) under Section 9 substantive evidence, and why are post-arrest confessions excluded from Section 10 (Conspiracy)?",
+            "a": "No - TIP is only corroborative evidence supporting dock identification in court. Under Section 10 (Mirza Akbar), once an accused is arrested, the conspiracy ends, so post-arrest narratives are not made in furtherance of common intention."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loe-u1-t5": {
+      "id": "loe-u1-t5",
+      "subtitle": "Law of Evidence (IEA / BSA) - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 11 IEA (Section 9 BSA) admits otherwise irrelevant facts that make a fact in issue highly probable or improbable - most famously the Plea of Alibi ('elsewhere'). Section 13 (Sec. 11 BSA) proves Custom and Rights via past transactions/instances, while Sections 14-15 (Secs. 12-13 BSA) admit facts showing specific State of Mind (intention, knowledge, good/bad faith) and rebutting a defence of accident.",
+        "legalProvision": "Sections 11, 12, 13, 14, & 15, Indian Evidence Act, 1872 (Sections 9, 10, 11, 12, & 13, Bharatiya Sakshya Adhiniyam, 2023)",
+        "meaning": "Section 11 acts as a residuary gateway for decisive alibi proof, while Sections 14-15 prevent an accused caught in a repeated pattern of fraud or arson from claiming 'it was a pure accident' while barring generalized bad-character attacks.",
+        "keyPoints": [
+          "Residuary Relevancy & Plea of Alibi (Sec. 11 IEA / Sec. 9 BSA): Admits facts (1) INCONSISTENT with any fact in issue (e.g., Alibi - A was in Mumbai when murder occurred in Hyderabad, making A's presence impossible), OR (2) making existence/non-existence of a fact in issue HIGHLY PROBABLE or improbable. Burden of proving Alibi rests strictly on the accused (Dudh Nath Pandey), though failure to prove alibi does not automatically prove guilt.",
+          "Facts Determining Damages (Sec. 12 / Sec. 10 BSA) & Right or Custom (Sec. 13 / Sec. 11 BSA): Section 12 admits facts helping civil courts quantify compensation; Section 13 proves any public/private right or custom through (a) any transaction creating, claiming, modifying, or denying it (e.g., old sale/mortgage deeds, judgments), or (b) particular instances where it was exercised or disputed.",
+          "Facts Showing State of Mind or Bodily Feeling (Sec. 14 / Sec. 12 BSA): Admits intention, knowledge, good faith, negligence, rashness, or ill-will toward a SPECIFIC matter/person (Explanation 1: must show state of mind toward the PARTICULAR transaction, NOT a general criminal disposition; e.g., knowing a dog bit people earlier proves knowledge of ferocity).",
+          "Accidental vs Intentional Acts / Similar Fact Evidence (Sec. 15 / Sec. 13 BSA): Where the question is whether an act was accidental or intentional, evidence that it formed part of a SERIES OF SIMILAR OCCURRENCES involving the accused is relevant (e.g., accused repeatedly insuring and burning houses to claim fire insurance, or R. v. Smith 'Brides in the Bath')."
+        ],
+        "caseLaws": [
+          {
+            "name": "Dudh Nath Pandey v. State of Uttar Pradesh",
+            "citation": "AIR 1981 SC 911",
+            "principle": "Held that the Plea of Alibi under Section 11 must be proved with absolute certainty by the accused showing physical impossibility of presence at the crime scene, and defence witnesses deserve equal scrutiny as prosecution witnesses."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Under which section is the Plea of Alibi relevant, and what restriction does Explanation 1 to Section 14 IEA (Section 12 BSA) impose on state-of-mind evidence?",
+            "a": "Plea of Alibi is relevant under Section 11 IEA / Section 9 BSA (fact inconsistent with fact in issue). Explanation 1 to Section 14 restricts state-of-mind evidence strictly to the specific transaction/person in question, barring evidence of mere general criminal propensity."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

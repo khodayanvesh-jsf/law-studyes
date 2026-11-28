@@ -1,0 +1,190 @@
+{
+  "subjects": [
+    {
+      "id": "principles-of-taxation-law",
+      "title": "Principles of Taxation Law",
+      "semester": "Semester 4",
+      "year": "Year 2",
+      "paper": "Paper III",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Five Heads of Income (Secs. 14-59) - Salaries, House Property, Business/Profession (PGBP), Capital Gains & Other Sources",
+          "topics": [
+            {"id": "tax-u3-t1", "title": "1. Income from Salaries (Secs. 15-17) - Employer-Employee Relationship, Allowances, Perquisites, Profits in Lieu & Deductions (Sec. 16)"},
+            {"id": "tax-u3-t2", "title": "2. Income from House Property (Secs. 22-27) - Annual Value (Sec. 23), Deductions (Sec. 24), Self-Occupied vs Let-Out & Deemed Owner"},
+            {"id": "tax-u3-t3", "title": "3. Profits and Gains of Business or Profession / PGBP (Secs. 28-44DB) - Depreciation (Sec. 32), General Deduction (Sec. 37) & Disallowances"},
+            {"id": "tax-u3-t4", "title": "4. Capital Gains (Secs. 45-55A) - Capital Asset, Transfer, Short-Term vs Long-Term, Computation & Exemptions (Secs. 54, 54EC & 54F)"},
+            {"id": "tax-u3-t5", "title": "5. Income from Other Sources (Secs. 56-59) - Residuary Head, Dividends, Casual Winnings, Gifts (Sec. 56(2)(x)) & Deductions (Sec. 57)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "tax-u3-t1": {
+      "id": "tax-u3-t1",
+      "subtitle": "Principles of Taxation Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 14 classifies all taxable income into FIVE mutually exclusive Heads of Income. Under Sections 15-17, 'Salaries' taxes remuneration paid strictly out of an EMPLOYER-EMPLOYEE (master-servant) relationship on 'due or receipt basis, whichever is earlier' - encompassing basic pay, allowances, taxable perquisites (Sec. 17(2)), and profits in lieu of salary (Sec. 17(3)), minus Standard Deduction, Entertainment Allowance, and Professional Tax (Sec. 16).",
+        "legalProvision": "Sections 14, 15, 16, & 17, Income-tax Act, 1961",
+        "meaning": "Without a master-servant relationship, remuneration falls outside 'Salaries' (e.g., partner's salary is taxed under PGBP; MP/MLA salary or non-executive director sitting fees are taxed under Other Sources).",
+        "keyPoints": [
+          "Basis of Charge (Sec. 15): Taxed on DUE OR RECEIPT BASIS, WHICHEVER IS EARLIER (salary due in March paid in April is taxed in March's PY; advance salary is taxed on receipt, never taxed twice). Foregoing of salary AFTER accrual is mere application of income (TAXABLE), whereas Surrender of salary to Central Government under Voluntary Surrender of Salaries Act, 1961 is EXEMPT.",
+          "Components of Salary (Sec. 17(1)-(3)): (1) Wages, annuity, pension, gratuity, fees, commission, bonus, leave encashment, and employer PF contribution (> 12% or Rs. 7.5L aggregate cap); (2) ALLOWANCES - Fully taxable (DA, CCA, Overtime), Partly exempt (HRA Sec. 10(13A) in old regime, children education/hostel), or Exempt to extent spent (travelling/conveyance/helper); (3) PERQUISITES (Sec. 17(2) - non-cash benefits: rent-free accommodation, motor car, ESOP/sweat equity, concessional loans; medical treatment in Govt/approved hospital exempt); (4) PROFITS IN LIEU OF SALARY (Sec. 17(3) - termination compensation, joining/non-compete bonus, Keyman insurance payouts).",
+          "Deductions from Salary (Sec. 16): (1) STANDARD DEDUCTION (Sec. 16(ia) - Rs. 75,000 under New Default Tax Regime Sec. 115BAC; Rs. 50,000 under Old Regime), (2) ENTERTAINMENT ALLOWANCE (Sec. 16(ii) - ONLY for Government employees under Old Regime, capped at lowest of Rs. 5,000, 1/5th basic salary, or actual allowance), and (3) PROFESSIONAL / EMPLOYMENT TAX paid to State Government (Sec. 16(iii) - Old Regime)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Ram Prashad v. CIT",
+            "citation": "1972 2 SCC 696",
+            "principle": "Held that a Managing Director working under the control and supervision of the Board of Directors is a servant/employee of the company, making his remuneration taxable under 'Salaries' (Sec. 15) rather than Business Income."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the basis of charge under Section 15 ('Salaries') and list the three deductions allowed under Section 16 of the Income-tax Act, 1961.",
+            "a": "Salary is taxed on due or receipt basis, whichever is earlier (requiring an employer-employee relationship). Sec. 16 allows (1) Standard Deduction (Rs. 75,000 new regime / Rs. 50,000 old regime), (2) Entertainment Allowance (Govt employees only, old regime), and (3) Professional Tax paid (old regime)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u3-t2": {
+      "id": "tax-u3-t2",
+      "subtitle": "Principles of Taxation Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 22 taxes the 'Annual Value' (inherent earning capacity, NOT merely actual rent received!) of any building or land appurtenant thereto owned by the assessee (including Deemed Owners under Sec. 27), PROVIDED it is NOT occupied for the assessee's own business or profession. Net Annual Value (NAV = GAV minus Municipal Taxes paid) enjoys ONLY TWO statutory deductions under Section 24: flat 30% Standard Deduction and Interest on Borrowed Capital.",
+        "legalProvision": "Sections 22, 23, 24, 25, 25A, 26, & 27, Income-tax Act, 1961",
+        "meaning": "House Property is the ONLY head of income that can tax notional/expected rent (even if a second or third house lies vacant without letting out, unless covered by the two-self-occupied-houses relief under Sec. 23(2)).",
+        "keyPoints": [
+          "Three Essential Conditions (Sec. 22): (1) Property consists of BUILDINGS or LAND APPURTENANT thereto (vacant open plot rent goes to Other Sources, NOT House Property!), (2) Assessee must be the OWNER or DEEMED OWNER under Sec. 27 (e.g., individual transferring house to spouse/minor child without adequate consideration, holder of impartible estate, co-operative society member, or buyer in possession under Sec. 53A TPA - CIT v. Podar Cement), and (3) Property is NOT used by assessee for his own business/profession.",
+          "Computation of Annual Value (Sec. 23): For Let-Out Property -> Gross Annual Value (GAV) = Higher of Expected Rent (higher of Municipal Value or Fair Rent, capped at Standard Rent under Rent Control Act) OR Actual Rent received/receivable (vacancy loss reduces GAV). Deduct Municipal Taxes ACTUALLY PAID by owner -> Net Annual Value (NAV). For Self-Occupied Property (Sec. 23(2)) -> Assessee may treat up to TWO houses as self-occupied with NIL Annual Value (any 3rd+ unoccupied house is 'Deemed Let Out').",
+          "Two Exclusive Deductions (Sec. 24): (a) STANDARD DEDUCTION (Sec. 24(a)) = flat 30% of NAV (regardless of actual repair expenses; NIL if NAV is zero), and (b) INTEREST ON BORROWED CAPITAL (Sec. 24(b)) = fully deductible WITHOUT CAP for let-out property; for self-occupied property (Old Regime only), capped at Rs. 2,00,000 for post-1999 construction/acquisition loan completed within 5 years (Rs. 30,000 for repairs/pre-1999). Pre-construction interest is deductible in 5 equal annual instalments after completion. Arrears/unrealized rent recovered later is taxed under Sec. 25A after flat 30% deduction."
+        ],
+        "caseLaws": [
+          {
+            "name": "CIT v. Podar Cement Pvt. Ltd.",
+            "citation": "1997 5 SCC 482",
+            "principle": "Held that 'owner' under Section 22 means the person entitled to receive income from the property in his own right (beneficial possessor under Sec. 53A TPA), even before a formal registered conveyance deed is executed."
+          },
+          {
+            "name": "East India Housing & Land Development Trust Ltd. v. CIT",
+            "citation": "AIR 1961 SC 116",
+            "principle": "Held that rental income derived from letting out shops/stalls by a company formed to develop markets is still taxable strictly under 'Income from House Property' (Sec. 22), not Business Income (distinguished in Chennai Properties where leasing is the sole main MOA business)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How many self-occupied houses can enjoy NIL Annual Value under Section 23(2), and what are the ONLY two deductions allowed from Net Annual Value under Section 24?",
+            "a": "Up to TWO self-occupied houses enjoy NIL Annual Value. Section 24 permits ONLY (1) a flat 30% Standard Deduction of NAV, and (2) Interest on borrowed capital (no cap for let-out; up to Rs. 2,00,000 for self-occupied under Old Regime)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u3-t3": {
+      "id": "tax-u3-t3",
+      "subtitle": "Principles of Taxation Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 28-44DB tax 'Profits and Gains of Business or Profession' (PGBP) - covering trade, commerce, manufacture, adventure in the nature of trade (Sec. 2(13)), and intellectual/skilled professions (law, medicine, CA). Taxable profit is computed by deducting express business expenses (rent, repairs, Depreciation on Block of Assets under Sec. 32, bad debts under Sec. 36) and residuary business expenses under Section 37(1), subject to strict anti-evasion disallowances (Secs. 40, 40A & 43B).",
+        "legalProvision": "Sections 2(13), 2(36), 28-37, 40, 40A, 43B, 44AA-44AD, Income-tax Act, 1961",
+        "meaning": "PGBP taxes NET commercial profits (not gross turnover), requiring genuine revenue expenditure laid out 'wholly and exclusively' for business while strictly disallowing illegal bribes, cash payments above Rs. 10,000, and unpaid statutory/MSME dues.",
+        "keyPoints": [
+          "Chargeability (Sec. 28): Covers profits of any business/profession carried on during PY, compensation for termination of managing agency, export incentives, value of business perquisites, partner's interest/remuneration from firm, and non-compete fees (speculation business kept separate for loss set-off).",
+          "Key Express Deductions (Secs. 30-36): Rent/rates/repairs/insurance of premises & machinery (Secs. 30-31); DEPRECIATION (Sec. 32 - MANDATORY even if not claimed; computed on Written Down Value of 'Block of Assets' for tangible assets + intangible know-how/patents/copyrights/trademarks/licences; half-rate if asset put to use < 180 days in acquisition year); Scientific Research (Sec. 35); Interest on business loans & written-off Bad Debts (Sec. 36(1)(iii) & (vii)).",
+          "General Residuary Deduction (Sec. 37(1) - Five Mandatory Tests): Expense must be (1) NOT covered under Secs. 30-36, (2) NOT capital expenditure, (3) NOT personal expenditure, (4) Laid out 'WHOLLY AND EXCLUSIVELY' for business/profession (Commercial Expediency test - Sassoon J. David), and (5) NOT for any purpose which is an OFFENCE or PROHIBITED BY LAW (Explanation 1 - bribes, extortion money, statutory penalties, and CSR spending under Sec. 135 Companies Act are STRICTLY DISALLOWED!).",
+          "Major Disallowances & Presumptive Taxation (Secs. 40, 40A, 43B & 44AD/44ADA): Failure to deduct/deposit TDS disallows 30% of resident payments & 100% of non-resident payments (Sec. 40(a)); Cash payment > Rs. 10,000 to a single person in a day is 100% disallowed (Sec. 40A(3); Rs. 35,000 for transport); Taxes, PF/ESI, bank interest, and payments to Micro/Small Enterprises (Sec. 43B(h)) are allowed ONLY on ACTUAL PAYMENT basis (Sec. 43B). Presumptive Tax: small businesses (Sec. 44AD - 8% / 6% digital up to Rs. 3 Cr) and specified professionals including lawyers (Sec. 44ADA - 50% up to Rs. 75 lakhs)."
+        ],
+        "caseLaws": [
+          {
+            "name": "G. Venkataswami Naidu & Co. v. CIT",
+            "citation": "AIR 1959 SC 359",
+            "principle": "Laid down the classic 'Adventure in the Nature of Trade' tests: buying four adjacent plots of land with sole intention of reselling at a profit to a managed mill constituted taxable PGBP income even as an isolated transaction."
+          },
+          {
+            "name": "Apex Laboratories Pvt. Ltd. v. Deputy CIT",
+            "citation": "2022 7 SCC 98",
+            "principle": "Held that freebies/gifts distributed by pharma companies to doctors (prohibited by MCI Regulations) fall squarely under Explanation 1 to Section 37(1) and are strictly disallowed as illegal business expenditure."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the five conditions for allowing a general business expense under Section 37(1), and explain the cash-payment disallowance rule under Section 40A(3).",
+            "a": "Sec. 37(1): not under Secs. 30-36, not capital, not personal, laid out wholly and exclusively for business, and not for an offence/prohibited by law (Explanation 1). Under Sec. 40A(3), any single-day cash business payment exceeding Rs. 10,000 (Rs. 35,000 for goods transport) is 100% disallowed."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u3-t4": {
+      "id": "tax-u3-t4",
+      "subtitle": "Principles of Taxation Law - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Section 45 charges tax on profits arising from the 'Transfer' (Sec. 2(47)) of a 'Capital Asset' (Sec. 2(14) - excluding stock-in-trade, ordinary personal effects, and rural agricultural land) in the year of transfer. Gains split into Short-Term Capital Gains (STCG) and Long-Term Capital Gains (LTCG - holding period > 12 months for listed securities or > 24 months for immovable property/other assets post-Finance Act 2024), with major reinvestment exemptions under Sections 54, 54EC, and 54F.",
+        "legalProvision": "Sections 2(14), 2(47), 45-55A, 111A, & 112/112A, Income-tax Act, 1961 (as updated by Finance (No. 2) Act, 2024)",
+        "meaning": "Capital Gains taxes appreciation in capital wealth upon realization ('Transfer'), while Section 54 exemptions encourage rolling capital gains back into residential housing or national infrastructure bonds.",
+        "keyPoints": [
+          "Capital Asset (Sec. 2(14)) & Transfer (Sec. 2(47)): 'Capital Asset' means property of ANY kind (movable, immovable, tangible, intangible like goodwill/tenancy), EXCLUDING (1) stock-in-trade, (2) personal effects (clothes, furniture, car - EXCEPT jewellery, archaeological collections, drawings, paintings, sculptures & artworks which ARE capital assets!), and (3) RURAL agricultural land in India. 'Transfer' (Sec. 2(47)) includes sale, exchange, relinquishment, extinguishment of rights, compulsory acquisition, conversion into stock-in-trade, and Sec. 53A TPA part-performance possession (certain transfers like Gifts, Wills, HUF Partition, and Amalgamation are exempt under Sec. 47).",
+          "Short-Term vs Long-Term Holding Period & Tax Rates (Post-Finance Act 2024 Reform): Holding period simplified to TWO slabs -> > 12 MONTHS for ALL listed securities/equity mutual funds, and > 24 MONTHS for all other assets (immovable property, unlisted shares, gold). Tax Rates: Listed equity STCG (Sec. 111A) = 20%; LTCG (Sec. 112 & 112A) = uniform 12.5% without indexation (with Rs. 1.25 lakh annual exemption on listed equity under Sec. 112A; resident individuals selling pre-23 July 2024 land/building retain option to pay lower of 12.5% without indexation OR 20% with indexation!).",
+          "Computation Formula (Sec. 48): Full Value of Consideration (subject to Stamp Duty Value floor under Sec. 50C for land/buildings) MINUS (a) Expenses incurred wholly and exclusively on transfer (brokerage/stamp duty), MINUS (b) Cost of Acquisition & Cost of Improvement = Capital Gain.",
+          "Key Capital Gains Exemptions (Secs. 54, 54B, 54EC & 54F): Sec. 54 (Individual/HUF selling residential house -> reinvest capital gain in 1 residential house in India within 1 yr before or 2 yrs after purchase / 3 yrs construction; Rs. 10 Cr cap); Sec. 54B (urban agricultural land -> new agricultural land within 2 yrs); Sec. 54EC (land/building LTCG -> NHAI/REC/PFC 5-year bonds within 6 months, capped at Rs. 50 lakhs); Sec. 54F (any non-house LT asset -> invest ENTIRE NET SALE CONSIDERATION in 1 residential house; Rs. 10 Cr cap). Unutilized amounts must be parked in Capital Gains Account Scheme (CGAS) before ITR due date."
+        ],
+        "caseLaws": [
+          {
+            "name": "CIT v. B.C. Srinivasa Setty",
+            "citation": "AIR 1981 SC 972",
+            "principle": "Held that if the computation machinery under Section 48 fails (as with self-generated goodwill having zero ascertainable cost of acquisition), the charging section (Sec. 45) also fails (later overcome for goodwill/tenancy by amending Sec. 55(2)(a) deeming cost as NIL)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name three items excluded from 'Capital Asset' under Section 2(14) (and state why jewellery is still taxed), and distinguish Section 54 from Section 54F exemption.",
+            "a": "Excluded: stock-in-trade, ordinary personal effects, and rural agricultural land (jewellery and artworks are expressly carved out of personal effects and remain taxable capital assets). Under Sec. 54 (selling a residential house) only the Capital Gain need be reinvested, whereas under Sec. 54F (selling a non-house asset) the ENTIRE net sale consideration must be invested."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "tax-u3-t5": {
+      "id": "tax-u3-t5",
+      "subtitle": "Principles of Taxation Law - Unit 3",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 56-59 govern the fifth and residuary head - 'Income from Other Sources' - acting as the statutory safety net catching EVERY taxable income not falling under Salaries, House Property, PGBP, or Capital Gains. Section 56(2) specifically taxes Dividends, Casual Winnings (lotteries, online games, betting @ flat 30% under Secs. 115BB/115BBJ with ZERO deductions), Interest on securities/FDs, Family Pension, and Gifts exceeding Rs. 50,000 from non-relatives (Sec. 56(2)(x)).",
+        "legalProvision": "Sections 56, 57, 58, 59, 115BB, & 115BBJ, Income-tax Act, 1961",
+        "meaning": "If an income is taxable under the Act and fits none of the first four heads, it lands automatically under Section 56(1) - ensuring zero leakage in the tax net.",
+        "keyPoints": [
+          "General Residuary Scope (Sec. 56(1)): Covers bank/FD/savings interest, director's sitting fees, MP/MLA salaries, rent from vacant open land, sub-letting rent by a tenant, exam-paper-setting fees to non-employees, and foreign agricultural income.",
+          "Specific Incomes Expressly Taxed Under Section 56(2): (1) DIVIDENDS (Sec. 56(2)(i) - taxable directly in shareholders' hands after abolition of DDT in 2020), (2) CASUAL WINNINGS (Sec. 56(2)(ib) - lotteries, crossword puzzles, horse races, card/gambling games taxed @ flat 30% under Sec. 115BB; Online Gaming net winnings @ 30% under Sec. 115BBJ - NO basic exemption, NO expense deduction, NO loss set-off!), (3) Interest on enhanced land-acquisition compensation (50% flat deduction under Sec. 57(iv)), (4) Composite/inseparable letting of machinery + building, and (5) Advance money forfeited on failed property sale negotiation (Sec. 56(2)(ix)).",
+          "Taxation of Gifts (Sec. 56(2)(x)): Cash/money OR immovable property OR specified movable property (shares, jewellery, bullion, paintings) received WITHOUT consideration (or inadequate consideration) exceeding aggregate Rs. 50,000 in a year is FULLY TAXABLE in the RECIPIENT's hands - EXCEPT gifts received from (a) Specified 'RELATIVES' (spouse, siblings, lineal ascendants/descendants & their spouses), (b) On the occasion of MARRIAGE of the individual, (c) Under a WILL or by INHERITANCE, or (d) In contemplation of death / from local authority or registered charitable trust.",
+          "Deductions Allowed (Sec. 57) & Disallowed (Sec. 58): Sec. 57 allows collection commission on dividends/interest (interest expense on dividend capped at 20%), Family Pension deduction (lower of 1/3rd or Rs. 25,000 under new regime / Rs. 15,000 old regime), and revenue expenses laid out wholly and exclusively to earn the income (Sec. 57(iii)); Sec. 58 disallows personal expenses and ANY expenditure against lottery/casual winnings."
+        ],
+        "caseLaws": [
+          {
+            "name": "CIT v. Rajendra Prasad Moody",
+            "citation": "1978 115 ITR 519 (SC)",
+            "principle": "Held under Section 57(iii) that interest paid on money borrowed specifically to invest in shares is deductible even if the shares yielded ZERO dividend income during that assessment year."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When is a cash gift received by an individual taxable under Section 56(2)(x), list four exempt gift situations, and state the tax rate on lottery/online gaming winnings.",
+            "a": "Taxable when aggregate cash gifts from non-relatives exceed Rs. 50,000 in a financial year (entire amount becomes taxable). Exempt: from specified relatives, on occasion of marriage, under a Will/inheritance, or in contemplation of death. Lotteries (Sec. 115BB) and online games (Sec. 115BBJ) are taxed at a flat 30% with zero expense deductions."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

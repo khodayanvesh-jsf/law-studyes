@@ -1,0 +1,271 @@
+{
+  "subjects": [
+    {
+      "id": "interpretation-of-statutes",
+      "title": "Interpretation of Statutes",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Beneficial, Strict & Harmonious Construction and Subsidiary Rules",
+          "topics": [
+            {"id": "interpretation-of-statutes-u3-t1", "title": "1. Beneficial vs Strict Construction (Penal & Taxing Statutes), Harmonious Construction & Ejusdem Generis"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Internal (Intrinsic) & External (Extrinsic) Aids to Interpretation",
+          "topics": [
+            {"id": "interpretation-of-statutes-u4-t1", "title": "1. Internal Aids (Title, Preamble, Proviso, Explanation) & External Aids (Parliamentary History, Reports, Dictionaries)"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Constitutional Interpretation Doctrines & Supreme Court Powers",
+          "topics": [
+            {"id": "interpretation-of-statutes-u5-t1", "title": "1. Judicial Review, Severability, Eclipse, Colourable Legislation, Prospective Overruling & Art. 143 Advisory Jurisdiction"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "land-laws",
+      "title": "Land Laws",
+      "semester": "Semester 4",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 3,
+          "title": "Compulsory Land Acquisition - Public Purpose, Procedure & Compensation",
+          "topics": [
+            {"id": "land-laws-u3-t1", "title": "1. Land Acquisition - Public Purpose, Acquisition Procedure (1894 Act & LARR Act, 2013), Reference (Sec. 18) & Solatium"}
+          ]
+        },
+        {
+          "unitNo": 4,
+          "title": "Land Ceiling Laws, Tenancy Reforms & Rent Control",
+          "topics": [
+            {"id": "land-laws-u4-t1", "title": "1. Agricultural & Urban Land Ceiling (1973 & 1976 Acts), Protected & Cultivating Tenants & Rent Control"}
+          ]
+        },
+        {
+          "unitNo": 5,
+          "title": "Scheduled Areas Tribal Land Protection, Assigned Lands & Land Grabbing",
+          "topics": [
+            {"id": "land-laws-u5-t1", "title": "1. Scheduled Areas Land Transfer Regulation (1959), Assigned Lands Act (1977) & Land Grabbing (Prohibition) Act (1982)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "interpretation-of-statutes-u3-t1": {
+      "id": "interpretation-of-statutes-u3-t1",
+      "subtitle": "Interpretation of Statutes - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Courts apply Beneficial Construction to welfare and labour statutes, Strict Construction to penal and taxing statutes (favouring the citizen in ambiguity), Harmonious Construction to reconcile conflicting statutory provisions, and Ejusdem Generis to limit general words following a specific category.",
+        "legalProvision": "Canons of Statutory Construction; General Clauses Act, 1897; Articles 12, 19(1)(a), & 194(3), Constitution of India",
+        "meaning": "Beyond the three primary rules, courts tailor construction to the nature of the statute. Remedial laws aimed at social justice receive a liberal interpretation, whereas laws imposing criminal penalties or taxes are strictly construed without presumptions.",
+        "keyPoints": [
+          "Beneficial Construction: Applied to social welfare and labour legislations (Factories Act, Minimum Wages Act, Maternity Benefit Act, Employees' Compensation Act); when two interpretations are possible, courts adopt the one preserving the benefit and removing inequity.",
+          "Strict Construction (Penal & Taxing Statutes): Penal statutes are construed strictly in favour of the accused and operate prospectively (no constructive crimes); taxing statutes allow no equity or intendment—tax applies only if clearly within the statutory text.",
+          "Doctrine of Harmonious Construction: Based on the presumption that the Legislature does not intend to contradict itself; conflicting provisions within the same statute or Constitution are reconciled so both remain effective (e.g., Fundamental Rights and Directive Principles, or Articles 19(1)(a) and 194(3) in M.S.M. Sharma).",
+          "Ejusdem Generis ('Of the Same Kind'): When general words follow specific words forming a distinct, non-exhaustive class (genus), the general words are restricted to that same class; does NOT apply where no common genus exists (Rajasthan State Electricity Board v. Mohanlal on 'other authorities' under Article 12).",
+          "Noscitur a Sociis & Expressio Unius: Under Noscitur a Sociis, an ambiguous word takes colour from surrounding words; under Expressio Unius Est Exclusio Alterius, express mention of one thing implies exclusion of others."
+        ],
+        "caseLaws": [
+          {
+            "name": "Alembic Chemical Works Co. Ltd. v. Workmen",
+            "citation": "AIR 1961 SC 647",
+            "principle": "Held that the Factories Act, 1948 is a welfare legislation requiring beneficial construction in favour of workmen whenever statutory language admits two meanings."
+          },
+          {
+            "name": "Rajasthan State Electricity Board v. Mohanlal",
+            "citation": "AIR 1967 SC 1857",
+            "principle": "Refused to apply Ejusdem Generis to restrict 'other authorities' in Article 12 because the bodies enumerated in Article 12 do not form a single common genus."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When does the rule of Ejusdem Generis apply, and why did the Supreme Court refuse to apply it to Article 12?",
+            "a": "It applies when general words follow specific words belonging to a distinct, non-exhaustive class (genus). In Rajasthan Electricity Board v. Mohanlal, the Court held Article 12 entities share no common genus."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "interpretation-of-statutes-u4-t1": {
+      "id": "interpretation-of-statutes-u4-t1",
+      "subtitle": "Interpretation of Statutes - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To ascertain legislative intent when statutory language is ambiguous, courts first rely on Internal (Intrinsic) Aids within the Act itself—such as Long Title, Preamble, Headings, Definition Clauses, Provisos, Explanations, Illustrations, and Schedules—and then turn to External (Extrinsic) Aids like Parliamentary History, Committee Reports, Dictionaries, and the General Clauses Act, 1897.",
+        "legalProvision": "General Clauses Act, 1897 (Section 3); Standard Intrinsic & Extrinsic Canons of Construction",
+        "meaning": "A statute must always be read as a whole. Internal aids are part of the statute itself and help clarify ambiguous text without overriding plain enacting words, while external aids illuminate historical context and legislative mischief when intrinsic aids fall short.",
+        "keyPoints": [
+          "Key Internal Aids — Title, Preamble & Headings: Short Title only identifies the Act, whereas Long Title and Preamble ('key to open the minds of the makers') reveal the Act's object and scope; Chapter Headings and Marginal Notes assist in resolving ambiguity but cannot override clear enacting language.",
+          "Internal Aids — Definitions, Provisos, Explanations & Schedules: Interpretation/Definition clauses govern terms throughout the Act; a Proviso carves out an exception or qualifies the main section (Kush Sahgal v. M.C. Mitter); Explanations clarify scope; Illustrations guide application; Saving Clauses preserve existing rights upon repeal; Schedules form part of the Act.",
+          "External Aids — Parliamentary History & Committee Reports: Statement of Objects and Reasons, Constituent Assembly/Parliamentary debates, and Law Commission or Joint Committee Reports may be consulted to understand the mischief and historical background (S.P. Gupta; Indira Sawhney; Haldiram Bhujiawala).",
+          "External Aids — Dictionaries, Textbooks & Other Statutes: Dictionaries give ordinary usage when a word is undefined (subject to statutory context, e.g., Ramavatar on 'betel leaves'); authoritative textbooks and pari materia statutes (statutes on the same subject) clarify concepts.",
+          "General Clauses Act, 1897 & Foreign Decisions: Section 3 of the General Clauses Act supplies default definitions for Central Acts; foreign decisions (UK, US, Australia) have persuasive value only and may be departed from to suit Indian needs (e.g., Absolute Liability in M.C. Mehta)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kush Sahgal v. M.C. Mitter",
+            "citation": "AIR 2000 SC 1390",
+            "principle": "Reaffirmed that the normal function of a Proviso is to except something out of or qualify the main enacting provision, and it must be construed in relation to that section."
+          },
+          {
+            "name": "Ramavatar Budhaiprasad v. Assistant Sales Tax Officer",
+            "citation": "AIR 1961 SC 1325",
+            "principle": "Held that ordinary popular meaning prevails over technical/dictionary meaning—hence 'betel leaves' are not 'vegetables' exempt from sales tax."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between Internal Aids and External Aids to statutory interpretation with three examples of each.",
+            "a": "Internal aids are found within the statute itself (Preamble, Proviso, Explanation, Long Title, Schedules); External aids come from outside the statute (Parliamentary history, Committee reports, Dictionaries, General Clauses Act, 1897)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "interpretation-of-statutes-u5-t1": {
+      "id": "interpretation-of-statutes-u5-t1",
+      "subtitle": "Interpretation of Statutes - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Constitutional interpretation rests on Judicial Review (Basic Structure), Severability (striking only the void part), Eclipse (dormant pre-Constitution laws revived by amendment), Colourable Legislation (barring indirect legislative fraud), Prospective Overruling (Golaknath), and Supreme Court Advisory (Article 143) and Review (Article 137) powers.",
+        "legalProvision": "Articles 13, 32, 137, 141, 143, 145(3), 226, and 246, Constitution of India; Order XLVII Rule 1 CPC",
+        "meaning": "Because a Constitution is a living organic instrument distributing federal powers and protecting Fundamental Rights, constitutional courts apply specialized doctrines to uphold constitutional supremacy while preserving valid legislation wherever possible.",
+        "keyPoints": [
+          "Judicial Review (Articles 13, 32, 226 & 246): Power of courts (originating in Marbury v. Madison, explicit in India) to invalidate unconstitutional laws or executive actions; held to be part of the Basic Structure (Kesavananda Bharati; L. Chandra Kumar).",
+          "Doctrine of Severability & Doctrine of Eclipse (Article 13): Under Severability (R.M.D.C. v. Union of India), only the unconstitutional portion of a statute is struck down if separable from the valid part; under Eclipse (Bhikaji Narain v. State of M.P.), a pre-Constitution law inconsistent with Fundamental Rights becomes dormant (not dead) and revives if the constitutional shadow is removed.",
+          "Doctrine of Colourable Legislation: Based on 'what cannot be done directly cannot be done indirectly'—invalidates statutes where a legislature lacking competence disguises an ultra vires law under a legitimate entry (State of Bihar v. Kameshwar Singh); legislative motive is irrelevant if competence exists.",
+          "Doctrine of Prospective Overruling: Adopted from Linkletter v. Walker (1965) in Golaknath (1967)—allows ONLY the Supreme Court in constitutional matters to overrule a precedent for future transactions without invalidating past actions.",
+          "Advisory Jurisdiction (Art. 143) & Overruling/Review Power (Arts. 137 & 141): Under Art. 143(1) the Supreme Court 'may' advise the President on questions of public importance (5-judge Bench under Art. 145(3)), whereas under Art. 143(2) it 'shall' report on pre-Constitution treaty disputes; under Art. 141 the Supreme Court is not bound by its own prior decisions (Bengal Immunity) and may review judgments under Art. 137 for error apparent on the record."
+        ],
+        "caseLaws": [
+          {
+            "name": "R.M.D. Chamarbaugwalla v. Union of India",
+            "citation": "AIR 1957 SC 628",
+            "principle": "Laid down the comprehensive rules of the Doctrine of Severability—invalidating only the severable unconstitutional portion of the Prize Competitions Act."
+          },
+          {
+            "name": "Bhikaji Narain Dhakras v. State of M.P.",
+            "citation": "AIR 1955 SC 781",
+            "principle": "Formulated the Doctrine of Eclipse, holding that pre-Constitution laws conflicting with Fundamental Rights are overshadowed (not dead) and become operative again once the inconsistency is removed by amendment."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the difference between the Doctrine of Eclipse and the Doctrine of Severability under Article 13.",
+            "a": "Severability separates and strikes down only the unconstitutional part of a statute while saving the valid remainder; Eclipse holds that a pre-Constitution law violating Fundamental Rights stays dormant and revives if a later constitutional amendment removes the shadow."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "land-laws-u3-t1": {
+      "id": "land-laws-u3-t1",
+      "subtitle": "Land Laws - Unit 3",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Compulsory acquisition of private land for 'public purpose' (railways, dams, housing, universities) historically followed the Land Acquisition Act, 1894 (Sections 4, 5A, 6, 11, 18, & 23), now replaced by the RFCTLARR Act, 2013—introducing mandatory Social Impact Assessment (SIA), landowner consent, 100% solatium, and rehabilitation.",
+        "legalProvision": "Land Acquisition Act, 1894 (Sections 3(f), 4, 5A, 6, 11, 11A, 18, & 23); RFCTLARR Act, 2013 (Sections 4, 11, 19, 23, 30, & 64)",
+        "meaning": "Unlike temporary Requisition (where possession returns to the owner with rent), Acquisition permanently vests title in the State. Statutory procedure ensures public notice, opportunity to object, fair market-value compensation, and judicial reference if the landowner disputes the Collector's award.",
+        "keyPoints": [
+          "Public Purpose (Section 3(f), 1894 Act / Section 2, 2013 Act): Inclusive concept covering general community welfare—infrastructure, irrigation, town planning, public hospitals, educational institutions, and disaster rehabilitation (Somawanti v. State of Punjab).",
+          "Classical Acquisition Stages (1894 Act): (1) Preliminary Notification (Sec. 4—Official Gazette + 2 local dailies + locality notice), (2) Hearing of Objections within 30 days (Sec. 5A), (3) Final Declaration within 1 year (Sec. 6), (4) Claims Notice (Sec. 9), and (5) Collector's Inquiry & Award within 2 years (Secs. 11 & 11A—else proceedings lapse).",
+          "Reference to Civil Court (Section 18, 1894 Act / Section 64, 2013 Act): Any interested person who has not accepted the award (or accepted under protest) may apply in writing to the Collector to refer disputes over area measurement, compensation quantum, or apportionment to the Court; the Court cannot reduce compensation below the Collector's award.",
+          "Compensation & Solatium (Section 23, 1894 Act): Market value on notification date + severance/relocation damages + 12% p.a. additional amount + 30% Solatium (sentimental payment for compulsory nature).",
+          "Key Upgrades in RFCTLARR Act, 2013: Mandates Social Impact Assessment (SIA), prior consent of 70% affected families for PPP and 80% for private projects, enhanced compensation (up to 2x market value in urban areas and 4x in rural areas), 100% Solatium, and mandatory Rehabilitation & Resettlement (R&R)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Smt. Somawanti v. State of Punjab",
+            "citation": "AIR 1963 SC 151",
+            "principle": "Defined 'public purpose' broadly as whatever promotes general community welfare rather than private gain, and held the Government's declaration under Section 6 conclusive unless colourable or mala fide."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What are the major procedural steps under the Land Acquisition Act, 1894, and what two major protections were added by the 2013 RFCTLARR Act?",
+            "a": "1894 steps: Sec. 4 Preliminary Notification, Sec. 5A Objections (30 days), Sec. 6 Declaration (1 year), Sec. 11/11A Award (2 years), and Sec. 18 Court Reference. The 2013 Act added mandatory Social Impact Assessment (SIA), landowner consent (70%/80%), 100% solatium, and R&R."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "land-laws-u4-t1": {
+      "id": "land-laws-u4-t1",
+      "subtitle": "Land Laws - Unit 4",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "To fulfil distributive justice under Articles 38 and 39(b)-(c), Andhra Pradesh and Telangana enacted Agricultural Land Ceiling (1973 Act—1 Standard Holding per family unit), Urban Land Ceiling (ULCRA, 1976—later repealed), Tenancy Reforms (Telangana 1950 & Andhra 1956 Acts), and Buildings Rent Control (1960 Act).",
+        "legalProvision": "A.P. Land Reforms (Ceiling on Agricultural Holdings) Act, 1973; Urban Land (Ceiling and Regulation) Act, 1976; A.P. (Telangana Area) Tenancy Act, 1950; A.P. (Andhra Area) Tenancy Act, 1956; A.P. Buildings (Lease, Rent & Eviction) Control Act, 1960",
+        "meaning": "Land ceiling and tenancy laws dismantled feudal concentration of land, capped family landholdings to redistribute surplus acres to the landless poor, and shielded cultivating and urban tenants from arbitrary eviction and extortionate rents.",
+        "keyPoints": [
+          "Agricultural Land Ceiling (1973 Act, placed in Ninth Schedule): Replaced the ineffective 1961 Act; allows 1 Standard Holding (approx. 10-27 acres wet land or 35-54 acres dry land) for a family unit of up to 5 members (husband, wife, minor sons, minor unmarried daughters), plus 1/5th per extra member up to 2 Standard Holdings; exempts Government, religious/charitable/Wakf, cooperative, bank, and plantation lands (Section 23).",
+          "Urban Land (Ceiling & Regulation) Act, 1976 (ULCRA): Enacted by Parliament under Article 252(1) to prevent urban vacant-land speculation across four city categories—A (500 sq.m), B (1,000 sq.m), C (1,500 sq.m), and D (2,000 sq.m); later repealed centrally in 1999 and adopted for repeal by A.P. in 2008.",
+          "Telangana Area Tenancy Act, 1950: Distinguishes Ordinary Tenants (Sec. 5) from Protected Tenants (Sec. 34—6 years' continuous personal cultivation, unless landlord is a minor or in armed forces); Protected Tenants enjoy heritable tenure, right to purchase/pre-emption (Sec. 38), right to mortgage interest, and protection from arbitrary eviction.",
+          "Andhra Area Tenancy Act, 1956: Protects 'Cultivating Tenants' with perpetual/minimum 6-year leases, rent remission during crop failure, pre-emption right to buy, and statutory fair rent caps (max 30% gross produce for irrigable land, 25% for unirrigable land under Section 3).",
+          "Rent Control Act, 1960: Regulates urban building leases across Hyderabad, Secunderabad, Vijayawada, Visakhapatnam, and municipalities—fixing fair rent, protecting essential amenities, and preventing arbitrary eviction while obligating tenants to pay/deposit rent."
+        ],
+        "caseLaws": [
+          {
+            "name": "Waman Rao v. Union of India",
+            "citation": "AIR 1981 SC 271",
+            "principle": "Upheld agricultural land ceiling laws placed in the Ninth Schedule before 24 April 1973 as advancing agrarian reform and distributive justice under Articles 31A, 31B, and 39(b)-(c)."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between an Ordinary Tenant and a Protected Tenant under the Telangana Area Tenancy Act, 1950, and state the agricultural ceiling unit under the 1973 Act.",
+            "a": "A Protected Tenant has 6+ years of continuous personal cultivation with statutory certificate, heritable tenure, and pre-emption right (Sec. 38), unlike an Ordinary Tenant. Under the 1973 Act, a family unit up to 5 members may hold 1 Standard Holding (max 2 Standard Holdings for larger families)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "land-laws-u5-t1": {
+      "id": "land-laws-u5-t1",
+      "subtitle": "Land Laws - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Under Article 244(1) and the Fifth Schedule, the A.P./Telangana Scheduled Areas Land Transfer Regulation, 1959 (1 of 1970) voids all transfers of agency land to non-tribals. Simultaneously, the Assigned Lands Act (1977) bars alienating lands assigned to the landless poor, and the Land Grabbing (Prohibition) Act (1982) establishes Special Courts to punish land grabbers.",
+        "legalProvision": "Article 244(1) & Fifth Schedule, Constitution of India; A.P. Scheduled Areas Land Transfer Regulation, 1959 (as amended by Reg. 1 of 1970); A.P. Assigned Lands (Prohibition of Transfers) Act, 1977; A.P. Land Grabbing (Prohibition) Act, 1982",
+        "meaning": "Because tribal communities depend on land for survival and soaring urban land values trigger organized encroachments, Telangana and Andhra Pradesh enforce strict statutory prohibitions against alienation of tribal/assigned lands and unauthorized grabbing of public or private properties.",
+        "keyPoints": [
+          "Scheduled Areas Land Transfer Regulation, 1959 (Agency Tracts — e.g., Adilabad, Warangal, Khammam, East/West Godavari, Visakhapatnam): Under Section 3 (as amended in 1970), ANY transfer of immovable property in Scheduled Areas—even between two non-tribals—is null and void unless made in favour of a Scheduled Tribe or an exclusively tribal cooperative society.",
+          "Restricted Mortgages & Execution Bar (Sections 3A, 3B & 5): Non-possessory mortgage is permitted only to approved banks/cooperatives (and auction on default is restricted exclusively to tribals); registrars cannot register prohibited deeds, and civil courts cannot attach or sell tribal land in execution.",
+          "Assigned Lands (Prohibition of Transfers) Act, 1977: Lands assigned by the Government to landless poor carry an absolute non-alienation condition (Section 3); any sale/gift is void and resumable by the Government, though mortgages to Government, cooperative societies, or scheduled banks for agricultural credit are permitted.",
+          "Land Encroachment Act (1905) & Public Premises Act (1968): Declares public roads, lakes, nalas, rivers, and poramboke lands as Government property and empowers Estate Officers/Revenue authorities to evict unauthorized occupants after show-cause notice.",
+          "Land Grabbing (Prohibition) Act, 1982: Makes unauthorized occupation of Government, local authority, religious/charitable, or private urban/urbanisable land with intent to retain or illegally build/sell a strict statutory offence (no Mens Rea required), punishable with 6 months to 5 years' imprisonment plus fine, tried expeditiously by Special Courts (High Court Judge Chair + Judicial & Revenue members)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Samatha v. State of Andhra Pradesh",
+            "citation": "AIR 1997 SC 3297",
+            "principle": "Held that the word 'person' in Section 3 of the 1959 Regulation includes the State Government itself, prohibiting the State from granting mining leases in Scheduled Areas to non-tribal private companies."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Under Section 3 of the Scheduled Areas Land Transfer Regulation, 1959, can a non-tribal validly sell land located in a Scheduled Area to another non-tribal?",
+            "a": "No. Section 3 (as amended by Regulation 1 of 1970) renders every transfer in Scheduled Areas null and void unless the transferee is a Scheduled Tribe member or an all-tribal cooperative society."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

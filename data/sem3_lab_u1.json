@@ -1,0 +1,197 @@
+{
+  "subjects": [
+    {
+      "id": "labour-law-i",
+      "title": "Labour Law - I",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper V",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Concept & Evolution of Labour Law, Constitutional Framework, ILO Standards & Trade Unions Act, 1926",
+          "topics": [
+            {"id": "lab-u1-t1", "title": "1. Concept, Objectives & Evolution of Labour Law (Laissez-Faire to Welfare State & Industrial Relations Code, 2020)"},
+            {"id": "lab-u1-t2", "title": "2. Constitutional Framework for Labour Protection (Arts. 14, 16, 19(1)(c), 21, 23, 24 & DPSPs Arts. 38-43A) & Role of ILO"},
+            {"id": "lab-u1-t3", "title": "3. Trade Unions Act, 1926 - Definition, Scope, Mode of Registration, Cancellation & Appeal (Secs. 2-11)"},
+            {"id": "lab-u1-t4", "title": "4. Rights, Duties, General & Political Funds (Secs. 15-16), Civil & Criminal Immunities (Secs. 17-18) & Recognition of Trade Unions"},
+            {"id": "lab-u1-t5", "title": "5. Office-Bearers (Disqualifications & Proportion of Outsiders - Secs. 21A-22), Change of Name, Amalgamation & Dissolution (Secs. 23-27)"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "lab-u1-t1": {
+      "id": "lab-u1-t1",
+      "subtitle": "Labour Law - I - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Labour Law (Industrial Jurisprudence) evolved from 19th-century Laissez-Faire 'freedom of contract' (which exploited unorganized workers under unequal bargaining power) to modern Welfare-State social justice balancing industrial peace with worker dignity. In India, 29 central labour statutes were consolidated into four comprehensive Labour Codes in 2019-2020, with Labour Law - I focusing on Industrial Relations (Trade Unions, Standing Orders, and Industrial Disputes).",
+        "legalProvision": "Industrial Relations Code, 2020 (consolidating Trade Unions Act, 1926, Standing Orders Act, 1946 & Industrial Disputes Act, 1947); Seventh Schedule Concurrent List Entries 22-24",
+        "meaning": "Because an individual worker cannot bargain on equal terms with a powerful corporate employer, labour law steps in to equalize bargaining power through collective bargaining, statutory job security, and specialized industrial adjudication.",
+        "keyPoints": [
+          "Evolution from Laissez-Faire to Welfare Jurisprudence: Under 19th-century 'hire and fire' laissez-faire, courts treated employment purely as a private contract; Industrial Revolution abuses, trade union struggles, and World War I (creating the ILO in 1919) shifted law toward protective social-justice jurisprudence.",
+          "Four Core Objectives of Labour Law: (1) Social Justice & Dignity of Labour (preventing exploitation), (2) Industrial Peace & Harmony (preventing strikes/lockouts via conciliation and adjudication), (3) Collective Bargaining & Workplace Democracy, and (4) Economic Productivity & Growth.",
+          "Growth in India & Labour Codes Consolidation: Colonial Factories Act (1881), Trade Unions Act (1926), Payment of Wages Act (1936), Standing Orders Act (1946), and Industrial Disputes Act (1947); post-1950 welfare legislation; consolidated by Parliament into 4 Labour Codes (Code on Wages 2019, Industrial Relations Code 2020, Social Security Code 2020, and OSHWC Code 2020)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Crown Aluminium Works v. Their Workmen",
+            "citation": "AIR 1958 SC 30",
+            "principle": "Held that in a social-welfare State, the old laissez-faire doctrine of absolute freedom of contract cannot override industrial social justice and fair living conditions for workmen."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Why did 19th-century 'freedom of contract' fail industrial workers, and which three statutes were merged into the Industrial Relations Code, 2020?",
+            "a": "Because extreme inequality of bargaining power forced starving workers to accept exploitative wages and unsafe conditions. The Industrial Relations Code, 2020 consolidated the Trade Unions Act, 1926, Industrial Employment (Standing Orders) Act, 1946, and Industrial Disputes Act, 1947."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u1-t2": {
+      "id": "lab-u1-t2",
+      "subtitle": "Labour Law - I - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Indian Constitution embeds worker protection across BOTH Fundamental Rights (Art. 14 equality, Art. 19(1)(c) right to form unions, Art. 21 right to livelihood & humane conditions, Art. 23 ban on forced/bonded labour, Art. 24 ban on child labour under 14) and Directive Principles (Arts. 38, 39, 41, 42, 43 & 43A), reinforced by International Labour Organization (ILO) Conventions.",
+        "legalProvision": "Articles 14, 16, 19(1)(c), 21, 23, 24, 38, 39, 41, 42, 43, & 43A, Constitution of India; ILO Declaration of Philadelphia (1944)",
+        "meaning": "Articles 23 and 24 are enforceable directly even against PRIVATE employers (horizontal application), while DPSPs guide Supreme Court interpretation of labour statutes in favour of workmen.",
+        "keyPoints": [
+          "Fundamental Rights Protecting Workers: Art. 14 & 16 (equal protection & public employment equality); Art. 19(1)(c) (Fundamental Right to form associations/unions - note All India Bank Employees' Association: Art. 19(1)(c) protects forming a union, NOT a guaranteed fundamental right to strike!); Art. 21 (right to livelihood, health, safety & sexual-harassment-free workplace - Olga Tellis; Vishaka); Art. 23 (prohibits traffic in human beings and 'begar'/forced labour - paying less than minimum wage is forced labour per PUDR v. Union of India); Art. 24 (bars employment of children below 14 in any factory, mine, or hazardous occupation).",
+          "Directive Principles of State Policy (Part IV): Art. 38 (social order for welfare), Art. 39(a) & (d) (adequate livelihood & Equal Pay for Equal Work - Randhir Singh), Art. 41 (right to work & public assistance), Art. 42 (just and humane conditions of work & maternity relief), Art. 43 (living wage & decent standard of life), and Art. 43A (42nd Amendment - participation of workers in management of industries).",
+          "Role of International Labour Organization / ILO (1919): Tripartite UN agency (Government, Employers, Workers) setting International Labour Standards via binding Conventions and guiding Recommendations; Declaration of Philadelphia (1944) affirmed 'Labour is not a commodity'. India (founding member) ratified 6 of 8 Core ILO Conventions (Forced Labour Nos. 29 & 105, Equal Remuneration No. 100, Discrimination No. 111, Minimum Age No. 138, Worst Forms of Child Labour No. 182 - not yet Nos. 87 & 98 due to civil-servant restrictions)."
+        ],
+        "caseLaws": [
+          {
+            "name": "People's Union for Democratic Rights (PUDR) v. Union of India (Asiad Workers Case)",
+            "citation": "AIR 1982 SC 1473",
+            "principle": "Held that paying workers less than the statutory minimum wage amounts to 'forced labour' prohibited by Article 23, enforceable directly against private contractors."
+          },
+          {
+            "name": "All India Bank Employees' Association v. National Industrial Tribunal",
+            "citation": "AIR 1962 SC 171",
+            "principle": "5-judge Constitution Bench held that Article 19(1)(c) guarantees the right to form trade unions, but does NOT include a concomitant fundamental right to effective collective bargaining or to strike."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Does Article 19(1)(c) of the Constitution include a fundamental right to strike, and what did PUDR v. Union of India (1982) hold regarding minimum wages under Article 23?",
+            "a": "No - Article 19(1)(c) protects forming a union, not a fundamental right to strike (All India Bank Employees' Association). PUDR held that paying less than minimum wage constitutes 'forced labour' prohibited by Article 23."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u1-t3": {
+      "id": "lab-u1-t3",
+      "subtitle": "Labour Law - I - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "The Trade Unions Act, 1926 (Chapter II, Secs. 3-14) governs formation and registration of Trade Unions (combinations formed primarily to regulate relations between workmen and employers or impose restrictive business conditions, including federations). Registration requires at least 7 subscribing members AND a minimum membership of 10% or 100 workmen (whichever is less, subject to min 7) employed in the establishment (Sec. 4 & Sec. 9A).",
+        "legalProvision": "Sections 2(h), 3-14, & 21, Trade Unions Act, 1926 (as amended in 2001); Sections 5-14, Industrial Relations Code, 2020",
+        "meaning": "Registration is optional, NOT compulsory - yet only a REGISTERED Trade Union becomes a body corporate (Sec. 13) enjoying vital civil and criminal immunities during trade disputes.",
+        "keyPoints": [
+          "Definition & Scope of Trade Union (Sec. 2(h)): Any combination (temporary or permanent) formed primarily for regulating relations between (a) workmen and employers, (b) workmen and workmen, or (c) employers and employers, or imposing restrictive conditions on any trade/business (even an Employers' Association can register as a Trade Union!). Any person aged 15+ may become a member (Sec. 21).",
+          "Mode of Registration & Twin Thresholds (Secs. 4-9 & 9A - 2001 Amendment): (1) Application to Registrar of Trade Unions signed by AT LEAST 7 MEMBERS, AND (2) At the time of registration AND continuously thereafter (Sec. 9A), union must have at least 10% OR 100 workmen (whichever is less, subject to minimum 7) engaged/employed in the connected establishment/industry. Accompanied by copy of Rules containing mandatory items under Sec. 6 (name, objects, subscription, executive, audit, dissolution) and statement of particulars (Sec. 5).",
+          "Certificate of Registration & Legal Status (Secs. 8, 9 & 13): Registrar registers union and issues Certificate of Registration (conclusive evidence of due registration - Sec. 9); under Section 13, registered union becomes a BODY CORPORATE with perpetual succession, common seal, power to acquire/hold property, contract, and sue/be sued (Societies Registration Act & Companies Act do NOT apply - Sec. 14).",
+          "Cancellation / Withdrawal of Registration (Sec. 10) & Appeal (Sec. 11): Registrar may withdraw/cancel registration on (a) union's application, or (b) satisfaction that certificate was obtained by fraud/mistake, union ceased to exist, wilfully contravened Act after notice, rescinded a mandatory Sec. 6 rule, or fell below Sec. 9A minimum membership - ONLY after giving at least 2 MONTHS' prior written notice specifying grounds. Appeal lies within 60 days to High Court (Presidency towns/HC seat) or Labour Court / Industrial Tribunal (Sec. 11)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Tirumala Tirupati Devasthanam v. Commissioner of Labour",
+            "citation": "1995 Supp (3) SCC 653",
+            "principle": "Held that employees working in a department/wing that qualifies as an 'industry' can validly register a Trade Union under the Trade Unions Act, 1926."
+          },
+          {
+            "name": "Bokajan Cement Corporation Employees' Union v. Cement Corporation of India",
+            "citation": "2004 1 SCC 142",
+            "principle": "Held that membership of a registered trade union does NOT automatically cease merely upon termination of employment unless the union's constitution/rules expressly provide for automatic cessation."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the twin numerical thresholds required to register a Trade Union under Sections 4 and 9A of the Trade Unions Act, 1926, and state the notice period required before cancelling registration under Section 10.",
+            "a": "At least 7 subscribing members must apply, AND the union must have at least 10% or 100 workmen (whichever is less, minimum 7) employed in the establishment. Under Section 10, the Registrar must give at least 2 months' prior written notice before cancelling registration."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u1-t4": {
+      "id": "lab-u1-t4",
+      "subtitle": "Labour Law - I - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A registered Trade Union may spend its General Fund strictly on ten enumerated industrial/welfare objects (Sec. 15) and maintain a separate voluntary Political Fund (Sec. 16 - non-contributors cannot be discriminated against). Crucially, Sections 17 and 18 grant statutory Criminal Immunity (from conspiracy charges under Sec. 120B IPC / Sec. 61 BNS) and Civil Immunity (from tort suits for inducing breach of employment contract) for bona fide trade-dispute acts - though violent/coercive acts are NEVER protected.",
+        "legalProvision": "Sections 15, 16, 17, 18, 19, & 20, Trade Unions Act, 1926 (Sections 15-18, Industrial Relations Code, 2020)",
+        "meaning": "Without Sections 17 and 18, every peaceful strike call or picket would expose union leaders to criminal conspiracy prosecutions and ruinous tort damages by employers.",
+        "keyPoints": [
+          "General Fund Objects (Sec. 15): Spent EXCLUSIVELY on officer salaries/admin, legal proceedings protecting union/member rights, conducting trade disputes, compensating members for trade-dispute loss, educational/social/religious benefits, funeral/sickness/unemployment allowances, and publishing labour periodicals.",
+          "Separate Political Fund (Sec. 16): Union may constitute a separate fund for civic/political objects (election expenses, holding political meetings, distributing political literature) - STRICTLY VOLUNTARY: contribution CANNOT be made a condition for union admission, and non-contributors must suffer ZERO disadvantage in union benefits or voting.",
+          "Immunity from Criminal Conspiracy (Sec. 17): No office-bearer or member of a registered Trade Union is liable to punishment under Sec. 120B(2) IPC / Sec. 61(2) BNS for any agreement made between members to further a lawful Section 15 object, UNLESS the agreement is to commit an OFFENCE.",
+          "Immunity from Civil Suits (Sec. 18): Protects registered union, office-bearers, and members from civil tort suits merely because an act done in contemplation or furtherance of a trade dispute induces a person to break a contract of employment or interferes with trade/business - does NOT protect physical violence, intimidation, gherao, or destruction of property (Rohtas Industries; Jay Engineering Works).",
+          "Recognition of Trade Unions: Registration (by Registrar) is distinct from Recognition (by Employer as sole/principal collective bargaining agent). Central Act has no automatic recognition clause (Maharashtra MRTU & PULP Act and Kerala/WB rules govern recognition; IR Code, 2020 introduces 'Negotiating Union / Negotiating Council' at 51% / 20% thresholds)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Rohtas Industries Staff Union v. State of Bihar",
+            "citation": "AIR 1963 Pat 170 (affirmed by SC in 1976 2 SCC 82)",
+            "principle": "Held that Section 18 protects registered trade unions from civil tort claims for economic loss caused by peaceful strikes in furtherance of a trade dispute, even if the strike was illegal under the ID Act."
+          },
+          {
+            "name": "Jay Engineering Works Ltd. v. State of West Bengal",
+            "citation": "AIR 1968 Cal 407",
+            "principle": "Held that 'Gherao' (wrongfully confining managers inside office premises) is a criminal offence and enjoys ZERO immunity under Sections 17 or 18 of the Trade Unions Act."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between the General Fund (Sec. 15) and Political Fund (Sec. 16) of a registered Trade Union, and state what acts are NOT protected by Civil Immunity under Section 18.",
+            "a": "General Fund covers industrial, legal, and member-welfare expenses, whereas Political Fund is a separate voluntary fund for political/election activities where non-contributors cannot be penalized. Section 18 does NOT protect violence, physical intimidation, gherao, or property damage."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "lab-u1-t5": {
+      "id": "lab-u1-t5",
+      "subtitle": "Labour Law - I - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 21A-22 of the Trade Unions Act, 1926 require office-bearers to be at least 18 years old without moral-turpitude convictions and strictly cap 'outsiders' (non-employees) in the executive (1/3rd or 5, whichever is less, in organized sectors; 50% in unorganized sectors). Sections 23-27 regulate Change of Name, Amalgamation (requiring 50% voting + 60% approval), and Dissolution (notice within 14 days).",
+        "legalProvision": "Sections 21A, 22, 23, 24, 25, 26, & 27, Trade Unions Act, 1926 (as amended in 2001)",
+        "meaning": "Capping outside political office-bearers ensures trade unions are led predominantly by actual workers of the industry while preserving democratic procedures for union mergers and dissolution.",
+        "keyPoints": [
+          "Disqualifications of Office-Bearers (Sec. 21A): Disqualified from executive/office-bearer post if (1) below 18 years of age, OR (2) convicted by an Indian court of any offence involving MORAL TURPITUDE and sentenced to imprisonment (unless 5 years have elapsed since release).",
+          "Proportion of Outsiders in Executive (Sec. 22 - 2001 Amendment): In UNORGANIZED sectors, at least 50% of office-bearers must be actually engaged/employed in the connected industry; in ORGANIZED sectors, ALL office-bearers MUST be actual employees EXCEPT NOT MORE THAN ONE-THIRD (1/3rd) OR FIVE (5), whichever is LESS (Ministers/Govt office-holders are disqualified).",
+          "Change of Name (Sec. 23 & Sec. 25): Requires consent of NOT LESS THAN TWO-THIRDS (2/3rds) of total members + written notice signed by Secretary and 7 members to Registrar (does NOT affect existing rights/obligations - Sec. 26).",
+          "Amalgamation of Trade Unions (Secs. 24-26): Two or more registered unions may amalgamate (with or without dissolution/division of funds) provided (1) votes of AT LEAST ONE-HALF (50%) of members entitled to vote of EACH union are recorded, AND (2) AT LEAST SIXTY PERCENT (60%) of recorded votes are in favour; notice signed by Secretary & 7 members sent to Registrar (binding on creditors once registered).",
+          "Dissolution of Trade Union (Sec. 27): Dissolved in accordance with union rules; notice of dissolution signed by 7 members + Secretary sent to Registrar within 14 DAYS; Registrar divides funds per rules (or equally among members if rules are silent)."
+        ],
+        "caseLaws": [
+          {
+            "name": "M.T. Chandrasenan v. N. Sukumaran",
+            "citation": "1974 2 SCC 317",
+            "principle": "Held that subscription arrears do not automatically strip a union member of voting rights in internal elections/resolutions unless specifically declared in default under the union's registered rules."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the maximum permissible proportion of 'outsiders' in the executive of an organized-sector Trade Union under Section 22, and what voting threshold is required for Amalgamation under Section 24?",
+            "a": "Not more than 1/3rd of total office-bearers or 5, whichever is less. Amalgamation under Section 24 requires at least 50% of eligible members of each union to vote and at least 60% of recorded votes to approve."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

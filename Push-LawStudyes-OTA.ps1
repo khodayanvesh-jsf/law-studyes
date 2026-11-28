@@ -18,7 +18,56 @@ $ErrorActionPreference = "Stop"
 $u = New-Object System.Text.UTF8Encoding $false
 $root = (Get-Location).Path
 $wwwDir = Join-Path $root "www"
-
+
+if (Test-Path (Join-Path $root "Sync-And-Translate-BeforeDeploy.ps1")) { & (Join-Path $root "Sync-And-Translate-BeforeDeploy.ps1") }
+# === LS_SMOKE_PRE_START ===
+$__lsRoot = if ($root) { $root } else { $PSScriptRoot }
+$__lsSmokeFile = Join-Path $__lsRoot "SmokeTest-LawStudyes-v3.1.1.ps1"
+$__lsSmokeVer = "3.1.1"
+$__lsManPath = Join-Path $__lsRoot "www\manifest.json"
+if (Test-Path $__lsManPath) {
+  try {
+    $__lsManObj = Get-Content $__lsManPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    if ($__lsManObj.version) { $__lsSmokeVer = [string]$__lsManObj.version }
+  } catch {}
+}
+if (Test-Path $__lsSmokeFile) {
+  Write-Host "`n=== Pre-Push Gate: Running Local Smoke Test (v$__lsSmokeVer) ===" -ForegroundColor Cyan
+  powershell -ExecutionPolicy Bypass -File $__lsSmokeFile -ExpectedVersion $__lsSmokeVer -SkipLiveOta
+  if ($LASTEXITCODE -ne 0) {
+    throw "Pre-push Smoke Test FAILED (exit code $LASTEXITCODE)! Aborting OTA push to protect active users."
+  }
+} else {
+  Write-Host "[WARN] SmokeTest-LawStudyes-v3.1.1.ps1 not found; skipping pre-push smoke gate." -ForegroundColor Yellow
+}
+# === LS_SMOKE_PRE_END ===
+# === LS_MP3_STAGE_START ===
+$__lsMp3Root = if ($root) { $root } else { $PSScriptRoot }
+$__lsAudioDir = Join-Path $__lsMp3Root "www\audio"
+$__lsMp3Stage = Join-Path $__lsMp3Root ".ls_mp3_stage_tmp"
+$__lsMovedLangs = New-Object System.Collections.Generic.List[string]
+if (Test-Path $__lsMp3Stage) {
+  New-Item -ItemType Directory -Path $__lsAudioDir -Force | Out-Null
+  foreach ($__lg in @("en", "te", "hi")) {
+    $__left = Join-Path $__lsMp3Stage $__lg
+    $__dest = Join-Path $__lsAudioDir $__lg
+    if ((Test-Path $__left) -and (-not (Test-Path $__dest))) { Move-Item $__left $__dest -Force }
+  }
+  Remove-Item $__lsMp3Stage -Recurse -Force -ErrorAction SilentlyContinue
+}
+foreach ($__lg in @("en", "te", "hi")) {
+  $__src = Join-Path $__lsAudioDir $__lg
+  if (Test-Path $__src) {
+    New-Item -ItemType Directory -Path $__lsMp3Stage -Force | Out-Null
+    Move-Item $__src (Join-Path $__lsMp3Stage $__lg) -Force
+    $__lsMovedLangs.Add($__lg)
+  }
+}
+if ($__lsMovedLangs.Count -gt 0) {
+  Write-Host "  [LEAN OTA] Excluded www/audio/{$($__lsMovedLangs -join ',')} MP3s from ota-bundle.zip (hosted on Vercel CDN)." -ForegroundColor Cyan
+}
+try {
+# === LS_MP3_STAGE_END ===
 if (-not (Test-Path (Join-Path $wwwDir "index.html"))) {
   throw "www/index.html not found. Run this script from the project root."
 }
@@ -139,6 +188,25 @@ $builtSha = $built.sha256
 $builtMB = [Math]::Round($built.sizeBytes / 1MB, 2)
 Write-Host ("[BUILT] SemVer=" + $builtVer + " | Size=" + $builtMB + " MB | Files=" + $built.files + " | Modules=" + $built.modules + " | SHA=" + $builtSha.Substring(0,16)) -ForegroundColor Green
 
+# === LS_MP3_RESTORE_START ===
+} finally {
+  if ($__lsMovedLangs -and $__lsMovedLangs.Count -gt 0) {
+    New-Item -ItemType Directory -Path $__lsAudioDir -Force | Out-Null
+    foreach ($__lg in $__lsMovedLangs) {
+      $__bk = Join-Path $__lsMp3Stage $__lg
+      if (Test-Path $__bk) { Move-Item $__bk (Join-Path $__lsAudioDir $__lg) -Force }
+    }
+    if (Test-Path $__lsMp3Stage) { Remove-Item $__lsMp3Stage -Recurse -Force -ErrorAction SilentlyContinue }
+    Write-Host "  [LEAN OTA] Restored www/audio/{$($__lsMovedLangs -join ',')} MP3s for Git/Vercel CDN." -ForegroundColor Green
+  }
+}
+$__lsPrevEaAudio = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
+try {
+  git config core.safecrlf false 2>$null
+  if (Test-Path $__lsAudioDir) { git add "www/audio" 2>$null }
+} finally { $ErrorActionPreference = $__lsPrevEaAudio }
+# === LS_MP3_RESTORE_END ===
 Write-Host "`n=== 3. Committing & Pushing OTA Bundle to GitHub (Triggers Vercel CDN) ===" -ForegroundColor Cyan
 git add -A www/
 if (Test-Path (Join-Path $root ".github\workflows\auto-sync-lawstudyes.yml")) {
@@ -158,6 +226,24 @@ if (-not $status) {
   if ($LASTEXITCODE -ne 0) { throw "git commit failed!" }
 }
 
+# === LS_GIT_AUTOMERGE_START ===
+$__lsPrevEaGit = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
+try {
+  git config core.safecrlf false 2>$null
+  Write-Host "  [GIT SYNC] Checking origin/main for newer remote commits..." -ForegroundColor Cyan
+  git fetch origin main 2>&1 | Out-Null
+  $__lsBehindRaw = ((git rev-list --count HEAD..origin/main 2>$null) | Out-String).Trim()
+  $__lsBehind = 0
+  if ($__lsBehindRaw -match '^\d+$') { $__lsBehind = [int]$__lsBehindRaw }
+  if ($__lsBehind -gt 0) {
+    Write-Host "  [GIT SYNC] Remote origin/main is ahead by $__lsBehind commit(s). Auto-merging with -s ours..." -ForegroundColor Yellow
+    git merge -s ours origin/main --no-edit -m "Auto-sync remote main while preserving verified local OTA build" 2>&1 | ForEach-Object { Write-Host "    $_" -ForegroundColor DarkGray }
+    if ($LASTEXITCODE -ne 0) { throw "Auto-merge with origin/main failed (exit code $LASTEXITCODE)!" }
+    Write-Host "  [GIT SYNC] Auto-merge succeeded (0 conflicts). Pushing..." -ForegroundColor Green
+  }
+} finally { $ErrorActionPreference = $__lsPrevEaGit }
+# === LS_GIT_AUTOMERGE_END ===
 git push origin main
 if ($LASTEXITCODE -ne 0) {
   Write-Host "[WARN] Remote main has newer commits (e.g. Auto-Sync Bot). Run 'git pull --rebase origin main' then retry." -ForegroundColor Yellow
@@ -235,3 +321,13 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 Write-Host ("[VERIFIED] Vercel LIVE Parity MATCH! Version=" + $builtVer + " | SHA=" + $builtSha.Substring(0,16)) -ForegroundColor Green
+
+# === LS_SMOKE_POST_START ===
+if (Test-Path $__lsSmokeFile) {
+  Write-Host "`n=== Post-Push Gate: Running Full Live Vercel OTA Smoke Test (v$__lsSmokeVer) ===" -ForegroundColor Cyan
+  powershell -ExecutionPolicy Bypass -File $__lsSmokeFile -ExpectedVersion $__lsSmokeVer
+  if ($LASTEXITCODE -ne 0) {
+    throw "Post-push Live Smoke Test FAILED (exit code $LASTEXITCODE)! Check Vercel CDN parity immediately."
+  }
+}
+# === LS_SMOKE_POST_END ===

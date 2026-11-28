@@ -1,0 +1,196 @@
+{
+  "subjects": [
+    {
+      "id": "company-law",
+      "title": "Company Law",
+      "semester": "Semester 3",
+      "year": "Year 2",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 5,
+          "title": "Majority Rule & Minority Protection, Oppression & Mismanagement, Investigation, Reconstruction/Amalgamation & Winding Up (2013 Act & IBC)",
+          "topics": [
+            {"id": "com-u5-t1", "title": "1. Supremacy of Majority Rule (Foss v. Harbottle) & Exceptions for Minority Protection"},
+            {"id": "com-u5-t2", "title": "2. Prevention of Oppression and Mismanagement (Secs. 241-246) & Class Action Suits (Sec. 245)"},
+            {"id": "com-u5-t3", "title": "3. Inspection, Inquiry and Investigation of Company Affairs (Secs. 206-229) & Serious Fraud Investigation Office (SFIO)"},
+            {"id": "com-u5-t4", "title": "4. Compromise, Arrangement, Reconstruction & Amalgamation / Mergers (Secs. 230-240)"},
+            {"id": "com-u5-t5", "title": "5. Winding Up of Companies - Modes & Procedure Under Companies Act, 2013 (Secs. 270-365) & IBC, 2016"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "com-u5-t1": {
+      "id": "com-u5-t1",
+      "subtitle": "Company Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Company governance rests on corporate democracy - the Rule of Majority established in Foss v. Harbottle (1843): courts will not interfere in internal management irregularities that an ordinary majority can ratify, and the COMPANY itself (not an individual shareholder) is the proper plaintiff for corporate wrongs. To prevent majority tyranny, five classic Exceptions empower minority shareholders to bring Derivative or Personal Actions.",
+        "legalProvision": "Rule in Foss v. Harbottle (1843); Sections 241-245, Companies Act, 2013",
+        "meaning": "Foss v. Harbottle prevents multiplicity of vexatious suits by disgruntled individual shareholders over curable internal defects, while its exceptions safeguard minority investors when wrongdoers themselves control the majority votes.",
+        "keyPoints": [
+          "Two Pillars of Foss v. Harbottle (1843): (1) PROPER PLAINTIFF RULE - When a wrong is done to a company (e.g., directors misappropriating corporate funds), ONLY the company as a separate juristic person can sue; (2) INTERNAL MANAGEMENT / MAJORITY RULE - Courts will not intervene in internal irregularities that a simple majority of shareholders can lawfully ratify in general meeting.",
+          "Five Exceptions Allowing Minority Shareholder Suits (Derivative / Personal Actions): (1) ULTRA VIRES OR ILLEGAL ACTS (an act beyond MOA or statute cannot be ratified by any majority - Bharat Insurance Co. v. Kanhaiya Lal), (2) FRAUD ON THE MINORITY (majority/directors expropriating company property or discriminating unfairly against minority - Menier v. Hooper's Telegraph Works; Cook v. Deeks), (3) ACTS REQUIRING SPECIAL / QUALIFIED MAJORITY (where a 75% Special Resolution was required but passed by mere simple majority - Edwards v. Halliwell), (4) INVASION OF PERSONAL MEMBERSHIP RIGHTS (denying right to vote, attend meetings, or receive declared dividend - Pender v. Lushington), and (5) OPPRESSION AND MISMANAGEMENT (statutory remedies under Secs. 241-245).",
+          "Derivative Action vs Personal Action: In a Derivative Action, a minority shareholder sues ON BEHALF OF the company (relief/damages go to the company) when wrongdoers control the Board; in a Personal Action, the shareholder sues in his own name for breach of his personal membership rights."
+        ],
+        "caseLaws": [
+          {
+            "name": "Foss v. Harbottle",
+            "citation": "1843 2 Hare 461",
+            "principle": "Foundational company-law rule establishing that the company itself is the proper plaintiff for wrongs done to it and courts respect majority decisions on ratifiable internal matters."
+          },
+          {
+            "name": "Menier v. Hooper's Telegraph Works",
+            "citation": "1874 LR 9 Ch App 350",
+            "principle": "Recognized 'Fraud on the Minority' as a core exception to Foss v. Harbottle where a majority shareholder used its voting power to divert corporate assets/litigation benefits exclusively to itself."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the two core rules laid down in Foss v. Harbottle (1843) and list four exceptions where a minority shareholder can sue.",
+            "a": "Proper Plaintiff Rule (company alone sues for corporate wrongs) and Internal Management / Majority Rule (courts do not interfere in ratifiable irregularities). Exceptions: (1) Ultra vires/illegal acts, (2) Fraud on the minority, (3) Breach of special-majority requirement, and (4) Infringement of personal membership rights."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u5-t2": {
+      "id": "com-u5-t2",
+      "subtitle": "Company Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 241-246 of the Companies Act, 2013 provide powerful statutory remedies before the National Company Law Tribunal (NCLT) against 'Oppression' (harsh, burdensome, unfair conduct lacking probity toward minority members - Elder v. Elder & Watson; Shanti Prasad Jain) and 'Mismanagement' (material change in control/management prejudicial to company or public interest). Section 245 newly empowers members and depositors to file collective Class Action Suits.",
+        "legalProvision": "Sections 241, 242, 244, 245, & 246, Companies Act, 2013",
+        "meaning": "Instead of destroying a profitable company through 'just and equitable' winding up, Section 242 empowers NCLT to pass flexible corrective orders (regulating affairs, buying out minority/majority shares, or setting aside unfair contracts).",
+        "keyPoints": [
+          "Grounds for Application to NCLT (Sec. 241): Any eligible member (or Central Govt in public interest) may apply where (a) company affairs are conducted in a manner prejudicial to public interest, oppressive to any member(s), or prejudicial to the interests of the company, OR (b) a material change in management/control has occurred likely to cause affairs to be conducted prejudicially (Mismanagement). Under Sec. 242, NCLT must also be satisfied that winding up would unfairly prejudice members though facts otherwise justify just-and-equitable winding up (extended in Tata Consultancy Services v. Cyrus Investments, 2021).",
+          "Who Can Apply - Eligibility Threshold (Sec. 244): Company with share capital -> lower of 100 members OR 1/10th of total members, OR member(s) holding >= 1/10th of issued share capital (paid all calls); Company without share capital -> >= 1/5th of total members. NCLT has discretion under Sec. 244(1) Proviso to WAIVE these thresholds in deserving cases (Cyrus Investments Pvt. Ltd.).",
+          "Wide Powers of NCLT (Sec. 242(2)): Regulation of future conduct of affairs, purchase of shares of any member by other members or company (with consequent capital reduction), termination/modification of unfair agreements with MD/directors/third parties, setting aside fraudulent transfers within 3 months, and appointment of interim directors.",
+          "Class Action Suits (Sec. 245): Newly introduced in 2013; allows a prescribed group of members or depositors to restrain ultra vires/unlawful acts, declare void resolutions passed by suppression of material facts, and claim damages/compensation directly from the company, directors, auditors, or experts."
+        ],
+        "caseLaws": [
+          {
+            "name": "Shanti Prasad Jain v. Kalinga Tubes Ltd.",
+            "citation": "AIR 1965 SC 1535",
+            "principle": "Defined 'Oppression': conduct must be burdensome, harsh, and wrongful, showing a continuous lack of probity and fair dealing toward members in their proprietary rights as shareholders - mere unwise business decisions do not suffice."
+          },
+          {
+            "name": "Tata Consultancy Services Ltd. v. Cyrus Investments Pvt. Ltd.",
+            "citation": "2021 9 SCC 449",
+            "principle": "Clarified Sections 241-242: mere removal of a director/executive chairman in accordance with AOA without continuous oppressive conduct prejudicial to member rights does not justify winding up or reinstatement."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What is the minimum numerical/shareholding eligibility required under Section 244 to file an Oppression & Mismanagement petition before NCLT, and what is a Class Action Suit under Section 245?",
+            "a": "In a share-capital company: lower of 100 members or 10% of total members, OR holders of >= 10% issued share capital (waivable by NCLT). Section 245 allows a group of members or depositors to file a collective Class Action Suit restraining ultra vires/unlawful acts and claiming damages from directors/auditors."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u5-t3": {
+      "id": "com-u5-t3",
+      "subtitle": "Company Law - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter XIV (Sections 206-229) of the Companies Act, 2013 empowers the Registrar of Companies (ROC), Central Government Inspectors, and the specialized multi-disciplinary Serious Fraud Investigation Office (SFIO - Sec. 211) to inspect books, conduct inquiries, and investigate corporate fraud, oppression, or public-interest violations - with full powers to seize records, freeze assets, and prosecute offenders.",
+        "legalProvision": "Sections 206 to 229, Companies Act, 2013",
+        "meaning": "Because minority shareholders lack access to internal accounting vouchers, statutory investigation provides an independent sovereign probe into suspected white-collar corporate fraud.",
+        "keyPoints": [
+          "Inspection & Inquiry by ROC (Secs. 206-209): ROC may call for information/explanation, inspect books and papers, conduct inquiries if business is carried on fraudulently or investors' grievances are ignored, and seize documents with Magistrate order (Sec. 209) if destruction is feared.",
+          "Investigation into Company's Affairs (Secs. 210 & 213): Central Government MAY order investigation under Sec. 210 on ROC report, Special Resolution of company, or public interest, and MUST order investigation if directed by Court or NCLT (NCLT may order investigation under Sec. 213 on application by eligible members or any person showing fraudulent/oppressive conduct).",
+          "Serious Fraud Investigation Office / SFIO (Secs. 211-212): Statutory multi-disciplinary agency (banking, corporate law, taxation, forensic audit, IT experts) investigating complex corporate frauds assigned by Central Government; once assigned to SFIO, NO OTHER AGENCY (police/CBI/ED) may proceed with parallel investigation (Sec. 212(2)). SFIO officers hold arrest powers (Sec. 212(8)), and bail in SFIO fraud cases faces strict twin conditions (Sec. 212(6) read with Sec. 447).",
+          "Investigation of Ownership & Protection of Employees (Secs. 216 & 218): Central Govt may investigate true beneficial ownership/control (Sec. 216); during pendency of investigation or Sec. 241 proceedings, the company CANNOT discharge, suspend, or punish any employee/whistleblower without prior NCLT approval (Sec. 218)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Barium Chemicals Ltd. v. Company Law Board",
+            "citation": "AIR 1967 SC 295",
+            "principle": "Constitution Bench held that ordering an investigation into a company's affairs is a serious step affecting corporate credit; the Government's subjective opinion must rest on verifiable objective circumstances showing fraud or oppression."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What happens to parallel investigations by other agencies once the Central Government assigns a case to the SFIO under Section 212, and what protection does Section 218 give employees?",
+            "a": "Under Sec. 212(2), no other investigating agency can proceed with any separate investigation once SFIO is assigned. Under Sec. 218, the company cannot dismiss, demote, or punish any employee during pending investigation without prior NCLT approval."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u5-t4": {
+      "id": "com-u5-t4",
+      "subtitle": "Company Law - Unit 5",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter XV (Sections 230-240, Companies Act, 2013) provides a single-window NCLT framework for corporate restructuring - Compromise (settling disputed claims), Arrangement (reorganizing share capital/debt), Reconstruction (transferring business to a new company with same owners), and Amalgamation / Merger (blending two or more companies into one) - including fast-track mergers (Sec. 233) and cross-border mergers (Sec. 234).",
+        "legalProvision": "Sections 230 to 240, Companies Act, 2013",
+        "meaning": "Restructuring enables struggling businesses to survive without liquidation and healthy companies to achieve economies of scale, while NCLT scrutiny ensures statutory 3/4ths majority approval and fair treatment of dissenting creditors/shareholders.",
+        "keyPoints": [
+          "Key Concepts: COMPROMISE = settlement of a dispute/claim between company and creditors/members; ARRANGEMENT = wider reorganization of rights/liabilities even without a dispute; RECONSTRUCTION = transferring an undertaking to a newly formed company carrying on the same business; AMALGAMATION / MERGER = uniting two or more companies either by absorption (A merges into B) or consolidation (A + B form brand-new C).",
+          "NCLT Procedure & Twin Majority Requirement (Secs. 230-232): Application to NCLT -> NCLT convenes separate class meetings of creditors/members -> Notice sent to Central Govt, ROC, Income Tax, SEBI, RBI, CCI (30 days for objections) -> Scheme MUST be approved by a MAJORITY IN NUMBER representing THREE-FOURTHS (75%) IN VALUE of creditors or members present and voting -> NCLT sanctions scheme (binding on ALL including dissenters; Miheer H. Mafatlal limits judicial interference to fairness/legality, not commercial wisdom).",
+          "Fast-Track Merger (Sec. 233): Simplified Central Government (Regional Director) approval WITHOUT NCLT petition for mergers between (1) two or more Small Companies, (2) Holding Company and its Wholly-Owned Subsidiary, or (3) prescribed Start-up companies - requires 90% member & creditor approval.",
+          "Cross-Border Merger (Sec. 234) & Squeeze-Out / Takeover (Secs. 235-236): Sec. 234 permits inbound and outbound mergers between Indian companies and notified foreign companies with prior RBI approval; Secs. 235-236 regulate acquiring dissenting minority shares when 90%+ shareholders approve a takeover."
+        ],
+        "caseLaws": [
+          {
+            "name": "Miheer H. Mafatlal v. Mafatlal Industries Ltd.",
+            "citation": "1997 1 SCC 579",
+            "principle": "Laid down the classic 9-point scope of Company Court / NCLT jurisdiction in sanctioning a merger scheme: the court acts as an umpire checking statutory compliance, class fairness, and public interest, without sitting in appeal over shareholders' commercial wisdom."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "What dual voting majority is required to approve a Compromise or Merger scheme under Section 230(6), and which companies qualify for Fast-Track Merger under Section 233?",
+            "a": "Majority in number representing 3/4ths (75%) in value of creditors/members present and voting. Fast-track merger (Sec. 233) applies to Small Companies, Holding & Wholly-Owned Subsidiary, and prescribed Start-up companies."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "com-u5-t5": {
+      "id": "com-u5-t5",
+      "subtitle": "Company Law - Unit 5",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Winding Up (Liquidation) is the legal process of collecting a company's assets, paying off its debts in statutory priority, and distributing any surplus before final Dissolution (Sec. 302). Following the Insolvency and Bankruptcy Code (IBC), 2016, 'inability to pay debts' was shifted out of the Companies Act, 2013 into IBC (CIRP & Liquidation), leaving Section 271 of the Companies Act, 2013 with five non-insolvency NCLT winding-up grounds (including Special Resolution, sovereignty/security, fraud, and 'just and equitable').",
+        "legalProvision": "Sections 270-365, Companies Act, 2013; Insolvency and Bankruptcy Code (IBC), 2016 (Secs. 7, 9, 10, 33, & 53)",
+        "meaning": "Winding up does NOT immediately kill the company - the company retains corporate personality during liquidation until the final Dissolution order is passed by NCLT.",
+        "keyPoints": [
+          "Impact of IBC, 2016 on Winding Up: Previously Companies Act had 'Compulsory Winding Up by Tribunal' and 'Voluntary Winding Up'; IBC, 2016 omitted voluntary winding up from Companies Act (moving solvent voluntary liquidation to Sec. 59 IBC) and shifted insolvency ('inability to pay debts', default threshold Rs. 1 crore) to Corporate Insolvency Resolution Process (CIRP under Secs. 7, 9, 10 IBC -> Liquidation under Sec. 33 IBC if resolution fails).",
+          "Five Grounds for Winding Up by NCLT (Sec. 271, Companies Act, 2013): (a) Company resolves by SPECIAL RESOLUTION to be wound up by Tribunal, (b) Company acted against sovereignty & integrity of India, security of State, friendly foreign relations, public order, decency, or morality, (c) Company affairs conducted FRAUDULENTLY or formed for unlawful purpose (on Registrar/Central Govt petition), (d) Default in filing financial statements/annual returns for 5 CONSECUTIVE YEARS, or (e) Tribunal is of opinion it is JUST AND EQUITABLE to wind up (deadlock in management - Yenidje Tobacco, substratum gone - German Date Coffee, loss of confidence).",
+          "Who Can Petition (Sec. 272) & Liquidator (Secs. 275-290): Company, any contributory (shareholder), Registrar, Central/State Govt; NCLT appoints Company Liquidator from IBBI panel who takes custody of assets, settles list of contributories, and realizes property.",
+          "Priority Waterfall in Liquidation (Sec. 326-327 Companies Act & Sec. 53 IBC): Sec. 53 IBC waterfall -> (1) Insolvency/liquidation process costs, (2) Workmen's dues (24 months) + Secured creditors relinquishing security (pari passu), (3) Employee wages (12 months), (4) Unsecured financial creditors, (5) Government dues (2 years) + remaining secured creditors, (6) Remaining debts, (7) Preference shareholders, and (8) Equity shareholders. Once affairs are completely wound up, NCLT passes Dissolution Order (Sec. 302 / Sec. 54 IBC) ending corporate existence."
+        ],
+        "caseLaws": [
+          {
+            "name": "Re Yenidje Tobacco Co. Ltd.",
+            "citation": "1916 2 Ch 426",
+            "principle": "Classic 'Just and Equitable' winding-up authority: where two equal shareholder-directors in a quasi-partnership deadlocked completely and refused to speak except through the secretary, winding up was ordered."
+          },
+          {
+            "name": "Swiss Ribbons Pvt. Ltd. v. Union of India",
+            "citation": "2019 4 SCC 17",
+            "principle": "Upheld the constitutional validity of the IBC, 2016 (including the Sec. 53 liquidation waterfall and Sec. 29A promoter bar), emphasizing revival first and liquidation only as a last resort."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List the five grounds on which NCLT may order winding up under Section 271 of the Companies Act, 2013, and explain how winding up differs from Dissolution.",
+            "a": "Sec. 271 grounds: (1) Special Resolution, (2) Sovereignty/security/public order/morality breach, (3) Fraudulent/unlawful conduct, (4) 5-year default in filing accounts/returns, and (5) Just & Equitable. Winding up is the asset-realization/debt-payment process during which the company still exists, whereas Dissolution is the final order terminating corporate personality forever."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}

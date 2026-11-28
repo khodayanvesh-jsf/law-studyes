@@ -1,0 +1,428 @@
+{
+  "subjects": [
+    {
+      "id": "law-of-crimes",
+      "title": "Law of Crimes (IPC / BNS)",
+      "semester": "Semester 2",
+      "year": "Year 1",
+      "paper": "Paper IV",
+      "url": "",
+      "units": [
+        {
+          "unitNo": 1,
+          "title": "Concept, Elements & Stages of Crime, Codification (IPC/BNS), Jurisdiction, General Explanations & Punishments",
+          "topics": [
+            {"id": "loc-u1-t1", "title": "1. Concept, Definition & Meaning of Crime and Distinction Between Crime, Tort & Contract"},
+            {"id": "loc-u1-t2", "title": "2. Elements of Crime - Actus Reus, Mens Rea & Strict Liability Exceptions"},
+            {"id": "loc-u1-t3", "title": "3. Stages of Crime - Intention, Preparation, Attempt (Sec. 511 IPC / Sec. 62 BNS) & Commission"},
+            {"id": "loc-u1-t4", "title": "4. Codification of Criminal Law in India (IPC 1860 to BNS 2023) & Territorial / Extra-Territorial Jurisdiction"},
+            {"id": "loc-u1-t5", "title": "5. General Explanations (Public Servant, Good Faith, Common Intention vs Common Object) & Kinds of Punishments"}
+          ]
+        },
+        {
+          "unitNo": 2,
+          "title": "General Exceptions, Private Defence, Abetment, Criminal Conspiracy, Offences Against State & Public Tranquillity",
+          "topics": [
+            {"id": "loc-u2-t1", "title": "1. General Exceptions - Mistake, Accident, Necessity, Infancy, Insanity (M'Naghten Rule) & Intoxication"},
+            {"id": "loc-u2-t2", "title": "2. Right of Private Defence of Body and Property (Secs. 96-106 IPC / Secs. 34-44 BNS)"},
+            {"id": "loc-u2-t3", "title": "3. Abetment - Modes, Liability of Abettor & Punishments (Secs. 107-120 IPC / Secs. 45-60 BNS)"},
+            {"id": "loc-u2-t4", "title": "4. Criminal Conspiracy - Definition, Proof & Distinction from Abetment (Secs. 120A-120B IPC / Sec. 61 BNS)"},
+            {"id": "loc-u2-t5", "title": "5. Offences Against the State - Waging War, Sedition (Sec. 124A IPC) vs Endangering Sovereignty (Sec. 152 BNS)"},
+            {"id": "loc-u2-t6", "title": "6. Offences Against Public Peace & Tranquillity - Unlawful Assembly, Rioting, Promoting Enmity & Affray"}
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "loc-u1-t1": {
+      "id": "loc-u1-t1",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 1",
+      "readTime": "4 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "A crime (or 'offence' under Section 40 IPC / Section 2(24) BNS) is an unlawful act or omission prohibited by State criminal law and punishable by imprisonment, fine, forfeiture, or community service. Unlike Torts or Breaches of Contract (private civil wrongs remedied by compensation), a Crime is a public wrong against society prosecuted by the State.",
+        "legalProvision": "Section 40, Indian Penal Code, 1860 (Section 2(24), Bharatiya Nyaya Sanhita, 2023)",
+        "meaning": "Blackstone defined crime as an act committed or omitted in violation of a public law forbidding or commanding it, while Kenny emphasized that criminal sanctions are remissible only by the Sovereign/State. Because crime threatens social order, the State itself steps in as prosecutor.",
+        "keyPoints": [
+          "Definition & Nature of Crime: A public wrong codified by statute (Nulla poena sine lege - no punishment without law); prosecuted by the State (e.g., State v. Accused) with proof required 'beyond reasonable doubt'.",
+          "Crime vs Tort: (1) Crime is a public wrong against society & State, whereas Tort is a private civil wrong against an individual; (2) Crime is codified (IPC/BNS), whereas Tort is largely uncodified common law; (3) Criminal remedy is punishment (imprisonment/fine), whereas Tort remedy is unliquidated damages/compensation; (4) Mens Rea is generally essential in crime, often irrelevant in strict/negligent torts; (5) State prosecutes crime, injured victim sues in tort (some acts like assault, defamation, and nuisance are both).",
+          "Crime vs Breach of Contract: Crime violates a 'right in rem' (against the whole world) with State punishment and Mens Rea as a core element, whereas Contract violates a 'right in personam' (between contracting parties) remedied by civil damages or specific performance regardless of good/bad motive.",
+          "Changing Concept of Crime: Criminality evolves with society - e.g., adultery (Sec. 497 IPC) and consensual adult same-sex relations (Sec. 377 IPC) were decriminalized, while cybercrime, organized crime, and mob lynching were newly codified under BNS, 2023."
+        ],
+        "caseLaws": [
+          {
+            "name": "Proprietary Articles Trade Association v. Attorney General for Canada",
+            "citation": "1931 AC 310 (PC)",
+            "principle": "Lord Atkin held that the domain of criminal jurisprudence is determined not by fixed morality alone, but by whether the State prohibits an act with penal consequences."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State four fundamental differences between a Crime and a Tort.",
+            "a": "(1) Crime is a public wrong against society/State, Tort is a private wrong against an individual; (2) Crime is codified (IPC/BNS), Tort is largely uncodified; (3) Crime results in punishment (imprisonment/fine), Tort results in civil compensation; (4) Criminal trials require proof beyond reasonable doubt, whereas civil tort suits use preponderance of probabilities."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u1-t2": {
+      "id": "loc-u1-t2",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Criminal liability rests on four elements - Human Being, Mens Rea (guilty mind), Actus Reus (guilty act or illegal omission), and Injury - summarized in the maxim 'Actus non facit reum nisi mens sit rea' (an act alone does not make a person guilty unless the mind is also guilty). In India, Mens Rea is built directly into statutory definitions via words like 'dishonestly', 'fraudulently', 'voluntarily', and 'knowingly', subject to narrow Strict Liability exceptions.",
+        "legalProvision": "Sections 24, 25, 32, 33, 39, & 44 IPC, 1860 (Sections 2(7), 2(9), 2(14), 2(25), & 2(33) BNS, 2023)",
+        "meaning": "Criminal law punishes blameworthy conduct, not mere evil thoughts or blameless accidents. Both Actus Reus (external conduct) and Mens Rea (internal mental state) must concur at the time of the offence.",
+        "keyPoints": [
+          "Actus Reus (Guilty Act / Illegal Omission): The external physical event prohibited by law - includes both positive acts (stabbing, stealing) and illegal omissions where a legal duty exists (Sec. 32 IPC - e.g., a parent deliberately starving an infant, or a jailer starving a prisoner; moral omission like not saving a drowning stranger is NOT criminal).",
+          "Mens Rea (Guilty Mind) & Motive vs Intention: Mens Rea encompasses Intention, Knowledge, Recklessness, and Criminal Negligence. Intention is the immediate purpose behind an act (relevant to guilt), whereas Motive is the ulterior reason (e.g., stealing bread to feed a starving child - bad/good motive does NOT excuse crime, though relevant as evidence under Sec. 8 IEA / Sec. 6 BSA).",
+          "Mens Rea in IPC / BNS: Rather than a separate general section, Indian codes embed mental elements inside each offence ('dishonestly' Sec. 24, 'fraudulently' Sec. 25, 'voluntarily' Sec. 39, 'maliciously', 'rashly or negligently') and protect innocent minds via Chapter IV General Exceptions.",
+          "Exceptions - Strict Liability Offences (No Mens Rea Required): Statutory offences where public welfare overrides guilty mind - e.g., kidnapping a minor from lawful guardianship (R. v. Prince), bigamy, waging war, counterfeiting currency, food adulteration, NDPS possession, and public nuisance.",
+          "Corporate Criminal Liability: Corporations are 'persons' (Sec. 11 IPC / Sec. 2(26) BNS) and can be prosecuted and fined even for offences requiring Mens Rea by attributing the directing mind of officers (Standard Chartered Bank v. Directorate of Enforcement, 2005)."
+        ],
+        "caseLaws": [
+          {
+            "name": "State of Maharashtra v. Mayer Hans George",
+            "citation": "AIR 1965 SC 722",
+            "principle": "Held that while Mens Rea is ordinarily presumed in statutory offences, Parliament may exclude it by express words or necessary implication in socio-economic/public-welfare statutes (e.g., smuggling gold under FERA)."
+          },
+          {
+            "name": "Nathulal v. State of Madhya Pradesh",
+            "citation": "AIR 1966 SC 43",
+            "principle": "Reaffirmed that Mens Rea is an essential ingredient of a criminal offence unless clearly excluded by the language and object of the statute."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Explain the maxim 'Actus non facit reum nisi mens sit rea' and list four Strict Liability offences where Mens Rea is not required.",
+            "a": "It means an act does not make a person guilty unless accompanied by a guilty mind. Strict liability exceptions include kidnapping from lawful guardianship, waging war, counterfeiting currency, bigamy, and food adulteration."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u1-t3": {
+      "id": "loc-u1-t3",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Every intentional crime passes through four stages: (1) Intention (never punishable alone), (2) Preparation (generally NOT punishable except grave offences like waging war or dacoity), (3) Attempt (ALWAYS punishable as an inchoate crime even if unsuccessful), and (4) Commission (full substantive punishment).",
+        "legalProvision": "Sections 122, 126, 307, 308, 309, 399, & 511 IPC, 1860 (Corresponding to Sections 62, 109, 110, 149, 154, & 310(4) BNS, 2023)",
+        "meaning": "Drawing the exact line between non-punishable 'Preparation' and punishable 'Attempt' is one of the most tested problems in criminal law. Courts apply four judicial tests - Proximity, Locus Poenitentiae, Equivocality, and Social Danger - to decide when an accused has crossed the point of no return.",
+        "keyPoints": [
+          "Stage 1 - Intention (Mental Stage): Mere guilty thought or wish to commit a crime is NEVER punishable ('Cogitationis poenam nemo patitur'), because the devil himself knows not the mind of man.",
+          "Stage 2 - Preparation: Arranging means/measures to commit a crime (e.g., buying a knife or poison) is ordinarily NOT punishable because the person may still repent. Statutory Exceptions where Preparation IS punishable: Waging war against India (Sec. 122 IPC / Sec. 149 BNS), depredation on friendly power's territory (Sec. 126), making/possessing counterfeit coins/stamps (Secs. 233-235, 255), and Preparation to commit Dacoity (Sec. 399 IPC / Sec. 310(4) BNS).",
+          "Stage 3 - Attempt (Direct Movement Toward Commission): Punished under specific sections (Attempt to Murder Sec. 307/109 BNS; Attempt to Culpable Homicide Sec. 308/110 BNS) OR the residuary Section 511 IPC / Section 62 BNS (punishable with up to half of the longest imprisonment term for the completed offence). Note: Sec. 309 IPC (attempt to suicide) is omitted in BNS except Sec. 226 BNS (attempting suicide to compel/restrain a public servant).",
+          "Judicial Tests Distinguishing Preparation from Attempt: (1) Proximity Test (how close to completion - Abhayanand Mishra), (2) Doctrine of Locus Poenitentiae (whether accused still had time to abandon the plan - Malkiat Singh), (3) Equivocality Test (act unambiguously reveals criminal intent), and (4) Impossible Attempts (putting hand in an empty pocket or firing at an empty bed intending murder IS still punishable attempt - Sec. 511 illustrations).",
+          "Stage 4 - Commission: Actual completion of the offence attracting the full statutory penalty."
+        ],
+        "caseLaws": [
+          {
+            "name": "Abhayanand Mishra v. State of Bihar",
+            "citation": "AIR 1961 SC 1698",
+            "principle": "Held that submitting forged degree certificates to a university to obtain an exam admit card crossed from preparation into punishable 'attempt to cheat' under Sections 420/511 IPC."
+          },
+          {
+            "name": "Malkiat Singh v. State of Punjab",
+            "citation": "AIR 1970 SC 713",
+            "principle": "Applied the Doctrine of Locus Poenitentiae: a truck carrying paddy stopped 18 miles before the State border was still at the stage of 'preparation', not 'attempt' to smuggle, because the driver could still turn back."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name three offences where even 'Preparation' is punishable, and explain the Doctrine of Locus Poenitentiae.",
+            "a": "Preparation is punishable for waging war against India (Sec. 122), preparation for dacoity (Sec. 399), and making/possessing counterfeit coins/stamps. Locus Poenitentiae means an act remains non-punishable preparation as long as the accused still has an opportunity to change his mind and desist before committing the crime."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u1-t4": {
+      "id": "loc-u1-t4",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Indian substantive criminal law was first codified by Lord Macaulay's First Law Commission as the Indian Penal Code, 1860 (511 sections) and modernized on 1 July 2024 by the Bharatiya Nyaya Sanhita (BNS), 2023 (358 sections). Sections 2-4 IPC / Section 1 BNS establish broad Intra-Territorial jurisdiction over all persons in India and Extra-Territorial jurisdiction over Indian citizens, Indian-registered ships/aircraft, and foreign cyber-attacks targeting Indian computers.",
+        "legalProvision": "Sections 1-5, Indian Penal Code, 1860 (Section 1, Bharatiya Nyaya Sanhita, 2023); Section 188 CrPC / Section 208 BNSS",
+        "meaning": "Codification brings uniformity, certainty, and equal application across India's diverse regions. Jurisdictional rules ensure neither foreigners committing crimes on Indian soil nor Indian nationals committing crimes abroad escape Indian criminal courts.",
+        "keyPoints": [
+          "Codification History (1860 to 2024): Drafted by the First Law Commission (1834) headed by Lord Thomas Babington Macaulay; enacted on 6 October 1860 (enforced 1 January 1862); replaced from 1 July 2024 by the Bharatiya Nyaya Sanhita (BNS), 2023 streamlining 511 sections into 358 sections (adding organized crime, terrorist act, mob lynching, snatching, and community service while omitting colonial sedition Sec. 124A and Sec. 377).",
+          "Intra-Territorial Jurisdiction (Sec. 2 IPC / Sec. 1(3) BNS): Applies to EVERY person (Indian citizen OR foreigner) committing an offence within India (including 12 nautical miles of territorial waters) - even if the foreigner is physically abroad while directing an offence inside India (Mobarik Ali Ahmed). Exemptions: Foreign sovereigns, diplomatic ambassadors, alien enemies in war, and constitutional immunity of President/Governors during office (Art. 361).",
+          "Extra-Territorial Jurisdiction (Secs. 3-4 IPC / Sec. 1(4)-(5) BNS): Extends Indian criminal law beyond India's borders to (1) ANY Indian citizen committing an offence anywhere outside India (Sec. 4(1)), (2) ANY person (citizen or foreigner) committing an offence on an Indian-registered ship or aircraft anywhere in the world (Admiralty/Flag jurisdiction - Sec. 4(2)), and (3) ANY person abroad targeting a computer resource located in India (Cyber jurisdiction - Sec. 4(3)).",
+          "Procedural Sanction & Special Laws (Sec. 188 CrPC / Sec. 5 IPC): Trial in India for an offence committed abroad requires prior Central Government sanction (Sec. 188 CrPC / Sec. 208 BNSS); Sec. 5 IPC / Sec. 1(6) BNS saves military laws and special/local statutes (e.g., NDPS, POCSO, UAPA)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Mobarik Ali Ahmed v. State of Bombay",
+            "citation": "AIR 1957 SC 857",
+            "principle": "Held that a Pakistani national sitting in Karachi who cheated a businessman in Bombay via letters and telegrams was criminally liable under Section 2 IPC because the offence was completed in India."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State the three categories of Extra-Territorial Jurisdiction under Section 4 IPC / Section 1(5) BNS, and state who is exempt from Section 2 intra-territorial liability.",
+            "a": "Extra-territorial jurisdiction covers (1) Indian citizens anywhere abroad, (2) anyone on an Indian-registered ship or aircraft, and (3) anyone abroad targeting a computer resource in India. Exempted persons include foreign sovereigns, accredited diplomats, and the President/Governors during their term (Art. 361)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u1-t5": {
+      "id": "loc-u1-t5",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 1",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter II IPC (Sections 6-52A) / Section 2 BNS provides uniform General Explanations defining key legal terms - Public Servant, Wrongful Gain/Loss, Dishonestly, Fraudulently, Good Faith, and Joint Liability (Common Intention Sec. 34 vs Common Object Sec. 149). Chapter III IPC (Secs. 53-75) / Section 4 BNS lists statutory Punishments - Death, Life Imprisonment, Rigorous/Simple Imprisonment, Forfeiture, Fine, and (newly in BNS) Community Service.",
+        "legalProvision": "Sections 21, 23-25, 34, 52, 53-75, & 149 IPC, 1860 (Sections 2, 3(5), 4-13, & 190 BNS, 2023)",
+        "meaning": "General Explanations act as a built-in dictionary ensuring consistent interpretation across all offences, while Section 34 (Common Intention) and Section 149 (Common Object) hold group offenders vicariously liable when crimes are committed collectively.",
+        "keyPoints": [
+          "Key General Explanations: Public Servant (Sec. 21 IPC / Sec. 2(28) BNS - judges, police, armed forces officers, municipal/government officers, and MLA/Ministers per P.V. Narasimha Rao); Dishonestly (Sec. 24 - intending wrongful gain or wrongful loss of property); Fraudulently (Sec. 25 - intent to defraud causing deception + injury); Good Faith (Sec. 52 IPC / Sec. 2(11) BNS - nothing is done in good faith unless done with 'due care and attention').",
+          "Common Intention (Sec. 34 IPC / Sec. 3(5) BNS) vs Common Object (Sec. 149 IPC / Sec. 190 BNS): Section 34 is a rule of evidence requiring 2+ persons, prior meeting of minds, and active participation in the criminal act (Barendra Kumar Ghosh - 'they also serve who only stand and wait'); Section 149 is a substantive offence requiring 5+ persons forming an Unlawful Assembly with a common object (mere membership suffices without prior meeting of minds or overt act).",
+          "Kinds of Punishments (Sec. 53 IPC / Sec. 4 BNS): (1) Death Penalty (strictly limited to 'rarest of rare' cases - Bachan Singh), (2) Imprisonment for Life (means remainder of natural life unless commuted by Government, minimum 14 years under Sec. 433A CrPC - Gopal Vinayak Godse), (3) Rigorous (hard labour) or Simple Imprisonment, (4) Forfeiture of Property, (5) Fine (default imprisonment under Sec. 64), and (6) Community Service (newly introduced under Sec. 4(f) BNS, 2023 for 6 petty offences like defamation and petty theft).",
+          "Solitary Confinement Limits (Secs. 73-74 IPC / Secs. 11-12 BNS): Permissible ONLY with Rigorous Imprisonment; capped strictly at max 3 MONTHS total (1 month if sentence <= 6 months; 2 months if <= 1 year; 3 months if > 1 year) and max 14 days at a stretch."
+        ],
+        "caseLaws": [
+          {
+            "name": "Barendra Kumar Ghosh v. King Emperor",
+            "citation": "AIR 1925 PC 1",
+            "principle": "Postmaster murder case explaining Section 34 (Common Intention): a lookout standing outside while co-accused shoot inside shares equal liability for murder ('they also serve who only stand and wait')."
+          },
+          {
+            "name": "Bachan Singh v. State of Punjab",
+            "citation": "AIR 1980 SC 898",
+            "principle": "Constitution Bench upheld the constitutionality of the Death Penalty while restricting it strictly to the 'rarest of rare' cases where life imprisonment is unquestionably foreclosed."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three differences between Common Intention (Sec. 34 IPC / Sec. 3(5) BNS) and Common Object (Sec. 149 IPC / Sec. 190 BNS), and name the new punishment introduced by BNS, 2023.",
+            "a": "(1) Sec. 34 needs 2+ persons, Sec. 149 needs 5+; (2) Sec. 34 requires prior meeting of minds and active participation, Sec. 149 requires mere membership in an unlawful assembly; (3) Sec. 34 is a rule of evidence, Sec. 149 creates a distinct substantive offence. BNS Section 4(f) introduced Community Service."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u2-t1": {
+      "id": "loc-u2-t1",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter IV IPC (Sections 76-95) / Chapter III BNS (Sections 14-33) codifies General Exceptions that absolve criminal liability where Mens Rea is absent or conduct is legally justified - including Mistake of Fact, Judicial Acts, Accident, Necessity, Infancy (Doli Incapax), Insanity (M'Naghten Rule), Involuntary Intoxication, Consent, Compulsion, and Trifles (De Minimis).",
+        "legalProvision": "Sections 76-95 IPC, 1860 (Sections 14-33 BNS, 2023); Section 105 IEA / Section 108 BSA",
+        "meaning": "Under Section 105 IEA / Section 108 BSA, the accused bears the burden of proving a General Exception on a preponderance of probabilities. These defences are divided into Excusable acts (lack of guilty mind: infancy, insanity, accident, mistake of fact) and Justifiable acts (necessity, judicial duty, consent).",
+        "keyPoints": [
+          "Mistake of Fact vs Mistake of Law (Secs. 76 & 79): 'Ignorantia facti excusat, ignorantia juris non excusat' - a bona fide mistake of FACT believing oneself bound or justified by law excuses (e.g., soldier firing on mob under lawful command, or arresting B mistaking him for A after due inquiry), whereas Mistake of Law is NEVER a defence.",
+          "Judicial Acts, Accident & Necessity (Secs. 77-78, 80-81): Judges and officers executing court orders are immune; Sec. 80 excuses lawful acts done with proper care resulting in misfortune/accident without criminal intent; Sec. 81 (Necessity) excuses causing lesser harm in good faith to prevent greater imminent harm (EXCEPT killing an innocent person to save oneself from starvation - R. v. Dudley & Stephens).",
+          "Infancy / Doli Incapax (Secs. 82-83) & Insanity (Sec. 84): Children under 7 have absolute immunity (Sec. 82); children aged 7-12 have qualified immunity if lacking maturity (Sec. 83). Section 84 codifies the M'Naghten Rule: requires LEGAL insanity (incapacity to know the nature of the act or that it is wrong/contrary to law at the exact moment of the offence - mere medical insanity or irresistible impulse is insufficient).",
+          "Intoxication (Secs. 85-86): Involuntary intoxication administered without knowledge or against will is a complete defence (Sec. 85); voluntary intoxication is NO defence - law imputes the same knowledge as a sober person (Sec. 86; Basdev v. State of Pepsu).",
+          "Consent, Good Faith, Compulsion & Trifles (Secs. 87-95): Secs. 87-92 protect sports injuries and careful medical surgeries; Sec. 94 excuses acts under instant threat of death EXCEPT murder and offences against the State punishable with death; Sec. 95 ('De minimis non curat lex') bars prosecution for trivial harms."
+        ],
+        "caseLaws": [
+          {
+            "name": "R. v. Dudley and Stephens",
+            "citation": "1884 14 QBD 273",
+            "principle": "Held that Necessity (Section 81) is NEVER a valid defence to murder - shipwrecked sailors killing and eating a cabin boy to survive were convicted of murder."
+          },
+          {
+            "name": "Basdev v. State of Pepsu",
+            "citation": "AIR 1956 SC 488",
+            "principle": "Distinguished 'knowledge' from 'intention' under Section 86: voluntary drunkenness never excuses crime unless intoxication is so extreme as to render the accused incapable of forming the specific intent required for murder."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Distinguish between 'medical insanity' and 'legal insanity' under Section 84 IPC / Section 22 BNS, and state the two crimes excluded from the defence of Compulsion (Section 94).",
+            "a": "Medical insanity is any clinical mental illness, whereas legal insanity under Section 84 requires proof that at the time of the act the accused's cognitive faculties were so impaired that he did not know the nature of the act or that it was wrong/contrary to law. Section 94 (compulsion) NEVER excuses murder or offences against the State punishable with death."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u2-t2": {
+      "id": "loc-u2-t2",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Sections 96-106 IPC (Sections 34-44 BNS) grant every person the preventive right to defend his own (or any other person's) body and property against unlawful aggression. The right is strictly defensive - never punitive or retaliatory - ceases once danger ends, cannot exceed necessary proportionate force, and extends to causing death only in grave enumerated contingencies (Sections 100 & 103).",
+        "legalProvision": "Sections 96 to 106, Indian Penal Code, 1860 (Sections 34 to 44, Bharatiya Nyaya Sanhita, 2023)",
+        "meaning": "Because the police cannot be present at every moment of sudden attack, the law permits self-help to repel imminent crime. A defender facing sudden peril is NOT expected to measure force in 'golden scales' (Darshan Singh), though an initial aggressor cannot claim private defence.",
+        "keyPoints": [
+          "Scope & Restrictions (Secs. 96-99): Covers defence of one's own OR a stranger's body/property, even against an insane/child attacker (Sec. 98). Four strict limits under Section 99: (1) No right against lawful good-faith acts of public servants not causing apprehension of death/grievous hurt, (2) No right if there is time to seek protection of public authorities, (3) Force must NEVER exceed what is reasonably necessary, and (4) No right in a free fight or to an aggressor.",
+          "When Private Defence of Body Extends to Causing Death (Sec. 100 IPC / Sec. 38 BNS): Available against 7 specific assaults causing reasonable apprehension of (1) Death, (2) Grievous Hurt, (3) Rape, (4) Gratifying unnatural lust, (5) Kidnapping/Abduction, (6) Wrongful confinement where public authorities cannot be reached, or (7) Acid attack / attempt to throw acid (added by 2013 Amendment).",
+          "When Private Defence of Property Extends to Causing Death (Sec. 103 IPC / Sec. 41 BNS): Available against 4 grave property crimes - (1) Robbery, (2) House-breaking after sunset and before sunrise (at night), (3) Mischief by fire/explosive to a dwelling house or property custody building, and (4) Theft/mischief/house-trespass causing reasonable apprehension of death or grievous hurt.",
+          "Commencement & Continuation (Secs. 102 & 105): Begins the instant reasonable apprehension of danger arises (no need to wait for the first blow) and ends the moment danger ceases or the offender retreats/is disarmed.",
+          "Risk to Innocent Person (Sec. 106 IPC / Sec. 44 BNS): If defending against a deadly mob requires firing at the risk of harming an innocent child/bystander, the defender is legally protected."
+        ],
+        "caseLaws": [
+          {
+            "name": "Amjad Khan v. State",
+            "citation": "AIR 1952 SC 165",
+            "principle": "Held that during a communal riot where an armed mob looted nearby shops and threatened the accused's home, firing to repel the imminent threat fell squarely within Sections 100 and 103 without waiting for actual physical assault."
+          },
+          {
+            "name": "Darshan Singh v. State of Punjab",
+            "citation": "2010 2 SCC 333",
+            "principle": "Summarized 10 authoritative principles on Private Defence: it is preventive not retributive, requires imminent peril, and a person under sudden attack need not modulate defensive force in golden scales."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "List the four property offences under Section 103 IPC / Section 41 BNS where private defence of property extends to causing death.",
+            "a": "(1) Robbery, (2) House-breaking at night, (3) Mischief by fire/explosive to a human dwelling or property custody structure, and (4) Theft, mischief, or house-trespass causing reasonable apprehension of death or grievous hurt."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u2-t3": {
+      "id": "loc-u2-t3",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Abetment (Section 107 IPC / Section 45 BNS) is the intentional assistance or encouragement of another person to commit an offence through three distinct modes: Instigation, Conspiracy (with an overt act), or Intentional Aiding. The abettor's guilt is independent - even if the principal offender is a child, insane, or refuses to commit the crime, the abettor remains criminally liable.",
+        "legalProvision": "Sections 107 to 120, Indian Penal Code, 1860 (Sections 45 to 60, Bharatiya Nyaya Sanhita, 2023)",
+        "meaning": "Criminal law punishes the instigator behind the curtain just as severely as the actual perpetrator, because without the abettor's provocation or material aid the crime might never have occurred.",
+        "keyPoints": [
+          "Three Modes of Abetment (Sec. 107 IPC / Sec. 45 BNS): (1) Instigation (actively goading, provoking, or counselling - mere silent presence or casual angry words like 'go and die' without Mens Rea is NOT instigation per Sanju v. State of M.P.), (2) Engaging in Conspiracy (requires agreement PLUS an actual act or illegal omission in pursuance thereof), and (3) Intentional Aiding (facilitating commission before or at the time of crime, e.g., supplying a weapon or a priest solemnizing a knowingly bigamous marriage).",
+          "Abettor's Independent Liability (Sec. 108 IPC / Sec. 46 BNS): Offence of abetment is complete upon instigation/aid; NOT necessary that the abetted act actually be committed, or that the principal offender possess guilty intent (e.g., using a 6-year-old child to commit theft). Abetment of an abetment is also an offence; under Sec. 108A IPC / Sec. 48 BNS, abetting in India an offence committed abroad is punishable.",
+          "Punishment When Abetted Act IS Committed (Secs. 109 & 114): If no express punishment is provided, abettor gets the SAME punishment as the completed offence (Sec. 109); if the abettor is physically PRESENT at the scene of crime, he is deemed to have committed the offence himself (Sec. 114 IPC / Sec. 54 BNS).",
+          "Punishment When Act is NOT Committed (Secs. 115 & 116): For death/life offences not committed -> up to 7 years (14 years if hurt caused); for other imprisonment offences not committed -> up to 1/4th of the longest term (up to 1/2 if abettor is a public servant duty-bound to prevent it).",
+          "Different Act / Probable Consequence (Secs. 111 & 113): If the principal commits a different act that was a PROBABLE consequence of the abetment (e.g., instigating robbery where murder foreseeably occurs), the abettor is liable for that act too (Sec. 111)."
+        ],
+        "caseLaws": [
+          {
+            "name": "Sanju alias Sanjay Singh Sengar v. State of M.P.",
+            "citation": "2002 5 SCC 371",
+            "principle": "Held that words uttered in a fit of anger during a quarrel ('to go and die') without real Mens Rea to instigate suicide do not constitute abetment under Section 107 / Section 306 IPC."
+          },
+          {
+            "name": "Faguna Kanta Nath v. State of Assam",
+            "citation": "AIR 1959 SC 673",
+            "principle": "Clarified that where abetment is solely by 'intentional aiding' of a specific principal's act and the principal is acquitted on merits of committing that act, the aider cannot be convicted alone."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "Name the three modes of Abetment under Section 107 IPC / Section 45 BNS, and state the legal effect when the abettor is physically present at the crime scene (Section 114).",
+            "a": "Instigation, conspiracy (plus overt act/illegal omission), and intentional aiding. Under Section 114 IPC / Section 54 BNS, an abettor physically present when the crime is committed is deemed to have committed the substantive offence himself."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u2-t4": {
+      "id": "loc-u2-t4",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Criminal Conspiracy (Section 120A IPC / Section 61(1) BNS) is an agreement between TWO or more persons to do an illegal act, or a legal act by illegal means. It is an exceptional substantive inchoate crime where the mere agreement to commit an offence is punishable even before any overt step is taken, proved largely by circumstantial evidence and Section 10 IEA / Section 8 BSA.",
+        "legalProvision": "Sections 120A & 120B, Indian Penal Code, 1860 (Section 61, Bharatiya Nyaya Sanhita, 2023); Section 10 IEA / Section 8 BSA",
+        "meaning": "Inserted in 1913 to widen the narrow scope of abetment-by-conspiracy, Section 120A strikes at dangerous group plots at their earliest stage because collective criminal planning poses a far graver threat to society than solitary acts.",
+        "keyPoints": [
+          "Essential Ingredients (Sec. 120A IPC / Sec. 61(1) BNS): (1) Two or more persons (a single person cannot conspire with himself; if all co-accused except one are acquitted, the lone accused cannot be convicted of conspiracy unless unknown conspirators are proved - Topandas v. State of Bombay), (2) Agreement / meeting of minds, and (3) Object is an illegal act OR a legal act by illegal means.",
+          "Overt Act Proviso: If the agreement is to commit an OFFENCE, the bare agreement itself is complete and punishable (NO overt act required); if the agreement is to do a non-offence illegal act (e.g., civil fraud/tort), at least one overt act in pursuance of the agreement is mandatory.",
+          "Punishment (Sec. 120B IPC / Sec. 61(2) BNS): Conspiracy to commit a serious offence (punishable with death, life, or 2+ years' RI) is punished in the same manner as ABETMENT of that offence; any other criminal conspiracy carries up to 6 months' imprisonment and/or fine.",
+          "Rule of Evidence in Conspiracy (Sec. 10 IEA / Sec. 8 BSA): Because conspiracies are hatched in secrecy, once prima facie evidence of conspiracy exists, anything said, done, or written by ANY conspirator in reference to their common intention is admissible against ALL co-conspirators (Kehar Singh v. State).",
+          "Abetment vs Criminal Conspiracy: (1) Abetment can be by 1 person instigating another; Conspiracy requires 2+ agreeing minds; (2) Abetment by conspiracy (Sec. 107) ALWAYS requires an overt act/illegal omission, whereas Sec. 120A conspiracy to commit an offence needs NO overt act; (3) Abetment is a mode of complicity, whereas Sec. 120A-B is an independent substantive offence."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kehar Singh v. State (Delhi Administration)",
+            "citation": "1988 3 SCC 609",
+            "principle": "Indira Gandhi assassination case: held that direct proof of a secret conspiracy agreement is rarely available and may be inferred from circumstantial evidence, conduct, and Section 10 IEA statements."
+          },
+          {
+            "name": "State of Tamil Nadu v. Nalini",
+            "citation": "1999 5 SCC 253",
+            "principle": "Rajiv Gandhi assassination case: laid down 10 exhaustive principles on Section 120A, holding that not every conspirator need know every other conspirator or every detail so long as they share the common criminal design."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "When is an overt act required under Section 120A IPC / Section 61 BNS, and why can a single accused not be convicted alone if all named co-conspirators are acquitted?",
+            "a": "An overt act is required ONLY when the agreement is to do an illegal act that is not itself an offence; for an agreement to commit an offence, no overt act is needed. Because conspiracy requires at least two agreeing minds, one person cannot conspire alone unless unknown conspirators are proved (Topandas)."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u2-t5": {
+      "id": "loc-u2-t5",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter VI IPC (Sections 121-130) / Chapter VII BNS (Sections 147-158) punishes the gravest crimes threatening India's sovereignty, constitutional stability, and territorial integrity - including Waging War against India (death/life), Assaulting the President/Governor, and Aiding Escape of State Prisoners. Crucially, BNS, 2023 abolished colonial Sedition (Section 124A IPC) and replaced it with Section 152 (Acts Endangering Sovereignty, Unity and Integrity of India).",
+        "legalProvision": "Sections 121-130, Indian Penal Code, 1860 (Sections 147-158, Bharatiya Nyaya Sanhita, 2023); Article 19(1)(a) & 19(2), Constitution",
+        "meaning": "While the State must suppress armed insurrection and secessionism, constitutional democracy protects fierce peaceful criticism of government policies. Both Kedar Nath Singh (1962) and BNS Section 152 draw a bright line between lawful political dissent and incitement to armed rebellion or secession.",
+        "keyPoints": [
+          "Waging War Against the Government of India (Secs. 121, 121A, 122 & 123 IPC / Secs. 147-150 BNS): Waging, attempting, or abetting war carries Death or Life Imprisonment (Sec. 121/147 BNS); conspiracy to wage war or overawe Parliament/State Governments by criminal force carries life/10 years (Sec. 121A/148 BNS); collecting arms/men (Preparation itself is punishable under Sec. 122/149 BNS). Covers organized armed terrorist attacks like the 2001 Parliament Attack (Navjot Sandhu) and 26/11 Mumbai Attack (Ajmal Kasab).",
+          "Assaulting High Constitutional Dignitaries (Sec. 124 IPC / Sec. 151 BNS): Assaulting or wrongfully restraining the President or any State Governor intending to compel or restrain lawful power carries up to 7 years' imprisonment.",
+          "Sedition (Sec. 124A IPC - Kept in Abeyance 2022) & Kedar Nath Singh (1962): Historically punished bringing 'hatred, contempt, or disaffection' against the Government; in Kedar Nath Singh v. State of Bihar (1962), a 5-judge Bench saved Sec. 124A only by restricting it strictly to speech inciting violence or public disorder. In May 2022 (S.G. Vombatkere), the Supreme Court put all Sec. 124A trials in abeyance pending review.",
+          "Replacement Under BNS, 2023 (Section 152 - Endangering Sovereignty, Unity & Integrity): Omitted the word 'sedition' and 'disaffection against Government'; punishes purposefully or knowingly exciting secession, armed rebellion, subversive activities, or separatist feelings via words, electronic communication, or financial means (life imprisonment or up to 7 years). Expressly protects lawful comments disapproving government measures without inciting rebellion.",
+          "Depredation on Friendly Foreign Power & State Prisoners (Secs. 125-130 IPC / Secs. 153-158 BNS): Punishes waging war against any friendly Asiatic/foreign power at peace with India, and voluntarily allowing or aiding the escape of, or harbouring, any State prisoner or prisoner of war."
+        ],
+        "caseLaws": [
+          {
+            "name": "Kedar Nath Singh v. State of Bihar",
+            "citation": "AIR 1962 SC 955",
+            "principle": "5-judge Constitution Bench held that strong criticism of government policies is protected free speech under Article 19(1)(a); penal liability under Section 124A arises ONLY if words have a tendency to incite violence or create public disorder."
+          },
+          {
+            "name": "State (NCT of Delhi) v. Navjot Sandhu (Parliament Attack Case)",
+            "citation": "2005 11 SCC 600",
+            "principle": "Held that an organized armed terrorist attack on Parliament targeting India's sovereign authority constitutes 'Waging War against the Government of India' under Section 121 IPC."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "How does Section 152 of BNS, 2023 differ from colonial Section 124A IPC (Sedition), and what test did Kedar Nath Singh (1962) lay down?",
+            "a": "Kedar Nath Singh restricted Sec. 124A strictly to speech inciting violence or public disorder. BNS Section 152 removes the colonial term 'sedition' and 'disaffection toward Government', focusing instead on acts (including electronic/financial means) exciting secession, armed rebellion, or endangering India's sovereignty, unity, and integrity while expressly protecting peaceful policy criticism."
+          }
+        ],
+        "visuals": []
+      }
+    },
+    "loc-u2-t6": {
+      "id": "loc-u2-t6",
+      "subtitle": "Law of Crimes (IPC / BNS) - Unit 2",
+      "readTime": "5 min read",
+      "url": "",
+      "en": {
+        "inOneMinute": "Chapter VIII IPC (Sections 141-160) / Chapter XI BNS (Sections 189-197) protects collective public peace through four core offences: Unlawful Assembly (5+ persons with a common illegal object), Rioting (unlawful assembly using force or violence), Promoting Enmity Between Groups (communal/caste hatred), and Affray (2+ persons fighting in a public place disturbing public peace).",
+        "legalProvision": "Sections 141-160, Indian Penal Code, 1860 (Sections 189-197, Bharatiya Nyaya Sanhita, 2023)",
+        "meaning": "Mob violence and public brawls threaten the safety of ordinary citizens and paralyze civic life. By creating constructive vicarious liability under Section 149 IPC / Section 190 BNS, criminal law deters individuals from joining violent mobs.",
+        "keyPoints": [
+          "Unlawful Assembly (Sec. 141 IPC / Sec. 189 BNS): Assembly of FIVE OR MORE persons sharing one of five designated illegal Common Objects - (1) overawing Government/public servant by criminal force, (2) resisting execution of law/legal process, (3) committing mischief or criminal trespass, (4) obtaining property or depriving a right by criminal force, or (5) compelling any person to do what he is not legally bound to do. Membership carries 6 months (2 years if armed with deadly weapon - Sec. 144).",
+          "Rioting (Secs. 146-148 IPC / Sec. 191 BNS): Whenever force or violence is used by an Unlawful Assembly, or by ANY member thereof, in prosecution of its common object, EVERY member is guilty of Rioting (Unlawful Assembly + Force/Violence = Rioting). Punishable with up to 2 years (3 years if armed with deadly weapon under Sec. 148 / Sec. 191(3) BNS).",
+          "Constructive Group Liability (Sec. 149 IPC / Sec. 190 BNS): Every member of an unlawful assembly is vicariously guilty of ANY offence committed by any member in prosecution of the common object, OR which members knew to be likely to be committed (Masalti v. State of U.P.).",
+          "Promoting Enmity & Prejudicial Imputations (Secs. 153A & 153B IPC / Secs. 196-197 BNS): Punishes promoting hatred or disharmony between groups on grounds of religion, race, place of birth, residence, language, or caste (up to 3 years; 5 years if in a place of worship; BNS Sec. 196 explicitly includes electronic communication).",
+          "Affray (Secs. 159-160 IPC / Sec. 194 BNS) vs Rioting: Affray is fighting by TWO or more persons in a PUBLIC place disturbing public peace (up to 1 month imprisonment and/or Rs. 1,000 fine under BNS, raised from Rs. 100 IPC). Unlike Rioting (needs 5+ persons, common object, can occur in private or public place), Affray needs only 2+ persons, NO common object, and MUST occur in a public place."
+        ],
+        "caseLaws": [
+          {
+            "name": "Masalti v. State of U.P.",
+            "citation": "AIR 1965 SC 202",
+            "principle": "Held that under Section 149 IPC, every member of an unlawful assembly sharing the common object is vicariously liable for offences committed by the mob even without proving a specific overt blow by each member."
+          }
+        ],
+        "selfTest": [
+          {
+            "q": "State three key differences between Rioting (Sec. 146 IPC / Sec. 191 BNS) and Affray (Sec. 159 IPC / Sec. 194 BNS).",
+            "a": "(1) Rioting requires 5 or more persons, Affray requires 2 or more; (2) Rioting can happen in a public OR private place, Affray MUST occur in a public place; (3) Rioting requires a common illegal object under Sec. 141, whereas Affray requires only public fighting disturbing public peace (and carries lighter punishment)."
+          }
+        ],
+        "visuals": []
+      }
+    }
+  }
+}
