@@ -1,11 +1,11 @@
 {
-  "dbVersion": "2026.11.27.2131",
+  "dbVersion": "2026.11.28.0815",
   "totalSubjects": 6,
   "totalNotes": 591,
-  "totalVisuals": 2065,
-  "totalVisualsTe": 1267,
-  "mermaidDiagrams": 740,
-  "tables": 1400,
+  "totalVisuals": 3211,
+  "totalVisualsTe": 2413,
+  "mermaidDiagrams": 2628,
+  "tables": 2100,
   "images": 0,
-  "updatedAt": "2026-11-27T21:31:00.337288+00:00"
+  "updatedAt": "2026-11-28T08:15:07.601101+00:00"
 }
